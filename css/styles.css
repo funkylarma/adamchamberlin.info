@@ -1,28 +1,15 @@
-@font-face {
-	font-family: 'QuicksandLight';
-	src: url('../fonts/Quicksand_Light-webfont.eot');
-	src: local('?'), url('../fonts/Quicksand_Light-webfont.woff') format('woff'), url('../fonts/Quicksand_Light-webfont.ttf') format('truetype'), url('../fonts/Quicksand_Light-webfont.svg#webfont') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 
-@font-face {
-	font-family: 'QuicksandBook';
-	src: url('../fonts/Quicksand_Book-webfont.eot');
-	src: url('../fonts/Quicksand_Book-webfont.woff') format('woff'), url('../fonts/Quicksand_Book-webfont.ttf') format('truetype'), url('../fonts/Quicksand_Book-webfont.svg#webfont') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 
 body {
-	background: url('../img/bg.jpg');
+	background: url('http://static.tumblr.com/blj3ksc/vcWm2ben2/bg.jpg');
 	background-attachment: fixed;
 	font: normal 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #content {
-	width: 500px;
+	width: 600px;
 	margin: 0 auto;
+	position: relative;
 }
 
 #content a {
@@ -38,31 +25,107 @@ header h1 {
 	font: 64px 'Josefin Sans', arial, serif;
 }
 
+#search {
+  background: url('http://static.tumblr.com/blj3ksc/VE1m2bwqz/avatar.png') no-repeat center top;
+  position: absolute;
+  width: 150px;
+  left: -200px;
+  top: -45px;
+  text-align: center;
+}
+
+#search input {
+  margin: 270px 0 0 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+}
+
 article {
 	margin: 0 0 50px 0;
+	width: 400px;
+	position: relative;
 }
 
 article h2 {
 	font: bold 28px 'Josefin Sans', arial, serif;
 }
 
+.meta {
+  font-size: 12px;
+  color: #878787;
+  text-align: center;
+}
+
+.timeAgo {
+  background: transparent url('../img/meta_time.png') no-repeat;
+  padding-left: 22px;
+}
+
+.notesLink {
+  background: transparent url('../img/meta_time.png') no-repeat;
+  padding-left: 22px;
+}
+
+.tags {
+  background: transparent url('../img/meta_tag.png') no-repeat;
+  padding-left: 22px;
+}
+
 article.text {
 	background: rgba(255,255,255,1);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border-radius: 5px;
-	-webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.6);
+	webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
 	padding: 20px 50px;
 	text-align: left;
 }
 
+.text .date {
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  height: 90px;
+  width: 65px;
+  top: 0;
+  padding: 5px 0 0 0;
+  background: transparent url('http://static.tumblr.com/blj3ksc/nk2m2bnak/ribbon.png') center bottom;
+}
+
+.text .date span {
+  display: block;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.text .date .day {
+  font-size: 22px;
+  line-height: 24px;
+}
+.text .date .month {
+  font-size: 16px;
+  line-height: 18px;
+}
+
 article.photo {
 	text-align: center;
+	margin: 0 0 0 40px;
 }
 
 article.photo img {
 	background: white;
 	padding: 10px;
 	border: 1px solid rgba(100,100,100,1);
-	-webkit-box-shadow: 4px 10px 20px rgba(0,0,0,0.4);
+	webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 article.photoset {
@@ -70,15 +133,28 @@ article.photoset {
 }
 
 article.quote {
-		background: grey
+
 }
 
 article.quote blockquote {
 	font: normal 34px/36px Georgia, "Times New Roman", Times, serif;
+	background: transparent url('http://static.tumblr.com/blj3ksc/y4Ym2bnbs/blockquote.png') no-repeat;
+  color: #ffffff;
+  margin: 10px;
+  padding: 0 0 0 60px;
+}
+
+article.quote .source {
+  margin: 0 0 0 70px;
 }
 
 article.link {
-	background: red;
+	
+}
+
+article.link h2 {
+  background: transparent url('../img/Star.png') no-repeat;
+  padding: 0 0 0 40px;
 }
 
 article.chat {
@@ -86,7 +162,7 @@ article.chat {
 }
 
 article.video {
-	background: blue;
+  
 }
 
 article.audio {
