@@ -1,0 +1,98 @@
+@font-face {
+	font-family: 'QuicksandLight';
+	src: url('../fonts/Quicksand_Light-webfont.eot');
+	src: local('?'), url('../fonts/Quicksand_Light-webfont.woff') format('woff'), url('../fonts/Quicksand_Light-webfont.ttf') format('truetype'), url('../fonts/Quicksand_Light-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'QuicksandBook';
+	src: url('../fonts/Quicksand_Book-webfont.eot');
+	src: url('../fonts/Quicksand_Book-webfont.woff') format('woff'), url('../fonts/Quicksand_Book-webfont.ttf') format('truetype'), url('../fonts/Quicksand_Book-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	background: url('../img/bg.jpg');
+	background-attachment: fixed;
+	font: normal 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#content {
+	width: 500px;
+	margin: 0 auto;
+}
+
+#content a {
+	text-decoration: none;
+	color: #911;
+}
+
+header {
+}
+
+header h1 {
+	color: rgba(0,0,0,0.5);
+	font: 64px 'Josefin Sans', arial, serif;
+}
+
+article {
+	margin: 0 0 50px 0;
+}
+
+article h2 {
+	font: bold 28px 'Josefin Sans', arial, serif;
+}
+
+article.text {
+	background: rgba(255,255,255,1);
+	border-radius: 5px;
+	-webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.6);
+	padding: 20px 50px;
+	text-align: left;
+}
+
+article.photo {
+	text-align: center;
+}
+
+article.photo img {
+	background: white;
+	padding: 10px;
+	border: 1px solid rgba(100,100,100,1);
+	-webkit-box-shadow: 4px 10px 20px rgba(0,0,0,0.4);
+}
+
+article.photoset {
+	background: white;
+}
+
+article.quote {
+		background: grey
+}
+
+article.quote blockquote {
+	font: normal 34px/36px Georgia, "Times New Roman", Times, serif;
+}
+
+article.link {
+	background: red;
+}
+
+article.chat {
+	background: green;
+}
+
+article.video {
+	background: blue;
+}
+
+article.audio {
+	background: yellow;
+}
+
+article section.tags {
+	text-align: left;
+}
