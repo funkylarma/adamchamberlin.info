@@ -7,7 +7,7 @@ body {
 }
 
 #content {
-	width: 600px;
+	width: 500px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -45,38 +45,50 @@ header h1 {
 }
 
 article {
-	margin: 0 0 50px 0;
-	width: 400px;
+	margin: 0 0 80px 0;
 	position: relative;
 }
 
 article h2 {
-	font: bold 28px 'Josefin Sans', arial, serif;
+	font:  28px 'Josefin Sans', arial, serif;
 }
 
 .meta {
   font-size: 12px;
-  color: #878787;
+  color: #c7c7c7;
   text-align: center;
+  padding: 10px 0 0 0;
 }
 
-.timeAgo {
-  background: transparent url('../img/meta_time.png') no-repeat;
-  padding-left: 22px;
+#content .meta a {
+  color: #c7c7c7;
 }
 
-.notesLink {
-  background: transparent url('../img/meta_time.png') no-repeat;
+#content .meta a:hover {
+  color: #333333;
+}
+
+.ago, .notes, .comments, .tags {
   padding-left: 22px;
+  margin: 0 10px;
+  height: 22px;
+  line-height: 22px; 
+}
+
+.ago {
+  background: transparent url('../img/meta_time.png') no-repeat;
+}
+
+.notes {
+  background: transparent url('../img/meta_notes.png') no-repeat;
 }
 
 .tags {
   background: transparent url('../img/meta_tag.png') no-repeat;
-  padding-left: 22px;
 }
 
-article.text {
-	background: rgba(255,255,255,1);
+article.text, article.link, article.chat {
+	background: #ffffff;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -87,8 +99,12 @@ article.text {
 	text-align: left;
 }
 
-.text .date {
-  color: #fff;
+article.text .meta {
+  border-top: 1px solid #ebebeb;
+}
+
+article.text .date {
+  color: #ffffff;
   text-align: center;
   position: absolute;
   right: 10px;
@@ -96,31 +112,34 @@ article.text {
   width: 65px;
   top: 0;
   padding: 5px 0 0 0;
-  background: transparent url('http://static.tumblr.com/blj3ksc/nk2m2bnak/ribbon.png') center bottom;
+  background: url('http://static.tumblr.com/blj3ksc/nk2m2bnak/ribbon.png') center bottom;  
 }
 
-.text .date span {
+article.text .date span {
   display: block;
   font-size: 12px;
   line-height: 14px;
+    text-shadow: 2px 2px 2px #340b09;
+  filter: dropshadow(color=#340b09, offx=2, offy=2);    
 }
 
-.text .date .day {
+article.text .date .day {
   font-size: 22px;
   line-height: 24px;
 }
-.text .date .month {
+
+article.text .date .month {
   font-size: 16px;
   line-height: 18px;
 }
 
 article.photo {
 	text-align: center;
-	margin: 0 0 0 40px;
+
 }
 
-article.photo img {
-	background: white;
+article.photo img, article.video embed, article.audio embed {
+	background: #ffffff;
 	padding: 10px;
 	border: 1px solid rgba(100,100,100,1);
 	webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
@@ -129,7 +148,6 @@ article.photo img {
 }
 
 article.photoset {
-	background: white;
 }
 
 article.quote {
@@ -137,7 +155,9 @@ article.quote {
 }
 
 article.quote blockquote {
-	font: normal 34px/36px Georgia, "Times New Roman", Times, serif;
+	font-size: 34px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 38px;
 	background: transparent url('http://static.tumblr.com/blj3ksc/y4Ym2bnbs/blockquote.png') no-repeat;
   color: #ffffff;
   margin: 10px;
@@ -149,24 +169,28 @@ article.quote .source {
 }
 
 article.link {
-	
+	padding: 10px 50px;
 }
 
 article.link h2 {
-  background: transparent url('../img/Star.png') no-repeat;
+  background: transparent url('../img/link.png') no-repeat left 10px;
   padding: 0 0 0 40px;
 }
 
 article.chat {
-	background: green;
+
 }
 
 article.video {
-  
+  text-align: center;
+}
+
+article.video embed {
+
 }
 
 article.audio {
-	background: yellow;
+	text-align: center;
 }
 
 article section.tags {
