@@ -207,7 +207,7 @@
 	  }
 	  
 	  article.link h2 {
-	    background: transparent url('http://static.tumblr.com/blj3ksc/90gm2dy0k/sprite2.png') no-repeat left top;
+	    background: transparent url('http://static.tumblr.com/blj3ksc/90gm2dy0k/sprite2.png') no-repeat left 8px;
 	    padding: 5px 0 5px 40px;
 	    line-height: 32px;
 	  }
@@ -293,7 +293,7 @@
 
 	<section id="search">
 		<form action="/search" method="get">
-		    <input type="text" name="q" value="{SearchQuery}"/>
+		    <input type="search" placeholder="Search and enter" name="q" value="{SearchQuery}" />
 		</form>
 	</section>
 
@@ -303,8 +303,13 @@
 		{block:Text}
 			<article class="text">
 			  {block:Date}
-			  	<h3>Posted on:</h3>
-			  	<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{DayOfMonthWithZer} {MonthNumberWithZero} {Year}</time>
+				<div class="date">
+					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">
+					<span class="day">{DayOfMonthWithZero}</span>
+					<span class="month">{ShortMonth}</span>
+					<span class="year">{Year}</span>
+					</time>
+				</div><!-- .date -->
 			  {/block:Date}
 			  
 				{block:Title}
@@ -313,22 +318,18 @@
 
 				{Body}
 
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-				  <aside class="notes">
-					  {NoteCount} Notes
-					</aside>
-				{/block:NoteCount}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 				
 			</article>
 		{/block:Text}
@@ -342,27 +343,18 @@
 					<div class="caption">{Caption}</div>
 				{/block:Caption}
 
-				{block:Date}
-					<h3>Posted on:</h3>
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Month} {DayOfMonth} {Year}</time>
-				{/block:Date}
-
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-				  <aside class="notes">
-					  {NoteCount} Notes
-					</aside>
-				{/block:NoteCount}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 				
 			</article>
 		{/block:Photo}
@@ -376,27 +368,18 @@
 					<div class="caption">{Caption}</caption>
 				{/block:Caption}
 
-				{block:Date}
-					<h3>Posted on:</h3>
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Month} {DayOfMonth} {Year}</time>
-				{/block:Date}
-
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-				  <aside class="notes">
-					  {NoteCount} Notes
-					</aside>
-				{/block:NoteCount}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 				
 			</article>
 		{/block:Photoset}
@@ -404,33 +387,24 @@
 		<!-- Quote post -->
 		{block:Quote}
 			<article class="quote">
-				"{Quote}"
+				<<blockquote>{Quote}</blockquote>
 
 				{block:Source}
 					<div class="source">{Source}</div>
 				{/block:Source}
 
-				{block:Date}
-					<h3>Posted on:</h3>
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Month} {DayOfMonth} {Year}</time>
-				{/block:Date}
-
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-				  <aside class="notes">
-					  {NoteCount} Notes
-					</aside>
-				{/block:NoteCount}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 				
 			</article>
 		{/block:Quote}
@@ -438,33 +412,24 @@
 		<!-- Link post -->
 		{block:Link}
 			<article class="link">
-				<h2><a href="{URL}" {Target}>{Name}</a></h2>
+				<h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
 
 				{block:Description}
 					<div class="description">{Description}</div>
 				{/block:Description}
 
-				{block:Date}
-					<h3>Posted on:</h3>
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Month} {DayOfMonth} {Year}</time>
-				{/block:Date}
-
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-				  <aside class="notes">
-					  {NoteCount} Notes
-					</aside>
-				{/block:NoteCount}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 				
 			</article>
 		{/block:Link}
@@ -487,27 +452,18 @@
 					{/block:Lines}
 				</ul>
 
-				{block:Date}
-					<h3>Posted on:</h3>
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Month} {DayOfMonth} {Year}</time>
-				{/block:Date}
-
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-				  <aside class="notes">
-					  {NoteCount} Notes
-					</aside>
-				{/block:NoteCount}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 				
 			</article>
 		{/block:Chat}
@@ -521,27 +477,18 @@
 					<div class="caption">{Caption}</div>
 				{/block:Caption}
 
-				{block:Date}
-					<h3>Posted on:</h3>
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Month} {DayOfMonth} {Year}</time>
-				{/block:Date}
-
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-				  <aside class="notes">
-					  {NoteCount} Notes
-					</aside>
-				{/block:NoteCount}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 				
 			</article>
 		{/block:Video}
@@ -555,37 +502,35 @@
 					<div class="caption">{Caption}</div>
 				{/block:Caption}
 
-				{block:Date}
-					<h3>Posted on:</h3>
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Month} {DayOfMonth} {Year}</time>
-				{/block:Date}
+				<div class="meta">
+					{block:Date}
+						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+					{/block:Date}
+					{block:Notes}
+						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
+					{/block:Notes}
+					{block:HasTags}
+						<br />
+						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+					{/block:HasTags}
+				</div>
 
-				{block:HasTags}
-					<section class="tags">
-						<h3>Tags:</h3>
-							<ul>
-								{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>
-								{/block:Tags}
-							</ul>
-					</section>
-				{/block:HasTags}
-
-				{block:NoteCount}
-					{NoteCount} Notes
-				{/block:NoteCount}
 			</article>
 		{/block:Audio}
 
 	{/block:Posts}
 
-	<footer>
-		{block:PreviousPage}
-			<a href="{PreviousPage">Previous</a>
-		{/block:PreviousPage}
-		{block:NextPage}
-			<a href="{NextPage}">Next</a>
-		{/block:NextPage}
+	<footer class="footer">
+		<div class="nav-previous">
+			{block:PreviousPage}
+				<a href="{PreviousPage">Previous</a>
+			{/block:PreviousPage}
+		</div>
+		<div class="nav-next">
+			{block:NextPage}
+				<a href="{NextPage}">Next</a>
+			{/block:NextPage}
+		</div>
 	</footer>
 
 </div><!-- #content --> 
