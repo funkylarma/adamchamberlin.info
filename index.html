@@ -5,16 +5,16 @@
 <head>
 	<!-- Meta-data -->
 	<meta charset="utf-8" />
-	<meta name="robots" content="noindex" />
-
-	<meta name="text:Disqus Shortname" content="" />
-	<meta name="viewport" content="width=800"/> <!-- iPhone -->
-
-    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+	<meta name="text:Disqus Shortname" content="shibbyonline" />
+	<meta name="viewport" content="width=800"/>
+	<meta name="description" content="{MetaDescription}" />
+	<meta name="author" conten="Adam Chamberlin" />
+	<meta http-equiv="cleartype" content="on">
 
 	<title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
 
 	<link rel="shortcut icon" href="{Favicon" />
+	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
 	<link rel="alternate" type="application/rss+xml" href="{RSS" />
 
 	<!-- Stylesheets -->
@@ -71,6 +71,7 @@
 	  
 	  article h2 {
 	    font:  28px 'Josefin Sans', arial, serif;
+	    width: 350px;
 	  }
 	  
 	  .meta {
@@ -89,7 +90,7 @@
 	    color: #333333;
 	  }
 	  
-	  .ago, .notes, .comments, .tags {
+	  .meta-ago, .meta-notes, .meta-comments, .meta-tags {
 	    padding-left: 22px;
 	    margin: 0 10px;
 	    height: 22px;
@@ -97,19 +98,19 @@
 	    display: inline-block;
 	  }
 	  
-	  .ago {
+	  .meta-ago {
 	    background: transparent url('http://static.tumblr.com/blj3ksc/QaJm2dwp3/sprite.png') no-repeat left top;
 	  }
 	  
-	  .notes {
+	  .meta-notes {
 	    background: transparent url('http://static.tumblr.com/blj3ksc/QaJm2dwp3/sprite.png') no-repeat left -22px;
 	  }
 	  
-	  .comments {
+	  .meta-comments {
 	    background: transparent url('http://static.tumblr.com/blj3ksc/QaJm2dwp3/sprite.png') no-repeat left -44px;
 	  }
 	  
-	  .tags {
+	  .meta-tags {
 	    background: transparent url('http://static.tumblr.com/blj3ksc/QaJm2dwp3/sprite.png') no-repeat left -66px;
 	  }
 	  
@@ -299,42 +300,49 @@
 
 	{block:Posts}
 
-		<!-- Text post -->
 		{block:Text}
 			<article class="text">
-			  {block:Date}
-				<div class="date">
-					<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">
-					<span class="day">{DayOfMonthWithZero}</span>
-					<span class="month">{ShortMonth}</span>
-					<span class="year">{Year}</span>
-					</time>
-				</div><!-- .date -->
-			  {/block:Date}
-			  
-				{block:Title}
-					<h2><a href="{Permalink}">{Title}</a></h2>
-				{/block:Title}
+				<header>	
+					{block:Date}
+						<div class="date">
+							<time pubdate="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">
+								<span class="day">{DayOfMonthWithZero}</span>
+								<span class="month">{ShortMonth}</span>
+								<span class="year">{Year}</span>
+							</time>
+						</div><!-- .date -->
+					{/block:Date}
+
+					{block:Title}
+						<h2><a href="{Permalink}">{Title}</a></h2>
+					{/block:Title}
+				</header>
 
 				{Body}
 
-				<div class="meta">
+				{block:More}
+					<p class="read-more">
+						<a href="{Permalink}" title="Read the rest of the post">Read more...</a>
+					</p>
+				{/block:More}
+
+				<footer class="meta">
 					{block:Date}
-						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+						<span class="meta-ago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
+					<span class="meta-comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></span>
 					{block:HasTags}
 						<br />
-						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+						<span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 				
 			</article>
 		{/block:Text}
 
-		<!-- Photo post -->
 		{block:Photo}
 			<article class="photo">
 				<img src="{PhotoURL-400}" alt="{PhotoAlt}" />
@@ -343,23 +351,22 @@
 					<div class="caption">{Caption}</div>
 				{/block:Caption}
 
-				<div class="meta">
+				<footer class="meta">
 					{block:Date}
-						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+						<span class="meta-ago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
 					{block:HasTags}
 						<br />
-						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+						<span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 				
 			</article>
 		{/block:Photo}
 
-		<!-- Photoset post -->
 		{block:Photoset}
 			<article class="photoset">
 				{Photoset-400}
@@ -368,78 +375,79 @@
 					<div class="caption">{Caption}</caption>
 				{/block:Caption}
 
-				<div class="meta">
+				<footer class="meta">
 					{block:Date}
-						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+						<span class="meta-ago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
 					{block:HasTags}
 						<br />
-						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+						<span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 				
 			</article>
 		{/block:Photoset}
 
-		<!-- Quote post -->
 		{block:Quote}
 			<article class="quote">
-				<<blockquote>{Quote}</blockquote>
+				<blockquote>{Quote}</blockquote>
 
 				{block:Source}
-					<div class="source">{Source}</div>
+					<cite class="source">{Source}</cite>
 				{/block:Source}
 
-				<div class="meta">
+				<footer class="meta">
 					{block:Date}
-						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+						<span class="meta-ago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
 					{block:HasTags}
 						<br />
-						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+						<span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 				
 			</article>
 		{/block:Quote}
 
-		<!-- Link post -->
 		{block:Link}
 			<article class="link">
-				<h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
+				<header>
+					<h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
+				</header>
 
 				{block:Description}
 					<div class="description">{Description}</div>
 				{/block:Description}
 
-				<div class="meta">
+				<footer class="meta">
 					{block:Date}
 						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
 					{block:HasTags}
 						<br />
 						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 				
 			</article>
 		{/block:Link}
 
-		<!-- Chat post -->
 		{block:Chat}
 			<article class="chat">
-				{block:Title}
-					<h3><a href="{Permalink}">{Title}</a></h3>
-				{/block:Title}
+				<header>
+					{block:Title}
+						<h2><a href="{Permalink}">{Title}</a></h2>
+					{/block:Title}
+				</header>
 
 				<ul class="chat">
 					{block:Lines}
@@ -452,48 +460,46 @@
 					{/block:Lines}
 				</ul>
 
-				<div class="meta">
+				<footer class="meta">
 					{block:Date}
-						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+						<span class="meta-ago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
 					{block:HasTags}
 						<br />
-						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+						<span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 				
 			</article>
 		{/block:Chat}
 
-		<!-- Video post -->
 		{block:Video}
 			<article class="video">
-				{Video=400}
+				{Video-400}
 
 				{block:Caption}
 					<div class="caption">{Caption}</div>
 				{/block:Caption}
 
-				<div class="meta">
+				<footer class="meta">
 					{block:Date}
-						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+						<span class="meta-ago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
 					{block:HasTags}
 						<br />
-						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+						<span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 				
 			</article>
 		{/block:Video}
 
-		<!-- Audio post -->
 		{block:Audio}
 			<article class="audio">
 				{AudioPlayerBlack}
@@ -502,23 +508,58 @@
 					<div class="caption">{Caption}</div>
 				{/block:Caption}
 
-				<div class="meta">
+				<footer class="meta">
 					{block:Date}
-						<span class="ago"><a href="{Permalink}">{TimeAgo}</a></span>
+						<span class="meta-aago"><a href="{Permalink}">{TimeAgo}</a></span>
 					{/block:Date}
-					{block:Notes}
-						<span class="notes"><a href="{Permalink}#notes">2 notes</a></span>
-					{/block:Notes}
+					{block:NoteCount}
+						<span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+					{/block:NoteCount}
 					{block:HasTags}
 						<br />
-						<span class="tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+						<span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
 					{/block:HasTags}
-				</div>
+				</footer>
 
 			</article>
 		{/block:Audio}
 
 	{/block:Posts}
+
+	<script type="text/javascript">
+		var disqus_url = "{Permalink}";
+		var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";
+	</script>
+
+	{block:Permalink}
+		<section id="disqus_thread">
+		</section>
+		<script type="text/javascript">
+	    	var disqus_identifier = "{PostID}";
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://shibbyonline.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=shibbyonline">comments powered by Disqus.</a></noscript>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	{/block:Permalink}
+	<script type="text/javascript">
+		var disqus_shortname = 'shibbyonline';
+		(function () {
+	  		var s = document.createElement('script'); s.async = true;
+	  		s.src = 'http://shibbyonline.disqus.com/count.js';
+	  		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	</script>
+
+	{block:PostNotes}
+		<section id="notes">
+			<h2>{NoteCountWithLabel}</h2>
+			{PostNotes}
+		</section>
+	{/block:PostNotes}
 
 	<footer class="footer">
 		<div class="nav-previous">
@@ -533,7 +574,18 @@
 		</div>
 	</footer>
 
-</div><!-- #content --> 
+</div><!-- #content -->
+
+<!-- Change UA-XXXXX-X to be your site's ID -->
+{block:IfGoogleAnalyticsID}
+
+{/block:IfGoogleAnalyticsID}
+
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
 
 </body>
 </html>
