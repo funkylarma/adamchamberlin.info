@@ -3,12 +3,13 @@
 <html lang="en">
 
 <head>
-	<!-- Meta-data -->
+    <!-- Meta-data -->
 	<meta charset="utf-8" />
-	<meta name="text:Disqus Shortname" content="shibbyonline" />
 	<meta name="viewport" content="width=800"/>
-	<meta name="description" content="{MetaDescription}" />
 	<meta name="author" conten="Adam Chamberlin" />
+	<meta name="title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}" /> 
+	<meta name="description" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title} - {Description}" />
+	<meta name="keywords" content="{block:Permalink}{block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
 	<meta http-equiv="cleartype" content="on">
 
 	<title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
@@ -18,7 +19,7 @@
 	<link rel="alternate" type="application/rss+xml" href="{RSS" />
 
 	<!-- Stylesheets -->
-	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:light,regular,bold' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
 	<style>
 	  body {
 	    background: url('http://static.tumblr.com/blj3ksc/vcWm2ben2/bg.jpg');
@@ -28,8 +29,9 @@
 	  
 	  #content {
 	    width: 500px;
-	    margin: 0 auto;
+	    margin: 0 0 0 30%;
 	    position: relative;
+	    overflow: hidden;
 	  }
 	  
 	  a {
@@ -42,26 +44,31 @@
 	  
 	  header h1 {
 	    color: rgba(0,0,0,0.5);
-	    font: 64px 'Josefin Sans', arial, serif;
+	    font: 64px 'Dosis', arial, serif;
 	  }
 	  
-	  #search {
+	  #sidebar {
 	    background: url('http://static.tumblr.com/blj3ksc/VE1m2bwqz/avatar.png') no-repeat center top;
-	    position: absolute;
+	    position: fixed;
 	    width: 150px;
-	    left: -200px;
-	    top: -45px;
+	    left: 5%;
+	    top: 0;
 	    text-align: center;
 	  }
 	  
-	  #search input {
+	  #sidebar input {
 	    margin: 270px 0 0 0;
-	    padding: 10px;
+	    padding: 10px 5px;
+	    width: 90%;
 	    background-color: rgba(255, 255, 255, 0.3);
 	    border-style: solid;
 	    border-color: rgba(255, 255, 255, 0.4);
-	    color: rgba(255, 255, 255, 1);
+	    color: #000000;
 	    border-radius: 5px;
+	  }
+
+	  #sidebar #about {
+	  	margin: 20px 0 0 0;
 	  }
 	  
 	  article {
@@ -70,7 +77,7 @@
 	  }
 	  
 	  article h2 {
-	    font:  28px 'Josefin Sans', arial, serif;
+	    font:  28px 'Dosis', arial, serif;
 	    width: 350px;
 	  }
 	  
@@ -128,6 +135,8 @@
 	  
 	  article.text .meta {
 	    border-top: 1px solid #ebebeb;
+	    clear: both;
+	    margin: 10px 0 0 0;
 	  }
 	  
 	  article.text .date {
@@ -159,13 +168,51 @@
 	    font-size: 16px;
 	    line-height: 18px;
 	  }
+
+	  article.text h3 {
+	  	clear: both;
+	  }
 	  
 	  article.text a {
 	    border-bottom: 1px dashed #ebebeb;
 	  }
+
+	  a img {
+	  	border: none;
+	  }
+
+	  a:hover {
+	  	border: none;
+	  }
 	  
 	  article.text a:hover {
 	    border-bottom: 1px solid #911;
+	  }
+
+	  article.text .alignleft {
+	  	float: left;
+	  	margin: 5px 10px 5px 5px; 
+	  }
+
+	  article.text .alignright {
+	  	float: right;
+	  	margin: 5px 5px 5px 10px;
+	  }
+
+	  article.text code, article.text .code {
+	  	display: block;
+	  	background: #eee8d5;
+	  	border: 1px solid #93a1a1;
+	  	margin: 10px auto;
+	  	padding: 5px 20px;
+	  	color: #073642;
+	  	font-family: "Courier New", Courier, monospace;
+	  }
+
+	  article.text blockquote {
+	  	margin: 1.5em;
+	  	color: #666;
+	  	font-style: italic;
 	  }
 	  
 	  article.photo {
@@ -273,6 +320,7 @@
 	  
 		{CustomCSS}
 	</style>
+	<link rel="stylesheet" href="http://static.tumblr.com/blj3ksc/GtFm3anjh/lightbox.css" />
 
 	<!-- Fix -->
 	<!--[if IE]>
@@ -292,11 +340,14 @@
 		</h1>
 	</header>
 
-	<section id="search">
+	<aside id="sidebar">
 		<form action="/search" method="get">
 		    <input type="search" placeholder="Search and enter" name="q" value="{SearchQuery}" />
 		</form>
-	</section>
+		<section id="about">
+			{Description}
+		</section>
+	</aside>
 
 	{block:Posts}
 
@@ -564,7 +615,7 @@
 	<footer class="footer">
 		<div class="nav-previous">
 			{block:PreviousPage}
-				<a href="{PreviousPage">Previous</a>
+				<a href="{PreviousPage}">Previous</a>
 			{/block:PreviousPage}
 		</div>
 		<div class="nav-next">
@@ -576,10 +627,22 @@
 
 </div><!-- #content -->
 
-<!-- Change UA-XXXXX-X to be your site's ID -->
-{block:IfGoogleAnalyticsID}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://static.tumblr.com/blj3ksc/arKm3anin/lightbox.js"></script>
 
-{/block:IfGoogleAnalyticsID}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30265454-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 
 <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <!--[if lt IE 7 ]>
