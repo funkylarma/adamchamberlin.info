@@ -14,9 +14,9 @@
 
 	<title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
 
-	<link rel="shortcut icon" href="{Favicon" />
+	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
-	<link rel="alternate" type="application/rss+xml" href="{RSS" />
+	<link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
@@ -48,16 +48,17 @@
 	  }
 	  
 	  #sidebar {
-	    background: url('http://static.tumblr.com/blj3ksc/VE1m2bwqz/avatar.png') no-repeat center top;
+	    background: url('http://static.tumblr.com/blj3ksc/VE1m2bwqz/avatar.png') no-repeat center -70px;
 	    position: fixed;
-	    width: 150px;
+	    width: 170px;
 	    left: 5%;
 	    top: 0;
 	    text-align: center;
+	    font-size: 12px;
 	  }
 	  
 	  #sidebar input {
-	    margin: 270px 0 0 0;
+	    margin: 200px 0 0 0;
 	    padding: 10px 5px;
 	    width: 90%;
 	    background-color: rgba(255, 255, 255, 0.3);
@@ -68,7 +69,23 @@
 	  }
 
 	  #sidebar #about {
+	  	background: rgba(1, 1, 1, 0.7);
+	  	color: #999;
+	  	text-align: left;
+	  	padding: 5px 10px;
 	  	margin: 20px 0 0 0;
+	  	border-radius: 5px;
+	  	border: 1px solid #000000;
+        text-shadow: 1px 1px 1px #000000;
+        filter: dropshadow(color=#000000, offx=1, offy=1);
+        webkit-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+	    -moz-box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+	    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+	  }
+
+	  #sidebar #about a {
+	  	color: #999;
+	  	font-weight: bold;
 	  }
 	  
 	  article {
@@ -148,7 +165,7 @@
 	    width: 65px;
 	    top: 0;
 	    padding: 5px 0 0 0;
-	    background: url('http://static.tumblr.com/blj3ksc/nk2m2bnak/ribbon.png') center bottom;
+	    background: url('http://static.tumblr.com/blj3ksc/nk2m2bnak/ribbon.png') 3px bottom;
 	  }
 	  
 	  article.text .date span {
@@ -177,7 +194,7 @@
 	    border-bottom: 1px dashed #ebebeb;
 	  }
 
-	  a img {
+	  a img, img a {
 	  	border: none;
 	  }
 
@@ -317,8 +334,16 @@
 	    background: transparent url('http://static.tumblr.com/blj3ksc/90gm2dy0k/sprite2.png') no-repeat right -32px;
 	    padding: 0 40px 0 0;
 	  }
+
+	  #disqus_thread {
+
+	  }
+
+	  #notes {
+
+	  }
 	  
-		{CustomCSS}
+	  {CustomCSS}
 	</style>
 	<link rel="stylesheet" href="http://static.tumblr.com/blj3ksc/GtFm3anjh/lightbox.css" />
 
@@ -345,7 +370,7 @@
 		    <input type="search" placeholder="Search and enter" name="q" value="{SearchQuery}" />
 		</form>
 		<section id="about">
-			{Description}
+			<p>The blog of <a href="http://adamchamberlin.info" title="Adam Chamberlin">Adam Chamberlin</a>.</p>
 		</section>
 	</aside>
 
@@ -396,7 +421,9 @@
 
 		{block:Photo}
 			<article class="photo">
-				<img src="{PhotoURL-400}" alt="{PhotoAlt}" />
+				<a href="{PhotoURL-HighRes}" rel="lightbox">
+					<img src="{PhotoURL-400}" alt="{PhotoAlt}" />
+				</a>
 
 				{block:Caption}
 					<div class="caption">{Caption}</div>
@@ -583,25 +610,26 @@
 	</script>
 
 	{block:Permalink}
-		<section id="disqus_thread">
-		</section>
-		<script type="text/javascript">
-	    	var disqus_identifier = "{PostID}";
-			(function() {
-				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				dsq.src = 'http://shibbyonline.disqus.com/embed.js';
-				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=shibbyonline">comments powered by Disqus.</a></noscript>
-		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+		<section id="disqus_thread"></section>
+			<script type="text/javascript">
+			  /**
+			    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+			    */
+			  (function() {
+			   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			   dsq.src = 'http://shibbyonline.disqus.com/embed.js';
+			   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			  })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=shibbyonline">comments powered by Disqus.</a></noscript>
 	{/block:Permalink}
+
 	<script type="text/javascript">
 		var disqus_shortname = 'shibbyonline';
 		(function () {
-	  		var s = document.createElement('script'); s.async = true;
-	  		s.src = 'http://shibbyonline.disqus.com/count.js';
-	  		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		  var s = document.createElement('script'); s.async = true;
+		  s.src = 'http://shibbyonline.disqus.com/count.js';
+		  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 		}());
 	</script>
 
