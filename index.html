@@ -21,10 +21,90 @@
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
 	<style>
+	html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		font-size: 100%;
+		vertical-align: baseline;
+		background: transparent;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	    display: block;
+	}
+
+	audio, canvas, video {
+	    display: inline-block;
+	    *display: inline;
+	    *zoom: 1;
+	}
+
+	audio:not([controls]) {
+	    display: none;
+	}
+
+	[hidden], .hide {
+	    display: none;
+	}
+
+	html {
+	    font-size: 100%;
+	    overflow-y: scroll;
+	    -webkit-text-size-adjust: 100%;
+	    -ms-text-size-adjust: 100%;
+	}
+
 	body {
 		background: url('http://static.tumblr.com/blj3ksc/vcWm2ben2/bg.jpg');
 		background-attachment: fixed;
-		font: normal 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: normal 14px/22px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		min-width: 710px;
+	}
+
+	h1,h2,h3,h4 {
+    	font-family: 'Dosis', 'Helvetica Neue', helvetica, sans-serif;
+    	color:#333;
+    	-webkit-font-smoothing: antialiased;
+    	text-rendering: optimizelegibility;
+    }
+
+	h1 {
+		font-size: 2.25em;
+		line-height: 2.25em;
+	}
+
+	h2 {
+		font-size: 1.75em;
+		line-height: 2.25em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+		line-height: 1.5em;
+	}
+
+	h4 {
+		font-size: 1.125em;
+		line-height: 1.125em;
+	}
+
+	h5 {
+		font-size: 0.9375em;
+		line-height: 1.125em;
+		top: 4px;
+	}
+
+	h6 {
+		font-size: 0.75em;
+		line-height: 1em;
+		top: 5px;
+	}
+
+	a {
+		text-decoration: none;
+		color: #911;
 	}
 	
 	#content {
@@ -32,19 +112,11 @@
 		margin: 0 0 0 30%;
 		position: relative;
 		overflow: hidden;
-	}
-	
-	a {
-		text-decoration: none;
-		color: #911;
-	}
-	
-	header {
-	}
+	}	
 	
 	header h1 {
-		color: rgba(0,0,0,0.5);
 		font: 64px 'Dosis', arial, serif;
+		margin: 1em 0 0.5em 0;
 	}
 	
 	#sidebar {
@@ -93,7 +165,7 @@
 		position: relative;
 	}
 	
-	article h2 {
+	article header h1 {
 		font:  28px 'Dosis', arial, serif;
 		width: 350px;
 	}
@@ -165,7 +237,7 @@
 		width: 65px;
 		top: 0;
 		padding: 5px 0 0 0;
-		background: url('http://static.tumblr.com/blj3ksc/nk2m2bnak/ribbon.png') 3px bottom;
+		background: url('http://static.tumblr.com/blj3ksc/nk2m2bnak/ribbon.png') center bottom;
 	}
 	
 	article.text .date span {
@@ -325,8 +397,9 @@
 		padding: 0 40px 0 0;
 	}
 
-	#disqus_thread {
-
+	#disqus_thread, #notes {
+		background-color: #ffffff;
+		padding: 20px;
 	}
 
 	#notes {
@@ -380,11 +453,41 @@
 					{/block:Date}
 
 					{block:Title}
-					<h2><a href="{Permalink}">{Title}</a></h2>
+					<h1><a href="{Permalink}">{Title}</a></h1>
 					{/block:Title}
 				</header>
 
 				{Body}
+
+				<h1>Heading one</h1>
+				<p>Pig shoulder tongue, ground round tenderloin turkey pork belly swine andouille filet mignon ball tip leberkas tri-tip speck brisket. Meatloaf rump shankle, ham hock tenderloin pork sausage pork chop pork loin pancetta ball tip. Pig sausage corned beef sirloin beef swine, turkey short ribs rump ham hock frankfurter salami pork loin. Speck hamburger short loin, pork loin sausage swine turducken andouille pork belly shank ham hock ham rump prosciutto. Frankfurter andouille ham biltong pork loin pancetta.</p>
+
+				<p>Capicola venison hamburger sausage shank, drumstick biltong chuck ham swine tenderloin. Hamburger tongue turkey fatback. Shoulder pork loin brisket fatback, flank tenderloin spare ribs leberkas rump ham hock strip steak turkey pork chop tri-tip ground round. Speck capicola spare ribs, pork belly short ribs jowl andouille pork loin. Spare ribs pancetta chicken, turkey short loin ham sausage ground round fatback meatball boudin strip steak beef.</p>
+
+				<h2>Heading two</h2>
+				<p>Pig shoulder tongue, ground round tenderloin turkey pork belly swine andouille filet mignon ball tip leberkas tri-tip speck brisket. Meatloaf rump shankle, ham hock tenderloin pork sausage pork chop pork loin pancetta ball tip. Pig sausage corned beef sirloin beef swine, turkey short ribs rump ham hock frankfurter salami pork loin. Speck hamburger short loin, pork loin sausage swine turducken andouille pork belly shank ham hock ham rump prosciutto. Frankfurter andouille ham biltong pork loin pancetta.</p>
+
+				<p>Capicola venison hamburger sausage shank, drumstick biltong chuck ham swine tenderloin. Hamburger tongue turkey fatback. Shoulder pork loin brisket fatback, flank tenderloin spare ribs leberkas rump ham hock strip steak turkey pork chop tri-tip ground round. Speck capicola spare ribs, pork belly short ribs jowl andouille pork loin. Spare ribs pancetta chicken, turkey short loin ham sausage ground round fatback meatball boudin strip steak beef.</p>
+
+				<h3>Heading three</h3>
+				<p>Pig shoulder tongue, ground round tenderloin turkey pork belly swine andouille filet mignon ball tip leberkas tri-tip speck brisket. Meatloaf rump shankle, ham hock tenderloin pork sausage pork chop pork loin pancetta ball tip. Pig sausage corned beef sirloin beef swine, turkey short ribs rump ham hock frankfurter salami pork loin. Speck hamburger short loin, pork loin sausage swine turducken andouille pork belly shank ham hock ham rump prosciutto. Frankfurter andouille ham biltong pork loin pancetta.</p>
+
+				<p>Capicola venison hamburger sausage shank, drumstick biltong chuck ham swine tenderloin. Hamburger tongue turkey fatback. Shoulder pork loin brisket fatback, flank tenderloin spare ribs leberkas rump ham hock strip steak turkey pork chop tri-tip ground round. Speck capicola spare ribs, pork belly short ribs jowl andouille pork loin. Spare ribs pancetta chicken, turkey short loin ham sausage ground round fatback meatball boudin strip steak beef.</p>
+
+				<h4>Heading four</h4>
+				<p>Pig shoulder tongue, ground round tenderloin turkey pork belly swine andouille filet mignon ball tip leberkas tri-tip speck brisket. Meatloaf rump shankle, ham hock tenderloin pork sausage pork chop pork loin pancetta ball tip. Pig sausage corned beef sirloin beef swine, turkey short ribs rump ham hock frankfurter salami pork loin. Speck hamburger short loin, pork loin sausage swine turducken andouille pork belly shank ham hock ham rump prosciutto. Frankfurter andouille ham biltong pork loin pancetta.</p>
+
+				<p>Capicola venison hamburger sausage shank, drumstick biltong chuck ham swine tenderloin. Hamburger tongue turkey fatback. Shoulder pork loin brisket fatback, flank tenderloin spare ribs leberkas rump ham hock strip steak turkey pork chop tri-tip ground round. Speck capicola spare ribs, pork belly short ribs jowl andouille pork loin. Spare ribs pancetta chicken, turkey short loin ham sausage ground round fatback meatball boudin strip steak beef.</p>
+
+				<h5>Heading five</h5>
+				<p>Pig shoulder tongue, ground round tenderloin turkey pork belly swine andouille filet mignon ball tip leberkas tri-tip speck brisket. Meatloaf rump shankle, ham hock tenderloin pork sausage pork chop pork loin pancetta ball tip. Pig sausage corned beef sirloin beef swine, turkey short ribs rump ham hock frankfurter salami pork loin. Speck hamburger short loin, pork loin sausage swine turducken andouille pork belly shank ham hock ham rump prosciutto. Frankfurter andouille ham biltong pork loin pancetta.</p>
+
+				<p>Capicola venison hamburger sausage shank, drumstick biltong chuck ham swine tenderloin. Hamburger tongue turkey fatback. Shoulder pork loin brisket fatback, flank tenderloin spare ribs leberkas rump ham hock strip steak turkey pork chop tri-tip ground round. Speck capicola spare ribs, pork belly short ribs jowl andouille pork loin. Spare ribs pancetta chicken, turkey short loin ham sausage ground round fatback meatball boudin strip steak beef.</p>
+
+				<h6>Heading six</h6>
+				<p>Pig shoulder tongue, ground round tenderloin turkey pork belly swine andouille filet mignon ball tip leberkas tri-tip speck brisket. Meatloaf rump shankle, ham hock tenderloin pork sausage pork chop pork loin pancetta ball tip. Pig sausage corned beef sirloin beef swine, turkey short ribs rump ham hock frankfurter salami pork loin. Speck hamburger short loin, pork loin sausage swine turducken andouille pork belly shank ham hock ham rump prosciutto. Frankfurter andouille ham biltong pork loin pancetta.</p>
+
+				<p>Capicola venison hamburger sausage shank, drumstick biltong chuck ham swine tenderloin. Hamburger tongue turkey fatback. Shoulder pork loin brisket fatback, flank tenderloin spare ribs leberkas rump ham hock strip steak turkey pork chop tri-tip ground round. Speck capicola spare ribs, pork belly short ribs jowl andouille pork loin. Spare ribs pancetta chicken, turkey short loin ham sausage ground round fatback meatball boudin strip steak beef.</p>
 
 				{block:More}
 				<p class="read-more">
@@ -486,7 +589,7 @@
 				{block:Link}
 				<article class="link">
 					<header>
-						<h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
+						<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>
 					</header>
 
 					{block:Description}
@@ -513,7 +616,7 @@
 				<article class="chat">
 					<header>
 						{block:Title}
-						<h2><a href="{Permalink}">{Title}</a></h2>
+						<h1><a href="{Permalink}">{Title}</a></h1>
 						{/block:Title}
 					</header>
 
@@ -549,7 +652,7 @@
 					{Video-400}
 
 					{block:Caption}
-					<div class="caption">{Caption}</div>
+						<div class="caption">{Caption}</div>
 					{/block:Caption}
 
 					<footer class="meta">
