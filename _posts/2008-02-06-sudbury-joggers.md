@@ -1,0 +1,11 @@
+---
+layout: post
+title: Sudbury Joggers
+tags:
+- apple
+- jogging
+- nike+
+- running
+- sudbury
+---
+For the last couple of evenings when I have been out running round Sudbury I have noticed an abundance of other runners and joggers out there. On one run I actually saw the same person twice! Once within the first 2 minutes and then on the last leg. You could say that there are still plenty of people out there taking up their New Years resolutions and keeping fit. Personally I like to think that Apple/Nike have done their thing and promoted more people to get out there and run; they all have iPods (the ‘mug me’ white cables say so) and so they might all be Nike+ users. Hell they might even have seen my ‘round the block'' route and been trying it out. If you are a runner or jogger from the Sudbury area drop me a line, would be good to see how many there are out there.

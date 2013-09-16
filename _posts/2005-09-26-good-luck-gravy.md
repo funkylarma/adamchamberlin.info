@@ -1,0 +1,9 @@
+---
+layout: post
+title: Good luck Gravy!
+tags:
+- Side Notes
+---
+Just a quick note to say good luck Gravy, we all know you have been worrying about your short trip to the dreaded ‘H’ but don’t it’s fine. I mean if any thing does go wrong it is amazing what they can do now with reconstructive surgery. Look at MJ, just think you might end up just like him.
+
+Good luck fella.

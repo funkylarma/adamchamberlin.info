@@ -1,0 +1,10 @@
+---
+layout: post
+title: What the hell is going on!
+tags:
+- contador
+- doping
+- rusmussen
+- tour_de_france
+---
+This morning I woke to find that Rasmussen was no longer yellow jersey leader of this years Tour de France. Now it is best to point out that Rasmussen has not failed any dope tests or returned any positive results. He has been sacked by his team; Rabobank, following the confusion about his location regarding his missed out of race drug tests. At first I was pleased to know that Contador would move up to first place and finally wear the yellow jersey but thinking about it I would not like the job. Having spent the last three days fighting with Rasmussen in the mountains victory would not taste good having it just handed to you. The only resolution would be to know if you are the better rider.
