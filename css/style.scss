@@ -5,6 +5,7 @@
  * 
  */
 
+@import "reset";
 
 /*
  * Elements
@@ -23,6 +24,8 @@
 
 img, object, embed, iframe {
   max-width: 100%; }
+
+@import "typography";
 
 /*
  * Structure Styles
