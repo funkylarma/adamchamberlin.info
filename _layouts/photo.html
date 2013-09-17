@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<article class="photo">
+  <a href="{PhotoURL-HighRes}" rel="lightbox">
+    <img src="{PhotoURL-400}" alt="{PhotoAlt}" />
+  </a>
+
+  {block:Caption}
+  <div class="caption">{Caption}</div>
+  {/block:Caption}
+
+  <footer class="meta">
+    {block:Date}
+    <span class="meta-ago"><a href="{Permalink}">{TimeAgo}</a></span>
+    {/block:Date}
+    {block:NoteCount}
+    <span class="meta-notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></span>
+    {/block:NoteCount}
+    <span class="meta-comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></span>
+    {block:HasTags}
+    <br />
+    <span class="meta-tags">Tagged with: {block:Tags}&nbsp;<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>
+    {/block:HasTags}
+  </footer>
+  
+</article>

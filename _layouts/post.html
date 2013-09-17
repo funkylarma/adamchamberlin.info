@@ -1,9 +1,32 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
-{{ content }}
-</div>
+
+<article class="text">
+  <header>  
+    <div class="date">
+      <time timedate="{{ page.date }}" pubdate>
+        <span class="day">{{ page.date | date: "%d" }}</span>
+        <span class="month">{{ page.date | date: "%b" }}</span>
+        <span class="year">{{ page.date | date: "%Y" }}</span>
+      </time>
+    </div><!-- .date -->
+    <h1>{{ page.title }}</h1>
+  </header>
+  {{ content }}
+  {block:More}
+  <p class="read-more">
+    <a href="{Permalink}" title="Read the rest of the post">Read more...</a>
+  </p>
+  {/block:More}
+  <footer class="meta">
+    <span class="meta-ago"><a href="#">{{ page.date | timeago }}</a></span>
+    <span class="meta-comments"><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></span>
+    {block:HasTags}
+    <br />
+    <span class="meta-tags">Tagged with: {{ page.tags }}</span>
+    {/block:HasTags}
+  </footer>
+</article>
