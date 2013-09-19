@@ -7,4 +7,4 @@ NewRelic::Agent.after_fork(:force_reconnect => true)
 
 use Rack::Deflater
 
-run Rack::Jekyll.new()
+run Rack::Jekyll.new
