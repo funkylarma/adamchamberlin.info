@@ -1,9 +1,8 @@
 GIT
-  remote: git://github.com/adaoraul/rack-jekyll.git
-  revision: 6a4b832c5b2350c8c1263b534ebf02135deb6363
-  ref: 6a4b832c5b2350c8c1263b534ebf02135deb6363
+  remote: https://github.com/adaoraul/rack-jekyll.git
+  revision: 4a77cbb4e4ef44fc5b13eccb7c9f53c940d35637
   specs:
-    rack-jekyll (0.4.0)
+    rack-jekyll (0.4.1)
       jekyll (>= 0.12.0, < 2.0)
       rack (~> 1.5.0)
 
@@ -50,11 +49,14 @@ GEM
       syntax (>= 1.0.0)
     mime-types (1.25)
     netrc (0.7.7)
+    newrelic_rpm (3.6.7.152)
     posix-spawn (0.3.6)
     pygments.rb (0.5.2)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     raindrops (0.12.0)
     redcarpet (2.3.0)
     rest-client (1.6.7)
@@ -76,5 +78,8 @@ DEPENDENCIES
   foreman
   heroku
   jekyll
+  newrelic_rpm
+  rack
+  rack-cache
   rack-jekyll!
   unicorn
