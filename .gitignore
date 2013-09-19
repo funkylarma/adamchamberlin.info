@@ -2,6 +2,6 @@
 .bundle/
 _site/
 site/_site/
-coverage
+log/
 .ruby-version
 .sass-cache
