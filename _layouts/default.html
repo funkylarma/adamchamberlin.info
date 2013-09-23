@@ -7,16 +7,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Adam Chamberlin">
-  <meta name="title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}"> 
-  <meta name="description" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title} - {Description}">
-  <meta name="keywords" content="{block:Permalink}{block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}">
+  <meta name="title" content="{{ page.title }}"> 
+  <meta name="description" content="">
+  <meta name="keywords" content="{% for tag in page.tags %}{{ tag }} {% endfor %}">
   <meta http-equiv="cleartype" content="on">
   <meta name="HandheldFriendly" content="true">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="msapplication-TileImage" content="{PortraitURL-128}">
+  <meta name="msapplication-TileImage" content="">
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="apple-mobile-web-app-title" content="Shibbyonline">
-  <meta name="description" content="The online playground of Adam Chamberlin">
 
   <title>{{ page.title }} &ndash; Shibbyonline</title>
 
@@ -39,14 +38,10 @@
         </a>
       </h1>
     </header>
+    
+    {% include sidebar.html %}
 
-          {{ content }}
-
-    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
-    <!--[if lt IE 7 ]>
-      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-      <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-    <![endif]-->
+    {{ content }}
 
 </body>
 </html>
