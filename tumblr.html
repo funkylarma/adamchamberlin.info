@@ -7,7 +7,7 @@
 
 <head>
   <!-- Meta-data -->
-	<meta charset="utf-8">
+<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="text:Google Analytics Web Property ID" content=""/>
@@ -29,8 +29,8 @@
 	<link rel="alternate" type="application/rss+xml" href="{RSS}" >
 
 	<!-- Stylesheets -->
-	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
-  <link href="http://static.tumblr.com/blj3ksc/5Ubn5zbp4/styles.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" type="text/css">
+  <link href="https://static.tumblr.com/blj3ksc/5Ubn5zbp4/styles.css" rel="stylesheet" type="text/css">
 	<style>
 	{CustomCSS}
 	</style>
@@ -41,7 +41,7 @@
 	<header class="header big">
     <div class="wrapper">
   		<h1>
-  			<a href="/">
+  			<a href="{BlogURL}">
   				Shibbyonline
   			</a>
   		</h1>
@@ -52,7 +52,7 @@
     </div><!-- .wrapper -->
 		<section id="about">
       <div class="wrapper">
-			  <p>The online blog of <a href="http://adamchamberlin.info" title="Adam Chamberlin">Adam Chamberlin</a>. I <a href="http://www.mackmangroup.co.uk" title="Mackman Group">work</a>, sometimes I <a href="https://github.com/funkylarma" title="GitHub Profile">build things</a>, I'm always <a href="http://www.flickr.com/photos/funkylarma/" title="Flickr feed">seeing things</a> and I <a href="http://app.strava.com/athletes/146830" title="Strava Activities">cycle</a> when I can.</p>
+			  <p>The online blog of Adam Chamberlin. I <a href="https://www.thepedalhouse.co.uk" title="The Pedal House">work</a>, sometimes I <a href="https://github.com/funkylarma" title="GitHub Profile">build things</a>, I'm always <a href="https://www.instagram.com/funkylarma/" title="Instagram">seeing things</a> and I <a href="https://www.komoot.com/user/359014724014" title="Komoot">cycle</a> when I can.</p>
       </div><!-- .wrapper -->
 		</section><!-- #about -->
 	</header><!-- .header -->
@@ -285,18 +285,18 @@
 	    */
 	    (function() {
 	    	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	    	dsq.src = 'http://shibbyonline.disqus.com/embed.js';
+	    	dsq.src = 'https://shibbyonline.disqus.com/embed.js';
 	    	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	    })();
 	    </script>
-	    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=shibbyonline">comments powered by Disqus.</a></noscript>
+	    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript=shibbyonline">comments powered by Disqus.</a></noscript>
 	    {/block:Permalink}
 
 	    <script type="text/javascript">
 	    var disqus_shortname = 'shibbyonline';
 	    (function () {
 	    	var s = document.createElement('script'); s.async = true;
-	    	s.src = 'http://shibbyonline.disqus.com/count.js';
+	    	s.src = 'https://shibbyonline.disqus.com/count.js';
 	    	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	    }());
 	    </script>
@@ -322,18 +322,16 @@
 		    </footer>
 
 		</div><!-- #content -->
-    <script src="http://static.tumblr.com/blj3ksc/pjnn5zbdq/app-min.js"></script>
-    <script>       
-      var _gaq = _gaq || [];
-    		_gaq.push(['_setAccount', 'UA-30265454-4']);
-			_gaq.push(['_trackPageview']);
+    <script src="https://static.tumblr.com/blj3ksc/pjnn5zbdq/app-min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30265454-4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
+    gtag('config', 'UA-30265454-4');
+    </script>
 
 </body>
 </html>
