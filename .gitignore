@@ -132,6 +132,13 @@ Thumbs.db
 
 # Ignore everything in the "plugins" directory, except the plugins you
 # specify (see the commented-out examples for hints on how to do this.)
+wp-content/uploads/rank-math/*
+wp-content/uploads/siteground-optimizer-assets/*
+wp-content/uploads/wp-migrate-db/*
+# !wp-content/plugins/my-single-file-plugin.php
+
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
 wp-content/plugins/*
 # !wp-content/plugins/my-single-file-plugin.php
 
