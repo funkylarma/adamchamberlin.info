@@ -1,8 +1,6 @@
-# ignore node dependency directories (used by grunt)
 node_modules/
 
 # ignore OS generated files
 ehthumbs.db
 Thumbs.db
 .DS_Store
-content
