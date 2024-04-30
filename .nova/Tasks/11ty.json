@@ -1,0 +1,20 @@
+{
+  "actions" : {
+    "build" : {
+      "postActions" : [
+        {
+          "script" : "npx @11ty\/eleventy",
+          "type" : "runScript"
+        }
+      ]
+    },
+    "run" : {
+      "postActions" : [
+        {
+          "script" : "npx @11ty\/eleventy --serve",
+          "type" : "runScript"
+        }
+      ]
+    }
+  }
+}
