@@ -1,19 +1,21 @@
 {
   "name": "adamchamberlin.info",
   "version": "2.0.0",
-  "description": "Oxygen themed playground",
+  "description": "Welcome to the online playground of Adam Chamberlin. Consummate Athlete And DOM Element Wrangler.",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
-    "start": "npx @11ty/eleventy --serve --quiet",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "watch:sass": "sass --watch content/scss:_site/css",
+    "build:sass": "sass content/scss:_site/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "serve": "npx eleventy --serve",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*",
+    "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "git://github.com/funkylarma/adamchamberlin.info.git"
   },
   "author": {
     "name": "Adam Chamberlin"
@@ -23,11 +25,13 @@
     "node": ">=14"
   },
   "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+    "url": "https://github.com/funkylarma/adamchamberlin.info/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "homepage": "https://github.com/funkylarma/adamchamberlin.info/blob/master/README.md",
   "keywords": [],
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.2.0",
+    "npm-run-all": "^4.1.5"
   }
 }
