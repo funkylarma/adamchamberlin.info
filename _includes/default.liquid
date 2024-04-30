@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ metadata.locale }}">
+
+  {% include "head.liquid" %}
+
+  <body class="">
+    <a href="#skip" class="visually-hidden">Skip to main content</a>
+    
+    <header>
+      <a href="/" class="home-link">{{ metadata.title }}</a>
+  
+      <nav>
+        <h2 class="visually-hidden">Top level navigation menu</h2>
+        <ul class="nav">
+        {%- for entry in collections.all | eleventyNavigation %}
+          <li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+        {%- endfor %}
+        </ul>
+      </nav>
+    </header>
+  
+    <main id="skip" role="main" class="content">
+      {{ content }}
+    </main>
+  
+    <footer></footer>
+  
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+  </body>
+</html>

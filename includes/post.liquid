@@ -1,9 +1,0 @@
-{% layout "default.liquid" %}
-
-{% block content %}
-    <article class="post" data-input-path="{{ page.filePathStem }}">
-      <h1 class="post-title">{{ title }}</h1>
-      <time class="post-date" datetime="{{ date }}">{{ date }}</time>
-{{ content }}
-    </article>
-{% endblock %}

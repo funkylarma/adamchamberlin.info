@@ -1,0 +1,7 @@
+---
+layout: 'default.liquid'
+---
+{% for post in collections.posts %}
+    <h2><a href="{{ post.data.slug }}">{{ post.data.title }}</a></h2>
+    <em>{{ post.date | date: "%Y-%m-%d" }}</em>
+{% endfor %}

@@ -3,7 +3,15 @@
     "build" : {
       "postActions" : [
         {
-          "script" : "npx @11ty\/eleventy",
+          "script" : "npm run build",
+          "type" : "runScript"
+        }
+      ]
+    },
+    "clean" : {
+      "postActions" : [
+        {
+          "script" : "npm run prestart",
           "type" : "runScript"
         }
       ]
@@ -11,10 +19,11 @@
     "run" : {
       "postActions" : [
         {
-          "script" : "npx @11ty\/eleventy --serve",
+          "script" : "npm run start",
           "type" : "runScript"
         }
       ]
     }
-  }
+  },
+  "buildBeforeRunning" : true
 }
