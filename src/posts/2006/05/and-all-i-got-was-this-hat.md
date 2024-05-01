@@ -7,7 +7,7 @@ coverImage: "image-not-found.png"
 slug: "and-all-i-got-was-this-hat"
 ---
 
-[![IMG_1854.JPG](images/149528487_600027eeea_m.jpg)](http://www.flickr.com/photos/funkylarma/149528487/ "Leap Hat")For a few months I have been hassling Rob about Sram and their palns for the road side of the cycling market.  
+[![IMG_1854.JPG](/images/149528487_600027eeea_m.jpg)](http://www.flickr.com/photos/funkylarma/149528487/ "Leap Hat")For a few months I have been hassling Rob about Sram and their palns for the road side of the cycling market.  
 If you have a mountain bike the chances are you are running one of two makes on the gears/transmission; SRAM or Shimano. Shimano have always been the leader but since SRAM broke into a MTB world they have taken it by storm, there simple ergonomic approch to levers and gears just works. On the other hand if you have a road bike your running either Shimano or Campag. Notice something; Shimano are the Microsoft of the cycling world they have cornered everything and trademarked or patented everything they can!  
 So when I heard of SRAM’s plans to take on the road scene I expected to me impressed, waiting for the third groupset to hit the shelves.  
   

@@ -7,7 +7,7 @@ coverImage: "image-not-found.png"
 slug: "my-civic-duty"
 ---
 
-![Civic](images/74191439_2e40b8533e_o.jpg "Civic")Today I spent the best part of it out and about on the road. To do this I had to borrow a company car, which was OK as I first thought. It turned out I was getting a nice 04 Honda Civic, not bad.  
+![Civic](/images/74191439_2e40b8533e_o.jpg "Civic")Today I spent the best part of it out and about on the road. To do this I had to borrow a company car, which was OK as I first thought. It turned out I was getting a nice 04 Honda Civic, not bad.  
 I’ve always admired the new shape Civic since it’s debut in the BTCC, in particular the TypeR version, in fact I’ve often thought about getting one. But after spending a few hours behind the wheel I’m not so sure.  
 Ok I’ll start off there is nothing wrong with the car, in fact it was quite a good car to drive. Given the size it was very spacious inside, even with 4,000 vacuum pouches in the boot and backseat (the real reason for my trip) and the handling was nice and controlled but my real problem was with the gearbox; an automatic!
 

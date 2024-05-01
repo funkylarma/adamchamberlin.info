@@ -9,7 +9,7 @@ slug: "leaving-strava"
 
 It was 2010 and I signed up for the latest web service but unlike most of the signups this did not offer 140 characters to express my feelings, it was a new service called Strava. Back then Strava was pretty new, having only emerged a few years prior but it was gaining traction in the fitness arena, in particular cycling.
 
-![](images/strava-1024x512.png)
+![](/images/strava-1024x512.png)
 
 <!--more-->
 

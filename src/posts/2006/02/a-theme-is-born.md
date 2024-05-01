@@ -7,7 +7,7 @@ coverImage: "image-not-found.png"
 slug: "a-theme-is-born"
 ---
 
-[![Blog Ideas](images/104540922_7ba0853fbc.jpg)](http://www.flickr.com/photos/funkylarma/104540922/ "Photo Sharing")
+[![Blog Ideas](/images/104540922_7ba0853fbc.jpg)](http://www.flickr.com/photos/funkylarma/104540922/ "Photo Sharing")
 
 It has been in the back of my mind for quite a while now; create your own [WordPress](http://wordpress.org) theme.
 

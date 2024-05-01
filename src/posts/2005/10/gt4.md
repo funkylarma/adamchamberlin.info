@@ -7,7 +7,7 @@ coverImage: "image-not-found.png"
 slug: "gt4"
 ---
 
-![](images/gt4.gif)  
+![](/images/gt4.gif)  
 
 ## 24hr Challenge
 

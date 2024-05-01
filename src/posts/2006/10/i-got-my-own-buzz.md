@@ -17,6 +17,6 @@ Anyway they have been full systems go and even moved further away to find new wa
 So when Dave called and asked if they could pop round I explained that I felt like I had been “Woody'ed”. Obviously confused he asked me to explain.  
 I told him about how it was always me and the cycling and now all he cared about was septic systems and French wiring.
 
-[![DSC00025](images/279037621_54dd372bb1_m.jpg)](http://www.flickr.com/photos/funkylarma/279037621/ "Photo Sharing")When they finally popped round the other night to catch up I was treated to an early birthday present; my own little Buzz Lightyear.
+[![DSC00025](/images/279037621_54dd372bb1_m.jpg)](http://www.flickr.com/photos/funkylarma/279037621/ "Photo Sharing")When they finally popped round the other night to catch up I was treated to an early birthday present; my own little Buzz Lightyear.
 
 You know that I’m only joking and I wish both of you the best of luck. If you ever get a place sorted and it all pans out remember to make sure you have a little room just for Woody!
