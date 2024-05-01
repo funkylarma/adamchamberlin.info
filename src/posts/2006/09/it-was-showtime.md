@@ -7,7 +7,7 @@ coverImage: "image-not-found.png"
 slug: "it-was-showtime"
 ---
 
-[![ipod family](images/242166384_19b779a8d6.jpg)](http://www.flickr.com/photos/funkylarma/242166384/ "Photo Sharing")
+[![ipod family](/images/242166384_19b779a8d6.jpg)](http://www.flickr.com/photos/funkylarma/242166384/ "Photo Sharing")
 
 Yesterdays Apple event was not quite what a lot of people expected. There was no AirPort video or updates to the MacBookPro, instead it was all about Apple’s flagship media products; iPods and iTunes.
 
@@ -21,7 +21,7 @@ The iPod has had an increase in capacity and screen quality, ready for movies an
 
 ## Shuffle
 
-[![shuffle](images/242166382_18bf2043c6_m.jpg)](http://www.flickr.com/photos/funkylarma/242166382/ "Photo Sharing")For me this was the big (pardon the pun) star of the show. Just look at the size and design of the second generation of the Shuffle. It is stunning and in my mind completely what the Shuffle user requires. The Shuffle, which also uses a flash memory, is geared towards the active user and with the small size and clever clip design will fit in perfectly with this lifestyle. I do not know how many times I have wanted something smaller to just fit in my pocket when I’m out and about. Add to this the crazy price of £55 for a 1gb version and you have no reason not to get one. Even the included dock is a clever little piece of kit. I feel an impulse purchase coming on.
+[![shuffle](/images/242166382_18bf2043c6_m.jpg)](http://www.flickr.com/photos/funkylarma/242166382/ "Photo Sharing")For me this was the big (pardon the pun) star of the show. Just look at the size and design of the second generation of the Shuffle. It is stunning and in my mind completely what the Shuffle user requires. The Shuffle, which also uses a flash memory, is geared towards the active user and with the small size and clever clip design will fit in perfectly with this lifestyle. I do not know how many times I have wanted something smaller to just fit in my pocket when I’m out and about. Add to this the crazy price of £55 for a 1gb version and you have no reason not to get one. Even the included dock is a clever little piece of kit. I feel an impulse purchase coming on.
 
 ## iTunes
 

@@ -16,7 +16,7 @@ My problem was that I did want to find a way to display images in a way that kep
 
 ### Installing Lightbox…
 
-[![Wet dog](images/14181952_cc24c994d7_m.jpg)](http://www.flickr.com/photos/funkylarma/14181952/ "Photo Sharing")The installation of [Lightbox](http://www.huddletogether.com/projects/lightbox2/) was very simple really, first off download the files required from [Lokesh’s](http://www.huddletogether.com/) site, you do get the required script.aculo.us files in there but it might be worth while checking the site for [updates](http://script.aculo.us/downloads).  
+[![Wet dog](/images/14181952_cc24c994d7_m.jpg)](http://www.flickr.com/photos/funkylarma/14181952/ "Photo Sharing")The installation of [Lightbox](http://www.huddletogether.com/projects/lightbox2/) was very simple really, first off download the files required from [Lokesh’s](http://www.huddletogether.com/) site, you do get the required script.aculo.us files in there but it might be worth while checking the site for [updates](http://script.aculo.us/downloads).  
 Upload the Javascript files to your web host, I’m presuming you will keep them in the folder named js and this in your template/theme folder, such as; /wp-content/themes/k2/js/\*.js  
 Next you need to add these to your header file to have them called on the loading of the page. Open up your required page, if your using [WordPress](http://www.wordpress.org) like me here then you want header.php in your theme directory. Now locate the head tags and insert this code between them:
 

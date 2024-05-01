@@ -18,7 +18,7 @@ From those humble beginnings the service grew and whilst it never became the big
 
 ## How killing Tweetbot killed my Twitter
 
-![Ivory elephant in front of Tweetbot grave](images/tweetbot_memorial-1024x683.jpg)
+![Ivory elephant in front of Tweetbot grave](/images/tweetbot_memorial-1024x683.jpg)
 
 On [12th January](https://blog.iconfactory.com/2023/01/state-of-the-twitterverse/) Tweetbot suddenly stopped authenticating and I could not see anything. Heading over to Twitter.com showed that the platform was up and running, which was my first concern. Had CEO Elon Musk pulled the plug in a rage due to someone calling him out? No, it turned out he had reset the API keys and Twitter would no longer allow access to third-party clients, although the Twitter dev team had not made any comment to the issue. In fact it took nearly a week for any official word on the issue.
 
@@ -30,6 +30,6 @@ More and more news and information was coming out of the developer community. De
 
 Twitter as company is surely not to blame, but it is hard not to look at the captain of the ship and line up the cross hairs at him. When you look at how these developers have been instrumental to building the platform and then basically completely shafted with no communication or explanation why. So with that I can not bring myself to use Twitter anymore. Of course you can not ignore the platform, it is still mainstream and I’m sure many users have no idea on what is going on or what happened. When the platform dies, which it will I’m sure of, the truth will out.
 
-![Ivory by Tapbots](images/ivory-1024x683.jpeg)
+![Ivory by Tapbots](/images/ivory-1024x683.jpeg)
 
 For me, well I’m off to [Mastodon](https://mastodon.social/@FunkyLarma), you can find me [here](https://mastodon.social/@FunkyLarma) and the best news is that [Tapbots](https://tapbots.com/ivory/) already have my back. Thank you!

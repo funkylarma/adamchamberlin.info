@@ -19,7 +19,7 @@ Over the last couple of weeks, I have been conducting some work on a new theme f
 
 ## Remember blogging?
 
-![](images/install-step3.png)
+![](/images/install-step3.png)
 
 Remember those custom domains, adding some hosting and setting up MySQL connections to perform that classic five-minute installation?
 
