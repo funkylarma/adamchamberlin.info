@@ -1,31 +1,27 @@
 ---
 # Metadata comes from _data/site.json
-permalink: /feed/rss
+templateEngineOverride: njk
+permalink: /feed/feed.xml
 eleventyExcludeFromCollections: true
 ---
-
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <title>{{ site.title }}</title>
-  <subtitle>{{ site.description }}</subtitle>
-  <link href="{{ site.feed.url }}" rel="self"/>
-  <link href="{{ site.url | addPathPrefixToFullUrl }}"/>
-  <description>{{ site.tagline }}</description>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-  <id>{{ site.url }}</id>
-  <author>
-    <name>{{ site.author.name }}</name>
-    <email>{{ site.author.email }}</email>
-  </author>
-  <atom:link href="{{ site.url }}" rel="self" type="application/rss+xml"/>
-  {%- for post in collections.posts | reverse %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-  <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-  </entry>
-  {%- endfor %}
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ site.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.feed.url }}" rel="self" type="application/rss+xml" />
+    <description>{{ site.description }}</description>
+    <language>{{ site.language }}</language>
+    {%- for post in collections.post | reverse %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(site.url) %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <description>{{ post.templateContent | excerpt | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <dc:creator>{{ site.author.name }}</dc:creator>
+      <guid>{{ absolutePostUrl }}</guid>
+    </item>
+    {%- endfor %}
+  </channel>
 </rss>
