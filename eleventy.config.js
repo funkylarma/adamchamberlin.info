@@ -34,6 +34,8 @@ module.exports = function (eleventyConfig) {
   
   // Template filters
   eleventyConfig.addLiquidFilter("absoluteUrl", eleventyRss.absoluteUrl);
+  eleventyConfig.addLiquidFilter("dateToRfc822", eleventyRss.dateToRfc822);
+  eleventyConfig.addLiquidFilter("getNewestCollectionItemDate", eleventyRss.getNewestCollectionItemDate);
   
   // Filters
   // TODO: Put all the filters into external file

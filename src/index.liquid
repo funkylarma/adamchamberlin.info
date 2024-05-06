@@ -61,19 +61,19 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
   </div><!-- .content -->
 </section> <!-- End post list -->
 
-{% comment %} <section class="pagination">
+<section class="pagination">
   <div class="pagination-content">
-    <nav aria-labelledby="post-pagination">
-        <h2 id="post-pagination">This is my Pagination</h2>
-        <ol>
-          {%- for pageEntry in pagination.pages %}
-            <li>
-              <a href="{{ pagination.hrefs[ forloop.index0 ] }}"{% if page.url == pagination.hrefs[ forloop.index0 ] %} aria-current="page"{% endif %}>
-                Page {{ forloop.index }}
-              </a>
-            </li>
-          {%- endfor %}
-        </ol>
-      </nav>
+    <nav class="post-pagination" aria-labelledby="post-pagination">
+      <div class="previous-posts">
+        {% if pagination.href.previous %}
+          <a href="{{ pagination.href.previous }}">« Newer Posts</a>
+        {% endif %}
+      </div><!-- .previous-posts -->
+      <div class="next-posts">
+        {% if pagination.href.next %}
+          <a href="{{ pagination.href.next }}">Older Posts »</a>
+        {% endif %}
+      </div><!-- .next-posts -->
+    </nav><!-- .post-pagination -->
   </div><!-- .pagination-content -->
-</section><!-- .pagination --> {% endcomment %}
+</section><!-- .pagination -->
