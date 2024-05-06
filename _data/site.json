@@ -1,0 +1,44 @@
+{
+  "title": "Adam Chamberlin",
+  "tagline": "Welcome to the online playground of Adam Chamberlin. Consummate Athlete And DOM Element Wrangler.",
+  "url": "https://adamchamberlin.info/",
+  "time": "",
+  "locale": "en-GB",
+  "language": "en",
+  "description": "Welcome to the online playground of Adam Chamberlin. Consummate Athlete And DOM Element Wrangler.",
+  "author": {
+    "name": "Adam Chamberlin",
+    "email": "",
+    "url": "https://adamchamberlin.info/about/"
+  },
+  "feed": {
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "https://adamchamberlin.info//feed/feed.xml",
+    "id": "https://adamchamberlin.info/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://adamchamberlin.info//"
+  },
+  "navigation_primary": [
+    {
+      "label": "Home",
+      "class": "home",
+      "title": "Back home",
+      "url": "/"
+    },
+    {
+      "label": "About",
+      "class": "about",
+      "title": "All about me",
+      "url": "/about/"
+    },
+    {
+      "label": "Social",
+      "class": "social",
+      "title": "Lets get social",
+      "url": "/social/"
+    }
+  ]
+}

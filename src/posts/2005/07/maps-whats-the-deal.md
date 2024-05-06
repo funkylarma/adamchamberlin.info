@@ -1,0 +1,13 @@
+---
+title: "Maps? What's the deal?"
+date: "2005-07-19"
+categories: 
+  - "writing"
+coverImage: "image-not-found.png"
+slug: "maps-whats-the-deal"
+---
+
+It seems that the web is alive with maps at the moment, the in thing is [Earth Google](http://earth.google.com) with the new [Google Maps](http://maps.google.co.uk) also being popular.  
+Is this the new way of looking at the world as a small space were we are all connected? Well it could well be.  
+Whilst I’ve not tried Earth Google yet as it’s PC only but the Google Maps are pretty cool, makes you wonder how Columbus ever found land without them.  
+By the way this is my local [area](http://maps.google.co.uk/maps?q=sudbury&ll=52.036078,.721149&spn=0.008205,0.008745&t=k&hl=en)
