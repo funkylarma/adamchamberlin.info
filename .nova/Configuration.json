@@ -1,6 +1,6 @@
 {
   "index.ignored_file_patterns" : [
-    "public"
+    "_site"
   ],
   "workspace.art_style" : 1,
   "workspace.color" : 8
