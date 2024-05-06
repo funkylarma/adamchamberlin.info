@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ site.locale }}">
+  {% include "partials/head.liquid" %}
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+      <div class="content">
+        <a href="#skip" class="visually-hidden">Skip to main content</a>
+        <header class="mast-head">
+          <div class="content">
+            <figure>
+              <img src="/assets/images/logo_dark.svg" alt="My brand" />
+            </figure>
+            <nav class="nav">
+              <menu class="">
+              {% for item in site.navigation_primary %}
+                <li class="nav-item {% if item.class %}{{ item.class }}{% endif %}">
+                  <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
+                    {{ item.label }}
+                  </a>
+                </li>
+              {% endfor %}
+              </menu>
+            </nav>
+          </div><!-- .content -->
+        </header><!-- .header -->
+        <main id="skip" role="main" class="main">
+          {{ content }}
+        </main><!-- .main -->
+        <footer class="mast-foot">
+          <div class="content">
+            {% include "partials/social.liquid" %}
+            <div class="copyright">© Adam Chamberlin 2005-{% year %}</div>
+          </div><!-- .content -->  
+        </footer>
+      </div><!-- .content -->
+    </div><!-- .container -->
+  <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+  </body>
+</html>

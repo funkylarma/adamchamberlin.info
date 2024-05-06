@@ -1,0 +1,29 @@
+{
+  "actions" : {
+    "build" : {
+      "postActions" : [
+        {
+          "script" : "npm run build",
+          "type" : "runScript"
+        }
+      ]
+    },
+    "clean" : {
+      "postActions" : [
+        {
+          "script" : "npm run prestart",
+          "type" : "runScript"
+        }
+      ]
+    },
+    "run" : {
+      "postActions" : [
+        {
+          "script" : "npm run start",
+          "type" : "runScript"
+        }
+      ]
+    }
+  },
+  "buildBeforeRunning" : true
+}

@@ -1,0 +1,79 @@
+---
+layout: default.liquid
+pagination:
+  data: collections.post
+  size: 5
+  reverse: true
+eleventyNavigation:
+  key: Home
+  order: 1
+permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
+---
+
+<div class="site-intro">
+  <div class="site-intro-content">
+    <h1 class="site-title">{{ site.title }}</h1>
+    <div class="site-tagline">
+      <p>{{ site.tagline }}</p>
+    </div><!-- .site-tagline -->
+  </div><!-- .content -->
+</div><!-- .site-intro -->
+
+<section class="post-list">
+  <div class="post-list-content">
+    {%- for post in pagination.items -%}
+    <article class="post">
+      {% if post.data.coverImage %}
+        <div class="post-image">
+          <img src="/images/{{ post.data.coverImage }}" />
+        </div><!-- .post-image -->
+      {% endif %}
+      <div class="post-content">     
+        <div class="post-head">
+          <h2>
+            <a href="{{ post.url }}" class="post-link">
+              {% if post.data.title %}
+                {{ post.data.title }}
+              {% else %}
+                <code>{{ post.url }}</code>
+              {% endif %}
+            </a>
+          </h2>
+          <div class="post-meta">
+            <p>
+              <span>Date: </span> <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> | 
+              <span>Category: </span>{{ post.data.categories }} | 
+              <span>Estimated: </span> {{ post.templateContent | emojiReadTime }}
+            </p>
+          </div><!-- .post-meta -->
+        </div><!-- .post-head -->
+        {% if post.data.categories contains "writing" %}
+          <div class="post-excerpt">
+            <p>{{ post.templateContent | excerpt }}</p>
+            <div class="continue-reading">
+              <a href="{{ post.url }}">Read More...</a>
+            </div><!-- .continue-reading -->
+          </div><!-- .post-excerpt -->
+        {% endif %}
+      </div><!-- .post-content -->
+    </article> <!-- End Post article-->
+    {%- endfor -%}
+  </div><!-- .content -->
+</section> <!-- End post list -->
+
+{% comment %} <section class="pagination">
+  <div class="pagination-content">
+    <nav aria-labelledby="post-pagination">
+        <h2 id="post-pagination">This is my Pagination</h2>
+        <ol>
+          {%- for pageEntry in pagination.pages %}
+            <li>
+              <a href="{{ pagination.hrefs[ forloop.index0 ] }}"{% if page.url == pagination.hrefs[ forloop.index0 ] %} aria-current="page"{% endif %}>
+                Page {{ forloop.index }}
+              </a>
+            </li>
+          {%- endfor %}
+        </ol>
+      </nav>
+  </div><!-- .pagination-content -->
+</section><!-- .pagination --> {% endcomment %}
