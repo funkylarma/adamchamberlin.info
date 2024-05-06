@@ -7,7 +7,7 @@ coverImage: "terreno-scaled.jpg"
 slug: "vittoria-terreno-zero"
 ---
 
-![](/images/terreno-1024x683.jpg)
+![](/images/terreno-scaled.jpg)
 
 At first glance the Vittoria Terreno Zero looks like a lockdown love child of the Corsa road tyre and a Terreno cyclocross tyre. Has Vitoria found that sweet spot for fast gravel rides?
 
