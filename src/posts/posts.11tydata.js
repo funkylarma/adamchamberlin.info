@@ -7,7 +7,7 @@ module.exports = {
       if (process.env.NODE_ENV === "production" && (data.draft || data.page.date >= new Date())) {
         return false;
       }
-      return `/posts/${data.page.fileSlug}/`;
+      return `/${data.page.filePathStem.replace('/posts', '/')}/`;
     },
     
     // Support for drafts
@@ -24,5 +24,7 @@ module.exports = {
   
   // What layout to use
   layout: "post.liquid",
+  
+  bodyClass: "single"
 
 };

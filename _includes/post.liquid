@@ -1,7 +1,17 @@
-{% layout "default.liquid" %}
+---
+layout: default.liquid
+---
 
-
-<div class="post" data-input-path="{{ page.filePathStem }}">
-  <h1 class="post-title">{{ pageTitle }}</h1>
-  <time class="post-date" datetime="{{ post.date }}">{{ post.date }}</time>
-</div>
+<section class="post-single">
+  <div class="post-content">
+    <article class="post"  data-input-path="{{ page.filePathStem }}">
+      <div class="post-head">
+        <h1 class="post-title">{% if title %}{{ title }}{% else %}<code>{{ url }}</code>{% endif %}</h1>
+        <time class="postlist-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      </div><!-- .post-head -->
+      <div class="post-body">
+        {{ content }}
+      </div><!-- .post-body -->
+    </article><!-- article -->
+  </div><!-- .post-content -->
+</section> <!-- End Post article-->

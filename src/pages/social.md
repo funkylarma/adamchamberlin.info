@@ -1,5 +1,8 @@
 ---
 title: "Social"
+eleventyNavigation:
+  key: Social
+  order: 3
 date: "2024-02-01"
 slug: "social"
 ---

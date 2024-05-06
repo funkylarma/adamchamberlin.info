@@ -1,0 +1,10 @@
+---
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+---
+{%- for page in collections.all -%}
+  {%- if page.url and page.data.slug -%}
+    {{ '/' }}{{ page.data.slug }}  {{ page.url }} {{ '301' }}
+    {{ '\n' }}
+  {%- endif -%}
+{%- endfor -%}
