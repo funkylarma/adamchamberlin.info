@@ -9,7 +9,7 @@ slug: "getting-my-racing-fix"
 
 2020 started off on the right trajectory. I had set myself some decent goals and spent a lot of the winter building my fitness towards some serious racing. An early race only went to prove this with a third place finish from a break.
 
-![](/images/lee-valley-race-1024x767.jpg)
+![](/images/lee-valley-race.jpg)
 
 <!--more-->
 
