@@ -3,7 +3,7 @@ title: "We're on the move"
 date: "2005-08-26"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "were-on-the-move"
 ---
 

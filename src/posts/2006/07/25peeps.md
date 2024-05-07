@@ -3,7 +3,7 @@ title: "25peeps"
 date: "2006-07-19"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "25peeps"
 ---
 

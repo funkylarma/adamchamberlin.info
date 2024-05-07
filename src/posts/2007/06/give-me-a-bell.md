@@ -3,7 +3,7 @@ title: "Give me a bell..."
 date: "2007-06-01"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "give-me-a-bell"
 ---
 

@@ -3,7 +3,7 @@ title: "Xbox expansion"
 date: "2006-02-03"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "xbox-expansion"
 ---
 

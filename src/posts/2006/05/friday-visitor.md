@@ -3,7 +3,7 @@ title: "Friday Visitor"
 date: "2006-05-19"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "friday-visitor"
 ---
 

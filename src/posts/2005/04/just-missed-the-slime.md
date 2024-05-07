@@ -3,7 +3,7 @@ title: "Just missed the slime!"
 date: "2005-04-24"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "just-missed-the-slime"
 ---
 

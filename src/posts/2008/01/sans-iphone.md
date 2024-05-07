@@ -3,7 +3,7 @@ title: "Sans iPhone"
 date: "2008-01-21"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "sans-iphone"
 ---
 

@@ -3,7 +3,7 @@ title: "Time to reboot"
 date: "2006-04-05"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "time-to-reboot"
 ---
 

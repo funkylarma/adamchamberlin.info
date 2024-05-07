@@ -3,7 +3,7 @@ title: "Pinch and a punch..."
 date: "2005-08-01"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "pinch-and-a-punch"
 ---
 

@@ -3,7 +3,7 @@ title: "Windows Live Writer"
 date: "2006-08-23"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "windows-live-writer"
 ---
 

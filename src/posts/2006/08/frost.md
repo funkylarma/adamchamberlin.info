@@ -3,7 +3,7 @@ title: "Frost"
 date: "2006-08-22"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "frost"
 ---
 

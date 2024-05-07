@@ -3,7 +3,7 @@ title: "Your 360 Blogs"
 date: "2006-10-02"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "your-360-blogs"
 ---
 

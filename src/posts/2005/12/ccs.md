@@ -3,7 +3,7 @@ title: "Cycle Club Sudbury"
 date: "2005-12-20"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "ccs"
 ---
 

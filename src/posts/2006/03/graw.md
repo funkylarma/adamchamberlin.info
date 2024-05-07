@@ -3,7 +3,7 @@ title: "G.R.A.W"
 date: "2006-03-11"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "graw"
 ---
 

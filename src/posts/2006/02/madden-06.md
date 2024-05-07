@@ -3,7 +3,7 @@ title: "Madden 06"
 date: "2006-02-09"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "madden-06"
 ---
 

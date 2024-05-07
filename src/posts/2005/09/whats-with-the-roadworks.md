@@ -3,7 +3,7 @@ title: "Whats with the Roadworks?!?"
 date: "2005-09-02"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "whats-with-the-roadworks"
 ---
 

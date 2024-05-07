@@ -3,7 +3,7 @@ title: "One step forward, two back"
 date: "2006-05-10"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "one-step-forward-two-back"
 ---
 

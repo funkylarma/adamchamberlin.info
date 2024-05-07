@@ -3,7 +3,7 @@ title: "Check This Out!"
 date: "2005-08-18"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "check-this-out"
 ---
 

@@ -3,7 +3,7 @@ title: "Die As One get noticed!"
 date: "2005-07-28"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "die-as-one-get-noticed"
 ---
 

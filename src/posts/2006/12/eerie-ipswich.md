@@ -3,7 +3,7 @@ title: "eerie Ipswich"
 date: "2006-12-20"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "eerie-ipswich"
 ---
 

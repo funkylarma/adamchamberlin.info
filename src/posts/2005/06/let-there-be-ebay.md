@@ -3,7 +3,7 @@ title: "Let there be eBay"
 date: "2005-06-12"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "let-there-be-ebay"
 ---
 

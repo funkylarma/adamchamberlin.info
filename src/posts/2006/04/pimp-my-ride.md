@@ -3,7 +3,7 @@ title: "Pimp My Ride"
 date: "2006-04-23"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "pimp-my-ride"
 ---
 

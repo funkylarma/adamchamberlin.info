@@ -3,7 +3,7 @@ title: "Back to the grind"
 date: "2005-04-12"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "back-to-the-grind"
 ---
 

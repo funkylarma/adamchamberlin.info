@@ -3,7 +3,7 @@ title: "Got that Friday feeling"
 date: "2007-02-02"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "got-that-friday-feeling"
 ---
 

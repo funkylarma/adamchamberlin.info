@@ -3,7 +3,7 @@ title: "Finally Found Facebook"
 date: "2007-10-25"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "finally-found-facebook"
 ---
 

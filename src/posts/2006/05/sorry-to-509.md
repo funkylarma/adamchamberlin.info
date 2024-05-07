@@ -3,7 +3,7 @@ title: "Sorry to 50.9%"
 date: "2006-05-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "sorry-to-509"
 ---
 

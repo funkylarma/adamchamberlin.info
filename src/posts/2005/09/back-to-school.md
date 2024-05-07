@@ -3,7 +3,7 @@ title: "Back to school"
 date: "2005-09-21"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "back-to-school"
 ---
 

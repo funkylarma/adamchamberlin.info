@@ -3,7 +3,7 @@ title: "It's all coming up Gravy"
 date: "2006-03-01"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "its-all-coming-up-gravy"
 ---
 

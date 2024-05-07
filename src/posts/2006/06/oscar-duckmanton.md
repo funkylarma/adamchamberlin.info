@@ -3,7 +3,7 @@ title: "Oscar Duckmanton"
 date: "2006-06-16"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "oscar-duckmanton"
 ---
 

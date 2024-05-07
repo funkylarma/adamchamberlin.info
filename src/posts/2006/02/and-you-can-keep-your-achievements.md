@@ -3,7 +3,7 @@ title: "And you can keep your achievements!"
 date: "2006-02-16"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "and-you-can-keep-your-achievements"
 ---
 

@@ -7,11 +7,11 @@ tags:
   - "apple"
   - "pro"
   - "vision"
-coverImage: "Apple-WWCD23-Vision-Pro-glass-230605-scaled.jpg"
+coverImage: "./src/images/Vision-Pro-glass.jpg"
 slug: "apple-vision-pro"
 ---
 
-![](/images/Apple-WWCD23-Vision-Pro-lifestyle-working-230605-scaled.jpg)
+{% image "./src/images/Vision-Pro-lifestyle-working.jpg", "Apple Vision Pro" %}
 
 Over the last 24 hours I have been reading and watching quite a few articles about the Apple Vision Pro headset and thinking about the upcoming launch, where it will sit in the technology stack and the future of such a novel product.
 
@@ -25,7 +25,7 @@ Currently I am not in the 'FOMO' camp; there are way too many hurdles to try and
 
 This is clearly a first gen product for Apple and in my views it is probably more of a development kit for retail purchase. You can this with the late addition of different headbands after initial comments of weight and comfort with the advertised Solo Knit band.
 
-![](/images/Apple-WWCD23-Vision-Pro-with-battery-230605-scaled.jpg)
+{% image "./src/images/Vision-Pro-with-battery.jpg", "Apple Vision Pro with battery" %}
 
 That said it is important to remember that both the iPhone and iPad started somewhere and look at that market now.
 

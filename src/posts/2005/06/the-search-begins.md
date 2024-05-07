@@ -3,7 +3,7 @@ title: "The Search Begins"
 date: "2005-06-07"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "the-search-begins"
 ---
 

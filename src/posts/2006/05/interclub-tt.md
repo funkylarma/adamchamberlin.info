@@ -3,7 +3,7 @@ title: "Interclub TT"
 date: "2006-05-26"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "interclub-tt"
 ---
 

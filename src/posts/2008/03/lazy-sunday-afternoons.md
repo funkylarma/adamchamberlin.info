@@ -3,7 +3,7 @@ title: "Lazy Sunday Afternoons"
 date: "2008-03-09"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "lazy-sunday-afternoons"
 ---
 

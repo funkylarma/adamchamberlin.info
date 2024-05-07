@@ -3,7 +3,7 @@ title: "It was a different night..."
 date: "2005-06-24"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "it-was-a-different-night"
 ---
 

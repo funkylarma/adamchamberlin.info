@@ -3,7 +3,7 @@ title: "I know just how he feels"
 date: "2005-08-05"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "i-know-just-how-he-feels"
 ---
 

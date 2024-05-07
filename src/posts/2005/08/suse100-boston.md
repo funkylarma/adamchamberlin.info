@@ -3,7 +3,7 @@ title: "SuSe10.0 - Boston"
 date: "2005-08-25"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "suse100-boston"
 ---
 

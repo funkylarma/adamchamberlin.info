@@ -3,7 +3,7 @@ title: "Pass the Dog and Bone"
 date: "2007-05-26"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "pass-the-dog-and-bone"
 ---
 

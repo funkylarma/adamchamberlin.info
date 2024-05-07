@@ -3,7 +3,7 @@ title: "Trafalgar Day"
 date: "2005-10-21"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "trafalgar-day"
 ---
 

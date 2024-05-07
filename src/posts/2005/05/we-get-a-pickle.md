@@ -3,7 +3,7 @@ title: "We get a Pickle"
 date: "2005-05-07"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "we-get-a-pickle"
 ---
 

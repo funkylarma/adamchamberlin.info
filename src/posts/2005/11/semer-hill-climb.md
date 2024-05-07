@@ -3,7 +3,7 @@ title: "Semer Hill Climb"
 date: "2005-11-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "semer-hill-climb"
 ---
 

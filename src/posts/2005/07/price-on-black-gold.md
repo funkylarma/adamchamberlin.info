@@ -3,7 +3,7 @@ title: "Price on black gold"
 date: "2005-07-10"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "price-on-black-gold"
 ---
 

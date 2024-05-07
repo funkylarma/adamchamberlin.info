@@ -3,7 +3,7 @@ title: "3% is still a lot!"
 date: "2005-12-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "3-is-still-a-lot"
 ---
 

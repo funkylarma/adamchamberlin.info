@@ -3,7 +3,7 @@ title: "Happy Christmas"
 date: "2007-12-24"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "happy-christmas"
 ---
 

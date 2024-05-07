@@ -3,7 +3,7 @@ title: "Willow Tree Farm Shop"
 date: "2006-06-22"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "willow-tree-farm-shop"
 ---
 

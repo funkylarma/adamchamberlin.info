@@ -3,7 +3,7 @@ title: "I Made The Switch"
 date: "2007-10-11"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "i-made-the-switch"
 ---
 

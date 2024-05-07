@@ -3,7 +3,7 @@ title: "Longhorn is now Vista"
 date: "2005-07-23"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "longhorn-is-now-vista"
 ---
 

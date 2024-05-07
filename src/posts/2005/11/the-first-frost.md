@@ -3,7 +3,7 @@ title: "The First Frost"
 date: "2005-11-15"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "the-first-frost"
 ---
 

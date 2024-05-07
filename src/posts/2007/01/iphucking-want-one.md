@@ -3,7 +3,7 @@ title: "iPhucking want one!"
 date: "2007-01-10"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "iphucking-want-one"
 ---
 

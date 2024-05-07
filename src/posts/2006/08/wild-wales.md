@@ -3,7 +3,7 @@ title: "Wild Wales"
 date: "2006-08-29"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "wild-wales"
 ---
 

@@ -3,7 +3,7 @@ title: "HD-DVD bolt on extra for Xbox"
 date: "2006-01-08"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "hd-dvd-bolt-on-extra-for-xbox"
 ---
 

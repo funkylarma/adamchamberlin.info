@@ -3,7 +3,7 @@ title: "Life Goes On"
 date: "2006-06-13"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "life-goes-on"
 ---
 

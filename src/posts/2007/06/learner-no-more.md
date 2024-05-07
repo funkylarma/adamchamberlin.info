@@ -3,7 +3,7 @@ title: "Learner no more"
 date: "2007-06-08"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "learner-no-more"
 ---
 

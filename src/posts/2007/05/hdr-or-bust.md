@@ -3,7 +3,7 @@ title: "HDR or Bust"
 date: "2007-05-11"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "hdr-or-bust"
 ---
 

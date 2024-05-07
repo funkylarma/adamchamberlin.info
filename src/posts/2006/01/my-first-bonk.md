@@ -3,7 +3,7 @@ title: "My first 'bonk'"
 date: "2006-01-20"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "my-first-bonk"
 ---
 

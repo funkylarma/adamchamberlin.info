@@ -3,7 +3,7 @@ title: "iPod repairs!"
 date: "2005-10-23"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "ipod-repairs"
 ---
 

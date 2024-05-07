@@ -3,7 +3,7 @@ title: "end2end: redux"
 date: "2007-07-12"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "end2end-redux"
 ---
 

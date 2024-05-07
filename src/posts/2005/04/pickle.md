@@ -3,7 +3,7 @@ title: "Pickle"
 date: "2005-04-02"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "pickle"
 ---
 

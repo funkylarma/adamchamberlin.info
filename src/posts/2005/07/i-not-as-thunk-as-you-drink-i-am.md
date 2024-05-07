@@ -3,7 +3,7 @@ title: "I'm Not As Thunk As You Drink I Am!!"
 date: "2005-07-26"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "i-not-as-thunk-as-you-drink-i-am"
 ---
 

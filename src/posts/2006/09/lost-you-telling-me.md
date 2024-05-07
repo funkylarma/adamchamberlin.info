@@ -3,7 +3,7 @@ title: "Lost; you telling me!"
 date: "2006-09-27"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "lost-you-telling-me"
 ---
 

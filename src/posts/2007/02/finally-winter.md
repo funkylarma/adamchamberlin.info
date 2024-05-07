@@ -3,7 +3,7 @@ title: "Finally Winter"
 date: "2007-02-08"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "finally-winter"
 ---
 

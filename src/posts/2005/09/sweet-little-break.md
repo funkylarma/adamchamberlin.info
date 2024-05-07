@@ -3,7 +3,7 @@ title: "Sweet little break"
 date: "2005-09-24"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "sweet-little-break"
 ---
 

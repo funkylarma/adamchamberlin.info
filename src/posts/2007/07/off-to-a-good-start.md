@@ -3,7 +3,7 @@ title: "Off to a good start"
 date: "2007-07-09"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "off-to-a-good-start"
 ---
 

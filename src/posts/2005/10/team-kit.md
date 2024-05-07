@@ -3,7 +3,7 @@ title: "Team Kit"
 date: "2005-10-27"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "team-kit"
 ---
 

@@ -3,7 +3,7 @@ title: "Quiet and iLife05"
 date: "2005-03-31"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "quiet-and-ilife05"
 ---
 

@@ -3,7 +3,7 @@ title: "What no Power?"
 date: "2006-10-12"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "what-no-power"
 ---
 

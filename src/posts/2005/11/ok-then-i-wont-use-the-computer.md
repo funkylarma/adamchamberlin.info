@@ -3,7 +3,7 @@ title: "ok then I won't use the computer"
 date: "2005-11-24"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "ok-then-i-wont-use-the-computer"
 ---
 

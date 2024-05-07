@@ -7,7 +7,7 @@ tags:
   - "ai"
   - "coaching"
   - "running"
-coverImage: "Screenshot-2024-02-14-at-20.00.51.png"
+coverImage: "./src/images/trainerroad.png"
 slug: "getting-the-most-out-of"
 ---
 
@@ -15,7 +15,7 @@ Last weekend saw me complete my second running event of 2024, the Marriott’s W
 
 As is the case with these events, I plan my race, not only from the food and calorie intake but also the entertainment to help take my mind off the dark parts. This normally consists of some downloaded music that invokes a positive mindset, but also a few recent podcasts, as these really help shift the internal dialogue.
 
-![](/images/overcast-ios-app-screenshot-5282ba7a-1-scaled.jpg)
+{% image "./src/images/overcast-ios-app.jpg", "Overcast iOS app" %} 
 
 It was not planned, but the podcasts on tap were all sports related and had a similar thread running through them; what makes a good coach, and how do they get the best out of the athlete?
 
@@ -27,7 +27,7 @@ Coaching, whilst my take is predominantly associated with sports, is not just ab
 
 It was around mile 18 of the race, I went really deep into this conversation and how technology and coaching can interact and play off each other. Clearly, Artificial Intelligence is big business as it is woven into more and more aspects of our lives.
 
-![](/images/IMG_2845-scaled.jpeg)
+{% image "./src/images/IMG_2845.jpeg", "Marriots Trail" %}
 
 One particular area is the sports physiology and training market. Companies are now leaning on AI to start analysing an athlete's performance and predict what they should do next to keep the adaptions building. Which begs the question; will AI be a replacement for the coach?
 
@@ -49,7 +49,7 @@ Likewise, my views on the conversations at work are the same. We can create as m
 
 As I entered Aylsham and lifted my pace for a sub four hour finish, the podcasts ended, and I was left with my thoughts.
 
-![](/images/IMG_1661-scaled.jpeg)
+{% image "./src/images/IMG_1661.jpeg" "Final finish" %}
 
 The bottom line. AI is here to stay, it will be integrated into as much as possible, that does always mean it is right or best to always use the latest and greatest tools.
 

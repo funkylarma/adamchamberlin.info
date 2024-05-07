@@ -3,7 +3,7 @@ title: "I have my number"
 date: "2007-06-13"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "i-have-my-number"
 ---
 
