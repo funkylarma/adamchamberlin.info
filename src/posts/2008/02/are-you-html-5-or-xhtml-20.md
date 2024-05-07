@@ -3,7 +3,7 @@ title: "Are You html 5 or xhtml 2.0"
 date: "2008-02-19"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "are-you-html-5-or-xhtml-20"
 ---
 

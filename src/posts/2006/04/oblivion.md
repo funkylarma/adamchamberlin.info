@@ -3,7 +3,7 @@ title: "Oblivion"
 date: "2006-04-04"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "oblivion"
 ---
 

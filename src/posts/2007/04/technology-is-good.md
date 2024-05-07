@@ -3,7 +3,7 @@ title: "Technology Is Good"
 date: "2007-04-22"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "technology-is-good"
 ---
 

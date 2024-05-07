@@ -3,7 +3,7 @@ title: "Seasons Greetings"
 date: "2005-12-29"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "seasons-greetings"
 ---
 

@@ -3,7 +3,7 @@ title: "Not a good start to the month"
 date: "2005-12-02"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "not-a-good-start-to-the-month"
 ---
 

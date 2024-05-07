@@ -3,7 +3,7 @@ title: "Dodge Charger"
 date: "2005-07-11"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "dodge-charger"
 ---
 

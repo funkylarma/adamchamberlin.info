@@ -3,7 +3,7 @@ title: "Colour Printing Problems"
 date: "2007-03-08"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "colour-printing-problems"
 ---
 

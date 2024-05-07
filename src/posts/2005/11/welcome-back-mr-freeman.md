@@ -3,7 +3,7 @@ title: "Welcome back Mr. Freeman"
 date: "2005-11-21"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "welcome-back-mr-freeman"
 ---
 

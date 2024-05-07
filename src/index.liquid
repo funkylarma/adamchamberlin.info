@@ -23,9 +23,9 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
   <div class="post-list-content">
     {%- for post in pagination.items -%}
     <article class="post">
-      {% if post.data.coverImage %}
+      {% if post.data.cover %}
         <div class="post-image">
-          {% image post.data.coverImage, "Featured Image" %}
+          {% image post.data.cover, post.title %}
         </div><!-- .post-image -->
       {% endif %}
       <div class="post-content">     

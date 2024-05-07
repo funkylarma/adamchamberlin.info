@@ -3,7 +3,7 @@ title: "The Post 30 Post"
 date: "2007-11-03"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "the-post-30-post"
 ---
 

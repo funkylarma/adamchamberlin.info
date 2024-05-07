@@ -5,11 +5,11 @@ eleventyNavigation:
   order: 2
 nav: "About"
 date: "2022-02-20"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "about"
 ---
 
-![My daughter running with me as I finish a 50k ultra](/images/IMG_0900-1024x683.jpeg)
+{% image "./src/images/IMG_0900.jpeg", "My daughter running with me as I finish a 50k ultra", "wide" %}
 
 Welcome to my online playground and sandbox of ideas and musings.
 

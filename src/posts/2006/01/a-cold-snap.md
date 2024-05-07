@@ -3,7 +3,7 @@ title: "A Cold Snap"
 date: "2006-01-25"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "a-cold-snap"
 ---
 

@@ -3,7 +3,7 @@ title: "Dark, almost black"
 date: "2006-11-06"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "dark-almost-black"
 ---
 

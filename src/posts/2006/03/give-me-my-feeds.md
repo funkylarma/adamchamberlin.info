@@ -3,7 +3,7 @@ title: "Give me my feeds"
 date: "2006-03-23"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "give-me-my-feeds"
 ---
 

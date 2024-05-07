@@ -3,7 +3,7 @@ title: "Finally Getting My Money's Worth"
 date: "2007-11-13"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "finally-getting-my-moneys-worth"
 ---
 

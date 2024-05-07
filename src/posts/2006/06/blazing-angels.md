@@ -3,7 +3,7 @@ title: "Blazing Angels"
 date: "2006-06-29"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "blazing-angels"
 ---
 

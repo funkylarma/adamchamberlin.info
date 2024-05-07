@@ -3,7 +3,7 @@ title: "Are there any astrol beings here??"
 date: "2005-06-21"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "are-there-any-astrol-beings-here"
 ---
 

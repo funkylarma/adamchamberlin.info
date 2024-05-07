@@ -3,7 +3,7 @@ title: "got minted"
 date: "2005-10-07"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "got-minted"
 ---
 

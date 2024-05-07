@@ -3,7 +3,7 @@ title: "Is it just a fade?"
 date: "2007-01-14"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "is-it-just-a-fade"
 ---
 

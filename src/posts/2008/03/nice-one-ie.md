@@ -3,7 +3,7 @@ title: "Nice one IE"
 date: "2008-03-13"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "nice-one-ie"
 ---
 

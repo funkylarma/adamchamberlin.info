@@ -3,7 +3,7 @@ title: "Vittoria Terreno Zero Review"
 date: "2020-11-19"
 categories: 
   - "writing"
-coverImage: "./src/images/terreno.jpg"
+cover: "./src/images/terreno.jpg"
 slug: "vittoria-terreno-zero"
 ---
 

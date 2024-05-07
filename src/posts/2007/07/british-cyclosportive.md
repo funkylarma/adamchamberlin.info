@@ -3,7 +3,7 @@ title: "British Cyclosportive"
 date: "2007-07-05"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "british-cyclosportive"
 ---
 

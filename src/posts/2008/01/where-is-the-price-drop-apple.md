@@ -3,7 +3,7 @@ title: "Where is the price drop Apple?"
 date: "2008-01-30"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "where-is-the-price-drop-apple"
 ---
 

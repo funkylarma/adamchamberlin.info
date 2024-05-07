@@ -3,7 +3,7 @@ title: "To Twit or Twitter"
 date: "2007-03-30"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "to-twit-or-twitter"
 ---
 

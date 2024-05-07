@@ -3,7 +3,7 @@ title: "I Only Wanted The New NIN Album"
 date: "2008-03-04"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "i-only-wanted-the-new-nin-album"
 ---
 

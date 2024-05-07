@@ -3,7 +3,7 @@ title: "Something Must Be Wrong?"
 date: "2007-04-18"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "something-must-be-wrong"
 ---
 

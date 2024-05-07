@@ -3,7 +3,7 @@ title: "What the hell is going on!"
 date: "2007-07-26"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "what-the-hell-is-going-on"
 ---
 

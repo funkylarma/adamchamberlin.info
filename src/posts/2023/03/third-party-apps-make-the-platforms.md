@@ -6,7 +6,7 @@ categories:
 tags: 
   - "developers"
   - "twitter"
-coverImage: "./src/images/tweetbot_memorial.jpg"
+cover: "./src/images/tweetbot_memorial.jpg"
 slug: "third-party-apps-make-the-platforms"
 ---
 

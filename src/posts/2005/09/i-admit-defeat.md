@@ -3,7 +3,7 @@ title: "I admit defeat!"
 date: "2005-09-28"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "i-admit-defeat"
 ---
 

@@ -3,7 +3,7 @@ title: "In print again"
 date: "2007-02-02"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "in-print-again"
 ---
 

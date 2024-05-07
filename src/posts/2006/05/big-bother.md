@@ -3,7 +3,7 @@ title: "Big Bother"
 date: "2006-05-19"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "big-bother"
 ---
 

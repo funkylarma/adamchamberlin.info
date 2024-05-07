@@ -3,7 +3,7 @@ title: "Typical Bank Holiday!"
 date: "2005-05-31"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "typical-bank-holiday"
 ---
 

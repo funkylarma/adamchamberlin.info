@@ -3,7 +3,7 @@ title: "I got my own Buzz"
 date: "2006-10-26"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "i-got-my-own-buzz"
 ---
 

@@ -3,7 +3,7 @@ title: "What a Tour"
 date: "2007-07-22"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "what-a-tour"
 ---
 

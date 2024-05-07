@@ -3,7 +3,7 @@ title: "Made the press"
 date: "2006-05-31"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "made-the-press"
 ---
 

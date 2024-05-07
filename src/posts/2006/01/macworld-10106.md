@@ -3,7 +3,7 @@ title: "MacWorld - 10.1.06"
 date: "2006-01-11"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "macworld-10106"
 ---
 

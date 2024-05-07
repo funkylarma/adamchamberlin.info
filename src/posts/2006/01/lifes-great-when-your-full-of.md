@@ -3,7 +3,7 @@ title: "Life's Great when your full of"
 date: "2006-01-30"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "lifes-great-when-your-full-of"
 ---
 

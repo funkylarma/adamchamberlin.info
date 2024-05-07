@@ -7,7 +7,7 @@ tags:
   - "apple"
   - "pro"
   - "vision"
-coverImage: "./src/images/Vision-Pro-glass.jpg"
+cover: "./src/images/Vision-Pro-glass.jpg"
 slug: "apple-vision-pro"
 ---
 

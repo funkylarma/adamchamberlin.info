@@ -3,7 +3,7 @@ title: "Canon 40D Is On The Way"
 date: "2007-08-20"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "canon-40d-is-on-the-way"
 ---
 

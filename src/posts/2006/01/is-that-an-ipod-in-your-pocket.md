@@ -3,7 +3,7 @@ title: "is that an ipod in your pocket?"
 date: "2006-01-11"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "is-that-an-ipod-in-your-pocket"
 ---
 

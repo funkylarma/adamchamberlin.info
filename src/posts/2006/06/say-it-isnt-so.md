@@ -3,7 +3,7 @@ title: "Say it isn't so!"
 date: "2006-06-20"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "say-it-isnt-so"
 ---
 

@@ -3,7 +3,7 @@ title: "How do they sleep at night?"
 date: "2006-07-09"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "how-do-they-sleep-at-night"
 ---
 

@@ -3,7 +3,7 @@ title: "Back To Running"
 date: "2007-12-15"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "back-to-running"
 ---
 

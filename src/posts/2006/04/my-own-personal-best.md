@@ -3,7 +3,7 @@ title: "My Own Personal Best"
 date: "2006-04-03"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "my-own-personal-best"
 ---
 

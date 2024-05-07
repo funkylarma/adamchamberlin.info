@@ -3,7 +3,7 @@ title: "CBT Pass"
 date: "2007-06-17"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "cbt-pass"
 ---
 

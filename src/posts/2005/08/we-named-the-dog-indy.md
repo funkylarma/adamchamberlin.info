@@ -3,7 +3,7 @@ title: "We named the dog Indy..."
 date: "2005-08-03"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "we-named-the-dog-indy"
 ---
 

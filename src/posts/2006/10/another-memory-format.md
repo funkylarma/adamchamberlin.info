@@ -3,7 +3,7 @@ title: "Another memory format?!?"
 date: "2006-10-16"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "another-memory-format"
 ---
 

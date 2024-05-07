@@ -3,7 +3,7 @@ title: "30 years of madness"
 date: "2007-02-12"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "30-years-of-madness"
 ---
 

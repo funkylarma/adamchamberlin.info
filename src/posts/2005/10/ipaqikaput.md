@@ -3,7 +3,7 @@ title: "iPaq:iKaput"
 date: "2005-10-25"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "ipaqikaput"
 ---
 

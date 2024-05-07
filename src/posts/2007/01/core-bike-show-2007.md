@@ -3,7 +3,7 @@ title: "Core Bike Show 2007"
 date: "2007-01-31"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "core-bike-show-2007"
 ---
 

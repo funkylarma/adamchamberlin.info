@@ -3,7 +3,7 @@ title: "Pink For October"
 date: "2006-09-22"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "pink-for-october"
 ---
 

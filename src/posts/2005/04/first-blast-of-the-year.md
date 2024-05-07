@@ -3,7 +3,7 @@ title: "First blast of the year"
 date: "2005-04-01"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "first-blast-of-the-year"
 ---
 

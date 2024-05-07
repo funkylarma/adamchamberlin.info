@@ -3,7 +3,7 @@ title: "Wi-Fi service for the DS"
 date: "2005-11-04"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "wi-fi-for-the-ds"
 ---
 

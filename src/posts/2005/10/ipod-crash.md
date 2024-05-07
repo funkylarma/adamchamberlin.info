@@ -3,7 +3,7 @@ title: "iPod crash"
 date: "2005-10-06"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "ipod-crash"
 ---
 

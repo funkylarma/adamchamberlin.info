@@ -7,7 +7,7 @@ tags:
   - "ai"
   - "coaching"
   - "running"
-coverImage: "./src/images/trainerroad.png"
+cover: "./src/images/trainerroad.png"
 slug: "getting-the-most-out-of"
 ---
 

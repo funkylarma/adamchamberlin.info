@@ -3,7 +3,7 @@ title: "Its getting hotter!"
 date: "2005-06-18"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "its-getting-hotter"
 ---
 

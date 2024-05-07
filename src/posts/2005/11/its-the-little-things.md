@@ -3,7 +3,7 @@ title: "it's the little things"
 date: "2005-11-21"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "its-the-little-things"
 ---
 

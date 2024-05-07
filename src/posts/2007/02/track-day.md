@@ -3,7 +3,7 @@ title: "Track Day"
 date: "2007-02-27"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "track-day"
 ---
 

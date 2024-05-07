@@ -3,7 +3,7 @@ title: "Paris-Roubaix"
 date: "2006-04-09"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "paris-roubaix"
 ---
 

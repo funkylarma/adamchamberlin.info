@@ -3,7 +3,7 @@ title: "Happy 60th"
 date: "2007-02-21"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "happy-60th"
 ---
 

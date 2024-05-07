@@ -1,7 +1,7 @@
 module.exports = function(eleventyConfig) {
   
   const outdent = require('outdent'),
-        eleventyImageTransformPlugin = require("@11ty/eleventy-img");
+        Image = require("@11ty/eleventy-img");
 
   /** Maps a config of attribute-value pairs to an HTML string
    * representing those same attribute-value pairs.
@@ -32,7 +32,7 @@ module.exports = function(eleventyConfig) {
     formats = ['webp', 'jpeg'],
     sizes = '100vw'
   ) => {
-    const imageMetadata = await eleventyImageTransformPlugin(src, {
+    const imageMetadata = await Image(src, {
       widths: [...widths, null],
       formats: [...formats, null],
       outputDir: '_site/images',

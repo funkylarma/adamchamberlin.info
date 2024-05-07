@@ -3,7 +3,7 @@ title: "101% True Geek Now"
 date: "2007-05-03"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "101-true-geek-now"
 ---
 

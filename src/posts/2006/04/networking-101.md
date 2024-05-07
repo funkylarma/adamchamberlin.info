@@ -3,7 +3,7 @@ title: "Networking 101"
 date: "2006-04-26"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "networking-101"
 ---
 

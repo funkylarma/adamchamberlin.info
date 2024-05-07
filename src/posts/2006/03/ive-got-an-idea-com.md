@@ -3,7 +3,7 @@ title: "i've got an idea .com"
 date: "2006-03-15"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "ive-got-an-idea-com"
 ---
 
