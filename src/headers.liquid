@@ -1,0 +1,17 @@
+---
+permalink: '_headers'
+---
+
+/.well-known/webfinger
+  content-type: application/jrd+json; charset=UTF-8
+
+/feed/feed.xml
+  content-type: application/rss+xml; charset=UTF-8
+
+/*
+  Referrer-Policy: no-referrer-when-downgrade
+  Strict-Transport-Security: max-age=63072000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-Xss-Protection:	1; mode=block
+  Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
