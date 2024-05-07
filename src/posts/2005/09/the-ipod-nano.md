@@ -3,7 +3,7 @@ title: "The iPod Nano"
 date: "2005-09-10"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "the-ipod-nano"
 ---
 

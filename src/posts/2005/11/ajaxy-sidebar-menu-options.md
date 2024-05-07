@@ -3,7 +3,7 @@ title: "AJAXy sidebar menu options"
 date: "2005-11-30"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "ajaxy-sidebar-menu-options"
 ---
 

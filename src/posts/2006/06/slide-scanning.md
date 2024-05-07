@@ -3,7 +3,7 @@ title: "Slide Scanning"
 date: "2006-06-21"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "slide-scanning"
 ---
 

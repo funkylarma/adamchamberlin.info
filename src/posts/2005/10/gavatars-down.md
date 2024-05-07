@@ -3,7 +3,7 @@ title: "gavatar's down"
 date: "2005-10-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "gavatars-down"
 ---
 

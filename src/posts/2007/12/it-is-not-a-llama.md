@@ -3,7 +3,7 @@ title: "It is NOT a Llama"
 date: "2007-12-04"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "it-is-not-a-llama"
 ---
 

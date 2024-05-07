@@ -3,7 +3,7 @@ title: "Triple time pay for road workers"
 date: "2005-04-03"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "triple-time-pay-for-road-workers"
 ---
 

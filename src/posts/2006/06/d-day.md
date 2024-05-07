@@ -3,7 +3,7 @@ title: "D Day"
 date: "2006-06-03"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "d-day"
 ---
 

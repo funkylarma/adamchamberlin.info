@@ -3,7 +3,7 @@ title: "Newsgator errors"
 date: "2007-01-26"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "newsgator-errors"
 ---
 

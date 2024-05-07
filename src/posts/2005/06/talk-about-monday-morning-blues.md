@@ -3,7 +3,7 @@ title: "Talk about Monday morning blues!"
 date: "2005-06-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "talk-about-monday-morning-blues"
 ---
 

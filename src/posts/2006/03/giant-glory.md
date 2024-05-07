@@ -3,7 +3,7 @@ title: "Giant Glory"
 date: "2006-03-28"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "giant-glory"
 ---
 

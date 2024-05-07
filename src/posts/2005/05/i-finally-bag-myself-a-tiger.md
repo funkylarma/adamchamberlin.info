@@ -3,7 +3,7 @@ title: "I finally bag myself a Tiger"
 date: "2005-05-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "i-finally-bag-myself-a-tiger"
 ---
 

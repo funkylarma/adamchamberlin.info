@@ -3,7 +3,7 @@ title: "It's on DVD at last!"
 date: "2005-09-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "its-on-dvd-at-last"
 ---
 

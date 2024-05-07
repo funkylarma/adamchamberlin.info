@@ -3,7 +3,7 @@ title: "What a birthday present"
 date: "2007-03-02"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "what-a-birthday-present"
 ---
 

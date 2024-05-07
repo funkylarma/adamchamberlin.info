@@ -3,7 +3,7 @@ title: "One can make a difference"
 date: "2007-07-17"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "one-can-make-a-difference"
 ---
 

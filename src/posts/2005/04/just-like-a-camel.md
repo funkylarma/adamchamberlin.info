@@ -3,7 +3,7 @@ title: "Just like a camel"
 date: "2005-04-18"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "just-like-a-camel"
 ---
 

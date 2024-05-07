@@ -3,7 +3,7 @@ title: "A Time for a change"
 date: "2006-03-01"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "a-time-for-a-change"
 ---
 

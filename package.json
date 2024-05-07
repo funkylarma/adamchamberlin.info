@@ -38,8 +38,10 @@
     "luxon": "^3.4.4"
   },
   "dependencies": {
+    "@11ty/eleventy-img": "^4.0.2",
     "dotenv": "^16.4.5",
     "eleventy-plugin-redirects": "^1.0.0",
-    "eleventy-plugin-youtube-embed": "^1.10.2"
+    "eleventy-plugin-youtube-embed": "^1.10.2",
+    "outdent": "^0.8.0"
   }
 }

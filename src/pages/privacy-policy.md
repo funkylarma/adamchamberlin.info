@@ -37,6 +37,8 @@ Preferences: These cookies help us store your settings and browsing preferences 
 
 Should you decide to change your preferences later through your browsing session, you can click on the "Privacy & Cookie Policy" tab on your screen. This will display the consent notice again enabling you to change your preferences or withdraw your consent entirely.In addition to this, different browsers provide different methods to block and delete cookies used by websites. You can change the settings of your browser to block/delete the cookies. To find out more about how to manage and delete cookies, visit wikipedia.org, www.allaboutcookies.org.
 
+<div class= "cky-audit-table-element"></div>
+
 * * *
 
 ## Comments

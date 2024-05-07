@@ -3,7 +3,7 @@ title: "iBook or PowerBook?"
 date: "2005-12-09"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "ibook-or-powerbook"
 ---
 

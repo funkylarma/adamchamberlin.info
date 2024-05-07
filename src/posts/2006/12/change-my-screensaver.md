@@ -3,7 +3,7 @@ title: "Change my screensaver!"
 date: "2006-12-19"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "change-my-screensaver"
 ---
 

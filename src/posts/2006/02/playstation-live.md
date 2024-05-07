@@ -3,7 +3,7 @@ title: "Playstation Live?"
 date: "2006-02-01"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "playstation-live"
 ---
 

@@ -3,7 +3,7 @@ title: "Bank Holiday weekends"
 date: "2005-05-02"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "bank-holiday-weekends"
 ---
 

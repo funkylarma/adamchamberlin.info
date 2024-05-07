@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 2
 nav: "About"
 date: "2022-02-20"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "about"
 ---
 

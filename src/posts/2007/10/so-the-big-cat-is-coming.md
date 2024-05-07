@@ -3,7 +3,7 @@ title: "So The Big Cat Is Coming"
 date: "2007-10-22"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "so-the-big-cat-is-coming"
 ---
 

@@ -3,7 +3,7 @@ title: "well done son"
 date: "2005-10-11"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "well-done-son"
 ---
 

@@ -3,7 +3,7 @@ title: "Walking through the Fauna"
 date: "2005-12-12"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "walking-through-the-fauna"
 ---
 

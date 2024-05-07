@@ -3,15 +3,13 @@ title: "Ken Chamberlin"
 date: "2022-02-21"
 categories: 
   - "writing"
-coverImage: "DA0F5931-C08C-4B3F-B927-382796232D36-scaled.jpeg"
+coverImage: "./src/images/ken-chamberlin.jpeg"
 slug: "ken-chamberlin"
 ---
 
 I remember sitting in the back of a hot car having flown into Poitier international airport for the first time, looking out of the window at the countryside and being slightly confused.
 
 You see, both Sean and I had recently surmised that our childhood had in part been the longest and best planned house hunt. A region by region tour of France, but with mum and dad’s future retirement plan in the back of their minds. Not that we were complaining, these were some of the best times of our lives.
-
-<!--more-->
 
 The taste of four in the morning only meant one thing, we were off on another adventure overseas. The little black man bag was full of traveller checks and you could guarantee it was never going to be the same as last year. Over the years we had tried all manner of different holidays; both in location and transportation. Double decker coaches to the Camargue. Trailer tents almost making it to Dover. Even a limping a Fourtrak spilling transmission oil all around Bordeaux.
 

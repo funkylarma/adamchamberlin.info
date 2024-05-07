@@ -3,7 +3,7 @@ title: "It's a Vauxhall? But it's good?"
 date: "2005-09-05"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "its-a-vauxhall-but-it-good"
 ---
 

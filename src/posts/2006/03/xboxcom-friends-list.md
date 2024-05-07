@@ -3,7 +3,7 @@ title: "xbox.com friends list"
 date: "2006-03-01"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "xboxcom-friends-list"
 ---
 

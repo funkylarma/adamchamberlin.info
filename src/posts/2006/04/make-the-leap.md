@@ -3,7 +3,7 @@ title: "Make the leap?"
 date: "2006-04-26"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "make-the-leap"
 ---
 

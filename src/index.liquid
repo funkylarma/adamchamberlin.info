@@ -25,7 +25,7 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
     <article class="post">
       {% if post.data.coverImage %}
         <div class="post-image">
-          <img src="/images/{{ post.data.coverImage }}" />
+          {% image post.data.coverImage, "Featured Image" %}
         </div><!-- .post-image -->
       {% endif %}
       <div class="post-content">     

@@ -3,7 +3,7 @@ title: "Feel the Force"
 date: "2006-09-27"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "feel-the-force"
 ---
 

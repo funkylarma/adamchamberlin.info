@@ -3,7 +3,7 @@ title: "GT4"
 date: "2005-10-01"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "gt4"
 ---
 

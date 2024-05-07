@@ -3,7 +3,7 @@ title: "Toca Race Driver 3"
 date: "2005-09-07"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "toca-race-driver-3"
 ---
 

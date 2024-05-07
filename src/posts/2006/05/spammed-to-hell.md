@@ -3,7 +3,7 @@ title: "Spammed to Hell"
 date: "2006-05-08"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "spammed-to-hell"
 ---
 

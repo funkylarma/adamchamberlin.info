@@ -3,7 +3,7 @@ title: "Monday Morning"
 date: "2006-09-11"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "monday-morning"
 ---
 

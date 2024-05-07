@@ -3,7 +3,7 @@ title: "Make do workshop"
 date: "2005-04-20"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "workshop"
 ---
 

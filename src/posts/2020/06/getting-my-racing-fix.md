@@ -3,13 +3,13 @@ title: "Getting my racing fix"
 date: "2020-06-25"
 categories: 
   - "writing"
-coverImage: "lee-valley-race.jpg"
+coverImage: "./src/images/lee-valley-race.jpg"
 slug: "getting-my-racing-fix"
 ---
 
 2020 started off on the right trajectory. I had set myself some decent goals and spent a lot of the winter building my fitness towards some serious racing. An early race only went to prove this with a third place finish from a break.
 
-![](/images/lee-valley-race.jpg)
+{% image "./src/images/lee-valley-race.jpg", "Tipping it in at Lee Valley" %}
 
 <!--more-->
 
@@ -22,6 +22,6 @@ So I started looking back at my training plans and decided to throw my hat back 
 Around the same time the local race leagues had similar ideas and setup some online events to keep us going so it felt like a way to keep me motivated, stay in contact with the other local riders and still get a bit of racing in this year.  
 My first race back on Zwift was just as hard as I remembered but I needed something else to keep me motivated, I needed a drive, something to keep my coming back and pushing every week. Let us be honest, getting on a turbo in a hot garage in June requires some dedication. Enter online streaming!
 
-![](/images/e720dd678f502fd83c3cd298f5c9606b3433bc50.png)
+{% image "./src/images/zwift.png", "Zwift racing" %}
 
 I’m streaming nearly all of my races on [Twitch](https://www.twitch.tv/funky_larma). We even provide a bit of commentary on the races with the online chat and Lucy talking into the microphone. This whole process helps drive me to push harder knowing there is a chance some one is watching. It has worked, my [Zwift Power profile](https://zwiftpower.com/profile.php?z=9087) has jumped to A+ and I keep signing up for races.

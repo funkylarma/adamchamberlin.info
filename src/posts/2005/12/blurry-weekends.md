@@ -3,7 +3,7 @@ title: "blurry weekends"
 date: "2005-12-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "blurry-weekends"
 ---
 

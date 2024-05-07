@@ -7,7 +7,7 @@ tags:
   - "christmas"
   - "family"
   - "timelapse"
-coverImage: "Screenshot-2023-01-24-at-14.42.05.png"
+coverImage: "./src/images/christmas-decorating.png"
 slug: "christmas-decorating"
 ---
 

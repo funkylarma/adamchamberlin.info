@@ -3,7 +3,7 @@ title: "Night Shot"
 date: "2005-07-26"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "night-shot"
 ---
 

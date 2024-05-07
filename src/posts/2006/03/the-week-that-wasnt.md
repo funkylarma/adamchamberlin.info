@@ -3,7 +3,7 @@ title: "The week that wasn't"
 date: "2006-03-27"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "the-week-that-wasnt"
 ---
 

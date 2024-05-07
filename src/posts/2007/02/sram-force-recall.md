@@ -3,7 +3,7 @@ title: "SRAM Force Recall"
 date: "2007-02-14"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "sram-force-recall"
 ---
 

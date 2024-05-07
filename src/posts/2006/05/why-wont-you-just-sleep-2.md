@@ -3,7 +3,7 @@ title: "Why won't you just sleep!"
 date: "2006-05-05"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "why-wont-you-just-sleep-2"
 ---
 

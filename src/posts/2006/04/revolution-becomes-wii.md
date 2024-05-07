@@ -3,7 +3,7 @@ title: "Revolution becomes Wii"
 date: "2006-04-28"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "revolution-becomes-wii"
 ---
 

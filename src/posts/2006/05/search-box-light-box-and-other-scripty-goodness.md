@@ -3,7 +3,7 @@ title: "Search box, Light Box and other Scripty goodness"
 date: "2006-05-13"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "search-box-light-box-and-other-scripty-goodness"
 ---
 

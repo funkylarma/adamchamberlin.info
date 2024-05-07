@@ -3,7 +3,7 @@ title: "Christmas is a trying time"
 date: "2007-01-06"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "christmas-is-a-trying-time"
 ---
 

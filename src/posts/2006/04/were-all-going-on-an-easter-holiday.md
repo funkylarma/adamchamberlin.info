@@ -3,7 +3,7 @@ title: "We're all going on an Easter Holiday"
 date: "2006-04-14"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "were-all-going-on-an-easter-holiday"
 ---
 

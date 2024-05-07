@@ -3,7 +3,7 @@ title: "Tour De Tendering"
 date: "2007-05-22"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "tour-de-tendering"
 ---
 

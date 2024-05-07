@@ -3,7 +3,7 @@ title: "Last minute Shake Up"
 date: "2006-06-30"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "last-minute-shake-up"
 ---
 

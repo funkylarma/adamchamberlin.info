@@ -3,7 +3,7 @@ title: "Where are you?"
 date: "2006-03-21"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "where-are-you"
 ---
 

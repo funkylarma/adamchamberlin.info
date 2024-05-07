@@ -3,7 +3,7 @@ title: "Give me the gift of time"
 date: "2006-04-10"
 categories: 
   - "writing"
-coverImage: "image-not-found.png"
+coverImage: "./src/images/image-not-found.png"
 slug: "give-me-the-gift-of-time"
 ---
 
