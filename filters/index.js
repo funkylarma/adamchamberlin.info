@@ -1,6 +1,8 @@
 module.exports = function(eleventyConfig) {
   
   const { DateTime } = require("luxon");
+  const Image = require("@11ty/eleventy-img");
+  const site = require('../_data/site');
 
   // Filters
   // TODO: Put all the filters into external file
@@ -55,6 +57,25 @@ module.exports = function(eleventyConfig) {
   
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
     return (tags || []).filter(tag => [ "all", "nav", "post", "posts" ].indexOf(tag) === -1);
+  });
+  
+  eleventyConfig.addFilter("absoluteUrl", (url) => {
+    return new URL(url, site.url).href;
+  });
+  
+  eleventyConfig.addFilter("absoluteImageUrl", async (src, width = null) => {
+    const imageOptions = {
+      // We only need the original width and format
+      widths: [width],
+      formats: [null],
+      // Where the generated image files get saved
+      outputDir: '_site/images',
+      // Public URL path that's referenced in the img tag's src attribute
+      urlPath: '/images',
+    };
+    const stats = await Image(src, imageOptions);
+    const imageUrl = Object.values(stats)[0][0].url;
+    return new URL(imageUrl, site.url).href;
   });
   
 };

@@ -3,7 +3,7 @@ title: "Want invites?"
 date: "2007-07-03"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "want-invites"
 ---
 

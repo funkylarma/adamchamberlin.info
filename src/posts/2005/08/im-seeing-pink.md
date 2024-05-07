@@ -3,7 +3,7 @@ title: "I'm seeing pink"
 date: "2005-08-22"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "im-seeing-pink"
 ---
 

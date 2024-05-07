@@ -3,7 +3,7 @@ title: "The end"
 date: "2006-06-11"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "the-end"
 ---
 

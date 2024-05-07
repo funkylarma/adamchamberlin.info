@@ -3,7 +3,7 @@ title: "The night before"
 date: "2006-06-04"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "the-night-before"
 ---
 

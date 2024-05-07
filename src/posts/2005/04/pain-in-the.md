@@ -3,7 +3,7 @@ title: "Pain in the..."
 date: "2005-04-28"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "pain-in-the"
 ---
 

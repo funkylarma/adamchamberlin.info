@@ -3,7 +3,7 @@ title: "Last post for a while"
 date: "2005-08-26"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "last-post-for-a-while"
 ---
 

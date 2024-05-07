@@ -3,7 +3,7 @@ title: "1D Mark III"
 date: "2007-03-09"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "1d-mark-iii"
 ---
 

@@ -3,7 +3,7 @@ title: "Smoking a no-no"
 date: "2006-02-15"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "smoking-a-no-no"
 ---
 

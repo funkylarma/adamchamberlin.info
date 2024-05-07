@@ -3,7 +3,7 @@ title: "geek it up"
 date: "2006-03-02"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "geek-it-up"
 ---
 

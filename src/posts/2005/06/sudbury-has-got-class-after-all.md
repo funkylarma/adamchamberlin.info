@@ -3,7 +3,7 @@ title: "Sudbury has got class after all"
 date: "2005-06-14"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "sudbury-has-got-class-after-all"
 ---
 

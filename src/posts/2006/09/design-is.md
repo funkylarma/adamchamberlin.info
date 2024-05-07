@@ -3,7 +3,7 @@ title: "Design is"
 date: "2006-09-15"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "design-is"
 ---
 

@@ -3,7 +3,7 @@ title: "Online Video Virgin"
 date: "2007-12-21"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "online-video-virgin"
 ---
 

@@ -3,7 +3,7 @@ title: "Now that's a Bug to be proud of"
 date: "2006-11-21"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "now-thats-a-bug-to-be-proud-of"
 ---
 

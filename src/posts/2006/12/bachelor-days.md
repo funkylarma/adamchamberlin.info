@@ -3,7 +3,7 @@ title: "Bachelor Days"
 date: "2006-12-11"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "bachelor-days"
 ---
 

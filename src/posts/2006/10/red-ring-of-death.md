@@ -3,7 +3,7 @@ title: "Red Ring Of Death"
 date: "2006-10-25"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "red-ring-of-death"
 ---
 

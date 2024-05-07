@@ -3,7 +3,7 @@ title: "Summer Storm"
 date: "2005-06-29"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "summer-storm"
 ---
 

@@ -3,7 +3,7 @@ title: "Happy Birthday Dan"
 date: "2006-01-05"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "happy-birthday-dan"
 ---
 

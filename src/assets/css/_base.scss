@@ -254,17 +254,21 @@ footer {
         margin-right: auto;
         margin-bottom: 2rem;
         
-        .wide {
-          width: 140%;
-          max-width: 140%;
-          margin: 0 -20%;
-        }
       }
       img[width] {
         width: auto; /* Defer to max-width */
       }
       img[width][height] {
         height: auto; /* Preserve aspect ratio */
+      }
+      
+      picture {
+        &.wide {
+          display: block;
+          width: 140%;
+          max-width: 140%;
+          margin: 0 -20%;
+        }
       }
     }
   }

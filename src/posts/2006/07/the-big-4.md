@@ -3,7 +3,7 @@ title: "The Big 4"
 date: "2006-07-05"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "the-big-4"
 ---
 

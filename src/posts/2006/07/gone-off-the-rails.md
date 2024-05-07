@@ -3,7 +3,7 @@ title: "Gone Off The Rails"
 date: "2006-07-22"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "gone-off-the-rails"
 ---
 

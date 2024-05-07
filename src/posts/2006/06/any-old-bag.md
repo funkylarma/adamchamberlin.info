@@ -3,7 +3,7 @@ title: "Any Old Bag"
 date: "2006-06-02"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "any-old-bag"
 ---
 

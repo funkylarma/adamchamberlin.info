@@ -3,7 +3,7 @@ title: "The Pinkness Begins"
 date: "2006-09-29"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "the-pinkness-begins"
 ---
 

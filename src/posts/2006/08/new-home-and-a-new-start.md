@@ -3,7 +3,7 @@ title: "New home and a new start"
 date: "2006-08-21"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "new-home-and-a-new-start"
 ---
 

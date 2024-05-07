@@ -3,7 +3,7 @@ title: "Monday mornings"
 date: "2005-05-09"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "monday-mornings-2"
 ---
 

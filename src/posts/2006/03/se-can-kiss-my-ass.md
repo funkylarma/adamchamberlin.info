@@ -3,7 +3,7 @@ title: "SE can kiss my ass!"
 date: "2006-03-07"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "se-can-kiss-my-ass"
 ---
 

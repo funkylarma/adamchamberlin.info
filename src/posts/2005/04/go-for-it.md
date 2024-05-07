@@ -3,7 +3,7 @@ title: "Go for it"
 date: "2005-04-16"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "go-for-it"
 ---
 

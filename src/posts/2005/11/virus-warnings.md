@@ -3,7 +3,7 @@ title: "virus warnings"
 date: "2005-11-23"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "virus-warnings"
 ---
 

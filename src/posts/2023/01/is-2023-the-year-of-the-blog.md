@@ -3,7 +3,7 @@ title: "Is 2023 the year of the blog?"
 date: "2023-01-23"
 categories: 
   - "writing"
-coverImage: "./src/images/install-step3.png"
+cover: "./src/images/install-step3.png"
 slug: "is-2023-the-year-of-the-blog"
 ---
 

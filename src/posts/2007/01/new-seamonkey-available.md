@@ -3,7 +3,7 @@ title: "New Seamonkey Available"
 date: "2007-01-22"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "new-seamonkey-available"
 ---
 

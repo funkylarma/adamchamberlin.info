@@ -3,7 +3,7 @@ title: "Can We Have Some Order Mr. Chairman?"
 date: "2007-11-15"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "can-we-have-some-order-mr-chairman"
 ---
 

@@ -3,7 +3,7 @@ title: "Not bad for Aston"
 date: "2005-06-19"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "not-bad-for-aston"
 ---
 

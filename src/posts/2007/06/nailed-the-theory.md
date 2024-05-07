@@ -3,7 +3,7 @@ title: "Nailed the Theory"
 date: "2007-06-28"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "nailed-the-theory"
 ---
 

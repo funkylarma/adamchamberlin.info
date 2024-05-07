@@ -3,7 +3,7 @@ title: "by far the best blonde joke in the world"
 date: "2005-12-19"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "by-far-the-best-blonde-joke-in-the-world"
 ---
 

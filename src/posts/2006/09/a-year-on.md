@@ -3,7 +3,7 @@ title: "A year on"
 date: "2006-09-04"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "a-year-on"
 ---
 

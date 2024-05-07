@@ -3,7 +3,7 @@ title: "Ken Chamberlin"
 date: "2022-02-21"
 categories: 
   - "writing"
-coverImage: "./src/images/ken-chamberlin.jpeg"
+cover: "./src/images/ken-chamberlin.jpeg"
 slug: "ken-chamberlin"
 ---
 

@@ -3,7 +3,7 @@ title: "Leaving Strava"
 date: "2020-08-02"
 categories: 
   - "writing"
-coverImage: "./src/images/strava.png"
+cover: "./src/images/strava.png"
 slug: "leaving-strava"
 ---
 

@@ -3,7 +3,7 @@ title: "Who gets Lara's assets?"
 date: "2005-03-23"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "who-gets-laras-assets"
 ---
 

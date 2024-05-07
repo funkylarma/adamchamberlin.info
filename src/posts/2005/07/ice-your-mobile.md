@@ -3,7 +3,7 @@ title: "ICE your mobile"
 date: "2005-07-15"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "ice-your-mobile"
 ---
 

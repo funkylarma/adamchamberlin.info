@@ -3,7 +3,7 @@ title: "The 7th is Pickle day"
 date: "2005-04-26"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "the-7th-is-pickle-day"
 ---
 

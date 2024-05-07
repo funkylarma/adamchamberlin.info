@@ -5,7 +5,7 @@ categories:
   - "videography"
 tags: 
   - "running"
-coverImage: "./src/images/IMG_0077.jpeg"
+cover: "./src/images/IMG_0077.jpeg"
 slug: "finding-the-legs"
 ---
 

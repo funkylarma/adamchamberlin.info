@@ -3,7 +3,7 @@ title: "Lows and Highs"
 date: "2007-01-20"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "lows-and-highs"
 ---
 

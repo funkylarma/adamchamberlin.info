@@ -3,7 +3,7 @@ title: "Envy &amp; Other Sins"
 date: "2007-12-16"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "envy-other-sins"
 ---
 

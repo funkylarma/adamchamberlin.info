@@ -3,7 +3,7 @@ title: "Getting my racing fix"
 date: "2020-06-25"
 categories: 
   - "writing"
-coverImage: "./src/images/lee-valley-race.jpg"
+cover: "./src/images/lee-valley-race.jpg"
 slug: "getting-my-racing-fix"
 ---
 

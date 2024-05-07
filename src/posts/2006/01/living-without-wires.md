@@ -3,7 +3,7 @@ title: "Living without wires"
 date: "2006-01-31"
 categories: 
   - "writing"
-coverImage: "./src/images/image-not-found.png"
+cover: "./src/images/image-not-found.png"
 slug: "living-without-wires"
 ---
 
