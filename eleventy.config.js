@@ -13,33 +13,59 @@ const
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const { DateTime } = require("luxon");
 
+const {
+  excerpt,
+  readableDate,
+  htmlDateString,
+  dateISO,
+  dateRSS,
+  absoluteUrl,
+  absoluteImageUrl
+} = require('./filters/filters');
+
+const {
+  imageShortcode,
+  currentBuildDate,
+  year
+} = require('./shortcodes');
+
 module.exports = function (eleventyConfig) {
   
-  // Copy the contents of the `public` folder to the output folder
+  eleventyConfig.setLiquidOptions({
+    // Allows for dynamic include/partial names. If true, include names must be quoted. Defaults to true as of beta/1.0.
+    dynamicPartials: true,
+  });
+  
+  // Pass-through copy for static assets
   eleventyConfig.addPassthroughCopy({
     //"./src/images": "/images",
     "./src/assets/fonts": "/assets/fonts",
     "./src/assets/images": "/assets/images",
   });
   
-  // Sass
+  // Custom filters
+  eleventyConfig.addFilter('excerpt', excerpt);
+  eleventyConfig.addFilter('readableDate', readableDate);
+  eleventyConfig.addFilter('htmlDateString', htmlDateString);
+  eleventyConfig.addFilter('dateISO', dateISO);
+  eleventyConfig.addFilter('absoluteUrl', absoluteUrl);
+  eleventyConfig.addFilter('absoluteImageUrl', absoluteImageUrl);
+  
+  // Custom shortcodes
+  eleventyConfig.addShortcode('image', imageShortcode);
+  eleventyConfig.addShortcode('currentBuildDate', currentBuildDate);
+  eleventyConfig.addShortcode('year', year);
+  
+  // Custom collections
+  
+  // Plugins
   eleventyConfig.addPlugin(eleventySass);
-  
-  // html base
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  
-  // Navigation
   eleventyConfig.addPlugin(eleventyNavigation);
-  
-  // YouTube Lite embed
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true
   });
-  
-  // RSS feeds
   eleventyConfig.addPlugin(eleventyRss);
-  
-  // Read time
   eleventyConfig.addPlugin(emojiReadTime, {
     showEmoji: false
   });
@@ -47,12 +73,6 @@ module.exports = function (eleventyConfig) {
   // Template filters
   eleventyConfig.addLiquidFilter("dateToRfc822", eleventyRss.dateToRfc822);
   eleventyConfig.addLiquidFilter("getNewestCollectionItemDate", eleventyRss.getNewestCollectionItemDate);
-  
-  // Filters
-  eleventyConfig.addPlugin(require('./filters'));
-  
-  // Shortcodes
-  eleventyConfig.addPlugin(require('./shortcodes'));
 
   return {
     
