@@ -16,9 +16,10 @@ const stringifyAttributes = (attributeMap) => {
 /** Converts the given string to a slug form. */
 const slugifyString = (str) => {
   return slugify(str, {
+    lower: true,
+    strict: true,
     replacement: '-',
     remove: /[#,&,+()$~%.'":*?<>{}]/g,
-    lower: true,
   });
 };
 

@@ -27,7 +27,7 @@ const {
   dateRSS,
   absoluteUrl,
   absoluteImageUrl
-} = require('./filters/filters');
+} = require('./filters');
 
 // Load the local shortcodes
 const {
