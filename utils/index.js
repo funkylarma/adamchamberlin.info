@@ -1,4 +1,5 @@
-const path = require('path');
+const path = require('path'),
+      slugify = require('slugify');
 
 /** Maps a config of attribute-value pairs to an HTML string
  * representing those same attribute-value pairs.
@@ -12,6 +13,15 @@ const stringifyAttributes = (attributeMap) => {
     .join(' ');
 };
 
+/** Converts the given string to a slug form. */
+const slugifyString = (str) => {
+  return slugify(str, {
+    replacement: '-',
+    remove: /[#,&,+()$~%.'":*?<>{}]/g,
+    lower: true,
+  });
+};
+
 /**
  * @param {string} pathString
  */
@@ -19,5 +29,6 @@ const withoutBaseDirectory = (pathString) => pathString.substring(pathString.ind
 
 module.exports = {
   stringifyAttributes,
+  slugifyString,
   withoutBaseDirectory
 };

@@ -10,9 +10,15 @@ const
   eleventySass = require('@11tyrocks/eleventy-plugin-sass-lightningcss'),
   emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const { DateTime } = require("luxon");
+const { 
+  EleventyHtmlBasePlugin
+} = require("@11ty/eleventy");
 
+const { 
+  DateTime 
+} = require("luxon");
+
+// Load the local filters
 const {
   excerpt,
   readableDate,
@@ -23,11 +29,17 @@ const {
   absoluteImageUrl
 } = require('./filters/filters');
 
+// Load the local shortcodes
 const {
   imageShortcode,
   currentBuildDate,
   year
 } = require('./shortcodes');
+
+// Load the Markdown plugin
+const { 
+  markdown 
+} = require('./plugins/markdown');
 
 module.exports = function (eleventyConfig) {
   
@@ -69,6 +81,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(emojiReadTime, {
     showEmoji: false
   });
+  
+  eleventyConfig.setLibrary('md', markdown);
   
   // Template filters
   eleventyConfig.addLiquidFilter("dateToRfc822", eleventyRss.dateToRfc822);
