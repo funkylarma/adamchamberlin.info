@@ -379,6 +379,44 @@ hr {
   border: 1px solid color("secondary");
 }
 
+.heading-wrapper {
+  align-items: stretch;
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: minmax(auto, max-content) min-content;
+}
+
+.deeplink {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  &:link,
+  &:visited {
+    color: var(--main-color-background);
+    text-decoration: none;
+  }
+
+  .heading-wrapper:hover &,
+  &:hover,
+  &:focus {
+    color: $link-color;
+
+  }
+}
+
+@media (min-width: 65rem) {
+  .heading-wrapper {
+    // Anchor link in the left margin on larger viewports
+    grid-template-columns: min-content auto;
+    margin-left: -2rem; // 1rem width + .25rem * 2 paddings + 0.5rem gap
+  }
+
+  .deeplink {
+    grid-row-start: 1;
+  }
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
