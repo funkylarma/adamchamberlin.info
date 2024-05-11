@@ -11,13 +11,17 @@ I finally received my birthday gift from Lucy. The new 2nd generation iPod Shuff
 
 ## The Box and Goodies
 
-[![IMG_4194.JPG](/images/286065772_7ce7b0d26f_m.jpg)](http://www.flickr.com/photos/funkylarma/286065772/)
+{% image "./src/images/286065772.jpg" %}
 
-[![whoops](/images/286599164_60554eb2f1_t.jpg)](http://www.flickr.com/photos/funkylarma/286599164/)
+{% image "./src/images/286599164.jpg" %}
 
-[![iTunes](/images/298297098_a9d1557887_m.jpg)](http://www.flickr.com/photos/funkylarma/298297098/)
+{% image "./src/images/298297098.jpg" %}
 
-To start with the box, yes it is the same box as that used in the new Nano’s, just with a different inlay card and machine holder. I’m not sure if I’m a big fan of the new packaging but it is by far one of the best on the high street, my only concern is this over kill for an mp3 player? Open the box and remove the player to access the instructions and goodies hiding in the depths of the box. The first thing you will notice is that the Shuffle is being shipped with the old style ear buds. Many people will and have complained about this, and rightly so, why not use the current head phones. For me I’m not bothered I’ll use my own Sony buds, I never could get on with the Apple aural devices. Towards the back of the box you will also find your enclosed [dock/charging station](http://static.flickr.com/105/286057162_899801af8c.jpg) thing. How clever is this thing? It is just a simple dock with one plug, 3.5mm jack plug that fits into the headphones socket of the machine. The other end is your standard USB connector for your PC or Mac. Plug the machine in and the first thing that happens is that iTunes will check to see if your running the current version, 7.0.2 is required to sync your new Shuffle so download if required. So far I’ve not had any problems with this release, I think it was solely to update the software for the Shuffle. The new iTunes interface, which I’m still not really sure about it yet, gets a Shuffle make over when the device is connected, I’ve got to admit that icon is pretty slick. Once connected the Shuffle comes into it’s name sake, you have the option of what music to Shuffle. The default action is to take a random selection of your library and copy it over to the Shuffle. However you can then change the criteria and even the playlist from which music is selected. Or if your just not in the mood just drag and drop music onto the device and create your own list. If you really want you can use the Shuffle as a removable storage device, not really suitable due to the fact that you only get one dock and one way to connect, but I guess it’s handy if need be.
+To start with the box, yes it is the same box as that used in the new Nano’s, just with a different inlay card and machine holder. I’m not sure if I’m a big fan of the new packaging but it is by far one of the best on the high street, my only concern is this over kill for an mp3 player? Open the box and remove the player to access the instructions and goodies hiding in the depths of the box. The first thing you will notice is that the Shuffle is being shipped with the old style ear buds. Many people will and have complained about this, and rightly so, why not use the current head phones. For me I’m not bothered I’ll use my own Sony buds, I never could get on with the Apple aural devices. Towards the back of the box you will also find your enclosed thing.
+
+{% image "./src/images/286057162.jpg", "dock/charging station" %}
+
+How clever is this thing? It is just a simple dock with one plug, 3.5mm jack plug that fits into the headphones socket of the machine. The other end is your standard USB connector for your PC or Mac. Plug the machine in and the first thing that happens is that iTunes will check to see if your running the current version, 7.0.2 is required to sync your new Shuffle so download if required. So far I’ve not had any problems with this release, I think it was solely to update the software for the Shuffle. The new iTunes interface, which I’m still not really sure about it yet, gets a Shuffle make over when the device is connected, I’ve got to admit that icon is pretty slick. Once connected the Shuffle comes into it’s name sake, you have the option of what music to Shuffle. The default action is to take a random selection of your library and copy it over to the Shuffle. However you can then change the criteria and even the playlist from which music is selected. Or if your just not in the mood just drag and drop music onto the device and create your own list. If you really want you can use the Shuffle as a removable storage device, not really suitable due to the fact that you only get one dock and one way to connect, but I guess it’s handy if need be.
 
 ## Using The Shuffle
 
@@ -25,6 +29,6 @@ I’ve spent the last two week using the Shuffle on a near daily basis and can s
 
 ## In Conclusion
 
-[![IMG_4191.JPG](/images/286055208_3ac56086af_m.jpg)](http://www.flickr.com/photos/funkylarma/286055208/)
+{% image "./src/images/286055208.jpg" %}
 
 Let’s be honest here the Shuffle will not appeal to every one. The iPod (in it’s full form factor) is the industry standard and with the recent edition of movies it is going to be the first choice for the average user. The Shuffle only really comes into it’s own for a couple of reasons. People that are always on the move or people that do not see the harm in investing £55 on the Apple family! That’s right the Shuffle’s price tag is not to be ignored. Invest in Cupertino and buy into the iPod trend and not break the bank to do so! Or just buy into what for me is such a blindingly simple design.

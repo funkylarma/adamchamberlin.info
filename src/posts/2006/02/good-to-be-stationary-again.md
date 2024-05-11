@@ -3,11 +3,12 @@ title: "Good to be stationary again"
 date: "2006-02-21"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+cover: "./src/images/102232581.jpg"
 slug: "good-to-be-stationary-again"
 ---
 
-[![IMG_1287.JPG](/images/102232581_0396026e78_m.jpg)](http://www.flickr.com/photos/funkylarma/102232581/ "Photo Sharing")What a week end.  
+{% image "./src/images/102232581.jpg", "Photo Sharing" %}
+What a week end.  
 It feels like I’m still only just getting used to not moving my legs round in circles.
 
 The last few days were spent in the saddle, clocking up the miles. Total so far 151!
