@@ -70,6 +70,11 @@ strong {
 
 a:not(.button) {
   color: $link-color;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 code:not([class*="language"]) {
