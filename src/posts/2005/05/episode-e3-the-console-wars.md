@@ -3,7 +3,7 @@ title: "Episode E3: The Console Wars"
 date: "2005-05-17"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "episode-e3-the-console-wars"
 ---
 

@@ -3,7 +3,7 @@ title: "You can smell the fur"
 date: "2005-04-07"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "you-can-smell-the-fur"
 ---
 

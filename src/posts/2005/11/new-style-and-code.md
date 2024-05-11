@@ -3,7 +3,7 @@ title: "New style and code"
 date: "2005-11-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "new-style-and-code"
 ---
 

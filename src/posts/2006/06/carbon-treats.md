@@ -3,7 +3,7 @@ title: "Carbon treats"
 date: "2006-06-15"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "carbon-treats"
 ---
 

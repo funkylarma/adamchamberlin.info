@@ -3,7 +3,7 @@ title: "The Aliens have left the building"
 date: "2006-03-23"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "the-aliens-has-left"
 ---
 

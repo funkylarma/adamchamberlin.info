@@ -3,7 +3,7 @@ title: "Flickr's Terms"
 date: "2006-07-07"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "flickrs-terms"
 ---
 

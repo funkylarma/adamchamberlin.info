@@ -3,7 +3,7 @@ title: "Long live the Poisson Rouge"
 date: "2007-03-05"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "long-live-the-poisson-rouge"
 ---
 

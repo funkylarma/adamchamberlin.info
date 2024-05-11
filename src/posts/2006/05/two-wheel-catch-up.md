@@ -3,7 +3,7 @@ title: "Two Wheel Catch Up"
 date: "2006-05-11"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "two-wheel-catch-up"
 ---
 

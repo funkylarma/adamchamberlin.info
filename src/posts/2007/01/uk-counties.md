@@ -3,7 +3,7 @@ title: "Uk Counties"
 date: "2007-01-12"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "uk-counties"
 ---
 

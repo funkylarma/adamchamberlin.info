@@ -3,7 +3,7 @@ title: "Spring is finally here"
 date: "2007-03-25"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "spring-is-finally-here"
 ---
 

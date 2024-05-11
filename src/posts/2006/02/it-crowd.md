@@ -3,7 +3,7 @@ title: "IT Crowd"
 date: "2006-02-04"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "it-crowd"
 ---
 

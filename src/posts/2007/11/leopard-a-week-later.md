@@ -3,7 +3,7 @@ title: "Leopard, A Week Later"
 date: "2007-11-11"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "leopard-a-week-later"
 ---
 

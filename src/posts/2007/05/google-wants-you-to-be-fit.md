@@ -3,7 +3,7 @@ title: "Google wants you to be fit"
 date: "2007-05-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "google-wants-you-to-be-fit"
 ---
 

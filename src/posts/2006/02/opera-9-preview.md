@@ -3,7 +3,7 @@ title: "Opera 9 Preview"
 date: "2006-02-07"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "opera-9-preview"
 ---
 

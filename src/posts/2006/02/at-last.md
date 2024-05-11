@@ -3,7 +3,7 @@ title: "At last!"
 date: "2006-02-10"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "at-last"
 ---
 

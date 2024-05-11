@@ -3,7 +3,7 @@ title: "Hobbies and Social Time"
 date: "2006-02-16"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "hobbies"
 ---
 

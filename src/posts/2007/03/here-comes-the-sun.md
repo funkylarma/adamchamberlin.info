@@ -3,7 +3,7 @@ title: "Here comes the sun"
 date: "2007-03-13"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "here-comes-the-sun"
 ---
 

@@ -3,7 +3,7 @@ title: "End To End"
 date: "2006-05-29"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "end2end"
 ---
 

@@ -3,7 +3,7 @@ title: "What did you do at the weekend?"
 date: "2006-07-10"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "justdecking"
 ---
 

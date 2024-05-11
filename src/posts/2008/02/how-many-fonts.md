@@ -3,7 +3,7 @@ title: "How Many Fonts..."
 date: "2008-02-26"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "how-many-fonts"
 ---
 

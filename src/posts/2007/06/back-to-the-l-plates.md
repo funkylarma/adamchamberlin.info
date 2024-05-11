@@ -3,7 +3,7 @@ title: "Back to the L Plates"
 date: "2007-06-15"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "back-to-the-l-plates"
 ---
 

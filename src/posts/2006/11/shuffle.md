@@ -3,7 +3,7 @@ title: "Shuffle"
 date: "2006-11-21"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "shuffle"
 ---
 

@@ -3,7 +3,7 @@ title: "Painkillers"
 date: "2005-04-30"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "painkillers"
 ---
 

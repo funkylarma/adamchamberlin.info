@@ -3,7 +3,7 @@ title: "Enjoy the sun"
 date: "2005-06-18"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "enjoy-the-sun"
 ---
 

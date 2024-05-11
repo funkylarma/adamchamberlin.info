@@ -3,7 +3,7 @@ title: "'Alert Banner' hack"
 date: "2005-10-04"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "alert-banner-hack"
 ---
 

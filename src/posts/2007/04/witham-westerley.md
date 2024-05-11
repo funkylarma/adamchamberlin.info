@@ -3,7 +3,7 @@ title: "Witham Westerley"
 date: "2007-04-16"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "witham-westerley"
 ---
 

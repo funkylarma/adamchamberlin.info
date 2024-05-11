@@ -3,7 +3,7 @@ title: "Blogging Hiatus"
 date: "2006-08-10"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "blogging-hiatus"
 ---
 

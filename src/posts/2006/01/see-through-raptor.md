@@ -3,7 +3,7 @@ title: "See through Raptor"
 date: "2006-01-09"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "see-through-raptor"
 ---
 

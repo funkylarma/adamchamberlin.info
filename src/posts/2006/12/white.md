@@ -3,7 +3,7 @@ title: "White"
 date: "2006-12-05"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "white"
 ---
 

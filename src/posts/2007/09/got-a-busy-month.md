@@ -3,7 +3,7 @@ title: "Got A Busy Month"
 date: "2007-09-28"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "got-a-busy-month"
 ---
 

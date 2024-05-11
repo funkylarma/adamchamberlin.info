@@ -3,7 +3,7 @@ title: "It's downhill from here"
 date: "2006-06-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "its-downhill-from-here"
 ---
 

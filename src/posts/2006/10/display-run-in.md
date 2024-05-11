@@ -3,7 +3,7 @@ title: "display: run-in;"
 date: "2006-10-10"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "display-run-in"
 ---
 

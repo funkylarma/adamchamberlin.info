@@ -3,7 +3,7 @@ title: "quick promotions"
 date: "2005-10-21"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "quick-promotions"
 ---
 

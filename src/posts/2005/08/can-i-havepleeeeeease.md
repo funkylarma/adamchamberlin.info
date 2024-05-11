@@ -3,7 +3,7 @@ title: "Can I have....Pleeeeeease..."
 date: "2005-08-17"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "can-i-havepleeeeeease"
 ---
 

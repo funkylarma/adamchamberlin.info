@@ -3,7 +3,7 @@ title: "Phone Update"
 date: "2006-03-09"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "phone-update"
 ---
 

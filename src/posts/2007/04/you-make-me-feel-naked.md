@@ -3,7 +3,7 @@ title: "You make me feel Naked"
 date: "2007-04-05"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "you-make-me-feel-naked"
 ---
 

@@ -3,7 +3,7 @@ title: "Ahh Miss Croft, you're back."
 date: "2006-04-09"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "ahh-miss-croft"
 ---
 

@@ -3,7 +3,7 @@ title: "The call signs are set."
 date: "2006-01-26"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "the-call-signs-are-set"
 ---
 

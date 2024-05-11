@@ -3,7 +3,7 @@ title: "An iBook it is"
 date: "2006-01-27"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "an-ibook-it-is"
 ---
 

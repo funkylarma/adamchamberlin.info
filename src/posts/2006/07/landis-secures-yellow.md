@@ -3,7 +3,7 @@ title: "Landis secures Yellow"
 date: "2006-07-24"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "landis-secures-yellow"
 ---
 

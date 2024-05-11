@@ -3,7 +3,7 @@ title: "DAS Passed"
 date: "2007-08-16"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "das-passed"
 ---
 

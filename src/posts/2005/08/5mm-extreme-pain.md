@@ -3,7 +3,7 @@ title: "5mm = Extreme Pain"
 date: "2005-08-21"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "5mm-extreme-pain"
 ---
 

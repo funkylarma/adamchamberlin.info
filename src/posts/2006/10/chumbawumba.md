@@ -3,7 +3,7 @@ title: "Chumbawumba"
 date: "2006-10-28"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "chumbawumba"
 ---
 

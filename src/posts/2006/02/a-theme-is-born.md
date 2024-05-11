@@ -3,7 +3,7 @@ title: "A theme is born"
 date: "2006-02-25"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "a-theme-is-born"
 ---
 

@@ -3,7 +3,7 @@ title: "welcome back"
 date: "2006-04-20"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "welcome-back"
 ---
 

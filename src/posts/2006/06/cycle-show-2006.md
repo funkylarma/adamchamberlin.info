@@ -3,7 +3,7 @@ title: "Cycle Show 2006"
 date: "2006-06-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "cycle-show-2006"
 ---
 

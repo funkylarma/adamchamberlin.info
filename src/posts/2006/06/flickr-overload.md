@@ -3,7 +3,7 @@ title: "Flickr Overload"
 date: "2006-06-30"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "flickr-overload"
 ---
 

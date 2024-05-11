@@ -3,7 +3,7 @@ title: "Nike++ == happy_legs;"
 date: "2007-01-15"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "nike-happylegs"
 ---
 

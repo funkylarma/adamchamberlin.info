@@ -3,7 +3,7 @@ title: "Brighter days"
 date: "2006-04-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "brighter-days"
 ---
 

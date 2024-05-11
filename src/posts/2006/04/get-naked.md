@@ -3,7 +3,7 @@ title: "Get Naked"
 date: "2006-04-05"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "get-naked"
 ---
 

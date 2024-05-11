@@ -3,7 +3,7 @@ title: "Sober attack"
 date: "2005-12-08"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "sober-attack"
 ---
 

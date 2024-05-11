@@ -3,7 +3,7 @@ title: "Mid Week Roundup"
 date: "2005-12-15"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "mid-week-roundup"
 ---
 

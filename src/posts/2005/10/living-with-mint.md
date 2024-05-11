@@ -3,7 +3,7 @@ title: "Living with Mint"
 date: "2005-10-24"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "living-with-mint"
 ---
 

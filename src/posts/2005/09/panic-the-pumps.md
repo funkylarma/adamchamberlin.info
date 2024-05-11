@@ -3,7 +3,7 @@ title: "Panic @ the Pumps!"
 date: "2005-09-13"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "panic-the-pumps"
 ---
 
