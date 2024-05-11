@@ -3,7 +3,7 @@ title: "Stage 10"
 date: "2006-07-12"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "stage-10"
 ---
 

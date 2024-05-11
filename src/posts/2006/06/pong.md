@@ -3,7 +3,7 @@ title: "Pong Clock"
 date: "2006-06-27"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "pong"
 ---
 

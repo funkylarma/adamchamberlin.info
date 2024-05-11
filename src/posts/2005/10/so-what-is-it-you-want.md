@@ -3,7 +3,7 @@ title: "so what is it you want!?!"
 date: "2005-10-19"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "so-what-is-it-you-want"
 ---
 

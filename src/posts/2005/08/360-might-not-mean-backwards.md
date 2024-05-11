@@ -3,7 +3,7 @@ title: "360 might not mean backwards"
 date: "2005-08-19"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "360-might-not-mean-backwards"
 ---
 

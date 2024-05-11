@@ -3,7 +3,7 @@ title: "What is nutrileum?"
 date: "2006-02-08"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "what-is-nutrileum"
 ---
 

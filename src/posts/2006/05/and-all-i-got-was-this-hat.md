@@ -3,7 +3,7 @@ title: "and all I got was this hat!"
 date: "2006-05-24"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "and-all-i-got-was-this-hat"
 ---
 

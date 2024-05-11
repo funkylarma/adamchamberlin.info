@@ -3,7 +3,7 @@ title: "Bit of tweeking"
 date: "2006-09-06"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "bit-of-tweeking"
 ---
 

@@ -3,7 +3,7 @@ title: "Happy Birthday!"
 date: "2005-03-26"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "happy-birthday"
 ---
 

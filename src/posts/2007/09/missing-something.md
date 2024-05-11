@@ -3,7 +3,7 @@ title: "Missing something?"
 date: "2007-09-06"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "missing-something"
 ---
 

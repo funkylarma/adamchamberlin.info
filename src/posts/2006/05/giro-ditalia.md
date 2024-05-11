@@ -3,7 +3,7 @@ title: "Giro d'Italia"
 date: "2006-05-19"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "giro-ditalia"
 ---
 

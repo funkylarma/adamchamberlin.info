@@ -3,7 +3,7 @@ title: "... part 2"
 date: "2005-06-26"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "part-2"
 ---
 

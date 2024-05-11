@@ -3,7 +3,7 @@ title: "It was difficult to even watch"
 date: "2007-01-20"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "it-was-difficult-to-even-watch"
 ---
 

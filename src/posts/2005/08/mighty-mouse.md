@@ -3,7 +3,7 @@ title: "Mighty Mouse"
 date: "2005-08-03"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "mighty-mouse"
 ---
 

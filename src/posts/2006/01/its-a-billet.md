@@ -3,7 +3,7 @@ title: "It's a billet"
 date: "2006-01-11"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "its-a-billet"
 ---
 

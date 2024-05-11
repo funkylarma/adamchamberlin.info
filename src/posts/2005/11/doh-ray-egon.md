@@ -3,7 +3,7 @@ title: "doh, ray, egon!"
 date: "2005-11-18"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "doh-ray-egon"
 ---
 

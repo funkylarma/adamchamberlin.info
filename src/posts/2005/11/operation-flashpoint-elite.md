@@ -3,7 +3,7 @@ title: "Operation Flashpoint Elite"
 date: "2005-11-01"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "operation-flashpoint-elite"
 ---
 

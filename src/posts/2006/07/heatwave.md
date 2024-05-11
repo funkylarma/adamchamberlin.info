@@ -3,7 +3,7 @@ title: "Heatwave"
 date: "2006-07-02"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "heatwave"
 ---
 

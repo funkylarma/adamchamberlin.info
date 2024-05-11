@@ -3,7 +3,7 @@ title: "It was showtime"
 date: "2006-09-13"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "it-was-showtime"
 ---
 

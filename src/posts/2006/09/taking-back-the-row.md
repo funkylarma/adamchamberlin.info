@@ -3,7 +3,7 @@ title: "Taking back the Row"
 date: "2006-09-07"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "taking-back-the-row"
 ---
 

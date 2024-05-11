@@ -3,7 +3,7 @@ title: "Time Machine"
 date: "2006-07-01"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "time-machine"
 ---
 

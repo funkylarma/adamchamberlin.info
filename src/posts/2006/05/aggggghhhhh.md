@@ -3,7 +3,7 @@ title: "aggggghhhhh"
 date: "2006-05-12"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "aggggghhhhh"
 ---
 

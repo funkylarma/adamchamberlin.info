@@ -3,7 +3,7 @@ title: "Colour Shuffle's"
 date: "2007-01-31"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "colour-shuffles"
 ---
 

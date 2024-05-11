@@ -3,7 +3,7 @@ title: "Bye Bye 98"
 date: "2006-07-12"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "bye-bye-98"
 ---
 

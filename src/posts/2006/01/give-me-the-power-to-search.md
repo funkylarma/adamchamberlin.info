@@ -3,7 +3,7 @@ title: "Give me the power to search"
 date: "2006-01-23"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "give-me-the-power-to-search"
 ---
 

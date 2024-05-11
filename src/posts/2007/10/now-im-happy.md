@@ -3,7 +3,7 @@ title: "Now I'm Happy"
 date: "2007-10-16"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "now-im-happy"
 ---
 

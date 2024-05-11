@@ -3,7 +3,7 @@ title: "Where's my hat?"
 date: "2005-12-16"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "wheres-my-hat"
 ---
 

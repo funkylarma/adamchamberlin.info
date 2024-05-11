@@ -3,7 +3,7 @@ title: "This Page Is Valid XHTML 1.0 Transitional!"
 date: "2005-11-17"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "this-page-is-valid-xhtml-10-transitional"
 ---
 

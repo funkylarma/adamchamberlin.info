@@ -3,7 +3,7 @@ title: "it's changed again"
 date: "2006-02-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "its-changed-again"
 ---
 

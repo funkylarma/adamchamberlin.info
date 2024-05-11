@@ -3,7 +3,7 @@ title: "One Red Paperclip"
 date: "2006-07-12"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "one-red-paperclip"
 ---
 

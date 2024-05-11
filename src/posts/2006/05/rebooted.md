@@ -3,7 +3,7 @@ title: "Rebooted"
 date: "2006-05-01"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "rebooted"
 ---
 

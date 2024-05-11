@@ -3,7 +3,7 @@ title: "Graphic Design Poster Competition"
 date: "2008-02-13"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "graphic-design-poster-competition"
 ---
 

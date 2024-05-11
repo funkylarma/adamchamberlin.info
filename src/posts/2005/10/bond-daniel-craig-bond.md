@@ -3,7 +3,7 @@ title: "Bond, Daniel Craig, Bond"
 date: "2005-10-14"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "bond-daniel-craig-bond"
 ---
 

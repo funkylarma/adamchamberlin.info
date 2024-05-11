@@ -3,7 +3,7 @@ title: "Happy Birthday Mr. WordPress"
 date: "2006-02-13"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "happy-birthday-mr-wordpress"
 ---
 

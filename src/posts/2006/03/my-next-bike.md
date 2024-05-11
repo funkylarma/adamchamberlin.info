@@ -3,7 +3,7 @@ title: "My next bike"
 date: "2006-03-06"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "my-next-bike"
 ---
 

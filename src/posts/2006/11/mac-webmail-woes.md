@@ -3,7 +3,7 @@ title: ".mac webmail woes"
 date: "2006-11-06"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "mac-webmail-woes"
 ---
 

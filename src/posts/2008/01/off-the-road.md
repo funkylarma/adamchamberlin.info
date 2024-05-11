@@ -3,7 +3,7 @@ title: "Off The Road"
 date: "2008-01-15"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "off-the-road"
 ---
 

@@ -3,7 +3,7 @@ title: "Petrol Explosions"
 date: "2005-12-12"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "petrol-explosions"
 ---
 

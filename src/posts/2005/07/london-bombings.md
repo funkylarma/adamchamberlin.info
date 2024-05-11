@@ -3,7 +3,7 @@ title: "London Bombings"
 date: "2005-07-07"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "london-bombings"
 ---
 

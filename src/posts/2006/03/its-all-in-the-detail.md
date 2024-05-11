@@ -3,7 +3,7 @@ title: "It's all in the detail"
 date: "2006-03-14"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "its-all-in-the-detail"
 ---
 

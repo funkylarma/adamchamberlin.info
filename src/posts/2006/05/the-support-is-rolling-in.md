@@ -3,7 +3,7 @@ title: "The support is rolling in"
 date: "2006-05-16"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "the-support-is-rolling-in"
 ---
 

@@ -3,7 +3,7 @@ title: "Running update"
 date: "2007-02-28"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "running-update"
 ---
 

@@ -3,7 +3,7 @@ title: "Where have I been?"
 date: "2006-11-29"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "where-have-i-been"
 ---
 

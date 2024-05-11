@@ -3,7 +3,7 @@ title: "veedub unpimped"
 date: "2006-03-07"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "veedub-unpimped"
 ---
 

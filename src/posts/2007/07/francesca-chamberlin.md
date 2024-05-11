@@ -3,7 +3,7 @@ title: "Francesca Chamberlin"
 date: "2007-07-27"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "francesca-chamberlin"
 ---
 

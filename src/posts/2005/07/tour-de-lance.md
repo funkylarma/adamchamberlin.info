@@ -3,7 +3,7 @@ title: "Tour de Lance"
 date: "2005-07-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "tour-de-lance"
 ---
 

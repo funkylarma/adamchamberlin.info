@@ -3,7 +3,7 @@ title: "24th And I'm At Home"
 date: "2007-09-24"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "24th-and-im-at-home"
 ---
 

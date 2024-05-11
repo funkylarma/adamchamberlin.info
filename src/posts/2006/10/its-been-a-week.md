@@ -3,7 +3,7 @@ title: "It's been a week"
 date: "2006-10-20"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "its-been-a-week"
 ---
 

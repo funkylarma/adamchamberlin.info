@@ -3,7 +3,7 @@ title: "No Longer Lost"
 date: "2008-03-26"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "no-longer-lost"
 ---
 

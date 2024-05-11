@@ -3,7 +3,7 @@ title: "My .Mac Home Page"
 date: "2005-08-02"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "my-imac-home-page"
 ---
 

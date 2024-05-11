@@ -3,7 +3,7 @@ title: "forget bird flu this is serious"
 date: "2005-11-28"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "forget-bird-flu-this-is-serious"
 ---
 

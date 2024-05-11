@@ -3,7 +3,7 @@ title: "Christmas washout"
 date: "2008-01-02"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "christmas-washout"
 ---
 

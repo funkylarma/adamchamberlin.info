@@ -3,7 +3,7 @@ title: "Cuddly Aliens"
 date: "2005-11-27"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "cuddly-aliens"
 ---
 

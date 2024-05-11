@@ -3,7 +3,7 @@ title: "How big is big?"
 date: "2005-08-26"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "how-big-is-big"
 ---
 

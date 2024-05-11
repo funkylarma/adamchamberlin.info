@@ -3,7 +3,7 @@ title: "Great Notification Dreamhost"
 date: "2008-03-23"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "great-notification-dreamhost"
 ---
 

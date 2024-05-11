@@ -3,7 +3,7 @@ title: "Flickr Photo Site"
 date: "2005-05-22"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "flickr-photo-site"
 ---
 

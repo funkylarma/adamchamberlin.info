@@ -3,7 +3,7 @@ title: "Camera Upgrade"
 date: "2007-03-20"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "camera-upgrade"
 ---
 

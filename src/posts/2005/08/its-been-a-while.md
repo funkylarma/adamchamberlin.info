@@ -3,7 +3,7 @@ title: "It's been a while"
 date: "2005-08-17"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "its-been-a-while"
 ---
 

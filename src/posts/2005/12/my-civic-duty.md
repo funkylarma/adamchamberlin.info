@@ -3,7 +3,7 @@ title: "My Civic Duty"
 date: "2005-12-16"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "my-civic-duty"
 ---
 
