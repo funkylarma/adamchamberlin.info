@@ -1,9 +1,9 @@
 ---
 title: "Is 2023 the year of the blog?"
 date: "2023-01-23"
-categories: 
+categories:
   - "writing"
-cover: "./src/images/install-step3.png"
+cover: "/images/install-step3.png"
 slug: "is-2023-the-year-of-the-blog"
 ---
 
@@ -19,7 +19,7 @@ Over the last couple of weeks, I have been conducting some work on a new theme f
 
 ## Remember blogging?
 
-{% image "./src/images/install-step3.png", "WordPress 5 minute install" %}
+![WordPress 5 minute install](/images/install-step3.png)
 
 Remember those custom domains, adding some hosting and setting up MySQL connections to perform that classic five-minute installation?
 

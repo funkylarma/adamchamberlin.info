@@ -7,4 +7,4 @@ categories:
 slug: "dark-crystal-2"
 ---
 
-[Looks](http://www.scifi.com/scifiwire/index.php?category=3&id=34445) like the second film might be pushed forward.
+[Looks](https://www.scifi.com/scifiwire/index.php?category=3&id=34445) like the second film might be pushed forward.

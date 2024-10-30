@@ -7,7 +7,7 @@ categories:
 slug: "blag-some-new-kit"
 ---
 
-Online cycle shop [Wiggle](http://www.wiggle.co.uk) are running a competition at the moment where they are giving away a full [Shimano XT groupset](http://www.wiggle.co.uk/range.aspx?n=Shimano-XT-2008-bike-components&Range=25). All you have to do is tell them why you dersve it over all overs. Here is my excuse:
+Online cycle shop [Wiggle](https://www.wiggle.co.uk) are running a competition at the moment where they are giving away a full [Shimano XT groupset](https://www.wiggle.co.uk/range.aspx?n=Shimano-XT-2008-bike-components&Range=25). All you have to do is tell them why you dersve it over all overs. Here is my excuse:
 
 > I think I deserve a new XT groupset as my bike needs one badly and I’ve begged the other half but I can’t buy anything new until she has her wisdom teeth out. So I’m having to ride around using a worn XT which really doesn’t know what gear it wants to be in! And she thinks she is in pain!
 

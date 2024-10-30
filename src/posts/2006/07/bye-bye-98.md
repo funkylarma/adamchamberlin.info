@@ -7,4 +7,4 @@ categories:
 slug: "bye-bye-98"
 ---
 
-Mircosoft is to end all support for [98 and Me](http://www.theregister.co.uk/2006/07/11/ms_ends_windows98_support/) next week. Sorry but it looks like if you want to still recieve all those updates and fixes you had better upgrade, or if you really want you can go back to 3.11 and pretend that the ‘start’ button thing never happened. I pick 3.11 anyday.
+Mircosoft is to end all support for [98 and Me](https://www.theregister.co.uk/2006/07/11/ms_ends_windows98_support/) next week. Sorry but it looks like if you want to still recieve all those updates and fixes you had better upgrade, or if you really want you can go back to 3.11 and pretend that the ‘start’ button thing never happened. I pick 3.11 anyday.

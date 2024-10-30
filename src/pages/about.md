@@ -9,7 +9,7 @@ date: "2022-02-20"
 slug: "about"
 ---
 
-{% image "./src/images/IMG_0900.jpeg", "My daughter running with me as I finish a 50k ultra", "wide" %}
+![My daughter running with me as I finish a 50k ultra](/images/IMG_0900.jpeg){.wide}
 
 Welcome to my online playground and sandbox of ideas and musings.
 

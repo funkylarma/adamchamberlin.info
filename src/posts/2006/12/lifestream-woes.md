@@ -7,4 +7,4 @@ categories:
 slug: "lifestream-woes"
 ---
 
-I have been trying to set up [Chris](http://www.chrisjdavis.org/)’ latest offering to the WordPress community; the [LifeStream](http://www.chrisjdavis.org/2006/11/26/lifestream-ala-wordpress/) plugin. Everything looks to be working apart from my [Twitter](http://twitter.com/FunkyLarma) feed, I just can;t seem to get it to show up. I’ve run the feed through [FeedBurner](http://www.feedburner.com/fb/a/myfeeds), along with other feeds but no joy.
+I have been trying to set up [Chris](https://www.chrisjdavis.org/)’ latest offering to the WordPress community; the [LifeStream](https://www.chrisjdavis.org/2006/11/26/lifestream-ala-wordpress/) plugin. Everything looks to be working apart from my [Twitter](https://twitter.com/FunkyLarma) feed, I just can;t seem to get it to show up. I’ve run the feed through [FeedBurner](https://www.feedburner.com/fb/a/myfeeds), along with other feeds but no joy.

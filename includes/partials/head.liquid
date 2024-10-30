@@ -1,0 +1,45 @@
+<head>
+  <meta charset="utf-8">
+
+  <!-- Title and description -->
+  <title>
+    {% if title %}
+      {{ title }} | {{ metadata.title }}
+    {% elsif pagination.pageNumber != 0 %}
+      {{ metadata.title }} | Archive - Page {{ pagination.pageNumber | plus: 1 }}
+    {% else %}
+      {{ metadata.title }} | {{ metadata.tagline }}
+    {% endif %}
+  </title>
+
+  <!-- Meta Details -->
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="{{ eleventy.generator }}" built="{% currentBuildDate %}" />
+  <meta name="robots" content="index, follow" />
+  <meta name="fediverse:creator" content="@FunkyLarma@mastodon.social">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
+  <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}" />
+  <meta property="og:type" content="article" />
+  <meta property="article:author" content="{{ metadata.author.name }}">
+
+  <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
+  <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
+  <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
+  <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
+  <link type="text/plain" rel="author" href="{{ "/humans.txt" | absoluteUrl }}" /">
+  <link rel="author" href="{{ metadata.author.name }}" />
+  <link rel="stylesheet" href="/assets/css/screen.css" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
+  <!-- End Google Tag Manager -->
+
+</head>

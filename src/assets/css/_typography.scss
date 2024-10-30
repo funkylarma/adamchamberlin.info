@@ -31,12 +31,11 @@ h3,
 h4,
 .h4 {
   font-size: $h4-font-size;
-  color: color("gray");
 }
 
 p,
 li {
-  font-size: $text-font-size; 
+  font-size: $text-font-size;
 }
 
 p {
@@ -71,7 +70,7 @@ strong {
 a:not(.button) {
   color: $link-color;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -80,8 +79,6 @@ a:not(.button) {
 code:not([class*="language"]) {
   display: inline-flex;
   padding: 0.15em;
-  background-color: color("light");
-  color: color("gray");
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   border: 1px solid var(--main-color-base);
   border-radius: 2px;
@@ -100,7 +97,6 @@ blockquote {
   margin-right: 0;
   padding-left: 1.5rem;
   border-left: 2px solid var(--main-color-secondary);
-  color: color("gray");
 
   &,
   p {

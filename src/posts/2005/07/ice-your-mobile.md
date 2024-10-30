@@ -25,7 +25,7 @@ I have recieved so many emails about this idea I thought it best to share it wit
 > 
 > —— End of original message ——
 > 
-> There is a press release about this initiative at href=“http://www.eastanglianambulance.com/content/news/newsdeta il.asp?newsID=646104183"http://www.eastanglianambulance.com/co ntent/news/newsdetail.asp?newsID=646104183.
+> There is a press release about this initiative at href=“https://www.eastanglianambulance.com/content/news/newsdeta il.asp?newsID=646104183"https://www.eastanglianambulance.com/co ntent/news/newsdetail.asp?newsID=646104183.
 > 
 > I am sending this message to all my email lists so apologies if you get multiple copies. Please forward as widely as you can.
 
