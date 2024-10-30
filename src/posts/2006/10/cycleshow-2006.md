@@ -1,7 +1,7 @@
 ---
 title: "Cycleshow 2006"
 date: "2006-10-06"
-categories: 
+categories:
   - "writing"
 
 slug: "cycleshow-2006"
@@ -11,28 +11,35 @@ This week end the excel center in London will play host to the 2006 Cycleshow. S
 
 ## The smaller fry
 
-[![Custom Kona](/images/261749920_a4cfa5398f_m.jpg)](http://www.flickr.com/photos/funkylarma/261749920/)
+<!-- ![Photo sharing](/images/261749920.jpg) -->
 
-[![Cannondale](/images/261693276_a5ba3e6ad6_m.jpg)](http://www.flickr.com/photos/funkylarma/261693276/)
+<!-- ![Photo sharing](./images/261693276.jpg) -->
 
 Moving round the outside you got a feel for the price of the floor space here, yep the little people where all gathered round the perimeter with some not even set up yet. One of the best stalls was Pauls Custom Cycles. If you have watched American Chopper you will know where this is heading. Paul takes a standard bike; Kona in this case and then tricks it out with some crazy chromed bling treats. The results where amazing and I’m sorry for not seeing the sign that said do not touch! After a good few minutes we headed back inland to find the USE importer stand and a cup of coffee. The main show case here was a lovely Cannondale sporting the new USE tri bars. These bars are no in production yet, planned for early 2007, but break from the norm by having a horizontal brake lever. As Rob spoke about deals I carried on admiring the Cannondale and the Moots frame on the stand behind. Moots have some of the cleanest welding on any frame out there and the simple colour scheme used makes them instantly recognisable.
 
 ## New from the big stables
 
-[![Look](/images/261716814_3458b8b922_m.jpg)](http://www.flickr.com/photos/funkylarma/261716814/)
+<!-- ![Photo sharing](/images/261716814.jpg) -->
 
-[![Colnago](/images/261753049_8719f2ba98_m.jpg)](http://www.flickr.com/photos/funkylarma/261753049/)
+<!-- ![Photo sharing](/images/261753049.jpg) -->
 
-[![Roval](/images/261733242_26631ef41c_m.jpg)](http://www.flickr.com/photos/funkylarma/261733242/)
+<!-- ![Photo sharing](/images/261733242.jpg) -->
 
-[![XTR](/images/261730217_1071f71bed_m.jpg)](http://www.flickr.com/photos/funkylarma/261730217/)
+<!-- ![Photo sharing](/images/261730217.jpg) -->
 
 We started off again but this time heading for the bigger names. The big thing and name to have this year was Sram Force; no ends of stands were boasting their latest machine fitted with the new wonder groupset. Fisher, the UK importer of Sram, of course had a test and try set up. I spent a few minutes there watching people try the gears and listening to the nay sayers claim how difficult it is to use; get with it people! Moving from Sram promptly lead me to the Look stand. Since riding a couple of Look frames I have grown to love the style and feel of their carbon. I found a couple of interesting products, namely the 595 frame; in both white and black. They also had the limited edition versions of the 585 and 565 which will be released later next year. We moved on to see more names and brands; Felt was the next with their seriously well engineered TT bike. After taking in the we stumbled across Scot’s version; the Plasma and then the worlds lightest production frame. This was all getting too much for me I needed something just to keep me in check, what I didn’t need was the Limited Edition Colnago bike. Just looking at this thing puts you in a trance, the paintwork is stunning and it definitely is not a machine you would use day to day. There of course where the other Colnago frames there, they all look too good to ride as you would just be worrying about chipping that paint work. Specialized were there with a huge stand, everything they are currently putting into the sport was on show. On road, off road, male, female, it didn’t matter it was there. It was a chance for me to finally see first hand the Roval wheels on the new S-Works road bike. Having spent a good 5 minutes staring at them I decided that they were still a bit too garish for me, until I found them in a black hub. With the colours toned down they did not look as bad and you could almost say you would ride them. The red just brings too much attention to the fact they are so strange. We moved onto the Park Tools stand were I found one of the best hidden secrets of the show. A full XTR 2007 prototype groupset. Everything was there, mech’s shifters and wheels. The crank arms even had prototype stamped on them. The final look of this groupset is moving towards the machined out look of the Sram off road gear but the levers felt very usable and solid. Once again the levers have moved position and you can use the entire brake lever for shifting making it almost as ergonomic as the X0 levers. The mechanisms are looking very tasty and look to be well designed and made. I’ve never tried any Shimano brakes so I can not judge them but they still do not quite have the look of the Magura counterparts yet.
 
 ## The best of the rest
 
-Rather than trying to type my through the entire 6 hours of sights and sounds I will instead shower you with a few photographs to wet your appetite. [![Electra](/images/261692667_458fb5f96d_m.jpg)](http://www.flickr.com/photos/funkylarma/261692667/ "Photo Sharing") [![Iron Horse](/images/261683970_1b59b44f60_m.jpg)](http://www.flickr.com/photos/funkylarma/261683970/ "Photo Sharing") [![Principia](/images/261722098_94f31d01cf_m.jpg)](http://www.flickr.com/photos/funkylarma/261722098/ "Photo Sharing") [![Condor](/images/261736894_2f72f64d41_m.jpg)](http://www.flickr.com/photos/funkylarma/261736894/ "Photo Sharing") [![Litespeed](/images/261705956_dbe5585a56_m.jpg)](http://www.flickr.com/photos/funkylarma/261705956/ "Photo Sharing") [![BMC](/images/261751805_0779cdb7b1_m.jpg)](http://www.flickr.com/photos/funkylarma/261751805/ "Photo Sharing")
+Rather than trying to type my through the entire 6 hours of sights and sounds I will instead shower you with a few photographs to wet your appetite.
+
+<!-- [![Electra](/images/261692667_458fb5f96d_m.jpg)](https://www.flickr.com/photos/funkylarma/261692667/ "Photo Sharing") -->
+<!-- [![Iron Horse](/images/261683970_1b59b44f60_m.jpg)](https://www.flickr.com/photos/funkylarma/261683970/ "Photo Sharing") -->
+<!-- [![Principia](/images/261722098_94f31d01cf_m.jpg)](https://www.flickr.com/photos/funkylarma/261722098/ "Photo Sharing") -->
+<!-- [![Condor](/images/261736894_2f72f64d41_m.jpg)](https://www.flickr.com/photos/funkylarma/261736894/ "Photo Sharing") -->
+<!-- [![Litespeed](/images/261705956_dbe5585a56_m.jpg)](https://www.flickr.com/photos/funkylarma/261705956/ "Photo Sharing") -->
+<!-- [![BMC](/images/261751805_0779cdb7b1_m.jpg)](https://www.flickr.com/photos/funkylarma/261751805/ "Photo Sharing") -->
 
 ## The aftershow party
 
-On the drive home Rob and I spoke about the day and to be honest there was nothing there that really had that ‘wow’ factor. Yes there were some lovely machines and you could easily get lost in the carbon but it lacked that conversational piece. You know the feeling where you see something that just makes you stop and look. I missed the event last year so it was good to finally get there, despite the fact that this year was smaller. I would go again next year and if any one is thinking of going then definitely make the trip; just try and stay away from the £3/hour car park! Of course I got trigger happy with the camera, check out the rest of the photo’s on [Flickr](http://www.flickr.com/photos/funkylarma/sets/72157594314501698/ "cycle show")
+On the drive home Rob and I spoke about the day and to be honest there was nothing there that really had that ‘wow’ factor. Yes there were some lovely machines and you could easily get lost in the carbon but it lacked that conversational piece. You know the feeling where you see something that just makes you stop and look. I missed the event last year so it was good to finally get there, despite the fact that this year was smaller. I would go again next year and if any one is thinking of going then definitely make the trip; just try and stay away from the £3/hour car park! Of course I got trigger happy with the camera, check out the rest of the photo’s on [Flickr](https://www.flickr.com/photos/funkylarma/sets/72157594314501698/ "cycle show")

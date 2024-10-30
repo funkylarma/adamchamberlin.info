@@ -7,7 +7,7 @@ categories:
 slug: "from-one-ring-to-another"
 ---
 
-It looks like Peter Jackson of ‘Lords of the Rings’ fame is going to take on another ring; the infamous Halo. I found [this](http://www.xboxsolution.com/article2672.html) link on a Xbox site.
+It looks like Peter Jackson of ‘Lords of the Rings’ fame is going to take on another ring; the infamous Halo. I found [this](https://www.xboxsolution.com/article2672.html) link on a Xbox metadata.
 
 > Universal Pictures and Twentieth Century Fox announced today that triple-Academy Award winners Peter Jackson and Fran Walsh will serve as the executive producers of HALO, the upcoming feature film based on Microsoft’s phenomenally popular video game from Bungie Studios
 

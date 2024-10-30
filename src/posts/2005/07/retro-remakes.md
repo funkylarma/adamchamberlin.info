@@ -13,4 +13,4 @@ Anyway on to the post,i found an absolute class site the other day which has som
 
 Clicking on the link below will whisk you away to remake land,enjoy!!!!
 
-[Classic Remakes Here!!](http://www.merseyremakes.co.uk/blog/)
+[Classic Remakes Here!!](https://www.merseyremakes.co.uk/blog/)

@@ -1,24 +1,24 @@
-const path = require('path'),
-      slugify = require('slugify');
+import path from 'path';
+import slugify from 'slugify';
 
 /** Maps a config of attribute-value pairs to an HTML string
  * representing those same attribute-value pairs.
  */
-const stringifyAttributes = (attributeMap) => {
+export const stringifyAttributes = (attributeMap) => {
   return Object.entries(attributeMap)
     .map(([attribute, value]) => {
-      if (typeof value === 'undefined') return '';
+      if (typeof value === "undefined") return "";
       return `${attribute}="${value}"`;
     })
-    .join(' ');
+    .join(" ");
 };
 
 /** Converts the given string to a slug form. */
-const slugifyString = (str) => {
+export const slugifyString = (str) => {
   return slugify(str, {
     lower: true,
     strict: true,
-    replacement: '-',
+    replacement: "-",
     remove: /[#,&,+()$~%.'":*?<>{}]/g,
   });
 };
@@ -26,10 +26,6 @@ const slugifyString = (str) => {
 /**
  * @param {string} pathString
  */
-const withoutBaseDirectory = (pathString) => pathString.substring(pathString.indexOf(path.sep));
-
-module.exports = {
-  stringifyAttributes,
-  slugifyString,
-  withoutBaseDirectory
-};
+export const withoutBaseDirectory = (pathString) => {
+  pathString.substring(pathString.indexOf(path.sep));
+}

@@ -2,7 +2,7 @@
   "name": "adamchamberlin.info",
   "version": "2.0.0",
   "description": "Welcome to the online playground of Adam Chamberlin. Consummate Athlete And DOM Element Wrangler.",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve --quiet",
@@ -20,7 +20,7 @@
   },
   "license": "",
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "bugs": {
     "url": "https://github.com/funkylarma/adamchamberlin.info/issues"
@@ -28,25 +28,26 @@
   "homepage": "https://github.com/funkylarma/adamchamberlin.info/blob/master/README.md",
   "keywords": [],
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.3.0",
-    "dayjs": "^1.11.11",
+    "dayjs": "^1.11.13",
     "fast-glob": "^3.3.2",
-    "luxon": "^3.4.4",
+    "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^8.6.7",
-    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-anchor": "^9.0.0",
+    "markdown-it-attrs": "^4.2.0",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-prism": "^2.3.0"
   },
   "dependencies": {
-    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-img": "^5.0.0",
     "dotenv": "^16.4.5",
     "eleventy-plugin-redirects": "^1.0.0",
-    "eleventy-plugin-youtube-embed": "^1.10.2",
+    "eleventy-plugin-youtube-embed": "^1.11.0",
     "lodash": "^4.17.21",
     "outdent": "^0.8.0"
   }

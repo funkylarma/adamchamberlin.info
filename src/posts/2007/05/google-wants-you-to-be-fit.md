@@ -9,7 +9,7 @@ slug: "google-wants-you-to-be-fit"
 
 Follow these simple steps:
 
-- Go to [www.google.co.uk](http://www.google.co.uk)
+- Go to [www.google.co.uk](https://www.google.co.uk)
 - Click on maps
 - Click on get directions
 - Go from “Atlanta” to “Paris, France”

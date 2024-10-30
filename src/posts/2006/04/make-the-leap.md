@@ -7,4 +7,4 @@ categories:
 slug: "make-the-leap"
 ---
 
-The [site](http://www.willyoumaketheleap.com/) went live last week but I’ve not had time to really look around but Sram’s new road groupset is looking very sweet.
+The [site](https://www.willyoumaketheleap.com/) went live last week but I’ve not had time to really look around but Sram’s new road groupset is looking very sweet.

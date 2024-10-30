@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.locale }}">
+<html lang="{{ metadata.locale }}">
   {% include "partials/head.liquid" %}
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -12,11 +12,11 @@
         <header class="mast-head">
           <div class="content">
             <figure>
-              <img src="/assets/images/logo_dark.svg" alt="Site logo" width="64" />
+              <img src="/assets/images/logo_dark.svg" alt="Site logo" width="64" height="43" eleventy:ignore />
             </figure>
             <nav class="nav">
               <menu class="">
-              {% for item in site.navigation_primary %}
+              {% for item in metadata.navigation_primary %}
                 <li class="nav-item {% if item.class %}{{ item.class }}{% endif %}">
                   <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
                     {{ item.label }}
@@ -34,7 +34,7 @@
           <div class="content">
             <nav class="footer">
               <menu class="navigation-footer">
-              {% for item in site.navigation_footer %}
+              {% for item in metadata.navigation_footer %}
                 <li class="nav-item {% if item.class %}{{ item.class }}{% endif %}">
                   <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
                     {{ item.label }}
@@ -45,7 +45,7 @@
             </nav>
             {% include "partials/social.liquid" %}
             <div class="copyright">© Adam Chamberlin 2005-{% year %}</div>
-          </div><!-- .content -->  
+          </div><!-- .content -->
         </footer>
       </div><!-- .content -->
     </div><!-- .container -->

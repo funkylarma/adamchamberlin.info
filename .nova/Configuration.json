@@ -1,8 +1,12 @@
 {
+  "index.enabled" : true,
   "index.ignored_file_patterns" : [
     "_site"
   ],
+  "index.symbolicate" : true,
   "workspace.art_style" : 1,
-  "workspace.color" : 8,
-  "workspace.name" : "adamchamberlin.info"
+  "workspace.color" : 5,
+  "workspace.name" : "adamchamberlin.info",
+  "workspace.preview_type" : "custom",
+  "workspace.preview_url" : "http:\/\/localhost:8080\/"
 }

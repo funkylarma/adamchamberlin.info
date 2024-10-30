@@ -1,7 +1,5 @@
-module.exports = {
-  
+export default {
   eleventyComputed: {
-    
-    eleventyExcludeFromCollections: true
-  }
-}
+    eleventyExcludeFromCollections: true,
+  },
+};

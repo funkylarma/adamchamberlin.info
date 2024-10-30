@@ -12,9 +12,9 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
 
 <div class="site-intro">
   <div class="site-intro-content">
-    <h1 class="site-title">{{ site.title }}</h1>
+    <h1 class="site-title">{{ metadata.title }}</h1>
     <div class="site-tagline">
-      <p>{{ site.tagline }}</p>
+      <p>{{ metadata.tagline }}</p>
     </div><!-- .site-tagline -->
   </div><!-- .content -->
 </div><!-- .site-intro -->
@@ -25,10 +25,10 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
     <article class="post">
       {% if post.data.cover %}
         <div class="post-image">
-          {% image post.data.cover, post.title %}
+          <img src="{{ post.data.cover }}" alt="{{ post.title }}" />
         </div><!-- .post-image -->
       {% endif %}
-      <div class="post-content">     
+      <div class="post-content">
         <div class="post-head">
           <h2>
             <a href="{{ post.url }}" class="post-link">
@@ -41,8 +41,8 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
           </h2>
           <div class="post-meta">
             <p>
-              <span>Date: </span> <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> | 
-              <span>Category: </span>{{ post.data.categories }} | 
+              <span>Date: </span> <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> |
+              <span>Category: </span>{{ post.data.categories }} |
               <span>Estimated: </span> {{ post.templateContent | emojiReadTime }}
             </p>
           </div><!-- .post-meta -->

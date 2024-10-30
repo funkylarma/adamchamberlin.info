@@ -10,4 +10,4 @@ slug: "its-a-billet"
 > `bil'let _noun_   a small bar of metal for further processing.`
 
 Or in this case my first K2 style.  
-[Billet - R1](http://www.shibbyonline.co.uk/media/wp/)
+[Billet - R1](https://www.shibbyonline.co.uk/media/wp/)
