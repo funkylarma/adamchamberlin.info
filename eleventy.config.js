@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import {
   IdAttributePlugin,
   InputPathToUrlTransformPlugin,
@@ -24,7 +25,6 @@ import pluginShortcodes from "./shortcodes/index.js";
 import { markdown } from "./plugins/markdown.js";
 
 export default async function (eleventyConfig) {
-
   eleventyConfig.setLiquidOptions({
     // Allows for dynamic include/partial names. If true, include names must be quoted. Defaults to true as of beta/1.0.
     dynamicPartials: true,
@@ -86,22 +86,16 @@ export default async function (eleventyConfig) {
   );
 
   return {
-
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid
-    templateFormats: [
-      "md",
-      "njk",
-      "html",
-      "liquid",
-    ],
+    templateFormats: ["md", "njk", "html", "liquid"],
 
     // Inputs and outputs:
     dir: {
-      input: "./src",             // default: "."
-      includes: "../includes",  // default: "_includes"
-      data: "../data",          // default: "_data"
-      output: "_site"
+      input: "./src", // default: "."
+      includes: "../includes", // default: "_includes"
+      data: "../data", // default: "_data"
+      output: "_site",
     },
     pathPrefix: "/",
   };

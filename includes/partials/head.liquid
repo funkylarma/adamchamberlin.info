@@ -23,6 +23,7 @@
   <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
   <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
   <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}" />
+  <meta property="og:image" content="{% openGraphImage %}">
   <meta property="og:type" content="article" />
   <meta property="article:author" content="{{ metadata.author.name }}">
 
