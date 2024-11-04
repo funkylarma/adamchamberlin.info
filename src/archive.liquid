@@ -1,0 +1,61 @@
+---
+layout: default.liquid
+templateEngineOverride: njk
+permalink: "/archive/"
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: Archives
+  filter:
+  - page
+---
+
+<div class="site-intro">
+  <div class="site-intro-content">
+    <h1 class="site-title">{{ title }}</h1>
+  </div><!-- .content -->
+</div><!-- .site-intro -->
+
+<section class="post-list">
+
+  <!-- Tags -->
+  <div class="post-list-content">
+    <h2>By Tag</h2>
+    <ul>
+      {%- for tag, val in collections.tagList | dictsort -%}
+        <li>
+          <a href="/tagged/{{tag}}">{{ tag }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div><!-- .content -->
+
+  <!-- Categories -->
+  <div class="post-list-content">
+    <h2>By Category</h2>
+    <ul>
+      {%- for cat, val in collections.categoryList | dictsort -%}
+        <li>
+          <a href="/category/{{cat}}">{{ cat }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div><!-- .content -->
+
+  <div class="post-list-content">
+    <h2>By Date</h2>
+    {% for year, yearPosts in collections.postsByYear %}
+      <h3>{{ year }}</h3>
+      <ul>
+        {% for post in yearPosts | reverse %}
+          <li>
+            <a href="{{ post.url }}" class="post-link">
+              {{ post.data.title }}
+            </a>
+            -
+            <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div><!-- .content -->
+</section> <!-- End post list -->

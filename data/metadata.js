@@ -35,6 +35,12 @@ export default {
       url: "/about/",
     },
     {
+      label: "Archives",
+      class: "archive",
+      title: "History",
+      url: "/archive/",
+    },
+    {
       label: "Social",
       class: "social",
       title: "Lets get social",

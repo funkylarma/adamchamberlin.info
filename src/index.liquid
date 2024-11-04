@@ -42,7 +42,12 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
           <div class="post-meta">
             <p>
               <span>Date: </span> <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> |
-              <span>Category: </span>{{ post.data.categories }} |
+              {% if post.data.categories %}
+              <span>Category: </span>{%- for category in post.data.categories -%}<a href="/category/{{category}}">{{ category }}</a> {%- endfor -%} |
+              {% endif %}
+              {% if post.data.tags != "post" %}
+              <span>Tagged: </span>{%- for tag in post.data.tags -%}{% if tag != 'post' %}<a href="/tagged/{{tag}}">{{ tag }}</a> {% endif %}{%- endfor -%} |
+              {% endif %}
               <span>Estimated: </span> {{ post.templateContent | emojiReadTime }}
             </p>
           </div><!-- .post-meta -->

@@ -63,7 +63,7 @@ footer {
   width: 100%;
 
   .site-intro-content {
-    max-width: var(--main-layout-width-narrow);
+    max-width: var(--main-layout-width-normal);
     text-align: center;
     padding-top: 8vh;
     padding-bottom: 5vh;
@@ -196,8 +196,7 @@ footer {
       margin-right: auto;
       margin-bottom: 5rem;
 
-      picture
-      img {
+      picture img {
         &.wide {
           display: block;
           width: 140%;
@@ -270,8 +269,7 @@ footer {
       margin-right: auto;
       margin-bottom: 5rem;
 
-      picture
-      img {
+      picture img {
         &.wide {
           display: block;
           width: 140%;

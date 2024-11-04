@@ -3,7 +3,6 @@ import Image from "@11ty/eleventy-img";
 import metadata from "../data/metadata.js";
 
 export default function (eleventyConfig) {
-
   eleventyConfig.addFilter("excerpt", (post) => {
     const content = post.replace(/(<([^>]+)>)/gi, "");
     return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
