@@ -1,0 +1,53 @@
+---
+title: Social Image Preview
+eleventyExcludeFromCollections: true
+templateEngineOverride: njk
+pagination:
+  data: collections.all
+  size: 1
+  alias: preview
+permalink: "ogi/{{ preview.data.date }}-{{ preview.data.title | slugify }}-preview.svg"
+---
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+{% set titleInLines = preview.data.title | splitlines %}
+{% set numberOfLines = titleInLines.length %}
+{% if numberOfLines == 1 %}
+    {% set verticalStartingPoint = 340 %}
+{% elseif numberOfLines == 2 %}
+    {% set verticalStartingPoint = 290 %}
+{% elseif numberOfLines == 3 %}
+    {% set verticalStartingPoint = 250 %}
+{% elseif numberOfLines == 4 %}
+    {% set verticalStartingPoint = 210 %}
+{% endif %}
+
+<svg width="1452px" height="843px" viewBox="0 0 1452 843" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+      <style>
+          @font-face {
+              font-family: Inter;
+              src: url("data:application/font-woff;base64,AAEAAAATAQAABAAwR0RFRv4pBjw....")
+          }
+      </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="white" />
+
+  <text text-anchor="start" font-family="'Giant Head OT', Helvetica, sans-serif" font-size="200">
+      <tspan x="80" y="350">bn</tspan>
+  </text>
+
+  <line x1="300" y1="80" x2="300" y2="548" stroke="black" />
+
+  <text font-family="Asap, Helvetica, sans-serif" font-size="30">
+      <tspan x="350" y="{{verticalStartingPoint - 90}}">{{ preview.date | readableDate }}</tspan>
+  </text>
+
+  <text id="text" font-family="Asap, Helvetica, sans-serif" font-size="80" font-weight="bold">
+  {% for line in titleInLines %}
+      <tspan x="350" y="{{verticalStartingPoint + loop.index0 * 80}}">{{ line }}</tspan>
+  {% endfor %}
+  </text>
+
+</svg>
