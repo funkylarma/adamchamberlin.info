@@ -9,6 +9,28 @@ export default function (eleventyConfig) {
     return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
   });
 
+  eleventyConfig.addFilter('splitlines', function(input) {
+      const parts = input.split(' ');
+      const lines = parts.reduce(function(prev, current) {
+
+      if (!prev.length) {
+          return [current];
+      }
+
+      let lastOne = prev[prev.length - 1];
+
+      if (lastOne.length + current.length > 19) {
+          return [...prev, current];
+      }
+
+      prev[prev.length - 1] = lastOne + ' ' + current;
+
+      return prev;
+      }, []);
+
+      return lines;
+  });
+
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
     // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
     return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
