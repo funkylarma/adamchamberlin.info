@@ -16,6 +16,9 @@ import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
 // Import some utilities
 import { dir, imagePaths, scriptDirs } from "./utils/constants.js";
 
+// Import the local collections
+import pluginCollections from "./collections/index.js";
+
 // Import the local filters
 import pluginFilters from "./filters/index.js";
 
@@ -35,6 +38,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./src/assets/fonts": "/assets/fonts",
     "./src/assets/images": "/assets/images",
+    "./src/assets/icons": "/assets/icons",
   });
 
   // Watch content images for the image pipeline.
@@ -78,6 +82,8 @@ export default async function (eleventyConfig) {
   // Filters
   eleventyConfig.addPlugin(pluginFilters);
 
+  eleventyConfig.addPlugin(pluginCollections);
+
   // Template filters
   eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
   eleventyConfig.addLiquidFilter(
@@ -86,53 +92,6 @@ export default async function (eleventyConfig) {
   );
 
   // Collections
-  eleventyConfig.addCollection("categoryList", (collection) => {
-    let catSet = {};
-    collection.getAll().forEach((item) => {
-      if (!item.data.categories) return;
-      item.data.categories
-        .filter((cat) => !["posts", "all"].includes(cat))
-        .forEach((cat) => {
-          if (!catSet[cat]) {
-            catSet[cat] = [];
-          }
-          catSet[cat].push(item);
-        });
-    });
-    return catSet;
-  });
-
-  eleventyConfig.addCollection("tagList", (collection) => {
-    const tagsSet = {};
-    collection.getAll().forEach((item) => {
-      if (!item.data.tags) return;
-      item.data.tags
-        .filter((tag) => !["posts", "all"].includes(tag))
-        .forEach((tag) => {
-          if (!tagsSet[tag]) {
-            tagsSet[tag] = [];
-          }
-          tagsSet[tag].push(item);
-        });
-    });
-    return tagsSet;
-  });
-
-  eleventyConfig.addCollection("postsByYear", (collection) => {
-    const posts = collection.getFilteredByTag("post").reverse();
-    const years = posts.map((post) => post.date.getFullYear());
-    const uniqueYears = [...new Set(years)];
-
-    const postsByYear = uniqueYears.reduce((prev, year) => {
-      const filteredPosts = posts.filter(
-        (post) => post.date.getFullYear() === year
-      );
-
-      return [...prev, [year, filteredPosts]];
-    }, []);
-
-    return postsByYear;
-  });
 
   eleventyConfig.on("afterBuild", () => {
     const ogiDir = "./src/assets/ogi/";

@@ -1,9 +1,9 @@
 ---
-title: Social Image Preview
 eleventyExcludeFromCollections: true
+title: Social Image Preview
 templateEngineOverride: njk
 pagination:
-  data: collections.post
+  data: collections.all
   size: 1
   alias: preview
 permalinkBypassOutputDir: true
@@ -40,9 +40,11 @@ permalink: "./src/assets/ogi/{{ preview.data.date }}-{{ preview.data.title | slu
 
 <line x1="200" y1="80" x2="200" y2="550" stroke="#f24405" />
 
+{% elseif "post" in preview.data.tags %}
 <text font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="30" fill="#348888">
     <tspan x="250" y="{{verticalStartingPoint - 90}}">{{ preview.date | readableDate }}</tspan>
 </text>
+{% endif %}
 
 <text id="text" font-family="'Plus Jakarta Sans', Helvetica, sans-serif" font-size="80" fill="#348888">
 {% for line in titleInLines %}

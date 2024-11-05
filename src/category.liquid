@@ -1,0 +1,23 @@
+---
+layout: default.liquid
+title: "Categories"
+pagination:
+  data: collections.categoryList
+  size: 1
+  alias: category
+permalink: "category/{{ category }}/"
+---
+
+<div class="site-intro">
+  <div class="site-intro-content">
+    <h1 class="site-title">Category: "{{ category }}"</h1>
+  </div><!-- .content -->
+</div><!-- .site-intro -->
+
+<section class="post-list">
+  <div class="post-list-content">
+    {%- for post in collections.categoryList[category] reversed -%}
+      {% include "partials/article.liquid" %}
+    {%- endfor -%}
+  </div><!-- .content -->
+</section> <!-- End post list -->

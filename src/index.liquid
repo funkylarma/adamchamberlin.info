@@ -1,5 +1,6 @@
 ---
 layout: default.liquid
+title: "Adam Chamberlin"
 pagination:
   data: collections.post
   size: 10
@@ -22,46 +23,7 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
 <section class="post-list">
   <div class="post-list-content">
     {%- for post in pagination.items -%}
-    <article class="post">
-      {% if post.data.cover %}
-        <div class="post-image">
-          <img src="{{ post.data.cover }}" alt="{{ post.title }}" />
-        </div><!-- .post-image -->
-      {% endif %}
-      <div class="post-content">
-        <div class="post-head">
-          <h2>
-            <a href="{{ post.url }}" class="post-link">
-              {% if post.data.title %}
-                {{ post.data.title }}
-              {% else %}
-                <code>{{ post.url }}</code>
-              {% endif %}
-            </a>
-          </h2>
-          <div class="post-meta">
-            <p>
-              <span>Date: </span> <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> |
-              {% if post.data.categories %}
-              <span>Category: </span>{%- for category in post.data.categories -%}<a href="/category/{{category}}">{{ category }}</a> {%- endfor -%} |
-              {% endif %}
-              {% if post.data.tags != "post" %}
-              <span>Tagged: </span>{%- for tag in post.data.tags -%}{% if tag != 'post' %}<a href="/tagged/{{tag}}">{{ tag }}</a> {% endif %}{%- endfor -%} |
-              {% endif %}
-              <span>Estimated: </span> {{ post.templateContent | emojiReadTime }}
-            </p>
-          </div><!-- .post-meta -->
-        </div><!-- .post-head -->
-        {% if post.data.categories contains "writing" %}
-          <div class="post-excerpt">
-            <p>{{ post.templateContent | excerpt }}</p>
-            <div class="continue-reading">
-              <a href="{{ post.url }}">Read More...</a>
-            </div><!-- .continue-reading -->
-          </div><!-- .post-excerpt -->
-        {% endif %}
-      </div><!-- .post-content -->
-    </article> <!-- End Post article-->
+      {% include "partials/article.liquid" %}
     {%- endfor -%}
   </div><!-- .content -->
 </section> <!-- End post list -->
