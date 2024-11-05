@@ -7,6 +7,6 @@ categories:
 slug: "transformers"
 ---
 
-<!-- ![Photo sharing](/images/17823344.jpg) -->
+![Photo sharing](/images/17823344.jpg)
 
 New trailer released. Need you say any more.

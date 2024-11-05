@@ -6,7 +6,7 @@ categories:
 slug: "my-next-bike"
 ---
 
-<!-- ![Photo sharing](/images/108636993.jpg) -->
+![Photo sharing](/images/108636993.jpg)
 
 I spent most of the afternoon in Rob’s shop the other day, well I was bored, and whilst I walked around I found my next bike. It was a [Electra](https://www.electrabike.com/) Ghost Rider, a slung back cruiser.
 

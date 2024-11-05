@@ -6,7 +6,7 @@ categories:
 slug: "a-theme-is-born"
 ---
 
-<!-- ![Blog Ideas](/images/104540922.jpg) -->
+![Blog Ideas](/images/104540922.jpg)
 
 It has been in the back of my mind for quite a while now; create your own [WordPress](https://wordpress.org) theme.
 

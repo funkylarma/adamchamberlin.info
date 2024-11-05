@@ -7,7 +7,7 @@ categories:
 slug: "summer-storm"
 ---
 
-<!-- ![Lightening](/images/22316186.jpg) -->
+![Lightening](/images/22316186.jpg)
 
 Last night we experienced one of the best electric storms we have had so far this year.
 It is hardly surprising the weather has been getting hotter and hotter and the air just so ‘heavy’ with that close feeling about it that you knew it was going to happen.

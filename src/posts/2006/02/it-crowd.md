@@ -6,7 +6,7 @@ categories:
 slug: "it-crowd"
 ---
 
-<!-- ![IT Crowd](/images/95394124.jpg) -->
+![IT Crowd](/images/95394124.jpg)
 
 I’ve had the first two episodes of the [IT Crowd](https://www.channel4.com/entertainment/tv/microsites/I/itcrowd/index.html) on my iPaq for a few days, good to watch when board or on the move, but last night Channel 4 ran a double bill.
 

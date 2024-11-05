@@ -7,7 +7,7 @@ categories:
 slug: "core-bike-show"
 ---
 
-<!-- ![Corebike Show](/images/90745722.jpg) -->
+![Corebike Show](/images/90745722.jpg)
 
 Yesterday afternoon was taken as a jolly. In other words work got the boot and I spent the time traveling to the [Core Bike Show](https://corebike.co.uk/).
 This event is a trade show for the major importers of all things cycling, so I had to take on the role of ‘Web Designer’ for LifecycleUK, despite the fact that Rob actually signed me up as office gimp! Matt (the only real employee of LifeCycle) was 'Mechanic’.

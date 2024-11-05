@@ -7,7 +7,7 @@ categories:
 slug: "paris-roubaix"
 ---
 
-<!-- ![Photo sharing](/images/125918299.jpg) -->
+![Photo sharing](/images/125918299.jpg)
 
 Lucy recorded the Paris-Roubaix cycle race for me today as I was; as usual out on my bike.
 

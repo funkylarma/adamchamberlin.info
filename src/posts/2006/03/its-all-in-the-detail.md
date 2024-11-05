@@ -7,7 +7,7 @@ categories:
 slug: "its-all-in-the-detail"
 ---
 
-<!-- ![Photo sharing](/images/112410916.jpg) -->
+![Photo sharing](/images/112410916.jpg)
 
 I’ve not been about much, the new theme has been put on hold, Lucy wonders where I am going and what happened to me. The answer is Ghost Recon.
 

@@ -7,7 +7,7 @@ categories:
 slug: "welcome-back"
 ---
 
-<!-- ![Photo sharing](/images/130943517.jpg) -->
+![Photo sharing](/images/130943517.jpg)
 It has taken a while to sit down and write this post, but we are back from a extended holiday week end on the north Norfolk coast.
 
 We were camping in a small village called East Runton, which is just outside Cromer.
