@@ -8,6 +8,7 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import Image from "@11ty/eleventy-img";
 import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
@@ -38,8 +39,7 @@ export default async function (eleventyConfig) {
 
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
-
-  // Custom collections
+  eleventyConfig.watchIgnores.add("src/assets/ogi/**/*");
 
   // Plugins
   eleventyConfig.addPlugin(eleventySass);
@@ -132,6 +132,27 @@ export default async function (eleventyConfig) {
     }, []);
 
     return postsByYear;
+  });
+
+  eleventyConfig.on("afterBuild", () => {
+    const ogiDir = "./src/assets/ogi/";
+    fs.readdir(ogiDir, function (err, files) {
+      if (files.length > 0) {
+        files.forEach(function (filename) {
+          if (filename.endsWith(".svg")) {
+            let imageUrl = ogiDir + filename;
+            Image(imageUrl, {
+              formats: ["jpeg"],
+              outputDir: "./_site/assets/ogi/",
+              filenameFormat: function (id, src, width, format, options) {
+                let outputFilename = filename.substring(0, filename.length - 4);
+                return `${outputFilename}.${format}`;
+              },
+            });
+          }
+        });
+      }
+    });
   });
 
   return {

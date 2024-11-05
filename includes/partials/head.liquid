@@ -17,23 +17,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="generator" content="{{ eleventy.generator }}" built="{% currentBuildDate %}" />
   <meta name="robots" content="index, follow" />
-  <meta name="fediverse:creator" content="@FunkyLarma@mastodon.social">
+  <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
+  <meta property="article:author" content="{{ metadata.author.name }}">
 
   <!-- OpenGraph -->
   <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
   <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
   <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}" />
-  <meta property="og:image" content="{% openGraphImage %}">
   <meta property="og:type" content="article" />
-  <meta property="article:author" content="{{ metadata.author.name }}">
+  {% if tags %}
+  <meta property="og:image" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  <meta property="og:image:secure_url" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  {% endif %}
 
   <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
   <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
   <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
   <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
-  <link type="text/plain" rel="author" href="{{ "/humans.txt" | absoluteUrl }}" /">
   <link rel="author" href="{{ metadata.author.name }}" />
   <link rel="stylesheet" href="/assets/css/screen.css" />
+  <link type="text/plain" rel="author" href="{{ "/humans.txt" | absoluteUrl }}" />
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
