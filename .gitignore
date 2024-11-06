@@ -1,11 +1,7 @@
 node_modules/
 _site
 /src/assets/ogi
-<<<<<<< HEAD
-/src/indexnow.liquid
-=======
 /src/key.liquid
->>>>>>> master
 
 # ignore OS generated files
 ehthumbs.db
