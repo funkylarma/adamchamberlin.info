@@ -1,11 +1,12 @@
 ---
 layout: default.liquid
-title: "Categories"
 pagination:
   data: collections.categoryList
   size: 1
   alias: category
 permalink: "category/{{ category }}/"
+eleventyComputed:
+  title: "Category: {{ category }}"
 ---
 
 <div class="site-intro">

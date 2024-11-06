@@ -157,8 +157,12 @@ footer {
 
         .post-excerpt {
           .continue-reading {
+            display: block;
+            width: fit-content;
+            margin: auto;
+
             a {
-              color: var(--main-color-tertiary);
+              color: var(--main-color-white);
               text-decoration: none;
             }
           }

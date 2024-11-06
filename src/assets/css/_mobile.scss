@@ -1,0 +1,56 @@
+/**
+ * Mobile Media Queries
+
+ */
+
+@media (max-width: 1250px) {
+
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 550px) {
+
+  .site-intro {
+
+    .site-intro-content {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+
+      .site-tagline {
+        max-width: 60%;
+        margin: 0 auto;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .post-list {
+
+    .post-list-content {
+
+      .post {
+        margin-bottom: 4rem;
+
+        .post-image {
+
+        }
+
+        .post-content {
+          padding: 2rem 2rem 3rem 2rem;
+        }
+
+        .post-excerpt {
+
+          .continue-reading {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

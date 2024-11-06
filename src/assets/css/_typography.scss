@@ -123,3 +123,20 @@ blockquote {
   list-style: none;
   padding: 0;
 }
+
+button,
+.button,
+.call-to-action {
+  padding-inline: 1em;
+  text-transform: uppercase;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 1rem;
+  background: var(--main-color-primary);
+  color: var(--main-color-white);
+  padding: .52em 2em .45em;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+}

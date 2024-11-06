@@ -1,11 +1,12 @@
 ---
 layout: default.liquid
-title: Tagged
 pagination:
   data: collections.tagList
   size: 1
   alias: tag
 permalink: "tagged/{{ tag }}/"
+eleventyComputed:
+  title: "Tagged: {{ tag }}"
 ---
 
 <div class="site-intro">
