@@ -49,6 +49,7 @@
     "eleventy-plugin-redirects": "^1.0.0",
     "eleventy-plugin-youtube-embed": "^1.11.0",
     "lodash": "^4.17.21",
-    "outdent": "^0.8.0"
+    "outdent": "^0.8.0",
+    "remove-markdown": "^0.5.5"
   }
 }

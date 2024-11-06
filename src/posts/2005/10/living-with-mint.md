@@ -7,7 +7,7 @@ categories:
 slug: "living-with-mint"
 ---
 
-As some may know the other week [I installed Mint](https://adamchamberlin.info/2005/10/07/got-minted/), a little web stats application from Shaun Inman.
+As some may know the other week [I installed Mint](https://adamchamberlin.info/2005/10/got-minted/), a little web stats application from Shaun Inman.
 Well a week on, how does Mint taste? Did it leave a breath of freshness or loose it’s taste just way too quickly?
 
 Sorry but how many mint related wise cracks can you get before it all turns sour?

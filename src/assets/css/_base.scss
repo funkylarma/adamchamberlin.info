@@ -63,10 +63,11 @@ footer {
   width: 100%;
 
   .site-intro-content {
+    font-size: var(--main-font-size-large);
     max-width: var(--main-layout-width-normal);
     text-align: center;
-    padding-top: 8vh;
-    padding-bottom: 5vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     margin-left: auto;
     margin-right: auto;
 

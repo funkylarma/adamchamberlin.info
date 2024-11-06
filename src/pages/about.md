@@ -4,8 +4,6 @@ eleventyNavigation:
   key: About
   order: 2
 nav: "About"
-date: "2022-02-20"
-
 slug: "about"
 ---
 
@@ -13,8 +11,8 @@ slug: "about"
 
 Welcome to my online playground and sandbox of ideas and musings.
 
-I am the head of development at Mackman Group and have been tinkering with computers for longer than I can remember.
+I am the head of development at [Mackman Group](https://mackman.co.uk) and have been tinkering with computers for longer than I can remember.
 
-This site has been in development since 2008 and has seen many different versions and setups. Currently we are using WordPress and a bespoke theme via the Oxygen Page Builder.
+This site has been in development since 2008 and has seen many different versions and setups. Currently it is built with [11ty](https://www.11ty.dev) and hosted over at [Netlify](https://www.netlify.com).
 
 <!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/29e0a35d-ad30-4810-abd9-ae229bc7c90e/deploy-status)](https://app.netlify.com/sites/adamchamberlin/deploys) -->

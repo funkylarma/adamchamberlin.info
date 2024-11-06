@@ -10,4 +10,4 @@ Version 2.4 was skipped and the WordPress development team jumped straight from 
 
 **Update: Shibbyonline is now hosted on Tumblr**
 
-**Update: Shibbyonline is now adamchamberlin.info and currently running as an 11ty site**
+**Update: Shibbyonline is now https://adamchamberlin.info and currently running as an 11ty site**

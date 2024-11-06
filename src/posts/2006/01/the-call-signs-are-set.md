@@ -7,7 +7,7 @@ categories:
 slug: "the-call-signs-are-set"
 ---
 
-When Dave first [mentioned](https://adamchamberlin.info/2005/11/27/do-you-fancy-a-longer-run/ "Longer Run") about cycling from Lands End to John O'Groates I thought this would just be a flash in the pan idea, some thing that would be forgotten about in the build up to Christmas. I’m sure that was more hoping than thinking.
+When Dave first [mentioned](https://adamchamberlin.info/2005/11/do-you-fancy-a-longer-run/ "Longer Run") about cycling from Lands End to John O'Groates I thought this would just be a flash in the pan idea, some thing that would be forgotten about in the build up to Christmas. I’m sure that was more hoping than thinking.
 Well now a couple of weeks down the line and this is by far dream, it is really going to happen.
 
 The date has been set; we leave Lands End on Monday the 5th June and all being well and good we will arrive in John O'Groates sometime on Friday 9th June having just ridden the length of the British Isles.
