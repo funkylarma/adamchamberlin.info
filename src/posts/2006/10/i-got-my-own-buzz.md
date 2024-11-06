@@ -16,7 +16,7 @@ Anyway they have been full systems go and even moved further away to find new wa
 So when Dave called and asked if they could pop round I explained that I felt like I had been “Woody'ed”. Obviously confused he asked me to explain.
 I told him about how it was always me and the cycling and now all he cared about was septic systems and French wiring.
 
-<!-- ![Photo sharing](/images/279037621.jpg) -->
+![Photo sharing](/images/279037621.jpg)
 
 When they finally popped round the other night to catch up I was treated to an early birthday present; my own little Buzz Lightyear.
 

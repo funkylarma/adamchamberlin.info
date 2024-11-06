@@ -6,7 +6,7 @@ categories:
 slug: "made-the-press"
 ---
 
-<!-- ![Photo sharing](/images/157028034.jpg) -->
+![Photo sharing](/images/157028034.jpg)
 
 Sorry this should have been posted last week, but I’ve been having a few problems with my scanner!
 

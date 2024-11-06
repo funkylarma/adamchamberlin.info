@@ -105,7 +105,11 @@ footer {
 
       .post-image {
         img {
+          width: 937;
           max-width: 100%;
+          aspect-ratio: 16/9;
+          height: auto;
+          object-fit: cover;
           border-top-left-radius: 1rem;
           border-top-right-radius: 5rem;
         }
