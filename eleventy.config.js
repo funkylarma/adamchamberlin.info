@@ -12,7 +12,6 @@ import Image from "@11ty/eleventy-img";
 import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
-import removeMarkdown from "remove-markdown";
 
 // Import some utilities
 import { dir, imagePaths, scriptDirs } from "./utils/constants.js";
@@ -92,32 +91,6 @@ export default async function (eleventyConfig) {
     "getNewestCollectionItemDate",
     pluginRss.getNewestCollectionItemDate
   );
-
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: (file) => {
-      if (!file.data.date) {
-        // Only do this for blogposts.
-        // Here I assume they have a date in the frontmatter.
-        return;
-      }
-
-      // I use https://www.npmjs.com/package/remove-markdown here,
-      // but you can bring your own de-markdownifier.
-      let plaintext = removeMarkdown(file.content).trim();
-
-      // End the description at a period (inclusive) or newline (not)
-      // somewhere around the lenghtish mark.
-      let lenghtish = 180;
-      let dot = plaintext.indexOf(".", lenghtish) + 1;
-      let newline = plaintext.indexOf("\n", lenghtish);
-
-      // Avoid substringing to the empty string
-      if (dot === -1) dot = plaintext.length;
-      if (newline === -1) newline = plaintext.length;
-
-      file.excerpt = plaintext.substring(0, Math.min(dot, newline));
-    },
-  });
 
   eleventyConfig.on("afterBuild", () => {
     const ogiDir = "./src/assets/ogi/";

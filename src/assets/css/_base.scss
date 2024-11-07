@@ -63,8 +63,7 @@ footer {
   width: 100%;
 
   .site-intro-content {
-    font-size: var(--main-font-size-large);
-    max-width: var(--main-layout-width-normal);
+    max-width: var(--main-layout-width-wide);
     text-align: center;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -78,6 +77,8 @@ footer {
     }
 
     .site-tagline {
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
   }
 }

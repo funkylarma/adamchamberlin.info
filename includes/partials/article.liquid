@@ -1,7 +1,7 @@
 <article class="post">
   {% if post.data.cover %}
     <div class="post-image">
-      <img src="{{ post.data.cover }}" alt="{{ post.title }}" width="936" height="auto" />
+      <img src="{{ post.data.cover }}" alt="{{ post.title }}" width="936" height="527" {%- if forloop.first -%}loading="eager"{% endif %} />
     </div><!-- .post-image -->
   {% endif %}
   <div class="post-content">
@@ -19,10 +19,10 @@
         <p>
           <span>Date: </span> <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> |
           {% if post.data.categories %}
-          <span>Category: </span>{%- for category in post.data.categories -%}<a href="/category/{{category}}">{{ category }}</a> {%- endfor -%} |
+          <span>Category: </span>{%- for category in post.data.categories -%}<a href="/category/{{category}}/">{{ category }}</a> {%- endfor -%} |
           {% endif %}
           {% if post.data.tags.length > 1 %}
-          <span>Tagged: </span>{%- for tag in post.data.tags -%}{% if tag != 'post' %}<a href="/tagged/{{tag}}">{{ tag }}</a> {% endif %}{%- endfor -%} |
+          <span>Tagged: </span>{%- for tag in post.data.tags -%}{% if tag != 'post' %}<a href="/tagged/{{tag}}/">{{ tag }}</a> {% endif %}{%- endfor -%} |
           {% endif %}
           <span>Estimated: </span> {{ post.templateContent | emojiReadTime }}
         </p>

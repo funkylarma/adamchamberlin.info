@@ -7,7 +7,7 @@ categories:
 slug: "gt4"
 ---
 
-<!-- ![](/images/gt4.gif)   -->
+<!-- ![Photo sharing](/images/gt4.gif)   -->
 
 ## 24hr Challenge
 

@@ -4,9 +4,11 @@ pagination:
   data: collections.categoryList
   size: 1
   alias: category
+  generatePageOnEmptyData: true
 permalink: "category/{{ category }}/"
 eleventyComputed:
   title: "Category: {{ category }}"
+  description: "Archive page for the {{ category }} category"
 ---
 
 <div class="site-intro">

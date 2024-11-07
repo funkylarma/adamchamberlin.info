@@ -37,4 +37,5 @@ export default function (eleventyConfig) {
     const cacheKey = `_${new Date().valueOf()}`;
     return `https://v1.screenshot.11ty.dev/${encodedURL}/opengraph/${cacheKey}`;
   });
+
 }

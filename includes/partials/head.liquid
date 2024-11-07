@@ -1,35 +1,51 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- Title and description -->
-  <title>{% if title %}{{ title }} | {{ metadata.title }}{% else %}{{ metadata.description }}{% endif %}</title>
+  <!-- Title -->
+  <title>{% if title %}{{ title }} | {{ metadata.title }}{% else %}{{ metadata.title }}{% endif %}</title>
 
   <!-- Meta Details -->
-
-  <meta name="description" content="{% if description %}{{ description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}{{ metadata.description }}{% endif %}" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="{{ eleventy.generator }}" built="{% currentBuildDate %}" />
+  <meta name="generator" content="{{ eleventy.generator }}" />
+  {% if ignore %}
+  <meta name="robots" content="noindex">
+  {% else %}
   <meta name="robots" content="index, follow" />
-  <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
+  {% endif %}
+  {% if tags.length > 0 %}
+    <meta name="keywords" content="{{ tags | metaKeywords }}">
+  {% endif %}
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}" />
   <meta property="article:author" content="{{ metadata.author.name }}">
+
+  <!-- Fediverse -->
+  <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
 
   <!-- OpenGraph -->
   <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
   <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}" />
   <meta property="og:type" content="article" />
   {% if tags %}
   <meta property="og:image" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
   <meta property="og:image:secure_url" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
   {% endif %}
 
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@funkylarma" />
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}" />
+  <meta name="twitter:image" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+
+  <!-- Link -->
   <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
   <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
   <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
   <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
   <link rel="author" href="{{ metadata.author.name }}" />
   <link rel="stylesheet" href="/assets/css/screen.css" />
-  <link type="text/plain" rel="author" href="{{ "/humans.txt" | absoluteUrl }}" />
+  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain"   />
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -1,11 +1,22 @@
 import { DateTime } from "luxon";
 import Image from "@11ty/eleventy-img";
 import metadata from "../data/metadata.js";
+import removeMarkdown from "remove-markdown";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addFilter("excerpt", (post) => {
+
+  eleventyConfig.addFilter("excerpt", function (post) {
     const content = post.replace(/(<([^>]+)>)/gi, "");
     return content.substr(0, content.lastIndexOf(" ", 400)) + "...";
+  });
+
+  eleventyConfig.addFilter("metaKeywords", function (tags) {
+   return tags.join(", ");
+  });
+
+  eleventyConfig.addFilter("metaDescription", function (content) {
+    let plaintext = removeMarkdown(content).trim();
+    return plaintext;
   });
 
   eleventyConfig.addFilter("splitlines", function (input) {

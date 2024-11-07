@@ -4,9 +4,11 @@ pagination:
   data: collections.tagList
   size: 1
   alias: tag
+  generatePageOnEmptyData: true
 permalink: "tagged/{{ tag }}/"
 eleventyComputed:
   title: "Tagged: {{ tag }}"
+  description: "Archive page for the tag {{ tag }}"
 ---
 
 <div class="site-intro">
