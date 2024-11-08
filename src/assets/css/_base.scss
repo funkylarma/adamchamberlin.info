@@ -1,5 +1,9 @@
 @use "variables" as *;
 
+html {
+  color-scheme: light dark;
+}
+
 body {
   background-color: var(--main-color-background);
   color: var(--main-color-base);
