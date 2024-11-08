@@ -1,13 +1,17 @@
 <article class="post">
   {% if post.data.cover %}
     <div class="post-image">
-      <img src="{{ post.data.cover }}" alt="{{ post.title }}" width="936" height="527" {%- if forloop.first -%}loading="eager"{% endif %} />
+      <img src="{{ post.data.cover }}"
+           alt="{{ post.title }}"
+           width="936"
+           height="527"
+          {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}>
     </div><!-- .post-image -->
   {% endif %}
   <div class="post-content">
     <div class="post-head">
       <h2>
-        <a href="{{ post.url }}" class="post-link">
+        <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}" class="post-link">
           {% if post.data.title %}
             {{ post.data.title }}
           {% else %}
@@ -16,23 +20,43 @@
         </a>
       </h2>
       <div class="post-meta">
-        <p>
-          <span>Date: </span> <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time> |
-          {% if post.data.categories %}
-          <span>Category: </span>{%- for category in post.data.categories -%}<a href="/category/{{category}}/">{{ category }}</a> {%- endfor -%} |
-          {% endif %}
-          {% if post.data.tags.length > 1 %}
-          <span>Tagged: </span>{%- for tag in post.data.tags -%}{% if tag != 'post' %}<a href="/tagged/{{tag}}/">{{ tag }}</a> {% endif %}{%- endfor -%} |
-          {% endif %}
-          <span>Estimated: </span> {{ post.templateContent | emojiReadTime }}
-        </p>
+        <div class="post-date">
+          <span>Date: </span>
+          <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+        </div>
+        {% if post.data.categories %}
+          <div class="post-categories">
+            <span>Category: </span>
+            {%- for category in post.data.categories -%}
+              <a href="/category/{{category}}/" title="Browse other posts in the {{ category }} category">
+                {{ category }}
+              </a>
+            {%- endfor -%}
+          </div>
+        {% endif %}
+        {% if post.data.tags.length > 1 %}
+          <div class="post-tags">
+            <span>Tagged: </span>
+            {%- for tag in post.data.tags -%}
+              {% if tag != 'post' %}
+                <a href="/tagged/{{tag}}/" title="Browse other posts tagged with {{ tag }}">
+                  {{ tag }}
+                </a>
+              {% endif %}
+            {%- endfor -%}
+          </div>
+        {% endif %}
+        <div class="post-reading">
+          <span>Estimated: </span>
+          {{ post.templateContent | emojiReadTime }}
+        </div>
       </div><!-- .post-meta -->
     </div><!-- .post-head -->
     {% if post.data.categories contains "writing" %}
       <div class="post-excerpt">
-        <p>{{ post.templateContent | excerpt }}</p>
+        <p>{{ post.templateContent | postExcerpt }}</p>
         <div class="continue-reading call-to-action">
-          <a href="{{ post.url }}">Continue reading</a>
+          <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}">Continue reading</a>
         </div><!-- .continue-reading -->
       </div><!-- .post-excerpt -->
     {% endif %}

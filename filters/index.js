@@ -4,22 +4,31 @@ import metadata from "../data/metadata.js";
 import removeMarkdown from "remove-markdown";
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("metaTitle", function (title) {
+    title.trim();
+    if (this.page.url == "/" || this.page.url.includes("page")) {
+      title = metadata.title + " | " + metadata.tagline;
+    } else {
+      title = title + " | " + metadata.title;
+    }
 
-  eleventyConfig.addFilter("excerpt", function (post) {
+    return title;
+  });
+
+  eleventyConfig.addFilter("metaKeywords", function (tags) {
+    return tags.join(", ");
+  });
+
+  eleventyConfig.addFilter("metaDescription", function (description) {
+    return description;
+  });
+
+  eleventyConfig.addFilter("postExcerpt", function (post) {
     const content = post.replace(/(<([^>]+)>)/gi, "");
     return content.substr(0, content.lastIndexOf(" ", 400)) + "...";
   });
 
-  eleventyConfig.addFilter("metaKeywords", function (tags) {
-   return tags.join(", ");
-  });
-
-  eleventyConfig.addFilter("metaDescription", function (content) {
-    let plaintext = removeMarkdown(content).trim();
-    return plaintext;
-  });
-
-  eleventyConfig.addFilter("splitlines", function (input) {
+  eleventyConfig.addFilter("splitLines", function (input) {
     const parts = input.split(" ");
     const lines = parts.reduce(function (prev, current) {
       if (!prev.length) {
@@ -41,15 +50,19 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-    // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
     return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
       format || "dd LLLL yyyy"
     );
   });
 
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+  eleventyConfig.addFilter("dateRSS", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, "utc").toFormat(
+      "ddd, D MMM YYYY HH:mm:ss ZZ"
+    );
+  });
+
+  eleventyConfig.addFilter("dateHtmlString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, "utc").toFormat("yyyy-LL-dd");
   });
 
   eleventyConfig.addFilter("dateISO", (dateObj) => {
@@ -58,26 +71,5 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("absoluteUrl", (url) => {
     return new URL(url, metadata.url).href;
-  });
-
-  eleventyConfig.addFilter("absoluteImageUrl", async (src, width = null) => {
-    const imageOptions = {
-      // We only need the original width and format
-      widths: [width],
-      formats: [null],
-      // Where the generated image files get saved
-      outputDir: "_site/images",
-      // Public URL path that's referenced in the img tag's src attribute
-      urlPath: "/images",
-    };
-    const stats = await Image(src, imageOptions);
-    const imageUrl = Object.values(stats)[0][0].url;
-    return new URL(imageUrl, metadata.url).href;
-  });
-
-  eleventyConfig.addFilter("dateRSS", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "ddd, D MMM YYYY HH:mm:ss ZZ"
-    );
   });
 }

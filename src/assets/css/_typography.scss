@@ -129,14 +129,30 @@ button,
 .call-to-action {
   padding-inline: 1em;
   text-transform: uppercase;
+  border: 1px solid var(--main-color-primary);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 1rem;
   background: var(--main-color-primary);
   color: var(--main-color-white);
-  padding: .52em 2em .45em;
+  padding: 0.52em 2em 0.45em;
   text-decoration: none !important;
-  border: none;
   cursor: pointer;
+
+  a {
+    color: var(--main-color-white);
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--main-color-primary);
+    border: 1px solid var(--main-color-primary);
+    background: var(--main-color-white);
+
+    a {
+      color: var(--main-color-primary);
+      text-decoration: none;
+    }
+  }
 }

@@ -2,7 +2,7 @@
   <meta charset="utf-8">
 
   <!-- Title -->
-  <title>{% if title %}{{ title }} | {{ metadata.title }}{% else %}{{ metadata.title }}{% endif %}</title>
+  <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
 
   <!-- Meta Details -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -15,16 +15,16 @@
   {% if tags.length > 0 %}
     <meta name="keywords" content="{{ tags | metaKeywords }}">
   {% endif %}
-  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}" />
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="article:author" content="{{ metadata.author.name }}">
 
   <!-- Fediverse -->
   <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
 
   <!-- OpenGraph -->
-  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
+  <meta property="og:title" content="{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
   <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="og:type" content="article" />
   {% if tags %}
   <meta property="og:image" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
@@ -46,11 +46,14 @@
   <link rel="author" href="{{ metadata.author.name }}" />
   <link rel="stylesheet" href="/assets/css/screen.css" />
   <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain"   />
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2 as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
   <!-- End Google Tag Manager -->

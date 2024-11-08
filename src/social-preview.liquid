@@ -10,7 +10,7 @@ permalink: "./src/assets/ogi/{{ preview.data.date }}-{{ preview.data.title | slu
 title: Social Image Preview
 ---
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-{% set titleInLines = preview.data.title | splitlines %}
+{% set titleInLines = preview.data.title | splitLines %}
 {% set numberOfLines = titleInLines.length %}
 {% if numberOfLines == 1 %}
     {% set verticalStartingPoint = 340 %}

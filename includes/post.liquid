@@ -1,4 +1,5 @@
 ---
+# Metadata comes from _data/metadata.js
 layout: default.liquid
 ---
 <section class="post-single">
@@ -6,7 +7,37 @@ layout: default.liquid
     <article class="post"  data-input-path="{{ page.filePathStem }}">
       <div class="post-head">
         <h1 class="post-title">{% if title %}{{ title }}{% else %}<code>{{ url }}</code>{% endif %}</h1>
-        <time class="postlist-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+        <div class="post-meta">
+          <div class="post-date">
+            <time class="postlist-date" datetime="{{ page.date | dateHtmlString }}">{{ page.date | readableDate }}</time>
+          </div>
+          {% if categories %}
+            <div class="post-categories">
+              <span>Category: </span>
+              {%- for category in categories -%}
+                <a href="/category/{{category}}/" title="Browse other posts in the {{ category }} category">
+                  {{ category }}
+                </a>
+              {%- endfor -%}
+            </div>
+          {% endif %}
+          {% if tags.length > 1 %}
+            <div class="post-tags">
+              <span>Tagged: </span>
+              {%- for tag in tags -%}
+                {% if tag != 'post' %}
+                  <a href="/tagged/{{tag}}/" title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                {% endif %}
+              {%- endfor -%}
+            </div>
+          {% endif %}
+          <div class="post-reading">
+            <span>Estimated: </span>
+            {{ content | emojiReadTime }}
+          </div>
+        </div>
       </div><!-- .post-head -->
       <div class="post-body">
         {{ content }}
@@ -14,3 +45,55 @@ layout: default.liquid
     </article><!-- article -->
   </div><!-- .post-content -->
 </section> <!-- End Post article-->
+
+<!-- the structured data -->
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "@id": "{{ page.url | htmlBaseUrl: metadata.url }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | htmlBaseUrl: metadata.url }}"
+    },
+    "url": "{{ page.url | htmlBaseUrl: metadata.url }}",
+    "headline": "{{ title }}",
+    "description": "{{ title }}",
+    "audience": "web developers and designers",
+    {% if cover %}
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ cover | htmlBaseUrl: metadata.url }}",
+      "height": 675,
+      "width": 1200
+    },
+    {% endif %}
+    "dateCreated": "{{ date }}",
+    "datePublished": "{{ date }}",
+    "dateModified": "{{ date }}",
+    "articleSection": "Blog",
+    "author": {
+      "@type": "Person",
+      "name": "{{ metadata.author.name }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ metadata.author.image }}",
+        "height": 1024,
+        "width": 1024
+      },
+      "url": "{{ metadata.url }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "@id": "{{ metadata.title }}",
+        "name": "{{ metadata.title }}",
+        "url": "{{ metadata.url }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ metadata.author.image }}",
+          "height": 1024,
+          "width": 1024
+        }
+    }
+  }
+</script>

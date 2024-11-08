@@ -15,44 +15,55 @@ eleventyComputed:
   </div><!-- .content -->
 </div><!-- .site-intro -->
 
-<section class="post-list">
+<section class="page-single">
 
   <!-- Tags -->
-  <div class="post-list-content">
+  <div class="tag-list-content">
     <h2>By Tag</h2>
-    <ul>
+    <div class="tag-cloud">
       {%- for tag, val in collections.tagList | dictsort -%}
-        <li>
-          <a href="/tagged/{{tag}}">{{ tag }}</a>
-        </li>
+        <a href="/tagged/{{tag}}" title="Browse {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+          <div class="tag">
+            {{ tag }}
+            <div class="post-count">
+              - {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}
+            </div>
+          </div><!-- .tag -->
+        </a>
       {% endfor %}
-    </ul>
+    </div>
   </div><!-- .content -->
 
   <!-- Categories -->
-  <div class="post-list-content">
+  <div class="category-list-content ">
     <h2>By Category</h2>
-    <ul>
+    <div class="category-cloud">
       {%- for cat, val in collections.categoryList | dictsort -%}
-        <li>
-          <a href="/category/{{cat}}">{{ cat }}</a>
-        </li>
+        <a href="/category/{{cat}}" title="Browse {{ collections.categoryList[cat].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+          <div class="category">
+            {{ cat }}
+            <div class="post-count">
+             - {{ collections.categoryList[cat].length }} post{% if collections.categoryList[cat].length > 1 %}s{% endif %}
+            </div>
+          </div><!-- .category -->
+        </a>
       {% endfor %}
-    </ul>
+    </div>
   </div><!-- .content -->
 
-  <div class="post-list-content">
+  <div class="archive-list-content">
     <h2>By Date</h2>
     {% for year, yearPosts in collections.postsByYear %}
       <h3>{{ year }}</h3>
       <ul>
         {% for post in yearPosts | reverse %}
-          <li>
-            <a href="{{ post.url }}" class="post-link">
+          <li class="post">
+            <a href="{{ post.url }}" title="Read post" class="post-link">
               {{ post.data.title }}
             </a>
-            -
-            <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            <div class="post-date">
+              - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+            </div>
           </li>
         {% endfor %}
       </ul>

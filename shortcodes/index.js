@@ -28,14 +28,4 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("year", () => {
     return `${new Date().getFullYear()}`;
   });
-
-  eleventyConfig.addShortcode("openGraphImage", function () {
-    //return `https://adamchamberlin.info/ogi${this.page.url}`;
-    const encodedURL = encodeURIComponent(
-      `https://adamchamberlin.info/ogi${this.page.url}`
-    );
-    const cacheKey = `_${new Date().valueOf()}`;
-    return `https://v1.screenshot.11ty.dev/${encodedURL}/opengraph/${cacheKey}`;
-  });
-
 }

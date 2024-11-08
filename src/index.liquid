@@ -35,12 +35,12 @@ eleventyComputed:
     <nav class="post-pagination" aria-labelledby="post-pagination">
       <div class="previous-posts">
         {% if pagination.href.previous %}
-          <a href="{{ pagination.href.previous }}">« Newer Posts</a>
+          <a href="{{ pagination.href.previous }}" title="Head to the future">« Newer Posts</a>
         {% endif %}
       </div><!-- .previous-posts -->
       <div class="next-posts">
         {% if pagination.href.next %}
-          <a href="{{ pagination.href.next }}">Older Posts »</a>
+          <a href="{{ pagination.href.next }}" title="Go back in time">Older Posts »</a>
         {% endif %}
       </div><!-- .next-posts -->
     </nav><!-- .post-pagination -->

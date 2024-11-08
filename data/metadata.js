@@ -9,6 +9,7 @@ export default {
   author: {
     name: "Adam Chamberlin",
     email: "",
+    image: "https://adamchamberlin.info/assets/images/headshot.jpeg",
     url: "https://adamchamberlin.info/about/",
   },
   feed: {

@@ -62,14 +62,14 @@ export default async function (eleventyConfig) {
     // optional, output image formats
     formats: ["jpg", "webp"],
     // optional, output image widths
-    widths: ["auto", 400, 800],
+    widths: ["auto", 400, 900],
     // output directory
     urlPath: "/images/",
     outputDir: "./_site/images/",
     // optional, attributes assigned on <img> override these values.
     defaultAttributes: {
       loading: "lazy",
-      sizes: "100vw",
+      sizes: "900",
       decoding: "async",
     },
   });
