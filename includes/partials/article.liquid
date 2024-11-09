@@ -2,7 +2,7 @@
   {% if post.data.cover %}
     <div class="post-image">
       <img src="{{ post.data.cover }}"
-           alt="{{ post.title }}"
+           alt="Cover image for {{ post.data.title }}"
            width="936"
            height="527"
           {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}>
@@ -54,11 +54,27 @@
     </div><!-- .post-head -->
     {% if post.data.categories contains "writing" %}
       <div class="post-excerpt">
-        <p>{{ post.templateContent | postExcerpt }}</p>
+        <p>
+          {% if post.data.summary %}
+            {{ post.data.summary }}
+          {% else %}
+            {{ post.templateContent | postExcerpt }}
+          {% endif %}
+        </p>
         <div class="continue-reading call-to-action">
           <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}">Continue reading</a>
         </div><!-- .continue-reading -->
       </div><!-- .post-excerpt -->
+    {% elsif post.data.categories contains "videography" %}
+      <div class="post-excerpt">
+      <div class="continue-reading call-to-action">
+        <a href="{{ post.url }}" title="Continue to watch {{ post.data.title }}">Continue to watch</a>
+      </div><!-- .continue-reading -->
+    {% else %}
+      <div class="post-excerpt">
+      <div class="continue-reading call-to-action">
+        <a href="{{ post.url }}" title="Continue to {{ post.data.title }}">Continue</a>
+      </div><!-- .continue-reading -->
     {% endif %}
   </div><!-- .post-content -->
 </article> <!-- End Post article-->

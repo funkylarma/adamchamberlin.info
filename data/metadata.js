@@ -1,7 +1,11 @@
+const isDev = process.env.ELEVENTY_ENV === "development";
+const baseUrl = isDev ? `localhost:808` : `https://adamchamberlin.info/`;
+
 export default {
+  env: process.env.ELEVENTY_ENV,
   title: "Adam Chamberlin",
   tagline: "The online playground of a digiatal cowboy and consummate athlete.",
-  url: "https://adamchamberlin.info/",
+  url: baseUrl,
   locale: "en-GB",
   language: "en",
   description:
@@ -9,18 +13,18 @@ export default {
   author: {
     name: "Adam Chamberlin",
     email: "",
-    image: "https://adamchamberlin.info/assets/images/headshot.jpeg",
-    url: "https://adamchamberlin.info/about/",
+    image: baseUrl + "assets/images/headshot.jpeg",
+    url: baseUrl + "about/",
   },
   feed: {
     filename: "feed.xml",
     path: "/feed/feed.xml",
-    url: "https://adamchamberlin.info/feed/feed.xml",
-    id: "https://adamchamberlin.info/",
+    url: baseUrl + "feed/feed.xml",
+    id: baseUrl,
   },
   jsonfeed: {
     path: "/feed/feed.json",
-    url: "https://adamchamberlin.info/",
+    url: baseUrl,
   },
   navigation_primary: [
     {

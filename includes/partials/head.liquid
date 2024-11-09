@@ -27,8 +27,11 @@
   <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="og:type" content="article" />
   {% if tags %}
-  <meta property="og:image" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
-  <meta property="og:image:secure_url" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  <meta property="og:image" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  <meta property="og:image:secure_url" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  {% else %}
+  <meta property="og:image" content="{{ metadata.url }}assets/images/og.png" />
+  <meta property="og:image:secure_url" content="{{ metadata.url }}assets/images/og.png" />
   {% endif %}
 
   <!-- Twitter Cards -->
@@ -36,7 +39,11 @@
   <meta name="twitter:site" content="@funkylarma" />
   <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
   <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}" />
-  <meta name="twitter:image" content="https://adamchamberlin.info/assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  {% if tags %}
+  <meta name="twitter:image" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  {% else %}
+  <meta name="twitter:image" content="{{ metadata.url }}assets/images/og.png" />
+  {% endif %}
 
   <!-- Link -->
   <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
@@ -45,8 +52,8 @@
   <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
   <link rel="author" href="{{ metadata.author.name }}" />
   <link rel="stylesheet" href="/assets/css/screen.css" />
-  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain"   />
-  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2 as="font" type="font/woff2" crossorigin>
+  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
 

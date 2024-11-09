@@ -4,14 +4,13 @@
     --bg-color: var(--main-color-base);
 
     body {
-      background-color: var(--main-color-black);
+      background-color: var(--main-color-background-dark);
       color: var(--main-color-white);
 
       .post-list {
         .post-list-content {
           .post {
-            background: var(--main-color-black);
-            border: 2px solid var(--main-color-base);
+            background: var(--main-color-base-dark);
 
             .post-image {
               img {
@@ -27,8 +26,10 @@
                   }
                 }
                 .post-meta {
-                  border-bottom: 2px solid #333;
                 }
+              }
+              .post-excerpt {
+                border-top: 2px solid #333;
               }
             }
           }
@@ -66,7 +67,7 @@
         &:hover {
           color: var(--main-color-primary);
           border: 1px solid var(--main-color-primary);
-          background: var(--main-color-black);
+          background: var(--main-color-background-dark);
 
           a {
             color: var(--main-color-primary);

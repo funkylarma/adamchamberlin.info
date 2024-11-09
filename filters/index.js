@@ -7,7 +7,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("metaTitle", function (title) {
     title.trim();
     if (this.page.url == "/" || this.page.url.includes("page")) {
-      title = metadata.title + " | " + metadata.tagline;
+      title = metadata.tagline;
     } else {
       title = title + " | " + metadata.title;
     }
@@ -71,5 +71,20 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("absoluteUrl", (url) => {
     return new URL(url, metadata.url).href;
+  });
+
+  eleventyConfig.addFilter("absoluteImageUrl", async (src, width = null) => {
+    const imageOptions = {
+      // We only need the original width and format
+      widths: [width],
+      formats: [null],
+      // Where the generated image files get saved
+      outputDir: "_site/images/",
+      // Public URL path that's referenced in the img tag's src attribute
+      urlPath: "./src/images",
+    };
+    const stats = await Image(src, imageOptions);
+    const imageUrl = Object.values(stats)[0][0].url;
+    return absoluteUrl(imageUrl);
   });
 }

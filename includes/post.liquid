@@ -59,7 +59,9 @@ layout: default.liquid
     "url": "{{ page.url | htmlBaseUrl: metadata.url }}",
     "headline": "{{ title }}",
     "description": "{{ title }}",
-    "audience": "web developers and designers",
+    "audience": {
+      "@type": "Audience",
+      "name": "web developers and designers",
     {% if cover %}
     "image": {
       "@type": "ImageObject",

@@ -145,7 +145,7 @@ footer {
       }
 
       .post-content {
-        padding: 3rem;
+        padding: 2rem 3rem;
 
         .post-head {
           h2 {
@@ -162,8 +162,6 @@ footer {
           }
 
           .post-meta {
-            border-bottom: 2px solid var(--main-color-background);
-            margin-bottom: 1rem;
             display: flex;
             gap: 1rem;
 
@@ -182,6 +180,9 @@ footer {
         }
 
         .post-excerpt {
+          padding-top: 1rem;
+          border-top: 2px solid var(--main-color-background);
+
           .continue-reading {
             display: block;
             width: fit-content;
@@ -221,7 +222,7 @@ footer {
 
       .post-meta {
         width: 100%;
-        max-width: var(--main-layout-width-wide);
+        max-width: var(--main-layout-width-x-wide);
         font-size: var(--main-font-size-xx-small);
         text-transform: uppercase;
         margin: 0 auto;

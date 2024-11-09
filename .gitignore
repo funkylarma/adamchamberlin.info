@@ -1,7 +1,7 @@
+.env
 node_modules/
 _site
 /src/assets/ogi
-/src/key.liquid
 
 # ignore OS generated files
 ehthumbs.db
