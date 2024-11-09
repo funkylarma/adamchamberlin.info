@@ -50,7 +50,7 @@ layout: default.liquid
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "@id": "{{ page.url | htmlBaseUrl: metadata.url }}",
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -59,9 +59,6 @@ layout: default.liquid
     "url": "{{ page.url | htmlBaseUrl: metadata.url }}",
     "headline": "{{ title }}",
     "description": "{{ title }}",
-    "audience": {
-      "@type": "Audience",
-      "name": "web developers and designers",
     {% if cover %}
     "image": {
       "@type": "ImageObject",
