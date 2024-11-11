@@ -56,7 +56,7 @@ eleventyComputed:
     {% for year, yearPosts in collections.postsByYear %}
       <h3>{{ year }}</h3>
       <ul>
-        {% for post in yearPosts | reverse %}
+        {% for post in yearPosts %}
           <li class="post">
             <a href="{{ post.url }}" title="Read post" class="post-link">
               {{ post.data.title }}
