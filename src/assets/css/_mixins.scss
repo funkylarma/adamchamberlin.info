@@ -2,3 +2,12 @@
 .shadow {
     filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.1)) !important;
 }
+
+@mixin theme-light() {
+  color-scheme: light;
+  --color-surface-0: white;
+}
+@mixin theme-dark() {
+  color-scheme: dark;
+  --color-surface-0: black;
+}

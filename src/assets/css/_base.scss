@@ -1,7 +1,102 @@
 @use "variables" as *;
 
-html {
+@mixin theme-light() {
+  color-scheme: light;
+}
+@mixin theme-dark() {
+  color-scheme: dark;
+  --main-color-base: #21262e;
+  --main-color-background: #151b23;
+
+  body {
+    color: var(--main-color-white);
+
+    .post-list {
+      .post-list-content {
+        .post {
+          background: var(--main-color-base);
+
+          .post-image {
+            img {
+              filter: grayscale(50%);
+            }
+          }
+
+          .post-content {
+            .post-head {
+              h2 {
+                a {
+
+                }
+              }
+              .post-meta {
+              }
+            }
+            .post-excerpt {
+              border-top: 2px solid #333;
+            }
+          }
+        }
+      }
+    }
+
+    .post-single,
+    .page-single {
+      img {
+        filter: grayscale(50%);
+      }
+    }
+
+    button,
+    .button,
+    .call-to-action {
+
+
+
+      a {
+
+      }
+
+      &:hover {
+        background: var(--main-color-background);
+
+        a {
+
+        }
+      }
+    }
+  }
+}
+
+:root {
   color-scheme: light dark;
+  transition-duration: 200ms;
+  transition-property: all;
+
+  @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+    transition-duration: 0s;
+  }
+
+}
+
+/* Light Color Scheme (Default + Override) */
+:root[data-theme="light"],
+:root:has(input[name="theme"][value="light"]:checked) {
+  @include theme-light;
+}
+
+/* Dark Color Scheme (Override) */
+:root[data-theme="dark"],
+:root:has(input[name="theme"][value="dark"]:checked) {
+  @include theme-dark;
+}
+
+/* Dark Color Scheme (system preference) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]),
+  :root:has(input[name="theme"][value="auto"]:checked) {
+    @include theme-dark;
+  }
 }
 
 body {
@@ -111,7 +206,7 @@ footer {
     margin-right: auto;
 
     .post {
-      background: #ffffff;
+      background: var(--main-color-white);
       border-bottom-left-radius: 5rem;
       border-bottom-right-radius: 1rem;
       border-top-left-radius: 1rem;
@@ -133,6 +228,10 @@ footer {
           object-fit: cover;
           border-top-left-radius: 1rem;
           border-top-right-radius: 5rem;
+
+          @media (prefers-color-scheme: dark) {
+            filter: grayscale(50%);
+          }
         }
 
         img[width] {
@@ -152,7 +251,7 @@ footer {
             font-weight: 500;
 
             a {
-              color: var(--main-color-base);
+              color: var(--main-color-primary);
               text-decoration: none;
 
               &:hover {
@@ -175,6 +274,14 @@ footer {
               span {
                 font-weight: $strong-font-weight;
               }
+
+              a {
+                text-decoration: none;
+
+                &:hover {
+                  color: var(--main-color-quaternary);
+                }
+              }
             }
           }
         }
@@ -182,6 +289,10 @@ footer {
         .post-excerpt {
           padding-top: 1rem;
           border-top: 2px solid var(--main-color-background);
+
+          @media (prefers-color-scheme: dark) {
+            border-top: 2px solid #333;
+          }
 
           .continue-reading {
             display: block;
@@ -268,6 +379,10 @@ footer {
         border-top-left-radius: 1rem;
         border-top-right-radius: 5rem;
         filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.1)) !important;
+
+        @media (prefers-color-scheme: dark) {
+          filter: grayscale(50%);
+        }
       }
 
       img[width] {
@@ -447,7 +562,7 @@ footer {
         text-decoration: none;
 
         &:hover {
-          font-weight: bold;
+          color: var(--main-color-primary);
         }
       }
     }

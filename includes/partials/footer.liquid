@@ -1,0 +1,60 @@
+<footer class="mast-foot">
+  <div class="content">
+    <nav class="footer">
+      <menu class="navigation-footer">
+      {% for item in metadata.navigation_footer %}
+        <li class="nav-item {% if item.class %}{{ item.class }}{% endif %}">
+          <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
+            {{ item.label }}
+          </a>
+        </li>
+      {% endfor %}
+      </menu>
+      <div class="themes" hidden>
+        <fieldset id="theme-picker">
+          <legend>Theme:</legend>
+          <label>
+            <input name="theme" type="radio" value="auto" checked>
+            Auto
+          </label>
+          <label>
+            <input name="theme" type="radio" value="light">
+            Light
+          </label>
+          <label>
+            <input name="theme" type="radio" value="dark">
+            Dark
+          </label>
+        </fieldset>
+      </div>
+      <script>
+        // Run this only after DOM parsing so we can grab refs to elements. Putting this code here so it's co-located with the above logic.
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelector('.themes').removeAttribute('hidden');
+          const themePicker = document.getElementById('theme-picker');
+          if (!themePicker) return;
+
+          // Listen for change to sync localStorage and data- attribute
+          themePicker.addEventListener('change', (e) => {
+            const theme = e.target.value;
+            if (theme === Theme.AUTO) {
+              // Remove JS-set theme so the CSS :not([data-theme]) selectors kick in
+              delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
+              localStorage.removeItem(THEME_STORAGE_KEY);
+            } else {
+              THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
+              localStorage.setItem(THEME_STORAGE_KEY, theme);
+            }
+          });
+
+          // Sync picker's selected state to reflect initial theme
+          const initialTheme = cachedTheme ?? Theme.AUTO;
+          themePicker.querySelector('input[checked]').removeAttribute('checked');
+          themePicker.querySelector(`input[value="${initialTheme}"]`).setAttribute('checked', '');
+        });
+      </script>
+    </nav>
+    {% include "partials/social.liquid" %}
+    <div class="copyright">Adam Chamberlin - 2005-{% year %}</div>
+  </div><!-- .content -->
+</footer>
