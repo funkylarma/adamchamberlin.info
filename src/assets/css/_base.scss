@@ -11,6 +11,10 @@
   body {
     color: var(--main-color-white);
 
+    img:not([src*=".svg"]) {
+      filter: var(--main-image-filter);
+    }
+
     .post-list {
       .post-list-content {
         .post {
@@ -18,7 +22,6 @@
 
           .post-image {
             img {
-              filter: grayscale(50%);
             }
           }
 
@@ -26,7 +29,6 @@
             .post-head {
               h2 {
                 a {
-
                 }
               }
               .post-meta {
@@ -43,25 +45,32 @@
     .post-single,
     .page-single {
       img {
-        filter: grayscale(50%);
+      }
+    }
+
+    .mast-foot {
+      .content {
+        .footer {
+        }
+
+        .social {
+          a {
+            color: var(--main-color-primary);
+          }
+        }
       }
     }
 
     button,
     .button,
     .call-to-action {
-
-
-
       a {
-
       }
 
       &:hover {
         background: var(--main-color-background);
 
         a {
-
         }
       }
     }
@@ -70,13 +79,11 @@
 
 :root {
   color-scheme: light dark;
-  transition-duration: 200ms;
-  transition-property: all;
+  transition: all 1s ease-in-out;
 
   @media screen and (prefers-reduced-motion: reduce), (update: slow) {
     transition-duration: 0s;
   }
-
 }
 
 /* Light Color Scheme (Default + Override) */
@@ -217,7 +224,7 @@ footer {
       padding-right: 0;
       padding-bottom: 0;
       padding-left: 0;
-      filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.1)) !important;
+      filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.1));
 
       .post-image {
         img {
@@ -378,7 +385,7 @@ footer {
         border-bottom-right-radius: 1rem;
         border-top-left-radius: 1rem;
         border-top-right-radius: 5rem;
-        filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.1)) !important;
+        filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.1));
 
         @media (prefers-color-scheme: dark) {
           filter: grayscale(50%);
@@ -459,7 +466,7 @@ footer {
         border-bottom-right-radius: 1rem;
         border-top-left-radius: 1rem;
         border-top-right-radius: 5rem;
-        filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.1)) !important;
+        filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.1));
       }
       img[width] {
         width: auto; /* Defer to max-width */

@@ -58,6 +58,9 @@
   --main-layout-width-x-wide: 100ch;
   --main-layout-width-xx-wide: 120ch;
 
+  /* Dark mode image filters */
+  --main-image-filter: grayscale(50%);
+
   // --main-spacing-30: clamp(1.5rem, 5vw, 2rem);
   // --main-spacing-30: clamp(1.8rem, 1.8rem + ((1vw - 0.48rem) * 2.885);
   // --main-spacing-40: clamp(1.8rem, 1.8rem + ((1vw - 0.48rem) * 2.885), 3rem);

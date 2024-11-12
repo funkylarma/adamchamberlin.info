@@ -65,7 +65,6 @@
     const THEME_STORAGE_KEY = 'theme';
     // :root will own the data- attribute for the current theme override; it is the only eligible theme owner when this script is parsed in <head>
     const THEME_OWNER = document.documentElement;
-
     // Check to see if the user previously set a site theme preference.
     const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
     if (cachedTheme) {
