@@ -1,8 +1,10 @@
+import 'dotenv/config';
+
 const isDev = process.env.ELEVENTY_ENV === "development";
-const baseUrl = isDev ? `localhost:808` : `https://adamchamberlin.info/`;
+const baseUrl = isDev ? `http://localhost:808/` : `https://adamchamberlin.info/`;
 
 export default {
-  env: process.env.ELEVENTY_ENV,
+  env: isDev,
   title: "Adam Chamberlin",
   tagline: "The online playground of a digiatal cowboy and consummate athlete.",
   url: baseUrl,
