@@ -1,0 +1,80 @@
+<article class="post">
+  {% if post.data.cover %}
+    <div class="post-image">
+      <img src="{{ post.data.cover }}"
+           alt="Cover image for {{ post.data.title }}"
+           width="936"
+           height="527"
+          {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}>
+    </div><!-- .post-image -->
+  {% endif %}
+  <div class="post-content">
+    <div class="post-head">
+      <h2>
+        <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}" class="post-link">
+          {% if post.data.title %}
+            {{ post.data.title }}
+          {% else %}
+            <code>{{ post.url }}</code>
+          {% endif %}
+        </a>
+      </h2>
+      <div class="post-meta">
+        <div class="post-date">
+          <span>Date: </span>
+          <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+        </div>
+        {% if post.data.categories %}
+          <div class="post-categories">
+            <span>Category: </span>
+            {%- for category in post.data.categories -%}
+              <a href="/category/{{category}}/" title="Browse other posts in the {{ category }} category">
+                {{ category }}
+              </a>
+            {%- endfor -%}
+          </div>
+        {% endif %}
+        {% if post.data.tags.length > 1 %}
+          <div class="post-tags">
+            <span>Tagged: </span>
+            {%- for tag in post.data.tags -%}
+              {% if tag != 'post' %}
+                <a href="/tagged/{{tag}}/" title="Browse other posts tagged with {{ tag }}">
+                  {{ tag }}
+                </a>
+              {% endif %}
+            {%- endfor -%}
+          </div>
+        {% endif %}
+        <div class="post-reading">
+          <span>Estimated: </span>
+          {{ post.templateContent | emojiReadTime }}
+        </div>
+      </div><!-- .post-meta -->
+    </div><!-- .post-head -->
+    {% if post.data.categories contains "writing" %}
+      <div class="post-excerpt">
+        <p>
+          {% if post.data.summary %}
+            {{ post.data.summary }}
+          {% else %}
+            {{ post.templateContent | postExcerpt }}
+          {% endif %}
+        </p>
+        <div class="continue-reading call-to-action">
+          <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}">Continue reading</a>
+        </div><!-- .continue-reading -->
+      </div><!-- .post-excerpt -->
+    {% elsif post.data.categories contains "videography" %}
+      <div class="post-excerpt">
+      <div class="continue-reading call-to-action">
+        <a href="{{ post.url }}" title="Continue to watch {{ post.data.title }}">Continue to watch</a>
+      </div><!-- .continue-reading -->
+    {% else %}
+      <div class="post-excerpt">
+      <div class="continue-reading call-to-action">
+        <a href="{{ post.url }}" title="Continue to {{ post.data.title }}">Continue</a>
+      </div><!-- .continue-reading -->
+    {% endif %}
+  </div><!-- .post-content -->
+</article> <!-- End Post article-->

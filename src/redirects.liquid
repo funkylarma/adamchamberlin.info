@@ -1,8 +1,8 @@
 ---
-permalink: /_redirects
 eleventyExcludeFromCollections: true
+permalink: /_redirects
 ---
-{%- for page in collections.all -%}
+{%- for page in collections.post -%}
   {%- if page.url and page.data.slug -%}
     {{ '/' }}{{ page.data.slug }}  {{ page.url }} {{ '301' }}
     {{ '\n' }}

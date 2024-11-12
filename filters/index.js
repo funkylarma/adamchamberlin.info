@@ -1,58 +1,90 @@
-const { DateTime } = require("luxon");
-const Image = require("@11ty/eleventy-img");
-const site = require('../_data/site');
+import { DateTime } from "luxon";
+import Image from "@11ty/eleventy-img";
+import metadata from "../data/metadata.js";
+import removeMarkdown from "remove-markdown";
 
-// Filters
-// TODO: Put all the filters into external file
-const excerpt = (post) => {
-  const content = post.replace(/(<([^>]+)>)/gi, "");
-  return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
-};
+export default function (eleventyConfig) {
+  eleventyConfig.addFilter("metaTitle", function (title) {
+    title.trim();
+    if (this.page.url == "/" || this.page.url.includes("page")) {
+      title = metadata.tagline;
+    } else {
+      title = title + " | " + metadata.title;
+    }
 
-const readableDate = (dateObj, format, zone) => {
-  // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-  return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
-};
+    return title;
+  });
 
-const htmlDateString = (dateObj) => {
-  // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
-};
+  eleventyConfig.addFilter("metaKeywords", function (tags) {
+    return tags.join(", ");
+  });
 
-const dateISO = (dateObj) => {
-  return DateTime.fromJSDate(dateObj).toISO();
-};
+  eleventyConfig.addFilter("metaDescription", function (description) {
+    return description;
+  });
 
-const dateRSS = (dateObj) => {
-  return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('ddd, D MMM YYYY HH:mm:ss ZZ');
-};
+  eleventyConfig.addFilter("postExcerpt", function (post) {
+    const content = post.replace(/(<([^>]+)>)/gi, "");
+    return content.substr(0, content.lastIndexOf(" ", 400)) + "...";
+  });
 
-const absoluteUrl = (url) => {
-  return new URL(url, site.url).href;
-};
+  eleventyConfig.addFilter("splitLines", function (input) {
+    const parts = input.split(" ");
+    const lines = parts.reduce(function (prev, current) {
+      if (!prev.length) {
+        return [current];
+      }
 
-const absoluteImageUrl = async (src, width = null) => {
-  const imageOptions = {
-    // We only need the original width and format
-    widths: [width],
-    formats: [null],
-    // Where the generated image files get saved
-    outputDir: '_site/images',
-    // Public URL path that's referenced in the img tag's src attribute
-    urlPath: '/images',
-  };
-  const stats = await Image(src, imageOptions);
-  const imageUrl = Object.values(stats)[0][0].url;
-  return new URL(imageUrl, site.url).href;
-};
+      let lastOne = prev[prev.length - 1];
 
+      if (lastOne.length + current.length > 19) {
+        return [...prev, current];
+      }
 
-module.exports =  {
-  excerpt,
-  readableDate,
-  htmlDateString,
-  dateISO,
-  dateRSS,
-  absoluteUrl,
-  absoluteImageUrl
-};
+      prev[prev.length - 1] = lastOne + " " + current;
+
+      return prev;
+    }, []);
+
+    return lines;
+  });
+
+  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
+    return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
+      format || "dd LLLL yyyy"
+    );
+  });
+
+  eleventyConfig.addFilter("rssDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, "utc").toFormat(
+      "ddd, D MMM YYYY HH:mm:ss ZZ"
+    );
+  });
+
+  eleventyConfig.addFilter("dateHtmlString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, "utc").toFormat("yyyy-LL-dd");
+  });
+
+  eleventyConfig.addFilter("dateISO", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toISO();
+  });
+
+  eleventyConfig.addFilter("absoluteUrl", (url) => {
+    return new URL(url, metadata.url).href;
+  });
+
+  eleventyConfig.addFilter("absoluteImageUrl", async (src, width = null) => {
+    const imageOptions = {
+      // We only need the original width and format
+      widths: [width],
+      formats: [null],
+      // Where the generated image files get saved
+      outputDir: "_site/images/",
+      // Public URL path that's referenced in the img tag's src attribute
+      urlPath: "./src/images",
+    };
+    const stats = await Image(src, imageOptions);
+    const imageUrl = Object.values(stats)[0][0].url;
+    return absoluteUrl(imageUrl);
+  });
+}

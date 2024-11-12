@@ -3,7 +3,7 @@ title: "G.R.A.W"
 date: "2006-03-11"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "graw"
 ---
 
@@ -15,7 +15,7 @@ When I switched to Mac’s I took a copy of Ghost Recon with me, however the new
 Today Ghost Recon Advanced Warrior hit the shelves and here is my take on it:  
 First off I really can not stand the whole G.R.A.W. thing, feels more like Tony the Tiger, just stick with GR3 or something. Anyway that aside I had seen some pictures of the game play and it looked to be sticking with the whole, visior HUD style display. This was tried in the last Rainbow game and for me it never worked, I hated the whole highlighting of the enemies and the micky mouse feel of things. True to word this is in the new GR game and after a bit of time it is growing on me, in fact now I do love the feature and miss those red highlights.  
 The game itself has moved on from it’s frantic first person shooter roots, it is now… well a conbination of Ghost Recon, Full Spectrum Warrior and bit of Operation Flashpoint thrown in for good measure. You will find that you spend more time peeking from around corners and using the cover of objects more in this version. The way you move your team is very similar to the Full Spectrum Warrior game, select a position and direct them, the icons are very similar. The ability ot collect fallen foe’s weapons is a function along with the new addition of directing extra vehicles/equipment such as APC and the new drone!  
-The game itself is ruled by the very clever hub of the game, you can find some more details on the background of this [here](http://www.mtv.com/games/video_games/news/story.jhtml?id=1525683). The HUD offers such a great deal of information in such a unique way, it has taken the idea from picture in picture and once you get used to in it really creates a great environment.  
+The game itself is ruled by the very clever hub of the game, you can find some more details on the background of this [here](https://www.mtv.com/games/video_games/news/story.jhtml?id=1525683). The HUD offers such a great deal of information in such a unique way, it has taken the idea from picture in picture and once you get used to in it really creates a great environment.  
 The whole game itslef is set in a Mexican suburb, as you progress through the levels you do get the chance to look back accorss the skyline and see where you have come from, really giving the game a feel of a true for the city. Lighting is another majoy player in creating the evironment in this game. The details of the sun and the lighting in each level is simply amazing, you even get sun blindness as you move from daylight to shade.
 
 The single player side of the game is addictive and really drags you in, most of the missions start with you on your own and then when the crap hits the fan you get you team mates and really start to clear up.

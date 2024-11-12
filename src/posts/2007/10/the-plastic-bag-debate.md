@@ -3,11 +3,11 @@ title: "The Plastic Bag Debate"
 date: "2007-10-15"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "the-plastic-bag-debate"
 ---
 
-Every where you turn some one is talking about caring for the environment and doing your bit. One of the main subjects of concern is packaging and the critical issue carrier bags. Now obviously because I work in the [pacakaging industry](http://www.oscarproducts.com/)it does make me a bit biased, but on the other hand most of my leisure time is spent enjoying the outdoors so I’m not writing this from a business point of view, just from the facts I’ve picked up along the way.
+Every where you turn some one is talking about caring for the environment and doing your bit. One of the main subjects of concern is packaging and the critical issue carrier bags. Now obviously because I work in the [pacakaging industry](https://www.oscarproducts.com/)it does make me a bit biased, but on the other hand most of my leisure time is spent enjoying the outdoors so I’m not writing this from a business point of view, just from the facts I’ve picked up along the way.
 
 ### Ban The Bag!
 

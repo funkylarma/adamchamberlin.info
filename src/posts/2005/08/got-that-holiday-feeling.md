@@ -3,7 +3,7 @@ title: "Got that holiday feeling"
 date: "2005-08-05"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "got-that-holiday-feeling"
 ---
 

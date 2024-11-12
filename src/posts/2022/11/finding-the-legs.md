@@ -1,11 +1,11 @@
 ---
 title: "Finding the legs"
 date: "2022-11-08"
-categories: 
+categories:
   - "videography"
-tags: 
+tags:
   - "running"
-cover: "./src/images/IMG_0077.jpeg"
+cover: "/images/IMG_0077.jpeg"
 slug: "finding-the-legs"
 ---
 

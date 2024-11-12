@@ -3,7 +3,7 @@ title: "Mighty Mouse no longer mighty"
 date: "2006-12-07"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "mighty-mouse-no-longer-mighty"
 ---
 

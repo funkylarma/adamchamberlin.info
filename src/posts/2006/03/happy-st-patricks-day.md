@@ -3,7 +3,7 @@ title: "Happy St. Patricks Day"
 date: "2006-03-17"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "happy-st-patricks-day"
 ---
 

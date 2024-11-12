@@ -3,7 +3,7 @@ title: "Delusions of grandure"
 date: "2007-09-10"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "delusions-of-grandure"
 ---
 

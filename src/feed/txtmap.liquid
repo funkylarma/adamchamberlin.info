@@ -1,0 +1,9 @@
+---
+layout: false
+permalink: /feed/sitemap.txt
+templateEngineOverride: njk
+eleventyExcludeFromCollections: true
+---
+{% for item in collections.all %}
+  {{ item.url }}
+{%- endfor %}

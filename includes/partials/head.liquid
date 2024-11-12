@@ -1,0 +1,88 @@
+<head>
+  <meta charset="utf-8">
+
+  <!-- Title -->
+  <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
+
+  <!-- Meta Details -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="{{ eleventy.generator }}" />
+  {% if ignore %}
+  <meta name="robots" content="noindex">
+  {% else %}
+  <meta name="robots" content="index, follow" />
+  {% endif %}
+  {% if tags.length > 0 %}
+    <meta name="keywords" content="{{ tags | metaKeywords }}">
+  {% endif %}
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
+  <meta property="article:author" content="{{ metadata.author.name }}">
+
+  <!-- Fediverse -->
+  <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
+  <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
+  <meta property="og:type" content="article" />
+  {% if tags %}
+  <meta property="og:image" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  <meta property="og:image:secure_url" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  {% else %}
+  <meta property="og:image" content="{{ metadata.url }}assets/images/og.png" />
+  <meta property="og:image:secure_url" content="{{ metadata.url }}assets/images/og.png" />
+  {% endif %}
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@funkylarma" />
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}" />
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}" />
+  {% if tags %}
+  <meta name="twitter:image" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+  {% else %}
+  <meta name="twitter:image" content="{{ metadata.url }}assets/images/og.png" />
+  {% endif %}
+
+  <!-- Link -->
+  <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
+  <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
+  <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
+  <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
+  <link rel="author" href="{{ metadata.author.name }}" />
+  <link rel="stylesheet" href="/assets/css/screen.css" />
+  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  {% if process.env.ELEVENTY_ENV == "production" %}
+  <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+  {% endif %}
+
+  <!-- Used to add dark mode right away, adding here prevents any flicker -->
+  <script>
+    // Enum of supported themes. Not strictly needed; just helps avoid typos and magic strings.
+    const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
+    // We'll use this to write and read to localStorage and save the theme as a data- attribute
+    const THEME_STORAGE_KEY = 'theme';
+    // :root will own the data- attribute for the current theme override; it is the only eligible theme owner when this script is parsed in <head>
+    const THEME_OWNER = document.documentElement;
+    // Check to see if the user previously set a site theme preference.
+    const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (cachedTheme) {
+      // If they did, toggle data attribute immediately to prevent theme flash.
+      THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
+    }
+  </script>
+
+  {% if process.env.ELEVENTY_ENV == "production" %}
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
+  <!-- End Google Tag Manager -->
+  {% endif %}
+
+</head>

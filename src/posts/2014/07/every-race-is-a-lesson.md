@@ -6,9 +6,9 @@ categories:
 slug: "every-race-is-a-lesson"
 ---
 
-Round four of [Mud, Sweat and Gears](http://www.mudsweatgears.co.uk) was held at Ickworth Park in Bury St. Edmunds. It was a new course for me but I had been informed it would consist of a lot of grassy climbs.
+Round four of [Mud, Sweat and Gears](https://www.mudsweatgears.co.uk) was held at Ickworth Park in Bury St. Edmunds. It was a new course for me but I had been informed it would consist of a lot of grassy climbs.
 
-With the sun shining we pack the car and head over there. After signing on I meet up with Tony and we head out for a sighting lap. Sure enough, first turn off the start/finish straight was a big grassy climb into a wooded area. Unfortunately the previous two days of torrential rain was still evident under the trees. It brought back memories of winter rides with [Boxford Bike Club](http://www.boxfordbikeclub.co.uk), slipping and sliding through the thick goo.
+With the sun shining we pack the car and head over there. After signing on I meet up with Tony and we head out for a sighting lap. Sure enough, first turn off the start/finish straight was a big grassy climb into a wooded area. Unfortunately the previous two days of torrential rain was still evident under the trees. It brought back memories of winter rides with [Boxford Bike Club](https://www.boxfordbikeclub.co.uk), slipping and sliding through the thick goo.
 
 With a sighting lap complete there was some rumours of not riding but having paid my dues I hit the start line. Somehow I was gridded and found myself on the front row, up against the inside barrier.
 
@@ -18,7 +18,7 @@ It was only as I entered the second wooded section I realised I was in the top t
 On the final lap I realised I was on the limit and I needed to ease off the gas, but not knowing how far ahead I was meant I did not want to ease too much. Time to try and gage how much it too much but also too little.  
 Crossing the finish line in first place was amazing but also surreal; could or would I ever reproduce it.
 
-Only two weeks later we head over towards Chelmsford and [Radical Bikes](http://radicalbikes.co.uk) for Round Five. The description was a flat course that would not be technical but provide plenty of overtaking and a grin factor of ten. It was a section of natural woodland interspersed by ponds and littered with shallow bomb holes. The sighting lap highlighted that the little the climbs out of the holes required full speed attacks into the holes. It was going to be a tough course for me.
+Only two weeks later we head over towards Chelmsford and [Radical Bikes](https://radicalbikes.co.uk) for Round Five. The description was a flat course that would not be technical but provide plenty of overtaking and a grin factor of ten. It was a section of natural woodland interspersed by ponds and littered with shallow bomb holes. The sighting lap highlighted that the little the climbs out of the holes required full speed attacks into the holes. It was going to be a tough course for me.
 
 Once again I’m sitting on the front of the grid waiting for the whistle. To calm my nerves I look around and try to size up my competition; the only person I recognise is second place rider from the last round.
 

@@ -3,7 +3,7 @@ title: "Hats off to Microsoft"
 date: "2006-01-04"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "hats-off-to-microsoft"
 ---
 

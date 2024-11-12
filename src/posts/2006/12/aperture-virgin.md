@@ -3,7 +3,7 @@ title: "Aperture Virgin"
 date: "2006-12-13"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "aperture-virgin"
 ---
 

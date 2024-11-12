@@ -3,7 +3,7 @@ title: "flickr it is then"
 date: "2005-10-09"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "flickr-it-is-then"
 ---
 

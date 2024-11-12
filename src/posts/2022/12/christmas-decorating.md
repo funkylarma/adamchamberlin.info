@@ -1,13 +1,13 @@
 ---
 title: "Christmas Decorating"
 date: "2022-12-11"
-categories: 
+categories:
   - "videography"
-tags: 
+tags:
   - "christmas"
   - "family"
   - "timelapse"
-cover: "./src/images/christmas-decorating.png"
+cover: "/images/christmas-decorating.png"
 slug: "christmas-decorating"
 ---
 

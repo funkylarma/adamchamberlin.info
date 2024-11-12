@@ -3,7 +3,7 @@ title: "Day 5"
 date: "2006-06-21"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "day-5"
 ---
 

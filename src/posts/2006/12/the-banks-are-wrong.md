@@ -3,7 +3,7 @@ title: "The Banks Are Wrong?"
 date: "2006-12-05"
 categories: 
   - "writing"
-cover: "./src/images/image-not-found.png"
+
 slug: "the-banks-are-wrong"
 ---
 

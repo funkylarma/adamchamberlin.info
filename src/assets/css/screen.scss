@@ -1,14 +1,11 @@
+@use "variables.scss";
 
-@use 'variables.scss';
+@use "reset.scss";
 
-@use 'reset.scss';
+@use "typography.scss";
 
-@use 'typography.scss';
+@use "fonts.scss";
 
-@use 'mixins.scss';
+@use "base.scss";
 
-@use 'fonts.scss';
-
-@use 'base.scss';
-
-@use 'mobile.scss';
+@use "mobile.scss";
