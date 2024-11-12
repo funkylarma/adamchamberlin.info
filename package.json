@@ -4,8 +4,8 @@
   "description": "Welcome to the online playground of Adam Chamberlin. Consummate Athlete And DOM Element Wrangler.",
   "type": "module",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --quiet",
+    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
+    "start": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
     "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
