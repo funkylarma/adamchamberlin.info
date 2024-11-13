@@ -3,7 +3,10 @@ title: "101% True Geek Now"
 date: "2007-05-03"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “delivery”
+- “home”
 slug: "101-true-geek-now"
 ---
 

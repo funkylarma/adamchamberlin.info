@@ -6,7 +6,7 @@ categories:
 slug: "easymobile"
 ---
 
-easyMobile.com - the discount mobilephoneco backed by no frills airline entrepreneur Stelios Haji-Ioannou - has taken off at last.  
+easyMobile.com — the discount mobilephoneco backed by no frills airline entrepreneur Stelios Haji-Ioannou — has taken off at last.  
 And as reported, the cost of UK calls is 9p a minute while texts cost 3p. However, this is only a limited offer and from June, those charges will revert to 15p and 5p respectively.
 
 > “We are very pleased to launch our service in the UK, and I fully believe British consumers will be thrilled to be pioneers as customers of easyMobile.com,” said easyMobile chief exec Frank Rasmussen.

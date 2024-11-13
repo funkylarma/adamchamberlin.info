@@ -3,7 +3,8 @@ title: "Bachelor Days"
 date: "2006-12-11"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "bachelor-days"
 ---
 

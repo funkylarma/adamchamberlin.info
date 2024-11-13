@@ -3,7 +3,8 @@ title: "Good luck Gravy!"
 date: "2005-09-26"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "good-luck-gravy"
 ---
 

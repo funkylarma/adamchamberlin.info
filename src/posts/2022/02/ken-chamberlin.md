@@ -3,6 +3,9 @@ title: "Ken Chamberlin"
 date: "2022-02-21"
 categories:
   - "writing"
+ tags:
+  - “life”
+  - “family”
 cover: "/images/ken-chamberlin.jpeg"
 slug: "ken-chamberlin"
 ---
@@ -11,15 +14,15 @@ I remember sitting in the back of a hot car having flown into Poitier internatio
 
 You see, both Sean and I had recently surmised that our childhood had in part been the longest and best planned house hunt. A region by region tour of France, but with mum and dad’s future retirement plan in the back of their minds. Not that we were complaining, these were some of the best times of our lives.
 
-The taste of four in the morning only meant one thing, we were off on another adventure overseas. The little black man bag was full of traveller checks and you could guarantee it was never going to be the same as last year. Over the years we had tried all manner of different holidays; both in location and transportation. Double decker coaches to the Camargue. Trailer tents almost making it to Dover. Even a limping a Fourtrak spilling transmission oil all around Bordeaux.
+The taste of four in the morning only meant one thing, we were off on another adventure overseas. The little black man bag was full of traveller's checks, and you could guarantee it was never going to be the same as last year. Over the years, we have tried all manner of different holidays; both in location and transportation. Double-decker coaches to the Camargue. Trailer tents almost making it to Dover. Even a limping, a Fourtrak spilling transmission oil all around Bordeaux.
 
-We had explored all the corners of France and beyond yet when it came to retiring my parents had moved to this place; a flat area in the middle of no where. What on earth did retired farmer ken see in this place, it is just fields and…
+We had explored all the corners of France and beyond, yet when it came to retiring my parents had moved to this place; a flat area in the middle of no where. What on earth did retired farmer ken see in this place, it is just fields and…
 
-It was during this first stay in France I spent a bit of time just sitting back and watching. It was a very strange time for me, we had experienced the family farm getting auctioned off. Watched as many goodbyes were made to both family and friends and finally with the Todds lorry delivering a lifetime of possessions and the house being furnished I could not escape the fact my parents HAD retired and life does indeed march on. My own life was moving on, we had Jack with us and at three years old he was reinforcing that retired grandparent image. It sort of hit home that nothing is permanent and change is all around us.
+It was during this first stay in France I spent a bit of time just sitting back and watching. It was a very strange time for me, we had experienced the family farm getting auctioned off. Watched as many goodbyes were made to both family and friends and finally, with the Todds lorry delivering a lifetime of possessions and the house being furnished, I could not escape the fact my parents HAD retired and life does indeed march on. My life was moving on, we had Jack with us and at three years old he was reinforcing that retired grandparent image. It sort of hit home that nothing is permanent and change is all around us.
 
-That holiday I feel like I got to know my father just a little bit better; well learn more about him. I mean he was alway teaching like a father should and there for his sons, but not in one of those preachy ways. As Sean recently pointed out he would never solve your problems directly. He would let you solve it yourself, by talking, asking those theoretical questions and letting you come to the right decisions. It was over the next week in France that I did exactly that myself trying to understand why we were sitting in Poutiou Charente miles away from the coast, friends, family and apparently any vineyards.
+That holiday, I feel like I got to know my father just a little better; we'll learn more about him. I mean, he was alway teaching like a father should and there for his sons, but not in one of those preachy ways. As Sean recently pointed out, he would never solve your problems directly. He would let you solve it yourself, by talking, asking those theoretical questions and letting you come to the right decisions. It was over the next week in France that I did exactly that myself trying to understand why we were sitting in Poutiou Charente miles away from the coast, friends, family and apparently any vineyards.
 
-Honestly I was expecting some lonely ex-pat farmer sat there with no life outside of the British FreeSat television connection. To my surprise I found a man who had already secured a winter wood supply, was on first name terms with the neighbours and the town mayor. He had already made connections with the local English residents but was equally at home attempting farming chat with the French locals. It was at this point I realised the true super power of superman.
+Honestly, I was expecting some lonely ex-pat farmer sat there with no life outside the British FreeSat television connection. To my surprise, I found a man who had already secured a winter wood supply, was on first name terms with the neighbours and the town mayor. He had already made connections with the local English residents but was equally at home attempting farming chat with the French locals. It was at this point I realised the true super power of superman.
 
 Superman is a moniker that we have recently been using to refer to dad. It stated with a fund raising event, which if you look at your order of service you will see it is much more than just a phrase. But how else would you want to look up to your own father than as a superhero.
 

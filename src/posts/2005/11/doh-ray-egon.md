@@ -3,7 +3,8 @@ title: "doh, ray, egon!"
 date: "2005-11-18"
 categories: 
   - "writing"
-
+tags:
+- “movies”
 slug: "doh-ray-egon"
 ---
 

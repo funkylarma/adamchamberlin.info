@@ -3,7 +3,9 @@ title: "It's been a week"
 date: "2006-10-20"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “smoking”
 slug: "its-been-a-week"
 ---
 

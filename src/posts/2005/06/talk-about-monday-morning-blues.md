@@ -3,7 +3,9 @@ title: "Talk about Monday morning blues!"
 date: "2005-06-06"
 categories:
   - "writing"
-
+tags:
+ - “life”
+ - “updates”
 slug: "talk-about-monday-morning-blues"
 ---
 

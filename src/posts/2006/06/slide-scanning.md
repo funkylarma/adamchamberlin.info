@@ -3,7 +3,8 @@ title: "Slide Scanning"
 date: "2006-06-21"
 categories: 
   - "writing"
-
+tags:
+- “photography”
 slug: "slide-scanning"
 ---
 

@@ -3,7 +3,8 @@ title: "Its getting hotter!"
 date: "2005-06-18"
 categories: 
   - "writing"
-
+tags:
+ - “weather”
 slug: "its-getting-hotter"
 ---
 

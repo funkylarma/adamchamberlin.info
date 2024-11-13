@@ -3,6 +3,8 @@ title: "Look ma I'm blogging"
 date: "2012-05-02"
 categories: 
   - "writing"
+ tags:
+  - “blogging”
 slug: "look-ma-im-blogging"
 ---
 

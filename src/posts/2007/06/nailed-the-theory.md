@@ -3,7 +3,9 @@ title: "Nailed the Theory"
 date: "2007-06-28"
 categories: 
   - "writing"
-
+tags:
+- “motorbikes”
+- “learning”
 slug: "nailed-the-theory"
 ---
 

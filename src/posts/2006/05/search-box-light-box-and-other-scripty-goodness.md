@@ -3,23 +3,27 @@ title: "Search box, Light Box and other Scripty goodness"
 date: "2006-05-13"
 categories:
   - "writing"
+tags:
+- “development”
+- “web”
+- “javascript”
 slug: "search-box-light-box-and-other-scripty-goodness"
 ---
 
 I’ve been working away at those extra little bits on the site, you know all that fluff that makes you feel good about the amount of time you spend sitting in front of a computer screen.
 
-The latest installments apart from some style changes are the use of the various [script.aculo.us](https://script.aculo.us/) Java scripts. First off we have the new AJAX powered search bar found on the home page, in the archives and on any 404. The second is the use of [Lightbox](https://www.huddletogether.com/projects/lightbox2/) for displaying photograph’s and images from within posts.
-I have [always](https://adamchamberlin.info/2005/11/ajaxy-sidebar-menu-options/) enjoyed using the script.aculo.us libraries for various effects but since moving themes around I sort of missed the boat when it came to the whole Lightbox revolution that appears to have taken the web by storm.
+The latest installments apart from some style changes are the use of the various [script.aculo.us][1] Java scripts. First off we have the new AJAX powered search bar found on the home page, in the archives and on any 404. The second is the use of [Lightbox][2] for displaying photograph’s and images from within posts.
+I have [always][3] enjoyed using the script.aculo.us libraries for various effects but since moving themes around I sort of missed the boat when it came to the whole Lightbox revolution that appears to have taken the web by storm.
 
-My problem was that I did want to find a way to display images in a way that kept a small clean image in the post but would allow the reader to see a larger version without directing them to an external source such as my [Flickr](https://www.flickr.com/photos/funkylarma/) account. I’m afraid that at present [Lightbox](https://www.huddletogether.com/projects/lightbox2/) is the perfect answer, of course I could have followed [Derek’s](https://5thirtyone.com/archives/233) comments and tried [Thickbox](https://codylindley.com/Javascript/257/thickbox-one-box-to-rule-them-all) which runs off the more streamlined compressed [jquery](https://jquery.com/) script. But when I’m already loading part of the script.aculo.us for the search bar it makes no sense to load another library to save space. Besides which due to my limited readership, bandwidth or page load is not a concern, I’m not exactly digg material!
+My problem was that I did want to find a way to display images in a way that kept a small clean image in the post but would allow the reader to see a larger version without directing them to an external source such as my [Flickr][4] account. I’m afraid that at present [Lightbox][5] is the perfect answer, of course I could have followed [Derek’s][6] comments and tried [Thickbox][7] which runs off the more streamlined compressed [jquery][8] script. But when I’m already loading part of the script.aculo.us for the search bar it makes no sense to load another library to save space. Besides which due to my limited readership, bandwidth or page load is not a concern, I’m not exactly digg material!
 
 ### Installing Lightbox…
 
-<!-- [![Wet dog](/images/14181952_cc24c994d7_m.jpg)](https://www.flickr.com/photos/funkylarma/14181952/ "Photo Sharing") -->
+ [![Wet dog][image-1]][9]
 
-The installation of [Lightbox](https://www.huddletogether.com/projects/lightbox2/) was very simple really, first off download the files required from [Lokesh’s](https://www.huddletogether.com/) site, you do get the required script.aculo.us files in there but it might be worth while checking the site for [updates](https://script.aculo.us/downloads).
+The installation of [Lightbox][10] was very simple really, first off download the files required from [Lokesh’s][11] site, you do get the required script.aculo.us files in there but it might be worth while checking the site for [updates][12].
 Upload the Javascript files to your web host, I’m presuming you will keep them in the folder named js and this in your template/theme folder, such as; /wp-content/themes/k2/js/\*.js
-Next you need to add these to your header file to have them called on the loading of the page. Open up your required page, if your using [WordPress](https://www.wordpress.org) like me here then you want header.php in your theme directory. Now locate the head tags and insert this code between them:
+Next you need to add these to your header file to have them called on the loading of the page. Open up your required page, if your using [WordPress][13] like me here then you want header.php in your theme directory. Now locate the head tags and insert this code between them:
 
 `<script type="text/javascript" src=""<?php bloginfo('template_directory'); ?>/js/prototype.js"></script>   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/scriptaculous.js?load=effects"></script>   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/lightbox.js"></script>`
 
@@ -48,4 +52,23 @@ Of course replace yourdomain with _yourdomain_ and theme with the name of your t
 
 ### The search bar…
 
-The search bar was created following the [instructions](https://orderedlist.com/articles/howto-animated-live-search/) of Steve at [OrderedList](https://orderedlist.com/). View a demo [here](https://orderedlist.com/demos/livesearch/).
+The search bar was created following the [instructions][14] of Steve at [OrderedList][15]. View a demo [here][16].
+
+[1]:	https://script.aculo.us/
+[2]:	https://www.huddletogether.com/projects/lightbox2/
+[3]:	https://adamchamberlin.info/2005/11/ajaxy-sidebar-menu-options/
+[4]:	https://www.flickr.com/photos/funkylarma/
+[5]:	https://www.huddletogether.com/projects/lightbox2/
+[6]:	https://5thirtyone.com/archives/233
+[7]:	https://codylindley.com/Javascript/257/thickbox-one-box-to-rule-them-all
+[8]:	https://jquery.com/
+[9]:	https://www.flickr.com/photos/funkylarma/14181952/ "Photo Sharing"
+[10]:	https://www.huddletogether.com/projects/lightbox2/
+[11]:	https://www.huddletogether.com/
+[12]:	https://script.aculo.us/downloads
+[13]:	https://www.wordpress.org
+[14]:	https://orderedlist.com/articles/howto-animated-live-search/
+[15]:	https://orderedlist.com/
+[16]:	https://orderedlist.com/demos/livesearch/
+
+[image-1]:	/images/14181952_cc24c994d7_m.jpg

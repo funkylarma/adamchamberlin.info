@@ -3,7 +3,8 @@ title: "Where's my hat?"
 date: "2005-12-16"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "wheres-my-hat"
 ---
 

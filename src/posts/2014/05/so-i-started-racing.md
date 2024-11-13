@@ -3,6 +3,10 @@ title: "So, I started racing"
 date: "2014-05-23"
 categories: 
   - "writing"
+ tags:
+  - “cycling”
+  - “racing”
+  - “mtb”
 slug: "so-i-started-racing"
 ---
 

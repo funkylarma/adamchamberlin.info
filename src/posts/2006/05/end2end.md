@@ -3,28 +3,32 @@ title: "End To End"
 date: "2006-05-29"
 categories: 
   - "writing"
-
+tags:
+ - “end2end”
+ - “cycling”
 slug: "end2end"
 ---
 
 The challenge is to cycle from one end of the UK to the other in 5 days!  
 Starting on Monday 5th June to the 10th June four cyclists will leave Lands End and hopefully all being weel and good they will arrive at John O'Groats on the following Friday.  
+
 The journey will cover the full length of the United Kingdom with daily milage reaching 175 miles and an estimated 12 hours in the saddle each day.  
 The journey was set out as a personal goal but it was decided that we could raise some money along the way. We are collecting for the British Heart Foundation and the League of Friends of Belstead School in Ipswich.
 
 ## The people
 
 Who is taking part in this epic journey?  
-David Law  
-Harry Crampton  
-Rob Morse  
-and yours truly
+- David Law  
+- Harry Crampton  
+- Rob Morse  
+- and yours truly
 
 The other three have all completed this trip at least once before in their lives, not quite at this pace but they do know what to expect. Harry is the main man, as he is now on his 10th trip and has completed the double; up and back!
 
 ## The equipment.
 
-I will be riding my road bike for this, not sure the extra weight of the Marin is really necessary! I’ve done a quick run down of the bike and the setup.  
+I will be riding my road bike for this, not sure the extra weight of the Marin is really necessary! I’ve done a quick run down of the bike and the setup. 
+
 **Frameset:**  
 [Trek1400 SLR](https://static.flickr.com/71/157440389_af5f624f9f.jpg) Aluminium Frame with Carbon forks.
 

@@ -3,7 +3,9 @@ title: "Sunday Motocross"
 date: "2005-05-08"
 categories:
   - "writing"
-
+tags:
+ - “motocross”
+ - “family”
 slug: "sunday-motocross"
 ---
 

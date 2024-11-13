@@ -3,6 +3,9 @@ title: "So WordPress 2.5 Is Out?"
 date: "2008-04-01"
 categories:
   - "writing"
+ tags:
+  - “wordpress”
+  - “blogging”
 slug: "so-wordpress-25-is-out"
 ---
 

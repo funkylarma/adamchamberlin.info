@@ -3,7 +3,8 @@ title: "Seasons Greetings"
 date: "2005-12-29"
 categories: 
   - "writing"
-
+tags:
+- “christmas”
 slug: "seasons-greetings"
 ---
 

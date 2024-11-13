@@ -3,7 +3,8 @@ title: "It was difficult to even watch"
 date: "2007-01-20"
 categories: 
   - "writing"
-
+tags:
+- “television”
 slug: "it-was-difficult-to-even-watch"
 ---
 

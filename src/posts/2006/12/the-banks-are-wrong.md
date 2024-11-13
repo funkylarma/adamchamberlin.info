@@ -3,7 +3,8 @@ title: "The Banks Are Wrong?"
 date: "2006-12-05"
 categories: 
   - "writing"
-
+tags:
+- “news”
 slug: "the-banks-are-wrong"
 ---
 

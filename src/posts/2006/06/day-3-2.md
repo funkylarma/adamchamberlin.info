@@ -3,7 +3,9 @@ title: "Day 3"
 date: "2006-06-06"
 categories: 
   - "writing"
-
+tags:
+- “cycling”
+- “end2end”
 slug: "day-3-2"
 ---
 

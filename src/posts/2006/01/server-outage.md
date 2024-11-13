@@ -3,7 +3,10 @@ title: "Server Outage"
 date: "2006-01-14"
 categories: 
   - "writing"
-
+tags:
+- “dreamhost”
+- “hosting”
+- “outage”
 slug: "server-outage"
 ---
 

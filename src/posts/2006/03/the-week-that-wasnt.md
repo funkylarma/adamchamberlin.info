@@ -3,7 +3,9 @@ title: "The week that wasn't"
 date: "2006-03-27"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “birthday”
 slug: "the-week-that-wasnt"
 ---
 

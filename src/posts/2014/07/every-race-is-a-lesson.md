@@ -3,6 +3,10 @@ title: "Every race is a lesson"
 date: "2014-07-10"
 categories: 
   - "writing"
+ tags:
+  - “cycling”
+  - “racing”
+  - “mtb”
 slug: "every-race-is-a-lesson"
 ---
 

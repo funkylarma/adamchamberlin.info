@@ -3,7 +3,9 @@ title: "Mighty Mouse no longer mighty"
 date: "2006-12-07"
 categories: 
   - "writing"
-
+tags:
+- “apple”
+- “mouse”
 slug: "mighty-mouse-no-longer-mighty"
 ---
 

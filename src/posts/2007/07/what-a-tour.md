@@ -3,7 +3,9 @@ title: "What a Tour"
 date: "2007-07-22"
 categories: 
   - "writing"
-
+tags:
+- “cycling”
+- “pro-tour”
 slug: "what-a-tour"
 ---
 

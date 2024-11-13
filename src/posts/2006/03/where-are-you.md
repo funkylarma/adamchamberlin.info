@@ -3,7 +3,9 @@ title: "Where are you?"
 date: "2006-03-21"
 categories: 
   - "writing"
-
+tags:
+- “weather”
+- “life”
 slug: "where-are-you"
 ---
 

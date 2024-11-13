@@ -3,7 +3,8 @@ title: "And you can keep your achievements!"
 date: "2006-02-16"
 categories: 
   - "writing"
-
+tags:
+- “gaming”
 slug: "and-you-can-keep-your-achievements"
 ---
 

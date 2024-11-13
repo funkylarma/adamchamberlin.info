@@ -3,7 +3,9 @@ title: "Cooking In The Digital Age!"
 date: "2005-06-13"
 categories: 
   - "writing"
-
+tags:
+ - “digital”
+ - “cooking”
 slug: "cooking-in-the-digital-age"
 ---
 

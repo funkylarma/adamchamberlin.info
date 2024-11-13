@@ -3,7 +3,9 @@ title: "It's Halo Time"
 date: "2007-09-26"
 categories: 
   - "writing"
-
+tags:
+- “gaming”
+- “halo”
 slug: "its-halo-time"
 ---
 

@@ -3,6 +3,11 @@ title: "Vittoria Terreno Zero Review"
 date: "2020-11-19"
 categories:
   - "writing"
+ tags:
+  - “cycling”
+  - “review”
+  - “vittoria”
+  - “terreno”
 cover: "/images/terreno.jpg"
 slug: "vittoria-terreno-zero"
 ---
@@ -10,8 +15,6 @@ slug: "vittoria-terreno-zero"
 ![Terreno Zero](/images/terreno.jpg)
 
 At first glance the Vittoria Terreno Zero looks like a lockdown love child of the Corsa road tyre and a Terreno cyclocross tyre. Has Vitoria found that sweet spot for fast gravel rides?
-
-<!--more-->
 
 Vittoria has been in the tyre game for a while now and where enhancements in road tyres are few and far between the off-road team have been busy. Hot on the heals of the existing three Terreno cyclocross specific treads; Wet, Dry and Mix, the Italian brand released the Terreno Zero.
 

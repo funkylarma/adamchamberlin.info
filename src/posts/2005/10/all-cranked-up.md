@@ -3,7 +3,8 @@ title: "all cranked up"
 date: "2005-10-11"
 categories: 
   - "writing"
-
+tags:
+- “cycling”
 slug: "all-cranked-up"
 ---
 

@@ -3,7 +3,8 @@ title: "Big Bother"
 date: "2006-05-19"
 categories: 
   - "writing"
-
+tags:
+- “television”
 slug: "big-bother"
 ---
 

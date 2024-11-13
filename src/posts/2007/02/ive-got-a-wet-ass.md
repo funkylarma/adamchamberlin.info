@@ -3,7 +3,8 @@ title: "I've got a wet ass!"
 date: "2007-02-26"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "ive-got-a-wet-ass"
 ---
 

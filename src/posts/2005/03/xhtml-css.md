@@ -3,6 +3,9 @@ title: "XHTML + CSS"
 date: "2005-03-06"
 categories: 
   - "writing"
+tags:
+ - “development”
+- “web”
 slug: "xhtml-css"
 ---
 

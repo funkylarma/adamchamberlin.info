@@ -3,7 +3,8 @@ title: "Give me the power to search"
 date: "2006-01-23"
 categories: 
   - "writing"
-
+tags:
+- “google”
 slug: "give-me-the-power-to-search"
 ---
 

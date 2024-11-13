@@ -3,7 +3,8 @@ title: "New Lens"
 date: "2006-05-14"
 categories: 
   - "writing"
-
+tags:
+- “photography”
 slug: "new-lens"
 ---
 

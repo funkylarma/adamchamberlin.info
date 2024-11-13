@@ -3,35 +3,38 @@ title: "GT4"
 date: "2005-10-01"
 categories:
   - "writing"
-
+tags:
+- “gaming”
+- “event”
+- “gt4”
 slug: "gt4"
 ---
 
-<!-- ![Photo sharing](/images/gt4.gif)   -->
+![Photo sharing][image-1]
 
 ## 24hr Challenge
 
-- ### Info:
+### - Info:
 
-    [The Challenge](#challenge)
+	[The Challenge][1]
 
-    [The Drivers](#drivers)
+	[The Drivers][2]
 
-    [The Equipment](#equipment)
+	[The Equipment][3]
 
-    [The Background](#background)
+	[The Background][4]
 
-    [The Planning](#planning)
+	[The Planning][5]
 
-    [The Event](#event)
+	[The Event][6]
 
-    [Pictures](#pictures) - [Race Gallery](https://)
+	[Pictures][7] - [Race Gallery][8]
 
-    [Race Updates and Results](#results)
+	[Race Updates and Results][9]
 
-    **The challenge!**
-    To complete a 24hr endurance race on Gran Turismo4 in real time.
-    We are going to stick to some ground rules to make sure it still is a bit like the real race.
+	**The challenge!**
+	To complete a 24hr endurance race on Gran Turismo4 in real time.
+	We are going to stick to some ground rules to make sure it still is a bit like the real race.
 
 - There will be no pausing the game unless we are in the pit lane, and even then only paused enough to change driver. Pausing the game to use the toliet or roll a tab is not allowed (gravy!)
 - There will be shifts on the driving, uncertain who does what, I guess that part we will just play by ear.
@@ -41,9 +44,9 @@ slug: "gt4"
 - Drivers will not be tested for drugs as they should be high to even consider this crap!
 
 **The Drivers.**
-[Funky Larma - Adam. (me)](#fl)
-[Gravy2012 - Sean.](#gravy)
-[bobgbob - Chris.](#bob)
+[Funky Larma - Adam. (me)][10]
+[Gravy2012 - Sean.][11]
+[bobgbob - Chris.][12]
 
 **The Equipment.**
 PS2 - of course
@@ -109,3 +112,18 @@ We plan on starting the race at 16:00 on Sat 9th April and all being well and go
 I have not tried playing a computer game for so long and so I’m not sure what effects you will recieve or how difficult it will be to stay awake. Gravy and I have tried a few hours straight in practice and even then your happy to leave the seat! I think we might have bitten off more than we can chew!
 
 **Pictures**
+
+[1]:	#challenge
+[2]:	#drivers
+[3]:	#equipment
+[4]:	#background
+[5]:	#planning
+[6]:	#event
+[7]:	#pictures
+[8]:	https://
+[9]:	#results
+[10]:	#fl
+[11]:	#gravy
+[12]:	#bob
+
+[image-1]:	/images/gt4.gif

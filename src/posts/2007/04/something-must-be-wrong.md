@@ -3,7 +3,8 @@ title: "Something Must Be Wrong?"
 date: "2007-04-18"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "something-must-be-wrong"
 ---
 

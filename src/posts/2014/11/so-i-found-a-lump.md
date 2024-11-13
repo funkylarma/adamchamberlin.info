@@ -3,6 +3,10 @@ title: "So I found a lump"
 date: "2014-11-19"
 categories: 
   - "writing"
+ tags:
+  - “life”
+  - “medical”
+  - “health”
 slug: "so-i-found-a-lump"
 ---
 

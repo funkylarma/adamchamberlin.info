@@ -3,7 +3,9 @@ title: "One step forward, two back"
 date: "2006-05-10"
 categories: 
   - "writing"
-
+tags:
+- “development”
+- “web”
 slug: "one-step-forward-two-back"
 ---
 

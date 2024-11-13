@@ -3,7 +3,9 @@ title: "It's Showtime!"
 date: "2006-09-12"
 categories: 
   - "writing"
-
+tags:
+- “apple”
+- “event”
 slug: "its-showtime"
 ---
 

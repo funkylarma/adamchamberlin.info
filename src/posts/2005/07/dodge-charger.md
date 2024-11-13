@@ -3,7 +3,8 @@ title: "Dodge Charger"
 date: "2005-07-11"
 categories:
   - "writing"
-
+tags:
+ - “cars”
 slug: "dodge-charger"
 ---
 

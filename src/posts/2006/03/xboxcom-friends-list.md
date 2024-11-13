@@ -3,7 +3,8 @@ title: "xbox.com friends list"
 date: "2006-03-01"
 categories: 
   - "writing"
-
+tags:
+- “xbox”
 slug: "xboxcom-friends-list"
 ---
 
