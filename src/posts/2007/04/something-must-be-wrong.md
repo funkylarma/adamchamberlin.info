@@ -4,7 +4,7 @@ date: "2007-04-18"
 categories: 
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "something-must-be-wrong"
 ---
 

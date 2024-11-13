@@ -4,9 +4,9 @@ date: "2007-07-03"
 categories: 
   - "writing"
 tags:
-- “social”
-- “networking”
-- “web”
+- "social"
+- "networking"
+- "web"
 slug: "want-invites"
 ---
 

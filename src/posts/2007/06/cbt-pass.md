@@ -4,8 +4,8 @@ date: "2007-06-17"
 categories: 
   - "writing"
 tags:
-- “learning”
-- “motorbikes”
+- "learning"
+- "motorbikes"
 slug: "cbt-pass"
 ---
 

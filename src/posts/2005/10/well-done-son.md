@@ -4,8 +4,8 @@ date: "2005-10-11"
 categories: 
   - "writing"
 tags:
-- “music”
-- “web”
+- "music"
+- "web"
 slug: "well-done-son"
 ---
 

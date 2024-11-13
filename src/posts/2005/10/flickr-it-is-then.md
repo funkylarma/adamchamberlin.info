@@ -4,8 +4,8 @@ date: "2005-10-09"
 categories: 
   - "writing"
 tags:
-- “life”
-- “flickr”
+- "life"
+- "flickr"
 slug: "flickr-it-is-then"
 ---
 

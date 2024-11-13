@@ -1,11 +1,11 @@
 ---
 title: "The UK Etape"
 date: "2007-03-06"
-categories: 
+categories:
   - "writing"
 tags:
- - “cycling”
-- “event”
+ - "cycling"
+ - "event"
 slug: "the-uk-etape"
 ---
 

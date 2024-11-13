@@ -4,7 +4,7 @@ date: "2005-12-08"
 categories: 
   - "writing"
 tags:
-- “virus”
+- "virus"
 slug: "sober-attack"
 ---
 

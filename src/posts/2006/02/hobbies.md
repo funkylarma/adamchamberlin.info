@@ -4,7 +4,7 @@ date: "2006-02-16"
 categories:
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "hobbies"
 ---
 

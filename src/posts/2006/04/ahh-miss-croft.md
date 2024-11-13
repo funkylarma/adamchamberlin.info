@@ -2,9 +2,9 @@
 title: "Ahh Miss Croft, you're back."
 date: "2006-04-09"
 categories:
-  - "writing”
+  - "writing"
 tags:
-- “gaming”
+  - "gaming"
 slug: "ahh-miss-croft"
 ---
 

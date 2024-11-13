@@ -4,8 +4,8 @@ date: "2005-04-24"
 categories: 
   - "writing"
 tags:
- - “cycling”
- - “commute”
+ - "cycling"
+ - "commute"
 slug: "just-missed-the-slime"
 ---
 

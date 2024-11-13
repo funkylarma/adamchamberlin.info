@@ -4,7 +4,7 @@ date: "2005-08-26"
 categories: 
   - "writing"
 tags:
-- “television”
+- "television"
 slug: "how-big-is-big"
 ---
 

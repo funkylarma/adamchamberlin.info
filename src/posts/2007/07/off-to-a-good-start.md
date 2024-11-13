@@ -4,8 +4,8 @@ date: "2007-07-09"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “pro-tour”
+- "cycling"
+- "pro-tour"
 slug: "off-to-a-good-start"
 ---
 

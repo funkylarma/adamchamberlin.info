@@ -1,10 +1,10 @@
 ---
 title: "Willow Tree Farm Shop"
 date: "2006-06-22"
-categories: 
+categories:
   - "writing"
 tags:
-- “end2end”
+- "end2end"
 slug: "willow-tree-farm-shop"
 ---
 

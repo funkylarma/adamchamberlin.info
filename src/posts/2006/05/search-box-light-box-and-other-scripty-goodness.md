@@ -4,9 +4,9 @@ date: "2006-05-13"
 categories:
   - "writing"
 tags:
-- “development”
-- “web”
-- “javascript”
+- "development"
+- "web"
+- "javascript"
 slug: "search-box-light-box-and-other-scripty-goodness"
 ---
 
@@ -19,7 +19,7 @@ My problem was that I did want to find a way to display images in a way that kep
 
 ### Installing Lightbox…
 
- [![Wet dog][image-1]][9]
+ <!-- [![Wet dog][image-1]][9] -->
 
 The installation of [Lightbox][10] was very simple really, first off download the files required from [Lokesh’s][11] site, you do get the required script.aculo.us files in there but it might be worth while checking the site for [updates][12].
 Upload the Javascript files to your web host, I’m presuming you will keep them in the folder named js and this in your template/theme folder, such as; /wp-content/themes/k2/js/\*.js

@@ -4,8 +4,8 @@ date: "2007-05-06"
 categories: 
   - "writing"
 tags:
-- “flickr”
-- “tech”
+- "flickr"
+- "tech"
 slug: "flickr-uploader"
 ---
 

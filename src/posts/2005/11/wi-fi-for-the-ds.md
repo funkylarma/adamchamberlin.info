@@ -4,9 +4,9 @@ date: "2005-11-04"
 categories: 
   - "writing"
 tags:
-- “gaming”
-- “nintendo”
-- “news”
+- "gaming"
+- "nintendo"
+- "news"
 slug: "wi-fi-for-the-ds"
 ---
 

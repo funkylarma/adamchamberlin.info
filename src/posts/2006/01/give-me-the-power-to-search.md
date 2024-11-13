@@ -4,7 +4,7 @@ date: "2006-01-23"
 categories: 
   - "writing"
 tags:
-- “google”
+- "google"
 slug: "give-me-the-power-to-search"
 ---
 

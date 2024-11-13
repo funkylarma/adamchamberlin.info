@@ -4,8 +4,8 @@ date: "2007-05-11"
 categories: 
   - "writing"
 tags:
-- “photography”
-- “hdr”
+- "photography"
+- "hdr"
 slug: "hdr-or-bust"
 ---
 

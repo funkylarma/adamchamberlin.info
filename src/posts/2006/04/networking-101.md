@@ -4,8 +4,8 @@ date: "2006-04-26"
 categories: 
   - "writing"
 tags:
-- “networking”
-- “work”
+- "networking"
+- "work"
 slug: "networking-101"
 ---
 

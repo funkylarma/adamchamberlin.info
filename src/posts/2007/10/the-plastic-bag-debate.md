@@ -4,8 +4,8 @@ date: "2007-10-15"
 categories: 
   - "writing"
 tags:
-- “environment”
-- “debate”
+- "environment"
+- "debate"
 slug: "the-plastic-bag-debate"
 ---
 

@@ -4,8 +4,8 @@ date: "2005-08-26"
 categories: 
   - "writing"
 tags:
-- “life”
-- “moving”
+- "life"
+- "moving"
 slug: "were-on-the-move"
 ---
 

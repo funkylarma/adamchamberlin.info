@@ -1,11 +1,11 @@
 ---
 title: "Happy New Year"
 date: "2008-12-31"
-categories: 
+categories:
   - "writing"
- tags:
-  - “life”
-  - “new-year”
+tags:
+  - "life"
+  - "new-year"
 slug: "happy-new-year-2"
 ---
 

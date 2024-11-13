@@ -4,7 +4,7 @@ date: "2007-02-26"
 categories: 
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "ive-got-a-wet-ass"
 ---
 

@@ -4,9 +4,9 @@ date: "2007-09-06"
 categories:
   - "writing"
 tags:
-- “life”
-- “update”
-- “motorbike”
+- "life"
+- "update"
+- "motorbike"
 slug: "missing-something"
 ---
 

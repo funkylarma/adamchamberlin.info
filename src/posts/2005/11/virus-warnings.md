@@ -4,7 +4,7 @@ date: "2005-11-23"
 categories: 
   - "writing"
 tags:
-- “virus”
+- "virus"
 slug: "virus-warnings"
 ---
 

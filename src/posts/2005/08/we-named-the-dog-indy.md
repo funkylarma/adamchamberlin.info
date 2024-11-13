@@ -4,8 +4,8 @@ date: "2005-08-03"
 categories: 
   - "writing"
 tags:
-- “movies”
-- “news”
+- "movies"
+- "news"
 slug: "we-named-the-dog-indy"
 ---
 

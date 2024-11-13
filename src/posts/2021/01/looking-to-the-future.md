@@ -1,11 +1,11 @@
 ---
 title: "Looking to the future"
 date: "2021-01-01"
-categories: 
+categories:
   - "writing"
- tags:
-  - “life”
-  - “resolutions”
+tags:
+  - "life"
+  - "resolutions"
 slug: "looking-to-the-future"
 ---
 

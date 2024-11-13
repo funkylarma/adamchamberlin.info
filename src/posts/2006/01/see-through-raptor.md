@@ -4,8 +4,8 @@ date: "2006-01-09"
 categories: 
   - "writing"
 tags:
-- “tech”
-- “news”
+- "tech"
+- "news"
 slug: "see-through-raptor"
 ---
 

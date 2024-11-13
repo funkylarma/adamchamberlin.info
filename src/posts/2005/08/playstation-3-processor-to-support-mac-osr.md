@@ -4,8 +4,8 @@ date: "2005-08-05"
 categories: 
   - "writing"
 tags:
-- “gaming”
-- “ps3”
+- "gaming"
+- "ps3"
 slug: "playstation-3-processor-to-support-mac-osr"
 ---
 

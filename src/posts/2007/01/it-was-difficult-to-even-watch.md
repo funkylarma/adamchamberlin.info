@@ -4,7 +4,7 @@ date: "2007-01-20"
 categories: 
   - "writing"
 tags:
-- “television”
+- "television"
 slug: "it-was-difficult-to-even-watch"
 ---
 

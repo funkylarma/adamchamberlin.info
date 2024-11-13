@@ -4,8 +4,8 @@ date: "2006-03-27"
 categories: 
   - "writing"
 tags:
-- “life”
-- “birthday”
+- "life"
+- "birthday"
 slug: "the-week-that-wasnt"
 ---
 

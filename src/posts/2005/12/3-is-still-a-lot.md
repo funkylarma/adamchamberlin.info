@@ -4,9 +4,9 @@ date: "2005-12-06"
 categories: 
   - "writing"
 tags:
-- “gaming”
-- “xbox”
-- “news”
+- "gaming"
+- "xbox"
+- "news"
 slug: "3-is-still-a-lot"
 ---
 

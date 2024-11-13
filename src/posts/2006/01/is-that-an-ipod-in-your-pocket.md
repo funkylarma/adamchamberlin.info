@@ -4,7 +4,7 @@ date: "2006-01-11"
 categories: 
   - "writing"
 tags:
-- “ipod”
+- "ipod"
 slug: "is-that-an-ipod-in-your-pocket"
 ---
 

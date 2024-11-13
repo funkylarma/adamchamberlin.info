@@ -4,8 +4,8 @@ date: "2005-03-09"
 categories: 
   - "writing"
 tags:
- - “gaming”
- - “gt4”
+ - "gaming"
+ - "gt4"
 slug: "gran-turismo-4"
 ---
 

@@ -4,8 +4,8 @@ date: "2006-09-27"
 categories: 
   - "writing"
 tags:
-- “television”
-- “lost”
+- "television"
+- "lost"
 slug: "lost-you-telling-me"
 ---
 

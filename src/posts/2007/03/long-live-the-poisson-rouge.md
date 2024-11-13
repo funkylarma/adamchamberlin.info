@@ -4,12 +4,12 @@ date: "2007-03-05"
 categories:
   - "writing"
 tags:
- - “life”
-- “france”
+ - "life"
+ - "france"
 slug: "long-live-the-poisson-rouge"
 ---
 
-“je suis un poisson rouge” That is the limit of my French speaking skills. And I have no idea where I got that from! Yet I’ve just come back from a weekend in France and some how I managed to get food and water. Ok I was with people who have a better understanding on the language than I do.
+"je suis un poisson rouge" That is the limit of my French speaking skills. And I have no idea where I got that from! Yet I’ve just come back from a weekend in France and some how I managed to get food and water. Ok I was with people who have a better understanding on the language than I do.
 
 ![Photo sharing][image-1]
 

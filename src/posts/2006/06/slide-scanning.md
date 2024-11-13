@@ -4,7 +4,7 @@ date: "2006-06-21"
 categories: 
   - "writing"
 tags:
-- “photography”
+- "photography"
 slug: "slide-scanning"
 ---
 

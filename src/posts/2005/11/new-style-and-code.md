@@ -4,8 +4,8 @@ date: "2005-11-22"
 categories:
   - "writing"
 tags:
-- “development”
-- “wordpress”
+- "development"
+- "wordpress"
 slug: "new-style-and-code"
 ---
 

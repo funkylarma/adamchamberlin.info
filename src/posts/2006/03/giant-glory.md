@@ -4,8 +4,8 @@ date: "2006-03-28"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “news”
+- "cycling"
+- "news"
 slug: "giant-glory"
 ---
 

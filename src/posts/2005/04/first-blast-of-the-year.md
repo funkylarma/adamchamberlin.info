@@ -4,8 +4,8 @@ date: "2005-04-01"
 categories: 
   - "writing"
 tags:
- - “commute”
- - “cycling”
+ - "commute"
+ - "cycling"
 slug: "first-blast-of-the-year"
 ---
 

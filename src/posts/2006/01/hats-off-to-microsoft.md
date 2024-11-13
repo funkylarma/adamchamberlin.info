@@ -4,8 +4,8 @@ date: "2006-01-04"
 categories: 
   - "writing"
 tags:
-- “microsoft”
-- “ipod”
+- "microsoft"
+- "ipod"
 slug: "hats-off-to-microsoft"
 ---
 

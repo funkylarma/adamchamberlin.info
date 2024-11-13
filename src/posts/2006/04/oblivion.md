@@ -4,8 +4,8 @@ date: "2006-04-04"
 categories:
   - "writing"
 tags:
-- “gaming”
-- “review”
+- "gaming"
+- "review"
 slug: "oblivion"
 ---
 
@@ -15,7 +15,7 @@ To be honest I’m not a vast fantasy RPG fan, worrying about leveling up on you
 So I picked up a copy to see what all the fuss was about. As usual the limited edition version was all sold out so I settles for the standard version and went on home ready to be impressed.
 But to my horror I was not, far from it!
 
-When I put the disc in, I was greeted by the Bethesda logo and some stuttering music. Loading times I put it down to, so started a new game. Nope not loading times, just plain old not working. Every bit of audio was jumping, Patrick “Make it so” Stewart was unbearable, then came the loading times, or rather they did not. It was taking minutes to render the landscape and move between sections, not great at all! So much so I went back to the demo of Blazing Angels.
+When I put the disc in, I was greeted by the Bethesda logo and some stuttering music. Loading times I put it down to, so started a new game. Nope not loading times, just plain old not working. Every bit of audio was jumping, Patrick "Make it so" Stewart was unbearable, then came the loading times, or rather they did not. It was taking minutes to render the landscape and move between sections, not great at all! So much so I went back to the demo of Blazing Angels.
 
 Later on I did some home work and found out I was not running in 60hz mode on the console. After sorting this out and fitting a digital RGB cable (which greatly improved the visuals) I tried again. Perfect, no jumping audio, the rendering was better and loading times were back to normal. There have been reports of fragmented game cache’s with this game but if you are having problems with audio make sure your in 60hz from the dashboard.
 

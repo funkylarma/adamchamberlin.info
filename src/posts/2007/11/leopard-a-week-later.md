@@ -4,9 +4,9 @@ date: "2007-11-11"
 categories:
   - "writing"
 tags:
-- “apple”
-- “macos”
-- “leopard”
+- "apple"
+- "macos"
+- "leopard"
 slug: "leopard-a-week-later"
 ---
 
@@ -18,11 +18,11 @@ For the installation I opted to start from scratch and complete a total re-insta
 
 ## Finder
 
- [![Leopard Finder][image-1]][3]
+ <!-- [![Leopard Finder][image-1]][3] -->
 
 I open the new [Finder][4] to find the new side bar and folder icons. Personally I’m a fan of these, they look good and sort of make up for the fact that CandyBar will not work in Leopard. The side bar is also a great improvement, but for different reasons, it is not network friendly with browsing your network a complete breeze; that even includes Windows machines! If you have any machine on your network that is sharing files or services when it will appear in a separate section in the side bar. By clicking on said machine will start the connection process, if you have never connected before you default to 'guest’ but you can change this by 'connect as’ and once completed keychain remembers this next time. Networking for me suddenly just got a whole lot easier!
 
- [![Coverflow][image-2]][5]
+ <!-- [![Coverflow][image-2]][5] -->
 
 The next thing you will notice in the Finder are the new icons in the toolbar. First we have the coverflow view and the then the Quick Look eye. When viewing files and folders you used to have three main options, icons, threaded lists and split panes. Now you have the coverflow option. If you have used any recent version of iTunes you will know this feature, you are able to flick your way through your files. Whilst this is a great way to view some photographs or artwork I can not see it having the same effect with a load of boring Word documents. But for those Word Documents you have Quick Look which is just a breath of fresh air. We all know Microsoft Word is a hog, in fact using Pages makes much better sense, but rather than having to open up Word just to see that you’ve got the wrong document, one press of the spacebar brings the document up in Quick Look. [Quick Look][6] you enables you to open Word, Excel, pdf, quicktime and most image formats in a 'quick’ window for view or review. You can still control the active cursor in the main window so you can flick between files but there appears to be no known shortcuts just yet.
 
@@ -30,11 +30,11 @@ The next thing you will notice in the Finder are the new icons in the toolbar. F
 
 A long time ago I purchased a Freecom 400gb external USB hard drive with the plan of backing up all my data. However I could then not decide on the backup software or the process in which to do it. So as like most things it got pushed to the bottom of the pile. About once every couple of weeks I would turn this drive on, connect it up and use Apple Backup to backup my iTunes library and my photo library. Then it was forgotten about for another couple of weeks, not really best practice.
 
- [![Time Machine][image-3]][7]
+ <!-- [![Time Machine][image-3]][7] -->
 
 Apple have included a new backup facility in Leopard called [Time Machine][8], when I first read about it I was dubious and cast it aside as one of those gimmicky bolt on extras and never took any notice of it. Now I’m converted and a devote Time Machine user. When you read the Apple run down of Time Machine or look at the video’s they do not do it justice. I was convinced that it would only backup the startup drive and would be a tremendous waste of hard drive space and resources. But when I first configured the backup it went through and backed up both my startup drive and the second media drive. So after a few tweaks and setting some folders not to backup (scratch disks) I started again. Sure enough everything was backing up and when the next one was due it went off very quickly without any hitches.
 
- [![Time Machine][image-4]][9]
+ <!-- [![Time Machine][image-4]][9] -->
 
 Since then I have been using it on a daily basis and have performed by own disaster recovery trial run; what a fun time that was. The only down side is that to totally restore a complete drive you need to boot from your Leopard install disc and then restore from there. I’ve read about creating partitions on backup drives and creating bootable copies of Leopard install dvd’s on there. Too much for me, just don’t loose the disc!
 

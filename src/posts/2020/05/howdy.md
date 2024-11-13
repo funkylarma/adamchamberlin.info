@@ -1,16 +1,16 @@
 ---
 title: "Howdy"
 date: "2020-05-25"
-categories: 
+categories:
   - "writing"
- tags:
-  - “life”
-  - “blogging”
-  - “family”
+tags:
+  - "life"
+  - "blogging"
+  - "family"
 slug: "howdy"
 ---
 
-You know that feeling, when you wake in the morning and that little thought pops into your head. “I had a blog, once”.
+You know that feeling, when you wake in the morning and that little thought pops into your head. "I had a blog, once".
 
 Yep. I can confirm that after an online search for my name it turns out I do indeed have a blog. It is still alive and has been sitting here collecting dust all this time.
 

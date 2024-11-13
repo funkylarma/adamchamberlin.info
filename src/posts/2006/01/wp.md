@@ -4,13 +4,13 @@ date: "2006-01-11"
 categories:
   - "writing"
 tags:
-- “wordpress”
-- “theme”
-- “development”
+- "wordpress"
+- "theme"
+- "development"
 slug: "wp"
 ---
 
-![WordPress][image-1]
+<!-- ![WordPress][image-1] -->
 
 ## home grown themes
 
@@ -22,13 +22,13 @@ slug: "wp"
 
 K2 is the very popular theme from Michael Heilman, the creator of Kubrick (the default WordPress theme)
 
- [![Billet][image-2]][2]
+ <!-- [![Billet][image-2]][2] -->
 
 ### Billet
 
 \- A simple square looking style with an aluminium look to it. [Download][3]
 
- [![Grey][image-3]][4]
+ <!-- [![Grey][image-3]][4] -->
 
 ### Grey
 

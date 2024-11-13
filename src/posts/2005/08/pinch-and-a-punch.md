@@ -4,8 +4,8 @@ date: "2005-08-01"
 categories: 
   - "writing"
 tags:
-- “life”
-- “generation”
+- "life"
+- "generation"
 slug: "pinch-and-a-punch"
 ---
 

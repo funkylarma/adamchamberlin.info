@@ -4,11 +4,11 @@ date: "2006-06-30"
 categories:
   - "writing"
 tags:
-- “movies”
+- "movies"
 slug: "transformers"
 ---
 
-![Photo sharing][image-1]
+<!-- ![Photo sharing][image-1] -->
 
 New trailer released. Need you say any more.
 

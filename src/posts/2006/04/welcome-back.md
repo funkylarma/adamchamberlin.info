@@ -4,8 +4,8 @@ date: "2006-04-20"
 categories:
   - "writing"
 tags:
-- “life”
-- “update”
+- "life"
+- "update"
 slug: "welcome-back"
 ---
 

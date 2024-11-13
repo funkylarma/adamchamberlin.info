@@ -4,9 +4,9 @@ date: "2005-05-07"
 categories:
   - "writing"
 tags:
- - “pickle”
- - “life”
- - “parrot”
+ - "pickle"
+ - "life"
+ - "parrot"
 slug: "we-get-a-pickle"
 ---
 

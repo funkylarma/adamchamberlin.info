@@ -4,7 +4,7 @@ date: "2005-09-26"
 categories: 
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "good-luck-gravy"
 ---
 

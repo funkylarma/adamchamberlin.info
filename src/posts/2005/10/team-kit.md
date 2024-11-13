@@ -4,8 +4,8 @@ date: "2005-10-27"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “kit”
+- "cycling"
+- "kit"
 slug: "team-kit"
 ---
 

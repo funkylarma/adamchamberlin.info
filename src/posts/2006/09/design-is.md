@@ -4,11 +4,11 @@ date: "2006-09-15"
 categories:
   - "writing"
 tags:
-- “design”
+- "design"
 slug: "design-is"
 ---
 
- [![Design is...][image-1]][1]
+ <!-- [![Design is...][image-1]][1] -->
 
 It all start off with [Jon’s wallpaper][2], it all got a bit out of hand [from there][3]. Why not jump on the band wagon?
 

@@ -4,8 +4,8 @@ date: "2005-06-12"
 categories: 
   - "writing"
 tags:
- - “life”
- - “ebay”
+ - "life"
+ - "ebay"
 slug: "let-there-be-ebay"
 ---
 

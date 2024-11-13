@@ -4,8 +4,8 @@ date: "2007-12-21"
 categories: 
   - "writing"
 tags:
-- “online”
-- “video”
+- "online"
+- "video"
 slug: "online-video-virgin"
 ---
 

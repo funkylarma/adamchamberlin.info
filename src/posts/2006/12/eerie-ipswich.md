@@ -4,7 +4,7 @@ date: "2006-12-20"
 categories: 
   - "writing"
 tags:
-- “news”
+- "news"
 slug: "eerie-ipswich"
 ---
 

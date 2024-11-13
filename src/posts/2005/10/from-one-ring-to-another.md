@@ -4,8 +4,8 @@ date: "2005-10-04"
 categories: 
   - "writing"
 tags:
-- “movies”
-- “gaming”
+- "movies"
+- "gaming"
 slug: "from-one-ring-to-another"
 ---
 

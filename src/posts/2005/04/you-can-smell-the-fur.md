@@ -4,8 +4,8 @@ date: "2005-04-07"
 categories: 
   - "writing"
 tags:
- - “macos”
- - “tiger”
+ - "macos"
+ - "tiger"
 slug: "you-can-smell-the-fur"
 ---
 

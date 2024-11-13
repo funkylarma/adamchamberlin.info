@@ -4,8 +4,8 @@ date: "2006-03-07"
 categories: 
   - "writing"
 tags:
-- “gaming”
-- “xbox”
+- "gaming"
+- "xbox"
 slug: "new-marketplace-items"
 ---
 

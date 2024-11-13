@@ -4,7 +4,7 @@ date: "2005-07-11"
 categories:
   - "writing"
 tags:
- - “cars”
+ - "cars"
 slug: "dodge-charger"
 ---
 

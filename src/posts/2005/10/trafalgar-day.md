@@ -4,7 +4,7 @@ date: "2005-10-21"
 categories: 
   - "writing"
 tags:
-- “event”
+- "event"
 slug: "trafalgar-day"
 ---
 

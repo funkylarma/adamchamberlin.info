@@ -4,9 +4,9 @@ date: "2008-03-13"
 categories: 
   - "writing"
 tags:
- - “microsoft”
- - “sony”
- - “vaio”
+ - "microsoft"
+ - "sony"
+ - "vaio"
 slug: "nice-one-ie"
 ---
 

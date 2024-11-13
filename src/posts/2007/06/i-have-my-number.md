@@ -4,8 +4,8 @@ date: "2007-06-13"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “event”
+- "cycling"
+- "event"
 slug: "i-have-my-number"
 ---
 

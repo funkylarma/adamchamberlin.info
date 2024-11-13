@@ -4,8 +4,8 @@ date: "2006-05-12"
 categories: 
   - "writing"
 tags:
-- “mint”
-- “analytics”
+- "mint"
+- "analytics"
 slug: "aggggghhhhh"
 ---
 

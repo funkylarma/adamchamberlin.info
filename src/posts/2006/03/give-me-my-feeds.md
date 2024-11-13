@@ -4,7 +4,7 @@ date: "2006-03-23"
 categories: 
   - "writing"
 tags:
-- “rss”
+- "rss"
 slug: "give-me-my-feeds"
 ---
 

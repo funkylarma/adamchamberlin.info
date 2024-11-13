@@ -1,11 +1,11 @@
 ---
 title: "New iPod Line Up"
 date: "2005-02-24"
-categories: 
+categories:
   - "writing"
- tag:
-  - “apple”
-  - “iPod”
+tags:
+  - "apple"
+  - "iPod"
 slug: "new-ipod-line-up"
 ---
 

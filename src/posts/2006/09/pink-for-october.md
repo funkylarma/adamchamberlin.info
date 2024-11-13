@@ -4,8 +4,8 @@ date: "2006-09-22"
 categories:
   - "writing"
 tags:
-- “pink”
-- “web”
+- "pink"
+- "web"
 slug: "pink-for-october"
 ---
 

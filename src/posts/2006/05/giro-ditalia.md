@@ -4,8 +4,8 @@ date: "2006-05-19"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “pro-tour”
+- "cycling"
+- "pro-tour"
 slug: "giro-ditalia"
 ---
 

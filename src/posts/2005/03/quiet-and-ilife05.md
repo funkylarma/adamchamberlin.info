@@ -4,8 +4,8 @@ date: "2005-03-31"
 categories: 
   - "writing"
 tags:
- - “apple”
- - “iLife”
+ - "apple"
+ - "iLife"
 slug: "quiet-and-ilife05"
 ---
 

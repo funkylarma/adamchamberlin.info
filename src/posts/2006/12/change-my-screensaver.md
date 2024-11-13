@@ -4,7 +4,7 @@ date: "2006-12-19"
 categories: 
   - "writing"
 tags:
-- “tech”
+- "tech"
 slug: "change-my-screensaver"
 ---
 

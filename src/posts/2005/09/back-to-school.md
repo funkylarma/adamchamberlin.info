@@ -4,8 +4,8 @@ date: "2005-09-21"
 categories: 
   - "writing"
 tags:
-- “career”
-- “training”
+- "career"
+- "training"
 slug: "back-to-school"
 ---
 

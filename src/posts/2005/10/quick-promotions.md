@@ -4,7 +4,7 @@ date: "2005-10-21"
 categories: 
   - "writing"
 tags:
-- “cycling”
+- "cycling"
 slug: "quick-promotions"
 ---
 

@@ -4,7 +4,7 @@ date: "2005-07-10"
 categories: 
   - "writing"
 tags:
- - “updates”
+ - "updates"
 slug: "price-on-black-gold"
 ---
 

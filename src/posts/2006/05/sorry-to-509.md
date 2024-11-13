@@ -4,14 +4,14 @@ date: "2006-05-06"
 categories:
   - "writing"
 tags:
-- “web”
-- “development”
+- "web"
+- "development"
 slug: "sorry-to-509"
 ---
 
 According to [Mint][1] 50.9% of the visitors to my site use Internet Explorer (shame on you, [browse happy][2]!) needless to say you must cater for all users really and 50% is something you just cannot ignore.
 
-![IE you pain!][image-1]
+<!-- ![IE you pain!][image-1] -->
 
 Chris brought to my attention that the site is not IE friendly, everything still displays, and you get the whole picture, just not the picture I intended you to see.
 If you are using IE, your screen looks something like the picture, the navigation sidebar should not be sitting down there, it should be flush with the top of the article.

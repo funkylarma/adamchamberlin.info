@@ -4,7 +4,7 @@ date: "2006-02-16"
 categories: 
   - "writing"
 tags:
-- “gaming”
+- "gaming"
 slug: "and-you-can-keep-your-achievements"
 ---
 

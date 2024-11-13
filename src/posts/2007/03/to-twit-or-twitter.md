@@ -4,9 +4,9 @@ date: "2007-03-30"
 categories: 
   - "writing"
 tags:
-- “twitter”
-- “social”
-- “networking”
+- "twitter"
+- "social"
+- "networking"
 slug: "to-twit-or-twitter"
 ---
 

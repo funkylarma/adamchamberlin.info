@@ -4,8 +4,8 @@ date: "2005-05-22"
 categories:
   - "writing"
 tags:
- - “photography”
- - “flickr”
+ - "photography"
+ - "flickr"
 slug: "flickr-photo-site"
 ---
 

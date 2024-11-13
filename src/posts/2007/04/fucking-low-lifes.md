@@ -4,8 +4,8 @@ date: "2007-04-18"
 categories: 
   - "writing"
 tags:
-- “cars”
-- “life”
+- "cars"
+- "life"
 slug: "fucking-low-lifes"
 ---
 

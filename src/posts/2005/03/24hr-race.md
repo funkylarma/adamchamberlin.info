@@ -1,11 +1,11 @@
 ---
 title: "24hr Race"
 date: "2005-03-16"
-categories: 
+categories:
   - "writing"
 tags:
-	- “gaming”
-	- “gt4”
+- "gaming"
+- "gt4"
 slug: "24hr-race"
 ---
 
@@ -15,5 +15,5 @@ So imagine my delight when I discover that Gran Turismo 4 has some real time 24�
 
 That's right, racing in a computer game for 24 hours. Now this is nothing new really, as the old Le Man games of both PlayStation2 and original PlayStation fame had this feature. But what makes this fascinating is the fact that once you start, you cannot stop. Most games would let you pit in and save and stuff, not GT4. You want to race for 24 hours, you WILL race for 24 hours!
 
-This has got Gravy2012 and I are thinking, let's do it! Let’s organise a 24 hour Gran Turismo 4 race.  
+This has got Gravy2012 and I are thinking, let's do it! Let’s organise a 24 hour Gran Turismo 4 race.
 This is going to need some thought, we are not just going to sit there for 24 hours, plus using a controller for over a few hours hurts enough. We are looking into the use of a driving wheel and I guess a really comfortable chair!

@@ -4,9 +4,9 @@ date: "2005-12-09"
 categories: 
   - "writing"
 tags:
-- “apple”
-- “ibook”
-- “powerbook”
+- "apple"
+- "ibook"
+- "powerbook"
 slug: "ibook-or-powerbook"
 ---
 

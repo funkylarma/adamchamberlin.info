@@ -4,8 +4,8 @@ date: "2006-03-23"
 categories: 
   - "writing"
 tag:
-- “pc”
-- “dell”
+- "pc"
+- "dell"
 slug: "the-aliens-has-left"
 ---
 

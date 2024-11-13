@@ -4,8 +4,8 @@ date: "2005-10-08"
 categories: 
   - "writing"
 tags:
-- “gaming”
-- “flash”
+- "gaming"
+- "flash"
 slug: "i-am-michael-knight"
 ---
 

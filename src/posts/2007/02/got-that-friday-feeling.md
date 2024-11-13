@@ -4,7 +4,7 @@ date: "2007-02-02"
 categories: 
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "got-that-friday-feeling"
 ---
 

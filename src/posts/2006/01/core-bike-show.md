@@ -4,12 +4,12 @@ date: "2006-01-24"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “event”
+- "cycling"
+- "event"
 slug: "core-bike-show"
 ---
 
-![Corebike Show][image-1]
+<!-- ![Corebike Show][image-1] -->
 
 Yesterday afternoon was taken as a jolly. In other words work got the boot and I spent the time traveling to the [Core Bike Show][1].
 This event is a trade show for the major importers of all things cycling, so I had to take on the role of ‘Web Designer’ for LifecycleUK, despite the fact that Rob actually signed me up as office gimp! Matt (the only real employee of LifeCycle) was 'Mechanic’.

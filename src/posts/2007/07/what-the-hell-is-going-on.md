@@ -4,8 +4,8 @@ date: "2007-07-26"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “pro-tour”
+- "cycling"
+- "pro-tour"
 slug: "what-the-hell-is-going-on"
 ---
 

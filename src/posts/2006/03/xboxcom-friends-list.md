@@ -4,7 +4,7 @@ date: "2006-03-01"
 categories: 
   - "writing"
 tags:
-- “xbox”
+- "xbox"
 slug: "xboxcom-friends-list"
 ---
 

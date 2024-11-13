@@ -4,8 +4,8 @@ date: "2006-01-31"
 categories: 
   - "writing"
 tags:
-- “xbox”
-- “gaming”
+- "xbox"
+- "gaming"
 slug: "xbox-live-update"
 ---
 
@@ -17,7 +17,7 @@ Yesterday Microsoft announced the first update to the 360 dashboard. According t
 > 
 > \* Improvements to the Xbox Guide.  
 > \* Option to retain your saved games when you delete a profile.  
-> \* Increased accuracy of “last time played.”  
+> \* Increased accuracy of "last time played."  
 > \* Network configuration improvements for Xbox Live® members in the Netherlands.  
 > \* More detailed messaging for unreadable disk or region errors.
 > 

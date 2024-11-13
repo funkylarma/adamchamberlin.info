@@ -1,12 +1,12 @@
 ---
 title: "I Only Wanted The New NIN Album"
 date: "2008-03-04"
-categories: 
+categories:
   - "writing"
 tags:
- - “download”
- - “music”
- - “file-sharing”
+ - "download"
+ - "music"
+ - "file-sharing"
 slug: "i-only-wanted-the-new-nin-album"
 ---
 

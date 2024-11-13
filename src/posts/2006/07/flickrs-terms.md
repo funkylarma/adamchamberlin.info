@@ -4,8 +4,8 @@ date: "2006-07-07"
 categories: 
   - "writing"
 tags:
-- “web”
-- “flickr”
+- "web"
+- "flickr"
 slug: "flickrs-terms"
 ---
 

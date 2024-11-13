@@ -4,7 +4,7 @@ date: "2006-02-07"
 categories: 
   - "writing"
 tags:
-- “software”
+- "software"
 slug: "opera-9-preview"
 ---
 

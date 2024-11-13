@@ -4,8 +4,8 @@ date: "2007-05-16"
 categories: 
   - "writing"
 tags:
-- “flickr”
-- “software”
+- "flickr"
+- "software"
 slug: "its-that-time-again"
 ---
 

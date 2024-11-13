@@ -4,8 +4,8 @@ date: "2007-04-05"
 categories: 
   - "writing"
 tags:
-- “css”
-- “naked”
+- "css"
+- "naked"
 slug: "you-make-me-feel-naked"
 ---
 

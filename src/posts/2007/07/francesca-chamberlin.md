@@ -4,8 +4,8 @@ date: "2007-07-27"
 categories: 
   - "writing"
 tags:
-- “life”
-- “birthday”
+- "life"
+- "birthday"
 slug: "francesca-chamberlin"
 ---
 

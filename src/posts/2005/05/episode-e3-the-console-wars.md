@@ -4,7 +4,7 @@ date: "2005-05-17"
 categories: 
   - "writing"
 tags:
- - “gaming”
+ - "gaming"
 slug: "episode-e3-the-console-wars"
 ---
 

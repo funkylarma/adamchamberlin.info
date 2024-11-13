@@ -4,8 +4,8 @@ date: "2005-07-15"
 categories: 
   - "writing"
 tags:
- - “ice”
- - “safety”
+ - "ice"
+ - "safety"
 slug: "ice-your-mobile"
 ---
 
@@ -17,7 +17,7 @@ I have recieved so many emails about this idea I thought it best to share it wit
 > 
 > tim —–Original Message—–
 > 
-> East Anglian Ambulance Service launched in April a national “In case of Emergency ( ICE ) ” campaign. The idea is that you store the word “ ICE ” in your mobile phone address book, and against it enter the number of the person you would want to be contacted In Case of Emergency".
+> East Anglian Ambulance Service launched in April a national "In case of Emergency ( ICE ) " campaign. The idea is that you store the word " ICE " in your mobile phone address book, and against it enter the number of the person you would want to be contacted In Case of Emergency".
 > 
 > In an emergency situation ambulance and hospital staff will then be able to quickly find out who your next of kin are and be able to contact them. It’s so simple that everyone can do it. Please do.
 > 
@@ -27,7 +27,7 @@ I have recieved so many emails about this idea I thought it best to share it wit
 > 
 > —— End of original message ——
 > 
-> There is a press release about this initiative at href=“https://www.eastanglianambulance.com/content/news/newsdeta il.asp?newsID=646104183"https://www.eastanglianambulance.com/co ntent/news/newsdetail.asp?newsID=646104183.
+> There is a press release about this initiative at href="https://www.eastanglianambulance.com/content/news/newsdeta il.asp?newsID=646104183"https://www.eastanglianambulance.com/co ntent/news/newsdetail.asp?newsID=646104183.
 > 
 > I am sending this message to all my email lists so apologies if you get multiple copies. Please forward as widely as you can.
 

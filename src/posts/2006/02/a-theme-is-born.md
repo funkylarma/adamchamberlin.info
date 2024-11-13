@@ -4,8 +4,8 @@ date: "2006-02-25"
 categories:
   - "writing"
 tags:
-- “theme”
-- “wordpress”
+- "theme"
+- "wordpress"
 slug: "a-theme-is-born"
 ---
 

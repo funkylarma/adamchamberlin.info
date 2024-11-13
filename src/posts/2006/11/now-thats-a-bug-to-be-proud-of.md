@@ -4,8 +4,8 @@ date: "2006-11-21"
 categories: 
   - "writing"
 tags:
-- “cars”
-- “vw”
+- "cars"
+- "vw"
 slug: "now-thats-a-bug-to-be-proud-of"
 ---
 

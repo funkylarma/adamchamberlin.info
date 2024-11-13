@@ -4,8 +4,8 @@ date: "2005-10-04"
 categories: 
   - "writing"
 tags:
-- “wordpress”
-- “alert”
+- "wordpress"
+- "alert"
 slug: "alert-banner-hack"
 ---
 

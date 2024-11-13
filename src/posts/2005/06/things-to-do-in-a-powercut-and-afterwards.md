@@ -4,8 +4,8 @@ date: "2005-06-11"
 categories:
   - "writing"
 tags:
- - “powercut”
- - “life”
+ - "powercut"
+ - "life"
 slug: "things-to-do-in-a-powercut-and-afterwards"
 ---
 

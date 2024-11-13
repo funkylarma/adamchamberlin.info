@@ -4,7 +4,7 @@ date: "2005-10-25"
 categories: 
   - "writing"
 tags:
-- “ipaq”
+- "ipaq"
 slug: "ipaqikaput"
 ---
 

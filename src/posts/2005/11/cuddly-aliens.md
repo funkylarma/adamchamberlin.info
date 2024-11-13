@@ -4,8 +4,8 @@ date: "2005-11-27"
 categories: 
   - "writing"
 tags:
-- “life”
-- “comics”
+- "life"
+- "comics"
 slug: "cuddly-aliens"
 ---
 

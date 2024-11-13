@@ -4,8 +4,8 @@ date: "2005-10-14"
 categories: 
   - "writing"
 tags:
-- “movies”
-- “bond”
+- "movies"
+- "bond"
 slug: "bond-daniel-craig-bond"
 ---
 

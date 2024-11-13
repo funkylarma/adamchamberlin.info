@@ -4,7 +4,7 @@ date: "2007-10-16"
 categories: 
   - "writing"
 tags:
-- “gaming”
+- "gaming"
 slug: "now-im-happy"
 ---
 

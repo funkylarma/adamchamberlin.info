@@ -4,7 +4,7 @@ date: "2005-08-18"
 categories: 
   - "writing"
 tags:
- - “life”
+ - "life"
 slug: "check-this-out"
 ---
 

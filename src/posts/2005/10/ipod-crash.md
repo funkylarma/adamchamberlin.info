@@ -4,8 +4,8 @@ date: "2005-10-06"
 categories: 
   - "writing"
 tags:
-- “apple”
-- “ipod”
+- "apple"
+- "ipod"
 slug: "ipod-crash"
 ---
 

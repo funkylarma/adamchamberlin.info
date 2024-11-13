@@ -4,7 +4,7 @@ date: "2005-11-28"
 categories:
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "forget-bird-flu-this-is-serious"
 ---
 

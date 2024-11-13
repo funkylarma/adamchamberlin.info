@@ -4,8 +4,8 @@ date: "2005-11-17"
 categories: 
   - "writing"
 tags:
-- “development”
-- “html”
+- "development"
+- "html"
 slug: "this-page-is-valid-xhtml-10-transitional"
 ---
 

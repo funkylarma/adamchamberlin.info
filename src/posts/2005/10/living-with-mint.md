@@ -4,9 +4,9 @@ date: "2005-10-24"
 categories:
   - "writing"
 tags:
-- “mint”
-- “analytics”
-- “updates”
+- "mint"
+- "analytics"
+- "updates"
 slug: "living-with-mint"
 ---
 

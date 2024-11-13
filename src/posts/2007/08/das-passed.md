@@ -4,8 +4,8 @@ date: "2007-08-16"
 categories: 
   - "writing"
 tags:
-- “motorbikes”
-- “learning”
+- "motorbikes"
+- "learning"
 slug: "das-passed"
 ---
 

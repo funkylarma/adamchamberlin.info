@@ -4,9 +4,9 @@ date: "2006-02-01"
 categories: 
   - "writing"
 tags:
-- “gaming”
-- “playstation”
-- “live”
+- "gaming"
+- "playstation"
+- "live"
 slug: "playstation-live"
 ---
 

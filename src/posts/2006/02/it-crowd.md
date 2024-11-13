@@ -4,7 +4,7 @@ date: "2006-02-04"
 categories:
   - "writing"
 tags:
-- “television”
+- "television"
 slug: "it-crowd"
 ---
 

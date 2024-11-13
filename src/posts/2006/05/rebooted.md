@@ -4,7 +4,7 @@ date: "2006-05-01"
 categories: 
   - "writing"
 tags:
-- “reboot”
+- "reboot"
 slug: "rebooted"
 ---
 

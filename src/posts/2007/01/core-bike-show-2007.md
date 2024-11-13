@@ -4,8 +4,8 @@ date: "2007-01-31"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “event”
+- "cycling"
+- "event"
 slug: "core-bike-show-2007"
 ---
 

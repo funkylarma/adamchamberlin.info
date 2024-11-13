@@ -4,9 +4,9 @@ date: "2007-11-13"
 categories:
   - "writing"
 tags:
-- “software”
-- “apple”
-- “mac”
+- "software"
+- "apple"
+- "mac"
 slug: "finally-getting-my-moneys-worth"
 ---
 

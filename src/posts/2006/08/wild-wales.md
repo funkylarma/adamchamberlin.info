@@ -4,8 +4,8 @@ date: "2006-08-29"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “event”
+- "cycling"
+- "event"
 slug: "wild-wales"
 ---
 

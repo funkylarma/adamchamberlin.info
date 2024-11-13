@@ -4,8 +4,8 @@ date: "2007-07-25"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “pro-tour”
+- "cycling"
+- "pro-tour"
 slug: "another-dark-day-in-the-tour"
 ---
 
@@ -14,7 +14,7 @@ Please, just say it was one of those April Fool’s joke but a couple of months 
 
 Yet given the speed the Astana bus left last night you can only presume that Vinokourov has a big fight on his hands trying to prove he is not guilty of blood doping. Either that or he comes clean and disappears from the cycling scene as another broken dream.
 
- [![Alexandre Vinokourov][image-1]][2]
+ <!-- [![Alexandre Vinokourov][image-1]][2] -->
 I added this picture to my Flickr stream last week, it was a superb picture of a rider at his lowest (well now he has sunk lower) yet would not go down without a fight.
 Despite having over 60 stitches in his body he managed to tackle the Alps, then in the Time Trial he wiped the floor with every one. Two days afterwards he had the ride of his life winning his second stage.
 

@@ -1,11 +1,11 @@
 ---
 title: "Colour Printing Problems"
 date: "2007-03-08"
-categories: 
+categories:
   - "writing"
 tags:
- - “tech”
-- “printing”
+ - "tech"
+ - "printing"
 slug: "colour-printing-problems"
 ---
 

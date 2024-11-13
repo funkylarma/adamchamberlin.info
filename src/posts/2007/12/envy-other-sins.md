@@ -4,7 +4,7 @@ date: "2007-12-16"
 categories: 
   - "writing"
 tags:
-- “music”
+- "music"
 slug: "envy-other-sins"
 ---
 

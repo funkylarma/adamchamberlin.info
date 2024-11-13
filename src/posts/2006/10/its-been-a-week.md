@@ -4,8 +4,8 @@ date: "2006-10-20"
 categories: 
   - "writing"
 tags:
-- “life”
-- “smoking”
+- "life"
+- "smoking"
 slug: "its-been-a-week"
 ---
 

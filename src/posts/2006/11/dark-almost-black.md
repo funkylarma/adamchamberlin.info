@@ -4,8 +4,8 @@ date: "2006-11-06"
 categories:
   - "writing"
 tags:
-- “wordpress”
-- “theme”
+- "wordpress"
+- "theme"
 slug: "dark-almost-black"
 ---
 

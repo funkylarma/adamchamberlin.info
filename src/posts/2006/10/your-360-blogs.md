@@ -4,8 +4,8 @@ date: "2006-10-02"
 categories: 
   - "writing"
 tags:
-- “xbox”
-- “360”
+- "xbox"
+- "360"
 slug: "your-360-blogs"
 ---
 

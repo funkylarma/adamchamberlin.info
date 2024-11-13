@@ -4,7 +4,7 @@ date: "2005-07-26"
 categories:
   - "writing"
 tags:
- - “life”
+ - "life"
 slug: "i-not-as-thunk-as-you-drink-i-am"
 ---
 

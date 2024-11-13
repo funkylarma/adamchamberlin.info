@@ -4,8 +4,8 @@ date: "2007-06-08"
 categories: 
   - "writing"
 tags:
-- “cars”
-- “life”
+- "cars"
+- "life"
 slug: "learner-no-more"
 ---
 

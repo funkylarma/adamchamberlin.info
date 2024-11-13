@@ -4,13 +4,13 @@ date: "2006-05-24"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “sram”
-- “leap”
+- "cycling"
+- "sram"
+- "leap"
 slug: "and-all-i-got-was-this-hat"
 ---
 
-![Leap hat][image-1]
+<!-- ![Leap hat][image-1] -->
 For a few months I have been hassling Rob about Sram and their plans for the road side of the cycling market.
 
 If you have a mountain bike the chances are you are running one of two makes on the gears/transmission; SRAM or Shimano. Shimano have always been the leader but since SRAM broke into a MTB world they have taken it by storm, there simple ergonomic approach to levers and gears just works. On the other hand if you have a road bike your running either Shimano or Campag. Notice something; Shimano are the Microsoft of the cycling world they have cornered everything and trademarked or patented everything they can!
@@ -41,7 +41,7 @@ So what is with the Frog? Well the frog is called leap and it is based upon the 
 Later this year two teams will be running on SRAM Force kit in the Tour de France, also look out for a lot of publicity surrounding this groupset and lots of red frogs painted along the road.
 If all goes well Rob should have a set in later as well and I’ll hopefully get a test ride. Until then I’ll just make do with my free
 
-![Hat][image-2]
+<!-- ![Hat][image-2] -->
 
 [image-1]:	/images/149528487.jpg
 [image-2]:	/images/149527481.jpg

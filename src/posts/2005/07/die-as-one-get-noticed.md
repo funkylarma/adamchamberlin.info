@@ -4,9 +4,9 @@ date: "2005-07-28"
 categories: 
   - "writing"
 tags:
- - “gaming”
- - “clan”
- - “DAO”
+ - "gaming"
+ - "clan"
+ - "DAO"
 slug: "die-as-one-get-noticed"
 ---
 

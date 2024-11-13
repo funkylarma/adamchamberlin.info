@@ -4,8 +4,8 @@ date: "2006-06-13"
 categories: 
   - "writing"
 tags:
-- “life”
-- “update”
+- "life"
+- "update"
 slug: "life-goes-on"
 ---
 

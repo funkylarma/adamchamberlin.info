@@ -4,8 +4,8 @@ date: "2006-09-29"
 categories:
   - "writing"
 tags:
-- “pink”
-- “web”
+- "pink"
+- "web"
 slug: "the-pinkness-begins"
 ---
 

@@ -4,8 +4,8 @@ date: "2005-07-23"
 categories:
   - "writing"
 tags:
- - “windows”
- - “vista”
+ - "windows"
+ - "vista"
 slug: "longhorn-is-now-vista"
 ---
 

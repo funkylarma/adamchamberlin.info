@@ -4,13 +4,13 @@ date: "2005-10-01"
 categories:
   - "writing"
 tags:
-- “gaming”
-- “event”
-- “gt4”
+- "gaming"
+- "event"
+- "gt4"
 slug: "gt4"
 ---
 
-![Photo sharing][image-1]
+<!-- ![Photo sharing][image-1] -->
 
 ## 24hr Challenge
 

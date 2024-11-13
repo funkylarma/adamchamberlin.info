@@ -4,8 +4,8 @@ date: "2005-03-23"
 categories: 
   - "writing"
 tags:
- - “gaming”
- - “news”
+ - "gaming"
+ - "news"
 slug: "who-gets-laras-assets"
 ---
 

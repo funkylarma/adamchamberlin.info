@@ -3,9 +3,9 @@ title: "Ken Chamberlin"
 date: "2022-02-21"
 categories:
   - "writing"
- tags:
-  - “life”
-  - “family”
+tags:
+  - "life"
+  - "family"
 cover: "/images/ken-chamberlin.jpeg"
 slug: "ken-chamberlin"
 ---

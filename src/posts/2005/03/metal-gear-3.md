@@ -4,8 +4,8 @@ date: "2005-03-04"
 categories: 
   - "writing"
 tags:
- - “gaming”
- - “mgs”
+ - "gaming"
+ - "mgs"
 slug: "metal-gear-3"
 ---
 

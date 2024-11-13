@@ -4,7 +4,7 @@ date: "2005-06-26"
 categories:
   - "writing"
 tags:
- - “work”
+ - "work"
 slug: "part-2"
 ---
 

@@ -4,8 +4,8 @@ date: "2006-01-26"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “end2end”
+- "cycling"
+- "end2end"
 slug: "the-call-signs-are-set"
 ---
 

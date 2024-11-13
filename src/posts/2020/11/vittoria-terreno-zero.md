@@ -3,11 +3,11 @@ title: "Vittoria Terreno Zero Review"
 date: "2020-11-19"
 categories:
   - "writing"
- tags:
-  - “cycling”
-  - “review”
-  - “vittoria”
-  - “terreno”
+tags:
+  - "cycling"
+  - "review"
+  - "vittoria"
+  - "terreno"
 cover: "/images/terreno.jpg"
 slug: "vittoria-terreno-zero"
 ---

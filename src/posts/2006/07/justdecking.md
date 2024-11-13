@@ -4,7 +4,7 @@ date: "2006-07-10"
 categories:
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "justdecking"
 ---
 

@@ -4,8 +4,8 @@ date: "2005-10-06"
 categories: 
   - "writing"
 tags:
-- “wordpress”
-- “gravatar”
+- "wordpress"
+- "gravatar"
 slug: "gavatars-down"
 ---
 

@@ -4,8 +4,8 @@ date: "2005-03-17"
 categories: 
   - "writing"
 tags:
- - “gaming”
- - “Logitech”
+ - "gaming"
+ - "Logitech"
 slug: "logitech-driving-force-pro"
 ---
 

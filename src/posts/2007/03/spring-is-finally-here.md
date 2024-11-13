@@ -1,11 +1,11 @@
 ---
 title: "Spring is finally here"
 date: "2007-03-25"
-categories: 
+categories:
   - "writing"
 tags:
- - “life”
-- “weather”
+ - "life"
+ - "weather"
 slug: "spring-is-finally-here"
 ---
 

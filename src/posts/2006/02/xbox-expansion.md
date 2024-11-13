@@ -4,8 +4,8 @@ date: "2006-02-03"
 categories: 
   - "writing"
 tags:
-- “xbox”
-- “gaming”
+- "xbox"
+- "gaming"
 slug: "xbox-expansion"
 ---
 

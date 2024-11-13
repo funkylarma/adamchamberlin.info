@@ -4,7 +4,7 @@ date: "2006-02-09"
 categories: 
   - "writing"
 tags:
-- “gaming”
+- "gaming"
 slug: "madden-06"
 ---
 

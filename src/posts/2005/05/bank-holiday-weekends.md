@@ -4,9 +4,9 @@ date: "2005-05-02"
 categories:
   - "writing"
 tags:
- - “life”
- - “bank”
- - “holiday”
+ - "life"
+ - "bank"
+ - "holiday"
 slug: "bank-holiday-weekends"
 ---
 

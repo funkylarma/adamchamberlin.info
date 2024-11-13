@@ -4,8 +4,8 @@ date: "2007-11-15"
 categories:
   - "writing"
 tags:
-- “life”
-- “update”
+- "life"
+- "update"
 slug: "can-we-have-some-order-mr-chairman"
 ---
 

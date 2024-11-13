@@ -3,9 +3,9 @@ title: "Is 2023 the year of the blog?"
 date: "2023-01-23"
 categories:
   - "writing"
- tags:
-  - “wordpress”
-  - “blogging”
+tags:
+  - "wordpress"
+  - "blogging"
 cover: "/images/install-step3.png"
 slug: "is-2023-the-year-of-the-blog"
 ---

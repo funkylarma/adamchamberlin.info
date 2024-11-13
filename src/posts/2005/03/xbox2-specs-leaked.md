@@ -1,10 +1,10 @@
 ---
 title: "Xbox2 specs leaked (?)"
 date: "2005-03-10"
-categories: 
+categories:
   - "writing"
- tags:
-  - “xbox”
+tags:
+  - "xbox"
 slug: "xbox2-specs-leaked"
 ---
 

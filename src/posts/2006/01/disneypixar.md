@@ -4,7 +4,7 @@ date: "2006-01-24"
 categories: 
   - "writing"
 tags:
-- “movies”
+- "movies"
 slug: "disneypixar"
 ---
 

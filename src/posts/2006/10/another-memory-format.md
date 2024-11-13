@@ -4,7 +4,7 @@ date: "2006-10-16"
 categories:
   - "writing"
 tags:
-- “tech”
+- "tech"
 slug: "another-memory-format"
 ---
 

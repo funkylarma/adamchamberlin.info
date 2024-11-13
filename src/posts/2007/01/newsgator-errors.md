@@ -4,7 +4,7 @@ date: "2007-01-26"
 categories: 
   - "writing"
 tags:
-- “rss”
+- "rss"
 slug: "newsgator-errors"
 ---
 

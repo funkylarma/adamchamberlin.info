@@ -4,8 +4,8 @@ date: "2005-05-06"
 categories: 
   - "writing"
 tags:
- - “macos”
- - “tiger”
+ - "macos"
+ - "tiger"
 slug: "i-finally-bag-myself-a-tiger"
 ---
 

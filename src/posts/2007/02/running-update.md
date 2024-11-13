@@ -4,7 +4,7 @@ date: "2007-02-28"
 categories: 
   - "writing"
 tags:
-- “running”
+- "running"
 slug: "running-update"
 ---
 

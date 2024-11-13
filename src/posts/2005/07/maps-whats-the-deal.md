@@ -4,7 +4,7 @@ date: "2005-07-19"
 categories: 
   - "writing"
 tags:
- - “maps”
+ - "maps"
 slug: "maps-whats-the-deal"
 ---
 

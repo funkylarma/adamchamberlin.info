@@ -4,9 +4,9 @@ date: "2005-05-31"
 categories: 
   - "writing"
 tags:
- - “bank”
- - “holiday”
- - “life”
+ - "bank"
+ - "holiday"
+ - "life"
 slug: "typical-bank-holiday"
 ---
 

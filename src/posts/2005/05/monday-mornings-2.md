@@ -4,7 +4,7 @@ date: "2005-05-09"
 categories: 
   - "writing"
 tags:
- - “life”
+ - "life"
 slug: "monday-mornings-2"
 ---
 

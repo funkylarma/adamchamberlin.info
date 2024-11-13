@@ -4,8 +4,8 @@ date: "2006-02-01"
 categories: 
   - "writing"
 tags:
-- “news”
-- “movies”
+- "news"
+- "movies"
 slug: "dark-crystal-2"
 ---
 

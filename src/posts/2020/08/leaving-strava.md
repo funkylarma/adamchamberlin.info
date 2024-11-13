@@ -3,10 +3,10 @@ title: "Leaving Strava"
 date: "2020-08-02"
 categories:
   - "writing"
- tags:
-  - “strava”
-  - “social”
-  - “networking”
+tags:
+  - "strava"
+  - "social"
+  - "networking"
 cover: "/images/strava.png"
 slug: "leaving-strava"
 ---

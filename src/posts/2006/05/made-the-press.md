@@ -4,12 +4,12 @@ date: "2006-05-31"
 categories:
   - "writing"
 tags:
-- “cycling”
-- “end2end”
+- "cycling"
+- "end2end"
 slug: "made-the-press"
 ---
 
-![Photo sharing][image-1]
+<!-- ![Photo sharing][image-1] -->
 
 Sorry this should have been posted last week, but I’ve been having a few problems with my scanner!
 

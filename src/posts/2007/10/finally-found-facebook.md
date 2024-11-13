@@ -1,12 +1,12 @@
 ---
 title: "Finally Found Facebook"
 date: "2007-10-25"
-categories: 
+categories:
   - "writing"
 tags:
- - “social”
-- “networking”
-- “facebook”
+ - "social"
+ - "networking"
+ - "facebook"
 slug: "finally-found-facebook"
 ---
 

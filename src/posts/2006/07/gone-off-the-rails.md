@@ -4,7 +4,7 @@ date: "2006-07-22"
 categories:
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "gone-off-the-rails"
 ---
 

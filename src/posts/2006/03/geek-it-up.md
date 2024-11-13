@@ -4,7 +4,7 @@ date: "2006-03-02"
 categories: 
   - "writing"
 tags:
-- “development”
+- "development"
 slug: "geek-it-up"
 ---
 

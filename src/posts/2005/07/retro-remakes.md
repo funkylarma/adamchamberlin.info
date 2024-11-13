@@ -4,9 +4,9 @@ date: "2005-07-15"
 categories: 
   - "writing"
 tags:
- - “gaming”
- - “retro”
- - “remake”
+ - "gaming"
+ - "retro"
+ - "remake"
 slug: "retro-remakes"
 ---
 

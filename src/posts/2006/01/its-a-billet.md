@@ -4,8 +4,8 @@ date: "2006-01-11"
 categories:
   - "writing"
 tags:
-- “wordpress”
-- “theme”
+- "wordpress"
+- "theme"
 slug: "its-a-billet"
 ---
 

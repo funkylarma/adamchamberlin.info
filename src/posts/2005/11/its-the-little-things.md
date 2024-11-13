@@ -4,8 +4,8 @@ date: "2005-11-21"
 categories: 
   - "writing"
 tags:
-- “sidebar”
-- “development”
+- "sidebar"
+- "development"
 slug: "its-the-little-things"
 ---
 

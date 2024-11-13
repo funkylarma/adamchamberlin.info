@@ -4,8 +4,8 @@ date: "2006-04-26"
 categories: 
   - "writing"
 tags:
-- “sram”
-- “cycling”
+- "sram"
+- "cycling"
 slug: "make-the-leap"
 ---
 

@@ -4,7 +4,7 @@ date: "2006-07-19"
 categories:
   - "writing"
 tags:
-- “web”
+- "web"
 slug: "25peeps"
 ---
 

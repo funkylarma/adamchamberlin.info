@@ -4,8 +4,8 @@ date: "2006-04-28"
 categories: 
   - "writing"
 tags:
-- “gaming”
-- “nintendo”
+- "gaming"
+- "nintendo"
 slug: "revolution-becomes-wii"
 ---
 

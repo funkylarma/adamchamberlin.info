@@ -4,8 +4,8 @@ date: "2006-04-10"
 categories:
   - "writing"
 tags:
-- “life”
-- “holiday”
+- "life"
+- "holiday"
 slug: "give-me-the-gift-of-time"
 ---
 

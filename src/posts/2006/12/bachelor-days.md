@@ -4,7 +4,7 @@ date: "2006-12-11"
 categories: 
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "bachelor-days"
 ---
 

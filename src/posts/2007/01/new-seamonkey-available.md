@@ -4,8 +4,8 @@ date: "2007-01-22"
 categories: 
   - "writing"
 tags:
-- “news”
-- “mozilla”
+- "news"
+- "mozilla"
 slug: "new-seamonkey-available"
 ---
 

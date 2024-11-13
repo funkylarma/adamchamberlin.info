@@ -4,9 +4,9 @@ date: "2007-09-28"
 categories: 
   - "writing"
 tags:
-- “life”
-- “blogging”
-- “pink”
+- "life"
+- "blogging"
+- "pink"
 slug: "got-a-busy-month"
 ---
 

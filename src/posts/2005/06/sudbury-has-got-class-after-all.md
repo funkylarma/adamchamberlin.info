@@ -4,8 +4,8 @@ date: "2005-06-14"
 categories:
   - "writing"
 tags:
- - “cars”
- - “sudbury”
+ - "cars"
+ - "sudbury"
 slug: "sudbury-has-got-class-after-all"
 ---
 

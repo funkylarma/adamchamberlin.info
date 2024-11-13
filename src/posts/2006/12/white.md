@@ -4,8 +4,8 @@ date: "2006-12-05"
 categories: 
   - "writing"
 tags:
-- “wordpress”
-- “theme”
+- "wordpress"
+- "theme"
 slug: "white"
 ---
 

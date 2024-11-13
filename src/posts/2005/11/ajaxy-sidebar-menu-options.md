@@ -4,9 +4,9 @@ date: "2005-11-30"
 categories: 
   - "writing"
 tags:
-- “wordpress”
-- “javascript”
-- “frameworks”
+- "wordpress"
+- "javascript"
+- "frameworks"
 slug: "ajaxy-sidebar-menu-options"
 ---
 

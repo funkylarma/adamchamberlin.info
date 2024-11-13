@@ -1,11 +1,11 @@
 ---
 title: "1D Mark III"
 date: "2007-03-09"
-categories: 
+categories:
   - "writing"
 tags:
- - “photography”
-- “canon”
+ - "photography"
+ - "canon"
 slug: "1d-mark-iii"
 ---
 

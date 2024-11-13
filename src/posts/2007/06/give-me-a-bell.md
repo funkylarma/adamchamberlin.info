@@ -4,8 +4,8 @@ date: "2007-06-01"
 categories: 
   - "writing"
 tags:
-- “life”
-- “update”
+- "life"
+- "update"
 slug: "give-me-a-bell"
 ---
 

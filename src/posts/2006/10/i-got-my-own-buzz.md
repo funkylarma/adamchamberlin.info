@@ -4,7 +4,7 @@ date: "2006-10-26"
 categories:
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "i-got-my-own-buzz"
 ---
 
@@ -15,7 +15,7 @@ Let me explain the story.
 Dave (aka Goose) and Serena took a holiday in France during the summer and since then they have been looking into purchasing a property out there with plans of retiring from the modern life. Maybe just watch Russell Crowe’s new film ‘A Good Year’?
 Anyway they have been full systems go and even moved further away to find new ways of financing this venture.
 
-So when Dave called and asked if they could pop round I explained that I felt like I had been “Woody'ed”. Obviously confused he asked me to explain.
+So when Dave called and asked if they could pop round I explained that I felt like I had been "Woody'ed". Obviously confused he asked me to explain.
 I told him about how it was always me and the cycling and now all he cared about was septic systems and French wiring.
 
 ![Photo sharing][image-1]

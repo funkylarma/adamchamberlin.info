@@ -4,8 +4,8 @@ date: "2006-05-10"
 categories: 
   - "writing"
 tags:
-- “development”
-- “web”
+- "development"
+- "web"
 slug: "one-step-forward-two-back"
 ---
 

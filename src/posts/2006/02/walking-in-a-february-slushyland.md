@@ -4,8 +4,8 @@ date: "2006-02-23"
 categories:
   - "writing"
 tags:
-- “life”
-- “weather”
+- "life"
+- "weather"
 slug: "walking-in-a-february-slushyland"
 ---
 

@@ -4,7 +4,7 @@ date: "2007-02-14"
 categories: 
   - "writing"
 tags:
-- “sram”
+- "sram"
 slug: "sram-force-recall"
 ---
 

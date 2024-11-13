@@ -3,10 +3,10 @@ title: "Back on my bike"
 date: "2008-09-02"
 categories:
   - "writing"
- tags:
-  - “cycling”
-  - “event”
-  - “end2end
+tags:
+  - "cycling"
+  - "event"
+  - "end2end"
 slug: "back-on-my-bike"
 ---
 

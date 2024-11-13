@@ -4,8 +4,8 @@ date: "2006-01-05"
 categories: 
   - "writing"
 tags:
-- “life”
-- “update”
+- "life"
+- "update"
 slug: "new-year-fresh-idea"
 ---
 

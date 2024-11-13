@@ -1,11 +1,11 @@
 ---
 title: "2013 - The year of the cycle"
 date: "2013-02-15"
-categories: 
+categories:
   - "writing"
- tags:
-  - “cycling”
-  - “coaching”
+tags:
+  - "cycling"
+  - "coaching"
 slug: "2013-the-year-of-the-cycle"
 ---
 

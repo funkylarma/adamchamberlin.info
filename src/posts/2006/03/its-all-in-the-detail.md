@@ -4,7 +4,7 @@ date: "2006-03-14"
 categories:
   - "writing"
 tags:
-- “gaming”
+- "gaming"
 slug: "its-all-in-the-detail"
 ---
 

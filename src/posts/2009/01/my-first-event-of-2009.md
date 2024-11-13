@@ -3,9 +3,9 @@ title: "My first event of 2009"
 date: "2009-01-26"
 categories:
   - "writing"
- tags:
-  - “cycling”
-  - “event”
+tags:
+  - "cycling"
+  - "event"
 slug: "my-first-event-of-2009"
 ---
 

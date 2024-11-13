@@ -4,8 +4,8 @@ date: "2005-12-12"
 categories: 
   - "writing"
 tags:
-- “wordpress”
-- “theme”
+- "wordpress"
+- "theme"
 slug: "walking-through-the-fauna"
 ---
 

@@ -4,7 +4,7 @@ date: "2005-07-07"
 categories: 
   - "writing"
 tags:
- - “news”
+ - "news"
 slug: "london-bombings"
 ---
 

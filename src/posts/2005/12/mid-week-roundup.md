@@ -4,7 +4,7 @@ date: "2005-12-15"
 categories: 
   - "writing"
 tags:
-- “wordpress”
+- "wordpress"
 slug: "mid-week-roundup"
 ---
 

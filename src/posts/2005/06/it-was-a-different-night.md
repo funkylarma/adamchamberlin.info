@@ -4,9 +4,9 @@ date: "2005-06-24"
 categories:
   - "writing"
 tags:
- - “life”
- - “career”
- - “work”
+ - "life"
+ - "career"
+ - "work"
 slug: "it-was-a-different-night"
 ---
 

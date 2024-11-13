@@ -4,8 +4,8 @@ date: "2006-02-15"
 categories: 
   - "writing"
 tags:
-- “life”
-- “smoking”
+- "life"
+- "smoking"
 slug: "smoking-a-no-no"
 ---
 

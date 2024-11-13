@@ -4,8 +4,8 @@ date: "2006-07-12"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “pro-tour”
+- "cycling"
+- "pro-tour"
 slug: "stage-10"
 ---
 

@@ -4,8 +4,8 @@ date: "2005-12-06"
 categories: 
   - "writing"
 tags:
-- “life”
-- “weekend”
+- "life"
+- "weekend"
 slug: "blurry-weekends"
 ---
 

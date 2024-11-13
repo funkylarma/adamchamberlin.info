@@ -4,7 +4,7 @@ date: "2005-12-16"
 categories: 
   - "writing"
 tags:
-- “life”
+- "life"
 slug: "wheres-my-hat"
 ---
 

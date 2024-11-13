@@ -4,8 +4,8 @@ date: "2005-10-24"
 categories: 
   - "writing"
 tags:
-- “wordpress”
-- “asides”
+- "wordpress"
+- "asides"
 slug: "asides"
 ---
 

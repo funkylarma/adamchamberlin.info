@@ -4,7 +4,7 @@ date: "2006-05-14"
 categories: 
   - "writing"
 tags:
-- “photography”
+- "photography"
 slug: "new-lens"
 ---
 

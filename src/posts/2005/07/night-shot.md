@@ -4,7 +4,7 @@ date: "2005-07-26"
 categories:
   - "writing"
 tags:
- - “photography”
+ - "photography"
 slug: "night-shot"
 ---
 

@@ -4,8 +4,8 @@ date: "2006-01-20"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “bonk”
+- "cycling"
+- "bonk"
 slug: "my-first-bonk"
 ---
 
@@ -21,6 +21,6 @@ Bonking is not something I’ve ever done, I’m sure we’ve all pushed yoursel
 David obviously noticed this and came along beside me, he forced some carb drink into me and kept me talking and focusing on the ride. Not long after we found a village store (handy to be open at 4 on a Sunday afternoon) were I was stocked up with a Mars bar, quick fix energy!  
 Feeling a bit more with it I climbed aboard and set off on the last 10miles of the trip. David kept me talking and I was soon climbing hills and back to a better riding style, eventually we rolled into our finish having travelled 72miles.  
 
-Now the re-cap. 72miles is not a big distance to ride, in fact I’ve done more but what I should have done was prepare for the ride. Your body needs energy and I did not give it enough, I went off like a bullet to start with and failed at the end, sounds a bit like Lance to me. Despite the fact that I’m pleased I made I think I’m more pleased that I learnt the hard way now and not when it’s too late. As people have said “it happens to us all at some point” and once you’ve done it you know you don’t ever want to be there again. Although if you could bottle it up and sell it you could earn a fortune!
+Now the re-cap. 72miles is not a big distance to ride, in fact I’ve done more but what I should have done was prepare for the ride. Your body needs energy and I did not give it enough, I went off like a bullet to start with and failed at the end, sounds a bit like Lance to me. Despite the fact that I’m pleased I made I think I’m more pleased that I learnt the hard way now and not when it’s too late. As people have said "it happens to us all at some point" and once you’ve done it you know you don’t ever want to be there again. Although if you could bottle it up and sell it you could earn a fortune!
 
 [1]:	https://en.wikipedia.org/wiki/Bonk_(condition)

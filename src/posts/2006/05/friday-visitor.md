@@ -4,8 +4,8 @@ date: "2006-05-19"
 categories: 
   - "writing"
 tags:
-- “work”
-- “life”
+- "work"
+- "life"
 slug: "friday-visitor"
 ---
 

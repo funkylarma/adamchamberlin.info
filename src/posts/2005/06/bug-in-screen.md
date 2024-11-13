@@ -4,9 +4,9 @@ date: "2005-06-30"
 categories:
   - "writing"
 tags:
- - “apple”
- - “display”
- - “bug”
+ - "apple"
+ - "display"
+ - "bug"
 slug: "bug-in-screen"
 ---
 

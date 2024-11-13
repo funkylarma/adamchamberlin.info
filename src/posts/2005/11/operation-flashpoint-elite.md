@@ -4,11 +4,11 @@ date: "2005-11-01"
 categories:
   - "writing"
 tags:
-- “gaming”
+- "gaming"
 slug: "operation-flashpoint-elite"
 ---
 
- [![OFPEUK.jpg][image-1]][1]
+ <!-- [![OFPEUK.jpg][image-1]][1] -->
 I have been waiting for this game for over two years now. I’ve been waiting since Mr. W32.Sobig.A@mm decided to criple my Windows machine for the last time.
 Operation Flashpoint was one of the first games I played online and still is one of the few games that had me immersed in a total underground state, any Zelda game also ranks up there. I had purchased the orginal, then the addon Red Hammer, I even went out and bought the ‘Game Of The Year’ box edition just so I had a enough backups of the game. I started playing in a clan and creating new missions and extra units, life was good in the world of OFP. Then came the virus and I lost a lot of a hard drive including my OFP info. Since then I’ve found it hard to go back, now running a Mac it is damn near impossible, so up steps the Xbox version. Two years later it is finally released, not bad Codemasters now just sort out Flashpoint2 and I’ll think about getting a cheap Dell!
 

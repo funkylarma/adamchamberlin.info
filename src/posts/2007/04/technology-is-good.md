@@ -4,7 +4,7 @@ date: "2007-04-22"
 categories: 
   - "writing"
 tags:
-- “tech”
+- "tech"
 slug: "technology-is-good"
 ---
 

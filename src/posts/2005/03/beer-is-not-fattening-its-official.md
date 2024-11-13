@@ -4,7 +4,7 @@ date: "2005-03-09"
 categories: 
   - "writing"
 tags:
- - “news”
+ - "news"
 slug: "beer-is-not-fattening-its-official"
 ---
 

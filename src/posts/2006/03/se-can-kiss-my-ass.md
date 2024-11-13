@@ -4,9 +4,9 @@ date: "2006-03-07"
 categories: 
   - "writing"
 tags:
-- “phone”
-- “sony”
-- “ericsson”
+- "phone"
+- "sony"
+- "ericsson"
 slug: "se-can-kiss-my-ass"
 ---
 

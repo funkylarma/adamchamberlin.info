@@ -4,8 +4,8 @@ date: "2007-01-10"
 categories: 
   - "writing"
 tags:
-- “apple”
-- “iphone”
+- "apple"
+- "iphone"
 slug: "iphucking-want-one"
 ---
 

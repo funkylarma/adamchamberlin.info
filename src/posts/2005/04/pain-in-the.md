@@ -4,7 +4,7 @@ date: "2005-04-28"
 categories: 
   - "writing"
 tags:
- - “life”
+ - "life"
 slug: "pain-in-the"
 ---
 

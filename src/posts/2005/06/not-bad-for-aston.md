@@ -4,10 +4,10 @@ date: "2005-06-19"
 categories:
   - "writing"
 tags:
- - “cars”
- - “racing”
- - “24h”
- - “LeMans”
+ - "cars"
+ - "racing"
+ - "24h"
+ - "LeMans"
 slug: "not-bad-for-aston"
 ---
 

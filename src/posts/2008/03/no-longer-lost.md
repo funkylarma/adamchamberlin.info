@@ -1,11 +1,11 @@
 ---
 title: "No Longer Lost"
 date: "2008-03-26"
-categories: 
+categories:
   - "writing"
-tags”
- - “lost”
- - “television”
+tags:
+ - "lost"
+ - "television"
 slug: "no-longer-lost"
 ---
 

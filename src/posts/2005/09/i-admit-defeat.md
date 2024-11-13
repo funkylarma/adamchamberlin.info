@@ -4,8 +4,8 @@ date: "2005-09-28"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “life”
+- "cycling"
+- "life"
 slug: "i-admit-defeat"
 ---
 

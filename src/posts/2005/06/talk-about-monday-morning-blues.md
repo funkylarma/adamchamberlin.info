@@ -4,8 +4,8 @@ date: "2005-06-06"
 categories:
   - "writing"
 tags:
- - “life”
- - “updates”
+ - "life"
+ - "updates"
 slug: "talk-about-monday-morning-blues"
 ---
 

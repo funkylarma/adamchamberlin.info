@@ -4,8 +4,8 @@ date: "2005-07-03"
 categories: 
   - "writing"
 tags:
- - “life”
- - “updates”
+ - "life"
+ - "updates"
 slug: "another-month-rolls-by"
 ---
 

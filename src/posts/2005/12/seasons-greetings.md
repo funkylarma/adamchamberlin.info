@@ -4,7 +4,7 @@ date: "2005-12-29"
 categories: 
   - "writing"
 tags:
-- “christmas”
+- "christmas"
 slug: "seasons-greetings"
 ---
 

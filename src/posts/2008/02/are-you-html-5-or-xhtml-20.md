@@ -4,8 +4,8 @@ date: "2008-02-19"
 categories: 
   - "writing"
 tags:
- - “html”
- - “css”
+ - "html"
+ - "css"
 slug: "are-you-html-5-or-xhtml-20"
 ---
 

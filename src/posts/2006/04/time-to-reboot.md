@@ -4,8 +4,8 @@ date: "2006-04-05"
 categories:
   - "writing"
 tags:
-- “css”
-- “reboot”
+- "css"
+- "reboot"
 slug: "time-to-reboot"
 ---
 

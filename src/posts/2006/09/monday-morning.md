@@ -4,8 +4,8 @@ date: "2006-09-11"
 categories: 
   - "writing"
 tags:
-- “life”
-- “update”
+- "life"
+- "update"
 slug: "monday-morning"
 ---
 

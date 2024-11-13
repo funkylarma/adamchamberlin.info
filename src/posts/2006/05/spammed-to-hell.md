@@ -4,7 +4,7 @@ date: "2006-05-08"
 categories: 
   - "writing"
 tags:
-- “spam”
+- "spam"
 slug: "spammed-to-hell"
 ---
 

@@ -4,8 +4,8 @@ date: "2007-12-24"
 categories:
   - "writing"
 tags:
-- “life”
-- “christmas”
+- "life"
+- "christmas"
 slug: "happy-christmas"
 ---
 

@@ -4,8 +4,8 @@ date: "2006-09-06"
 categories: 
   - "writing"
 tags:
-- “web”
-- “blogging”
+- "web"
+- "blogging"
 slug: "bit-of-tweeking"
 ---
 

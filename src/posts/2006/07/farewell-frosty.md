@@ -4,8 +4,8 @@ date: "2006-07-06"
 categories:
   - "writing"
 tags:
-- “life”
-- “work”
+- "life"
+- "work"
 slug: "farewell-frosty"
 ---
 

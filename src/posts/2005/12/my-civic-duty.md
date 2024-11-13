@@ -4,11 +4,11 @@ date: "2005-12-16"
 categories:
   - "writing"
 tags:
-- “cars”
+- "cars"
 slug: "my-civic-duty"
 ---
 
-![Civic][image-1]
+<!-- ![Civic][image-1] -->
 
 Today I spent the best part of it out and about on the road. To do this I had to borrow a company car, which was OK as I first thought. It turned out I was getting a nice 04 Honda Civic, not bad.
 

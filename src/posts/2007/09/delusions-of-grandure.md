@@ -4,7 +4,7 @@ date: "2007-09-10"
 categories: 
   - "writing"
 tags:
-- “television”
+- "television"
 slug: "delusions-of-grandure"
 ---
 

@@ -4,11 +4,11 @@ date: "2006-03-15"
 categories: 
   - "writing"
 tags:
-- “internet”
+- "internet"
 slug: "ive-got-an-idea-com"
 ---
 
-During one of those geeky sessions were people get together and chat some one mentioned the word “Interslice” and “Cutco”, these words sounded familiar.
+During one of those geeky sessions were people get together and chat some one mentioned the word "Interslice" and "Cutco", these words sounded familiar.
 
 I remembered it was from an episode of Simpsons; [Das Bus][1] to be exact. Anyway Homer is trying to set up a new internet company that is catchy. The name Interslice is catchy, so catchy that I can’t shift it so I thought about having a look into the domain name. [Interslice][2].
 

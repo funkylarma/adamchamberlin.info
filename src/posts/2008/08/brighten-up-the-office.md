@@ -1,11 +1,11 @@
 ---
 title: "Brighten Up The Office"
 date: "2008-08-08"
-categories: 
+categories:
   - "writing"
- tags:
-  - “life”
-  - “work”
+tags:
+  - "life"
+  - "work"
 slug: "brighten-up-the-office"
 ---
 

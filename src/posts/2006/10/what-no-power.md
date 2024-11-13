@@ -4,8 +4,8 @@ date: "2006-10-12"
 categories: 
   - "writing"
 tags:
-- “life”
-- “powercut”
+- "life"
+- "powercut"
 slug: "what-no-power"
 ---
 

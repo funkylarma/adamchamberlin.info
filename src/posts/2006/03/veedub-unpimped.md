@@ -4,8 +4,8 @@ date: "2006-03-07"
 categories: 
   - "writing"
 tags:
-- “television”
-- “vw”
+- "television"
+- "vw"
 slug: "veedub-unpimped"
 ---
 

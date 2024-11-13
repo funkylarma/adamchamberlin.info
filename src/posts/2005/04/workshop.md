@@ -4,8 +4,8 @@ date: "2005-04-20"
 categories:
   - "writing"
 tags:
- - “cycling”
- - “workshop”
+ - "cycling"
+ - "workshop"
 slug: "workshop"
 ---
 

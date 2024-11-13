@@ -1,11 +1,11 @@
 ---
 title: "Macworld; What Happened?"
 date: "2009-01-06"
-categories: 
+categories:
   - "writing"
- tags:
-  - “apple”
-  - “macworld”
+tags:
+  - "apple"
+  - "macworld"
 slug: "macworld-what-happened"
 ---
 

@@ -4,8 +4,8 @@ date: "2007-02-12"
 categories:
   - "writing"
 tags:
-- “life”
-- “birthday”
+- "life"
+- "birthday"
 slug: "30-years-of-madness"
 ---
 

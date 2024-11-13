@@ -4,8 +4,8 @@ date: "2006-01-31"
 categories: 
   - "writing"
 tags:
-- “life”
-- “tech”
+- "life"
+- "tech"
 slug: "living-without-wires"
 ---
 

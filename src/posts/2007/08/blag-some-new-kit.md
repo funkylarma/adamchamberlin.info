@@ -4,8 +4,8 @@ date: "2007-08-25"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “upgrade”
+- "cycling"
+- "upgrade"
 slug: "blag-some-new-kit"
 ---
 

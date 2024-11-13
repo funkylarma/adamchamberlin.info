@@ -4,8 +4,8 @@ date: "2008-03-09"
 categories: 
   - "writing"
 tags:
- - “life”
- - “sunday”
+ - "life"
+ - "sunday"
 slug: "lazy-sunday-afternoons"
 ---
 

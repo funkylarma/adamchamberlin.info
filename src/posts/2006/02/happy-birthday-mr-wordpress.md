@@ -4,9 +4,9 @@ date: "2006-02-13"
 categories:
   - "writing"
 tags:
-- “wordpress”
-- “update”
-- “blogging”
+- "wordpress"
+- "update"
+- "blogging"
 slug: "happy-birthday-mr-wordpress"
 ---
 

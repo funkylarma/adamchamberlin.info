@@ -4,9 +4,9 @@ date: "2006-06-30"
 categories: 
   - "writing"
 tags:
-- “cycling”
-- “pro-tour”
-- “doping”
+- "cycling"
+- "pro-tour"
+- "doping"
 slug: "last-minute-shake-up"
 ---
 

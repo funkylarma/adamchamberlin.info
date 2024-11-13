@@ -4,7 +4,7 @@ date: "2005-06-18"
 categories: 
   - "writing"
 tags:
- - “weather”
+ - "weather"
 slug: "its-getting-hotter"
 ---
 

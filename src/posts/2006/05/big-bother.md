@@ -4,7 +4,7 @@ date: "2006-05-19"
 categories: 
   - "writing"
 tags:
-- “television”
+- "television"
 slug: "big-bother"
 ---
 

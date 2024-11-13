@@ -4,8 +4,8 @@ date: "2006-08-10"
 categories:
   - "writing"
 tags:
-- “life”
-- “blogging”
+- "life"
+- "blogging"
 slug: "blogging-hiatus"
 ---
 
