@@ -10,17 +10,28 @@ eleventyComputed:
   title: "Category: {{ category }}"
   description: "Archive page for the {{ category }} category"
 ---
-
 <div class="site-intro">
   <div class="site-intro-content">
-    <h1 class="site-title">Category: "{{ category }}"</h1>
+    <h1 class="site-title">{{ title }}</h1>
   </div><!-- .content -->
 </div><!-- .site-intro -->
 
-<section class="post-list">
-  <div class="post-list-content">
-    {%- for post in collections.categoryList[category] reversed -%}
-      {% include "partials/article.liquid" %}
-    {%- endfor -%}
-  </div><!-- .content -->
+<section class="page-single">
+  <div class="archive-list-content">
+    <div class="page-body">
+      <p class="h3">These are all the posts listed under the category of "{{ category }}".</p>
+      <ul>
+      {%- for post in collections.categoryList[category] reversed -%}
+        <li class="post">
+          <a href="{{ post.url }}" title="Read post" class="post-link">
+            {{ post.data.title }}
+          </a>
+          <div class="post-date">
+            - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+          </div>
+        </li>
+      {%- endfor -%}
+      </ul>
+    </div><!-- .page-body -->
+  </div><!-- .archive-list-content -->
 </section> <!-- End post list -->

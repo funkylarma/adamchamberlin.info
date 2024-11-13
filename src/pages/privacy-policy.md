@@ -1,6 +1,5 @@
 ---
 title: "Privacy Policy"
-date: "2021-08-25"
 slug: "privacy-policy"
 ---
 

@@ -1,11 +1,15 @@
-import 'dotenv/config';
+import "dotenv/config";
 
 const isDev = process.env.ELEVENTY_ENV === "development";
-const indexNow = process.env.INDEX_NOW_KEY ? process.env.INDEX_NOW_KEY : "dummy";
-const baseUrl = isDev ? `http://localhost:808/` : `https://adamchamberlin.info/`;
+const indexNow = process.env.INDEX_NOW_KEY
+  ? process.env.INDEX_NOW_KEY
+  : "dummy";
+const baseUrl = isDev
+  ? `http://localhost:808/`
+  : `https://adamchamberlin.info/`;
 
 export default {
-  env: isDev,
+  env: process.env.ELEVENTY_ENV,
   indexNow: indexNow,
   title: "Adam Chamberlin",
   tagline: "The online playground of a digiatal cowboy and consummate athlete.",

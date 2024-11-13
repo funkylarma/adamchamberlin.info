@@ -12,6 +12,8 @@ import Image from "@11ty/eleventy-img";
 import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
+import postGraph from "@rknightuk/eleventy-plugin-post-graph";
+import moment from "moment";
 
 // Import some utilities
 import { dir, imagePaths, scriptDirs } from "./utils/constants.js";
@@ -55,6 +57,13 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(emojiReadTime, {
     showEmoji: false,
+  });
+  eleventyConfig.addPlugin(postGraph, {
+    highlightColorLight: 'var(--main-color-secondary)',
+    highlightColorDark: 'var(--main-color-quinary)',
+    dayBoxTitle: true,
+    dayBoxTitleFormat: "MMM D, YYYY",
+    sort: 'desc',
   });
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     // which file extensions to process
