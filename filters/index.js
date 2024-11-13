@@ -55,7 +55,7 @@ export default function (eleventyConfig) {
     );
   });
 
-  eleventyConfig.addFilter("dateRSS", (dateObj) => {
+  eleventyConfig.addFilter("rssDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, "utc").toFormat(
       "ddd, D MMM YYYY HH:mm:ss ZZ"
     );

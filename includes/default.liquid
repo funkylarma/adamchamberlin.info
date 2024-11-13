@@ -2,10 +2,12 @@
 <html lang="{{ metadata.locale }}">
   {% include "partials/head.liquid" %}
   <body>
+    {% if metadata.env == "production" %}
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
     <div class="container">
       <div class="content">
         <a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -17,23 +19,7 @@
         <main id="skip" role="main" class="main">
           {{ content }}
         </main><!-- .main -->
-        <footer class="mast-foot">
-          <div class="content">
-            <nav class="footer">
-              <menu class="navigation-footer">
-              {% for item in metadata.navigation_footer %}
-                <li class="nav-item {% if item.class %}{{ item.class }}{% endif %}">
-                  <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
-                    {{ item.label }}
-                  </a>
-                </li>
-              {% endfor %}
-              </menu>
-            </nav>
-            {% include "partials/social.liquid" %}
-            <div class="copyright">© Adam Chamberlin 2005-{% year %}</div>
-          </div><!-- .content -->
-        </footer>
+        {% include "partials/footer.liquid" %}
       </div><!-- .content -->
     </div><!-- .container -->
     <script type="application/ld+json">

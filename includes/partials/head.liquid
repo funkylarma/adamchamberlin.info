@@ -54,9 +54,28 @@
   <link rel="stylesheet" href="/assets/css/screen.css" />
   <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  {% if process.env.ELEVENTY_ENV == "production" %}
   <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+  {% endif %}
 
+  <!-- Used to add dark mode right away, adding here prevents any flicker -->
+  <script>
+    // Enum of supported themes. Not strictly needed; just helps avoid typos and magic strings.
+    const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
+    // We'll use this to write and read to localStorage and save the theme as a data- attribute
+    const THEME_STORAGE_KEY = 'theme';
+    // :root will own the data- attribute for the current theme override; it is the only eligible theme owner when this script is parsed in <head>
+    const THEME_OWNER = document.documentElement;
+    // Check to see if the user previously set a site theme preference.
+    const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (cachedTheme) {
+      // If they did, toggle data attribute immediately to prevent theme flash.
+      THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
+    }
+  </script>
+
+  {% if metadata.env == "production" %}
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -64,5 +83,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
   <!-- End Google Tag Manager -->
+  {% endif %}
 
 </head>

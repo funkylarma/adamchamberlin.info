@@ -150,6 +150,10 @@ button,
     border: 1px solid var(--main-color-primary);
     background: var(--main-color-white);
 
+    @media (prefers-color-scheme: dark) {
+      background: var(--main-color-bg-dark);
+    }
+
     a {
       color: var(--main-color-primary);
       text-decoration: none;
