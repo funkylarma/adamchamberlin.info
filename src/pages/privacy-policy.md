@@ -6,7 +6,7 @@ slug: "privacy-policy"
 
 ## Who am I?
 
-Out side of the standard [About Page](https://adamchamberlin.info/about/) this site is a single user blog for Adam Chamberlin and the website address is: https://adamchamberlin.info.
+Outside of the standard [About Page][1] this site is a single user blog for Adam Chamberlin and the website address is: https://adamchamberlin.info.
 
 ---
 
@@ -18,7 +18,7 @@ This Cookie Policy explains what cookies are and how we use them, the types of c
 
 ### What are cookies ?
 
-Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyze what works and where it needs improvement.
+Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyse what works and where it needs improvement.
 
 ### How do we use cookies ?
 
@@ -26,7 +26,7 @@ As most of the online services, our website uses first-party and third-party coo
 
 ### What types of cookies do we use ?
 
-Essential: Some cookies are essential for you to be able to experience the full functionality of our metadata. They allow us to maintain user sessions and prevent any security threats. They do not collect or store any personal information. For example, these cookies allow you to log-in to your account and add products to your basket, and checkout securely.Statistics: These cookies store information like the number of visitors to the website, the number of unique visitors, which pages of the website have been visited, the source of the visit, etc. These data help us understand and analyze how well the website performs and where it needs improvement.Marketing: Our website displays advertisements. These cookies are used to personalize the advertisements that we show to you so that they are meaningful to you. These cookies also help us keep track of the efficiency of these ad campaigns.
+Essential: Some cookies are essential for you to be able to experience the full functionality of our metadata. They allow us to maintain user sessions and prevent any security threats. They do not collect or store any personal information. For example, these cookies allow you to log-in to your account and add products to your basket, and checkout securely.Statistics: These cookies store information like the number of visitors to the website, the number of unique visitors, which pages of the website have been visited, the source of the visit, etc. These data help us understand and analyse how well the website performs and where it needs improvement.Marketing: Our website displays advertisements. These cookies are used to personalise the advertisements that we show to you so that they are meaningful to you. These cookies also help us keep track of the efficiency of these ad campaigns.
 The information stored in these cookies may also be used by the third-party ad providers to show you ads on other websites on the browser as well.
 
 Functional: These are the cookies that help certain non-essential functionalities on our webmetadata. These functionalities include embedding content like videos or sharing content of the website on social media platforms.
@@ -45,7 +45,7 @@ Should you decide to change your preferences later through your browsing session
 
 When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.
 
-An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.
+An anonymised string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.
 
 ---
 
@@ -57,7 +57,7 @@ If you upload images to the website, you should avoid uploading images with embe
 
 ## Embedded content from other websites
 
-Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other webmetadata.
+Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the same way as if the visitor has visited the other webmetadata.
 
 These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that webmetadata.
 
@@ -86,3 +86,5 @@ If you have an account on this site, or have left comments, you can request to r
 ## Where we send your data
 
 Visitor comments may be checked through an automated spam detection service.
+
+[1]:	https://adamchamberlin.info/about/

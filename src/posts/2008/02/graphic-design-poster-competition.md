@@ -3,6 +3,8 @@ title: "Graphic Design Poster Competition"
 date: "2008-02-13"
 categories:
   - "writing"
+ tags:
+  - “design”
 slug: "graphic-design-poster-competition"
 ---
 

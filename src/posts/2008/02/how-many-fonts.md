@@ -3,7 +3,10 @@ title: "How Many Fonts..."
 date: "2008-02-26"
 categories: 
   - "writing"
-
+tags:
+ - “css”
+ - “fonts”
+ - “design”
 slug: "how-many-fonts"
 ---
 

@@ -3,7 +3,8 @@ title: "Happy St. Patricks Day"
 date: "2006-03-17"
 categories: 
   - "writing"
-
+tags:
+ - “holiday”
 slug: "happy-st-patricks-day"
 ---
 

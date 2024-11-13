@@ -3,7 +3,9 @@ title: "flickr it is then"
 date: "2005-10-09"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “flickr”
 slug: "flickr-it-is-then"
 ---
 

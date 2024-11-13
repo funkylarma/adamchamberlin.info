@@ -3,6 +3,9 @@ title: "Is 2023 the year of the blog?"
 date: "2023-01-23"
 categories:
   - "writing"
+ tags:
+  - “wordpress”
+  - “blogging”
 cover: "/images/install-step3.png"
 slug: "is-2023-the-year-of-the-blog"
 ---
@@ -11,7 +14,7 @@ Personally, I’m not a massive fan of the whole new year, new me movement. To m
 
 ## Block Theme Development
 
-Over the last couple of weeks, I have been conducting some work on a new theme for Mackman, and learning more about full site editing and block themes within WordPress. This got me thinking more about the platform and the future of a blog and blogging in general.
+Over the last couple of weeks, I have been conducting some work on a new theme for [Mackman](https://mackman.co.uk), and learning more about full site editing and block themes within WordPress. This got me thinking more about the platform and the future of a blog and blogging in general.
 
 ## Microblogging lives
 

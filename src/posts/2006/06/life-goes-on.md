@@ -3,7 +3,9 @@ title: "Life Goes On"
 date: "2006-06-13"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “update”
 slug: "life-goes-on"
 ---
 

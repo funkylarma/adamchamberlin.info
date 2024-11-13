@@ -3,7 +3,10 @@ title: "Playstation Live?"
 date: "2006-02-01"
 categories: 
   - "writing"
-
+tags:
+- “gaming”
+- “playstation”
+- “live”
 slug: "playstation-live"
 ---
 
@@ -23,7 +26,7 @@ Xbox Live turned out to be a hidden success to start with, you purchased a 12mon
 
 Microsoft really tore away in the console market with this and it shows, if you look at the new 360 console everything about it based around an internet connection and a Live account. It is the way forward and if any of the Next-Gen (when does Next-Gen become Current-Gen? Is the 360 now a current generation machine?) consoles want to complete they have got to get on board and come up with a service that rivals the Xbox version to even stand a hope in survival, let alone better it to win.
 
-[Rumours](https://www.joystiq.com/2006/01/31/sony-declares-full-on-assault-on-xbox-live/) are currently flying around the internet that this is exactly Sony’s plans for the upcoming PS3. Now lets look at the options and facts: Microsoft is a software company that develop computer software, they have spent most of their life on the internet and communicating accross the wires. I’m ignoring my own personal views on Microsoft here and trying to objective, but if anyone has the upperhand and resources it would be them. Sony are multi-media company and despite what people say and claim, they are the leaders in the console gaming market, they have the backing of developers and design studios.
+[Rumours][1] are currently flying around the internet that this is exactly Sony’s plans for the upcoming PS3. Now lets look at the options and facts: Microsoft is a software company that develop computer software, they have spent most of their life on the internet and communicating accross the wires. I’m ignoring my own personal views on Microsoft here and trying to objective, but if anyone has the upperhand and resources it would be them. Sony are multi-media company and despite what people say and claim, they are the leaders in the console gaming market, they have the backing of developers and design studios.
 
 They make damn good televisions and audio equipment but can Sony make a online gaming arena?
 
@@ -34,3 +37,5 @@ Don’t get me wrong I love Sony products. I still love my PS2. (Gran Turismo is
 I think that Sony have got their work cut out at present. Microsoft set up the online console gaming scene years ago, they have the current market top dog machine behind them. Even with rumours of a PS3 launch earlier than planned I think Sony are leaving it a bit late. By the time the PS3 comes out Microsoft will be ready to drop prices to compete, if the rumours about the specification of the PS3 are true it could not afford to complete. The current Live service will be tried and tested and by which time I think it will take a lot for people to switch.
 
 My own personal view, I really do hope that the PS3 has a online gaming service to match the Xbox, I think if Sony ignore this area they are destined to fail. If I can get the choice of two online gaming services from the comfort of my armchair, why not?
+
+[1]:	https://www.joystiq.com/2006/01/31/sony-declares-full-on-assault-on-xbox-live/

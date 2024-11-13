@@ -3,6 +3,9 @@ title: "Getting my racing fix"
 date: "2020-06-25"
 categories:
   - "writing"
+ tags:
+  - “cycling”
+  - “racing”
 cover: "/images/lee-valley-race.jpg"
 slug: "getting-my-racing-fix"
 ---
@@ -11,13 +14,12 @@ slug: "getting-my-racing-fix"
 
 ![Tipping it in at Lee Valley](/images/lee-valley-race.jpg)
 
-<!--more-->
-
 The power numbers were looking good, the motivation was high and the summer could not get here soon enough. Roll the clocks forward and 2020 has turned everything on its head.
 
 The pandemic hit everything, and boy did it hit my motivation. In the beginning I continued to train, living in hope that it was just a blip and the clouds would clear. Unfortunately that was not the case and my desire to train quickly disappeared.
 My days were filled with daily briefings and catching up the dire news from around the world; it just felt wrong to start thinking about myself and when I might get back to racing bikes.
 After a few weeks off the bike I soon realised that my mental state still needs to find a competitive edge and I need a goal to keep me getting out of bed in the morning.
+
 So I started looking back at my training plans and decided to throw my hat back in the Zwift racing ring.
 Around the same time the local race leagues had similar ideas and setup some online events to keep us going so it felt like a way to keep me motivated, stay in contact with the other local riders and still get a bit of racing in this year.
 My first race back on Zwift was just as hard as I remembered but I needed something else to keep me motivated, I needed a drive, something to keep my coming back and pushing every week. Let us be honest, getting on a turbo in a hot garage in June requires some dedication. Enter online streaming!

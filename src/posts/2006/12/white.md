@@ -3,7 +3,9 @@ title: "White"
 date: "2006-12-05"
 categories: 
   - "writing"
-
+tags:
+- “wordpress”
+- “theme”
 slug: "white"
 ---
 

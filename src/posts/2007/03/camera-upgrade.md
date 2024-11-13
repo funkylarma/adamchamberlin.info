@@ -3,15 +3,18 @@ title: "Camera Upgrade"
 date: "2007-03-20"
 categories: 
   - "writing"
-
+tags:
+- “canon”
+- “photography”
+- “upgrade”
 slug: "camera-upgrade"
 ---
 
-I have upgraded my Canon 300D to a 30D. The other week end in France my existing Canon camera; a [300D](https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/EOS_300D/) (Digital Rebel) started having a bit of a flip out. It would not focus and the shutter was not firing. To which I started looking around at an upgrade, just in case the worse ever happened. The options on the table was obviously a Canon, I have a few Canon AF lenses now, but what body; the new kid on the block is the [400D](https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/EOS_400D/index.asp). But then we have the older [30D](https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/eos30d/index.asp). What one should I choose?
+I have upgraded my Canon 300D to a 30D. The other week end in France my existing Canon camera; a [300D][1] (Digital Rebel) started having a bit of a flip out. It would not focus and the shutter was not firing. To which I started looking around at an upgrade, just in case the worse ever happened. The options on the table was obviously a Canon, I have a few Canon AF lenses now, but what body; the new kid on the block is the [400D][2]. But then we have the older [30D][3]. What one should I choose?
 
 ## Let’s Look At The Options
 
-When you look at the specifications of the two camera’s ([400D](https://www.dpreview.com/reviews/specs/Canon/canon_eos400d.asp) and [30D](https://www.dpreview.com/reviews/specs/Canon/canon_eos30d.asp)) the 400D is by the far the better of the two. The 400D boasts a 10.1mp resolution, a clever dust removal system for the sensor and a lot of the features from the 30D. Now looking at the 30D the only real bonus is that is it has spot metering and a magnesium body. It has a lower 8.2mp resolution and some higher ISO settings and a much higher price tag; to the common buyer the 400D is the camera to go for. Talking to a sales person in the local Jessops they even agreed that the sales of the 30D have dropped since the 400D hit the shelves. Rightly so, the 400D is a very suitable upgrade to my old 300D, two versions newer in fact. The 350D came out about 3 months after I purchased my 300D but I was not too fussed, I was happy. The 30D on the other hand is Canon’s answer to the prosumer market, the step down from the 5D. It offers some serious options and usability features that make it a true winner. The previous incarnation; 20D was one of Canon’s most popular selling DSLR’s.
+When you look at the specifications of the two camera’s ([400D][4] and [30D][5]) the 400D is by the far the better of the two. The 400D boasts a 10.1mp resolution, a clever dust removal system for the sensor and a lot of the features from the 30D. Now looking at the 30D the only real bonus is that is it has spot metering and a magnesium body. It has a lower 8.2mp resolution and some higher ISO settings and a much higher price tag; to the common buyer the 400D is the camera to go for. Talking to a sales person in the local Jessops they even agreed that the sales of the 30D have dropped since the 400D hit the shelves. Rightly so, the 400D is a very suitable upgrade to my old 300D, two versions newer in fact. The 350D came out about 3 months after I purchased my 300D but I was not too fussed, I was happy. The 30D on the other hand is Canon’s answer to the prosumer market, the step down from the 5D. It offers some serious options and usability features that make it a true winner. The previous incarnation; 20D was one of Canon’s most popular selling DSLR’s.
 
 ## So Why Did I Pick The 30?
 
@@ -24,3 +27,9 @@ The interweb is ripe with rumors of a 30D replacement; 40D on the way. Well ther
 ## My Package
 
 So I managed to put a package together; a new Canon 30D, a Canon EF-S 17-85mm USM IS Lens and a Battery Grip. The grip just makes the camera look mean as hell, almost 1D'ish, plus it does double the battery life. The lens is a EF-S version, so it will only work with Canon DSLR with the cropped Field of View, no 5D or 1D’s here. I have not quite got used to the weight and feel of the camera just yet but expect to see some extra photo’s on my Flickr feed.
+
+[1]:	https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/EOS_300D/
+[2]:	https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/EOS_400D/index.asp
+[3]:	https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/eos30d/index.asp
+[4]:	https://www.dpreview.com/reviews/specs/Canon/canon_eos400d.asp
+[5]:	https://www.dpreview.com/reviews/specs/Canon/canon_eos30d.asp

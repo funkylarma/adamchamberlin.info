@@ -3,7 +3,9 @@ title: "Lost; you telling me!"
 date: "2006-09-27"
 categories: 
   - "writing"
-
+tags:
+- “television”
+- “lost”
 slug: "lost-you-telling-me"
 ---
 

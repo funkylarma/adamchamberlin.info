@@ -3,7 +3,10 @@ title: "Aperture Virgin"
 date: "2006-12-13"
 categories: 
   - "writing"
-
+tags:
+- “apple”
+- “photography”
+- “aperture”
 slug: "aperture-virgin"
 ---
 

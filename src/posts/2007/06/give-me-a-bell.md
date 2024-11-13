@@ -3,7 +3,9 @@ title: "Give me a bell..."
 date: "2007-06-01"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “update”
 slug: "give-me-a-bell"
 ---
 

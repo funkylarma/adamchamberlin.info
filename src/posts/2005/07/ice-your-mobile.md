@@ -3,7 +3,9 @@ title: "ICE your mobile"
 date: "2005-07-15"
 categories: 
   - "writing"
-
+tags:
+ - “ice”
+ - “safety”
 slug: "ice-your-mobile"
 ---
 

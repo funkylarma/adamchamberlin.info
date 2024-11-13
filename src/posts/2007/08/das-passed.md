@@ -3,7 +3,9 @@ title: "DAS Passed"
 date: "2007-08-16"
 categories: 
   - "writing"
-
+tags:
+- “motorbikes”
+- “learning”
 slug: "das-passed"
 ---
 

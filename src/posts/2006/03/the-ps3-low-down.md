@@ -3,7 +3,9 @@ title: "The PS3 low down"
 date: "2006-03-23"
 categories:
   - "writing"
-
+tag:
+- “ps3”
+- “gaming”
 slug: "the-ps3-low-down"
 ---
 
@@ -22,6 +24,8 @@ Free Online Service; So EA will sting me instead?
 
 Of course there are a lot more details out there so just Google for yourself but the best news for me is they have ditched the ‘boomerang’ controller!
 This was a major let down but thankfully it was just a prototype and the new controller would be revealed at E3.
-The online service that Sony claimed would be the [Xbox Live killer](https://adamchamberlin.info/2006/02/playstation-live/) is rumoured to called 'PlayStation Network Platform’ will be ready to support the machine from launch. If this service remains free is uncertain, as are a lot of details about the whole situation.
+The online service that Sony claimed would be the [Xbox Live killer][1] is rumoured to called 'PlayStation Network Platform’ will be ready to support the machine from launch. If this service remains free is uncertain, as are a lot of details about the whole situation.
 
 Of course as with a lot of Sony hype it might just be that; hype. Expect delays and set backs right up till Christmas, that said I am looking forward to some next gen Gran Turismo.
+
+[1]:	https://adamchamberlin.info/2006/02/playstation-live/

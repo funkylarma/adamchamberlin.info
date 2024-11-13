@@ -3,7 +3,9 @@ title: "Flickr's Terms"
 date: "2006-07-07"
 categories: 
   - "writing"
-
+tags:
+- “web”
+- “flickr”
 slug: "flickrs-terms"
 ---
 

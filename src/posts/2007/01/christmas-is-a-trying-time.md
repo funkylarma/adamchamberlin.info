@@ -3,7 +3,9 @@ title: "Christmas is a trying time"
 date: "2007-01-06"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “cancer”
 slug: "christmas-is-a-trying-time"
 ---
 

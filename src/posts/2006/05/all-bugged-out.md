@@ -3,7 +3,10 @@ title: "All bugged out"
 date: "2006-05-19"
 categories:
   - "writing"
-
+tags:
+ - “car”
+ - “vw”
+ - “beetle”
 slug: "all-bugged-out"
 ---
 
@@ -12,7 +15,9 @@ slug: "all-bugged-out"
 What have I gone and done?
 
 I’ve made _the_ sacrifice to end all sacrifices, I’ve agreed with Lucy to sell my Audi so that we can get a car she can learn to drive in!
+
 Don’t get me wrong my Audi is nothing special, by modern standards anyway, but to me it is a lovely V6 engine that just purrs along. The problem is that I do not do enough miles to really justify having a car let alone that car but it was my little piece of motorhead.
+
 So when Lucy said she wanted to learn to drive we thought about it and the insurance company were not too happy about insuring her so it had to be a smaller car. Which unfortunately meant that something had to give, after a few days sitting there I decided it was me that had to give. I’ve let Lucy do all the looking and choosing and this evening we put the deposit down on a VW Beetle
 
 ![Photo sharing](/images/149530596.jpg)

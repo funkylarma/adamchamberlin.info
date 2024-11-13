@@ -3,6 +3,10 @@ title: "What a busy few months"
 date: "2008-08-05"
 categories: 
   - "writing"
+ tags:
+  - “life”
+  - “updates”
+  - “work”
 slug: "what-a-busy-few-months"
 ---
 

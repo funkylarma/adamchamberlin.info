@@ -3,7 +3,9 @@ title: "Summer Storm"
 date: "2005-06-29"
 categories:
   - "writing"
-
+tags:
+ - “weather”
+ - “storm”
 slug: "summer-storm"
 ---
 

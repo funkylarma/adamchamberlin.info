@@ -3,7 +3,8 @@ title: "Price on black gold"
 date: "2005-07-10"
 categories: 
   - "writing"
-
+tags:
+ - “updates”
 slug: "price-on-black-gold"
 ---
 

@@ -3,7 +3,8 @@ title: "Never Take Me Seriously"
 date: "2007-11-26"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "never-take-me-seriously"
 ---
 

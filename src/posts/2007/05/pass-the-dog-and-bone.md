@@ -3,7 +3,9 @@ title: "Pass the Dog and Bone"
 date: "2007-05-26"
 categories: 
   - "writing"
-
+tags:
+ - “phone”
+- “life”
 slug: "pass-the-dog-and-bone"
 ---
 

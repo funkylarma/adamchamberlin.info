@@ -3,7 +3,9 @@ title: "Here comes the sun"
 date: "2007-03-13"
 categories: 
   - "writing"
-
+tags:
+ - “life”
+- “weather”
 slug: "here-comes-the-sun"
 ---
 

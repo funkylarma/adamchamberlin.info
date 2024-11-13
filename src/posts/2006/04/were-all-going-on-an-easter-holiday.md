@@ -3,7 +3,9 @@ title: "We're all going on an Easter Holiday"
 date: "2006-04-14"
 categories: 
   - "writing"
-
+tags:
+- “life”
+- “holiday”
 slug: "were-all-going-on-an-easter-holiday"
 ---
 

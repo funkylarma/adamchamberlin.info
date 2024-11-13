@@ -3,7 +3,8 @@ title: "Now I'm Happy"
 date: "2007-10-16"
 categories: 
   - "writing"
-
+tags:
+- “gaming”
 slug: "now-im-happy"
 ---
 

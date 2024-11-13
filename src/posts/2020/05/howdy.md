@@ -3,6 +3,10 @@ title: "Howdy"
 date: "2020-05-25"
 categories: 
   - "writing"
+ tags:
+  - “life”
+  - “blogging”
+  - “family”
 slug: "howdy"
 ---
 

@@ -3,6 +3,10 @@ title: "Nothing is permanent"
 date: "2013-03-20"
 categories: 
   - "writing"
+ tags:
+  - “life”
+  - “career”
+  - “redundancy”
 slug: "nothing-is-permanent"
 ---
 

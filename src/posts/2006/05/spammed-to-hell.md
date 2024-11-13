@@ -3,7 +3,8 @@ title: "Spammed to Hell"
 date: "2006-05-08"
 categories: 
   - "writing"
-
+tags:
+- “spam”
 slug: "spammed-to-hell"
 ---
 

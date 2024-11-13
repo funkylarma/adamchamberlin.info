@@ -3,7 +3,9 @@ title: "Enjoy the sun"
 date: "2005-06-18"
 categories:
   - "writing"
-
+tags:
+ - “outside”
+ - “health”
 slug: "enjoy-the-sun"
 ---
 

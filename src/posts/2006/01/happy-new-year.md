@@ -3,7 +3,8 @@ title: "Happy New Year"
 date: "2006-01-01"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "happy-new-year"
 ---
 

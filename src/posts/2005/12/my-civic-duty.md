@@ -3,14 +3,17 @@ title: "My Civic Duty"
 date: "2005-12-16"
 categories:
   - "writing"
-
+tags:
+- “cars”
 slug: "my-civic-duty"
 ---
 
-![Civic](/images/74191439.jpg)
+![Civic][image-1]
 
 Today I spent the best part of it out and about on the road. To do this I had to borrow a company car, which was OK as I first thought. It turned out I was getting a nice 04 Honda Civic, not bad.
+
 I’ve always admired the new shape Civic since it’s debut in the BTCC, in particular the TypeR version, in fact I’ve often thought about getting one. But after spending a few hours behind the wheel I’m not so sure.
+
 Ok I’ll start off there is nothing wrong with the car, in fact it was quite a good car to drive. Given the size it was very spacious inside, even with 4,000 vacuum pouches in the boot and backseat (the real reason for my trip) and the handling was nice and controlled but my real problem was with the gearbox; an automatic!
 
 I’ve never really driven an automatic car for any distance, I’ve never owned one and to be honest I’ve never seen the appeal for them. Since my early ‘boy racer’ days I’ve always liked the ability to drop a cog and nail the machine, hey it’s the kid inside me. But today I had to change tack and learn a new way to drive.
@@ -23,3 +26,5 @@ In the poor Honda’s defense it was only the 1.6litre version and I’m sure bi
 Gearbox aside I did enjoy the car, it was a funky little thing to drive around, the idea of the hatestick gearstick in the centre of the dash is pretty cool, giving you a lot more room between the seats. The dash board itself was great and the dials are a glowing testament to Japanese motoring but there was just a bit too much funk and plastic bolt on bits to make it feel secure.
 
 All in a good car, not a good gearbox but it has helped me decide one thing, I’m not swapping in my Audi for a TypeR.
+
+[image-1]:	/images/74191439.jpg

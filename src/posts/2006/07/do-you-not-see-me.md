@@ -3,7 +3,8 @@ title: "Do you not see me?"
 date: "2006-07-11"
 categories: 
   - "writing"
-
+tags:
+- “life”
 slug: "do-you-not-see-me"
 ---
 
