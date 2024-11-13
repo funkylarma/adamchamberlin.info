@@ -1,36 +1,23 @@
 @use "variables" as *;
 
-$typography-variants: h1, h2, h3, h4;
-
-@each $type in $typography-variants {
-  #{$type},
-  .#{$type} {
-    font-weight: $strong-font-weight;
-    line-height: 1.15;
-    margin-bottom: 0.65em;
-  }
-}
-
 h1,
 .h1 {
-  font-size: $h1-font-size;
-  font-size: clamp(3rem, 5vw + 1rem, #{$h1-font-size});
+  font-size: var(--main-font-size-xx-large);
 }
 
 h2,
 .h2 {
-  font-size: $h2-font-size;
-  font-size: clamp(2.5rem, 5vw + 1rem, #{$h2-font-size});
+  font-size: var(--main-font-size-large);
 }
 
 h3,
 .h3 {
-  font-size: $h3-font-size;
+  font-size: var(--main-font-size-medium);
 }
 
 h4,
 .h4 {
-  font-size: $h4-font-size;
+  font-size: var(--main-font-size-medium);
 }
 
 p,
@@ -78,12 +65,12 @@ a:not(.button) {
 
 code:not([class*="language"]) {
   display: inline-flex;
-  padding: 0.15em;
+  padding: 0.25em;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   border: 1px solid var(--main-color-base);
   border-radius: 2px;
-  font-size: 0.75em;
-  line-height: 1.1;
+  font-size: 0.75rem;
+  line-height: 2.1;
 }
 
 pre code:not([class*="language"]) {
@@ -100,7 +87,7 @@ blockquote {
 
   &,
   p {
-    font-size: $h4-font-size;
+    font-size: var(--main-font-size-medium);
   }
 
   + * {

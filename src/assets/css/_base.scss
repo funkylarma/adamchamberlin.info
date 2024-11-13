@@ -1,5 +1,21 @@
 @use "variables" as *;
 
+@font-face {
+  font-display: optional;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/plus-jakarta-sans-v8-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* plus-jakarta-sans-italic - latin */
+@font-face {
+  font-display: optional;
+  font-family: "Plus Jakarta Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/plus-jakarta-sans-v8-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 @mixin theme-light() {
   color-scheme: light;
 }
@@ -74,7 +90,6 @@
       }
 
       .graph {
-
         .progress {
           background: var(--main-color-quinary);
         }
@@ -195,6 +210,7 @@ footer {
     padding: 0;
     margin: 0;
     list-style: none;
+    text-align: right;
 
     .nav-item {
       display: inline-block;
@@ -303,14 +319,17 @@ footer {
 
           .post-meta {
             display: flex;
-            gap: 1rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 0 1rem;
+            margin: 1rem 0;
 
             .post-date,
             .post-categories,
             .post-tags,
             .post-reading {
               font-size: var(--main-font-size-x-small);
-              margin-bottom: 1rem;
 
               span {
                 font-weight: $strong-font-weight;
@@ -354,6 +373,13 @@ footer {
 .post-single {
   width: 100%;
 
+  .wide {
+    display: block;
+    width: 140%;
+    max-width: 140%;
+    margin: 0 -20%;
+  }
+
   .post-content {
     max-width: var(--main-layout-width-x-wide);
     margin-left: auto;
@@ -380,9 +406,10 @@ footer {
         margin: 0 auto;
         padding-bottom: 1.5rem;
         display: flex;
+        gap: 0 1rem;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
 
         .post-date,
@@ -441,6 +468,7 @@ footer {
       h3,
       h4 {
         color: var(--main-color-tertiary);
+        font-weight: 500;
 
         a.heading-anchor {
           color: var(--main-color-tertiary);
@@ -520,6 +548,7 @@ footer {
       h3,
       h4 {
         color: var(--main-color-tertiary);
+        font-weight: 500;
 
         a.heading-anchor {
           color: var(--main-color-tertiary);
@@ -528,7 +557,6 @@ footer {
       }
 
       .graph {
-
         .wrapper {
           position: relative;
           height: 2rem;
@@ -552,6 +580,11 @@ footer {
         }
       }
 
+      .stats {
+        td {
+          text-align: center;
+        }
+      }
     }
   }
 
@@ -685,6 +718,8 @@ footer {
 
     .social {
       margin: 1rem;
+      display: flex;
+      justify-content: center;
 
       a {
         color: var(--main-color-base);

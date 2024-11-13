@@ -1,64 +1,33 @@
-/*
- * [Modified] Modern CSS Reset
- * @link https://github.com/hankchizljaw/modern-css-reset
-*/
-
-/* Box sizing rules */
+/* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* 2. Remove default margin */
+* {
   margin: 0;
 }
 
-p,
-li,
-h1,
-h2,
-h3,
-h4 {
-  // Help prevent overflow of long words/names/URLs
-  word-break: break-word;
-
-  // Optional, not supported for all languages
-  // hyphens: auto;
-}
-
-html,
 body {
-  overflow-x: hidden;
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  font-family: sans-serif;
-  font-size: 100%;
-  line-height: 1.7;
-  text-rendering: optimizeSpeed;
-}
-
-/* Make images easier to work with */
-img {
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-/* Inherit fonts for inputs and buttons */
+/* 6. Inherit fonts for form controls */
 input,
 button,
 textarea,
@@ -66,19 +35,34 @@ select {
   font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-    transition: all 0.5s;
-  }
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
 
-  html {
-    scroll-behavior: initial;
-  }
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
