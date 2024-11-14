@@ -216,8 +216,14 @@ footer {
       display: inline-block;
       text-transform: uppercase;
       margin: 0 0.5rem;
+      font-size: var(--main-font-size-small);
 
       .nav-link {
+        &:hover {
+          color: var(--main-color-primary);
+          text-decoration: none;
+        }
+
         &[aria-current] {
           font-weight: bold;
         }
@@ -312,7 +318,7 @@ footer {
               text-decoration: none;
 
               &:hover {
-                color: var(--main-color-secondary);
+                color: var(--main-color-tertiary);
               }
             }
           }
@@ -324,6 +330,7 @@ footer {
             justify-content: flex-start;
             gap: 0 1rem;
             margin: 1rem 0;
+            text-transform: uppercase;
 
             .post-date,
             .post-categories,
@@ -394,7 +401,7 @@ footer {
       h1.post-title {
         font-size: var(--main-font-size-xx-large);
         font-weight: 300;
-        color: var(--main-color-tertiary);
+        color: var(--main-color-primary);
         margin-bottom: 1.5rem;
       }
 
@@ -418,6 +425,17 @@ footer {
         .post-reading {
           display: inline;
           margin: 0 0.5rem;
+
+          span {
+            font-weight: $strong-font-weight;
+          }
+
+          a {
+            &:hover {
+              color: var(--main-color-quaternary);
+              text-decoration: none;
+            }
+          }
         }
       }
     }
@@ -698,14 +716,12 @@ footer {
 
       .navigation-footer {
         display: block;
-        margin-block-start: 1rem;
-        margin-block-end: rem;
-        padding-inline-start: 0;
 
         .nav-item {
           display: inline-block;
           margin-left: 1rem;
           margin-right: 1rem;
+          font-size: var(--main-font-size-small);
         }
         .nav-item a[href]:not(:hover) {
           text-decoration: none;

@@ -9,6 +9,7 @@ layout: default.liquid
         <h1 class="post-title">{% if title %}{{ title }}{% else %}<code>{{ url }}</code>{% endif %}</h1>
         <div class="post-meta">
           <div class="post-date">
+            <span>Date: </span>
             <time class="postlist-date" datetime="{{ page.date | dateHtmlString }}">{{ page.date | readableDate }}</time>
           </div>
           {% if categories %}
