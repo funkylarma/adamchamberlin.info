@@ -7,6 +7,7 @@ tags:
 - "life"
 - "birthday"
 slug: "30-years-of-madness"
+cover: "/images/ant_30.jpg"
 ---
 
 ![Photo sharing][image-1]

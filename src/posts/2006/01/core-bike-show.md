@@ -7,6 +7,7 @@ tags:
 - "cycling"
 - "event"
 slug: "core-bike-show"
+cover: "/images/corebike.jpg"
 ---
 
 <!-- ![Corebike Show][image-1] -->
@@ -22,4 +23,3 @@ I think the most time was spent at the BMC stall staring at the new all carbon f
 
 [1]:	https://corebike.co.uk/
 
-[image-1]:	/images/90745722.jpg

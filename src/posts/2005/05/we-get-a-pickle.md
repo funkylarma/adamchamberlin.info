@@ -17,5 +17,6 @@ I’m not sure if it was my driving or just the experience but half way home Pic
 
 An hour or so later and we were home, but she was looking a bit stressed and so we left to get used to her new home. I’m sure there will be more updates as she settles in. Below is a copy of the certificate provided by Muriel as proof of the bird, bit like a birth certificate I guess.
 
-<!-- ![Pickles Certificate](/images/pickle_cert.jpg)   -->
+![Pickles Certificate](/images/pickle_cert.jpg)
+
 Once again a big thank you to Muriel and Keith for all their help!

@@ -7,6 +7,7 @@ tags:
 - "cycling"
 - "track"
 slug: "track-day"
+cover: "/images/trackcycling.jpg"
 ---
 
 ![Photo sharing][image-1]

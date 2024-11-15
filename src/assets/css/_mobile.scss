@@ -3,7 +3,30 @@
 
  */
 
-@media (max-width: 1250px) {
+@media (max-width: 1150px) {
+
+  .post-single,
+  .page-single {
+
+    .post-content,
+    .page-content {
+
+      .post-body,
+      .page-body {
+
+        .wide,
+        img.wide,
+        picture img.wide {
+          margin: 0;
+          width: 100%;
+        }
+      }
+
+    }
+
+  }
+
+
 }
 
 @media (max-width: 1024px) {
@@ -43,6 +66,31 @@
           .continue-reading {
             text-align: center;
           }
+        }
+      }
+    }
+  }
+
+  .post-single,
+  .page-single {
+
+    .post-content,
+    .page-content {
+
+      .post-head,
+      .page-head {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .post-body,
+      .page-body {
+
+        img {
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 10px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 50px;
         }
       }
     }

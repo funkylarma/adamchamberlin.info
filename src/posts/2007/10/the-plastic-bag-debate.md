@@ -1,7 +1,7 @@
 ---
 title: "The Plastic Bag Debate"
 date: "2007-10-15"
-categories: 
+categories:
   - "writing"
 tags:
 - "environment"
@@ -15,9 +15,13 @@ Every where you turn some one is talking about caring for the environment and do
 
 That’s the idea that people are trying to get us to adopt, but before we just jump to a knee jerk reaction let’s just weigh up the options and make the right decisions. The bag in question is the plastic bag, which is used in just about every outlet or business. From the high density vest carriers that are handed out at the supermarkets right up to the fashion carriers from the highstreet stores. Despite the term plastic bag being put upon these products they are actually made from polythene, high density being the crinkly type of the superkmarket vest carrier and low density is the glossy looking smooth feeling fashion carriers. Polythene is obviously a type of plastic which means it is made via a by-product of crude oil. Which as we all know is a non-renewable fossil fuel. Could this connection with oil be the reason that people want to ban the bag?
 
+![Fashion bag](/images/fashion.jpg)
+
 ## What’s In A Bag?
 
 Before we put that bag in the bin let’s just look at the polythene bag for what it is (you always need to understand your enemy) Polythene is a very cheap material, despite costs in oil and subsequently polythene rising near on every month it is still a very cost effective material for carrier bags. Polythene has a very strong tensile strength for it’s weight, this quality makes it suitable for carrier bags. You need a material that will create a strong bags without being too bulky or heavy for the end user. With polythene you can create a very large carrier bag with inherit strength’s without making it uncomfortable for the user. Polythene is a flexible plastic ‘film’, very handy if you are one of those people that tries to re-use a carrier bag. You can fold, crush or stuff your polythene carrier bag into smaller spaces.
+
+![Paper bag](/images/paper.jpg)
 
 ## The Arguments And Alternatives
 
@@ -26,6 +30,7 @@ I will be totally honest I have no idea why people have suddenly decided that th
 ## The Right Bag For The Right Job
 
 If we are in a society were we must ban the bag and we have the options why is this not such an easy option to make. Well for one all the other options are not really as great as they first look. The paper bag looks like the best option, nice and natural, clean and eco-friendly. Well not quite. For a start paper bags come from tree’s, which if used from a managed forest is not a problem, but think of the transport and logisitics in getting felled trees to a position where it can be made into a bag. Wood/paper is not the most manoverable of materials and would add extra steps into the process. If you wanted a white paper bag the wood pulp must be bleached to achieve this, further polluting the environoment. Once your bag is made it is time for shipping, the finished paper bags would take up so much more space that an estimated 26,000 extra lorries would be required on the UK roads just to meet the commercial needs of carrier bags. If that was not enough you can easily expect to pay over 4 times the cost of the polythene bag just to get to this level. Not cost effective, not eco-friendly and not much good in the rain! Don’t be foiled by the recycling part of paper, that is more transport, more bleach and an extra cost. So to prevent this you chuck it in the landfill knowing that paper degrades. Paper does degrade, the best thing it has going for it, except paper degrading creates extremely high levels of Carbon Dioxide, which is the cause of so many other environmental issues. In my mind the best way to care for the environment is re-use as many materials as we can, preserve what we have got and reduce the amount of waste we are producing. To which I can not see the benefit of a degradable polythene bag, or paper for that matter. Yes they eventually disappear but there is only one final destination for a degradable carrier bag; the landfill. Due to the fact that degradable polythene will degrade you can not recycle it or allow it to be mixed with a standard polythene, this results in the material being next to useless unless it is put into a landfill. To which in my mind that goes against everything for caring for the environment, you are still using the oil to make the polythene yet you are unable to reuse it in any way. Re-usable shopping bags are great as they can be used time and time again, making them real value for money. But that is just the problem, the money involved in obtaining them. They will never be given away in the same scale as the carrier bag, making them unobtainable by most smaller companies. They must be first bought and then carried whenever required, remember to take it with you.
+![![Cotton Bag](/images/cotton.jpg)
 
 ## Conclusions
 

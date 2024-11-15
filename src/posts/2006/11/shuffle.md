@@ -7,6 +7,7 @@ tags:
 - "apple"
 - "ipod"
 slug: "shuffle"
+cover: "/images/shuffle.jpg"
 ---
 
 I finally received my birthday gift from Lucy. The new 2nd generation iPod Shuffle. First thoughts you get when you see the new Shuffle is "how small!?!" No matter how many pictures you see on the internet or read in books nothing really prepares you for just how small this thing really is. Last year I treated Lucy to a first generation Shuffle and was shocked as to the size of that but looking at the box of the new version you finally realise that this is quite close to being one of the smallest gadgets you’ve ever seen.

@@ -715,12 +715,13 @@ footer {
       justify-content: center;
 
       .navigation-footer {
-        display: block;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding-inline-start: 0;
 
         .nav-item {
           display: inline-block;
-          margin-left: 1rem;
-          margin-right: 1rem;
           font-size: var(--main-font-size-small);
         }
         .nav-item a[href]:not(:hover) {
@@ -748,7 +749,7 @@ footer {
 hr {
   margin-top: 4rem;
   margin-bottom: 4rem;
-  border: 1px solid var(--main-color-secondary);
+  border: 1px solid var(--main-color-base);
 }
 
 .heading-wrapper {
