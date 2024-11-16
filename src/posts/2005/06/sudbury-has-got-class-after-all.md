@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
  - "cars"
- - "sudbury"
+ - "Sudbury"
 slug: "sudbury-has-got-class-after-all"
 ---
 

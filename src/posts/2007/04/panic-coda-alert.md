@@ -4,29 +4,33 @@ date: "2007-04-26"
 categories:
   - "writing"
 tags:
-- "software"
-- "editor"
-- "panic"
-- "coda"
+  - "software"
+  - "editor"
+  - "Panic"
+  - "Coda"
 slug: "panic-coda-alert"
 ---
 
  <!-- [![Coda][image-1]][1] -->
+
 Yesterday the tubes were alive with the news of Coda, the new application from [Panic][2]. Coda is an attempt at an ‘all in one’ application containing all the tools for the development of a web page. Currently I use a combination of [TextMate][3], [CSSEdit][4] and [Transmit][5]that seem to fill most needs, but what if I could have all that power and only need load up one application? Well I downloaded the 15 trial of Coda and spent a few minutes using it. Find out my thoughts. The main user interface is the standard looking one; a files or assets browser down the left hand side, a main window on the right, a tool bar in the top with a small status bar down below. You will notice in the toolbar it is broken down into 5 sections, these will now be your tools of the trade…
 
 ## Sites
 
  <!-- [![Sites][image-2]][6] -->
+
 This modual is a real selling point and would be one of the reasons I would invest in the software. Forget your projects from [TextMate][7], think Sites in Dreamweaver; but better. You create a site in the normal way, name, local folder, ftp detais but you can now add terminal details for things like SSH. Once completed you are presented with a grey screen and a poster like image of your site, this image is pulled from the url of your site and updates each time you close the site profile. Clicking on the profile gives you the option to update it or do the usual barrage of setting changes, double clicking is the way in which you open the profile. The site is not just opened like a file, that is not the Panic way, instead you get treated to a lovely script.aculo.us style window effect as the image grows into your working environment. Whilst you are working on a set site there is always a handy little button in the top left to give you a clue on where you are and what you should be doing!
 
 ## Edit
 
  <!-- [![Edit][image-3]][8] -->
+
 It is basically your run of the mill code editor. So far I have found nothing vastly inspiring about this but then nothing bad either. As per the norm markup is colour coded and easily customisable and as Kristen [points out][9], changing the editor font to Monaco 12pt it looks very similar to the TextMate environment I’m used to. There is a form of predictive coding that when coding in a language and you start typing it will try and guess which command you are trying to come up with, it will then auto complete the statement with any arguments or variable options pre listed. Couple with this a handy little 'hints’ feature down in the bottom that will try and help you remember that variables need passing; clicking on the 'more’ button from here will quickly transport you to the relevant section in the 'Books’ module (more on that later). Of course this feature only works with languages and code elements that are known to Coda and stored in the Books module. The editor part seems very solid and they have done a good job with all the extras but it does feel like they could have done a bit more. The auto complete is great but what about integrating the Style Sheets into the mix. I’ve created a load of elements in my style sheet, which is linked to my php file, why not give me access to those as part of my predictive input? That would save time and stop me from switching between modules so often.
 
 ## CSS
 
  <!-- [![CSS][image-4]][10] -->
+
 This is where you can tinkle with the style sheets. If you open a style sheet in the Edit module you see the standard markup of the sheet, yet moving to the CSS part presents you with a [CSSEdit][11] style visual editor. The problem is this is where the similarities end. You get a list of all the elements in your sheet listed on the left and the ability to modify them on the right. There is even some CSS3 goodies hidden in there. But users of [CSSEdit][12] will miss the live preview and Xray features. In all honestly the CSS part is very well done really and new users will obviously find it easy to use. I on the other hand find it very frustrating, but I do know why. I am forever trying to compare it to [CSSEdit][13]. And why not, that application changed the way a lot of people code and the work flow is just awesome. Coda on the other hand does a stand up job, just not as good and without as many features. I keep on looking for an option only to not find it where I think it should be, only because that is why it is in [CSSEdit][14]. To which I’m not loving this module as much. Add to this that Macrabbit released version 2.5 of [CSSEdit][15]which make a big change to the UI and I think I will stick with that for heavy style sheet creation. As a bolt on tool this CSS module of Coda works fine. You can create quick sheets and I’m sure with a bit of practice you can do more; as long as you leave your comparisons at the door.
 
 ## Extras
@@ -37,27 +41,26 @@ To me those three are the main parts of Coda; the meat and two veg of the packag
 
 So I’ve played with Coda, took a tour round it’s flashy exterier and tried some the hidden depths but will I be Zapping any of my current applications? In a word no. I’ve paid for [TextMate][17], [CSSEdit][18] and [Transmit][19] and I can not see a reason to get rid of them. In all my time on TextMate I have only just scratched the surface of what it can do, there is always more to learn. To which this application will forever be on my hard drive. Tranmit has be hailed as the best ftp client for OSX and whilst Coda has an ftp feature is only allows you to upload from within the confines of the setup sites. Transmit is a free for all ftp client. So I’m sorry to say it too will stay. Finally CSSEdit, well seeing as how the CSS features of Coda is quite on a par with this I’m going to have to keep it. The X-Ray feature is worth the prchase on it’s own. So whilst I would not delete my current setup would I move over? I think I would, just to have more features in one place. You can most of your work done with Coda and then if need be finish it off with the other applications; just of final bells and whistles. But this is all based upon me, having already purchased the other applications. What about some one new who has not? The start price for Coda is $99, which at first sounds a bit steep. But when you look at the prices of the components that went into it I think it weighs but slightly better; just slightly thou. But if you are a Transmit user then you can knock $10 off the price and pick it up for $89. At present Panic are doing some introductory offers; a further $10 off each price. I think you are starting out and want to buy your first application of this kind you could do a lot worse. Remember that this is only version 1.0, imagine what the next major release will be. But if you are a seasoned coder who is stuck in your ways, try it out you might that you can find a use for it. Or just just it to sample those sweet effects and user interface’s.
 
-[1]:	https://www.flickr.com/photos/funkylarma/470983881/ "Photo Sharing"
-[2]:	https://www.panic.com/
-[3]:	https://macromates.com/
-[4]:	https://macrabbit.com/cssedit/
-[5]:	https://www.panic.com/transmit/
-[6]:	https://www.flickr.com/photos/funkylarma/470963508/ "Photo Sharing"
-[7]:	https://macromates.com/
-[8]:	https://www.flickr.com/photos/funkylarma/470963566/ "Photo Sharing"
-[9]:	https://twitter.com/kpishdadi/statuses/37284512
-[10]:	https://www.flickr.com/photos/funkylarma/470963652/ "Photo Sharing"
-[11]:	https://macrabbit.com/cssedit/
-[12]:	https://macrabbit.com/cssedit/
-[13]:	https://macrabbit.com/cssedit/
-[14]:	https://macrabbit.com/cssedit/
-[15]:	https://macrabbit.com/cssedit/
-[16]:	https://www.panic.com/transmit/
-[17]:	https://macromates.com/
-[18]:	https://macrabbit.com/cssedit/
-[19]:	https://www.panic.com/transmit/
-
-[image-1]:	/images/470983881_05ac2d236d_t.jpg
-[image-2]:	/images/470963508_64d0df123d_m.jpg
-[image-3]:	/images/470963566_1b4ff8a7f7_m.jpg
-[image-4]:	/images/470963652_b70f2e2680_m.jpg
+[1]: https://www.flickr.com/photos/funkylarma/470983881/ "Photo Sharing"
+[2]: https://www.panic.com/
+[3]: https://macromates.com/
+[4]: https://macrabbit.com/cssedit/
+[5]: https://www.panic.com/transmit/
+[6]: https://www.flickr.com/photos/funkylarma/470963508/ "Photo Sharing"
+[7]: https://macromates.com/
+[8]: https://www.flickr.com/photos/funkylarma/470963566/ "Photo Sharing"
+[9]: https://twitter.com/kpishdadi/statuses/37284512
+[10]: https://www.flickr.com/photos/funkylarma/470963652/ "Photo Sharing"
+[11]: https://macrabbit.com/cssedit/
+[12]: https://macrabbit.com/cssedit/
+[13]: https://macrabbit.com/cssedit/
+[14]: https://macrabbit.com/cssedit/
+[15]: https://macrabbit.com/cssedit/
+[16]: https://www.panic.com/transmit/
+[17]: https://macromates.com/
+[18]: https://macrabbit.com/cssedit/
+[19]: https://www.panic.com/transmit/
+[image-1]: /images/470983881_05ac2d236d_t.jpg
+[image-2]: /images/470963508_64d0df123d_m.jpg
+[image-3]: /images/470963566_1b4ff8a7f7_m.jpg
+[image-4]: /images/470963652_b70f2e2680_m.jpg

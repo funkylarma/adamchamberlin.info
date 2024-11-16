@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "cars"
-- "vw"
+- "VW"
 slug: "now-thats-a-bug-to-be-proud-of"
 ---
 

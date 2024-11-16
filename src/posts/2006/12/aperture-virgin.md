@@ -4,7 +4,7 @@ date: "2006-12-13"
 categories:
   - "writing"
 tags:
-- "apple"
+- "Apple"
 - "photography"
 - "aperture"
 slug: "aperture-virgin"

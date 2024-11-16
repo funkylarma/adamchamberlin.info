@@ -7,7 +7,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("metaTitle", function (title) {
     title.trim();
     if (this.page.url == "/" || this.page.url.includes("page")) {
-      title = metadata.tagline;
+      title = metadata.title + " | " + metadata.tagline;
     } else {
       title = title + " | " + metadata.title;
     }

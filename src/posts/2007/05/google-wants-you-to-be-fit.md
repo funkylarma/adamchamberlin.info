@@ -1,11 +1,11 @@
 ---
 title: "Google wants you to be fit"
 date: "2007-05-22"
-categories: 
+categories:
   - "writing"
 tags:
-- "google"
-- "maps"
+  - "Google"
+  - "maps"
 slug: "google-wants-you-to-be-fit"
 ---
 
@@ -19,4 +19,4 @@ Follow these simple steps:
 
 Now that is being optimistic! Thanks for the heads up Viv
 
-[1]:	https://www.google.co.uk
+[1]: https://www.google.co.uk

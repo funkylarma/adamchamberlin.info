@@ -4,8 +4,8 @@ date: "2006-11-21"
 categories:
   - "writing"
 tags:
-- "apple"
-- "ipod"
+- "Apple"
+- "iPod"
 slug: "shuffle"
 cover: "/images/shuffle.jpg"
 ---

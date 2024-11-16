@@ -4,9 +4,9 @@ date: "2006-03-09"
 categories:
   - "writing"
 tags:
-- "phone"
-- "sony"
-- "ericsson"
+  - "phone"
+  - "Sony"
+  - "Ericsson"
 slug: "phone-update"
 ---
 
@@ -17,5 +17,5 @@ Be warned this process does nothing for your warrenty and does not promise to le
 
 The W800i interface looks much the same with the addition of a music player; not really going to leave my iPod at home just yet. The phone does feel a bit quicker and the display sharper and it has not dropped the memory stick yet.
 
-[1]:	https://adamchamberlin.info/2006/03/se-can-kiss-my-ass/
-[2]:	https://davinciteam.com/
+[1]: https://adamchamberlin.info/2006/03/se-can-kiss-my-ass/
+[2]: https://davinciteam.com/

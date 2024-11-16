@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "gaming"
-- "xbox"
+- "Xbox"
 slug: "red-ring-of-death"
 cover: "/images/dsc00016-2.jpg"
 ---

@@ -1,37 +1,27 @@
 ---
-layout: default.liquid
+layout: page.liquid
 pagination:
   data: collections.tagList
   size: 1
   alias: tag
   generatePageOnEmptyData: true
-permalink: "tagged/{{ tag }}/"
+permalink: "tagged/{{ tag | slugify }}/"
 eleventyComputed:
   title: "Tagged: {{ tag }}"
   description: "Archive page for the tag {{ tag }}"
+  tagline: These are all the posts that have been tagged with "{{ tag }}"
 ---
-<div class="site-intro">
-  <div class="site-intro-content">
-    <h1 class="site-title">{{ title }}</h1>
-  </div><!-- .content -->
-</div><!-- .site-intro -->
-
-<section class="page-single">
-  <div class="archive-list-content">
-    <div class="page-body">
-      <p class="h3">These are all the posts that have been tagged with "{{ tag }}".</p>
-      <ul>
-      {%- for post in collections.tagList[tag] reversed -%}
-        <li class="post">
-          <a href="{{ post.url }}" title="Read post" class="post-link">
-            {{ post.data.title }}
-          </a>
-          <div class="post-date">
-            - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
-          </div>
-        </li>
-      {%- endfor -%}
-      </ul>
-    </div><!-- .page-body -->
-  </div><!-- .archive-list-content -->
-</section> <!-- End post list -->
+<div class="archive-list">
+  <ul>
+  {%- for post in collections.tagList[tag] reversed -%}
+    <li class="post">
+      <a href="{{ post.url }}" title="Read post" class="post-link">
+        {{ post.data.title }}
+      </a>
+      <div class="post-date">
+        - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+      </div>
+    </li>
+  {%- endfor -%}
+  </ul>
+</div>

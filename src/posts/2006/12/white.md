@@ -4,7 +4,7 @@ date: "2006-12-05"
 categories:
   - "writing"
 tags:
-- "wordpress"
+- "WordPress"
 - "theme"
 slug: "white"
 cover: "/images/white.jpg"

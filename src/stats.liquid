@@ -1,111 +1,91 @@
 ---
 eleventyExcludeFromCollections: true
-layout: default.liquid
+layout: page.liquid
 permalink: "/archive/stats/"
 title: Site Statistics
 ---
-<div class="site-intro">
-  <div class="site-intro-content">
-    <h1 class="site-title">{{ title }}</h1>
-  </div><!-- .content -->
-</div><!-- .site-intro -->
-
-<section class="page-single">
-  <div class="archive-list-content">
-    <div class="page-body">
-    {% if collections.postStats.postCount > 0 %}
-      <h2>Global Statistics</h2>
-      <ul>
-        <li>
-          <strong>First post:</strong>
-          {{ collections.postStats.firstPostDate | readableDate }}
-        </li>
-        <li>
-          <strong>Last post:</strong>
-          {{ collections.postStats.lastPostDate | readableDate }}
-        </li>
-        <li>
-          <strong>Post count:</strong>
-          {{ collections.postStats.postCount }}
-        </li>
-        <li>
-          <strong>Average posts per year:</strong>
-          {{ collections.postStats.avgPostsPerYear }} (may exclude current year depending on year of last post)
-        </li>
-        <li>
-          <strong>Average days between posts:</strong>
-          {{ collections.postStats.avgDays }}
-        </li>
-        <li>
-          <strong>Average characters per post:</strong>
-          {{ collections.postStats.avgCharacterCount }}
-        </li>
-        <li>
-          <strong>Average words per post:</strong>
-          {{ collections.postStats.avgWordCount }}
-        </li>
-        <li>
-          <strong>Average paragraphs per post:</strong>
-          {{ collections.postStats.avgParagraphCount }}
-        </li>
-        {%- if collections.postStats.avgCodeBlockCount > 0 -%}
-          <li>
-            <strong>Average code blocks per post:</strong>
-            {{ collections.postStats.avgCodeBlockCount }}
-          </li>
-        {% endif %}
-      </ul>
-
-      <h2>Yearly Graph</h2>
-      <div class="graph">
-        {%- for year in collections.postStats.years reversed %}
-        <div class="wrapper">
-          <div class="year">{{ year.year }}</div>
-          <div class="progress" style="width: {{ year.postCount | divided_by: collections.postStats.highPostCount | times: 100 }}%;">
-          </div>
-          <div class="data">
-              {{ year.postCount }}
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-
-      <h2>Posts Graph</h2>
-      <div class="wide">
-      {% postGraph collections.post %}
-      </div>
-
-      <h2>Yearly Statistics</h2>
-      <table class="stats">
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Post Count</th>
-            <th>Avgerage Days Between Posts</th>
-            <th>Avgerage &nbsp;Characters</th>
-            <th>Avgerage &nbsp;Words</th>
-            <th>Avgerage &nbsp;Paragraphs</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for year in collections.postStats.years %}
-            <tr>
-              <td>
-                <strong>{{ year.year }}</strong>
-              </td>
-              <td>{{ year.postCount }}</td>
-              <td>{{ year.avgDays }}</td>
-              <td>{{ year.avgCharacterCount }}</td>
-              <td>{{ year.avgWordCount }}</td>
-              <td>{{ year.avgParagraphCount }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-
-    {% else %}
-      <p><strong>No data to display</strong></p>
+{% if collections.postStats.postCount > 0 %}
+  <h2>Global Statistics</h2>
+  <ul>
+    <li>
+      <strong>First post:</strong>
+      {{ collections.postStats.firstPostDate | readableDate }}
+    </li>
+    <li>
+      <strong>Last post:</strong>
+      {{ collections.postStats.lastPostDate | readableDate }}
+    </li>
+    <li>
+      <strong>Post count:</strong>
+      {{ collections.postStats.postCount }}
+    </li>
+    <li>
+      <strong>Average characters per post:</strong>
+      {{ collections.postStats.avgCharacterCount }}
+    </li>
+    <li>
+      <strong>Average words per post:</strong>
+      {{ collections.postStats.avgWordCount }}
+    </li>
+    <li>
+      <strong>Average paragraphs per post:</strong>
+      {{ collections.postStats.avgParagraphCount }}
+    </li>
+    {%- if collections.postStats.avgCodeBlockCount > 0 -%}
+      <li>
+        <strong>Average code blocks per post:</strong>
+        {{ collections.postStats.avgCodeBlockCount }}
+      </li>
     {% endif %}
-    </div><!-- .page-body -->
-  </div><!-- .archive-list-content -->
-</section> <!-- End post list -->
+  </ul>
+
+  <h2>Yearly Graph</h2>
+  <div class="graph">
+    {%- for year in collections.postStats.years reversed %}
+    <div class="wrapper">
+      <div class="year">{{ year.year }}</div>
+      <div class="progress" style="width: {{ year.postCount | divided_by: collections.postStats.highPostCount | times: 100 }}%;">
+      </div>
+      <div class="data">
+          {{ year.postCount }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2>Posts Graph</h2>
+  <div class="wide">
+  {% postGraph collections.post %}
+  </div>
+
+  <h2>Yearly Statistics</h2>
+  <table class="stats">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Post Count</th>
+        <th>Avgerage Days Between Posts</th>
+        <th>Avgerage &nbsp;Characters</th>
+        <th>Avgerage &nbsp;Words</th>
+        <th>Avgerage &nbsp;Paragraphs</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for year in collections.postStats.years %}
+        <tr>
+          <td>
+            <strong>{{ year.year }}</strong>
+          </td>
+          <td>{{ year.postCount }}</td>
+          <td>{{ year.avgDays }}</td>
+          <td>{{ year.avgCharacterCount }}</td>
+          <td>{{ year.avgWordCount }}</td>
+          <td>{{ year.avgParagraphCount }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% else %}
+  <p><strong>No data to display</strong></p>
+{% endif %}

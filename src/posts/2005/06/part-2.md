@@ -4,11 +4,11 @@ date: "2005-06-26"
 categories:
   - "writing"
 tags:
- - "work"
+  - "work"
 slug: "part-2"
 ---
 
-[This night](https://adamchamberlin.info) was more orientated around the office staff of Grabor Plastics and so part 2 was for the shop floor workers, you know the real people behind any company.
+[This night](https://adamchamberlin.info/2005/06/it-was-a-different-night/) was more orientated around the office staff of Grabor Plastics and so part 2 was for the shop floor workers, you know the real people behind any company.
 
 Some how I got invited to that as well. Once again an ugly night was soon to follow and the damage was done.
 

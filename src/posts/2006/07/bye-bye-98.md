@@ -4,7 +4,7 @@ date: "2006-07-12"
 categories: 
   - "writing"
 tags:
-- "microsoft"
+- "Microsoft"
 slug: "bye-bye-98"
 ---
 

@@ -1,4 +1,4 @@
-<head>
+
   <meta charset="utf-8">
 
   <!-- Title -->
@@ -15,6 +15,7 @@
   {% if tags.length > 0 %}
     <meta name="keywords" content="{{ tags | metaKeywords }}">
   {% endif %}
+  <meta name="author" content="{{ metadata.author.name }}">
   <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="article:author" content="{{ metadata.author.name }}">
 
@@ -50,7 +51,6 @@
   <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
   <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
   <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
-  <link rel="author" href="{{ metadata.author.name }}" />
   <link rel="stylesheet" href="/assets/css/screen.css" />
   <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -80,4 +80,4 @@
   <!-- End Google Tag Manager -->
   {% endif %}
 
-</head>
+

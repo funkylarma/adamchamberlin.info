@@ -4,7 +4,7 @@ date: "2023-01-23"
 categories:
   - "writing"
 tags:
-  - "wordpress"
+  - "WordPress"
   - "blogging"
 cover: "/images/install-step3.png"
 slug: "is-2023-the-year-of-the-blog"

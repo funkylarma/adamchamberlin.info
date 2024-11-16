@@ -4,8 +4,8 @@ date: "2005-04-16"
 categories: 
   - "writing"
 tags:
- - "apple"
- - "macos"
+ - "Apple"
+ - "MacOS"
  - "tiger"
 slug: "go-for-it"
 ---

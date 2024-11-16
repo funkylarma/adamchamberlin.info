@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "development"
-- "wordpress"
+- "WordPress"
 slug: "new-style-and-code"
 ---
 

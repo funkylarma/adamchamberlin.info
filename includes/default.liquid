@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}">
-  {% include "partials/head.liquid" %}
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
   <body>
     {% if metadata.env == "production" %}
     <!-- Google Tag Manager (noscript) -->
@@ -9,18 +11,16 @@
     <!-- End Google Tag Manager (noscript) -->
     {% endif %}
     <div class="container">
-      <div class="content">
-        <a href="#skip" class="visually-hidden">Skip to main content</a>
-        <header class="mast-head">
-          <div class="content">
-            {% include "partials/navbar.liquid" %}
-          </div><!-- .content -->
-        </header><!-- .header -->
-        <main id="skip" class="main">
-          {{ content }}
-        </main><!-- .main -->
+      <a href="#skip" class="visually-hidden">Skip to main content</a>
+      <header class="mast-head">
+        {% include "partials/header.liquid" %}
+      </header><!-- .header -->
+      <main id="#skip" data-input-path="{{ page.filePathStem }}">
+        {{ content }}
+      </main><!-- .main -->
+      <footer class="mast-foot">
         {% include "partials/footer.liquid" %}
-      </div><!-- .content -->
+      </footer><!-- .mast-foot -->
     </div><!-- .container -->
     <script type="application/ld+json">
       {
@@ -42,6 +42,6 @@
         }
       }
     </script>
-  <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
   </body>
 </html>

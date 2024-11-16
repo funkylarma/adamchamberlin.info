@@ -4,7 +4,7 @@ date: "2024-02-14"
 categories:
   - "writing"
 tags:
-  - "ai"
+  - "AI"
   - "coaching"
   - "running"
 cover: "/images/trainerroad.png"

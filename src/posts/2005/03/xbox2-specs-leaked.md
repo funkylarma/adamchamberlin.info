@@ -4,7 +4,7 @@ date: "2005-03-10"
 categories:
   - "writing"
 tags:
-  - "xbox"
+  - "Xbox"
 slug: "xbox2-specs-leaked"
 ---
 

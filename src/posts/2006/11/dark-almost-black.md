@@ -4,7 +4,7 @@ date: "2006-11-06"
 categories:
   - "writing"
 tags:
-- "wordpress"
+- "WordPress"
 - "theme"
 slug: "dark-almost-black"
 cover: "/images/shibbyonline.jpg"

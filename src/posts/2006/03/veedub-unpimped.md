@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "television"
-- "vw"
+- "VW"
 slug: "veedub-unpimped"
 ---
 

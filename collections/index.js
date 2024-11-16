@@ -4,37 +4,46 @@ import moment from "moment";
 
 function processPostFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8')
+    let content = fs.readFileSync(filePath, "utf8");
     // remove front matter
-    content = content.replace(/---\n.*?\n---/s, '')
+    content = content.replace(/---\n.*?\n---/s, "");
     // remove empty lines
-    content = content.replace(/^\s*[\r\n]/gm, '')
-    const codeBlockMatches = content.match(/```(.*?)```/gis)
-    const codeBlocks = codeBlockMatches ? codeBlockMatches.length : 0
+    content = content.replace(/^\s*[\r\n]/gm, "");
+    const codeBlockMatches = content.match(/```(.*?)```/gis);
+    const codeBlocks = codeBlockMatches ? codeBlockMatches.length : 0;
     // remove code blocks
-    content = content.replace(/(```.+?```)/gms, '')
-    const stats = writingStats(content)
+    content = content.replace(/(```.+?```)/gms, "");
+    const stats = writingStats(content);
     return {
       characterCount: stats.characterCount,
       codeBlockCount: codeBlocks,
       paragraphCount: stats.paragraphCount,
-      wordCount: stats.wordCount
-    }
-  }
-  catch (err) {
-    console.error(err)
+      wordCount: stats.wordCount,
+    };
+  } catch (err) {
+    console.error(err);
     return {
       characterCount: 0,
       codeBlockCount: 0,
       paragraphCount: 0,
-      wordCount: 0
-    }
+      wordCount: 0,
+    };
   }
 }
 
-function makeYearStats(currentYear, yearPostCount, yearWordCount, yearCodeBlockCount, avgDays, yearCharacterCount, yearParagraphCount) {
-
-  const daysInYear = ((currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0) ? 366 : 365;
+function makeYearStats(
+  currentYear,
+  yearPostCount,
+  yearWordCount,
+  yearCodeBlockCount,
+  avgDays,
+  yearCharacterCount,
+  yearParagraphCount
+) {
+  const daysInYear =
+    (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0
+      ? 366
+      : 365;
 
   return {
     year: currentYear,
@@ -43,11 +52,17 @@ function makeYearStats(currentYear, yearPostCount, yearWordCount, yearCodeBlockC
     wordCount: yearWordCount,
     codeBlockCount: yearCodeBlockCount,
     avgDays: parseFloat(avgDays.toFixed(2)),
-    avgCharacterCount: parseFloat((yearCharacterCount / yearPostCount).toFixed(2)),
-    avgCodeBlockCount: parseFloat((yearCodeBlockCount / yearPostCount).toFixed(2)),
-    avgParagraphCount: parseFloat((yearParagraphCount / yearPostCount).toFixed(2)),
-    avgWordCount: parseFloat((yearWordCount / yearPostCount).toFixed(2))
-  }
+    avgCharacterCount: parseFloat(
+      (yearCharacterCount / yearPostCount).toFixed(2)
+    ),
+    avgCodeBlockCount: parseFloat(
+      (yearCodeBlockCount / yearPostCount).toFixed(2)
+    ),
+    avgParagraphCount: parseFloat(
+      (yearParagraphCount / yearPostCount).toFixed(2)
+    ),
+    avgWordCount: parseFloat((yearWordCount / yearPostCount).toFixed(2)),
+  };
 }
 
 export default function (eleventyConfig) {
@@ -128,14 +143,14 @@ export default function (eleventyConfig) {
       highPostCount: 0,
       years: [],
       postsByDay: {},
-    }
+    };
 
     const posts = collectionApi.getFilteredByTag("post").sort((a, b) => {
-        return a.date - b.date
+      return a.date - b.date;
     });
     let postCount = posts.length;
     if (postCount < 1) {
-      log.info(`No articles found for tag(s): ${tags.join(', ')}`);
+      log.info(`No articles found for tag(s): ${tags.join(", ")}`);
       // return the empty stats object
       return statsObject;
     }
@@ -148,15 +163,16 @@ export default function (eleventyConfig) {
     let currentYear = prevPostDate.getFullYear();
 
     for (let post of posts) {
-
       let postDate = post.data.page.date;
-      let dateIndexKey = `${moment(postDate).year()}-${moment(postDate).dayOfYear()}`;
+      let dateIndexKey = `${moment(postDate).year()}-${moment(
+        postDate
+      ).dayOfYear()}`;
 
       if (!statsObject.postsByDay[dateIndexKey]) {
-        statsObject.postsByDay[dateIndexKey] = 0
+        statsObject.postsByDay[dateIndexKey] = 0;
       }
 
-      statsObject.postsByDay[dateIndexKey]++
+      statsObject.postsByDay[dateIndexKey]++;
       let daysBetween = (postDate - prevPostDate) / oneDayMilliseconds;
       let thisYear = postDate.getFullYear();
 
@@ -164,7 +180,15 @@ export default function (eleventyConfig) {
         avgDays = yearPostDays / yearPostCount;
         highPostCount = Math.max(highPostCount, yearPostCount);
         statsObject.years.push(
-          makeYearStats(currentYear, yearPostCount, yearWordCount, yearCodeBlockCount, avgDays, yearCharacterCount, yearParagraphCount)
+          makeYearStats(
+            currentYear,
+            yearPostCount,
+            yearWordCount,
+            yearCodeBlockCount,
+            avgDays,
+            yearCharacterCount,
+            yearParagraphCount
+          )
         );
         yearCharacterCount = 0;
         yearCodeBlockCount = 0;
@@ -195,14 +219,30 @@ export default function (eleventyConfig) {
       avgDays = yearPostDays / yearPostCount;
       highPostCount = Math.max(highPostCount, yearPostCount);
       statsObject.years.push(
-        makeYearStats(currentYear, yearPostCount, yearWordCount, yearCodeBlockCount, avgDays, yearCharacterCount, yearParagraphCount)
+        makeYearStats(
+          currentYear,
+          yearPostCount,
+          yearWordCount,
+          yearCodeBlockCount,
+          avgDays,
+          yearCharacterCount,
+          yearParagraphCount
+        )
       );
     }
     statsObject.avgDays = parseFloat((totalDays / totalPostCount).toFixed(2));
-    statsObject.avgCharacterCount = parseFloat((totalCharacterCount / totalPostCount).toFixed(2));
-    statsObject.avgCodeBlockCount = parseFloat((totalCodeBlockCount / totalPostCount).toFixed(2));
-    statsObject.avgParagraphCount = parseFloat((totalParagraphCount / totalPostCount).toFixed(2));
-    statsObject.avgWordCount = parseFloat((totalWordCount / totalPostCount).toFixed(2));
+    statsObject.avgCharacterCount = parseFloat(
+      (totalCharacterCount / totalPostCount).toFixed(2)
+    );
+    statsObject.avgCodeBlockCount = parseFloat(
+      (totalCodeBlockCount / totalPostCount).toFixed(2)
+    );
+    statsObject.avgParagraphCount = parseFloat(
+      (totalParagraphCount / totalPostCount).toFixed(2)
+    );
+    statsObject.avgWordCount = parseFloat(
+      (totalWordCount / totalPostCount).toFixed(2)
+    );
     statsObject.totalWordCount = totalWordCount;
     statsObject.totalCodeBlockCount = totalCodeBlockCount;
     statsObject.highPostCount = highPostCount;

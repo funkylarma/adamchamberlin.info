@@ -4,7 +4,7 @@ date: "2007-03-30"
 categories:
   - "writing"
 tags:
-- "twitter"
+- "Twitter"
 - "social"
 - "networking"
 slug: "to-twit-or-twitter"
