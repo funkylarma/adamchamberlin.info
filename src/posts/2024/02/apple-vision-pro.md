@@ -4,7 +4,7 @@ date: "2024-02-01"
 categories:
   - "writing"
 tags:
-  - "apple"
+  - "Apple"
   - "pro"
   - "vision"
 cover: "/images/Vision-Pro-glass.jpg"

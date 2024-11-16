@@ -4,7 +4,7 @@ date: "2006-12-08"
 categories: 
   - "writing"
 tags:
-- "wordpress"
+- "WordPress"
 - "plugin"
 slug: "lifestream-woes"
 ---

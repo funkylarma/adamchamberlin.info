@@ -4,9 +4,9 @@ date: "2007-11-13"
 categories:
   - "writing"
 tags:
-- "software"
-- "apple"
-- "mac"
+  - "software"
+  - "Apple"
+  - "Mac"
 slug: "finally-getting-my-moneys-worth"
 ---
 
@@ -24,7 +24,7 @@ No more [box.net][2] for me, I’m a fully fledged iDisc user now. This is only 
 
 Now you might think I will take this further with all the iLife/.Mac goodies. Sorry but no joy, I have no reason for sharing my iPhoto library; I’m [Flickr'ed][3] and that does everything I need for online photos. I do not use my camcorder nearly enough to want to share movies, I’ve not even fired up iMovie since installing iLife. iWeb is just nasty, besides why would I want to mess with that when I have my own domain and one of the most [powerful web editors][4] out there. So I will not be investing in Apple’s wholesome family fun filled sharing adventure idea. That said though for what it is worth I will gladly continue to pay for the service; now I can see the full picture. It has taken a few years but I’m glad I kept forgetting to cancel the 'auto renew’ option.
 
-[1]:	https://adamchamberlin.info/2006/11/mac-webmail-woes
-[2]:	https://www.box.net
-[3]:	https://www.flickr.com/photos/funkylarma/
-[4]:	https://adamchamberlin.info/2007/04/panic-coda-alert
+[1]: https://adamchamberlin.info/2006/11/mac-webmail-woes/
+[2]: https://www.box.net/
+[3]: https://www.flickr.com/photos/funkylarma/
+[4]: https://adamchamberlin.info/2007/04/panic-coda-alert/

@@ -4,8 +4,8 @@ date: "2007-08-20"
 categories:
   - "writing"
 tags:
-- "canon"
-- "update"
+  - "canon"
+  - "update"
 slug: "canon-40d-is-on-the-way"
 ---
 
@@ -17,5 +17,5 @@ I for one use Digital Photography Review as my source of all things Photography 
 Given that I only upgraded camera body in the last [six months][2] am I excited or concerned?
 To be honest no, I have not even touched the surface of what the 30D can do for me and despite the spec’s of the 40D looking awesome I do not think I could do it justice just yet. But if you have a demo rig going spare I’ll happily test it out for you.
 
-[1]:	https://www.dpreview.com/news/0708/07082010canoneos40d.asp
-[2]:	https://adamchamberlin.info/2007/03/camera-upgrade
+[1]: https://www.dpreview.com/news/0708/07082010canoneos40d.asp
+[2]: https://adamchamberlin.info/2007/03/camera-upgrade/

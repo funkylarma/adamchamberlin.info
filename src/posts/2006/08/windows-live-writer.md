@@ -4,7 +4,7 @@ date: "2006-08-23"
 categories: 
   - "writing"
 tags:
-- "microsoft"
+- "Microsoft"
 - "windows"
 - "blogging"
 slug: "windows-live-writer"

@@ -4,7 +4,7 @@ date: "2006-10-02"
 categories:
   - "writing"
 tags:
-- "xbox"
+- "Xbox"
 - "360"
 slug: "your-360-blogs"
 cover: "/images/360voiceclip.jpg"

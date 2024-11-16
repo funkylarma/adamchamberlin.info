@@ -4,9 +4,9 @@ date: "2007-09-06"
 categories:
   - "writing"
 tags:
-- "life"
-- "update"
-- "motorbike"
+  - "life"
+  - "update"
+  - "motorbike"
 slug: "missing-something"
 ---
 
@@ -20,6 +20,6 @@ Finally Monday the 3rd arrived and I set off to collect my new machine. Since th
 
 Let’s be honest, or rather I had better be honest with myself, as long as the weather holds and the sun shines I think I will be out there improving my skills. And when not I’ll be over at the [FZ6 forum][3] catching up with other riders from around the globe.
 
-[1]:	https://farm2.static.flickr.com/1028/1332849402_bf7e2d0c03.jpg
-[2]:	https://adamchamberlin.info/2007/08/the-test-ride
-[3]:	https://www.fz6-forum.com/
+[1]: https://farm2.static.flickr.com/1028/1332849402_bf7e2d0c03.jpg
+[2]: https://adamchamberlin.info/2007/08/the-test-ride/
+[3]: https://www.fz6-forum.com/

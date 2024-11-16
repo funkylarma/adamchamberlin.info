@@ -4,7 +4,7 @@ date: "2005-04-12"
 categories:
   - "writing"
 tags:
- - "macos"
+ - "MacOS"
  - "tiger"
 slug: "tiger-is-unleashed"
 ---

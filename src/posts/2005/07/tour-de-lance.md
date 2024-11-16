@@ -4,7 +4,7 @@ date: "2005-07-22"
 categories:
   - "writing"
 tags:
- - "tdf"
+ - "Tour de France"
  - "cycling"
  - "pro-tour"
 slug: "tour-de-lance"

@@ -4,7 +4,7 @@ date: "2007-07-17"
 categories:
   - "writing"
 tags:
-- "cycling"
+  - "cycling"
 slug: "one-can-make-a-difference"
 ---
 
@@ -14,6 +14,6 @@ The other month I [wrote about][1]the condition of the local cycle paths and mor
 
 Just goes to show that you can make a difference if you try, power in numbers.
 
-[1]:	https://adamchamberlin.info/2007/05/you-improve-them-and-ill-use-them
-[2]:	https://www.pm.gov.uk/output/Page12275.asp
-[3]:	https://petitions.pm.gov.uk/roads4bikes/
+[1]: https://adamchamberlin.info/2007/05/you-improve-them-and-ill-use-them/
+[2]: https://www.pm.gov.uk/output/Page12275.asp
+[3]: https://petitions.pm.gov.uk/roads4bikes/

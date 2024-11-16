@@ -4,14 +4,18 @@ date: "2006-09-27"
 categories:
   - "writing"
 tags:
-- "cycling"
-- "sram"
+  - "cycling"
+  - "SRAM"
 slug: "feel-the-force"
 ---
 
  <!-- [![Sram Force][image-1]][1] -->
 
-Nope I’m not talking about the new Lego Star Wars game; however that is awesome and I will be putting some form of wording together for it later. I’m talking about the new Sram road groupset; Force. Sram have long been a competitor to Shimano in the the world of MTB gearing. The <!-- [![X0](https://adamchamberlin.info/wp-content/uploads/2006/09/x0.jpg "X0") --> groupset being in my mind one of the best looking bits of kit available. But so far they only concentrated their efforts on the off road scene. There have been rumors of a road groupset from Sram for a while know and last year it came into the light. The word was of a new technology; Double Tap, were the rider had only one lever to move and the level of movement dictated the if the gear was higher or lower. Of course there was going to be the usual mix of carbon and high grade aluminum and steel in the construction of the parts and if the previous components were any thing to go by they would look stunning. Months went past and slowly the internet started filling up with news and red frogs. Leap as he is now know is the mascot for Sram and the star of their webmetadata. At first we were just asked if we would "make the leap". Then the news of a US press release were in the works. and finally some details of the new range became apparent. It turned out there would be two sets of road gear; the Force and the Rival. The Force groupset is the flagship range, aimed directly at the DuraAce and Record market. Made from everything shiny and good it shaves grams of the competition. If your budget can not quite reach the limits of the Force range then consider the Rival. Aimed more towards the 105 competition it will be more cost effective. However given the weight of these not so carbon infused items the overall weight is more geared towards an Ultegra competitor.
+Nope I’m not talking about the new Lego Star Wars game; however that is awesome and I will be putting some form of wording together for it later. I’m talking about the new Sram road groupset; Force. Sram have long been a competitor to Shimano in the the world of MTB gearing.
+
+[![X0](/images/x0.jpg)
+
+The groupset being in my mind one of the best looking bits of kit available. But so far they only concentrated their efforts on the off road scene. There have been rumors of a road groupset from Sram for a while know and last year it came into the light. The word was of a new technology; Double Tap, were the rider had only one lever to move and the level of movement dictated the if the gear was higher or lower. Of course there was going to be the usual mix of carbon and high grade aluminum and steel in the construction of the parts and if the previous components were any thing to go by they would look stunning. Months went past and slowly the internet started filling up with news and red frogs. Leap as he is now know is the mascot for Sram and the star of their webmetadata. At first we were just asked if we would "make the leap". Then the news of a US press release were in the works. and finally some details of the new range became apparent. It turned out there would be two sets of road gear; the Force and the Rival. The Force groupset is the flagship range, aimed directly at the DuraAce and Record market. Made from everything shiny and good it shaves grams of the competition. If your budget can not quite reach the limits of the Force range then consider the Rival. Aimed more towards the 105 competition it will be more cost effective. However given the weight of these not so carbon infused items the overall weight is more geared towards an Ultegra competitor.
 
 ## The Goods
 
@@ -57,20 +61,19 @@ Right so far have some pretty trick equipment to get you going but what about st
 
 So far I’m yet to ride these but if the news is any where near as good as the looks no doubt this will be some clever stuff. Whilst these are not the cheapest out there, they will set you back more than a DuraAce setup, they will certainly be the talk for quite some time. The biggest let down so far is the fact that there is no cross compatibly with any other groupsets. Force will work with Rival and the cassettes and chains can be used on Shimano set ups but only Sram levers will work with Sram mechanisms; yet not the MTB range! Of course this is all a lot of speculation, they have really got to be tried and tested and proven out on the road. In the mean time admire the [photo][9]’s
 
-[1]:	https://www.flickr.com/photos/funkylarma/252657947/
-[2]:	https://www.flickr.com/photos/funkylarma/252657801/
-[3]:	https://adamchamberlin.info/2006/05/and-all-i-got-was-this-hat/
-[4]:	https://www.flickr.com/photos/funkylarma/252657492/
-[5]:	https://www.flickr.com/photos/funkylarma/252656442/
-[6]:	https://www.flickr.com/photos/funkylarma/252656236/
-[7]:	https://www.flickr.com/photos/funkylarma/252657081/
-[8]:	https://www.flickr.com/photos/funkylarma/252655918/
-[9]:	https://www.flickr.com/photos/funkylarma/sets/72157594299560843/
-
-[image-1]:	/images/252657947_a8013a4ec2.jpg
-[image-2]:	/images/252657801_4dbef5e4ef_m.jpg
-[image-3]:	/images/252657492_8f3acffeaf_t.jpg
-[image-4]:	/images/252656442_5651cff97b_m.jpg
-[image-5]:	/images/252656236_ed2963d998_t.jpg
-[image-6]:	/images/252657081_da1ae14a3c_m.jpg
-[image-7]:	/images/252655918_53abec90d8_m.jpg
+[1]: https://www.flickr.com/photos/funkylarma/252657947/
+[2]: https://www.flickr.com/photos/funkylarma/252657801/
+[3]: https://adamchamberlin.info/2006/05/and-all-i-got-was-this-hat/
+[4]: https://www.flickr.com/photos/funkylarma/252657492/
+[5]: https://www.flickr.com/photos/funkylarma/252656442/
+[6]: https://www.flickr.com/photos/funkylarma/252656236/
+[7]: https://www.flickr.com/photos/funkylarma/252657081/
+[8]: https://www.flickr.com/photos/funkylarma/252655918/
+[9]: https://www.flickr.com/photos/funkylarma/sets/72157594299560843/
+[image-1]: /images/252657947_a8013a4ec2.jpg
+[image-2]: /images/252657801_4dbef5e4ef_m.jpg
+[image-3]: /images/252657492_8f3acffeaf_t.jpg
+[image-4]: /images/252656442_5651cff97b_m.jpg
+[image-5]: /images/252656236_ed2963d998_t.jpg
+[image-6]: /images/252657081_da1ae14a3c_m.jpg
+[image-7]: /images/252655918_53abec90d8_m.jpg

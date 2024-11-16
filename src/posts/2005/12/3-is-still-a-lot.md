@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "gaming"
-- "xbox"
+- "Xbox"
 - "news"
 slug: "3-is-still-a-lot"
 ---

@@ -4,8 +4,8 @@ date: "2005-04-06"
 categories:
   - "writing"
 tags:
- - "apple"
- - "macos"
+ - "Apple"
+ - "MacOS"
  - "tiger"
 slug: "be-very-quiet-im-hunting-tigers"
 ---

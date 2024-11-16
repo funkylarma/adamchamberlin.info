@@ -1,12 +1,12 @@
 ---
 title: "Back To Running"
 date: "2007-12-15"
-categories: 
+categories:
   - "writing"
 tags:
-- "running"
-- "life"
-- "health"
+  - "running"
+  - "life"
+  - "health"
 slug: "back-to-running"
 ---
 
@@ -16,5 +16,5 @@ With the nights getting darker and the days colder I’m not getting out on my b
 
 It actually had a purpose so I, like 490 other people, joined up. Since then I’ve not focused on it, just doing my simple runs and letting iTunes work out my best 1km. Having submitted a few runs I decided to check the leader boards; hell yeah I’m 17th!
 
-[1]:	https://nikeplus.nike.com/nikeplus/
-[2]:	https://www.myspace.com/NikeSupersonic
+[1]: https://nikeplus.nike.com/nikeplus/
+[2]: https://www.myspace.com/NikeSupersonic/

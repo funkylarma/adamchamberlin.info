@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "gaming"
-- "ps3"
+- "PS3"
 slug: "playstation-3-processor-to-support-mac-osr"
 ---
 

@@ -1,6 +1,6 @@
 ---
+layout: page.liquid
 eleventyExcludeFromCollections: true
-layout: default.liquid
 templateEngineOverride: njk
 permalink: "/archive/"
 eleventyComputed:
@@ -9,72 +9,58 @@ eleventyComputed:
   - page
 ---
 
-<div class="site-intro">
-  <div class="site-intro-content">
-    <h1 class="site-title">{{ title }}</h1>
-  </div><!-- .content -->
-</div><!-- .site-intro -->
+<p class="h3">Welcome to the digital archive of the site.</p>
+<p>From here you can browse by <a href="#tag" title="Browse by tag">tag</a>, by <a href="#category" title="Browse by category">category</a> or just view all the content over the <a href="#date" title="Browse by date">years</a>. There are a lot of <a href="/archive/stats/">statistics</a> that detail what went into putting all these words together.</p>
 
-<section class="page-single">
-
-  <div class="archive-list-content">
-    <div class="body-content">
-      <p class="h3">Welcome to the digital archive of the site.</p>
-      <p>From here you can browse by <a href="#tag" title="Browse by tag">tag</a>, by <a href="#category" title="Browse by category">category</a> or just view all the content over the <a href="#date" title="Browse by date">years</a>. <br />
-      There are a lot of <a href="stats">statistics</a> that detail what went into putting all these words together.</p>
-    </div><!-- .body-content -->
-  </div>
-
-  <!-- Tags -->
-  <div class="tag-list-content">
-    <h2 id="tag">By Tag</h2>
-    <div class="tag-cloud">
-      {%- for tag, val in collections.tagList | dictsort -%}
-        <a href="/tagged/{{tag}}" title="Browse {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
-          <div class="tag">
-            {{ tag }}
-            <div class="post-count">
-              - {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}
-            </div>
-          </div><!-- .tag -->
-        </a>
-      {% endfor %}
-    </div>
-  </div><!-- .content -->
-
-  <!-- Categories -->
-  <div class="category-list-content ">
-    <h2 id="category">By Category</h2>
-    <div class="category-cloud">
-      {%- for cat, val in collections.categoryList | dictsort -%}
-        <a href="/category/{{cat}}" title="Browse {{ collections.categoryList[cat].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
-          <div class="category">
-            {{ cat }}
-            <div class="post-count">
-             - {{ collections.categoryList[cat].length }} post{% if collections.categoryList[cat].length > 1 %}s{% endif %}
-            </div>
-          </div><!-- .category -->
-        </a>
-      {% endfor %}
-    </div>
-  </div><!-- .content -->
-
-  <div class="archive-list-content">
-    <h2 id="date">By Date</h2>
-    {% for year, yearPosts in collections.postsByYear %}
-      <h3>{{ year }}</h3>
-      <ul>
-        {% for post in yearPosts %}
-          <li class="post">
-            <a href="{{ post.url }}" title="Read post" class="post-link">
-              {{ post.data.title }}
-            </a>
-            <div class="post-date">
-              - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
+<!-- Tags -->
+<div class="tag-list">
+  <h2 id="tag">By Tag</h2>
+  <div class="tag-cloud wide">
+    {%- for tag, val in collections.tagList | dictsort -%}
+      <a href="/tagged/{{ tag | slugify }}/" title="Browse {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+        <div class="tag">
+          {{ tag }}
+          <div class="post-count">
+            - {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}
+          </div>
+        </div><!-- .tag -->
+      </a>
     {% endfor %}
-  </div><!-- .content -->
-</section> <!-- End post list -->
+  </div><!-- .tag-cloud -->
+</div><!-- .tag-list -->
+
+<!-- Categories -->
+<div class="category-list">
+  <h2 id="category">By Category</h2>
+  <div class="category-cloud">
+    {%- for cat, val in collections.categoryList | dictsort -%}
+      <a href="/category/{{ cat | slugify }}/" title="Browse {{ collections.categoryList[cat].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+        <div class="category">
+          {{ cat }}
+          <div class="post-count">
+           - {{ collections.categoryList[cat].length }} post{% if collections.categoryList[cat].length > 1 %}s{% endif %}
+          </div>
+        </div><!-- .category -->
+      </a>
+    {% endfor %}
+  </div><!-- .category-cloud -->
+</div><!-- .category-list -->
+
+<div class="archive-list">
+  <h2 id="date">By Date</h2>
+  {% for year, yearPosts in collections.postsByYear %}
+    <h3>{{ year }}</h3>
+    <ul>
+      {% for post in yearPosts %}
+        <li class="post">
+          <a href="{{ post.url }}" title="Read post" class="post-link">
+            {{ post.data.title }}
+          </a>
+          <div class="post-date">
+            - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div><!-- .archive-list -->

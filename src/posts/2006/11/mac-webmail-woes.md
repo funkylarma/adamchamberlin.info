@@ -4,7 +4,7 @@ date: "2006-11-06"
 categories: 
   - "writing"
 tags:
-- "mac"
+- "Mac"
 slug: "mac-webmail-woes"
 ---
 

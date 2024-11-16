@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "cycling"
-- "sram"
+- "SRAM"
 - "leap"
 slug: "and-all-i-got-was-this-hat"
 ---

@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "gaming"
-- "xbox"
+- "Xbox"
 slug: "new-marketplace-items"
 ---
 

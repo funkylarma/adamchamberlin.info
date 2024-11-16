@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "theme"
-- "wordpress"
+- "WordPress"
 slug: "a-theme-is-born"
 ---
 

@@ -1,15 +1,59 @@
----
-layout: default.liquid
----
-<section class="page-single" >
-  <div class="page-content">
-    <article class="page" data-input-path="{{ page.filePathStem }}">
-      <div class="page-head">
-        <h1 class="page-title">{{ title }}</h1>
-      </div><!-- .page-head -->
-      <div class="page-body">
-        {{ content }}
-      </div><!-- .page-body -->
-    </article><!-- .article -->
-  </div><!-- .page-content -->
-</section><!-- .page-single -->
+<!doctype html>
+<html lang="{{ metadata.locale }}">
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
+  <body>
+    {% if metadata.env == "production" %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+    <div class="container">
+      <a href="#skip" class="visually-hidden">Skip to main content</a>
+      <header class="mast-head">
+        {% include "partials/header.liquid" %}
+      </header><!-- .header -->
+      <main id="#skip" data-input-path="{{ page.filePathStem }}">
+        <section class="intro">
+          <div class="intro--content">
+            <h1 class="page-title">{{ title }}</h1>
+              <div class="tagline">
+                <p>{{ tagline }}</p>
+              </div><!-- .tagline -->
+          </div><!-- .intro--content -->
+        </section><!-- .intro -->
+        <section class="page"><!-- .page -->
+          <div class="page--content">
+            {{ content }}
+          </div><!-- .page--content -->
+        </section><!-- .page -->
+      </main>
+      <footer class="mast-foot">
+        {% include "partials/footer.liquid" %}
+      </footer><!-- .mast-foot -->
+    </div><!-- .container -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Adam Chamberlin",
+        "url": "https://adamchamberlin.info",
+        "image": "https://adamchamberlin.info/assets/images/headshot.jpeg",
+        "sameAs": [
+          "https://www.youtube.com/@funkylarma",
+          "https://www.linkedin.com/in/adam-chamberlin/",
+          "https://github.com/funkylarma",
+          "https://mastodon.social/@FunkyLarma"
+        ],
+        "jobTitle": "Head of Development",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Mackman Group"
+        }
+      }
+    </script>
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+  </body>
+</html>

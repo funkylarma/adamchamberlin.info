@@ -4,7 +4,7 @@ date: "2005-10-23"
 categories: 
   - "writing"
 tags:
-- "ipod"
+- "iPod"
 - "repairs"
 slug: "ipod-repairs"
 ---

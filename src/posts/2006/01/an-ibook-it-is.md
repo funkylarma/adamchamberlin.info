@@ -4,8 +4,8 @@ date: "2006-01-27"
 categories:
   - "writing"
 tags:
-- "ibook"
-- "apple"
+  - "iBook"
+  - "Apple"
 slug: "an-ibook-it-is"
 ---
 
@@ -15,5 +15,5 @@ Well yes except for a few things, I could not buy a product called a MacBookPro 
 The final decision was on the size and to be honest this was quite simple, look at the [specs][2], there is not that big a difference compared to the price.
 The order has been placed now I just have to sit and wait.
 
-[1]:	https://adamchamberlin.info/2005/12/ibook-or-powerbook/
-[2]:	https://www.apple.com/uk/ibook/specs.html
+[1]: https://adamchamberlin.info/2005/12/ibook-or-powerbook/
+[2]: https://www.apple.com/uk/ibook/specs.html

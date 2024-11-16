@@ -6,7 +6,7 @@ categories:
 tags:
   - "James"
   - "Toseland"
-  - "motogp"
+  - "MotoGP"
   - "life"
 slug: "the-day-i-met-james-toseland"
 cover: "/images/toseland.jpg"

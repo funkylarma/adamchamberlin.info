@@ -4,7 +4,7 @@ date: "2005-08-03"
 categories: 
   - "writing"
 tags:
-- "apple"
+- "Apple"
 - "mouse"
 slug: "mighty-mouse"
 ---

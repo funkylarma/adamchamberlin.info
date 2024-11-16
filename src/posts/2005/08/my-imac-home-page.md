@@ -4,7 +4,7 @@ date: "2005-08-02"
 categories: 
   - "writing"
 tags:
- - "mac"
+ - "Mac"
  - "file-sharing"
 slug: "my-imac-home-page"
 ---

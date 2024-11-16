@@ -4,7 +4,7 @@ date: "2006-03-23"
 categories:
   - "writing"
 tag:
-- "ps3"
+- "PS3"
 - "gaming"
 slug: "the-ps3-low-down"
 ---

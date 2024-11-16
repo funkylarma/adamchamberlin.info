@@ -4,7 +4,7 @@ date: "2006-01-30"
 categories:
   - "writing"
 tags:
-- "wordpress"
+- "WordPress"
 - "theme"
 slug: "grey"
 ---

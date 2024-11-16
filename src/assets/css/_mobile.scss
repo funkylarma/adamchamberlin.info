@@ -4,93 +4,78 @@
  */
 
 @media (max-width: 1150px) {
-
-  .post-single,
-  .page-single {
-
-    .post-content,
-    .page-content {
-
-      .post-body,
-      .page-body {
-
-        .wide,
-        img.wide,
-        picture img.wide {
-          margin: 0;
-          width: 100%;
+  body {
+    main {
+      .post-single,
+      .page {
+        .post--content,
+        .page--content {
+          .wide,
+          img.wide,
+          picture img.wide {
+            margin: 0;
+            width: 100%;
+          }
         }
       }
-
     }
-
   }
-
-
 }
 
 @media (max-width: 1024px) {
 }
 
 @media (max-width: 550px) {
-  .site-intro {
-    .site-intro-content {
-      padding-top: 2rem;
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
+  body {
+    main {
+      .intro {
+        .intro--content {
+          padding-bottom: 1rem;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
 
-      .site-tagline {
-        max-width: 80%;
-        margin: 0 auto;
+          .tagline {
+            width: 100%;
+            margin: 0 auto;
 
-        p {
-          margin: 0;
-        }
-      }
-    }
-  }
-
-  .post-list {
-    .post-list-content {
-      .post {
-        margin-bottom: 4rem;
-
-        .post-image {
-        }
-
-        .post-content {
-          padding: 2rem 1rem 3rem 1rem;
-        }
-
-        .post-excerpt {
-          .continue-reading {
-            text-align: center;
+            p {
+              margin: 0;
+            }
           }
         }
       }
-    }
-  }
 
-  .post-single,
-  .page-single {
+      .post-list {
+        .post-list--content {
+          .post {
+            margin-bottom: 4rem;
 
-    .post-content,
-    .page-content {
+            .post--image {
+            }
 
-      .post-head,
-      .page-head {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+            .post--content {
+              padding: 2rem 1rem 3rem 1rem;
+            }
+
+            .post--excerpt {
+              .continue-reading {
+                text-align: center;
+              }
+            }
+          }
+        }
       }
 
-      .post-body,
-      .page-body {
-
-        img {
-          border-bottom-left-radius: 50px;
-          border-bottom-right-radius: 10px;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 50px;
+      .post-single,
+      .page {
+        .post--content,
+        .page--content {
+          img {
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 25px;
+          }
         }
       }
     }

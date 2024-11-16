@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
  - "gaming"
- - "xbox"
+ - "Xbox"
 slug: "360-might-not-mean-backwards"
 ---
 

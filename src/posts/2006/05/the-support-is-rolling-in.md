@@ -4,7 +4,7 @@ date: "2006-05-16"
 categories:
   - "writing"
 tags:
-- "end2end"
+  - "end2end"
 slug: "the-support-is-rolling-in"
 ---
 
@@ -20,6 +20,5 @@ Especially thanks to all friends and family who are not only offering sponsor mo
 
 Thanks to all!
 
-[1]:	https://adamchamberlin.info/tagged/end2end
-
-[image-1]:	/images/147476869.jpg
+[1]: https://adamchamberlin.info/tagged/end2end/
+[image-1]: /images/147476869.jpg

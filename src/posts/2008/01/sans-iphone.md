@@ -1,10 +1,10 @@
 ---
 title: "Sans iPhone"
 date: "2008-01-21"
-categories: 
+categories:
   - "writing"
 tags:
- - "iPhone"
+  - "iPhone"
 slug: "sans-iphone"
 ---
 
