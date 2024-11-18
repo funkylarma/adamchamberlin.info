@@ -19,6 +19,22 @@
   <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="article:author" content="{{ metadata.author.name }}">
 
+  {% if process.env.ELEVENTY_ENV == "production" %}
+  <!-- Preloads -->
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" />
+  <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+  <link rel="stylesheet" href="{{ '/assets/css/screen.css' | url | fileHash }}" />
+  {% else %}
+  <link rel="stylesheet" href="/assets/css/screen.css" />
+  {% endif %}
+  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
+  <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
+  <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
+  <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
+  <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
+
   <!-- Fediverse -->
   <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
 
@@ -46,19 +62,6 @@
   <meta name="twitter:image" content="{{ metadata.url }}assets/images/og.png" />
   {% endif %}
 
-  <!-- Link -->
-  <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
-  <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
-  <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
-  <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
-  <link rel="stylesheet" href="/assets/css/screen.css" />
-  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
-  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  {% if process.env.ELEVENTY_ENV == "production" %}
-  <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-  {% endif %}
-
   <!-- Used to add dark mode right away, adding here prevents any flicker -->
   <script>
     const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
@@ -79,5 +82,3 @@
   })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
   <!-- End Google Tag Manager -->
   {% endif %}
-
-

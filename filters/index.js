@@ -87,4 +87,11 @@ export default function (eleventyConfig) {
     const imageUrl = Object.values(stats)[0][0].url;
     return absoluteUrl(imageUrl);
   });
+
+  eleventyConfig.addFilter("fileHash", (url) => {
+      const [urlPart, paramPart] = url.split("?");
+      const params = new URLSearchParams(paramPart || "");
+      params.set("v", DateTime.local().toFormat("X"));
+      return `${urlPart}?${params}`;
+  });
 }
