@@ -22,7 +22,7 @@ h4,
 
 p,
 li {
-  font-size: $text-font-size;
+  font-size: var(--main-font-size-normal);
 }
 
 p {
@@ -51,11 +51,11 @@ article {
 }
 
 strong {
-  font-weight: $strong-font-weight;
+  font-weight: 600;
 }
 
 a:not(.button) {
-  color: $link-color;
+  color: var(--main-color-secondary);
   text-decoration: none;
 
   &:hover {
@@ -100,7 +100,7 @@ blockquote {
 }
 
 .lead {
-  font-size: $lead-font-size;
+  font-size: 1.35rem;
   letter-spacing: 0.01em;
   margin-bottom: 1em;
   line-height: 1.3;

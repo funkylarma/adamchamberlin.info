@@ -19,7 +19,7 @@
   <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="article:author" content="{{ metadata.author.name }}">
 
-  {% if process.env.ELEVENTY_ENV == "production" %}
+  {% if metadata.env == "production" %}
   <!-- Preloads -->
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" />

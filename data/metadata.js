@@ -1,6 +1,7 @@
 import "dotenv/config";
 
 const isDev = process.env.ELEVENTY_ENV === "development";
+const isProd = process.env.ELEVENTY_ENV === "production";
 const indexNow = process.env.INDEX_NOW_KEY
   ? process.env.INDEX_NOW_KEY
   : "dummy";

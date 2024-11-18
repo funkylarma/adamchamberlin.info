@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 import {
   IdAttributePlugin,
   InputPathToUrlTransformPlugin,
@@ -9,7 +10,10 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import Image from "@11ty/eleventy-img";
-import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
+import sass from "sass";
+import htmlmin from "html-minifier";
+import browserslist from "browserslist";
+import { transform, browserslistToTargets } from "lightningcss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
 import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
 import postGraph from "@rknightuk/eleventy-plugin-post-graph";
@@ -30,11 +34,63 @@ import pluginShortcodes from "./shortcodes/index.js";
 // Import the Markdown plugin
 import { markdown } from "./plugins/markdown.js";
 
+const isDev = process.env.ELEVENTY_ENV === "development";
+const isProd = process.env.ELEVENTY_ENV === "production";
+
 export default async function (eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     // Allows for dynamic include/partial names. If true, include names must be quoted. Defaults to true as of beta/1.0.
     dynamicPartials: true,
   });
+
+  eleventyConfig.addTemplateFormats("scss");
+
+  // Creates the extension for use
+  eleventyConfig.addExtension("scss", {
+    outputFileExtension: "css", // optional, default: "html"
+
+    // `compile` is called once per .scss file in the input directory
+    compile: async function (inputContent, inputPath) {
+
+      // Skip files like _fileName.scss
+      let parsed = path.parse(inputPath);
+      if (parsed.name.startsWith("_")) {
+        return;
+      }
+
+      // Run file content through Sass
+      let result = sass.compileString(inputContent, {
+        loadPaths: [parsed.dir || "."],
+        sourceMap: true, // or true, your choice!
+      });
+
+      let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
+
+      return async () => {
+        let { code } = await transform({
+          code: Buffer.from(result.css),
+          minify: isProd,
+          sourceMap: true,
+          targets,
+        });
+        return code;
+      };
+    },
+  });
+
+  if (isProd) {
+    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+      if (outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDocType: false,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
+      return content;
+    });
+  }
 
   // Pass-through copy for static assets
   eleventyConfig.addPassthroughCopy({
@@ -48,7 +104,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.watchIgnores.add("src/assets/ogi/**/*");
 
   // Plugins
-  eleventyConfig.addPlugin(eleventySass);
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(embedYouTube, {
