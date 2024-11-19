@@ -6,11 +6,14 @@ import removeMarkdown from "remove-markdown";
 export default function (eleventyConfig) {
   eleventyConfig.addFilter("metaTitle", function (title) {
     title.trim();
-    if (this.page.url == "/" || this.page.url.includes("page")) {
-      title = metadata.title + " | " + metadata.tagline;
-    } else {
-      title = title + " | " + metadata.title;
+    if (this.page.url) {
+      if (this.page.url == "/" || this.page.url.includes("page")) {
+        title = metadata.title + " | " + metadata.tagline;
+      } else {
+        title = title + " | " + metadata.title;
+      }
     }
+
 
     return title;
   });

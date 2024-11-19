@@ -66,6 +66,13 @@ function makeYearStats(
 }
 
 export default function (eleventyConfig) {
+  eleventyConfig.addCollection("drafts", function (collection) {
+    return collection
+      .getAll()
+      .filter(item => item.data.draft)
+      .sort((a, b) => b.date - a.date);
+  });
+
   eleventyConfig.addCollection("categoryList", (collection) => {
     let catSet = {};
     collection.getAll().forEach((item) => {
