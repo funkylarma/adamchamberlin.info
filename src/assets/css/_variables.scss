@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light dark;
+
   /* Colour variables */
   --main-color-white: #ffffff;
   --main-color-black: #000000;
@@ -59,4 +61,13 @@
 
   /* Dark mode image filters */
   --main-image-filter: grayscale(50%);
+
+  --epg-box-highlight: var(--main-color-primary);
+
+  transition: all 1s ease-in-out;
+
+  @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+    transition-duration: 0s;
+  }
+
 }

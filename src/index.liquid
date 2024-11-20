@@ -48,7 +48,7 @@ eleventyComputed:
           <div class="post--meta">
             <div class="post--date">
               <span>Date: </span>
-              <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+              <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
             </div><!-- .post--date -->
             {% if post.data.categories %}
             <div class="post--categories">
@@ -74,7 +74,7 @@ eleventyComputed:
             {% endif %}
             <div class="post--reading">
               <span>Estimated: </span>
-              {{ post.templateContent | emojiReadTime }}
+              {{ post.templateContent | timeReading }}
             </div><!-- .post-reading -->
           </div><!-- .post-meta -->
         </div>

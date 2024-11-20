@@ -27,29 +27,36 @@
       </fieldset>
     </div><!-- .themes -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Use JS to display the theme selector
-        //document.querySelector('.themes').removeAttribute('hidden');
-        // Get the theme selector element or break
-        const themePicker = document.getElementById('theme-picker');
-        if (!themePicker) return;
-        // Listen for change to sync localStorage and data- attribute
-        themePicker.addEventListener('change', (e) => {
-          const theme = e.target.value;
-          if (theme === Theme.AUTO) {
-            // Remove JS-set theme so the CSS :not([data-theme]) selectors kick in
-            delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
-            localStorage.removeItem(THEME_STORAGE_KEY);
-          } else {
-            THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
-            localStorage.setItem(THEME_STORAGE_KEY, theme);
-          }
+      {% capture jsfoot %}
+        document.addEventListener('DOMContentLoaded', () => {
+          // Use JS to display the theme selector
+          //document.querySelector('.themes').removeAttribute('hidden');
+          // Get the theme selector element or break
+          const themePicker = document.getElementById('theme-picker');
+          if (!themePicker) return;
+          // Listen for change to sync localStorage and data- attribute
+          themePicker.addEventListener('change', (e) => {
+            const theme = e.target.value;
+            if (theme === Theme.AUTO) {
+              // Remove JS-set theme so the CSS :not([data-theme]) selectors kick in
+              delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
+              localStorage.removeItem(THEME_STORAGE_KEY);
+            } else {
+              THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
+              localStorage.setItem(THEME_STORAGE_KEY, theme);
+            }
+          });
+          // Sync picker's selected state to reflect initial theme
+          const initialTheme = cachedTheme ?? Theme.AUTO;
+          themePicker.querySelector('input[checked]').removeAttribute('checked');
+          themePicker.querySelector(`input[value="${initialTheme}"]`).setAttribute('checked', '');
         });
-        // Sync picker's selected state to reflect initial theme
-        const initialTheme = cachedTheme ?? Theme.AUTO;
-        themePicker.querySelector('input[checked]').removeAttribute('checked');
-        themePicker.querySelector(`input[value="${initialTheme}"]`).setAttribute('checked', '');
-      });
+      {% endcapture %}
+      {% if metadata.env == "production" %}
+      {{ jshead | jsmin }}
+      {% else %}
+      {{ jshead }}
+      {% endif %}
     </script>
   </nav>
   {% include "partials/social.liquid" %}

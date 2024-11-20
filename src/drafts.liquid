@@ -13,7 +13,7 @@ description: "All the Draft posts"
         {{ post.data.title }}
       </a>
       <div class="post-date">
-        - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | readableDate }}</time>
+        - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
       </div>
     </li>
   {%- endfor -%}

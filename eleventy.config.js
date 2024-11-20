@@ -4,18 +4,18 @@ import {
   IdAttributePlugin,
   InputPathToUrlTransformPlugin,
   HtmlBasePlugin,
+  EleventyRenderPlugin,
 } from "@11ty/eleventy";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import Image from "@11ty/eleventy-img";
-import sass from "sass";
+import * as sass from 'sass'
 import htmlmin from "html-minifier";
 import browserslist from "browserslist";
 import { transform, browserslistToTargets } from "lightningcss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
-import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
 import postGraph from "@rknightuk/eleventy-plugin-post-graph";
 import moment from "moment";
 
@@ -43,15 +43,17 @@ export default async function (eleventyConfig) {
     dynamicPartials: true,
   });
 
-  eleventyConfig.addTemplateFormats("scss");
+  eleventyConfig.addBundle("css", {
+    outputFileExtension: "css",
+  });
 
-  // Creates the extension for use
+  // Add sass/scss support
+  eleventyConfig.addTemplateFormats("scss");
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css", // optional, default: "html"
 
     // `compile` is called once per .scss file in the input directory
     compile: async function (inputContent, inputPath) {
-
       // Skip files like _fileName.scss
       let parsed = path.parse(inputPath);
       if (parsed.name.startsWith("_")) {
@@ -78,20 +80,6 @@ export default async function (eleventyConfig) {
     },
   });
 
-  if (isProd) {
-    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-      if (outputPath.endsWith(".html")) {
-        let minified = htmlmin.minify(content, {
-          useShortDocType: false,
-          removeComments: true,
-          collapseWhitespace: true
-        });
-        return minified;
-      }
-      return content;
-    });
-  }
-
   // Pass-through copy for static assets
   eleventyConfig.addPassthroughCopy({
     "./src/assets/fonts": "/assets/fonts",
@@ -104,21 +92,19 @@ export default async function (eleventyConfig) {
   eleventyConfig.watchIgnores.add("src/assets/ogi/**/*");
 
   // Plugins
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
   });
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(emojiReadTime, {
-    showEmoji: false,
-  });
   eleventyConfig.addPlugin(postGraph, {
-    highlightColorLight: 'var(--main-color-secondary)',
-    highlightColorDark: 'var(--main-color-quinary)',
+    highlightColorLight: "var(--main-color-secondary)",
+    highlightColorDark: "var(--main-color-quinary)",
     dayBoxTitle: true,
     dayBoxTitleFormat: "MMM D, YYYY",
-    sort: 'desc',
+    sort: "desc",
   });
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     // which file extensions to process
@@ -149,12 +135,21 @@ export default async function (eleventyConfig) {
   // Collections
   eleventyConfig.addPlugin(pluginCollections);
 
-  // Template filters
-  eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
-  eleventyConfig.addLiquidFilter(
-    "getNewestCollectionItemDate",
-    pluginRss.getNewestCollectionItemDate
-  );
+  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+    if (isProd) {
+      if (outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDocType: true,
+          removeComments: true,
+          collapseWhitespace: true,
+        });
+        return minified;
+      }
+      return content;
+    } else {
+      return content;
+    }
+  });
 
   eleventyConfig.on("afterBuild", () => {
     const ogiDir = "./src/assets/ogi/";

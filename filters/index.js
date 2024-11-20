@@ -2,6 +2,8 @@ import { DateTime } from "luxon";
 import Image from "@11ty/eleventy-img";
 import metadata from "../data/metadata.js";
 import removeMarkdown from "remove-markdown";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import { minify } from "terser";
 
 export default function (eleventyConfig) {
   eleventyConfig.addFilter("metaTitle", function (title) {
@@ -13,7 +15,6 @@ export default function (eleventyConfig) {
         title = title + " | " + metadata.title;
       }
     }
-
 
     return title;
   });
@@ -52,15 +53,9 @@ export default function (eleventyConfig) {
     return lines;
   });
 
-  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
+  eleventyConfig.addFilter("dateReadable", (dateObj, format, zone) => {
     return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
       format || "dd LLLL yyyy"
-    );
-  });
-
-  eleventyConfig.addFilter("rssDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, "utc").toFormat(
-      "ddd, D MMM YYYY HH:mm:ss ZZ"
     );
   });
 
@@ -70,6 +65,13 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("dateISO", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toISO();
+  });
+
+  eleventyConfig.addFilter("timeReading", function (content) {
+
+    const minutes = Math.ceil(content.trim().split(/\s+/).length / 200);
+
+    return `${minutes} min read`;
   });
 
   eleventyConfig.addFilter("absoluteUrl", (url) => {
@@ -92,9 +94,26 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("fileHash", (url) => {
-      const [urlPart, paramPart] = url.split("?");
-      const params = new URLSearchParams(paramPart || "");
-      params.set("v", DateTime.local().toFormat("X"));
-      return `${urlPart}?${params}`;
+    const [urlPart, paramPart] = url.split("?");
+    const params = new URLSearchParams(paramPart || "");
+    params.set("v", DateTime.local().toFormat("X"));
+    return `${urlPart}?${params}`;
   });
+
+  eleventyConfig.addFilter("jsmin", async (code) => {
+    let minified = await minify(code);
+    if( minified.error ) {
+      console.log("Terser error: ", minified.error);
+      return code;
+    }
+    return minified.code;
+  });
+
+  // Template filters
+  eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
+
+  eleventyConfig.addLiquidFilter(
+    "getNewestCollectionItemDate",
+    pluginRss.getNewestCollectionItemDate
+  );
 }

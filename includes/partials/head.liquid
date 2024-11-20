@@ -4,31 +4,39 @@
   <!-- Title -->
   <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
 
-  <!-- Meta Details -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="{{ eleventy.generator }}" />
-  {% if ignore %}
-  <meta name="robots" content="noindex">
+  {% if metadata.env == "production" %}
+  <!-- Preloads -->
+  <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" />
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Inlined critical styles -->
+  {% css %}
+  {% renderFile "./src/assets/css/critical.scss" %}
+  {% endcss %}
+  <style>{% getBundle "css" %}</style>
+  <!-- Non-critical styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/screen.css' | url | fileHash }}" media="print" onload='this.media="all"'>
+  <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
   {% else %}
-  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="/assets/css/screen.css" />
   {% endif %}
+
+  <!-- Meta Details -->
+  {%- comment -%}Prevent this page from showing up on search engines{%- endcomment -%}
+  {%- if noindex -%}
+    <meta name="robots" content="noindex">
+  {%- else -%}
+  <meta name="robots" content="index, follow" />
+  {%- endif -%}
   {% if tags.length > 0 %}
     <meta name="keywords" content="{{ tags | metaKeywords }}">
   {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="{{ eleventy.generator }}" />
   <meta name="author" content="{{ metadata.author.name }}">
   <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="article:author" content="{{ metadata.author.name }}">
 
-  {% if metadata.env == "production" %}
-  <!-- Preloads -->
-  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" />
-  <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-  <link rel="stylesheet" href="{{ '/assets/css/screen.css' | url | fileHash }}" />
-  {% else %}
-  <link rel="stylesheet" href="/assets/css/screen.css" />
-  {% endif %}
   <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
   <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
   <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
@@ -64,13 +72,20 @@
 
   <!-- Used to add dark mode right away, adding here prevents any flicker -->
   <script>
-    const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
-    const THEME_STORAGE_KEY = 'theme';
-    const THEME_OWNER = document.documentElement;
-    const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-    if (cachedTheme) {
-      THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
-    }
+    {% capture jshead %}
+      const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
+      const THEME_STORAGE_KEY = 'theme';
+      const THEME_OWNER = document.documentElement;
+      const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+      if (cachedTheme) {
+        THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
+      }
+    {% endcapture %}
+    {% if metadata.env == "production" %}
+    {{ jshead | jsmin }}
+    {% else %}
+    {{ jshead }}
+    {% endif %}
   </script>
 
   {% if metadata.env == "production" %}

@@ -1,0 +1,131 @@
+
+@mixin theme-light() {
+  color-scheme: light;
+}
+
+@mixin theme-dark() {
+  color-scheme: dark;
+  --main-color-base: #21262e;
+  --main-color-background: #151b23;
+  --main-color-hairline: #333333;
+
+  body {
+    color: var(--main-color-white);
+
+    img:not([src*=".svg"]) {
+      filter: var(--main-image-filter);
+    }
+
+    .post-list {
+      .post-list--content {
+        .post {
+          background: var(--main-color-base);
+
+          .post-image {
+            img {
+            }
+          }
+
+          .post--content {
+            .post--head {
+              h2 {
+                a {
+                }
+              }
+              .post--meta {
+              }
+            }
+            .post--excerpt {
+              border-top: 2px solid #333;
+            }
+          }
+        }
+      }
+    }
+
+    .post-single,
+    .page {
+      img {
+      }
+
+      .tag-list,
+      .category-list {
+        .tag-cloud,
+        .category-cloud {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        a {
+          .post-count {
+            color: var(--main-color-primary);
+          }
+
+          &:hover {
+          }
+
+          .tag,
+          .category {
+            .post-count {
+            }
+          }
+        }
+      }
+
+      .graph {
+        .progress {
+          background: var(--main-color-quinary);
+        }
+      }
+    }
+
+    .mast-foot {
+      .content {
+        .footer {
+        }
+
+        .social {
+          a {
+            color: var(--main-color-primary);
+          }
+        }
+      }
+    }
+
+    button,
+    .button,
+    .call-to-action {
+      a {
+      }
+
+      &:hover {
+        background: var(--main-color-background);
+
+        a {
+        }
+      }
+    }
+  }
+}
+
+/* Light Color Scheme (Default + Override) */
+:root[data-theme="light"],
+:root:has(input[name="theme"][value="light"]:checked) {
+  @include theme-light;
+}
+
+/* Dark Color Scheme (Override) */
+:root[data-theme="dark"],
+:root:has(input[name="theme"][value="dark"]:checked) {
+  @include theme-dark;
+}
+
+/* Dark Color Scheme (system preference) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]),
+  :root:has(input[name="theme"][value="auto"]:checked) {
+    @include theme-dark;
+  }
+}

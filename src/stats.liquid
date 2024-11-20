@@ -9,11 +9,11 @@ title: Site Statistics
   <ul>
     <li>
       <strong>First post:</strong>
-      {{ collections.postStats.firstPostDate | readableDate }}
+      {{ collections.postStats.firstPostDate | dateReadable }}
     </li>
     <li>
       <strong>Last post:</strong>
-      {{ collections.postStats.lastPostDate | readableDate }}
+      {{ collections.postStats.lastPostDate | dateReadable }}
     </li>
     <li>
       <strong>Post count:</strong>

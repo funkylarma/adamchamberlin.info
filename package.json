@@ -49,6 +49,7 @@
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-prism": "^2.3.0",
     "sass": "^1.81.0",
+    "terser": "^5.36.0",
     "writing-stats": "^1.0.6"
   },
   "dependencies": {
