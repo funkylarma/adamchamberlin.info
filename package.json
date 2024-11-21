@@ -32,11 +32,9 @@
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "@rknightuk/eleventy-plugin-post-graph": "^1.0.8",
     "browserslist": "^4.24.2",
     "cross-env": "^7.0.3",
-    "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "eleventy-plugin-post-stats": "^0.2.11",
     "fast-glob": "^3.3.2",
@@ -50,15 +48,14 @@
     "markdown-it-prism": "^2.3.0",
     "sass": "^1.81.0",
     "terser": "^5.36.0",
-    "writing-stats": "^1.0.6"
-  },
-  "dependencies": {
+    "writing-stats": "^1.0.6",
     "@11ty/eleventy-img": "^5.0.0",
     "eleventy-plugin-redirects": "^1.0.0",
     "eleventy-plugin-youtube-embed": "^1.11.0",
-    "lodash": "^4.17.21",
     "moment": "^2.30.1",
-    "outdent": "^0.8.0",
     "remove-markdown": "^0.5.5"
+  },
+  "dependencies": {
+
   }
 }

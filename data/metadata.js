@@ -6,7 +6,7 @@ const indexNow = process.env.INDEX_NOW_KEY
   ? process.env.INDEX_NOW_KEY
   : "dummy";
 const baseUrl = isDev
-  ? `http://localhost:808/`
+  ? `http://localhost:8080/`
   : `https://adamchamberlin.info/`;
 
 export default {
