@@ -5,6 +5,7 @@ permalink: "/archive/stats/"
 title: Site Statistics
 ---
 {% if collections.postStats.postCount > 0 %}
+<section class="stats--global">
   <h2>Global Statistics</h2>
   <ul>
     <li>
@@ -38,7 +39,9 @@ title: Site Statistics
       </li>
     {% endif %}
   </ul>
+</section>
 
+<section class="stats--graph">
   <h2>Yearly Graph</h2>
   <div class="graph">
     {%- for year in collections.postStats.years reversed %}
@@ -52,12 +55,16 @@ title: Site Statistics
     </div>
     {% endfor %}
   </div>
+</section>
 
+<section class="stats--posts">
   <h2>Posts Graph</h2>
   <div class="wide">
   {% postGraph collections.post %}
   </div>
+</section>
 
+<section class="stats--yearly">
   <h2>Yearly Statistics</h2>
   <table class="stats">
     <thead>
@@ -85,6 +92,7 @@ title: Site Statistics
       {% endfor %}
     </tbody>
   </table>
+</section>
 
 {% else %}
   <p><strong>No data to display</strong></p>
