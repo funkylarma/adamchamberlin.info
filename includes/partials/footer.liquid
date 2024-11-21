@@ -53,9 +53,9 @@
         });
       {% endcapture %}
       {% if metadata.env == "production" %}
-      {{ jshead | jsmin }}
+      {{ jsfoot | jsmin }}
       {% else %}
-      {{ jshead }}
+      {{ jsfoot }}
       {% endif %}
     </script>
   </nav>
