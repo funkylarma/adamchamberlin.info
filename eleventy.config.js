@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import "dotenv/config";
 import {
   IdAttributePlugin,
   InputPathToUrlTransformPlugin,
@@ -38,6 +39,9 @@ const isDev = process.env.ELEVENTY_ENV === "development";
 const isProd = process.env.ELEVENTY_ENV === "production";
 
 export default async function (eleventyConfig) {
+
+  eleventyConfig.addGlobalData("env", process.env);
+
   eleventyConfig.setLiquidOptions({
     // Allows for dynamic include/partial names. If true, include names must be quoted. Defaults to true as of beta/1.0.
     dynamicPartials: true,
