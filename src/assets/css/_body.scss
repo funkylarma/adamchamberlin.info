@@ -39,9 +39,9 @@ main {
             }
           }
 
-          img[width] {
-            width: auto; /* Defer to max-width */
-          }
+          // img[width] {
+          //   width: auto; /* Defer to max-width */
+          // }
 
           img[width][height] {
             height: auto; /* Preserve aspect ratio */
