@@ -22,7 +22,7 @@ Since the first pictures of Saints Row were released onto the internet there wer
 
 ## You are you
 
-When you first fire up the game you get to start a new single player game. The first thing you must do is create your character. No more being CJ or Tony or some other person that the story writer decided upon. This time you get the chance to be who you want to be, in a Tiger Woods style of way you can change just about everything in your characters appearance. Of course I opted to get Lucy to help me out here and I think her tastes are not quite gangland but he sure does look like a pretty boy.
+When you first fire up the game, you get to start a new single player game. The first thing you must do is create your character. No more being CJ or Tony or some other person that the story writer decided upon. This time you get the chance to be who you want to be, in a Tiger Woods style of way you can change just about everything in your characters appearance. Of course I opted to get Lucy to help me out here and I think her tastes are not quite gangland but he sure does look like a pretty boy.
  <!-- [![Saints Row][image-3]][3] -->
 As per most games now you can changer your appearance later on if you are not happy. The usual hair dressers and clothes shops for the immediate change. But now we have a cosmetic surgeons we can also look in at; handy if I wanted to toughen up my pretty blue eyes! Whilst this idea is not cutting edge by any means it does add a good feeling of being at one with the game. Once your character is saved all cut scenes now include your character as you made him.
 
@@ -46,17 +46,3 @@ Transport comes in the usual elements, strange looking cars that might be modele
 ## Is it worth it
 
 If you are a die hard fan of the Grand Theft Auto series, in a few words; no. The game is very good but you will just sit there making comparisons and finding faults; trust me you will. If not then it is well worth the investment, if only just to tide you over until GTA is announced.
-
-[1]:	https://www.flickr.com/photos/funkylarma/236710745/ "Photo Sharing"
-[2]:	https://www.flickr.com/photos/funkylarma/236710746/ "Photo Sharing"
-[3]:	https://www.flickr.com/photos/funkylarma/236710749/ "Photo Sharing"
-[4]:	https://www.flickr.com/photos/funkylarma/236710747/ "Photo Sharing"
-[5]:	https://www.flickr.com/photos/funkylarma/236710748/ "Photo Sharing"
-[6]:	https://www.flickr.com/photos/funkylarma/236710750/ "Photo Sharing"
-
-[image-1]:	/images/236710745_658b346ac5.jpg
-[image-2]:	/images/236710746_c61b97df3d_m.jpg
-[image-3]:	/images/236710749_5c2f5c206c_m.jpg
-[image-4]:	/images/236710747_d48c9d234d_m.jpg
-[image-5]:	/images/236710748_901f787afa_m.jpg
-[image-6]:	/images/236710750_fb44cd723a_m.jpg

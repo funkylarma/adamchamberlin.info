@@ -5,10 +5,8 @@ categories:
   - "writing"
 tags:
 - "gaming"
-- "ps3"
+- "PS3"
 slug: "playstation-3-processor-to-support-mac-osr"
 ---
 
-Just found [this][1] link which was an interesting read, I’m sure this won’t sway my Xbox360 / PS3 decisions ;)
-
-[1]:	https://www.appleinsider.com/article.php?id=1221
+Just found [this](https://www.appleinsider.com/article.php?id=1221) link which was an interesting read, I’m sure this won’t sway my Xbox360 / PS3 decisions ;)
