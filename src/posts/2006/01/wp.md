@@ -4,7 +4,7 @@ date: "2006-01-11"
 categories:
   - "writing"
 tags:
-- "wordpress"
+- "WordPress"
 - "theme"
 - "development"
 slug: "wp"

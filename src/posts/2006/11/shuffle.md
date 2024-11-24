@@ -4,9 +4,10 @@ date: "2006-11-21"
 categories:
   - "writing"
 tags:
-- "apple"
-- "ipod"
+- "Apple"
+- "iPod"
 slug: "shuffle"
+cover: "/images/shuffle.jpg"
 ---
 
 I finally received my birthday gift from Lucy. The new 2nd generation iPod Shuffle. First thoughts you get when you see the new Shuffle is "how small!?!" No matter how many pictures you see on the internet or read in books, nothing really prepares you for just how small this thing really is. Last year I treated Lucy to a first generation Shuffle and was shocked as to the size of that but looking at the box of the new version you finally realise that this is quite close to being one of the smallest gadgets you’ve ever seen.
@@ -36,3 +37,10 @@ I’ve spent the last two weeks using the Shuffle on a near daily basis and can 
 ![Photo sharing](/images/286055208.jpg)
 
 Let’s be honest here the Shuffle will not appeal to every one. The iPod (in it’s full form factor) is the industry standard and with the recent edition of movies it is going to be the first choice for the average user. The Shuffle only really comes into it’s own for a couple of reasons. People that are always on the move or people that do not see the harm in investing £55 on the Apple family! That’s right the Shuffle’s price tag is not to be ignored. Invest in Cupertino and buy into the iPod trend and not break the bank to do so! Or just buy into what for me is such a blindingly simple design.
+
+[image-1]:	/images/286065772.jpg
+[image-2]:	/images/286599164.jpg
+[image-3]:	/images/298297098.jpg
+[image-4]:	/images/286057162.jpg
+[image-5]:	/images/286599164.jpg
+[image-6]:	/images/286055208.jpg

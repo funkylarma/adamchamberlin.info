@@ -7,6 +7,7 @@ tags:
 - "cycling"
 - "event"
 slug: "witham-westerley"
+cover: "/images/audax.jpg"
 ---
 
 ![Startup](/images/461145115_962f1c205d_m.jpg)

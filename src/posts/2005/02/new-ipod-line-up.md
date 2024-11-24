@@ -4,7 +4,7 @@ date: "2005-02-24"
 categories:
   - "writing"
 tags:
-  - "apple"
+  - "Apple"
   - "iPod"
 slug: "new-ipod-line-up"
 ---

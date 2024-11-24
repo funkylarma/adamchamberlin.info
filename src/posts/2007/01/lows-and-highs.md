@@ -4,7 +4,7 @@ date: "2007-01-20"
 categories:
   - "writing"
 tags:
-- "life"
+  - "life"
 slug: "lows-and-highs"
 ---
 

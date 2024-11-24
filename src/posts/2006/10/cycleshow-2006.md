@@ -7,6 +7,7 @@ tags:
 - "cycling"
 - "event"
 slug: "cycleshow-2006"
+cover: "/images/cycleshow_sml.jpg"
 ---
 
 This week end the excel center in London will play host to the 2006 Cycleshow. Starting on today the 6th and running through till Sunday the 8th you will be able to see the latest news and products to some of the industries larger names and see first hand what will be out next year. I however managed to blagg a ticket to yesterday’s pre-event trade show. Of course I did not have to sign up to take delivery of 12 Look frames, 15 Specialized bikes and a year’s supply of High5 to get in there. I just managed to get a job with Rob for the day; Adam Chamberlin, Vice. It should have been Junior Vice President but it sounded better as Vice. The first thing you are greeted when you enter is a BMC TT01 fully built; probably one of Landis’ machines although without a dope test it was not confirmed (this is only speculation ;) ) Then the hall opens out into a sea of shiny products and modern technology. The first few minutes where a random journey just moving from one flashy stand to another and not making any sense. Rob and I opted to make a little sense of this and make a structured journey round the outside of the stands and finally head inwards towards the end.

@@ -4,8 +4,8 @@ date: "2007-01-31"
 categories: 
   - "writing"
 tags:
-- "apple"
-- "ipod"
+- "Apple"
+- "iPod"
 slug: "colour-shuffles"
 ---
 

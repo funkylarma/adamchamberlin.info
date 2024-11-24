@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "gaming"
-- "playstation"
+- "Play Station"
 - "live"
 slug: "playstation-live"
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Back To Running"
 date: "2007-12-15"
-categories: 
+categories:
   - "writing"
 tags:
-- "running"
-- "life"
-- "health"
+  - "running"
+  - "life"
+  - "health"
 slug: "back-to-running"
 ---
 

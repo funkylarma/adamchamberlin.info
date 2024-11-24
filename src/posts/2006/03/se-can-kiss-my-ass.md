@@ -1,12 +1,12 @@
 ---
 title: "SE can kiss my ass!"
 date: "2006-03-07"
-categories: 
+categories:
   - "writing"
 tags:
-- "phone"
-- "sony"
-- "ericsson"
+  - "phone"
+  - "Sony"
+  - "Ericsson"
 slug: "se-can-kiss-my-ass"
 ---
 

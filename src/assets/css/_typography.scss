@@ -1,68 +1,5 @@
 @use "variables" as *;
 
-h1,
-.h1 {
-  font-size: var(--main-font-size-xx-large);
-}
-
-h2,
-.h2 {
-  font-size: var(--main-font-size-large);
-}
-
-h3,
-.h3 {
-  font-size: var(--main-font-size-medium);
-}
-
-h4,
-.h4 {
-  font-size: var(--main-font-size-medium);
-}
-
-p,
-li {
-  font-size: $text-font-size;
-}
-
-p {
-  margin: 0 0 2rem 0;
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-article {
-  > ul,
-  > ol {
-    > li + li {
-      margin-top: 1rem;
-    }
-  }
-
-  * {
-    + h2 {
-      margin-top: 4rem;
-    }
-
-    + h3 {
-      margin-top: 2rem;
-    }
-  }
-}
-
-strong {
-  font-weight: $strong-font-weight;
-}
-
-a:not(.button) {
-  color: $link-color;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 code:not([class*="language"]) {
   display: inline-flex;
   padding: 0.25em;
@@ -100,7 +37,7 @@ blockquote {
 }
 
 .lead {
-  font-size: $lead-font-size;
+  font-size: 1.35rem;
   letter-spacing: 0.01em;
   margin-bottom: 1em;
   line-height: 1.3;

@@ -15,3 +15,8 @@ When Michael [announced](https://binarybonsai.com/archives/2005/12/11/k2-will-be
 
 _In other news…_  
 Well, it finally hit me the other day that it is indeed the festive season. I’m not the most Christmassy of people, I’m no scrooge but I just never really get all tinsled up. But the other day I sat there flicking through the channels and settled on re-runs of Home Alone, how can you not get in the Christmas mood with that film? So now I’m full swing into Christmas and looking forward to only 5 working days left.
+
+Well it finally hit me the other day that it is indeed the festive season. I’m not the most Christmassy of people, I’m no scrooge but I just never really get all tinsled up. But the other day I sat there flicking through the channels and settled on re-runs of Home Alone, how can you not get in the Christmas mood with that film? So now I’m full swing into Christmas and looking forward to only 5 working days left.
+
+[1]:	https://binarybonsai.com/archives/2005/12/11/k2-will-be-wordpress-20-only/ "K2"
+[2]:	https://wordpress.org "WordPress"

@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light dark;
+
   /* Colour variables */
   --main-color-white: #ffffff;
   --main-color-black: #000000;
@@ -9,6 +11,7 @@
   --main-color-quaternary: #fa7f08;
   --main-color-quinary: #9ef8ee;
   --main-color-background: #f5f5f5;
+  --main-color-hairline: #ebebeb;
 
   /* Typography sizes */
   --main-font-size-normal: clamp(
@@ -50,18 +53,21 @@
   );
 
   /* Layout options */
-  --main-layout-width-narrow: 50ch;
-  --main-layout-width-normal: 70ch;
-  --main-layout-width-wide: 90ch;
-  --main-layout-width-x-wide: 110ch;
+  --main-layout-width-narrow: 40rem;
+  --main-layout-width-normal: 50rem;
+  --main-layout-width-wide: 60rem;
+  --main-layout-width-x-wide: 80rem;
   --main-layout-width-xx-wide: 130ch;
 
   /* Dark mode image filters */
   --main-image-filter: grayscale(50%);
-}
 
-$font-family: "Plus Jakarta Sans", sans-serif !default;
-$strong-font-weight: 500 !default;
-$text-font-size: var(--main-font-size-normal);
-$lead-font-size: 1.35rem !default;
-$link-color: var(--main-color-secondary);
+  --epg-box-highlight: var(--main-color-primary);
+
+  transition: all 1s ease-in-out;
+
+  @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+    transition-duration: 0s;
+  }
+
+}

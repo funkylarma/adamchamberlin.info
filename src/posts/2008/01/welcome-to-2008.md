@@ -4,9 +4,9 @@ date: "2008-01-09"
 categories:
   - "writing"
 tags:
- - "life"
- - "year-end"
- - "recap"
+  - "life"
+  - "year-end"
+  - "recap"
 slug: "welcome-to-2008"
 ---
 

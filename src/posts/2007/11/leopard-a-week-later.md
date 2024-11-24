@@ -4,8 +4,8 @@ date: "2007-11-11"
 categories:
   - "writing"
 tags:
-- "apple"
-- "macos"
+- "Apple"
+- "MacOS"
 - "leopard"
 slug: "leopard-a-week-later"
 ---

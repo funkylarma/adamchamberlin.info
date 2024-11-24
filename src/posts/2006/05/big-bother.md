@@ -1,11 +1,12 @@
 ---
 title: "Big Bother"
 date: "2006-05-19"
-categories: 
+categories:
   - "writing"
 tags:
 - "television"
 slug: "big-bother"
+cover: "/images/bb_eye.gif"
 ---
 
 No, that was not a typo that is my feelings towards the show.  

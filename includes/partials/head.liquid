@@ -1,22 +1,60 @@
-<head>
+
   <meta charset="utf-8">
 
   <!-- Title -->
   <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
 
-  <!-- Meta Details -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="generator" content="{{ eleventy.generator }}" />
-  {% if ignore %}
-  <meta name="robots" content="noindex">
+  {% if metadata.env == "production" %}
+  <!-- Inlined critical styles -->
+  {% css %}
+  {% renderFile "./src/assets/css/critical.scss" %}
+  {% endcss %}
+  <style>{% getBundle "css" %}</style>
+  <!-- Non-critical styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/screen.css' | url | fileHash }}" media="print" onload='this.media="all"'>
+  <!-- Preloads -->
+  <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" />
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Preconnects -->
+  <link rel="preconnect" href="/" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://cdn-cookieyes.com/" crossorigin="anonymous" />
+  <!-- Prefetch -->
+  <link rel="dns-prefetch" href="https://cdn-cookieyes.com/" />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+  <link rel="dns-prefetch" href="https://directory.cookieyes.com/" />
+  <link rel="dns-prefetch" href="https://log.cookieyes.com/" />
   {% else %}
-  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="/assets/css/screen.css" />
   {% endif %}
+
+  <!-- Meta Details -->
+  {%- comment -%}Prevent this page from showing up on search engines{%- endcomment -%}
+  {%- if noindex -%}
+    <meta name="robots" content="noindex">
+  {%- else -%}
+  <meta name="robots" content="index, follow" />
+  {%- endif -%}
   {% if tags.length > 0 %}
     <meta name="keywords" content="{{ tags | metaKeywords }}">
   {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="{{ eleventy.generator }}" />
+  <meta name="author" content="{{ metadata.author.name }}">
   <meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
   <meta property="article:author" content="{{ metadata.author.name }}">
+
+  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
+  <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
+  <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
+  <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
+
+  <link rel="icon" type="image/png" href="{{ "/assets/icons/favicon-96x96.png" | absoluteUrl }}" sizes="96x96" />
+  <link rel="icon" type="image/png" href="{{ "/assets/icons/web-app-manifest-192x192.png" | absoluteUrl }}" sizes="192x192" />
+  <link rel="icon" type="image/svg+xml" href="{{ "/assets/icons/favicon.svg" | absoluteUrl }}" />
+  <link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | absoluteUrl }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="{{ "/web.manifest" | absoluteUrl }}" />
 
   <!-- Fediverse -->
   <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
@@ -45,39 +83,31 @@
   <meta name="twitter:image" content="{{ metadata.url }}assets/images/og.png" />
   {% endif %}
 
-  <!-- Link -->
-  <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
-  <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
-  <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">
-  <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | absoluteUrl }}" sizes="192x192" />
-  <link rel="author" href="{{ metadata.author.name }}" />
-  <link rel="stylesheet" href="/assets/css/screen.css" />
-  <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain" />
-  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  {% if process.env.ELEVENTY_ENV == "production" %}
-  <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=mygtmid" as="script">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-  {% endif %}
-
   <!-- Used to add dark mode right away, adding here prevents any flicker -->
   <script>
-    const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
-    const THEME_STORAGE_KEY = 'theme';
-    const THEME_OWNER = document.documentElement;
-    const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-    if (cachedTheme) {
-      THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
-    }
+    {% capture jshead %}
+      const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
+      const THEME_STORAGE_KEY = 'theme';
+      const THEME_OWNER = document.documentElement;
+      const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+      if (cachedTheme) {
+        THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
+      }
+    {% endcapture %}
+    {% if metadata.env == "production" %}
+    {{ jshead | jsmin }}
+    {% else %}
+    {{ jshead }}
+    {% endif %}
   </script>
 
   {% if metadata.env == "production" %}
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
-  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id={{ env.GA4_TAG }}"></script>
+  <script defer>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ env.GA4_TAG }}');
+  </script>
   {% endif %}
-
-</head>

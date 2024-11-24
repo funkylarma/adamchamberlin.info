@@ -1,13 +1,14 @@
 ---
 title: "Camera Upgrade"
 date: "2007-03-20"
-categories: 
+categories:
   - "writing"
 tags:
 - "canon"
 - "photography"
 - "upgrade"
 slug: "camera-upgrade"
+cover: "/images/canon.jpg"
 ---
 
 I have upgraded my Canon 300D to a 30D. The other weekend in France my existing Canon camera; a [300D](https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/EOS_300D/) (Digital Rebel) started having a bit of a flip out. It would not focus, and the shutter was not firing. To which I started looking around for an upgrade, just in case the worse ever happened. The options on the table were obviously a Canon, I have a few Canon AF lenses now, but what body; the new kid on the block is the [400D](https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/EOS_400D/index.asp). But then we have the older [30D](https://www.canon.co.uk/For_Home/Product_Finder/Cameras/Digital_SLR/eos30d/index.asp). Which one should I choose?

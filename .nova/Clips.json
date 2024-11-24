@@ -1,0 +1,10 @@
+{
+  "clips" : [
+    {
+      "content" : "---\ntitle: \"${:title}\"\nkicker: \"${:kickr}\"\ndescription: \"${:description}\"\nsummary: \"${:summary}\"\ndate: \"yyyy-mm-dd\"\ncategories:\n  - \"writing\"\ntags:\n  - \"${:tag}\"\ncover: \"\/images\/$FILENAME\"\nslug: \"\"\n---",
+      "name" : "Blog Post",
+      "scope" : "editor",
+      "syntax" : "markdown"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
 - "news"
-- "mozilla"
+- "Mozilla"
 slug: "new-seamonkey-available"
 ---
 

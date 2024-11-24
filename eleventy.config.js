@@ -1,17 +1,22 @@
 import fs from "node:fs";
+import path from "node:path";
+import "dotenv/config";
 import {
   IdAttributePlugin,
   InputPathToUrlTransformPlugin,
   HtmlBasePlugin,
+  EleventyRenderPlugin,
 } from "@11ty/eleventy";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import Image from "@11ty/eleventy-img";
-import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
+import * as sass from 'sass'
+import htmlmin from "html-minifier";
+import browserslist from "browserslist";
+import { transform, browserslistToTargets } from "lightningcss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
-import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
 import postGraph from "@rknightuk/eleventy-plugin-post-graph";
 import moment from "moment";
 
@@ -30,10 +35,53 @@ import pluginShortcodes from "./shortcodes/index.js";
 // Import the Markdown plugin
 import { markdown } from "./plugins/markdown.js";
 
+const isDev = process.env.ELEVENTY_ENV === "development";
+const isProd = process.env.ELEVENTY_ENV === "production";
+
 export default async function (eleventyConfig) {
+
+  eleventyConfig.addGlobalData("env", process.env);
+
   eleventyConfig.setLiquidOptions({
     // Allows for dynamic include/partial names. If true, include names must be quoted. Defaults to true as of beta/1.0.
     dynamicPartials: true,
+  });
+
+  eleventyConfig.addBundle("css", {
+    outputFileExtension: "css",
+  });
+
+  // Add sass/scss support
+  eleventyConfig.addTemplateFormats("scss");
+  eleventyConfig.addExtension("scss", {
+    outputFileExtension: "css", // optional, default: "html"
+
+    // `compile` is called once per .scss file in the input directory
+    compile: async function (inputContent, inputPath) {
+      // Skip files like _fileName.scss
+      let parsed = path.parse(inputPath);
+      if (parsed.name.startsWith("_")) {
+        return;
+      }
+
+      // Run file content through Sass
+      let result = sass.compileString(inputContent, {
+        loadPaths: [parsed.dir || "."],
+        sourceMap: true, // or true, your choice!
+      });
+
+      let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
+
+      return async () => {
+        let { code } = await transform({
+          code: Buffer.from(result.css),
+          minify: isProd,
+          sourceMap: true,
+          targets,
+        });
+        return code;
+      };
+    },
   });
 
   // Pass-through copy for static assets
@@ -48,22 +96,19 @@ export default async function (eleventyConfig) {
   eleventyConfig.watchIgnores.add("src/assets/ogi/**/*");
 
   // Plugins
-  eleventyConfig.addPlugin(eleventySass);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
   });
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(emojiReadTime, {
-    showEmoji: false,
-  });
   eleventyConfig.addPlugin(postGraph, {
-    highlightColorLight: 'var(--main-color-secondary)',
-    highlightColorDark: 'var(--main-color-quinary)',
+    highlightColorLight: "var(--main-color-secondary)",
+    highlightColorDark: "var(--main-color-quinary)",
     dayBoxTitle: true,
     dayBoxTitleFormat: "MMM D, YYYY",
-    sort: 'desc',
+    sort: "desc",
   });
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     // which file extensions to process
@@ -71,14 +116,14 @@ export default async function (eleventyConfig) {
     // optional, output image formats
     formats: ["jpg", "webp"],
     // optional, output image widths
-    widths: ["auto", 400, 900],
+    widths: ["auto", 400, 600, 800],
     // output directory
     urlPath: "/images/",
     outputDir: "./_site/images/",
     // optional, attributes assigned on <img> override these values.
     defaultAttributes: {
       loading: "lazy",
-      sizes: "900",
+      sizes: "(min-width: 880px) 640px, calc(76.07vw - 14px)",
       decoding: "async",
     },
   });
@@ -94,12 +139,21 @@ export default async function (eleventyConfig) {
   // Collections
   eleventyConfig.addPlugin(pluginCollections);
 
-  // Template filters
-  eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
-  eleventyConfig.addLiquidFilter(
-    "getNewestCollectionItemDate",
-    pluginRss.getNewestCollectionItemDate
-  );
+  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+    if (isProd) {
+      if (outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDocType: true,
+          removeComments: true,
+          collapseWhitespace: true,
+        });
+        return minified;
+      }
+      return content;
+    } else {
+      return content;
+    }
+  });
 
   eleventyConfig.on("afterBuild", () => {
     const ogiDir = "./src/assets/ogi/";

@@ -4,7 +4,7 @@ date: "2006-01-08"
 categories: 
   - "writing"
 tags:
-- "xbox"
+- "Xbox"
 - "gaming"
 slug: "hd-dvd-bolt-on-extra-for-xbox"
 ---

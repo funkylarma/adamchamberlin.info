@@ -4,8 +4,8 @@ date: "2007-08-20"
 categories:
   - "writing"
 tags:
-- "canon"
-- "update"
+  - "canon"
+  - "update"
 slug: "canon-40d-is-on-the-way"
 ---
 

@@ -1,0 +1,21 @@
+---
+layout: page.liquid
+permalink: '/drafts/'
+ignore: true
+title: "Drafts"
+description: "All the Draft posts"
+---
+<div class="archive-list">
+  <ul>
+  {%- for post in collections.drafts reversed -%}
+    <li class="post">
+      <a href="{{ post.url }}" title="Read post" class="post-link">
+        {{ post.data.title }}
+      </a>
+      <div class="post-date">
+        - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
+      </div>
+    </li>
+  {%- endfor -%}
+  </ul>
+</div>

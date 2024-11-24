@@ -4,7 +4,7 @@ date: "2008-01-30"
 categories: 
   - "writing"
 tags:
- - "apple"
+ - "Apple"
 slug: "where-is-the-price-drop-apple"
 ---
 

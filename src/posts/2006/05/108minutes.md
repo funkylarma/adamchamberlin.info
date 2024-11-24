@@ -1,12 +1,13 @@
 ---
 title: "108minutes?"
 date: "2006-05-03"
-categories: 
+categories:
   - "writing"
 tags:
  - "lost"
  - "television"
 slug: "108minutes"
+cover: "/images/lost.jpg"
 ---
 
 Yes, most of the web and the UK public are going on about this and that noise that sounds like pong, but what the hell happens if the timer runs out?

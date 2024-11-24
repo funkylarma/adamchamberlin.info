@@ -4,7 +4,7 @@ date: "2006-08-22"
 categories:
   - "writing"
 tags:
-- "wordpress"
+- "WordPress"
 - "theme"
 slug: "frost"
 ---

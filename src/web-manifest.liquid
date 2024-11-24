@@ -1,0 +1,25 @@
+---
+layout: false
+permalink: "/web.manifest"
+eleventyExcludeFromCollections: true
+---
+{
+  "name": "{{ env.title }}",
+  "short_name": "{{ env.title }}",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/assets/icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#22babb",
+  "background_color": "#f5f5f5",
+  "display": "standalone"
+}

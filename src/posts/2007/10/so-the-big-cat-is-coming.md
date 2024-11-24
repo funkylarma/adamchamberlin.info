@@ -4,8 +4,8 @@ date: "2007-10-22"
 categories: 
   - "writing"
 tags:
-- "apple"
-- "macos"
+- "Apple"
+- "MacOS"
 - "leopard"
 slug: "so-the-big-cat-is-coming"
 ---

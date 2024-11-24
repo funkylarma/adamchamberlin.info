@@ -1,98 +1,91 @@
----
-# Metadata comes from _data/metadata.js
-layout: default.liquid
----
-<section class="post-single">
-  <div class="post-content">
-    <article class="post"  data-input-path="{{ page.filePathStem }}">
-      <div class="post-head">
-        <h1 class="post-title">{% if title %}{{ title }}{% else %}<code>{{ url }}</code>{% endif %}</h1>
-        <div class="post-meta">
-          <div class="post-date">
-            <time class="postlist-date" datetime="{{ page.date | dateHtmlString }}">{{ page.date | readableDate }}</time>
-          </div>
-          {% if categories %}
-            <div class="post-categories">
-              <span>Category: </span>
-              {%- for category in categories -%}
-                <a href="/category/{{category}}/" title="Browse other posts in the {{ category }} category">
-                  {{ category }}
-                </a>
-              {%- endfor -%}
-            </div>
-          {% endif %}
-          {% if tags.length > 1 %}
-            <div class="post-tags">
-              <span>Tagged: </span>
-              {%- for tag in tags -%}
-                {% if tag != 'post' %}
-                  <a href="/tagged/{{tag}}/" title="Browse other posts tagged with {{ tag }}">
-                    {{ tag }}
-                  </a>
-                {% endif %}
-              {%- endfor -%}
-            </div>
-          {% endif %}
-          <div class="post-reading">
-            <span>Estimated: </span>
-            {{ content | emojiReadTime }}
-          </div>
-        </div>
-      </div><!-- .post-head -->
-      <div class="post-body">
-        {{ content }}
-      </div><!-- .post-body -->
-    </article><!-- article -->
-  </div><!-- .post-content -->
-</section> <!-- End Post article-->
-
-<!-- the structured data -->
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "@id": "{{ page.url | htmlBaseUrl: metadata.url }}",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "{{ page.url | htmlBaseUrl: metadata.url }}"
-    },
-    "url": "{{ page.url | htmlBaseUrl: metadata.url }}",
-    "headline": "{{ title }}",
-    "description": "{{ title }}",
-    {% if cover %}
-    "image": {
-      "@type": "ImageObject",
-      "url": "{{ cover | htmlBaseUrl: metadata.url }}",
-      "height": 675,
-      "width": 1200
-    },
+<!doctype html>
+<html lang="{{ metadata.locale }}">
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
+  <body>
+    {% if metadata.env == "production" %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     {% endif %}
-    "dateCreated": "{{ date }}",
-    "datePublished": "{{ date }}",
-    "dateModified": "{{ date }}",
-    "articleSection": "Blog",
-    "author": {
-      "@type": "Person",
-      "name": "{{ metadata.author.name }}",
-      "image": {
-        "@type": "ImageObject",
-        "url": "{{ metadata.author.image }}",
-        "height": 1024,
-        "width": 1024
-      },
-      "url": "{{ metadata.url }}"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "@id": "{{ metadata.title }}",
-        "name": "{{ metadata.title }}",
-        "url": "{{ metadata.url }}",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "{{ metadata.author.image }}",
-          "height": 1024,
-          "width": 1024
+    <div class="container">
+      <a href="#skip" class="visually-hidden">Skip to main content</a>
+      <header class="mast-head">
+        {% include "partials/header.liquid" %}
+      </header><!-- .header -->
+      <main id="#skip" data-input-path="{{ page.filePathStem }}">
+        <section class="intro">
+          <div class="intro--content">
+            <h1 class="post-title">{{ title }}</h1>
+              <div class="tagline">
+                <p>{{ tagline }}</p>
+              </div><!-- .tagline -->
+              <div class="post--meta">
+                <div class="post--date">
+                  <span>Date: </span>
+                  <time class="postlist-date" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateReadable }}</time>
+                </div><!-- .post--date -->
+                {% if categories %}
+                <div class="post--categories">
+                  <span>Category: </span>
+                  {%- for category in categories -%}
+                    <a href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                      {{ category }}
+                    </a>
+                  {%- endfor -%}
+                </div><!-- .post--categories -->
+                {% endif %}
+                {% if tags.length > 1 %}
+                <div class="post--tags">
+                  <span>Tagged: </span>
+                  {%- for tag in tags -%}
+                    {% if tag != 'post' %}
+                      <a href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                        {{ tag }}
+                      </a>
+                    {% endif %}
+                  {%- endfor -%}
+                </div><!-- .post--tags -->
+                {% endif %}
+                <div class="post--reading">
+                  <span>Estimated: </span>
+                  {{ content | timeReading }}
+                </div><!-- .post-reading -->
+              </div><!-- .post-meta -->
+          </div><!-- .intro--content -->
+        </section><!-- .intro -->
+        <section class="post-single">
+          <div class="post--content">
+            {{ content }}
+          </div><!-- .post--content -->
+        </section><!-- .post-single -->
+      </main>
+      <footer class="mast-foot">
+        {% include "partials/footer.liquid" %}
+      </footer><!-- .mast-foot -->
+    </div><!-- .container -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Adam Chamberlin",
+        "url": "https://adamchamberlin.info",
+        "image": "https://adamchamberlin.info/assets/images/headshot.jpeg",
+        "sameAs": [
+          "https://www.youtube.com/@funkylarma",
+          "https://www.linkedin.com/in/adam-chamberlin/",
+          "https://github.com/funkylarma",
+          "https://mastodon.social/@FunkyLarma"
+        ],
+        "jobTitle": "Head of Development",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Mackman Group"
         }
-    }
-  }
-</script>
+      }
+    </script>
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+  </body>
+</html>

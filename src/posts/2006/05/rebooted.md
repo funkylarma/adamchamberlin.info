@@ -1,11 +1,12 @@
 ---
 title: "Rebooted"
 date: "2006-05-01"
-categories: 
+categories:
   - "writing"
 tags:
 - "reboot"
 slug: "rebooted"
+cover: "/images/css.jpg"
 ---
 
 Today was the Spring 2006 reboot, finally my new theme goes live, well sort of. Drop me a vote [here][1]

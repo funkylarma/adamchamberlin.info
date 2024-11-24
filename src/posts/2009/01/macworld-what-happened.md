@@ -4,8 +4,8 @@ date: "2009-01-06"
 categories:
   - "writing"
 tags:
-  - "apple"
-  - "macworld"
+  - "Apple"
+  - "Mac World"
 slug: "macworld-what-happened"
 ---
 

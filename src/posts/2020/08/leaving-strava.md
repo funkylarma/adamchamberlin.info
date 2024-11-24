@@ -4,7 +4,7 @@ date: "2020-08-02"
 categories:
   - "writing"
 tags:
-  - "strava"
+  - "Strava"
   - "social"
   - "networking"
 cover: "/images/strava.png"

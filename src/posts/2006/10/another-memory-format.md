@@ -6,6 +6,7 @@ categories:
 tags:
 - "tech"
 slug: "another-memory-format"
+cover: "/images/m2.jpg"
 ---
 
 After many phone calls and countless disagreements with T-Mobile I have finally upgraded my phone. More importantly O2 have upgraded my phone and until T-Mobile learn to take care of existing customers and offer them the same deals as the new customer I will not be going back! Anyway, I now have a K800i handset. Why? The phone boasts a 3.2mp camera. Nope that’s it, that’s the only reason I got one. Yes, it will sync with my Mac, with a little [help](https://mobile.feisar.com/phone_plugins_23.html) that is. True I do prefer Sony Ericsson phones to all the others out there but the ability to carry what is a good camera around in my pocket is worth it’s weight in gold.

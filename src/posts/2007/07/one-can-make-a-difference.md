@@ -4,7 +4,7 @@ date: "2007-07-17"
 categories:
   - "writing"
 tags:
-- "cycling"
+  - "cycling"
 slug: "one-can-make-a-difference"
 ---
 

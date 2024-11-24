@@ -5,7 +5,7 @@ categories:
   - "writing"
 tags:
  - "car"
- - "vw"
+ - "VW"
  - "beetle"
 slug: "all-bugged-out"
 ---

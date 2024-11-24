@@ -1,12 +1,12 @@
 ---
 title: "Nice one IE"
 date: "2008-03-13"
-categories: 
+categories:
   - "writing"
 tags:
- - "microsoft"
- - "sony"
- - "vaio"
+  - "Microsoft"
+  - "Sony"
+  - "Vaio"
 slug: "nice-one-ie"
 ---
 

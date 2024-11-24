@@ -4,10 +4,10 @@ date: "2007-04-26"
 categories:
   - "writing"
 tags:
-- "software"
-- "editor"
-- "panic"
-- "coda"
+  - "software"
+  - "editor"
+  - "Panic"
+  - "Coda"
 slug: "panic-coda-alert"
 ---
 

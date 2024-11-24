@@ -4,7 +4,7 @@ date: "2006-01-31"
 categories: 
   - "writing"
 tags:
-- "xbox"
+- "Xbox"
 - "gaming"
 slug: "xbox-live-update"
 ---

@@ -4,8 +4,8 @@ date: "2007-09-24"
 categories:
   - "writing"
 tags:
-- "cycling"
-- "end2end"
+  - "cycling"
+  - "end2end"
 slug: "24th-and-im-at-home"
 ---
 

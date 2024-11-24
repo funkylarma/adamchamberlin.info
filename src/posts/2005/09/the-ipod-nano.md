@@ -4,8 +4,8 @@ date: "2005-09-10"
 categories:
   - "writing"
 tags:
-- "apple"
-- "ipod"
+- "Apple"
+- "iPod"
 slug: "the-ipod-nano"
 ---
 

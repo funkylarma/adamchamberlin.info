@@ -29,5 +29,6 @@ export default {
   // What layout to use
   layout: "post.liquid",
 
-  bodyClass: "single",
+  // Apply a class to the body tag
+  bodyClass: "post--single",
 };

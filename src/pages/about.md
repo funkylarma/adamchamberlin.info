@@ -7,7 +7,7 @@ nav: "About"
 slug: "about"
 ---
 
-![My daughter running with me as I finish a 50k ultra](/images/IMG_0900.jpeg){.wide}
+![My daughter running with me as I finish a 50k ultra](/images/IMG_0900.jpeg){.wide}{sizes="(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)"}
 
 Welcome to my online playground and sandbox of ideas and musings.{.h3}
 

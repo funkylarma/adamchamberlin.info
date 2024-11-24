@@ -1,33 +1,33 @@
-<footer class="mast-foot">
-  <div class="content">
-    <nav class="footer">
-      <menu class="navigation-footer">
+<div class="content">
+  <nav class="footer">
+    <menu class="navigation-footer">
       {% for item in metadata.navigation_footer %}
-        <li class="nav-item {% if item.class %}{{ item.class }}{% endif %}">
+        <li class="nav-bar--item {% if item.class %}{{ item.class }}{% endif %}">
           <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
             {{ item.label }}
           </a>
         </li>
       {% endfor %}
-      </menu>
-      <div class="themes" hidden>
-        <fieldset id="theme-picker">
-          <legend>Theme:</legend>
-          <label>
-            <input name="theme" type="radio" value="auto" checked>
-            Auto
-          </label>
-          <label>
-            <input name="theme" type="radio" value="light">
-            Light
-          </label>
-          <label>
-            <input name="theme" type="radio" value="dark">
-            Dark
-          </label>
-        </fieldset>
-      </div>
-      <script>
+    </menu><!-- .nav-bar -->
+    <div class="theme" hidden="">
+      <fieldset id="theme-picker">
+        <legend>Theme:</legend>
+        <label>
+          <input name="theme" type="radio" value="auto" checked>
+          Auto
+        </label>
+        <label>
+          <input name="theme" type="radio" value="light">
+          Light
+        </label>
+        <label>
+          <input name="theme" type="radio" value="dark">
+          Dark
+        </label>
+      </fieldset>
+    </div><!-- .themes -->
+    <script>
+      {% capture jsfoot %}
         document.addEventListener('DOMContentLoaded', () => {
           // Use JS to display the theme selector
           //document.querySelector('.themes').removeAttribute('hidden');
@@ -51,9 +51,14 @@
           themePicker.querySelector('input[checked]').removeAttribute('checked');
           themePicker.querySelector(`input[value="${initialTheme}"]`).setAttribute('checked', '');
         });
-      </script>
-    </nav>
-    {% include "partials/social.liquid" %}
-    <div class="copyright">Adam Chamberlin - 2005-{% year %}</div>
-  </div><!-- .content -->
-</footer>
+      {% endcapture %}
+      {% if metadata.env == "production" %}
+      {{ jsfoot | jsmin }}
+      {% else %}
+      {{ jsfoot }}
+      {% endif %}
+    </script>
+  </nav>
+  {% include "partials/social.liquid" %}
+  <div class="copyright">Adam Chamberlin - 2005-2024</div>
+</div><!-- .content -->

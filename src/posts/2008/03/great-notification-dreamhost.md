@@ -1,11 +1,11 @@
 ---
 title: "Great Notification Dreamhost"
 date: "2008-03-23"
-categories: 
+categories:
   - "writing"
 tags:
- - "dreamhost"
- - "hosting"
+  - "Dreamhost"
+  - "hosting"
 slug: "great-notification-dreamhost"
 ---
 

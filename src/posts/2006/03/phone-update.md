@@ -4,9 +4,9 @@ date: "2006-03-09"
 categories:
   - "writing"
 tags:
-- "phone"
-- "sony"
-- "ericsson"
+  - "phone"
+  - "Sony"
+  - "Ericsson"
 slug: "phone-update"
 ---
 

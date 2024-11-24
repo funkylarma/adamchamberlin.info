@@ -4,8 +4,8 @@ date: "2007-10-11"
 categories:
   - "writing"
 tags:
-- "apple"
-- "mac"
+- "Apple"
+- "Mac"
 - "work"
 slug: "i-made-the-switch"
 ---

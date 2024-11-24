@@ -6,6 +6,7 @@ categories:
 tags:
 - "life"
 slug: "happy-new-year"
+cover: “/images/new_year.jpg”
 ---
 
 It’s a bit blurry, my head is a bit cloudy, everything is so strange and the house is a mess, I guess that means it was a good night.

@@ -4,7 +4,7 @@ date: "2006-12-07"
 categories: 
   - "writing"
 tags:
-- "apple"
+- "Apple"
 - "mouse"
 slug: "mighty-mouse-no-longer-mighty"
 ---

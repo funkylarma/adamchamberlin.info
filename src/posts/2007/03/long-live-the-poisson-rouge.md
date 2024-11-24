@@ -4,8 +4,8 @@ date: "2007-03-05"
 categories:
   - "writing"
 tags:
- - "life"
- - "france"
+  - "life"
+  - "France"
 slug: "long-live-the-poisson-rouge"
 ---
 

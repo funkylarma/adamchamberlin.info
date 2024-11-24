@@ -4,7 +4,7 @@ date: "2006-05-05"
 categories: 
   - "writing"
 tags:
-- "apple"
+- "Apple"
 slug: "why-wont-you-just-sleep-2"
 ---
 

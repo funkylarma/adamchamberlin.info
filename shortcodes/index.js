@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import Image from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
@@ -27,5 +28,9 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addShortcode("year", () => {
     return `${new Date().getFullYear()}`;
+  });
+
+  eleventyConfig.addShortcode("getCritical", () => {
+    return fs.readFileSync(`/assets/css/critical.css`);
   });
 }

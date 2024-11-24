@@ -4,7 +4,7 @@ date: "2006-09-13"
 categories:
   - "writing"
 tags:
-- "apple"
+- "Apple"
 - "event"
 slug: "it-was-showtime"
 ---

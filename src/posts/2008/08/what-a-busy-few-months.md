@@ -8,6 +8,7 @@ tags:
   - "updates"
   - "work"
 slug: "what-a-busy-few-months"
+cover: "/images/code.jpg"
 ---
 
 Wow, looking back at my site, the last article I wrote was nearly 4 months ago. Damn the time flies when you are on the cross roads of life and life-changing decisions mean you have to take a break and access where you are going. So if you know me or have followed this blog, you will no doubt know that I work as a sales development manager for Oscar Products; a small local packaging wholesaler. 

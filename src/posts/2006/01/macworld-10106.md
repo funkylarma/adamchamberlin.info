@@ -4,9 +4,9 @@ date: "2006-01-11"
 categories: 
   - "writing"
 tags:
-- "apple"
+- "Apple"
 - "event"
-- "macworld"
+- "Mac World"
 slug: "macworld-10106"
 ---
 
