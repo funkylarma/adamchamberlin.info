@@ -4,13 +4,13 @@ date: "2005-06-24"
 categories:
   - "writing"
 tags:
- - "life"
- - "career"
- - "work"
+  - "life"
+  - "career"
+  - "work"
 slug: "it-was-a-different-night"
 ---
 
- [![Photo sharing](/images/21321325_821b77e0d8_m.jpg)](https://www.flickr.com/photos/funkylarma/21321325/ "Every party needs a Joe")
+ <!-- [![Photo sharing](/images/21321325_821b77e0d8_m.jpg)](https://www.flickr.com/photos/funkylarma/21321325/ "Every party needs a Joe") -->
 
 I had a phone call from bobgbob the other day to say that Grabor Plastics, who were my old employer who had recently been sold and taken over by another firm, were having a get-together at a new drinking hole in Sudbury as a fare well. He asked if would like to show my face as an old employee and see people off to pastures new, I said hell no, but I’ll come just to take the pi55 if he wanted ;)
 

@@ -4,12 +4,12 @@ date: "2005-06-14"
 categories:
   - "writing"
 tags:
- - "cars"
- - "Sudbury"
+  - "cars"
+  - "Sudbury"
 slug: "sudbury-has-got-class-after-all"
 ---
 
- [![Photo sharing](/images/19351255_94f7f0bf8a_m.jpg)](https://www.flickr.com/photos/funkylarma/19351255/ "Morgan Aero8")
+ <!-- [![Photo sharing](/images/19351255_94f7f0bf8a_m.jpg)](https://www.flickr.com/photos/funkylarma/19351255/ "Morgan Aero8") -->
 
 I was cycling home tonight and the usual trip down Market Hill yields the standard array of new Focus’, welded together Rover’s and the fibre-glass improved chav mobiles but something caught my eye this time. So much so I had to stop and double take.
 

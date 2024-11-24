@@ -12,8 +12,9 @@ import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import Image from "@11ty/eleventy-img";
-import * as sass from 'sass'
+import * as sass from "sass";
 import htmlmin from "html-minifier";
+import { minify } from "terser";
 import browserslist from "browserslist";
 import { transform, browserslistToTargets } from "lightningcss";
 import embedYouTube from "eleventy-plugin-youtube-embed";
@@ -39,7 +40,6 @@ const isDev = process.env.ELEVENTY_ENV === "development";
 const isProd = process.env.ELEVENTY_ENV === "production";
 
 export default async function (eleventyConfig) {
-
   eleventyConfig.addGlobalData("env", process.env);
 
   eleventyConfig.setLiquidOptions({
@@ -64,23 +64,38 @@ export default async function (eleventyConfig) {
         return;
       }
 
-      // Run file content through Sass
-      let result = sass.compileString(inputContent, {
-        loadPaths: [parsed.dir || "."],
-        sourceMap: true, // or true, your choice!
-      });
-
       let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
 
-      return async () => {
-        let { code } = await transform({
-          code: Buffer.from(result.css),
-          minify: isProd,
-          sourceMap: true,
-          targets,
+      if (isProd) {
+        //Run file content through Sass
+        let result = sass.compileString(inputContent, {
+          loadPaths: [parsed.dir],
+          sourceMap: true, // or true, your choice!
         });
-        return code;
-      };
+
+        return async () => {
+          let { code } = await transform({
+            code: Buffer.from(result.css),
+            minify: isProd,
+            sourceMap: true,
+            targets,
+          });
+          return code;
+        };
+      }
+
+      if (isDev) {
+        return async (data) => {
+          let result = sass.compileString(inputContent, {
+            loadPaths: [parsed.dir],
+            sourceMap: true,
+            minify: isProd,
+            targets,
+          });
+
+          return result.css;
+        };
+      }
     },
   });
 
@@ -93,6 +108,7 @@ export default async function (eleventyConfig) {
 
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
+  eleventyConfig.addWatchTarget("/src/assets/sass/");
   eleventyConfig.watchIgnores.add("src/assets/ogi/**/*");
 
   // Plugins
@@ -139,9 +155,10 @@ export default async function (eleventyConfig) {
   // Collections
   eleventyConfig.addPlugin(pluginCollections);
 
+  // HTML minify transform
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (isProd) {
-      if (outputPath.endsWith(".html")) {
+      if ((this.page.outputPath || "").endsWith(".html")) {
         let minified = htmlmin.minify(content, {
           useShortDocType: true,
           removeComments: true,
@@ -155,6 +172,7 @@ export default async function (eleventyConfig) {
     }
   });
 
+  // After build to copy all the OpenGraph images
   eleventyConfig.on("afterBuild", () => {
     const ogiDir = "./src/assets/ogi/";
     fs.readdir(ogiDir, function (err, files) {
@@ -179,7 +197,7 @@ export default async function (eleventyConfig) {
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid
-    templateFormats: ["md", "njk", "html", "liquid"],
+    templateFormats: ["md", "njk", "html", "liquid", "scss", "js"],
 
     // Inputs and outputs:
     dir: {

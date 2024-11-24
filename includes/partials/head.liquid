@@ -11,12 +11,16 @@
   {% endcss %}
   <style>{% getBundle "css" %}</style>
   <!-- Non-critical styles -->
-  <link rel="stylesheet" href="{{ '/assets/css/screen.css' | url | fileHash }}" media="print" onload='this.media="all"'>
+  <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="{{ '/assets/css/screen.css' | url | fileHash }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+  </noscript>
   <!-- Preloads -->
-  <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" />
-  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin />
   <!-- Preconnects -->
-  <link rel="preconnect" href="/" crossorigin>
+  <link rel="preconnect" href="/" crossorigin />
   <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="anonymous" />
   <link rel="preconnect" href="https://cdn-cookieyes.com/" crossorigin="anonymous" />
   <!-- Prefetch -->
@@ -26,6 +30,7 @@
   <link rel="dns-prefetch" href="https://log.cookieyes.com/" />
   {% else %}
   <link rel="stylesheet" href="/assets/css/screen.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
   {% endif %}
 
   <!-- Meta Details -->
@@ -86,12 +91,9 @@
   <!-- Used to add dark mode right away, adding here prevents any flicker -->
   <script>
     {% capture jshead %}
-      const Theme = { AUTO: 'auto', LIGHT: 'light', DARK: 'dark' };
-      const THEME_STORAGE_KEY = 'theme';
-      const THEME_OWNER = document.documentElement;
-      const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+      const cachedTheme = localStorage.getItem('ac_theme');
       if (cachedTheme) {
-        THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
+        document.documentElement.dataset['ac_theme'] = cachedTheme;
       }
     {% endcapture %}
     {% if metadata.env == "production" %}
@@ -103,7 +105,7 @@
 
   {% if metadata.env == "production" %}
   <!-- Google tag (gtag.js) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id={{ env.GA4_TAG }}"></script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id={{ env.GA4_TAG }}" type="text/plain" data-category="analytics" data-service="Google Analytics"></script>
   <script defer>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}

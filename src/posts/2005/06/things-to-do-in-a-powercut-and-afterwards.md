@@ -4,8 +4,8 @@ date: "2005-06-11"
 categories:
   - "writing"
 tags:
- - "powercut"
- - "life"
+  - "powercut"
+  - "life"
 slug: "things-to-do-in-a-powercut-and-afterwards"
 ---
 
@@ -16,7 +16,8 @@ First thoughts are is just us, turned out to be the whole street, so what do you
 This was a good time to try and catch up with some reading, I have previously purchased a copy of ‘Angels & Demons’ by Dan Brown; from 'The Da Vinci Code’ fame, and so decided this might be a good time to start reading it.
 It was good to sit there without any distractions and just chill out, despite the feeling I was babysitting for someone (Lucy!)
 
-![Angels & Demons - Dan Brown](/images/0593054865.02._PE40_SCMZZZZZZZ_.jpg)
+<!-- ![Angels & Demons - Dan Brown](/images/0593054865.02._PE40_SCMZZZZZZZ_.jpg) -->
+
 Eventually, the power was restored, and I decided to carry on with the site update. So upstairs I went and booted my G5 and everything looked fine, now to start iTunes and carry on…
 
 This is where the problems began. Somewhere, my iTunes library had corrupted during the power cut. The raw files are still on the disk, but the linking XML file has gone totally t\*ts up!
