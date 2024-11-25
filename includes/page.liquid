@@ -13,14 +13,16 @@
     <div class="container">
       <a href="#skip" class="visually-hidden">Skip to main content</a>
       <header class="mast-head">
-        {% include "partials/header.liquid" %}
+        {% include "partials/nav-header.liquid" %}
       </header><!-- .header -->
       <main id="#skip" data-input-path="{{ page.filePathStem }}">
         <section class="intro">
           <div class="intro--content">
             <h1 class="page-title">{{ title }}</h1>
               <div class="tagline">
-                <p>{{ tagline }}</p>
+                {% if kicker %}
+                  <p>{{ kicker }}</p>
+                {% endif %}
               </div><!-- .tagline -->
           </div><!-- .intro--content -->
         </section><!-- .intro -->
@@ -31,9 +33,9 @@
         </section><!-- .page -->
       </main>
       <footer class="mast-foot">
-        {% include "partials/footer.liquid" %}
+        {% include "partials/nav-footer.liquid" %}
       </footer><!-- .mast-foot -->
     </div><!-- .container -->
-    {% include "partials/foot.liquid" %}
+    {% include "partials/footer.liquid" %}
   </body>
 </html>

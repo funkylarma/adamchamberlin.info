@@ -1,11 +1,11 @@
 ---
 title: "Cycle Club Sudbury"
 date: "2005-12-20"
-categories: 
+categories:
   - "writing"
 tags:
-- "cycling"
-- "ccs"
+  - "cycling"
+  - "ccs"
 slug: "ccs"
 ---
 
@@ -17,7 +17,7 @@ The CCS has moved to a new permanent space on the web. You can find them over at
 
 [Semer Hill Climb 2005][2] [CCS Christmas Dinner 2005 (?)][3] [TT Season 2006][4]
 
-[1]:	https://www.cycleclubsudbury.com
-[2]:	https://flickr.com/photos/funkylarma/sets/72057594053417226/
-[3]:	https://flickr.com/photos/funkylarma/sets/72057594061154882/
-[4]:	https://flickr.com/photos/funkylarma/sets/72057594113176167/
+[1]: https://cycleclubsudbury.com
+[2]: https://flickr.com/photos/funkylarma/sets/72057594053417226/
+[3]: https://flickr.com/photos/funkylarma/sets/72057594061154882/
+[4]: https://flickr.com/photos/funkylarma/sets/72057594113176167/

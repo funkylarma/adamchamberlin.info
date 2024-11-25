@@ -4,9 +4,9 @@ date: "2007-11-11"
 categories:
   - "writing"
 tags:
-- "Apple"
-- "MacOS"
-- "leopard"
+  - "Apple"
+  - "MacOS"
+  - "leopard"
 slug: "leopard-a-week-later"
 ---
 
@@ -44,4 +44,4 @@ So far everything has been great, but not so with Adobe Lightroom. If you have A
 
 ## Should You Upgrade?
 
-Put it this way I have no regrets over the £80 upgrade fee. OK it is not without it’s hiccups and no matter what I try I can not get 'Back To My Mac’ to work but the bits that do work are so much better. mail.app is now really able to be taken seriously, with the addition of Notes and To-do’s. So much so I’ve moved everything over to .Mac and IMAP to share with my iBook. There are a few views missing in iCal but now with improved syncing support I can share calendars with more confidence. iDisk has finally moved into something usable, I’ve actually stopped using [box.net](https://www.box.net) and moved back to Apple’s native version. Moving files back and from work is so mach easier now, plus I now feel like I’m getting something out of my .Mac membership. True there are a few applications that don’t work or will be unstable but I can not really think that this will last for long. When you way weigh this up against the speed and smoothness of everything now it is well worth it, especially if you are an Intel Mac owner, nice and speedy now.
+Put it this way I have no regrets over the £80 upgrade fee. OK it is not without it’s hiccups and no matter what I try I can not get 'Back To My Mac’ to work but the bits that do work are so much better. mail.app is now really able to be taken seriously, with the addition of Notes and To-do’s. So much so I’ve moved everything over to .Mac and IMAP to share with my iBook. There are a few views missing in iCal but now with improved syncing support I can share calendars with more confidence. iDisk has finally moved into something usable, I’ve actually stopped using [box.net](https://www.box.com/en-gb/) and moved back to Apple’s native version. Moving files back and from work is so mach easier now, plus I now feel like I’m getting something out of my .Mac membership. True there are a few applications that don’t work or will be unstable but I can not really think that this will last for long. When you way weigh this up against the speed and smoothness of everything now it is well worth it, especially if you are an Intel Mac owner, nice and speedy now.

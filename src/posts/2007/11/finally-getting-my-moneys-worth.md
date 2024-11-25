@@ -18,7 +18,7 @@ First off, I’m now using .Mac mail as it should be, using the magic that is IM
 
 ## iDisc
 
-No more [box.net](https://www.box.net) for me, I’m a fully fledged iDisc user now. This is only because of having a Mac at work now and the better support for iDisc in Leopard. Before then, I found it flakey; dropping connections, refusing to sync and just being a pain! Now I have a local copy on both work and home machines and auto-sync to keep everything where it should be. There are still a few things I would prefer, but the positive point out weigh the negative. Ease people, it’s just about making things easier.
+No more [box.net](https://www.box.com/en-gb/) for me, I’m a fully fledged iDisc user now. This is only because of having a Mac at work now and the better support for iDisc in Leopard. Before then, I found it flakey; dropping connections, refusing to sync and just being a pain! Now I have a local copy on both work and home machines and auto-sync to keep everything where it should be. There are still a few things I would prefer, but the positive point out weigh the negative. Ease people, it’s just about making things easier.
 
 ## The iLife Extras
 

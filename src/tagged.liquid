@@ -6,9 +6,10 @@ pagination:
   alias: tag
   generatePageOnEmptyData: true
 permalink: "tagged/{{ tag | slugify }}/"
+noindex: true
 eleventyComputed:
   title: "Tagged: {{ tag }}"
-  description: "Archive page for the tag {{ tag }}"
+  description: "Archive page for the tag '{{ tag }}'"
   tagline: These are all the posts that have been tagged with "{{ tag }}"
 ---
 <div class="archive-list">

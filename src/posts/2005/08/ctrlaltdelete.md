@@ -8,7 +8,7 @@ tags:
 slug: "ctrlaltdelete"
 ---
 
-Last night I took a trip down to _‘The Big Smoke’_ to see some friends play a gig in [The Metro Club](https://www.blowupmetro.com/) on Oxford Street. The band is called [CTRL.ALT.DELETE](https://www.ctrl-alt-delete-music.co.uk/) and has only recently been re-grouped for a few months after the split of the previous band 'Nausea’ about 4 or 5 years ago. The band have been practising hard and are trying to make a name for themselves around the London area.
+Last night I took a trip down to _‘The Big Smoke’_ to see some friends play a gig in The Metro Club on Oxford Street. The band is called CTRL.ALT.DELETE and has only recently been re-grouped for a few months after the split of the previous band 'Nausea’ about 4 or 5 years ago. The band have been practising hard and are trying to make a name for themselves around the London area.
 
 <!-- ![Demo Cover](/images/DSCF0033.JPG-thumb_140_105.jpg) -->
 

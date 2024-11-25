@@ -4,7 +4,7 @@ date: "2006-02-16"
 categories:
   - "writing"
 tags:
-- "life"
+  - "life"
 slug: "hobbies"
 ---
 
@@ -29,7 +29,3 @@ Currently, I’m on the Live service from Microsoft, gamertag of _Funky Larma_ F
 ## On the iPod
 
 I’m currently chilling out to, refer to my [Last.FM](https://www.last.fm/user/FunkyLarma) account for more
-
-table.lfmWidgetb50be8fb8bdfcc02995658fed058fc3a td {margin:0 !important;padding:0 !important;border:0 !important;}table.lfmWidgetb50be8fb8bdfcc02995658fed058fc3a tr.lfmHead a:hover {background:url(https://cdn.last.fm/widgets/images/en/header/chart/recenttracks\_regular\_grey.png) no-repeat 0 0 !important;}table.lfmWidgetb50be8fb8bdfcc02995658fed058fc3a tr.lfmEmbed object {float:left;}table.lfmWidgetb50be8fb8bdfcc02995658fed058fc3a tr.lfmFoot td.lfmConfig a:hover {background:url(https://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat 0px 0 !important;;}table.lfmWidgetb50be8fb8bdfcc02995658fed058fc3a tr.lfmFoot td.lfmView a:hover {background:url(https://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -85px 0 !important;}table.lfmWidgetb50be8fb8bdfcc02995658fed058fc3a tr.lfmFoot td.lfmPopup a:hover {background:url(https://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -159px 0 !important;}
-
-<table class="lfmWidgetb50be8fb8bdfcc02995658fed058fc3a" cellpadding="0" cellspacing="0" border="0" style="width:184px"><tbody><tr class="lfmHead"><td><a title="FunkyLarma: Recently Listened Tracks" href="https://www.last.fm/user/FunkyLarma/" target="_blank" style="overflow:hidden;height:20px;width:184px;background:url(https://cdn.last.fm/widgets/images/en/header/chart/recenttracks_regular_grey.png) no-repeat 0 -20px;text-decoration:none;border:0" rel="noopener"></a></td></tr><tr class="lfmEmbed"><td></td></tr><tr class="lfmFoot"><td style="background:url(https://cdn.last.fm/widgets/images/footer_bg/grey.png) repeat-x 0 0;text-align:right"><table cellspacing="0" cellpadding="0" border="0" style="width:184px"><tbody><tr><td class="lfmConfig"><a href="https://www.last.fm/widgets/?colour=grey&amp;chartType=recenttracks&amp;user=FunkyLarma&amp;chartFriends=1&amp;from=code&amp;widget=chart" title="Get your own widget" target="_blank" style="overflow:hidden;width:85px;height:20px;float:right;background:url(https://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat 0px -20px;text-decoration:none;border:0" rel="noopener"></a></td><td class="lfmView" style="width:74px"><a href="https://www.last.fm/user/FunkyLarma/" title="View FunkyLarma's profile" target="_blank" style="overflow:hidden;width:74px;height:20px;background:url(https://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -85px -20px;text-decoration:none;border:0" rel="noopener"></a></td><td class="lfmPopup" style="width:25px"><a href="https://www.last.fm/widgets/popup/?colour=grey&amp;chartType=recenttracks&amp;user=FunkyLarma&amp;chartFriends=1&amp;from=code&amp;widget=chart&amp;resize=1" title="Load this chart in a pop up" target="_blank" style="overflow:hidden;width:25px;height:20px;background:url(https://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -159px -20px;text-decoration:none;border:0" rel="noopener"></a></td></tr></tbody></table></td></tr></tbody></table>

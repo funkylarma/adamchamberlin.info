@@ -4,9 +4,9 @@ date: "2006-05-13"
 categories:
   - "writing"
 tags:
-- "development"
-- "web"
-- "javascript"
+  - "development"
+  - "web"
+  - "javascript"
 slug: "search-box-light-box-and-other-scripty-goodness"
 ---
 
@@ -15,7 +15,7 @@ I’ve been working away at those extra little bits on the site, you know all th
 The latest instalments apart from some style changes are the use of the various [script.aculo.us](https://script.aculo.us/) Java scripts. First off, we have the new AJAX-powered search bar found on the home page, in the archives and on any 404. The second is the use of [Lightbox](https://www.huddletogether.com/projects/lightbox2/) for displaying photograph’s and images from within posts.
 I have [always](https://adamchamberlin.info/2005/11/ajaxy-sidebar-menu-options/) enjoyed using the script.aculo.us libraries for various effects, but since moving themes around, I missed the boat when it came to the whole Lightbox revolution that appears to have taken the web by storm.
 
-My problem was that I did want to find a way to display images in a way that kept a small clean image in the post but would allow the reader to see a larger version without directing them to an external source such as my [Flickr](https://www.flickr.com/photos/funkylarma/) account. I’m afraid that at present, [Lightbox](https://www.huddletogether.com/projects/lightbox2/) is the perfect answer, of course, I could have followed [Derek’s](https://5thirtyone.com/archives/233) comments and tried [Thickbox](https://codylindley.com/Javascript/257/thickbox-one-box-to-rule-them-all) which runs off the more streamlined compressed [jquery](https://jquery.com/) script. But when I’m already loading part of the script.aculo.us for the search bar, it makes no sense to load another library to save space. Besides which, due to my limited readership, bandwidth or page load is not a concern, I’m not exactly digg material!
+My problem was that I did want to find a way to display images in a way that kept a small clean image in the post but would allow the reader to see a larger version without directing them to an external source such as my [Flickr](https://www.flickr.com/photos/funkylarma/) account. I’m afraid that at present, [Lightbox](https://www.huddletogether.com/projects/lightbox2/) is the perfect answer, of course, I could have followed [Derek’s](https://5thirtyone.com/archives/233) comments and tried [Thickbox](https://codylindley.com/) which runs off the more streamlined compressed [jquery](https://jquery.com/) script. But when I’m already loading part of the script.aculo.us for the search bar, it makes no sense to load another library to save space. Besides which, due to my limited readership, bandwidth or page load is not a concern, I’m not exactly digg material!
 
 ### Installing Lightbox…
 
@@ -52,4 +52,4 @@ Of course replace yourdomain with _yourdomain_ and theme with the name of your t
 
 ### The search bar…
 
-The search bar was created following the [instructions](https://orderedlist.com/articles/howto-animated-live-search/) of Steve at [OrderedList](https://orderedlist.com/). View a demo [here](https://orderedlist.com/demos/livesearch/).
+The search bar was created following the [instructions](https://orderedlist.com/) of Steve at [OrderedList](https://orderedlist.com/). View a demo [here](https://orderedlist.com/demos/livesearch/).

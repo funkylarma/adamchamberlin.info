@@ -8,15 +8,15 @@
     <div class="container">
       <a href="#skip" class="visually-hidden">Skip to main content</a>
       <header class="mast-head">
-        {% include "partials/header.liquid" %}
+        {% include "partials/nav-header.liquid" %}
       </header><!-- .header -->
       <main id="#skip" data-input-path="{{ page.filePathStem }}">
         {{ content }}
       </main><!-- .main -->
       <footer class="mast-foot">
-        {% include "partials/footer.liquid" %}
+        {% include "partials/nav-footer.liquid" %}
       </footer><!-- .mast-foot -->
     </div><!-- .container -->
-    {% include "partials/foot.liquid" %}
+    {% include "partials/footer.liquid" %}
   </body>
 </html>

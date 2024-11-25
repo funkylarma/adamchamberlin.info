@@ -104,11 +104,11 @@ export default async function (eleventyConfig) {
     "./src/assets/fonts": "/assets/fonts",
     "./src/assets/images": "/assets/images",
     "./src/assets/icons": "/assets/icons",
+    "./src/assets/js": "/assets/js",
   });
 
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
-  eleventyConfig.addWatchTarget("/src/assets/sass/");
   eleventyConfig.watchIgnores.add("src/assets/ogi/**/*");
 
   // Plugins

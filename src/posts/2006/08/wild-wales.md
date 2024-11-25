@@ -4,8 +4,8 @@ date: "2006-08-29"
 categories:
   - "writing"
 tags:
-- "cycling"
-- "event"
+  - "cycling"
+  - "event"
 slug: "wild-wales"
 ---
 
@@ -23,7 +23,7 @@ The first job was an hour drive to Bala, then a 20-minute wait to sign on. Final
 
 ![Photo sharing][image-2]
 
-So as we made our way down the road we were beginning to pass those slower riders who set off earlier. The road surface was good and I was feeling great, not too bad this I thought and we turned off the main road onto a B road. Over a few small humps, in Suffolk those would have been hills but not to what was waiting around the corner. As we cleared the lumps and bumps the field was panning out and there was not the huddle of riders until the next bend opened to a narrow tree covered track with two lines of near stationery cyclists on each side, oh yeah and the sign indicated a 17% incline. I instantly dropped a few gears and started the climb, the biggest problem and one I was not ready for was fighting for road space. People were walking, sitting in 'granny’ gears or just taking a breather. This meant you were forever switching sides, moving past and trying to make the most of the space available. The hill came out of the trees and I saw a space, being the hot headed Lance a like that I am I got fed up, turned round gave the closest rider the 'look’ and stepped up the pace. Back in the saddle and getting my pace sorted I started finding the space and making up some places. Two more switch-backs and false hopes of reaching the summit the road leveled out, looking across at the cloud covered mountain tops you realise you are at the top. The cyclist in front was talking to his friend saying that there was more of this to come, joining in the conversation I found out that at each stage there were at least two of these monster climbs, this one being one of the easier. Looking back I should have listened to Dave’s words more wisely.
+So as we made our way down the road we were beginning to pass those slower riders who set off earlier. The road surface was good and I was feeling great, not too bad this I thought and we turned off the main road onto a B road. Over a few small humps, in Suffolk those would have been hills but not to what was waiting around the corner. As we cleared the lumps and bumps the field was panning out and there was not the huddle of riders until the next bend opened to a narrow tree covered track with two lines of near stationery cyclists on each side, oh yeah and the sign indicated a 17% incline. I instantly dropped a few gears and started the climb, the biggest problem and one I was not ready for was fighting for road space. People were walking, sitting in 'granny’ gears or just taking a breather. This meant you were forever switching sides, moving past and trying to make the most of the space available. The hill came out of the trees and I saw a space, being the hot headed Lance a like that I am I got fed up, turned round gave the closest rider the 'look’ and stepped up the pace. Back in the saddle and getting my pace sorted I started finding the space and making up some places. Two more switch-backs and false hopes of reaching the summit the road levelled out, looking across at the cloud covered mountain tops you realise you are at the top. The cyclist in front was talking to his friend saying that there was more of this to come, joining in the conversation I found out that at each stage there were at least two of these monster climbs, this one being one of the easier. Looking back I should have listened to Dave’s words more wisely.
 
 ### More of the same
 
@@ -43,9 +43,7 @@ Yet after 10 miles there was nothing, a blinding decent; the best one of the day
 
 Dave was not wrong, it was the hardest riding I have ever done. Going so slow has never been so hard. But it was also a very rewarding ride. Knowing you have taken on a 17% mile long climb and seen the top is great to know, it is easy to see why the event just keeps on getting larger each year. If your interest in the event drop by the [web site][1] or give them a call but be warned you either need to be in good shape or have some serious gearing on your ride.
 
-[1]:	https://uk.geocities.com/wild_wales/index.htm
-
-[image-1]:	/images/227983731.jpg
-[image-2]:	/images/227983541.jpg
-[image-3]:	/images/227983393.jpg
-[image-4]:	/images/227982167.jpg
+[image-1]: /images/227983731.jpg
+[image-2]: /images/227983541.jpg
+[image-3]: /images/227983393.jpg
+[image-4]: /images/227982167.jpg
