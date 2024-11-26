@@ -1,22 +1,27 @@
+
+/**
+ * If a post is a `draft`, it is for dev mode only.
+ *
+ * @param {object} data Post data
+ * @param {boolean} [data.draft=false] Post draft status
+ * @returns {boolean}
+ */
+function devOnly(data) {
+  return Boolean(data.draft);
+}
+
 export default {
   eleventyComputed: {
     // Modify the permalink
     permalink: (data) => {
-      if (
-        process.env.NODE_ENV === "production" &&
-        (data.draft || data.page.date >= new Date())
-      ) {
+      if ( process.env.ELEVENTY_ENV === "production" && devOnly(data) ) {
         return false;
       }
       return `/${data.page.filePathStem.replace("/posts", "/")}/`;
     },
 
-    // Support for drafts
     eleventyExcludeFromCollections: (data) => {
-      if (
-        process.env.NODE_ENV === "production" &&
-        (data.draft || data.page.date >= new Date())
-      ) {
+      if ( process.env.ELEVENTY_ENV === "production" && devOnly(data) ) {
         return true;
       }
       return false;

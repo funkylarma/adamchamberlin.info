@@ -38,10 +38,6 @@ main {
             }
           }
 
-          // img[width] {
-          //   width: auto; /* Defer to max-width */
-          // }
-
           img[width][height] {
             height: auto; /* Preserve aspect ratio */
           }
@@ -60,6 +56,10 @@ main {
               a {
                 color: var(--main-color-primary);
                 text-decoration: none;
+
+                .draft {
+                  color: var(--main-color-secondary);
+                }
 
                 &:hover {
                   color: var(--main-color-tertiary);

@@ -40,6 +40,9 @@ eleventyComputed:
             <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}" class="post-link">
               {% if post.data.title %}
                 {{ post.data.title }}
+                {% if post.data.draft %}
+                 <span class="draft">- Draft</span>
+                {% endif %}
               {% else %}
                 <code>{{ post.url }}</code>
               {% endif %}
