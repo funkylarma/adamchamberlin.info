@@ -66,7 +66,7 @@
 <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}" />
 <meta property="og:type" content="article" />
 {% if tags %}
-<meta property="og:image" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
+<meta property="og:image" content="{{ metadata.url }}assets/ogi/{{ date | dateParse }}-{{ title | slugify }}.jpeg" />
 <meta property="og:image:secure_url" content="{{ metadata.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg" />
 {% else %}
 <meta property="og:image" content="{{ metadata.url }}assets/images/og.png" />

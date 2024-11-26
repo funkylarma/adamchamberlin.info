@@ -6,7 +6,7 @@ pagination:
   size: 1
   alias: preview
 permalinkBypassOutputDir: true
-permalink: "./src/assets/ogi/{{ preview.data.date }}-{{ preview.data.title | slugify }}.svg"
+permalink: "./src/assets/ogi/{{ preview.data.date | dateParse }}-{{ preview.data.title | slugify }}.svg"
 title: Social Image Preview
 ---
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>

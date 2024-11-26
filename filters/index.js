@@ -33,7 +33,7 @@ export default function (eleventyConfig) {
         return (
           title +
           " - an article posted by " +
-          metadata.title +
+          metadata.author +
           " on " +
           this.page.date.toDateString()
         );
@@ -81,6 +81,19 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("dateISO", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toISO();
+  });
+
+  eleventyConfig.addFilter("dateParse", (dateObj) => {
+    if (typeof dateObj !== "undefined") {
+      if (dateObj instanceof Date) {
+        return Date.parse(dateObj);
+      } else {
+        let date = new Date(dateObj);
+        return Date.parse(date);
+      }
+    } else {
+      return "not-set";
+    }
   });
 
   eleventyConfig.addFilter("timeReading", function (content) {

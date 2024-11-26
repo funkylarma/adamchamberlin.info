@@ -1,9 +1,16 @@
 ---
-Title: Stour Valley Path
-Date: 2025-09-15
-Draft: true
+title: Stour Valley Path
+date: 2023-09-15
+cover: "/images/IMG_1245.jpeg"
+categories:
+  - "writing"
+tags:
+  - "running"
+draft: true
 ---
+
 > You’ve got this. I love you. You can do it!
+
 These words sound in my head and bring me back down to earth, back to a field in Suffolk somewhere between Cavendish and Glemsford.
 My situation slowly comes into focus, I see a footpath with a couple of runners ahead, I’m running, and then it all comes flooding back. Today is the 12th of August, a day I have had circled in my diary for nearly twelve months. It is SVP100 day.
 

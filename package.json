@@ -12,7 +12,7 @@
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
     "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "prestart": "rm -rf ./_site/*",
+    "prestart": "rm -rf ./_site/* && rm -rf ./src/assets/ogi/*",
     "prebuild": "rm -rf ./_site/*"
   },
   "repository": {

@@ -1,13 +1,21 @@
 ---
-Title: Brighton Marathon
-Date: 2023-04-05
-Draft: true
+title: Brighton Marathon
+date: 2023-04-05
+categories:
+  - "writing"
+tags:
+  - "running"
+draft: true
 ---
 
 > What am I doing?
+
 > Why am I here?
+
 > Why am I running through an industrial estate on the first Sunday in April?
-When will this pain end?
+
+> When will this pain end?
+
 All these thoughts and many more are going through my head as I reach the final five miles of the 2023 Brighton Marathon.
 
 My mind drifts from the pounding of the concrete road in Hove and back to a conversation nearly 12 months prior and a flippant remark about signing up for the race. Again, the why's started flooding back?
