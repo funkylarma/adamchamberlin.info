@@ -13,7 +13,7 @@ export default {
   env: process.env.ELEVENTY_ENV,
   indexNow: indexNow,
   title: "Adam Chamberlin",
-  tagline: "The online playground of a digital cowboy and consummate athlete.",
+  tagline: "The online playground of Adam Chamberlin.",
   url: baseUrl,
   locale: "en-GB",
   language: "en",

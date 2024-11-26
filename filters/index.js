@@ -10,7 +10,7 @@ export default function (eleventyConfig) {
     title.trim();
     if (this.page.url) {
       if (this.page.url == "/" || this.page.url.includes("page")) {
-        title = metadata.title + " | " + metadata.tagline;
+        title = metadata.tagline;
       } else {
         title = title + " | " + metadata.title;
       }
@@ -23,8 +23,24 @@ export default function (eleventyConfig) {
     return tags.join(", ");
   });
 
-  eleventyConfig.addFilter("metaDescription", function (description) {
-    return description;
+  eleventyConfig.addFilter("metaDescription", function (title) {
+    if (this.page.url) {
+      if (this.page.url == "/" || this.page.url.includes("page")) {
+        return metadata.description;
+      }
+
+      if (/\d{4}\//.test(this.page.url)) {
+        return (
+          title +
+          " - an article posted by " +
+          metadata.title +
+          " on " +
+          this.page.date.toDateString()
+        );
+      }
+    }
+
+    return title + " | " + metadata.title;
   });
 
   eleventyConfig.addFilter("postExcerpt", function (post) {
@@ -68,7 +84,6 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("timeReading", function (content) {
-
     const minutes = Math.ceil(content.trim().split(/\s+/).length / 200);
 
     return `${minutes} min read`;
@@ -102,7 +117,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("jsmin", async (code) => {
     let minified = await minify(code);
-    if( minified.error ) {
+    if (minified.error) {
       console.log("Terser error: ", minified.error);
       return code;
     }

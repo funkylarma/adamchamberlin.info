@@ -69,7 +69,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("drafts", function (collection) {
     return collection
       .getAll()
-      .filter(item => item.data.draft)
+      .filter((item) => item.data.draft)
       .sort((a, b) => b.date - a.date);
   });
 
@@ -94,7 +94,7 @@ export default function (eleventyConfig) {
     collection.getAll().forEach((item) => {
       if (!item.data.tags) return;
       item.data.tags
-        .filter((tag) => !["posts", "all"].includes(tag))
+        .filter((tag) => !["post", "page", "all"].includes(tag))
         .forEach((tag) => {
           if (!tagsSet[tag]) {
             tagsSet[tag] = [];

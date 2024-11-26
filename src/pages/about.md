@@ -1,10 +1,11 @@
 ---
 title: "Hi, I'm Adam Chamberlin"
+kicker: "All about me"
 eleventyNavigation:
   key: About
   order: 2
 nav: "About"
-slug: "about"
+permalink: "about"
 ---
 
 ![My daughter running with me as I finish a 50k ultra](/images/IMG_0900.jpeg){.wide}{sizes="(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)"}

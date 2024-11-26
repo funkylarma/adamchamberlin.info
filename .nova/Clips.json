@@ -5,6 +5,10 @@
       "name" : "Blog Post",
       "scope" : "editor",
       "syntax" : "markdown"
+    },
+    {
+      "content" : "{.wide}{sizes=\"(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)\"}",
+      "name" : "Wide Image Attributes"
     }
   ]
 }

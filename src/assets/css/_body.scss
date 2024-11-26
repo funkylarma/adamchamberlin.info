@@ -1,5 +1,4 @@
 main {
-
   .post-list {
     width: 100%;
 
@@ -117,6 +116,11 @@ main {
               }
             }
           }
+
+          @media (max-width: 550px) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
         }
       }
     }
@@ -134,8 +138,6 @@ main {
       margin-right: auto;
       margin-bottom: 5rem;
 
-
-
       .eleventy-plugin-youtube-embed {
         margin-bottom: 2rem;
       }
@@ -143,7 +145,6 @@ main {
       h2,
       h3,
       h4 {
-
         font-weight: 500;
         margin-bottom: 1rem;
 
@@ -159,7 +160,6 @@ main {
     width: 100%;
 
     .page--content {
-
       .tag-list,
       .category-list,
       .archive-list {

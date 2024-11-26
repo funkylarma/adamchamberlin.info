@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
-    "start": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
+    "start": "cross-env ELEVENTY_ENV=development npm run watch:eleventy & npm run watch:sass",
+    "watch:eleventy": "npx @11ty/eleventy --serve --quiet",
+    "watch:sass": "sass --watch src/assets/css:_site/assets/css",
+    "build:sass": "sass src/assets/css:_site/assets/css",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
     "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
@@ -55,7 +58,5 @@
     "moment": "^2.30.1",
     "remove-markdown": "^0.5.5"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }

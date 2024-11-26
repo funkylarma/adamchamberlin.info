@@ -13,7 +13,7 @@
     <div class="container">
       <a href="#skip" class="visually-hidden">Skip to main content</a>
       <header class="mast-head">
-        {% include "partials/header.liquid" %}
+        {% include "partials/nav-header.liquid" %}
       </header><!-- .header -->
       <main id="#skip" data-input-path="{{ page.filePathStem }}">
         <section class="intro">
@@ -63,29 +63,9 @@
         </section><!-- .post-single -->
       </main>
       <footer class="mast-foot">
-        {% include "partials/footer.liquid" %}
+        {% include "partials/nav-footer.liquid" %}
       </footer><!-- .mast-foot -->
     </div><!-- .container -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org/",
-        "@type": "Person",
-        "name": "Adam Chamberlin",
-        "url": "https://adamchamberlin.info",
-        "image": "https://adamchamberlin.info/assets/images/headshot.jpeg",
-        "sameAs": [
-          "https://www.youtube.com/@funkylarma",
-          "https://www.linkedin.com/in/adam-chamberlin/",
-          "https://github.com/funkylarma",
-          "https://mastodon.social/@FunkyLarma"
-        ],
-        "jobTitle": "Head of Development",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Mackman Group"
-        }
-      }
-    </script>
-    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+    {% include "partials/footer.liquid" %}
   </body>
 </html>

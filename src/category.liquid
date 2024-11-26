@@ -6,9 +6,10 @@ pagination:
   alias: category
   generatePageOnEmptyData: true
 permalink: "category/{{ category | slugify }}/"
+noindex: true
 eleventyComputed:
   title: "Category: {{ category }}"
-  description: "Archive page for the {{ category }} category"
+  description: "Archive page for the '{{ category }}' category"
   tagline: These are all the posts listed under the category of "{{ category }}"
 ---
 <div class="archive-list">

@@ -1,0 +1,48 @@
+#cc-main {
+  .cm-wrapper {
+    .cm {
+      .cm__body {
+        .cm__texts {
+        }
+
+        .cm__btns {
+          .cm__btn[data-role="all"] {
+            background: var(--main-color-primary);
+          }
+
+          .cm__btn[data-role="necessary"] {
+            background: var(--main-color-secondary);
+          }
+        }
+      }
+    }
+  }
+  .pm-wrapper {
+    .pm {
+      .pm__header {
+      }
+
+      .pm__body {
+        .pm__section--toggle {
+          .section__toggle-wrapper {
+            // .toggle__icon-on {
+            //   background: var(--main-color-primary);
+            // }
+          }
+        }
+      }
+
+      .pm__footer {
+        .pm__btn-group {
+          .pm__btn[data-role="all"] {
+            background: var(--main-color-primary);
+          }
+
+          .pm__btn[data-role="necessary"] {
+            background: var(--main-color-secondary);
+          }
+        }
+      }
+    }
+  }
+}

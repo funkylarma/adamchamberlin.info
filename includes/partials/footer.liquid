@@ -1,64 +1,54 @@
-<div class="content">
-  <nav class="footer">
-    <menu class="navigation-footer">
-      {% for item in metadata.navigation_footer %}
-        <li class="nav-bar--item {% if item.class %}{{ item.class }}{% endif %}">
-          <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
-            {{ item.label }}
-          </a>
-        </li>
-      {% endfor %}
-    </menu><!-- .nav-bar -->
-    <div class="theme" hidden="">
-      <fieldset id="theme-picker">
-        <legend>Theme:</legend>
-        <label>
-          <input name="theme" type="radio" value="auto" checked>
-          Auto
-        </label>
-        <label>
-          <input name="theme" type="radio" value="light">
-          Light
-        </label>
-        <label>
-          <input name="theme" type="radio" value="dark">
-          Dark
-        </label>
-      </fieldset>
-    </div><!-- .themes -->
-    <script>
-      {% capture jsfoot %}
-        document.addEventListener('DOMContentLoaded', () => {
-          // Use JS to display the theme selector
-          //document.querySelector('.themes').removeAttribute('hidden');
-          // Get the theme selector element or break
-          const themePicker = document.getElementById('theme-picker');
-          if (!themePicker) return;
-          // Listen for change to sync localStorage and data- attribute
-          themePicker.addEventListener('change', (e) => {
-            const theme = e.target.value;
-            if (theme === Theme.AUTO) {
-              // Remove JS-set theme so the CSS :not([data-theme]) selectors kick in
-              delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
-              localStorage.removeItem(THEME_STORAGE_KEY);
-            } else {
-              THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
-              localStorage.setItem(THEME_STORAGE_KEY, theme);
-            }
-          });
-          // Sync picker's selected state to reflect initial theme
-          const initialTheme = cachedTheme ?? Theme.AUTO;
-          themePicker.querySelector('input[checked]').removeAttribute('checked');
-          themePicker.querySelector(`input[value="${initialTheme}"]`).setAttribute('checked', '');
-        });
-      {% endcapture %}
-      {% if metadata.env == "production" %}
-      {{ jsfoot | jsmin }}
-      {% else %}
-      {{ jsfoot }}
-      {% endif %}
-    </script>
-  </nav>
-  {% include "partials/social.liquid" %}
-  <div class="copyright">Adam Chamberlin - 2005-2024</div>
-</div><!-- .content -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "Adam Chamberlin",
+    "url": "https://adamchamberlin.info",
+    "image": "https://adamchamberlin.info/assets/images/headshot.jpeg",
+    "sameAs": [
+      "https://www.youtube.com/@funkylarma",
+      "https://www.linkedin.com/in/adam-chamberlin/",
+      "https://github.com/funkylarma",
+      "https://mastodon.social/@FunkyLarma"
+    ],
+    "jobTitle": "Head of Development",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Mackman Group"
+    }
+  }
+</script>
+<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+<script>
+  {% capture jsfoot %}
+    document.addEventListener('DOMContentLoaded', () => {
+      // Use JS to display the theme selector
+      //document.querySelector('.themes').removeAttribute('hidden');
+      // Get the theme selector element or break
+      const themePicker = document.getElementById('theme-picker');
+      if (!themePicker) return;
+      // Listen for change to sync localStorage and data- attribute
+      themePicker.addEventListener('change', (e) => {
+        const theme = e.target.value;
+        if (theme === 'auto') {
+          // Remove JS-set theme so the CSS :not([data-theme]) selectors kick in
+          delete document.documentElement.dataset['ac_theme'];
+          localStorage.removeItem('ac_theme');
+        } else {
+          document.documentElement.dataset['ac_theme'] = theme;
+          localStorage.setItem('ac_theme', theme);
+        }
+      });
+      // Sync picker's selected state to reflect initial theme
+      const initialTheme = cachedTheme ?? 'auto';
+      themePicker.querySelector('input[checked]').removeAttribute('checked');
+      themePicker.querySelector(`input[value="${initialTheme}"]`).setAttribute('checked', '');
+    });
+  {% endcapture %}
+  {% if metadata.env == "production" %}
+  {{ jsfoot | jsmin }}
+  {% else %}
+  {{ jsfoot }}
+  {% endif %}
+</script>
+<script async type="module" src="{{ '/assets/js/cookieconsent-config.js' | url }}"></script>

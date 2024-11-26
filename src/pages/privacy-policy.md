@@ -1,6 +1,7 @@
 ---
 title: "Privacy Policy"
-slug: "privacy-policy"
+kicker: "All the small print and legal stuff"
+permalink: "privacy-policy"
 ---
 
 ## Who am I?
