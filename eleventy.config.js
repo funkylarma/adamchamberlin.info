@@ -100,6 +100,7 @@ export default async function (eleventyConfig) {
     './src/assets/fonts': '/assets/fonts',
     './src/assets/images': '/assets/images',
     './src/assets/icons': '/assets/icons',
+    './src/assets/templates': '/assets/templates',
     './src/assets/js': '/assets/js',
   });
 

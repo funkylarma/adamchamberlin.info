@@ -3,7 +3,7 @@
     <img src="/assets/images/logo_dark.svg" alt="Site logo" width="64" height="43" eleventy:ignore />
   </figure>
   <nav class="nav" aria-label="primary">
-    <menu class="nav-bar">
+    <ul class="nav-bar">
     {% for item in metadata.navigation_primary %}
       <li class="nav-bar--item {% if item.class %}{{ item.class }}{% endif %}">
         <a class="nav-link" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
@@ -11,6 +11,6 @@
         </a>
       </li>
     {% endfor %}
-    </menu>
+    </ul>
   </nav>
 </div><!-- .content -->
