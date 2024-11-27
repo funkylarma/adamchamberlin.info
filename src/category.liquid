@@ -5,12 +5,11 @@ pagination:
   size: 1
   alias: category
   generatePageOnEmptyData: true
-permalink: "category/{{ category | slugify }}/"
-noindex: true
+permalink: '/category/{{ category | slugify }}/'
 eleventyComputed:
-  title: "Category: {{ category }}"
+  title: 'Category: {{ category }}'
   description: "Archive page for the '{{ category }}' category"
-  tagline: These are all the posts listed under the category of "{{ category }}"
+  tagline: 'These are all the posts listed under the category of "{{ category }}"'
 ---
 <div class="archive-list">
   <ul>
