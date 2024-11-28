@@ -1,6 +1,7 @@
 ---
 title: "Getting my racing fix"
-date: "2020-06-25"
+date: 2020-06-25
+description: A post about adapting to pandemic-era racing by turning to Zwift and online streaming for competitive cycling and community connection.
 categories:
   - "writing"
 tags:

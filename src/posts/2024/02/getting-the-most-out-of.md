@@ -1,6 +1,7 @@
 ---
 title: "Is technology getting the most out of me"
-date: "2024-02-14"
+date: 2024-02-14
+description: A post about how AI and coaching intersect in sports and life, reflecting on human relationships and the role of technology.
 categories:
   - "writing"
 tags:

@@ -1,11 +1,26 @@
 #cc-main {
   .cm-wrapper {
     .cm {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 1rem;
       .cm__body {
         .cm__texts {
         }
 
         .cm__btns {
+          .cm__btn {
+            border: none;
+            text-transform: uppercase;
+            font-size: var(--main-font-size-x-small);
+            font-weight: 400;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 1rem;
+          }
           .cm__btn[data-role="all"] {
             background: var(--main-color-primary);
           }
