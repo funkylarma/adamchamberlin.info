@@ -1,9 +1,10 @@
 ---
 title: "Crispy winter walk"
-date: "2022-12-10"
-categories: 
+date: 2022-12-10
+description: A post about capturing the beauty of a frosty winter walk with family, highlighting the joy of being outdoors together.
+categories:
   - "videography"
-tags: 
+tags:
   - "family"
   - "outside"
   - "walk"

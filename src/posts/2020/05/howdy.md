@@ -1,6 +1,7 @@
 ---
 title: "Howdy"
-date: "2020-05-25"
+date: 2020-05-25
+description: A post about rediscovering a long-dormant blog, reflecting on the evolution of blogging and personal growth over time.
 categories:
   - "writing"
 tags:

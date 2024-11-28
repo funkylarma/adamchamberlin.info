@@ -2,7 +2,7 @@
 title: Stour Valley Path
 date: 2023-09-15
 cover: "/images/IMG_1793.jpg"
-description: My second attempt at completing the SVP100, a 100km trail race following the Stour Valley Path from Newmarket to Brantham.
+description: A post about completing a 100km trail race, sharing personal challenges and lessons from the journey.
 summary: My second attempt at completing the SVP100, a 100km trail race following the Stour Valley Path from Newmarket to Brantham.
 categories:
   - "writing"

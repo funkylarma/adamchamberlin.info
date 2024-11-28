@@ -1,6 +1,7 @@
 ---
 title: "Is 2023 the year of the blog?"
-date: "2023-01-23"
+date: 2023-01-23
+description: A post about the resurgence of blogging, the evolution of platforms, and plans for a more controlled digital presence.
 categories:
   - "writing"
 tags:
