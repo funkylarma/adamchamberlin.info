@@ -14,5 +14,5 @@ It started with Amazon ‘accidentally’ putting the page live of their site, t
 
 I, for one, use Digital Photography Review as my source of all things Photography based, so when I see it there I start believing. [Whoot!](https://www.dpreview.com/news/0708/07082010canoneos40d.asp)
 
-Given that I only upgraded the camera body in the past [six months](https://adamchamberlin.info/2007/03/camera-upgrade) am I excited or concerned?
+Given that I only upgraded the camera body in the past [six months](https://adamchamberlin.info/2007/03/camera-upgrade/) am I excited or concerned?
 To be honest, no, I have not even touched the surface of what the 30D can do for me and despite the spec’s of the 40D looking awesome I do not think I could do it justice just yet. But if you have a demo rig going spare I’ll happily test it out for you.

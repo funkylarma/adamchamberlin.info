@@ -14,7 +14,7 @@ When I look in System Preferences it now tells me I’ve been a .Mac member sinc
 
 ## Mail
 
-First off, I’m now using .Mac mail as it should be, using the magic that is IMAP I’ve moved all my mail over to Apple. Since my first [attempt](https://adamchamberlin.info/2006/11/mac-webmail-woes) at using .Mac webmail they have made some improvements, and it is now usable and my perfect ‘out of office’ doorway. Plus, with an iPhone, I am now totally connected at any time, yep Edge is not great, but just being able to sit in the garden and check your mail is worth it.
+First off, I’m now using .Mac mail as it should be, using the magic that is IMAP I’ve moved all my mail over to Apple. Since my first [attempt](https://adamchamberlin.info/2006/11/mac-webmail-woes/) at using .Mac webmail they have made some improvements, and it is now usable and my perfect ‘out of office’ doorway. Plus, with an iPhone, I am now totally connected at any time, yep Edge is not great, but just being able to sit in the garden and check your mail is worth it.
 
 ## iDisc
 
@@ -22,4 +22,4 @@ No more [box.net](https://www.box.com/en-gb/) for me, I’m a fully fledged iDis
 
 ## The iLife Extras
 
-Now you might think I will take this further with all the iLife/.Mac goodies. Sorry but no joy, I have no reason for sharing my iPhoto library; I’m [Flickr'ed](https://www.flickr.com/photos/funkylarma/) and that does everything I need for online photos. I do not use my camcorder nearly enough to want to share movies, I’ve not even fired up iMovie since installing iLife. iWeb is just nasty, besides, why would I want to mess with that when I have my domain and one of the most [powerful web editors](https://adamchamberlin.info/2007/04/panic-coda-alert) out there. So I will not be investing in Apple’s wholesome family fun filled sharing adventure idea. That said, though, for what it is worth, I will gladly continue to pay for the service; now I can see the full picture. It has taken a few years, but I’m glad I kept forgetting to cancel the 'auto renew’ option.
+Now you might think I will take this further with all the iLife/.Mac goodies. Sorry but no joy, I have no reason for sharing my iPhoto library; I’m [Flickr'ed](https://www.flickr.com/photos/funkylarma/) and that does everything I need for online photos. I do not use my camcorder nearly enough to want to share movies, I’ve not even fired up iMovie since installing iLife. iWeb is just nasty, besides, why would I want to mess with that when I have my domain and one of the most [powerful web editors](https://adamchamberlin.info/2007/04/panic-coda-alert/) out there. So I will not be investing in Apple’s wholesome family fun filled sharing adventure idea. That said, though, for what it is worth, I will gladly continue to pay for the service; now I can see the full picture. It has taken a few years, but I’m glad I kept forgetting to cancel the 'auto renew’ option.

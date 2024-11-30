@@ -10,7 +10,7 @@ slug: "the-support-is-rolling-in"
 
 ![BHF](/images/147476869.jpg)
 
-Yesterday morning, everything went a bit blurry as the realisation suddenly hit that, this time in three weeks, I will be well on my way into the first day of the [End 2 End challenge](https://adamchamberlin.info/tagged/end2end).
+Yesterday morning, everything went a bit blurry as the realisation suddenly hit that, this time in three weeks, I will be well on my way into the first day of the [End 2 End challenge](https://adamchamberlin.info/tagged/end2end/).
 
 I am currently in a state of fear about the journey, there is this massive black cloud of “will I make it” looming over my head. Added to this that at present sponsorship money is rolling in only adds to the commitment of making sure it’s a success.
 
