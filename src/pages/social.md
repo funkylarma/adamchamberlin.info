@@ -4,7 +4,7 @@ kicker: "Time to get in contact"
 eleventyNavigation:
   key: Social
   order: 3
-slug: "social"
+slug: "/social/"
 ---
 
 Over the years I have had various contact forms and social networking handles, all I have learnt is that they serve to generate more email or internet mental chatter.{.h3}
