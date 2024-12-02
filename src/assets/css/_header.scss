@@ -1,8 +1,19 @@
-
 .container {
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
+
+  .skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+  }
+
+  /* Show keyboard focus */
+  .skip-link:focus-visible {
+    transform: translateY(0%);
+  }
 }
 
 header {
@@ -329,4 +340,3 @@ header {
     }
   }
 }
-

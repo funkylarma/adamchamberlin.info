@@ -11,11 +11,11 @@
     <!-- End Google Tag Manager (noscript) -->
     {% endif %}
     <div class="container">
-      <a href="#skip" class="visually-hidden">Skip to main content</a>
+      <a href="#skip" class="skip-link">Skip to main content</a>
       <header class="mast-head">
         {% include "partials/nav-header.liquid" %}
       </header><!-- .header -->
-      <main id="#skip" data-input-path="{{ page.filePathStem }}">
+      <main id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
         <section class="intro">
           <div class="intro--content">
             <h1 class="page-title">{{ title }}</h1>

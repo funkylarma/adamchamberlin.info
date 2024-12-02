@@ -5,8 +5,8 @@ import removeMarkdown from "remove-markdown";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import { minify } from "terser";
 
-export default function (eleventyConfig) {
-  eleventyConfig.addFilter("metaTitle", function (title) {
+export default {
+  metaTitle: function (title) {
     title.trim();
     if (this.page.url) {
       if (this.page.url == "/" || this.page.url.includes("page")) {
@@ -17,13 +17,13 @@ export default function (eleventyConfig) {
     }
 
     return title;
-  });
+  },
 
-  eleventyConfig.addFilter("metaKeywords", function (tags) {
+  metaKeywords: function (tags) {
     return tags.join(", ");
-  });
+  },
 
-  eleventyConfig.addFilter("metaDescription", function (title) {
+  metaDescription: function (title) {
     if (this.page.url) {
       if (this.page.url == "/" || this.page.url.includes("page")) {
         return metadata.description;
@@ -41,14 +41,14 @@ export default function (eleventyConfig) {
     }
 
     return title + " | " + metadata.title;
-  });
+  },
 
-  eleventyConfig.addFilter("postExcerpt", function (post) {
+  postExcerpt: function (post) {
     const content = post.replace(/(<([^>]+)>)/gi, "");
     return content.substr(0, content.lastIndexOf(" ", 400)) + "...";
-  });
+  },
 
-  eleventyConfig.addFilter("splitLines", function (input) {
+  splitLines: function (input) {
     const parts = input.split(" ");
     const lines = parts.reduce(function (prev, current) {
       if (!prev.length) {
@@ -67,23 +67,23 @@ export default function (eleventyConfig) {
     }, []);
 
     return lines;
-  });
+  },
 
-  eleventyConfig.addFilter("dateReadable", (dateObj, format, zone) => {
+  dateReadable: function (dateObj, format, zone) {
     return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
       format || "dd LLLL yyyy"
     );
-  });
+  },
 
-  eleventyConfig.addFilter("dateHtmlString", (dateObj) => {
+  dateHtmlString: function (dateObj) {
     return DateTime.fromJSDate(dateObj, "utc").toFormat("yyyy-LL-dd");
-  });
+  },
 
-  eleventyConfig.addFilter("dateISO", (dateObj) => {
+  dateISO: function (dateObj) {
     return DateTime.fromJSDate(dateObj).toISO();
-  });
+  },
 
-  eleventyConfig.addFilter("dateParse", (dateObj) => {
+  dateParse: function (dateObj) {
     if (typeof dateObj !== "undefined") {
       if (dateObj instanceof Date) {
         return Date.parse(dateObj);
@@ -94,19 +94,19 @@ export default function (eleventyConfig) {
     } else {
       return "not-set";
     }
-  });
+  },
 
-  eleventyConfig.addFilter("timeReading", function (content) {
+  timeReading: function (content) {
     const minutes = Math.ceil(content.trim().split(/\s+/).length / 200);
 
     return `${minutes} min read`;
-  });
+  },
 
-  eleventyConfig.addFilter("absoluteUrl", (url) => {
+  absoluteUrl: function (url) {
     return new URL(url, metadata.url).href;
-  });
+  },
 
-  eleventyConfig.addFilter("absoluteImageUrl", async (src, width = null) => {
+  absoluteImageUrl: async function (src, width = null) {
     const imageOptions = {
       // We only need the original width and format
       widths: [width],
@@ -119,29 +119,29 @@ export default function (eleventyConfig) {
     const stats = await Image(src, imageOptions);
     const imageUrl = Object.values(stats)[0][0].url;
     return absoluteUrl(imageUrl);
-  });
+  },
 
-  eleventyConfig.addFilter("fileHash", (url) => {
+  fileHash: function (url) {
     const [urlPart, paramPart] = url.split("?");
     const params = new URLSearchParams(paramPart || "");
     params.set("v", DateTime.local().toFormat("X"));
     return `${urlPart}?${params}`;
-  });
+  },
 
-  eleventyConfig.addFilter("jsmin", async (code) => {
+  jsmin: async function (code) {
     let minified = await minify(code);
     if (minified.error) {
       console.log("Terser error: ", minified.error);
       return code;
     }
     return minified.code;
-  });
+  },
 
-  // Template filters
-  eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
-
-  eleventyConfig.addLiquidFilter(
-    "getNewestCollectionItemDate",
-    pluginRss.getNewestCollectionItemDate
-  );
-}
+  //   // Template filters
+  //   eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
+  //
+  //   eleventyConfig.addLiquidFilter(
+  //     "getNewestCollectionItemDate",
+  //     pluginRss.getNewestCollectionItemDate
+  //   );
+};

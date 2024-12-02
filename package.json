@@ -55,7 +55,6 @@
     "writing-stats": "^1.0.6",
     "@11ty/eleventy-img": "^5.0.0",
     "eleventy-plugin-redirects": "^1.0.0",
-    "eleventy-plugin-youtube-embed": "^1.11.0",
     "moment": "^2.30.1",
     "remove-markdown": "^0.5.5"
   },

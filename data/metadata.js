@@ -15,6 +15,7 @@ export default {
   title: "Adam Chamberlin",
   tagline: "The online playground of Adam Chamberlin.",
   url: baseUrl,
+  repo: "https://github.com/funkylarma/adamchamberlin.info",
   locale: "en-GB",
   language: "en",
   description:
