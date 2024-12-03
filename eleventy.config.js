@@ -6,10 +6,6 @@ dotenv.config();
 // Web imports
 import * as sass from "sass";
 import htmlmin from "html-minifier";
-import { minify } from "terser";
-import browserslist from "browserslist";
-import { transform, browserslistToTargets } from "lightningcss";
-
 // 11ty Imports
 import {
   HtmlBasePlugin as pluginHtmlBase,
@@ -30,6 +26,7 @@ import filters from "./utils/filters.js";
 import shortcodes from "./utils/shortcodes.js";
 import transforms from "./utils/transforms.js";
 import { markdown } from "./utils/markdown.js";
+import viteHelpers from "./utils/vite.js";
 
 // Environmental
 const isDev = process.env.ELEVENTY_ENV === "development";
@@ -43,53 +40,6 @@ export default async function (eleventyConfig) {
     dynamicPartials: true,
   });
 
-  eleventyConfig.addBundle("css", {
-    outputFileExtension: "css",
-  });
-
-  // Add sass/scss support
-  eleventyConfig.addTemplateFormats("scss");
-  eleventyConfig.addExtension("scss", {
-    outputFileExtension: "css",
-    compile: async function (inputContent, inputPath) {
-      let parsed = path.parse(inputPath);
-      if (parsed.name.startsWith("_")) {
-        return;
-      }
-
-      let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
-
-      if (isProd) {
-        let result = sass.compileString(inputContent, {
-          loadPaths: [parsed.dir],
-          sourceMap: true,
-        });
-
-        return async () => {
-          let { code } = await transform({
-            code: Buffer.from(result.css),
-            minify: isProd,
-            sourceMap: true,
-            targets,
-          });
-          return code;
-        };
-      }
-
-      if (isDev) {
-        return async (data) => {
-          let result = sass.compileString(inputContent, {
-            loadPaths: [parsed.dir],
-            sourceMap: true,
-            minify: isProd,
-            targets,
-          });
-          return result.css;
-        };
-      }
-    },
-  });
-
   // Pass-through copy for static assets
   eleventyConfig.addPassthroughCopy({
     "./src/assets/fonts": "/assets/fonts",
@@ -99,7 +49,7 @@ export default async function (eleventyConfig) {
   });
 
   // Watch content images for the image pipeline.
-  eleventyConfig.addWatchTarget("./src/**/*.{svg,webp,png,jpeg}");
+  eleventyConfig.addWatchTarget("./src/assets/images/*.{svg,webp,png,jpeg}");
   eleventyConfig.watchIgnores.add("./src/assets/ogi/**/*");
 
   // Plugins
@@ -135,6 +85,14 @@ export default async function (eleventyConfig) {
     eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName]);
   });
 
+  // Vite Shortcodes
+  Object.keys(viteHelpers).forEach((shortcodeName) => {
+    eleventyConfig.addLiquidShortcode(
+      shortcodeName,
+      viteHelpers[shortcodeName]
+    );
+  });
+
   // Filters
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName]);
@@ -145,6 +103,7 @@ export default async function (eleventyConfig) {
     eleventyConfig.addCollection(collectionName, collections[collectionName]);
   });
 
+  // Transforms
   Object.keys(transforms).forEach((transformName) => {
     eleventyConfig.addTransform(transformName, transforms[transformName]);
   });
@@ -155,7 +114,7 @@ export default async function (eleventyConfig) {
   // Base config
   return {
     // Control which files Eleventy will process
-    templateFormats: ["md", "njk", "html", "liquid", "scss", "js"],
+    templateFormats: ["md", "njk", "html", "liquid"],
 
     // Inputs and outputs:
     dir: {

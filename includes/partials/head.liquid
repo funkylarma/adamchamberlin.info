@@ -5,29 +5,20 @@
 <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
 
 {% if metadata.env == "production" %}
-  <!-- Inlined critical styles -->
-  {% css %}
-  {% renderFile "./src/assets/css/critical.scss" %}
-  {% endcss %}
-  <style>{% getBundle "css" %}</style>
   <!-- Preloads -->
   <link rel="preload" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ '/assets/css/screen.css' | url | fileHash }}" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
   <!-- Preconnects -->
   <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="anonymous">
   <!-- Prefetch -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com/">
   <!-- Non-critical styles -->
-  <link rel="stylesheet" href="/assets/css/screen.css" media="all" onload="this.media='all'" fetchpriority="low">
+  {% viteLinkStylesheetTags %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" media="all" onload="this.media='all'" fetchpriority="low">
   <noscript>
-  <link rel="stylesheet" href="{{ '/assets/css/screen.css' | url | fileHash }}" fetchpriority="low">
+  {% viteLinkStylesheetTags %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" fetchpriority="low">
   </noscript>
-{% else %}
-  <link rel="stylesheet" href="/assets/css/screen.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 {% endif %}
 
 <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
@@ -97,17 +88,10 @@
 
 <!-- Used to add dark mode right away, adding here prevents any flicker -->
 <script>
-  {% capture jshead %}
   const cachedTheme = localStorage.getItem('ac_theme');
   if (cachedTheme) {
     document.documentElement.dataset['ac_theme'] = cachedTheme;
   }
-  {% endcapture %}
-  {% if metadata.env == "production" %}
-    {{ jshead | jsmin }}
-  {% else %}
-    {{ jshead }}
-  {% endif %}
 </script>
 
 {% if metadata.env == "production" %}

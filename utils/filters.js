@@ -3,7 +3,6 @@ import Image from "@11ty/eleventy-img";
 import metadata from "../data/metadata.js";
 import removeMarkdown from "remove-markdown";
 import pluginRss from "@11ty/eleventy-plugin-rss";
-import { minify } from "terser";
 
 export default {
   metaTitle: function (title) {
@@ -126,15 +125,6 @@ export default {
     const params = new URLSearchParams(paramPart || "");
     params.set("v", DateTime.local().toFormat("X"));
     return `${urlPart}?${params}`;
-  },
-
-  jsmin: async function (code) {
-    let minified = await minify(code);
-    if (minified.error) {
-      console.log("Terser error: ", minified.error);
-      return code;
-    }
-    return minified.code;
   },
 
   //   // Template filters

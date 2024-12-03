@@ -7,12 +7,14 @@ export default {
         let minified = htmlmin.minify(content, {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
-          removeComments: true,
-          sortClassName: true,
-          sortAttributes: true,
-          html5: true,
           decodeEntities: true,
+          html5: true,
+          minifyCSS: true,
+          minifyJS: true,
+          removeComments: true,
           removeOptionalTags: true,
+          sortAttributes: true,
+          sortClassName: true,
         });
         return minified;
       }
