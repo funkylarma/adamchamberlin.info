@@ -6,13 +6,13 @@ dotenv.config();
 // Web imports
 import * as sass from "sass";
 import htmlmin from "html-minifier";
+
 // 11ty Imports
 import {
   HtmlBasePlugin as pluginHtmlBase,
   EleventyRenderPlugin as pluginEleventyRender,
 } from "@11ty/eleventy";
 import pluginRss from "@11ty/eleventy-plugin-rss";
-import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin as pluginImageTransform } from "@11ty/eleventy-img";
 
@@ -31,6 +31,9 @@ import viteHelpers from "./utils/vite.js";
 // Environmental
 const isDev = process.env.ELEVENTY_ENV === "development";
 const isProd = process.env.ELEVENTY_ENV === "production";
+const INPUT_DIR = "src"
+const OUTPUT_DIR = "_site"
+const PATH_PREFIX = "/"
 
 export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData("env", process.env);
@@ -116,13 +119,15 @@ export default async function (eleventyConfig) {
     // Control which files Eleventy will process
     templateFormats: ["md", "njk", "html", "liquid"],
 
+    pathPrefix: PATH_PREFIX,
+    passthroughFileCopy: true,
+
     // Inputs and outputs:
     dir: {
-      input: "./src", // default: '.'
-      includes: "../includes", // default: '_includes'
-      data: "../data", // default: '_data'
-      output: "_site",
+      input: INPUT_DIR,
+      includes: "../includes",
+      data: "../data",
+      output: OUTPUT_DIR,
     },
-    pathPrefix: "/",
   };
 }

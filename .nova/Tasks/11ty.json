@@ -1,29 +1,16 @@
 {
   "actions" : {
     "build" : {
-      "postActions" : [
-        {
-          "script" : "npm run build",
-          "type" : "runScript"
-        }
-      ]
+      "enabled" : true,
+      "script" : "npm run build"
     },
     "clean" : {
-      "postActions" : [
-        {
-          "script" : "npm run clean",
-          "type" : "runScript"
-        }
-      ]
+      "enabled" : true,
+      "script" : "npm run clean"
     },
     "run" : {
-      "postActions" : [
-        {
-          "script" : "npm run start",
-          "type" : "runScript"
-        }
-      ]
+      "enabled" : true,
+      "script" : "npm run start"
     }
-  },
-  "buildBeforeRunning" : true
+  }
 }

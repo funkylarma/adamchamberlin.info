@@ -15,6 +15,10 @@
 
   img:not([src*=".svg"]) {
     filter: var(--main-image-filter);
+
+    &:hover {
+      filter: none;
+    }
   }
 
   .post-list {

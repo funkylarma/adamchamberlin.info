@@ -1,4 +1,3 @@
-import fs from "node:fs";
 import Image from "@11ty/eleventy-img";
 
 export default {
@@ -30,9 +29,5 @@ export default {
 
   year: function () {
     return `${new Date().getFullYear()}`;
-  },
-
-  getCritical: function () {
-    return fs.readFileSync(`/assets/css/critical.css`);
   },
 };
