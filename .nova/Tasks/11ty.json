@@ -11,7 +11,7 @@
     "clean" : {
       "postActions" : [
         {
-          "script" : "npm run prestart",
+          "script" : "npm run clean",
           "type" : "runScript"
         }
       ]

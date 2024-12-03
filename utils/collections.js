@@ -65,15 +65,15 @@ function makeYearStats(
   };
 }
 
-export default function (eleventyConfig) {
-  eleventyConfig.addCollection("drafts", function (collection) {
+export default {
+  drafts: function (collection) {
     return collection
       .getAll()
       .filter((item) => item.data.draft)
       .sort((a, b) => b.date - a.date);
-  });
+  },
 
-  eleventyConfig.addCollection("categoryList", (collection) => {
+  categoryList: function (collection) {
     let catSet = {};
     collection.getAll().forEach((item) => {
       if (!item.data.categories) return;
@@ -87,9 +87,9 @@ export default function (eleventyConfig) {
         });
     });
     return catSet;
-  });
+  },
 
-  eleventyConfig.addCollection("tagList", (collection) => {
+  tagList: function (collection) {
     const tagsSet = {};
     collection.getAll().forEach((item) => {
       if (!item.data.tags) return;
@@ -103,9 +103,9 @@ export default function (eleventyConfig) {
         });
     });
     return tagsSet;
-  });
+  },
 
-  eleventyConfig.addCollection("postsByYear", (collection) => {
+  postsByYear: function (collection) {
     const posts = collection.getFilteredByTag("post").reverse();
     const years = posts.map((post) => post.date.getFullYear());
     const uniqueYears = [...new Set(years)];
@@ -116,9 +116,9 @@ export default function (eleventyConfig) {
       return [...prev, [year, filteredPosts]];
     }, []);
     return postsByYear;
-  });
+  },
 
-  eleventyConfig.addCollection("postStats", (collectionApi) => {
+  postStats: function (collectionApi) {
     const oneDayMilliseconds = 1000 * 60 * 60 * 24;
     let avgDays = 0;
     let totalDays = 0;
@@ -255,5 +255,5 @@ export default function (eleventyConfig) {
     statsObject.highPostCount = highPostCount;
 
     return statsObject;
-  });
-}
+  },
+};

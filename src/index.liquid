@@ -113,7 +113,7 @@ eleventyComputed:
 
 <section class="pagination">
   <div class="pagination--content">
-    <nav class="post--pagination" aria-labelledby="post--pagination">
+    <nav id="post--pagination" class="post--pagination" aria-labelledby="post--pagination">
       <div class="previous-posts">
         {% if pagination.href.previous %}
           <a href="{{ pagination.href.previous }}" title="Head to the future">« Newer Posts</a>
