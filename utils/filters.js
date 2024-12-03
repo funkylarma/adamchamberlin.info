@@ -1,8 +1,5 @@
 import { DateTime } from "luxon";
-import Image from "@11ty/eleventy-img";
 import metadata from "../data/metadata.js";
-import removeMarkdown from "remove-markdown";
-import pluginRss from "@11ty/eleventy-plugin-rss";
 
 export default {
   metaTitle: function (title) {
@@ -31,9 +28,7 @@ export default {
       if (/\d{4}\//.test(this.page.url)) {
         return (
           title +
-          " - an article posted by " +
-          metadata.author +
-          " on " +
+          " - an article posted by Adam Chamberlin on " +
           this.page.date.toDateString()
         );
       }
@@ -105,33 +100,10 @@ export default {
     return new URL(url, metadata.url).href;
   },
 
-  absoluteImageUrl: async function (src, width = null) {
-    const imageOptions = {
-      // We only need the original width and format
-      widths: [width],
-      formats: [null],
-      // Where the generated image files get saved
-      outputDir: "_site/images/",
-      // Public URL path that's referenced in the img tag's src attribute
-      urlPath: "./src/images",
-    };
-    const stats = await Image(src, imageOptions);
-    const imageUrl = Object.values(stats)[0][0].url;
-    return absoluteUrl(imageUrl);
-  },
-
   fileHash: function (url) {
     const [urlPart, paramPart] = url.split("?");
     const params = new URLSearchParams(paramPart || "");
     params.set("v", DateTime.local().toFormat("X"));
     return `${urlPart}?${params}`;
   },
-
-  //   // Template filters
-  //   eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
-  //
-  //   eleventyConfig.addLiquidFilter(
-  //     "getNewestCollectionItemDate",
-  //     pluginRss.getNewestCollectionItemDate
-  //   );
 };

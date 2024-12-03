@@ -9,3 +9,5 @@ import "./theme.js";
 
 // Cookie consent
 import "./cookie.js";
+
+import "./interactions.js"

@@ -7,7 +7,7 @@ const PATH_PREFIX = "/";
 
 const getAssetManifest = memoize(async function () {
   const manifest = await fs.readFile(
-    path.resolve(process.cwd(), "_site/.vite", "manifest.json")
+    path.resolve(process.cwd(), '_site/.vite', 'manifest.json')
   );
   return JSON.parse(manifest);
 });

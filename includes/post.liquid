@@ -1,15 +1,10 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
+  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
   <head>
     {% include "partials/head.liquid" %}
   </head>
   <body>
-    {% if metadata.env == "production" %}
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    {% endif %}
     <div class="container">
       <a href="#skip" class="skip-link">Skip to main content</a>
       <header class="mast-head">
@@ -66,6 +61,7 @@
         {% include "partials/nav-footer.liquid" %}
       </footer><!-- .mast-foot -->
     </div><!-- .container -->
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
     {% include "partials/footer.liquid" %}
   </body>
 </html>
