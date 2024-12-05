@@ -32,9 +32,11 @@ import viteHelpers from './utils/vite.js';
 // Environmental
 const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production';
-const INPUT_DIR = 'src'
-const OUTPUT_DIR = '_site'
-const PATH_PREFIX = '/'
+const INPUT_DIR = 'src';
+const OUTPUT_DIR = '_site';
+const DATA_DIR = 'data';
+const INCLUDES_DIR = 'includes';
+const PATH_PREFIX = '/';
 
 export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData('env', process.env);
@@ -85,7 +87,7 @@ export default async function (eleventyConfig) {
       js: {
         enabled: true,
         path: '/assets/js/lite-yt-embed.min.js',
-      }
+      },
     },
     modestBranding: true,
   });
@@ -142,8 +144,8 @@ export default async function (eleventyConfig) {
     // Inputs and outputs:
     dir: {
       input: INPUT_DIR,
-      includes: '../includes',
-      data: '../data',
+      includes: INCLUDES_DIR,
+      data: DATA_DIR,
       output: OUTPUT_DIR,
     },
   };

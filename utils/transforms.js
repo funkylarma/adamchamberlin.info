@@ -1,9 +1,9 @@
-import htmlmin from "html-minifier";
+import htmlmin from 'html-minifier';
 
 export default {
   htmlmin: function (content, outputPath) {
-    if (process.env.ELEVENTY_ENV === "production") {
-      if ((this.page.outputPath || "").endsWith(".html")) {
+    if (process.env.ELEVENTY_ENV === 'production') {
+      if ((this.page.outputPath || '').endsWith('.html')) {
         let minified = htmlmin.minify(content, {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,

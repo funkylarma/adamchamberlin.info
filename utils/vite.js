@@ -1,14 +1,12 @@
-import fs from "fs/promises";
-import path from "path";
-import memoize from "lodash/memoize.js";
+import fs from 'fs/promises';
+import path from 'path';
+import memoize from 'lodash/memoize.js';
 
-const DEFAULT_ENTRY_FILE = "src/assets/js/main.js";
-const PATH_PREFIX = "/";
+const DEFAULT_ENTRY_FILE = 'src/assets/js/main.js';
+const PATH_PREFIX = '/';
 
 const getAssetManifest = memoize(async function () {
-  const manifest = await fs.readFile(
-    path.resolve(process.cwd(), '_site/.vite', 'manifest.json')
-  );
+  const manifest = await fs.readFile(path.resolve(process.cwd(), '_site/.vite', 'manifest.json'));
   return JSON.parse(manifest);
 });
 
@@ -16,9 +14,7 @@ async function getChunkInformationFor(entryFilename) {
   // We want an entryFilename, because in practice you might have multiple entrypoints
   // This is similar to how you specify an entry in development more
   if (!entryFilename) {
-    throw new Error(
-      "You must specify an entryFilename, so that vite-script can find the correct file."
-    );
+    throw new Error('You must specify an entryFilename, so that vite-script can find the correct file.');
   }
 
   const manifest = await getAssetManifest();
@@ -48,7 +44,7 @@ async function viteLinkStylesheetTags(entryFilename) {
   const entryChunk = await getChunkInformationFor(entryFile);
   if (!entryChunk.css || entryChunk.css.length === 0) {
     console.warn(`No css found for ${entryFilename} entry. Is that correct?`);
-    return "";
+    return '';
   }
   /* There can be multiple CSS files per entry, so assume many by default */
   return entryChunk.css
@@ -56,7 +52,7 @@ async function viteLinkStylesheetTags(entryFilename) {
       (cssFile) =>
         `<link rel="stylesheet" href="${PATH_PREFIX}${cssFile}" media="all" onload="this.media='all'" fetchpriority="low">`
     )
-    .join("\n");
+    .join('\n');
 }
 
 async function viteLegacyScriptTag(entryFilename) {

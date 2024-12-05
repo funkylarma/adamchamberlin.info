@@ -1,18 +1,18 @@
-import fs from "node:fs";
-import writingStats from "writing-stats";
-import moment from "moment";
+import fs from 'node:fs';
+import writingStats from 'writing-stats';
+import moment from 'moment';
 
 function processPostFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, "utf8");
+    let content = fs.readFileSync(filePath, 'utf8');
     // remove front matter
-    content = content.replace(/---\n.*?\n---/s, "");
+    content = content.replace(/---\n.*?\n---/s, '');
     // remove empty lines
-    content = content.replace(/^\s*[\r\n]/gm, "");
+    content = content.replace(/^\s*[\r\n]/gm, '');
     const codeBlockMatches = content.match(/```(.*?)```/gis);
     const codeBlocks = codeBlockMatches ? codeBlockMatches.length : 0;
     // remove code blocks
-    content = content.replace(/(```.+?```)/gms, "");
+    content = content.replace(/(```.+?```)/gms, '');
     const stats = writingStats(content);
     return {
       characterCount: stats.characterCount,
@@ -40,10 +40,7 @@ function makeYearStats(
   yearCharacterCount,
   yearParagraphCount
 ) {
-  const daysInYear =
-    (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0
-      ? 366
-      : 365;
+  const daysInYear = (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0 ? 366 : 365;
 
   return {
     year: currentYear,
@@ -52,15 +49,9 @@ function makeYearStats(
     wordCount: yearWordCount,
     codeBlockCount: yearCodeBlockCount,
     avgDays: parseFloat(avgDays.toFixed(2)),
-    avgCharacterCount: parseFloat(
-      (yearCharacterCount / yearPostCount).toFixed(2)
-    ),
-    avgCodeBlockCount: parseFloat(
-      (yearCodeBlockCount / yearPostCount).toFixed(2)
-    ),
-    avgParagraphCount: parseFloat(
-      (yearParagraphCount / yearPostCount).toFixed(2)
-    ),
+    avgCharacterCount: parseFloat((yearCharacterCount / yearPostCount).toFixed(2)),
+    avgCodeBlockCount: parseFloat((yearCodeBlockCount / yearPostCount).toFixed(2)),
+    avgParagraphCount: parseFloat((yearParagraphCount / yearPostCount).toFixed(2)),
     avgWordCount: parseFloat((yearWordCount / yearPostCount).toFixed(2)),
   };
 }
@@ -78,7 +69,7 @@ export default {
     collection.getAll().forEach((item) => {
       if (!item.data.categories) return;
       item.data.categories
-        .filter((cat) => !["posts", "all"].includes(cat))
+        .filter((cat) => !['posts', 'all'].includes(cat))
         .forEach((cat) => {
           if (!catSet[cat]) {
             catSet[cat] = [];
@@ -94,7 +85,7 @@ export default {
     collection.getAll().forEach((item) => {
       if (!item.data.tags) return;
       item.data.tags
-        .filter((tag) => !["post", "page", "all"].includes(tag))
+        .filter((tag) => !['post', 'page', 'all'].includes(tag))
         .forEach((tag) => {
           if (!tagsSet[tag]) {
             tagsSet[tag] = [];
@@ -106,13 +97,11 @@ export default {
   },
 
   postsByYear: function (collection) {
-    const posts = collection.getFilteredByTag("post").reverse();
+    const posts = collection.getFilteredByTag('post').reverse();
     const years = posts.map((post) => post.date.getFullYear());
     const uniqueYears = [...new Set(years)];
     const postsByYear = uniqueYears.reduce((prev, year) => {
-      const filteredPosts = posts.filter(
-        (post) => post.date.getFullYear() === year
-      );
+      const filteredPosts = posts.filter((post) => post.date.getFullYear() === year);
       return [...prev, [year, filteredPosts]];
     }, []);
     return postsByYear;
@@ -152,12 +141,12 @@ export default {
       postsByDay: {},
     };
 
-    const posts = collectionApi.getFilteredByTag("post").sort((a, b) => {
+    const posts = collectionApi.getFilteredByTag('post').sort((a, b) => {
       return a.date - b.date;
     });
     let postCount = posts.length;
     if (postCount < 1) {
-      log.info(`No articles found for tag(s): ${tags.join(", ")}`);
+      log.info(`No articles found for tag(s): ${tags.join(', ')}`);
       // return the empty stats object
       return statsObject;
     }
@@ -171,9 +160,7 @@ export default {
 
     for (let post of posts) {
       let postDate = post.data.page.date;
-      let dateIndexKey = `${moment(postDate).year()}-${moment(
-        postDate
-      ).dayOfYear()}`;
+      let dateIndexKey = `${moment(postDate).year()}-${moment(postDate).dayOfYear()}`;
 
       if (!statsObject.postsByDay[dateIndexKey]) {
         statsObject.postsByDay[dateIndexKey] = 0;
@@ -238,18 +225,10 @@ export default {
       );
     }
     statsObject.avgDays = parseFloat((totalDays / totalPostCount).toFixed(2));
-    statsObject.avgCharacterCount = parseFloat(
-      (totalCharacterCount / totalPostCount).toFixed(2)
-    );
-    statsObject.avgCodeBlockCount = parseFloat(
-      (totalCodeBlockCount / totalPostCount).toFixed(2)
-    );
-    statsObject.avgParagraphCount = parseFloat(
-      (totalParagraphCount / totalPostCount).toFixed(2)
-    );
-    statsObject.avgWordCount = parseFloat(
-      (totalWordCount / totalPostCount).toFixed(2)
-    );
+    statsObject.avgCharacterCount = parseFloat((totalCharacterCount / totalPostCount).toFixed(2));
+    statsObject.avgCodeBlockCount = parseFloat((totalCodeBlockCount / totalPostCount).toFixed(2));
+    statsObject.avgParagraphCount = parseFloat((totalParagraphCount / totalPostCount).toFixed(2));
+    statsObject.avgWordCount = parseFloat((totalWordCount / totalPostCount).toFixed(2));
     statsObject.totalWordCount = totalWordCount;
     statsObject.totalCodeBlockCount = totalCodeBlockCount;
     statsObject.highPostCount = highPostCount;
