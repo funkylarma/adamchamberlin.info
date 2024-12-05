@@ -1,13 +1,11 @@
 // Import the main stylesheet
 import "../css/screen.scss";
 
-// Focus Visible Polyfill
-import "focus-visible";
+// Cookie consent
+import "./includes/cookie.js";
 
 // Theme
-import "./theme.js";
+import "./includes/theme.js";
 
-// Cookie consent
-import "./cookie.js";
-
-import "./interactions.js"
+// Page Interactions
+import "./includes/interactions.js"
