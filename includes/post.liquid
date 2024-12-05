@@ -56,6 +56,26 @@
             {{ content }}
           </div><!-- .post--content -->
         </section><!-- .post-single -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | absoluteUrl }}"
+          },
+          "headline": "{{ title }}",
+          "description": "{{ summary }}",
+          "image": "{{ cover | absoluteUrl }}",
+          "author": {
+            "@type": "Person",
+            "name": "{{ metadata.author.name }}",
+            "url": "{{ metadata.url }}"
+          },
+          "datePublished": "{{ page.date | dateHtmlString }}"
+        }
+        </script>
+
       </main>
       <footer class="mast-foot">
         {% include "partials/nav-footer.liquid" %}

@@ -1,17 +1,17 @@
-@use "variables.scss";
+@use "includes/variables.scss";
 
-@use "reset.scss";
+@use "includes/reset.scss";
 
-@use "base.scss";
+@use "includes/base.scss";
 
-@use "typography.scss";
+@use "includes/typography.scss";
 
-@use "header.scss";
+@use "includes/header.scss";
 
-@use "body.scss";
+@use "includes/body.scss";
 
-@use "footer.scss";
+@use "includes/footer.scss";
 
-@use "themes.scss";
+@use "includes/themes.scss";
 
-@use "cookie.scss";
+@use "includes/cookie.scss";

@@ -23,32 +23,6 @@ export default defineConfig({
         chunkFileNames: 'assets/js/[name].[hash].js',
         entryFileNames: 'assets/js/[name].[hash].js',
       },
-      plugins: [rollupPluginCritical({
-          criticalUrl: './_site/',
-          criticalBase: './',
-          criticalPages: [
-            { uri: 'index.html', template: 'index' },
-            { uri: '404.html', template: '404' },
-          ],
-          criticalConfig: {
-            inline: true,
-            dimensions: [
-              {
-                height: 900,
-                width: 375,
-              },
-              {
-                height: 720,
-                width: 1280,
-              },
-              {
-                height: 1080,
-                width: 1920,
-              }
-            ],
-          }
-        })
-      ]
     },
   },
   css: {
