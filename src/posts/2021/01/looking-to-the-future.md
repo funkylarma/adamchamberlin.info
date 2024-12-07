@@ -17,6 +17,6 @@ So now as we enter 2021 we can do all we want to put 2020 behind us, but January
 
 If we truly want to improve in 2021, we must learn from 2020 and your resolutions might not involve a gym membership or a new diet.
 
-There might be vaccines in the works, there are talks to build new trade agreements with new markets, but one thing remains the same, the humans behind ever turn.
+There might be vaccines in the works, there are talks to build new trade agreements with new markets, but one thing remains the same, the humans behind every turn.
 
 So my plan is not to put a magic fix on a resolution, but to make the most of what I have. By being the best human, I can and with a positive attitude, I can improve 2021. So I encourage you to do the same. Reframe your views on resolutions and make the most of what you already have. Be the best you can. Don’t judge those who think different or have a different outlook. We are all in the same boat, and it is time to start bailing it out together.

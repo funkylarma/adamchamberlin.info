@@ -10,6 +10,7 @@ slug: "pinch-and-a-punch"
 ---
 
 For the first of the month!  
+
 How quick is this year flying through, already into August and if you live in the UK you will no doubt be wondering where the summer has got to. So far, we had one spell of really hot weather and that was it, just plain old grey days from then, about time it warmed up and gave you something to smile about before those cooler September days creep up on you.
  
 Any way, this is the worst time of year for me, the schools have broken for summer, which means the towns are ruled by chavs! I can think of better ways to spend my time than wading through a sea of Burberry caps and Reebok Classics. Whatever happened to jumping on your bike and riding for 3 hours no stop to see how far you can get, then find a wood somewhere and build an unstable structure with nothing but branches and shoelaces. 

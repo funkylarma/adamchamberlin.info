@@ -12,7 +12,7 @@ slug: "back-to-school"
 Of all things, it looks like I will be going back to study some more.  
 As some of you will know, I’m no web guru or full-time coder I am just a person with an unhealthy obsession with websites and all my knowledge and experience is 100% self-taught. It was decided by my company that I should get a qualification or at least a bit of paper to say I can do what I do, so when some ‘free’ courses are available through the local business link exchange they signed me up to the _'web design in the digital age’_ course.
  
-Last night I went along to the enrolement session only to recieve a copy of the proposed 10-week course outline:
+Last night I went along to the enrolment session only to receive a copy of the proposed 10-week course outline:
 
 > - 1\. Understand the concept of web page design and website structure.
 > - 2\. Design and create web pages with hyperlinks to a specified theme.

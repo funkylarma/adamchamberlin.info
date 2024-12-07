@@ -13,7 +13,7 @@ Today, Apple announced a change to the iPod line up. A new second generation Min
 
 Prices on the 4gb Mini have dropped to bring the new 6gb version in where the now older 4gb version sat. The Photo version has also been upgraded to a whopping 60gb! with standard versions still sitting at 20gb.
 
-The U2 limtied edition version is still available. Current line up is:
+The U2 limited edition version is still available. Current line up is:
 
 - Shuffle — _512mb, 1gb._
 - Mini — _4gb, 6gb_

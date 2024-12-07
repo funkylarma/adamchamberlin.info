@@ -10,7 +10,7 @@ tags:
 slug: "bank-holiday-weekends"
 ---
 
-After my visit to to the D&D house on Friday (see below) Lucy and I kind of got invited to a BBQ with Carol and John with Dan and Dell. It started out a bit on the strange side trying to get Augie down to the pub and onto the house without the use of a cab but the ever adventure seaking Dan and I opted to walk and what a good decision. Weather was top notch and worth effort. After a few jars in the local, ok a fair few we stumbled out to lit that primitive oven and have a laugh.
+After my visit to to the D&D house on Friday (see below) Lucy and I kind of got invited to a BBQ with Carol and John with Dan and Dell. It started out a bit on the strange side trying to get Augie down to the pub and onto the house without the use of a cab but the ever adventure seeking Dan and I opted to walk and what a good decision. Weather was top notch and worth effort. After a few jars in the local, ok a fair few we stumbled out to lit that primitive oven and have a laugh.
 
 ![Nice hand placement Dan!](/images/bbq1.jpg)
 

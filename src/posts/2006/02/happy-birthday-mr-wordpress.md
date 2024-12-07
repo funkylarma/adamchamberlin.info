@@ -15,5 +15,6 @@ slug: "happy-birthday-mr-wordpress"
 During lunch today I went on my normal cruise round the vapour of the internet, and it suddenly hit me, I’ve been blogging for a year now!
 
 Of course the standard installation message from WordPress was deleted and replaced with a nice, catchy, run-of-the-mill ’New Site!’ post. Since then, I’ve written about anything, mostly nothing, but anything that takes my fancy or has happened.
+
 It is strange to look back through the archives and remember those times that were and all the things that happened during the year, like your own little cheesy montage.
 Here’s to the next 12 months!

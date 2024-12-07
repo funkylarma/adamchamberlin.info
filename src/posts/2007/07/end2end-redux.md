@@ -20,4 +20,4 @@ Merlin and Goose hitting the road again; there is some [sense behind the names](
 
 So far, we have not decided which way we will tackle this, South to North during the summer is the best to take advantage of the Gulf Stream winds, but during September there could be the first signs of Northern winter winds. The best option is keep an eye on the long-term forecast and decide closer to the date.
 
-It is un-certain if we will be going for another sponsored event, as nice as it was to raise money, it don’t half get in the way of the cycling. You really need your mind on the prize and not on who owes you what. But if that does change, I’m sure we will call upon Joe Public for a bit of a donation ;)
+It is un-certain if we will be going for another sponsored event, as nice as it was to raise money, it doesn’t half get in the way of the cycling. You really need your mind on the prize and not on who owes you what. But if that does change, I’m sure we will call upon Joe Public for a bit of a donation ;)

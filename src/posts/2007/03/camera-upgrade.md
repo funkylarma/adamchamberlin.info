@@ -23,7 +23,7 @@ The answer is simple, just pick up and hold each camera and you will soon unders
 
 ## Why Now?
 
-The interweb is ripe with rumors of a 30D replacement; 40D on the way. Well, there could well be. There was mention of it at the PMA earlier this month; where Canon released the 1D MkIII. So it looks like it could well be back to the 18 month life cycle for the 30D which would make it about Autumn time for a replacement. To which should I wait? Will they release anything sooner? For the last week I have been cruising forums and news feeds trying to get some advice. The only thing that popped up was "how many pictures will I miss before I upgrade" which is true. Besides, once the 40D comes out, do you wait for the 50D? You could spend all your time waiting for the next best thing, problem is you will only end up waiting!
+The interweb is ripe with rumours of a 30D replacement; 40D on the way. Well, there could well be. There was mention of it at the PMA earlier this month; where Canon released the 1D MkIII. So it looks like it could well be back to the 18 month life cycle for the 30D which would make it about Autumn time for a replacement. To which should I wait? Will they release anything sooner? For the last week I have been cruising forums and news feeds trying to get some advice. The only thing that popped up was "how many pictures will I miss before I upgrade" which is true. Besides, once the 40D comes out, do you wait for the 50D? You could spend all your time waiting for the next best thing, problem is you will only end up waiting!
 
 ## My Package
 

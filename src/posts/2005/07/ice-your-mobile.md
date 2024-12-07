@@ -9,7 +9,7 @@ tags:
 slug: "ice-your-mobile"
 ---
 
-I have recieved so many emails about this idea I thought it best to share it with those that don’t know the deal.
+I have received so many emails about this idea I thought it best to share it with those that don’t know the deal.
 
 > Yo,
 > 
