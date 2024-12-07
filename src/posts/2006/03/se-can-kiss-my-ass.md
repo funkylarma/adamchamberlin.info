@@ -18,4 +18,4 @@ Hell no, since the update, my phone is now a complete brick. It will not turn on
   
 Sony Ericcson’s answer to this problem, send the phone off to be repaired; BTW if it costs anything it will cost me!
   
-Cutsomer service, I love it!
+Customer service, I love it!

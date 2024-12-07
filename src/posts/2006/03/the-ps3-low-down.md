@@ -16,7 +16,7 @@ They are planning a Worldwide launch; good luck!
 6 million units in the first year; financial year or our standard 12 months.
 60gb Hard drive included; good move.
 Backwards compatible with all Playstation games; Well done Sony
-Full Blu-ray supprt; No HD-DVD?
+Full Blu-ray support; No HD-DVD?
 HD and HDMI ready; Thanks, now I have to get the matching TV
 Linux OS installed; interesting.
 Region Free Games; Is that a good thing?

@@ -9,7 +9,7 @@ tags:
 slug: "the-first-frost"
 ---
 
-The other day I woke to be greated by the first blanket of white in the autumn.  
+The other day I woke to be greeted by the first blanket of white in the autumn.  
 So far we have had a very mild October followed by a similar beginning to November, finally the temperature has dropped and it would appear to be back to normal.  
 Personally I’m not a fan of the cold, I need by warmth, but it has been eerie still riding about in summer short clothing and not worrying about the weather.  
 
