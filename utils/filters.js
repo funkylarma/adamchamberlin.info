@@ -1,7 +1,11 @@
+import { inspect } from 'node:util';
 import { DateTime } from 'luxon';
 import metadata from '../src/data/metadata.js';
 
 export default {
+  debug: function (content) {
+    return `<pre>${inspect(content)}</pre>`;
+  },
   metaTitle: function (title) {
     title.trim();
     if (this.page.url) {
@@ -92,10 +96,83 @@ export default {
     return new URL(url, metadata.url).href;
   },
 
+  stripIndex: (path) => {
+    if (!path) return '';
+    return path.replace('/index.html', '/');
+  },
+
   fileHash: function (url) {
     const [urlPart, paramPart] = url.split('?');
     const params = new URLSearchParams(paramPart || '');
     params.set('v', DateTime.local().toFormat('X'));
     return `${urlPart}?${params}`;
+  },
+
+  webmentionsByUrl: function (webmentions, url) {
+    //return webmentions.children.filter((entry) => entry['wm-target'] === url);
+
+    console.log(webmentions);
+
+    const allowedTypes = {
+      likes: ['like-of'],
+      reports: ['in-reply-to'],
+      comments: ['mention-of', 'in-reply-to'],
+    };
+
+    const allowedHTML = {
+      allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+      allowedAttributes: {
+        a: ['href'],
+      },
+    };
+
+    const orderByDate = (a, b) => new Date(a.published) - new Date(b.published);
+
+    const checkRequiredFields = (entry) => {
+      const { author, published, content } = entry;
+      return !!author && !!author.name && !!published && !!content;
+    };
+
+    const clean = (entry) => {
+      const { html, text } = entry.content;
+
+      if (html) {
+        // really long html mentions, usually newsletters or compilations
+        entry.content.value =
+          html.length > 2000
+            ? `mentioned this in <a href="${entry['wm-source']}">${entry['wm-source']}</a>`
+            : sanitizeHTML(html, allowedHTML);
+      } else {
+        entry.content.value = sanitizeHTML(text, allowedHTML);
+      }
+
+      return entry;
+    };
+
+    const pageWebMentions = webmentions.children
+      .filter((mention) => mention['wm-target'] === url)
+      .sort(orderByDate)
+      .map(clean);
+
+    const like = pageWebMentions
+      .filter((mention) => allowedTypes.likes.includes(mention['wm-property']))
+      .filter((like) => like.author)
+      .map((like) => like.author);
+
+    const reposts = pageWebmentions
+      .filter((mention) => allowedTypes.reposts.includes(mention['wm-property']))
+      .filter((repost) => repost.author)
+      .map((repost) => repost.author);
+
+    const comments = pageWebmentions
+      .filter((mention) => allowedTypes.comments.includes(mention['wm-property']))
+      .filter((comment) => {
+        const { author, published, content } = comment;
+        return author && author.name && published && content;
+      });
+
+    const mentionCount = likes.length + reposts.length + comments.length;
+    const data = { likes, reposts, comments, mentionCount };
+    return data;
   },
 };

@@ -1,0 +1,24 @@
+{% capture webmentionUrl %}{{ page.url | absoluteUrl | stripIndex }}{% endcapture %}
+{% capture mentions = webmentions | webmentionsByUrl(webmentionUrl) %}{% endcapture %}
+
+{% if mentions.mentionCount > 0 %}
+  <div class="post--comment">
+    <div class="webmentions" id="webmentions" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">
+      <div data-render-root>
+        <div class="webmentions--preview">
+        </div>
+      </div>
+    </div>
+  </div><!-- .post--comment -->
+{% else %}
+  <p class="webmentions--empty" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">No webmentions yet.</p>
+{% endif %}
+
+<h3>Webmentions Object</h3>
+{{ webmentions | debug }}
+
+<h3>webmentionUrl</h3>
+{{ webmentionUrl | debug }}
+
+<h3>mentions</h3>
+{{ mentions | debug }}

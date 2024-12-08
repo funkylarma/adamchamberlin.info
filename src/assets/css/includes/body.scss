@@ -7,7 +7,8 @@ main {
 
     .post-list--content,
     .page--content,
-    .post--content {
+    .post--content,
+    .post--comment {
       max-width: var(--main-layout-width-normal);
       margin-left: auto;
       margin-right: auto;
@@ -29,7 +30,6 @@ main {
     width: 100%;
 
     .post-list--content {
-
       .post {
         background: var(--main-color-white);
         border-bottom-left-radius: 5rem;
@@ -264,7 +264,6 @@ main {
 
   .post-single,
   .page {
-
     .post--content,
     .page--content {
       picture img {
@@ -330,7 +329,6 @@ main {
       .eleventy-plugin-youtube-embed {
         margin-bottom: 2rem;
       }
-
     }
   }
 }
