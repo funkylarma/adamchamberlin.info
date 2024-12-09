@@ -1,10 +1,10 @@
 export default {
   async onBuild({ utils }) {
-    console.log('Restoring ./_cache/ folder');
-    await utils.cache.restore('./_cache');
+    console.log('Restoring ./.cache/ folder');
+    await utils.cache.restore('./.cache');
   },
   async onPostBuild({ utils }) {
-    console.log('Saving ./_cache folder for future builds');
-    await utils.cache.save('./_cache');
+    console.log('Saving ./.cache folder for future builds');
+    await utils.cache.save('./.cache');
   },
 };

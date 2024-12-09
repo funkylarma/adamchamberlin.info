@@ -10,10 +10,10 @@
       <header class="mast-head">
         {% include "partials/nav-header.liquid" %}
       </header><!-- .header -->
-      <main id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+      <main class="h-entry" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
         <section class="intro">
           <div class="intro--content">
-            <h1 class="page-title">{{ title }}</h1>
+            <h1 class="page-title p-name">{{ title }}</h1>
               <div class="tagline">
                 {% if kicker %}
                   <p>{{ kicker }}</p>
@@ -22,7 +22,7 @@
           </div><!-- .intro--content -->
         </section><!-- .intro -->
         <section class="page"><!-- .page -->
-          <div class="page--content">
+          <div class="page--content e-content">
             {{ content }}
           </div><!-- .page--content -->
         </section><!-- .page -->

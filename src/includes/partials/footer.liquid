@@ -18,6 +18,7 @@
     }
   }
 </script>
+{% render 'partials/hcard' %}
 <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
 {% if metadata.env == "production" %}
   {% viteScriptTag %}

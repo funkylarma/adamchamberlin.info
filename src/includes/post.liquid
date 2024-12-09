@@ -10,23 +10,24 @@
       <header class="mast-head">
         {% include "partials/nav-header.liquid" %}
       </header><!-- .header -->
-      <main id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+      <main id="#skip" class="h-entry" tabindex="-1" data-input-path="{{ page.filePathStem }}">
         <section class="intro">
           <div class="intro--content">
-            <h1 class="post-title">{{ title }}</h1>
+            <h1 class="post-title p-name">{{ title }}</h1>
+            <a class="u-url" href="{{ post.url }}" hidden>#</a>
               <div class="tagline">
                 <p>{{ tagline }}</p>
               </div><!-- .tagline -->
               <div class="post--meta">
                 <div class="post--date">
                   <span>Date: </span>
-                  <time class="postlist-date" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateReadable }}</time>
+                  <time class="postlist-date dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateReadable }}</time>
                 </div><!-- .post--date -->
                 {% if categories %}
                 <div class="post--categories">
                   <span>Category: </span>
                   {%- for category in categories -%}
-                    <a href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                    <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
                       {{ category }}
                     </a>
                   {%- endfor -%}
@@ -37,7 +38,7 @@
                   <span>Tagged: </span>
                   {%- for tag in tags -%}
                     {% if tag != 'post' %}
-                      <a href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                      <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
                         {{ tag }}
                       </a>
                     {% endif %}
@@ -52,9 +53,10 @@
           </div><!-- .intro--content -->
         </section><!-- .intro -->
         <section class="post-single">
-          <div class="post--content">
+          <div class="post--content e-content">
             {{ content }}
           </div><!-- .post--content -->
+          {% include "partials/webmentions.liquid" %}
         </section><!-- .post-single -->
         <script type="application/ld+json">
         {

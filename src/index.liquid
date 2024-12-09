@@ -24,20 +24,21 @@ eleventyComputed:
 <section class="post-list">
   <div class="post-list--content">
     {%- for post in pagination.items -%}
-    <article class="post">
+    <article class="post h-entry">
       {% if post.data.cover %}
         <div class="post--image">
           <img src="{{ post.data.cover }}"
            alt="Cover image for {{ post.data.title }}"
            sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
            width="936"
+           class="u-photo"
           {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}>
         </div><!-- .post--image -->
       {% endif %}
       <div class="post--content">
         <div class="post--head">
-          <h2>
-            <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}" class="post-link">
+          <h2 class="p-name">
+            <a class="u-url" href="{{ post.url }}" title="Continue to read {{ post.data.title }}" class="post-link">
               {% if post.data.title %}
                 {{ post.data.title }}
                 {% if post.data.draft %}
@@ -51,13 +52,13 @@ eleventyComputed:
           <div class="post--meta">
             <div class="post--date">
               <span>Date: </span>
-              <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
             </div><!-- .post--date -->
             {% if post.data.categories %}
             <div class="post--categories">
               <span>Category: </span>
               {%- for category in post.data.categories -%}
-                <a href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
                   {{ category }}
                 </a>
               {%- endfor -%}
@@ -68,7 +69,7 @@ eleventyComputed:
               <span>Tagged: </span>
               {%- for tag in post.data.tags -%}
                 {% if tag != 'post' %}
-                  <a href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
                     {{ tag }}
                   </a>
                 {% endif %}
@@ -82,7 +83,7 @@ eleventyComputed:
           </div><!-- .post-meta -->
         </div>
         {% if post.data.categories contains "writing" %}
-        <div class="post--excerpt">
+        <div class="post--excerpt e-content">
           <p>
             {% if post.data.summary %}
               {{ post.data.summary }}

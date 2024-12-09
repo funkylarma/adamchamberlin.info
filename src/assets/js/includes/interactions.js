@@ -45,4 +45,8 @@ function fadeIn(el) {
   if ($('.post-single picture')) {
     fadeIn('.post-single picture');
   }
+
+  if ($('.comment')) {
+    fadeIn('.comment');
+  }
 })(jQuery);
