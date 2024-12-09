@@ -14,16 +14,18 @@
         <section class="intro">
           <div class="intro--content">
             <h1 class="post-title p-name">{{ title }}</h1>
-            <a class="u-url" href="{{ post.url }}" hidden>#</a>
-              <div class="tagline">
-                <p>{{ tagline }}</p>
-              </div><!-- .tagline -->
-              <div class="post--meta">
-                <div class="post--date">
-                  <span>Date: </span>
-                  <time class="postlist-date dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateReadable }}</time>
-                </div><!-- .post--date -->
-                {% if categories %}
+            <div class=" h-card" hidden>
+              <a class="u-url u-uid" href="{{ post.url }}">{{ title }}</a> was written by <a class="p-author h-card" href="{{ metadata.url }}">{{ metadata.author.name }}</a>
+            </div>
+            <div class="tagline">
+              <p>{{ tagline }}</p>
+            </div><!-- .tagline -->
+            <div class="post--meta">
+              <div class="post--date">
+                <span>Date: </span>
+                <time class="postlist-date dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateReadable }}</time>
+              </div><!-- .post--date -->
+              {% if categories %}
                 <div class="post--categories">
                   <span>Category: </span>
                   {%- for category in categories -%}
@@ -32,8 +34,8 @@
                     </a>
                   {%- endfor -%}
                 </div><!-- .post--categories -->
-                {% endif %}
-                {% if tags.length > 1 %}
+              {% endif %}
+              {% if tags.length > 1 %}
                 <div class="post--tags">
                   <span>Tagged: </span>
                   {%- for tag in tags -%}
@@ -44,12 +46,12 @@
                     {% endif %}
                   {%- endfor -%}
                 </div><!-- .post--tags -->
-                {% endif %}
-                <div class="post--reading">
-                  <span>Estimated: </span>
-                  {{ content | timeReading }}
-                </div><!-- .post-reading -->
-              </div><!-- .post-meta -->
+              {% endif %}
+              <div class="post--reading">
+                <span>Estimated: </span>
+                {{ content | timeReading }}
+              </div><!-- .post-reading -->
+            </div><!-- .post-meta -->
           </div><!-- .intro--content -->
         </section><!-- .intro -->
         <section class="post-single">
