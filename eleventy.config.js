@@ -75,7 +75,17 @@ export default async function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginYouTube, {
-    lite: true,
+    lite: {
+      responsive: true,
+      css: {
+        enabled: true,
+        path: '/assets/css/lite-yt-embed.min.css',
+      },
+      js: {
+        enabled: true,
+        path: '/assets/js/lite-yt-embed.min.js',
+      },
+    },
     modestBranding: true,
   });
   eleventyConfig.addPlugin(pluginPostGraph, {

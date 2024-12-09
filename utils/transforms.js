@@ -12,9 +12,6 @@ export default {
           minifyCSS: true,
           minifyJS: true,
           removeComments: true,
-          removeOptionalTags: true,
-          sortAttributes: true,
-          sortClassName: true,
         });
         return minified;
       }
