@@ -1,4 +1,5 @@
 import { inspect } from 'node:util';
+import sanitizeHTML from 'sanitize-html';
 import { DateTime } from 'luxon';
 import metadata from '../src/data/metadata.js';
 
@@ -66,6 +67,10 @@ export default {
     return DateTime.fromJSDate(dateObj, { zone: zone || 'utc' }).toFormat(format || 'dd LLLL yyyy');
   },
 
+  readableDateFromISO: function (dateStr, formatStr = "dd LLL yyyy 'at' hh:mma") {
+    return DateTime.fromISO(dateStr).toFormat(formatStr);
+  },
+
   dateHtmlString: function (dateObj) {
     return DateTime.fromJSDate(dateObj, 'utc').toFormat('yyyy-LL-dd');
   },
@@ -96,7 +101,7 @@ export default {
     return new URL(url, metadata.url).href;
   },
 
-  stripIndex: (path) => {
+  stripIndex: function (path) {
     if (!path) return '';
     return path.replace('/index.html', '/');
   },
@@ -109,13 +114,9 @@ export default {
   },
 
   webmentionsByUrl: function (webmentions, url) {
-    //return webmentions.children.filter((entry) => entry['wm-target'] === url);
-
-    console.log(webmentions);
-
     const allowedTypes = {
       likes: ['like-of'],
-      reports: ['in-reply-to'],
+      reposts: ['in-reply-to'],
       comments: ['mention-of', 'in-reply-to'],
     };
 
@@ -131,6 +132,13 @@ export default {
     const checkRequiredFields = (entry) => {
       const { author, published, content } = entry;
       return !!author && !!author.name && !!published && !!content;
+    };
+
+    const sanitize = (entry) => {
+      if (entry.content && entry.content.html) {
+        entry.content = sanitizeHTML(entry.content.html, allowedHTML);
+      }
+      return entry;
     };
 
     const clean = (entry) => {
@@ -152,19 +160,19 @@ export default {
     const pageWebMentions = webmentions.children
       .filter((mention) => mention['wm-target'] === url)
       .sort(orderByDate)
-      .map(clean);
+      .map(sanitize);
 
-    const like = pageWebMentions
+    const likes = pageWebMentions
       .filter((mention) => allowedTypes.likes.includes(mention['wm-property']))
       .filter((like) => like.author)
       .map((like) => like.author);
 
-    const reposts = pageWebmentions
+    const reposts = pageWebMentions
       .filter((mention) => allowedTypes.reposts.includes(mention['wm-property']))
       .filter((repost) => repost.author)
       .map((repost) => repost.author);
 
-    const comments = pageWebmentions
+    const comments = pageWebMentions
       .filter((mention) => allowedTypes.comments.includes(mention['wm-property']))
       .filter((comment) => {
         const { author, published, content } = comment;

@@ -8,7 +8,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Define Cache Location and API Endpoint
-const CACHE_DIR = '_cache';
+const CACHE_DIR = '.cache';
 const API = 'https://webmention.io/api';
 const TOKEN = process.env.WEB_MENTION_KEY;
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production';

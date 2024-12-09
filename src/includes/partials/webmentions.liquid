@@ -1,24 +1,130 @@
-{% capture webmentionUrl %}{{ page.url | absoluteUrl | stripIndex }}{% endcapture %}
-{% capture mentions = webmentions | webmentionsByUrl(webmentionUrl) %}{% endcapture %}
+{% assign webmentionUrl = page.url | absoluteUrl %}
+{% assign mentions = webmentions | webmentionsByUrl: webmentionUrl %}
+<div class="post--comment">
+  <details>
+    <summary>
+      <h2>Webmentions</h2>
+    </summary>
+    <section>
+      <p>
+        <em>These are <a href="https://indieweb.org/Webmention">webmentions</a> via the <a href="https://indieweb.org/">IndieWeb</a> and <a href="https://webmention.io/">webmention.io</a>.</em>
+      </p>
+      {% if mentions.mentionCount > 0 %}
+        <div class="webmentions" id="webmentions" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">
 
-{% if mentions.mentionCount > 0 %}
-  <div class="post--comment">
-    <div class="webmentions" id="webmentions" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">
-      <div data-render-root>
-        <div class="webmentions--preview">
-        </div>
-      </div>
-    </div>
-  </div><!-- .post--comment -->
-{% else %}
-  <p class="webmentions--empty" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">No webmentions yet.</p>
-{% endif %}
+          <div data-render-root>
 
-<h3>Webmentions Object</h3>
-{{ webmentions | debug }}
+            {% if mentions.comments %}
+              <div class="comments">
+                <h3>
+                  {{ mentions.comments.length }}
+                  Comment
+                  {%- if mentions.comments.length > 1 -%}s{% endif %}
+                </h3>
+                <ol>
+                  {% for item in mentions.comments %}
+                    <li class="comment static-comments-reply u-comment" id="webmention-{{ item.wm-id }}">
+                      <div class="comment--head">
+                        {% if item.author %}
+                          <a href="{{ item.author.url }}" class="comment--author h-card u-url">
+                            {% if item.author.photo %}
+                              <img
+                                class="comment--author--photo u-photo"
+                                src="{{ item.author.photo }}"
+                                alt="photo of the author of one of the webmentions for this page"
+                                width="50"
+                                height="50"
+                                loading="lazy"
+                                eleventy:ignore
+                              >
+                            {% else %}
+                                <img class="comment--author--photo" src="" alt="" width="48" height="48" eleventy:ignore>
+                            {% endif %}
+                            <h4 class="p-name">{{ item.author.name }}</h4>
+                          </a>
+                        {% else %}
+                          <span class="comment--author">
+                            <img class="comment--author--photo" src="" alt="" eleventy:ignore>
+                            <h4>Anonymous</h4>
+                          </span>
+                        {% endif %}
+                        <em>
+                          <time class="postlist-date dt-published" datetime="{{ item.published }}">{{ item.published | readableDateFromISO: "dd LLL yyyy" }}</time>
+                        </em>
+                      </div>
+                      <div class="comment--body">
+                        <p class="comment--content p-content">{{ item.content }}</p>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ol>
+              </div><!-- .comments -->
+            {% endif %}
 
-<h3>webmentionUrl</h3>
-{{ webmentionUrl | debug }}
+            {% if mentions.likes %}
+              <div class="likes">
+                <h3>
+                  {{ mentions.likes.length }}
+                  Like
+                  {%- if mentions.likes.length > 1 -%}s{% endif %}
+                </h3>
+                <div class="webmentions--facepile">
+                  {% for item in mentions.likes %}
+                    <a class="h-card u-url" target="_blank" rel="noopener noreferrer" href="{{ item.url }}">
+                      <img
+                        class="comment--author--photo u-photo"
+                        src="{{ item.photo }}"
+                        alt="photo of the author of one of the webmentions for this page"
+                        width="50"
+                        height="50"
+                        loading="lazy"
+                        eleventy:ignore
+                      >
+                    </a>
+                  {% endfor %}
+                </div><!-- .facepile -->
+              </div>
+            {% endif %}
 
-<h3>mentions</h3>
-{{ mentions | debug }}
+            {% if mentions.reposts %}
+              <div class="reposts">
+                <h3>
+                  {{ mentions.reposts.length }}
+                  Repost
+                  {%- if mentions.reposts.length > 1 -%}s{% endif %}
+                </h3>
+                <div class="webmentions--facepile">
+                  {% for item in mentions.reposts %}
+                    <a class="h-card u-url" target="_blank" rel="noopener noreferrer" href="{{ item.url }}">
+                      <img
+                        class="comment--author--photo u-photo"
+                        src="{{ item.photo }}"
+                        alt="photo of the author of one of the webmentions for this page"
+                        width="50"
+                        height="50"
+                        loading="lazy"
+                        eleventy:ignore
+                      >
+                    </a>
+                  {% endfor %}
+                </div>
+              </div><!-- .reposts -->
+            {% endif %}
+          </div>
+        </div><!-- .webmentions -->
+      {% else %}
+          <p class="webmentions--empty" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">
+            No webmentions yet.
+          </p>
+      {% endif %}
+      <h3>Link your own related content.</h3>
+      <p>Have you posted a response to this or anything related, let me know...</p>
+      <form action="https://webmention.io/{{ metadata.domain }}/webmention" method="post" class="form-webmention">
+        <label for="form-webmention-source">URL of your site:</label>
+        <input id="form-webmention-source" type="url" name="source" placeholder="https://example.com" required>
+        <input type="hidden" name="target" value="{{ page.url | absoluteUrl }}">
+        <input type="submit" class="button" value="Send Ping">
+      </form>
+    </section>
+  </details>
+</div><!-- .post--comment -->

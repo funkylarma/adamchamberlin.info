@@ -9,6 +9,7 @@ _site
 
 # cached content
 _cache
+.cache
 
 # intermediate opengraph images
 /src/assets/ogi

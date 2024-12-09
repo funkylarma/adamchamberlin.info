@@ -65,7 +65,7 @@ footer {
           .nav-bar--item a[href]:not(:hover) {
             text-decoration: none;
           }
-          .nav a[href][aria-current="page"] {
+          .nav a[href][aria-current='page'] {
             text-decoration: underline;
           }
         }
@@ -82,5 +82,11 @@ footer {
         }
       }
     }
+  }
+}
+
+#hcard-Adam-Chamberlin {
+  * {
+    font-size: var(--main-font-size-x-small);
   }
 }
