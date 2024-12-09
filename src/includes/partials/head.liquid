@@ -35,6 +35,8 @@
 {% endif %}
 
 <!-- Icons and Feeds -->
+<link rel="author self" href="{{ metadata.url }}" />
+<link rel="author" type="application/activity+json" href="https://adamchamberlin.info@adamchamberlin.info" />
 <link rel="author" href="{{ "/humans.txt" | absoluteUrl }}" type="text/plain">
 <link rel="alternate" href="{{ metadata.feed.path | absoluteUrl }}" type="application/atom+xml" title="{{ metadata.title }}">
 <link rel="alternate" href="{{ metadata.jsonfeed.path | absoluteUrl }}" type="application/json" title="{{ metadata.title }}">

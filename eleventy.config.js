@@ -8,10 +8,7 @@ import * as sass from 'sass';
 import htmlmin from 'html-minifier';
 
 // 11ty Imports
-import {
-  HtmlBasePlugin as pluginHtmlBase,
-  EleventyRenderPlugin as pluginEleventyRender,
-} from '@11ty/eleventy';
+import { HtmlBasePlugin as pluginHtmlBase, EleventyRenderPlugin as pluginEleventyRender } from '@11ty/eleventy';
 import pluginRss from '@11ty/eleventy-plugin-rss';
 import pluginNavigation from '@11ty/eleventy-navigation';
 import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/eleventy-img';
@@ -78,17 +75,7 @@ export default async function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginYouTube, {
-    lite: {
-      responsive: true,
-      css: {
-        enabled: true,
-        path: '/assets/css/lite-yt-embed.min.css',
-      },
-      js: {
-        enabled: true,
-        path: '/assets/js/lite-yt-embed.min.js',
-      },
-    },
+    lite: true,
     modestBranding: true,
   });
   eleventyConfig.addPlugin(pluginPostGraph, {
@@ -109,10 +96,7 @@ export default async function (eleventyConfig) {
 
   // Vite Shortcodes
   Object.keys(viteHelpers).forEach((shortcodeName) => {
-    eleventyConfig.addLiquidShortcode(
-      shortcodeName,
-      viteHelpers[shortcodeName]
-    );
+    eleventyConfig.addLiquidShortcode(shortcodeName, viteHelpers[shortcodeName]);
   });
 
   // Filters
