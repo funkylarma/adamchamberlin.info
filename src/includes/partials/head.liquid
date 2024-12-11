@@ -1,6 +1,5 @@
 <!-- Title -->
 <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
-
 <!-- Meta Details -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,9 +13,7 @@
 {% if tags.length > 0 %}
   <meta name="keywords" content="{{ tags | metaKeywords }}">
 {% endif %}
-
 <link rel="canonical" href="{{ page.url | absoluteUrl }}">
-
 {% if metadata.env == "production" %}
   <!-- Preloads -->
   <link rel="preload" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin="anonymous">
@@ -33,7 +30,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" media="screen">
   </noscript>
 {% endif %}
-
 <!-- Icons and Feeds -->
 <link rel="author self" href="{{ metadata.url }}" />
 <link rel="author" type="application/activity+json" href="https://adamchamberlin.info@adamchamberlin.info" />
@@ -46,7 +42,6 @@
 <link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | absoluteUrl }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <link rel="manifest" href="{{ "/web.manifest" | absoluteUrl }}">
-
 <!-- OpenGraph -->
 <meta property="og:site_name" content="{{ metadata.title }}">
 <meta property="og:locale" content="en_GB" />
@@ -75,7 +70,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="780">
 {% endif %}
-
 <!-- Twitter -->
 <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
 <meta name="twitter:card" content="summary_large_image">
@@ -87,17 +81,13 @@
 {% else %}
   <meta name="twitter:image" content="{{ metadata.url }}assets/images/og.png">
 {% endif %}
-
 <!-- Fediverse -->
 <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
-
 <!-- Webmentions -->
 <link rel="pingback" href="https://webmention.io/adamchamberlin.info/xmlrpc">
 <link rel="webmention" href="https://webmention.io/adamchamberlin.info/webmention">
-
 <!-- Generator -->
 <meta name="generator" content="{{ eleventy.generator }}">
-
 <!-- Checking local storage for theme settings -->
 <script>
   const cachedTheme = localStorage.getItem('ac_theme');
@@ -105,7 +95,6 @@
     document.documentElement.dataset['ac_theme'] = cachedTheme;
   }
 </script>
-
 {% if metadata.env == "production" %}
   <!-- Google tag (gtag.js) -->
   <script defer src="https://www.googletagmanager.com/gtag/js?id={{ env.GA4_TAG }}" type="text/plain" data-category="analytics" data-service="Google Analytics"></script>

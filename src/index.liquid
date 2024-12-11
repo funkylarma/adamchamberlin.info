@@ -12,7 +12,6 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
 eleventyComputed:
   title: "Adam Chamberlin {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
 ---
-
 <section class="intro">
   <div class="intro--content">
     <h1>{{ metadata.title }}</h1>
@@ -28,11 +27,12 @@ eleventyComputed:
       {% if post.data.cover %}
         <div class="post--image">
           <img src="{{ post.data.cover }}"
-           alt="Cover image for {{ post.data.title }}"
-           sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
-           width="936"
-           class="u-photo"
-          {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}>
+            alt="Cover image for {{ post.data.title }}"
+            sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
+            width="936"
+            class="u-photo"
+            {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}
+          >
         </div><!-- .post--image -->
       {% endif %}
       <div class="post--content">

@@ -11,10 +11,8 @@ eleventyComputed:
   - page
   - post
 ---
-
 <p class="h3">Welcome to the digital archive of the site.</p>
 <p>From here you can browse by <a href="#tag" title="Browse by tag">tag</a>, by <a href="#category" title="Browse by category">category</a> or just view all the content over the <a href="#date" title="Browse by date">years</a>. There are a lot of <a href="/archive/stats/">statistics</a> that detail what went into putting all these words together.</p>
-
 <!-- Tags -->
 <div class="tag-list">
   <h2 id="tag">By Tag</h2>
@@ -31,7 +29,6 @@ eleventyComputed:
     {% endfor %}
   </div><!-- .tag-cloud -->
 </div><!-- .tag-list -->
-
 <!-- Categories -->
 <div class="category-list">
   <h2 id="category">By Category</h2>
@@ -48,7 +45,6 @@ eleventyComputed:
     {% endfor %}
   </div><!-- .category-cloud -->
 </div><!-- .category-list -->
-
 <div class="archive-list">
   <h2 id="date">By Date</h2>
   {% for year, yearPosts in collections.postsByYear %}

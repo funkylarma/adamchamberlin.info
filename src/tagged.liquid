@@ -14,12 +14,12 @@ eleventyComputed:
 <div class="archive-list">
   <ul>
   {%- for post in collections.tagList[tag] reversed -%}
-    <li class="post">
-      <a href="{{ post.url }}" title="Read post" class="post-link">
-        {{ post.data.title }}
+    <li class="post h-entry">
+      <a class="post-link u-url" href="{{ post.url }}" title="Read post">
+        <span class="p-name">{{ post.data.title }}</span>
       </a>
       <div class="post-date">
-        - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
+        - <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
       </div>
     </li>
   {%- endfor -%}

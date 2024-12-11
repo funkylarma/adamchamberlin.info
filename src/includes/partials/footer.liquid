@@ -18,7 +18,7 @@
     }
   }
 </script>
-{% render 'partials/hcard' %}
+{% include "partials/hcard.liquid" %}
 <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
 {% if metadata.env == "production" %}
   {% viteScriptTag %}

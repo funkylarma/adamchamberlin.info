@@ -41,7 +41,6 @@ permalink: "/archive/stats/"
     {% endif %}
   </ul>
 </section>
-
 <section class="stats--graph">
   <h2>Yearly Graph</h2>
   <div class="graph">
@@ -57,14 +56,12 @@ permalink: "/archive/stats/"
     {% endfor %}
   </div>
 </section>
-
 <section class="stats--posts">
   <h2>Posts Graph</h2>
   <div class="wide">
   {% postGraph collections.post %}
   </div>
 </section>
-
 <section class="stats--yearly">
   <h2>Yearly Statistics</h2>
   <table class="stats">
@@ -72,10 +69,10 @@ permalink: "/archive/stats/"
       <tr>
         <th>Year</th>
         <th>Post Count</th>
-        <th>Avgerage Days Between Posts</th>
-        <th>Avgerage &nbsp;Characters</th>
-        <th>Avgerage &nbsp;Words</th>
-        <th>Avgerage &nbsp;Paragraphs</th>
+        <th>Average Days Between Posts</th>
+        <th>Average &nbsp;Characters</th>
+        <th>Average &nbsp;Words</th>
+        <th>Average &nbsp;Paragraphs</th>
       </tr>
     </thead>
     <tbody>
@@ -94,7 +91,6 @@ permalink: "/archive/stats/"
     </tbody>
   </table>
 </section>
-
 {% else %}
   <p><strong>No data to display</strong></p>
 {% endif %}
