@@ -2,9 +2,6 @@
 eleventyExcludeFromCollections: true
 permalink: /_redirects
 ---
-/.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 302
-/.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger 302
-adamchamberlin-info.pages.dev https://adamchamberlin.info 302
 
 {%- for page in collections.post -%}
   {%- if page.url and page.data.slug -%}
@@ -12,3 +9,9 @@ adamchamberlin-info.pages.dev https://adamchamberlin.info 302
     {{ '\n' }}
   {%- endif -%}
 {%- endfor -%}
+
+adamchamberlin-info.pages.dev https://adamchamberlin.info 302
+
+/.well-known/host-meta* https://fed.brid.gy/.well-known/host-meta:splat 302
+
+/.well-known/webfinger* https://fed.brid.gy/.well-known/webfinger 302

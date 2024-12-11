@@ -25,7 +25,9 @@ The installation of [Lightbox](https://www.huddletogether.com/projects/lightbox2
 Upload the Javascript files to your web host, I’m presuming you will keep them in the folder named js and this in your template/theme folder, such as; /wp-content/themes/k2/js/\*.js
 Next you need to add these to your header file to have them called on the loading of the page. Open up your required page, if you are using [WordPress](https://www.wordpress.org) like me here, then you want header.php in your theme directory. Now locate the head tags and insert this code between them:
 
-`<script type="text/javascript" src=""<?php bloginfo('template_directory'); ?>/js/prototype.js"></script>   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/scriptaculous.js?load=effects"></script>   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/lightbox.js"></script>`
+````<script type="text/javascript" src=""<?php bloginfo('template_directory'); ?>/js/prototype.js"></script>
+   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/scriptaculous.js?load=effects"></script>
+   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/lightbox.js"></script>`
 
 This will call the scripts on each page as it loads, the need for the PHP call to the template directory is because, due to url rewriting, the location of the Javascript's would need to be modified on each call, this way we know the files are in the template directory.
 The final part is to add some CSS styling and images to the mix, in the zip file from Lokesh you should find a file called lightbox.css. And a folder containing some images.
@@ -34,11 +36,15 @@ The process with the images is very similar, I opted to add them to my images' f
 
 To create one of these clever tricks is simple, just add an addition tag to your href link to the image and you are away. If you take the example above, as standard clicking on the image would open the image on its own and the code to do so would be:
 
-`<a href="https://www.flickr.com/photos/funkylarma/14181952/" title="Wet Dog"><img src="https://static.flickr.com/11/14181952_cc24c994d7_m.jpg" alt="Wet dog" /></a>`
+```<a href="https://www.flickr.com/photos/funkylarma/14181952/" title="Wet Dog">
+   <img src="https://static.flickr.com/11/14181952_cc24c994d7_m.jpg" alt="Wet dog" />
+   </a>`
 
 All we need to do to make it open in the lightox is add the code `rel="lightbox"` to the href link, creating this:
 
-`<a href="https://www.flickr.com/photos/funkylarma/14181952/" title="Wet Dog" rel="lightbox"><img src="https://static.flickr.com/11/14181952_cc24c994d7_m.jpg" alt="Wet dog" /></a>`
+```<a href="https://www.flickr.com/photos/funkylarma/14181952/" title="Wet Dog" rel="lightbox">
+   <img src="https://static.flickr.com/11/14181952_cc24c994d7_m.jpg" alt="Wet dog" />
+   </a>`
 
 Now when you click to the image it will open in the Lightbox, you can also create text links that open images in the Lightbox, just add that rel tag to the link and you are away.
 
@@ -46,10 +52,11 @@ So what's’s this your having problems? As much as every one claims, life is ne
 The concern I had which took a while to work out was that I was never getting a close button when the picture had loaded. There was a hotspot at the bottom of the page but nothing to indicate that was the close button. It turns out that this information is held within the Lightbox java file itself. To fix it you have to open up the file lightbox.js and modify lines 62 and 63.
 When looking at these lines you can see the idea, they are links to the loading and close buttons, if like me you added these to your standard themes images then you know where they are, if not you will have to locate them. The downside is that the handy php call to template path will not work here, we are inside Java people, it must a complete url. Modify the lines as follows:
 
-`var fileLoadingImage = "https://www.yourdomain.com/wp-content/themes/theme/images/loading.gif";   var fileBottomNavCloseImage = "https://www.yourdomain.com/wp-content/themes/theme/images/closelabel.gif";`
+```var fileLoadingImage = "https://www.yourdomain.com/wp-content/themes/theme/images/loading.gif";   var fileBottomNavCloseImage = "https://www.yourdomain.com/wp-content/themes/theme/images/closelabel.gif";`
 
 Of course replace yourdomain with _yourdomain_ and theme with the name of your theme. Hopefully this will then give you your loading and close buttons as required.
 
 ## The search bar…
 
 The search bar was created following the [instructions](https://orderedlist.com/) of Steve at [OrderedList](https://orderedlist.com/). View a demo [here](https://orderedlist.com/).
+````
