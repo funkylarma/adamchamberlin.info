@@ -11,9 +11,7 @@
       </p>
       {% if mentions.mentionCount > 0 %}
         <div class="webmentions" id="webmentions" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">
-
           <div data-render-root>
-
             {% if mentions.comments %}
               <div class="comments">
                 <h3>
@@ -60,7 +58,6 @@
                 </ol>
               </div><!-- .comments -->
             {% endif %}
-
             {% if mentions.likes %}
               <div class="likes">
                 <h3>
@@ -85,7 +82,6 @@
                 </div><!-- .facepile -->
               </div>
             {% endif %}
-
             {% if mentions.reposts %}
               <div class="reposts">
                 <h3>
