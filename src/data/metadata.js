@@ -1,17 +1,11 @@
 import 'dotenv/config';
 
 const isDev = process.env.ELEVENTY_ENV === 'development';
-const isProd = process.env.ELEVENTY_ENV === 'production';
-const indexNow = process.env.INDEX_NOW_KEY ? process.env.INDEX_NOW_KEY : 'dummy';
 const baseUrl = isDev ? `http://localhost:8080/` : `https://adamchamberlin.info/`;
 
 export default {
-  env: process.env.ELEVENTY_ENV,
-  domain: 'adamchamberlin.info',
-  indexNow: indexNow,
   title: 'Adam Chamberlin',
   tagline: 'The online playground of Adam Chamberlin.',
-  url: baseUrl,
   repo: 'https://github.com/funkylarma/adamchamberlin.info',
   locale: 'en-GB',
   language: 'en',
@@ -22,60 +16,4 @@ export default {
     image: baseUrl + 'assets/images/headshot.jpeg',
     url: baseUrl + 'about/',
   },
-  feed: {
-    filename: 'feed.xml',
-    path: '/feed/feed.xml',
-    url: baseUrl + 'feed/feed.xml',
-    id: baseUrl,
-  },
-  jsonfeed: {
-    path: '/feed/feed.json',
-    url: baseUrl,
-  },
-  navigation_primary: [
-    {
-      label: 'Home',
-      class: 'home',
-      title: 'Back home',
-      url: '/',
-    },
-    {
-      label: 'Now',
-      class: 'now',
-      title: 'What am I doing now',
-      url: '/now/',
-    },
-    {
-      label: 'About',
-      class: 'about',
-      title: 'All about me',
-      url: '/about/',
-    },
-    {
-      label: 'Archives',
-      class: 'archive',
-      title: 'History',
-      url: '/archive/',
-    },
-  ],
-  navigation_footer: [
-    {
-      label: 'Home',
-      class: 'home',
-      title: 'Back home',
-      url: '/',
-    },
-    {
-      label: 'Contact',
-      class: 'contact',
-      title: 'Lets get social',
-      url: '/contact/',
-    },
-    {
-      label: 'RSS',
-      class: 'rss',
-      title: 'Long live the RSS feed',
-      url: '/feed/feed.xml',
-    },
-  ],
 };

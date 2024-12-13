@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for page in collections.all | reverse %}
     {% if (not page.data.draft) and (not page.data.noindex) %}
-      {% set absoluteUrl %}{{ page.url | htmlBaseUrl(metadata.url) }}{% endset %}
+      {% set absoluteUrl %}{{ page.url | htmlBaseUrl(globals.url) }}{% endset %}
       <url>
         <loc>{{ absoluteUrl }}</loc>
         <lastmod>{{ page.date | dateISO }}</lastmod>

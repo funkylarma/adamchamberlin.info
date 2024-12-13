@@ -9,8 +9,8 @@ permalink: /feed/json
   "version": "https://jsonfeed.org/version/1.1",
   "title": "{{ metadata.title }}",
   "language": "{{ metadata.language or page.lang }}",
-  "home_page_url": "{{ metadata.url | addPathPrefixToFullUrl }}",
-  "feed_url": "{{ permalink | htmlBaseUrl(metadata.url) }}",
+  "home_page_url": "{{ globals.url | addPathPrefixToFullUrl }}",
+  "feed_url": "{{ permalink | htmlBaseUrl(globals.url) }}",
   "description": "{{ metadata.description }}",
   "authors": [
     {
@@ -20,7 +20,7 @@ permalink: /feed/json
   ],
   "items": [
     {%- for post in collections.post | reverse %}
-    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(globals.url) %}
     {
      "id": "{{ absolutePostUrl }}",
      "url": "{{ absolutePostUrl }}",

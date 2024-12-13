@@ -1,7 +1,8 @@
 ---
-title: 'Contact'
-kicker: 'Time to get social'
-permalink: '/contact/'
+title: Contact
+kicker: Time to get social
+description: This is the typical contact page, but instead of a contact form you can pick the platform to contact me on.
+permalink: /contact/
 ---
 
 Over the years I have had various contact forms and social networking handles, all I have learnt is that they serve to generate more email or internet mental chatter.{.h3}
@@ -14,3 +15,11 @@ In an effort to keep me focused and the noise to a minimum I have cut back on my
 - [Mastodon](https://mastodon.social/@FunkyLarma)
 - [YouTube](https://www.youtube.com/@funkylarma)
 - [LastFM](https://www.last.fm/user/FunkyLarma)
+
+---
+
+## Other Pages{.h3}
+
+- [/now](/now/) - Learn about what I'm up to now
+- [/colophon](/colophon/) - Learn more about the site
+- [/uses](/uses/) - Learn about my setup

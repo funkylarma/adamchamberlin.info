@@ -1,12 +1,14 @@
 import { inspect } from 'node:util';
 import sanitizeHTML from 'sanitize-html';
 import { DateTime } from 'luxon';
+import globals from '../src/data/globals.js';
 import metadata from '../src/data/metadata.js';
 
 export default {
   debug: function (content) {
     return `<pre>${inspect(content)}</pre>`;
   },
+
   metaTitle: function (title) {
     title.trim();
     if (this.page.url) {
@@ -98,7 +100,7 @@ export default {
   },
 
   absoluteUrl: function (url) {
-    return new URL(url, metadata.url).href;
+    return new URL(url, globals.url).href;
   },
 
   stripIndex: function (path) {
