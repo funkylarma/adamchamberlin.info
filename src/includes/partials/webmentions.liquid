@@ -115,7 +115,7 @@
       {% endif %}
       <h3>Link your own related content.</h3>
       <p>Have you posted a response to this or anything related, let me know...</p>
-      <form action="https://webmention.io/{{ metadata.domain }}/webmention" method="post" class="form-webmention">
+      <form action="https://webmention.io/{{ globals.domain }}/webmention" method="post" class="form-webmention">
         <label for="form-webmention-source">URL of your site:</label>
         <input id="form-webmention-source" type="url" name="source" placeholder="https://example.com" required>
         <input type="hidden" name="target" value="{{ page.url | absoluteUrl }}">

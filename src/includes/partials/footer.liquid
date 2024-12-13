@@ -20,7 +20,7 @@
 </script>
 {% include "partials/hcard.liquid" %}
 <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
-{% if metadata.env == "production" %}
+{% if globals.env == "production" %}
   {% viteScriptTag %}
 {% else %}
   <script type="module" src="http://localhost:5173/@vite/client"></script>

@@ -15,7 +15,7 @@
           <div class="intro--content">
             <h1 class="post-title p-name">{{ title }}</h1>
             <div class=" h-card" hidden>
-              <a class="u-url" href="{{ post.url }}">{{ title }}</a> was written by <a class="p-author h-card" href="{{ metadata.url }}" rel="author">{{ metadata.author.name }}</a>
+              <a class="u-url" href="{{ post.url }}">{{ title }}</a> was written by <a class="p-author h-card" href="{{ globals.url }}" rel="author">{{ metadata.author.name }}</a>
             </div>
             <div class="tagline">
               <p>{{ tagline }}</p>
@@ -74,7 +74,7 @@
           "author": {
             "@type": "Person",
             "name": "{{ metadata.author.name }}",
-            "url": "{{ metadata.url }}"
+            "url": "{{ globals.url }}"
           },
           "datePublished": "{{ page.date | dateHtmlString }}"
         }
