@@ -8,6 +8,7 @@ tags:
   - 'javascript'
   - 'frameworks'
 slug: 'ajaxy-sidebar-menu-options'
+hasCode: true
 ---
 
 On the [Binary Bonsai](https://flickr.com/groups/binarybonsai/discuss/) forums it has been [asked](https://flickr.com/groups/binarybonsai/discuss/129663/) how I got those Java powered AJAXy looking features in my sidebar, I’ve also had a few emails about them so I thought I better write the code and share the knowledge. Here goes:

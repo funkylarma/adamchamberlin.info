@@ -1,14 +1,14 @@
 ---
-title: "My Civic Duty"
-date: "2005-12-16"
+title: 'My Civic Duty'
+date: '2005-12-16'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "cars"
-slug: "my-civic-duty"
+  - 'cars'
+slug: 'my-civic-duty'
 ---
 
-![Civic](/images/74191439.jpg)
+![Civic](/images/2005/74191439.jpg)
 
 Today I spent the best part of it out and about on the road. To do this I had to borrow a company car, which was OK as I first thought. It turned out I was getting a nice 04 Honda Civic, not bad.
 

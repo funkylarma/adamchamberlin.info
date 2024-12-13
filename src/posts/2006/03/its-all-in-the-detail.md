@@ -1,14 +1,15 @@
 ---
 title: "It's all in the detail"
-date: "2006-03-14"
+date: '2006-03-14'
+cover: /images/2006/112410916.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "gaming"
-slug: "its-all-in-the-detail"
+  - 'gaming'
+slug: 'its-all-in-the-detail'
 ---
 
-![Photo sharing](/images/112410916.jpg)
+![Photo sharing](/images/2006/112410916.jpg)
 
 I’ve not been about much, the new theme has been put on hold, Lucy wonders where I am going and what happened to me. The answer is Ghost Recon.
 

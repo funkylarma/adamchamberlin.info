@@ -1,14 +1,14 @@
 ---
-title: "Is 2023 the year of the blog?"
+title: 'Is 2023 the year of the blog?'
 date: 2023-01-23
 description: A post about the resurgence of blogging, the evolution of platforms, and plans for a more controlled digital presence.
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "WordPress"
-  - "blogging"
-cover: "/images/install-step3.png"
-slug: "is-2023-the-year-of-the-blog"
+  - 'WordPress'
+  - 'blogging'
+cover: '/images/2023/install-step3.png'
+slug: 'is-2023-the-year-of-the-blog'
 ---
 
 Personally, I’m not a massive fan of the whole new year, new me movement. To me, if you want to be a better person or make improvements, it should not matter what the date is. That said, I do like the idea of looking forward to the next twelve months and planning a journey through them.
@@ -23,7 +23,7 @@ Over the last couple of weeks, I have been conducting some work on a new theme f
 
 ## Remember blogging?
 
-![WordPress 5 minute install](/images/install-step3.png)
+![WordPress 5 minute install](/images/2023/install-step3.png)
 
 Remember those custom domains, adding some hosting and setting up MySQL connections to perform that classic five-minute installation?
 

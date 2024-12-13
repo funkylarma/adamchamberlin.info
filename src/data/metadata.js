@@ -40,6 +40,12 @@ export default {
       url: '/',
     },
     {
+      label: 'Now',
+      class: 'now',
+      title: 'What am I doing now',
+      url: '/now/',
+    },
+    {
       label: 'About',
       class: 'about',
       title: 'All about me',
@@ -51,12 +57,6 @@ export default {
       title: 'History',
       url: '/archive/',
     },
-    {
-      label: 'Social',
-      class: 'social',
-      title: 'Lets get social',
-      url: '/social/',
-    },
   ],
   navigation_footer: [
     {
@@ -66,16 +66,10 @@ export default {
       url: '/',
     },
     {
-      label: 'About',
-      class: 'about',
-      title: 'All about me',
-      url: '/about/',
-    },
-    {
-      label: 'Privacy Policy',
-      class: 'privacy',
-      title: 'All the legal stuff',
-      url: '/privacy-policy/',
+      label: 'Contact',
+      class: 'contact',
+      title: 'Lets get social',
+      url: '/contact/',
     },
     {
       label: 'RSS',

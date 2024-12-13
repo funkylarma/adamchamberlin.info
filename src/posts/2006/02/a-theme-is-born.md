@@ -1,15 +1,16 @@
 ---
-title: "A theme is born"
-date: "2006-02-25"
+title: 'A theme is born'
+date: '2006-02-25'
+cover: '/images/2006/104540922.jpg'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "theme"
-- "WordPress"
-slug: "a-theme-is-born"
+  - 'theme'
+  - 'WordPress'
+slug: 'a-theme-is-born'
 ---
 
-![Blog Ideas](/images/104540922.jpg)
+![Blog Ideas](/images/2006/104540922.jpg)
 
 It has been in the back of my mind for quite a while now; create your own [WordPress](https://wordpress.org) theme.
 

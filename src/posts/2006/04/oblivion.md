@@ -1,15 +1,16 @@
 ---
-title: "Oblivion"
-date: "2006-04-04"
+title: 'Oblivion'
+date: '2006-04-04'
+cover: /images/2006/123168089.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "gaming"
-- "review"
-slug: "oblivion"
+  - 'gaming'
+  - 'review'
+slug: 'oblivion'
 ---
 
-![Photo sharing](/images/123168089.jpg)
+![Photo sharing](/images/2006/123168089.jpg)
 
 To be honest, I’m not a vast fantasy RPG fan, worrying about leveling up on your shoelace tieing skill does not float my boat, but you could not ignore the hype that surrounded Oblivion IV: The Elder Scrolls.
 So I picked up a copy to see what all the fuss was about. As usual, the limited edition version was all sold out, so I settled for the standard version and went on home ready to be impressed.
@@ -21,7 +22,7 @@ Later on, I did some homework and found out I was not running in 60hz mode on th
 
 Now let’s discuss the game, first off, this thing is huge! You can not really start to describe the size of the game, don’t expect to put this down with Call Of Duty as completed just yet, Bethesda reckoned over 250 hours of game play is required to complete the quests and trust me, I take their word for it. There are some 9,000 different items and weapons to collect, over 16 square miles (scale version) to explore and enough little quests to keep every Wood Elf happy.
 
-![Photo sharing](/images/123168090.jpg)
+![Photo sharing](/images/2006/123168090.jpg)
 
 The graphics are impressive, I’m not completely blown away, but they are superb, given the amount of them. When I first emerged from the Imperial Sewer (long story) and looked across the valley the view was fantastic, but then to be able to run to that ourcrop of rocks on the other side and still enjoy the view was really something else.
 Trust me, get a nice mid-morning sun through the trees at Weatherleash farm, and you will know what I mean.

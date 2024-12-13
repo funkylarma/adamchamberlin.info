@@ -8,6 +8,7 @@ tags:
   - 'web'
   - 'javascript'
 slug: 'search-box-light-box-and-other-scripty-goodness'
+hasCode: true
 ---
 
 I’ve been working away at those extra little bits on the site, you know all that fluff that makes you feel good about the amount of time you spend sitting in front of a computer screen.

@@ -54,7 +54,7 @@ export default async function (eleventyConfig) {
   });
 
   // Watch content images for the image pipeline.
-  eleventyConfig.addWatchTarget('./src/assets/images/*.{svg,webp,png,jpeg}');
+  eleventyConfig.addWatchTarget('./src/assets/images/**/*.{svg,webp,png,jpeg}');
   eleventyConfig.watchIgnores.add('./src/assets/ogi/**/*');
 
   // Plugins

@@ -3,12 +3,6 @@
   <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
   <head>
     {% include "partials/head.liquid" %}
-    <!-- This is for use with eleventy-plugin-syntaxhighlight. -->
-    <link rel="preload" href="{{ '/assets/css/dracula-prism.min.css' | url }}" as="style" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="all" onload="this.media='all'" fetchpriority="low">
-    <noscript>
-      <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="screen">
-    </noscript>
   </head>
   <body>
     <div class="container">

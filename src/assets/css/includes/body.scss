@@ -48,11 +48,12 @@ main {
           border-bottom: 1px solid var(--main-color-hairline);
 
           img {
-            width: 937;
+            width: 100%;
             max-width: 100%;
             aspect-ratio: 16/9;
             height: auto;
             object-fit: cover;
+            object-position: center, center;
             border-top-left-radius: 1rem;
             border-top-right-radius: 5rem;
 

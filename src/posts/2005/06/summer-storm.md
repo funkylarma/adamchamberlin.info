@@ -1,15 +1,15 @@
 ---
-title: "Summer Storm"
-date: "2005-06-29"
+title: 'Summer Storm'
+date: '2005-06-29'
 categories:
-  - "writing"
+  - 'writing'
 tags:
- - "weather"
- - "storm"
-slug: "summer-storm"
+  - 'weather'
+  - 'storm'
+slug: 'summer-storm'
 ---
 
-![Lightening](/images/22316186.jpg)
+![Lightening](/images/2005/22316186.jpg)
 
 Last night we experienced one of the best electric storms we have had so far this year.
 It is hardly surprising the weather has been getting hotter and hotter and the air just so ‘heavy’ with that close feeling about it that you knew it was going to happen.

@@ -3,11 +3,11 @@ title: Brighton Marathon
 date: 2023-04-05
 description: Recap of my first road marathon event, the Brighton Marathon. The highs and lows of breaking that 26.2 mile run.
 summary: Recap of my first road marathon event, the Brighton Marathon. The highs and lows of breaking that 26.2 mile run.
-cover: /images/IMG_1294.jpg
+cover: /images/2023/IMG_1294.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "running"
+  - 'running'
 ---
 
 > What am I doing?
@@ -28,7 +28,7 @@ Back to the present and I realise another mile has ticked by, and I remembered m
 
 Now, it is important to note that I have a habit of not exactly doing things in a calm and measured way. So before hitting the start line I had taken part in various off-road events but had never tackled the full 26.2 miles on road.
 
-![Podium](/images/IMG_9241.jpg "Standing on the Podium"){.wide}{sizes="(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)"}
+![Podium](/images/2023/IMG_9241.jpg 'Standing on the Podium'){.wide}{sizes="(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)"}
 
 With that in mind, I did not have a goal I had committed to either, secretly I would love to go under four hours but opted to run it socially and enjoy the moment.
 We were now within the last couple of miles and the bleak industrial units had been replaced with the Brighton sea front and lines of beach huts. With the beach huts came crowds, this was just what I needed, some extrinsic motivation. With every meter, I edged closer to the finish the crowds got larger and louder and my pace got quicker. By the time I could see the finish line, I was buzzing with energy, so much so that I stopped to help a stationary runner and get him going again. With one final, what felt like a sprint but no doubt looked like a fast hobble, I crossed the finish line. The marshal's ushered me through the finish funnel to collect a medal, a t-shirt, some other motional material and a bottle of water; that was really what I required. Once the adrenaline had eased I looked back at the clock, 3 hours and 53 minutes. The official time turned out to be 3 hours 52 minutes and 28 seconds!

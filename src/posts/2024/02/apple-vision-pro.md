@@ -1,15 +1,15 @@
 ---
-title: "Apple Vision Pro"
-date: "2024-02-01"
+title: 'Apple Vision Pro'
+date: '2024-02-01'
 description: A post about Apple's Vision Pro headset, its place, and why it's not for everyone yet.
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "Apple"
-  - "pro"
-  - "vision"
-cover: "/images/Vision-Pro-glass.jpg"
-slug: "apple-vision-pro"
+  - 'Apple'
+  - 'pro'
+  - 'vision'
+cover: '/images/2024/Vision-Pro-glass.jpg'
+slug: 'apple-vision-pro'
 ---
 
 ![Apple Vision Pro][image-1]
@@ -32,5 +32,5 @@ That said, it is important to remember that both the iPhone and iPad started som
 
 My take is that this will follow in the tracks of the Apple Watch, a product that no one was really sure how or what they will use it for until the developers got it in their hands and started paving the road. Honestly, I cannot see I will be coding in augmented reality in the coming years, but positive I will be attending meetings and consuming content with a headset on.
 
-[image-1]: /images/Vision-Pro-lifestyle-working.jpg
-[image-2]: /images/Vision-Pro-with-battery.jpg
+[image-1]: /images/2024/Vision-Pro-lifestyle-working.jpg
+[image-2]: /images/2024/Vision-Pro-with-battery.jpg

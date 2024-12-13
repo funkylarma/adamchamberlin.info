@@ -1,16 +1,16 @@
 ---
-title: "Core Bike Show"
-date: "2006-01-24"
+title: 'Core Bike Show'
+date: '2006-01-24'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "cycling"
-- "event"
-slug: "core-bike-show"
-cover: "/images/corebike.jpg"
+  - 'cycling'
+  - 'event'
+slug: 'core-bike-show'
+cover: '/images/corebike.jpg'
 ---
 
-![Corebike Show](/images/90745722.jpg)
+![Corebike Show](/images/2006/90745722.jpg)
 
 Yesterday afternoon was taken as a jolly. In other words, work got the boot and I spent the time traveling to the [Core Bike Show](https://corebike.co.uk/).
 This event is a trade show for the major importers of all things cycling, so I had to take on the role of ‘Web Designer’ for LifecycleUK, even though Rob actually signed me up as an office gimp! Matt (the only real employee of LifeCycle) was 'Mechanic’.

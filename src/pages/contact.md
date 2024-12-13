@@ -1,10 +1,7 @@
 ---
-title: "Social"
-kicker: "Time to get in contact"
-eleventyNavigation:
-  key: Social
-  order: 3
-permalink: "/social/"
+title: 'Contact'
+kicker: 'Time to get social'
+permalink: '/contact/'
 ---
 
 Over the years I have had various contact forms and social networking handles, all I have learnt is that they serve to generate more email or internet mental chatter.{.h3}
