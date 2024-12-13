@@ -6,9 +6,6 @@ permalink: '/_headers'
 /.well-known/webfinger
   Content-Type: application/jrd+json; charset=UTF-8
 
-/feed/feed.xml
-  Content-Type: application/rss+xml; charset=utf-8
-
 /*
   Cache-Control: max-age=31536000
   Strict-Transport-Security: max-age=31536000; includeSubDomains
@@ -37,7 +34,9 @@ permalink: '/_headers'
 # Feed
 /*.rss
   Cache-Control: max-age=3600, public
-/*.atom
+/*.xml
+  Cache-Control: max-age=3600, public
+/json
   Cache-Control: max-age=3600, public
 
 # Media: images, icons, video, audio, HTC

@@ -1,0 +1,31 @@
+---
+layout: null
+templateEngineOverride: njk
+permalink: /feed/feed.rss
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>{{ metadata.title}}</title>
+  <link>{{ globals.url }}</link>
+  <description>{{ metadata.description }}</description>
+  <language>{{ metadata.language }}</language>
+  <image>
+    <url>{{ metadata.author.image }}</url>
+    <title>{{ metadata.author.name }}</title>
+    <link>{{ globals.url }}</link>
+  </image>
+  {%- for post in collections.post | reverse %}
+  {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <description>{{ post.templateContent | postExcerpt }}</description>
+      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <author>{{ metadata.author.name }}</author>
+      <guid>{{ absolutePostUrl }}</guid>
+    </item>
+  {%- endfor %}
+</channel>
+</rss>
