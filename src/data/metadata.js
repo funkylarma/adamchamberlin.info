@@ -12,8 +12,8 @@ export default {
   description: 'Welcome to the online playground of Adam Chamberlin. Consummate Athlete And DOM Element Wrangler.',
   author: {
     name: 'Adam Chamberlin',
-    email: '',
-    image: baseUrl + 'assets/images/headshot.jpeg',
+    email: 'hello@adamchamberlin.info',
+    image: baseUrl + 'assets/images/headshot.jpg',
     url: baseUrl + 'about/',
   },
 };

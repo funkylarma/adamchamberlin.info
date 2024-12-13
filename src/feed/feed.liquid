@@ -5,23 +5,33 @@ permalink: /feed/feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ globals.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ metadata.title }}</title>
-    <link>{{ globals.url }}</link>
-    <atom:link href="{{ globals.feed.url }}" rel="self" type="application/rss+xml" />
-    <description>{{ metadata.description }}</description>
-    <language>{{ metadata.language }}</language>
-    {%- for post in collections.post | reverse %}
-      {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
-      <item>
-        <title>{{ post.data.title }}</title>
-        <link>{{ absolutePostUrl }}</link>
-        <description>{{ post.templateContent | postExcerpt | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
-        <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-        <dc:creator>{{ metadata.author.name }}</dc:creator>
-        <guid>{{ absolutePostUrl }}</guid>
-      </item>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.description }}</subtitle>
+  <link href="{{ globals.atomFeed.url }}" rel="self"/>
+  <link href="{{ globals.url }}" rel="alternate" type="text/html"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ globals.url | addPathPrefixToFullUrl }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in collections.post | reverse %}
+  {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
+  <entry>
+    <id>{{ absolutePostUrl }}</id>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <published>{{ post.date | dateToRfc3339 }}</published>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    {%- for category in post.data.categories %}
+    <category term="{{ category }}" />
     {%- endfor %}
-  </channel>
-</rss>
+    <content type="html">{{ post.content | postExcerpt }}</content>
+    <author>
+      <name>{{ metadata.author.name }}</name>
+      <email>{{ metadata.author.email }}</email>
+    </author>
+  </entry>
+  {%- endfor %}
+</feed>
