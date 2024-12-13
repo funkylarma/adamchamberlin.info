@@ -16,6 +16,6 @@ This site has been in development since 2008 and has seen many versions and setu
 
 ## Other Pages{.h3}
 
-- [/now](/now/) - Learn about what I'm up to now
-- [/colophon](/colophon/) - Learn more about the site
-- [/uses](/uses/) - Learn about my setup
+- [/now](/now/) — Learn about what I'm up to now
+- [/colophon](/colophon/) — Learn more about the site
+- [/uses](/uses/) — Learn about my setup
