@@ -1,14 +1,15 @@
 ---
-title: "Paris-Roubaix"
-date: "2006-04-09"
+title: 'Paris-Roubaix'
+date: '2006-04-09'
+cover: /images/2006/125918299.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "cycling"
-slug: "paris-roubaix"
+  - 'cycling'
+slug: 'paris-roubaix'
 ---
 
-![Photo sharing](/images/125918299.jpg)
+![Photo sharing](/images/2006/125918299.jpg)
 
 Lucy recorded the Paris-Roubaix cycle race for me today as I was; as usual, out on my bike.
 

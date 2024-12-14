@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for page in collections.all | reverse %}
+  {% for page in collections.post | reverse %}
     {% if (not page.data.draft) and (not page.data.noindex) %}
       {% set absoluteUrl %}{{ page.url | htmlBaseUrl(globals.url) }}{% endset %}
       <url>
@@ -13,5 +13,17 @@ eleventyExcludeFromCollections: true
         <lastmod>{{ page.date | dateISO }}</lastmod>
       </url>
     {% endif %}
-{%- endfor %}
+  {%- endfor %}
+  {%- for cat, val in collections.categoryList | dictsort -%}
+    <url>
+      <loc>{{ globals.url }}category/{{ cat | slug }}/</loc>
+      <lastmod>{% currentBuildDate %}</lastmod>
+    </url>
+  {%- endfor %}
+  {%- for tag, val in collections.tagList | dictsort -%}
+    <url>
+      <loc>{{ globals.url }}tagged/{{ tag | slug }}/</loc>
+      <lastmod>{% currentBuildDate %}</lastmod>
+    </url>
+  {%- endfor %}
 </urlset>

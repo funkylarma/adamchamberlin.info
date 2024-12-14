@@ -1,20 +1,20 @@
 ---
-title: "Leaving Strava"
+title: 'Leaving Strava'
 date: 2020-08-02
 description: A post on Strava, reflecting on its impact on fitness and life balance during challenging times.
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "Strava"
-  - "social"
-  - "networking"
-cover: "/images/strava.png"
-slug: "leaving-strava"
+  - 'Strava'
+  - 'social'
+  - 'networking'
+cover: '/images/2020/strava.png'
+slug: 'leaving-strava'
 ---
 
 It was 2010, and I signed up for the latest web service but unlike most of the signups this did not offer 140 characters to express my feelings, it was a new service called Strava. Back then, Strava was pretty new, having only emerged a few years prior, but it was gaining traction in the fitness arena, in particular cycling.
 
-![Strava](/images/strava.png)
+![Strava](/images/2020/strava.png)
 
 To me, Strava started as a digital logbook of my activities on the bike. Each week I would check to see how far I cycled and compare this on a leaderboard of local riders. Clearly, the natural progression was to segments and the next level of comparison. I would target local segments and try to beat riders I knew.
 My life had become all about the average speed, and nothing else mattered.

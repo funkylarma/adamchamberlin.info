@@ -1,11 +1,12 @@
 ---
-title: "Sudbury Joggers"
-date: "2008-02-06"
+title: 'Sudbury Joggers'
+date: '2008-02-06'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "running"
-slug: "sudbury-joggers"
+  - 'running'
+  - 'Nike'
+slug: 'sudbury-joggers'
 ---
 
 For the last couple of evenings when I have been outrunning round Sudbury, I have noticed an abundance of other runners and joggers out there. On one run, I actually saw the same person twice! Once within the first 2 minutes and then on the last leg. You could say that there are still plenty of people out there taking up their New Year's resolutions and keeping fit.

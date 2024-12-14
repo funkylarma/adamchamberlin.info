@@ -1,18 +1,18 @@
 ---
-title: "The Day I Met James Toseland"
-date: "2008-04-08"
+title: 'The Day I Met James Toseland'
+date: '2008-04-08'
+cover: /images/2008/toseland.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "James"
-  - "Toseland"
-  - "MotoGP"
-  - "life"
-slug: "the-day-i-met-james-toseland"
-cover: "/images/toseland.jpg"
+  - 'James'
+  - 'Toseland'
+  - 'MotoGP'
+  - 'life'
+slug: 'the-day-i-met-james-toseland'
 ---
 
-![Photo sharing](/images/2390402886.jpg)
+![Photo sharing](/images/2008/2390402886.jpg)
 
 James Toseland is the current World Super Bike Champion, and now the best British bet at winning the MotoGP. Think of him as the motorbike version of Lewis Hamilton. Now I will level and say I have not always been up-to-date with my knowledge of motorcycling, so put me up against a diehard fan of Mr. Toseland and honestly could not answer questions about his beginning’s in trial bike riding. Or how he got signed in to the 125cc class and worked his way up to his current Tech3 Yamaha MotoGP deal. But I do follow the sport and I know a good rider when I see one, you can also tell that James has a stand-up personality.
 

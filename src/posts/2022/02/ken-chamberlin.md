@@ -1,13 +1,13 @@
 ---
-title: "Ken Chamberlin"
-date: "2022-02-21"
+title: 'Ken Chamberlin'
+date: '2022-02-21'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "life"
-  - "family"
-cover: "/images/ken-chamberlin.jpeg"
-slug: "ken-chamberlin"
+  - 'life'
+  - 'family'
+cover: '/images/2022/ken-chamberlin.jpeg'
+slug: 'ken-chamberlin'
 ---
 
 I remember sitting in the back of a hot car having flown into Poitier international airport for the first time, looking out of the window at the countryside and being slightly confused.
@@ -23,6 +23,8 @@ It was during this first stay in France I spent a bit of time just sitting back 
 That holiday, I feel like I got to know my father just a little better; we'll learn more about him. I mean, he was alway teaching like a father should and there for his sons, but not in one of those preachy ways. As Sean recently pointed out, he would never solve your problems directly. He would let you solve it yourself, by talking, asking those theoretical questions and letting you come to the right decisions. It was over the next week in France that I did exactly that myself trying to understand why we were sitting in Poutiou Charente miles away from the coast, friends, family and apparently any vineyards.
 
 Honestly, I was expecting some lonely ex-pat farmer sat there with no life outside the British FreeSat television connection. To my surprise, I found a man who had already secured a winter wood supply, was on first name terms with the neighbours and the town mayor. He had already made connections with the local English residents but was equally at home attempting farming chat with the French locals. It was at this point I realised the true super power of superman.
+
+![Ken Chamberlin](/images/2022/ken-chamberlin.jpeg 'Ken Chamberlin')
 
 Superman is a moniker that we have recently been using to refer to dad. It stated with a fund raising event, which if you look at your order of service you will see it is much more than just a phrase. But how else would you want to look up to your own father than as a superhero.
 

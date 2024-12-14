@@ -1,15 +1,16 @@
 ---
-title: "welcome back"
-date: "2006-04-20"
+title: 'welcome back'
+date: '2006-04-20'
+cover: /images/2006/130943517.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "life"
-- "update"
-slug: "welcome-back"
+  - 'life'
+  - 'update'
+slug: 'welcome-back'
 ---
 
-![Photo sharing](/images/130943517.jpg)
+![Photo sharing](/images/2006/130943517.jpg)
 It has taken a while to sit down and write this post, but we are back from a extended holiday weekend on the north Norfolk coast.
 
 We were camping in a small village called East Runton, which is just outside Cromer.

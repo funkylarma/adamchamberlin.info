@@ -1,18 +1,18 @@
 ---
-title: "Vittoria Terreno Zero Review"
-date: "2020-11-19"
+title: 'Vittoria Terreno Zero Review'
+date: '2020-11-19'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "cycling"
-  - "review"
-  - "vittoria"
-  - "terreno"
-cover: "/images/terreno.jpg"
-slug: "vittoria-terreno-zero"
+  - 'cycling'
+  - 'review'
+  - 'vittoria'
+  - 'terreno'
+cover: '/images/2020/terreno.jpg'
+slug: 'vittoria-terreno-zero'
 ---
 
-![Terreno Zero](/images/terreno.jpg)
+![Terreno Zero](/images/2020/terreno.jpg)
 
 At first glance the Vittoria Terreno Zero looks like a lockdown love child of the Corsa road tyre and a Terreno cyclocross tyre. Has Vitoria found that sweet spot for fast gravel rides?
 
@@ -27,7 +27,7 @@ So, what happens when you take the smooth centre section of a Corsa road tyre an
 
 The fact that this tyre is called a Terreno Zero and not a ‘Corsa All Road’ probably tells you which type of rider Vittoria are appealing too.
 
-![Photo sharing](/images/vittoria-tires.jpg)
+![Photo sharing](/images/2020/vittoria-tires.jpg)
 
 There are four size offerings if you ride 700c wheels and one in the 650b format. My test tyres are the 32 mm wide 700c tubeless ready versions, which are the narrowest in the range, widths bulge to 38c.
 Whilst there is only one size for the smaller rim I’m sure Vittoria are backing this size and sales to the gravel market will be a high percentage of this 47 mm wide version.
@@ -41,7 +41,7 @@ Once mounted on my DT Swiss ER1400 and inflated to a lofty 50psi they were measu
 
 ## Out on the road/trail
 
-![Photo sharing](/images/terreno-fork.jpg)
+![Photo sharing](/images/2020/terreno-fork.jpg)
 
 Whilst on the tarmac the centre tread, or lack of, acts just like any Corsa I have ever ridden, admittedly they don’t feel as tacky as the road version, but they roll really well. As you spin the Zeros faster you are quickly reminded that these are gravel tyres, the wind noise as the fish scales try to cut a hole is very noticeable. Once you hear it you can’t help but feel slower even if it is only in the head.
 When you run out of black top you just keep going, those funny-looking honeycomb blocks do work. They add just enough bite and feel to keep on the gas for longer. That said, you can quickly find the limits of these tyres, when the surface gets really loose they just cannot cope as well and you are probably going to have to start messing with tyre pressures to get the most out of them. Due to an August heatwave I have not been able to test what I suspect will be the tyre’s weakness; wet conditions. That centre section is so smooth that I think once the ground gets damp these are going to be nothing more than Bambi on Ice.
@@ -51,4 +51,4 @@ When you run out of black top you just keep going, those funny-looking honeycomb
 The Zeros are just like the rest of the Terreno range I have ridden; on paper it just does not feel like it should work. Yet out in the real world I have been surprised how well they handle. The Zeros perform well on the road, they won’t feel out of place on a café run, likewise they hold their own on dry hard pack trails. Granted these are not a dedicated off-road tyre, but if you are a gravel rider that takes in a fair bit or tarmac between sections, or the trails are hard packed then these are worth a look.
 I will continue to rack up the miles and ride them into the Autumn and see how they perform in the changing conditions.
 
-![Photo sharing](/images/ridley.jpg)
+![Photo sharing](/images/2020/ridley.jpg)

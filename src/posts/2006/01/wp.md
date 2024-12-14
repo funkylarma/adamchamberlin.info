@@ -1,13 +1,13 @@
 ---
-title: "WordPress"
-date: "2006-01-11"
+title: 'WordPress'
+date: '2006-01-11'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "WordPress"
-- "theme"
-- "development"
-slug: "wp"
+  - 'WordPress'
+  - 'theme'
+  - 'development'
+slug: 'wp'
 ---
 
 <!-- ![WordPress][image-1] -->
@@ -34,12 +34,9 @@ K2 is the very popular theme from Michael Heilman, the creator of Kubrick (the d
 
 \- The second installment, not 100% working but as close as I can do right now. [Download][5]
 
-[1]:	https://adamchamberlin.info "Frost"
-[2]:	https://www.flickr.com/photos/funkylarma/85545116/ "Billet"
-[3]:	https://adamchamberlin.info
-[4]:	https://www.flickr.com/photos/funkylarma/83449768/ "Grey"
-[5]:	https://adamchamberlin.info
-
-[image-1]:	/images/wordpress-logo.png
-[image-2]:	/images/85545116_11aa7512e9_s.jpg
-[image-3]:	/images/83449768_77be996095_s.jpg
+[1]: https://adamchamberlin.info 'Frost'
+[2]: https://www.flickr.com/photos/funkylarma/85545116/ 'Billet'
+[3]: https://adamchamberlin.info
+[4]: https://www.flickr.com/photos/funkylarma/83449768/ 'Grey'
+[5]: https://adamchamberlin.info
+[image-1]: /images/2006/wordpress-logo.png

@@ -1,13 +1,14 @@
 ---
-title: "Nice one IE"
-date: "2008-03-13"
+title: 'Nice one IE'
+date: '2008-03-13'
+cover: /images/2008/ie8.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "Microsoft"
-  - "Sony"
-  - "Vaio"
-slug: "nice-one-ie"
+  - 'Microsoft'
+  - 'Sony'
+  - 'Vaio'
+slug: 'nice-one-ie'
 ---
 
 Over the last few days I'm having been bringing back my old Vaio laptop from the dead. I purchased the laptop many moons ago, before my adventure into the world of Apple. But once I had found utopia with OSX the little Sony got put away somewhere and forgotten about. Meanwhile, Microsoft have seen sense and [180’d on their views](https://www.theregister.co.uk/2008/03/04/ie8_web_standards/) and IE8 will be the first fully functional standards aware MS web browser. The beta landed at the beginning of March, and I’ve been keen to try it out. So what better chance to format, install and rebuild the once forgotten machine.

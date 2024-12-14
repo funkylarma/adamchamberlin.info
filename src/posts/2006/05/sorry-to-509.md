@@ -1,17 +1,18 @@
 ---
-title: "Sorry to 50.9%"
-date: "2006-05-06"
+title: 'Sorry to 50.9%'
+date: '2006-05-06'
+cover: /images/2006/140292734.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "web"
-- "development"
-slug: "sorry-to-509"
+  - 'web'
+  - 'development'
+slug: 'sorry-to-509'
 ---
 
 According to [Mint](https://haveamint.com/) 50.9% of the visitors to my site use Internet Explorer (shame on you, [browse happy](https://browsehappy.com/)!) needless to say, you must cater for all users really and 50% is something you just cannot ignore.
 
-![IE you pain!](/images/140292734.jpg)
+![IE you pain!](/images/2006/140292734.jpg)
 
 Chris brought to my attention that the site is not IE friendly, everything still displays, and you get the whole picture, just not the picture I intended you to see.
 If you are using IE, your screen looks something like the picture, the navigation sidebar should not be sitting down there, it should be flush with the top of the article.

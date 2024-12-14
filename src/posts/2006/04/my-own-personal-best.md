@@ -1,12 +1,11 @@
 ---
-title: "My Own Personal Best"
-date: "2006-04-03"
+title: 'My Own Personal Best'
+date: '2006-04-03'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "cycling"
-- "100"
-slug: "my-own-personal-best"
+  - 'cycling'
+slug: 'my-own-personal-best'
 ---
 
 Yesterday was another one of those cycle runs out to the coast, we have been trying to do these every other weekend as a means of building up the base milage.

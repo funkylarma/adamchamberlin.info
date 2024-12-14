@@ -1,11 +1,12 @@
 ---
-title: "I got my own Buzz"
-date: "2006-10-26"
+title: 'I got my own Buzz'
+date: '2006-10-26'
+cover: /images/2006/279037621.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-- "life"
-slug: "i-got-my-own-buzz"
+  - 'life'
+slug: 'i-got-my-own-buzz'
 ---
 
 I’ve been Woody'ed!
@@ -24,4 +25,4 @@ When they finally popped round the other night to catch up I was treated to an e
 
 You know that I’m only joking and I wish both of you the best of luck. If you ever get a place sorted and it all pans out remember to make sure you have a little room just for Woody!
 
-[image-1]:	/images/279037621.jpg
+[image-1]: /images/2006/279037621.jpg

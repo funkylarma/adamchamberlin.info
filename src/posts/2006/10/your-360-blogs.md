@@ -5,7 +5,6 @@ categories:
   - 'writing'
 tags:
   - 'Xbox'
-  - '360'
 slug: 'your-360-blogs'
 cover: '/images/2006/360voiceclip.jpg'
 ---

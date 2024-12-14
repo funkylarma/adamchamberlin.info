@@ -1,13 +1,14 @@
 ---
-title: "Back on my bike"
-date: "2008-09-02"
+title: 'Back on my bike'
+date: '2008-09-02'
+cover: /images/2008/longcycledown.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "cycling"
-  - "event"
-  - "end2end"
-slug: "back-on-my-bike"
+  - 'cycling'
+  - 'event'
+  - 'end2end'
+slug: 'back-on-my-bike'
 ---
 
 That’s right, after a two-year break, I’m back on my bike and taking on the UK again.

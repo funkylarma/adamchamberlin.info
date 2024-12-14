@@ -1,12 +1,12 @@
 ---
-title: "Happy New Year"
-date: "2006-01-01"
+title: 'Happy New Year'
+date: '2006-01-01'
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "life"
-slug: "happy-new-year"
-cover: "/images/new_year.jpg"
+  - 'life'
+slug: 'happy-new-year'
+cover: '/images/2006/new_year.jpg'
 ---
 
 It’s a bit blurry, my head is a bit cloudy, everything is so strange and the house is a mess, I guess that means it was a good night.

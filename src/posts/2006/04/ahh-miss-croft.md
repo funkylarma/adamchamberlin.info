@@ -1,14 +1,15 @@
 ---
 title: "Ahh Miss Croft, you're back."
-date: "2006-04-09"
+date: '2006-04-09'
+cover: /images/2006/125764123.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
-  - "gaming"
-slug: "ahh-miss-croft"
+  - 'gaming'
+slug: 'ahh-miss-croft'
 ---
 
-![Photo sharing](/images/125764122.jpg)
+![Photo sharing](/images/2006/125764122.jpg)
 
 Tomb Raider has been around for a while fact, Lara Croft is now the largest selling female character of all time, but recently, it had been a bit of a let-down.
 
@@ -17,14 +18,14 @@ The original Tomb Raider, which I first played on a PlayStation (the big bulky g
 Now enter Tomb Raider Legends, the latest multi-platform Lara Croft game.
 What a difference time makes, Lara is back!
 
-![Photo sharing](/images/125764123.jpg)
+![Photo sharing](/images/2006/125764123.jpg)
 
 Of course, I’m currently playing the 360 version, well, would you want to miss out on screens like that just because you bought the PS2 version?
 The graphics are stunning, with the water effects being top of the list, but then that was one of the best items in the original games. But the best part of the game is that we are back to the raiding of tombs rather than wondering around environments shooting and being shot at. That said, there is always your fair share of opposing raiders out there to make life difficult, but you have your trusty pistols at hand.
 
 The most noticeable part of this game is the change in controls and methods, don’t worry, change is good this time round. Whereas before, you can draw your guns and walk around and when an enemy came into sight, se would auto-target.
 
-![Photo sharing](/images/125764124.jpg)
+![Photo sharing](/images/2006/125764124.jpg)
 
 This time you get a reticule around each enemy and holding a trigger will target that enemy, you can select another by releasing and holding again. Once, targeted is the same old kiss kiss bang bang affair. Now to help you out, you can destroy certain set environment features to take out your woes, shoot that pillar to fall on the truck, job done. You can always fall back on the precision aiming of a first person style, handy for shooting those special panels to activate that puzzle or even the crate to collect the various awards.
 

@@ -1,13 +1,14 @@
 ---
-title: "I Only Wanted The New NIN Album"
-date: "2008-03-04"
+title: 'I Only Wanted The New NIN Album'
+date: '2008-03-04'
+cover: /images/2008/ghosts.jpg
 categories:
-  - "writing"
+  - 'writing'
 tags:
- - "download"
- - "music"
- - "file-sharing"
-slug: "i-only-wanted-the-new-nin-album"
+  - 'download'
+  - 'music'
+  - 'file-sharing'
+slug: 'i-only-wanted-the-new-nin-album'
 ---
 
 Yesterday saw the release of [Ghosts I-IV](https://ghosts.nin.com/) from [NIN](https://nin.com/). Not only was this release not really publicised, but it was also following in a similar track of Radio head and their In Rainbows album. Not quite a ‘pay what you feel’ option, but some seriously price reduced DRM free chunage.

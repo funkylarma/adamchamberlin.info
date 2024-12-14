@@ -9,7 +9,6 @@ eleventyExcludeFromCollections: true
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ globals.atomFeed.url }}" rel="self"/>
-  <link href="{{ globals.url }}" rel="alternate" type="text/html"/>
   <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ globals.url | addPathPrefixToFullUrl }}</id>
   <author>

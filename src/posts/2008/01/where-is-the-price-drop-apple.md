@@ -1,11 +1,12 @@
 ---
-title: "Where is the price drop Apple?"
-date: "2008-01-30"
-categories: 
-  - "writing"
+title: 'Where is the price drop Apple?'
+date: '2008-01-30'
+cover: images/2007/appletv.jpg
+categories:
+  - 'writing'
 tags:
- - "Apple"
-slug: "where-is-the-price-drop-apple"
+  - 'Apple'
+slug: 'where-is-the-price-drop-apple'
 ---
 
 Let’s be honest, since its launch back in March 2007, it has not exactly been as big as can be expected.

@@ -7,7 +7,7 @@ tags:
   - 'cycling'
   - 'event'
 slug: 'core-bike-show'
-cover: '/images/corebike.jpg'
+cover: '/images/2006/corebike.jpg'
 ---
 
 ![Corebike Show](/images/2006/90745722.jpg)
