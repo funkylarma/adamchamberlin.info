@@ -3,6 +3,10 @@ import sanitizeHTML from 'sanitize-html';
 import { DateTime } from 'luxon';
 import globals from '../src/data/globals.js';
 import metadata from '../src/data/metadata.js';
+import { month_names } from './constants.js';
+import { nth } from './constants.js';
+
+const parse = (date) => new Date(Date.parse(date));
 
 export default {
   debug: function (content) {
@@ -66,15 +70,24 @@ export default {
   },
 
   getYear: function (dateObj) {
-    return dateObj.split('/')[0];
+    return parse(dateObj).getFullYear();
   },
 
   getMonth: function (dateObj) {
-    return dateObj.split('/')[1];
+    return parse(dateObj).getMonth() + 1;
+  },
+
+  getMonthName: function (dateObj) {
+    return month_names[parse(dateObj).getMonth()];
   },
 
   getDay: function (dateObj) {
-    return dateObj.split('/')[2];
+    return parse(dateObj).getDate();
+  },
+
+  getDayOrdinal: function (dateObj) {
+    let day = parse(dateObj).getDate();
+    return day + nth(day);
   },
 
   dateReadable: function (dateObj, format, zone) {
@@ -91,6 +104,12 @@ export default {
 
   dateISO: function (dateObj) {
     return DateTime.fromJSDate(dateObj).toISO();
+  },
+
+  dateLongDate: function (dateObj) {
+    date = parse(dateObj);
+    let day = date.getDate();
+    return `${day}${nth(day)} ${month_names[date.getMonth()]} ${date.getFullYear()}`;
   },
 
   dateParse: function (dateObj) {
@@ -113,7 +132,7 @@ export default {
 
   monthName: function (monthNum) {
     const date = new Date(2000, parseInt(monthNum) - 1, 1);
-    return date.toLocaleString('en-US', { month: 'long' });
+    return date.toLocaleDateString('en', { month: 'long' });
   },
 
   absoluteUrl: function (url) {

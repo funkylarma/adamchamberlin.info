@@ -1,0 +1,38 @@
+.page--content {
+  .diary {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    li.diary--years {
+      display: flex;
+      list-style: none;
+      .diary--year {
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        h2 {
+          font-size: var(--main-font-size-large);
+        }
+      }
+    }
+    ol.diary--months {
+      list-style: none;
+      position: relative;
+      padding: 0 1rem;
+      .diary--month {
+        background: var(--main-color-background);
+        text-transform: uppercase;
+        position: sticky;
+        top: 0;
+
+        h3 {
+          font-size: var(--main-font-size-large);
+        }
+      }
+    }
+    ol.diary--entries {
+      list-style: none;
+      padding: 0;
+    }
+  }
+}
