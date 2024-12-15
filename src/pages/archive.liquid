@@ -1,15 +1,11 @@
 ---
 layout: page.liquid
+templateEngineOverride: njk
 eleventyExcludeFromCollections: true
 title: Archives
 kicker: Strolling back in time
-templateEngineOverride: njk
-permalink: "/archive/"
 description: "The archive of all the content published on adamchamberlin.info. You can browse by tag or category, or just dive into a list of all the posts."
-eleventyComputed:
-  filter:
-  - page
-  - post
+permalink: "/archive/"
 ---
 <p class="h3">Welcome to the digital archive of the site.</p>
 <p>From here you can browse by <a href="#tag" title="Browse by tag">tag</a>, by <a href="#category" title="Browse by category">category</a> or just view all the content over the <a href="#date" title="Browse by date">years</a>. There are a lot of <a href="/stats/">statistics</a> that detail what went into putting all these words together.</p>
@@ -47,13 +43,13 @@ eleventyComputed:
 </div><!-- .category-list -->
 <div class="archive-list">
   <h2 id="date">By Date</h2>
-  {% for year, yearPosts in collections.postsByYear %}
+  {%- for year, yearPosts in collections.postsByYear -%}
     <h3>{{ year }}</h3>
-    <ul>
-      {% for post in yearPosts %}
-        <li class="post">
-          <a href="{{ post.url }}" title="Read post" class="post-link">
-            {{ post.data.title }}
+    <ul class="postlist">
+      {% for post in yearPosts | reverse %}
+        <li class="post{% if post.url == url %} postlist-item-active{% endif %}">
+          <a class="postlist-link" href="{{ post.url | url }}" title="Read post">
+            {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
           </a>
           <div class="post-date">
             - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>

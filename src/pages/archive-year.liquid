@@ -1,0 +1,33 @@
+---
+layout: page.liquid
+templateEngineOverride: njk
+eleventyExcludeFromCollections: true
+title: Yearly Archives
+kicker: Strolling back in time
+description: "The archive of all the content published on adamchamberlin.info. You can browse by tag or category, or just dive into a list of all the posts."
+pagination:
+  data: collections.postsByYear
+  size: 1
+  alias: year
+permalink: /{{ year[0] }}/
+---
+
+<h2>{{ year[0] }}</h2>
+<div class="archive-list">
+{% for postedYear, yearPosts in collections.postsByYear %}
+  {% if postedYear === year[0] %}
+  <ul class="postlist">
+    {% for post in yearPosts | reverse %}
+      <li class="post{% if post.url == url %} postlist-item-active{% endif %}">
+        <a class="postlist-link" href="{{ post.url | url }}" title="Read post">
+          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+        </a>
+        <div class="post-date">
+          - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endfor %}
+</div>

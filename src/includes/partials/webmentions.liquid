@@ -47,7 +47,7 @@
                           </span>
                         {% endif %}
                         <em>
-                          <time class="postlist-date dt-published" datetime="{{ item.published }}">{{ item.published | readableDateFromISO: "dd LLL yyyy" }}</time>
+                          <time class="postlist-date dt-published" datetime="{{ item.published }}">{{ item.published | dateReadableFromISO: "dd LLL yyyy" }}</time>
                         </em>
                       </div>
                       <div class="comment--body">

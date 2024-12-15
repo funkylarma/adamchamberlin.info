@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import _ from 'lodash';
 import writingStats from 'writing-stats';
 import moment from 'moment';
 
@@ -57,6 +58,7 @@ function makeYearStats(
 }
 
 export default {
+  // Drafts Collection
   drafts: function (collection) {
     return collection
       .getAll()
@@ -64,6 +66,7 @@ export default {
       .sort((a, b) => b.date - a.date);
   },
 
+  // Category Collection
   categoryList: function (collection) {
     let catSet = {};
     collection.getAll().forEach((item) => {
@@ -80,6 +83,7 @@ export default {
     return catSet;
   },
 
+  // Tag Collection
   tagList: function (collection) {
     const tagsSet = {};
     collection.getAll().forEach((item) => {
@@ -96,15 +100,40 @@ export default {
     return tagsSet;
   },
 
+  // Year Collection
   postsByYear: function (collection) {
-    const posts = collection.getFilteredByTag('post').reverse();
-    const years = posts.map((post) => post.date.getFullYear());
-    const uniqueYears = [...new Set(years)];
-    const postsByYear = uniqueYears.reduce((prev, year) => {
-      const filteredPosts = posts.filter((post) => post.date.getFullYear() === year);
-      return [...prev, [year, filteredPosts]];
-    }, []);
-    return postsByYear;
+    return _.chain(collection.getFilteredByTag('post'))
+      .groupBy((post) => post.date.getFullYear())
+      .toPairs()
+      .reverse()
+      .value();
+  },
+
+  // Year/Month Collection
+  postsByYearMonth: function (collection) {
+    return _.chain(collection.getFilteredByTag('post'))
+      .groupBy((post) => {
+        const year = post.date.getFullYear();
+        const month = String(post.date.getMonth() + 1).padStart(2, '0');
+        return `${year}/${month}`;
+      })
+      .toPairs()
+      .reverse()
+      .value();
+  },
+
+  // Year/Month/Day Collection
+  postsByYearMonthDay: function (collection) {
+    return _.chain(collection.getFilteredByTag('post'))
+      .groupBy((post) => {
+        const year = post.date.getFullYear();
+        const month = String(post.date.getMonth() + 1).padStart(2, '0');
+        const day = String(post.date.getDate()).padStart(2, '0');
+        return `${year}/${month}/${day}`;
+      })
+      .toPairs()
+      .reverse()
+      .value();
   },
 
   postStats: function (collectionApi) {

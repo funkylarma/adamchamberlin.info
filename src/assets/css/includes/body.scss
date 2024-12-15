@@ -57,6 +57,10 @@ main {
             border-top-left-radius: 1rem;
             border-top-right-radius: 5rem;
 
+            &.no-frills {
+              border-radius: 0;
+            }
+
             @media (prefers-color-scheme: dark) {
               filter: grayscale(50%);
             }
@@ -291,6 +295,10 @@ main {
         border-top-left-radius: 1rem;
         border-top-right-radius: 5rem;
         filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.1));
+
+        &.no-frills {
+          border-radius: 0;
+        }
 
         @media (max-width: 550px) {
           border-bottom-left-radius: 25px;

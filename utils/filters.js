@@ -65,11 +65,23 @@ export default {
     return lines;
   },
 
+  getYear: function (dateObj) {
+    return dateObj.split('/')[0];
+  },
+
+  getMonth: function (dateObj) {
+    return dateObj.split('/')[1];
+  },
+
+  getDay: function (dateObj) {
+    return dateObj.split('/')[2];
+  },
+
   dateReadable: function (dateObj, format, zone) {
     return DateTime.fromJSDate(dateObj, { zone: zone || 'utc' }).toFormat(format || 'dd LLLL yyyy');
   },
 
-  readableDateFromISO: function (dateStr, formatStr = "dd LLL yyyy 'at' hh:mma") {
+  dateReadableFromISO: function (dateStr, formatStr = "dd LLL yyyy 'at' hh:mma") {
     return DateTime.fromISO(dateStr).toFormat(formatStr);
   },
 
@@ -97,6 +109,11 @@ export default {
   timeReading: function (content) {
     const minutes = Math.ceil(content.trim().split(/\s+/).length / 200);
     return `${minutes} min read`;
+  },
+
+  monthName: function (monthNum) {
+    const date = new Date(2000, parseInt(monthNum) - 1, 1);
+    return date.toLocaleString('en-US', { month: 'long' });
   },
 
   absoluteUrl: function (url) {

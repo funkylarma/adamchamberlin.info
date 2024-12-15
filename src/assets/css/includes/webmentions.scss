@@ -41,6 +41,7 @@
       background-size: cover;
       margin-right: 0.75em;
       transition: 0.2s;
+      transform: rotate(270deg);
     }
   }
 
@@ -55,7 +56,7 @@
   }
 
   details[open] > summary::before {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
 
   @keyframes animateUp {
