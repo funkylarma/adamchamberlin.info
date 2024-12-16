@@ -21,6 +21,7 @@ To keep me focused and the noise to a minimum, I have cut back on my digital foo
 Related Pages{.h3}
 
 - [/now](/now/) — Learn about what I'm up to now
+- [/about](/about/) - Learn more about me
 - [/colophon](/colophon/) — Learn more about the site
 - [/uses](/uses/) — Learn about my setup
 

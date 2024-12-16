@@ -82,8 +82,8 @@ I'm not one for sitting down, so at home and work I have a standing desk. If I d
 
 Related Pages{.h3}
 
-- [/about](/about/) — Learn about me
 - [/now](/now/) — Learn about what I'm up to now
+- [/about](/about/) — Learn about me
 - [/colophon](/colophon/) — Learn more about the site
 
 </div>
