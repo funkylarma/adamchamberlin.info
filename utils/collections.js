@@ -140,7 +140,7 @@ export default {
 
   postsDiary: function (collection) {
     //let entries = collection.getFilteredByTag('post').reverse(),
-    let entries = collection.getAll().reverse(),
+    let entries = collection.getFilteredByTag('post').reverse(),
       output = [];
 
     // Loop through each of the entries
