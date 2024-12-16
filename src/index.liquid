@@ -12,18 +12,18 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
 eleventyComputed:
   title: "Adam Chamberlin {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
 ---
-<section class="intro">
-  <div class="intro--content">
-    <h1>{{ metadata.title }}</h1>
+<section class="intro h-feed hfeed">
+  <div class="intro--content ">
+    <h1 class="p-name site-title">{{ metadata.title }}</h1>
       <div class="tagline">
-        <p>{{ metadata.description }}</p>
+        <p class="p-summary site-description">{{ metadata.description }}</p>
       </div><!-- .tagline -->
   </div><!-- .intro--content -->
 </section><!-- .intro -->
 <section class="post-list">
   <div class="post-list--content">
     {%- for post in pagination.items -%}
-    <article class="post h-entry">
+    <article class="post h-entry hentry">
       {% if post.data.cover %}
         <div class="post--image">
           <img src="{{ post.data.cover }}"
@@ -38,7 +38,7 @@ eleventyComputed:
       <div class="post--content">
         <div class="post--head">
           <h2 class="p-name">
-            <a class="u-url u-" href="{{ post.url }}" title="Continue to read {{ post.data.title }}" class="post-link">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
               {% if post.data.title %}
                 {{ post.data.title }}
                 {% if post.data.draft %}

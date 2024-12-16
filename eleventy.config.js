@@ -23,9 +23,9 @@ import collections from './utils/collections.js';
 import filters from './utils/filters.js';
 import shortcodes from './utils/shortcodes.js';
 import pairedShortcodes from './utils/shortcodes-paired.js';
+import liquidShortcodes from './utils/shortcodes-liquid.js';
 import transforms from './utils/transforms.js';
 import { markdown } from './utils/markdown.js';
-import viteHelpers from './utils/vite.js';
 
 // Environmental
 const isDev = process.env.ELEVENTY_ENV === 'development';
@@ -110,9 +110,9 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPairedShortcode(shortcodeName, pairedShortcodes[shortcodeName]);
   });
 
-  // Vite Shortcodes
-  Object.keys(viteHelpers).forEach((shortcodeName) => {
-    eleventyConfig.addLiquidShortcode(shortcodeName, viteHelpers[shortcodeName]);
+  // Liquid Shortcodes
+  Object.keys(liquidShortcodes).forEach((shortcodeName) => {
+    eleventyConfig.addLiquidShortcode(shortcodeName, liquidShortcodes[shortcodeName]);
   });
 
   // Filters

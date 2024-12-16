@@ -7,24 +7,31 @@ kicker: All the content in one big list
 description: All the content in one big scrolling list.
 permalink: /diary/
 ---
-<ol class="diary">
-{% for year in collections.postsDiary %}
-<li class="diary--years">
-  <div class="diary--year">
-    <h2 id="{{ year.title }}">{{ year.title }}</h2>
-  </div>
-  <ol class="diary--months">
-  {% for month in year.months %}
-    <div class="diary--month">
-      <h3>{{ month.title }}</h3>
+
+<div class="h-feed">
+  <ol class="diary">
+  {% for year in collections.postsDiary %}
+  <li class="diary--years">
+    <div class="diary--year">
+      <h2 id="{{ year.title }}">{{ year.title }}</h2>
     </div>
-    <ol class="diary--entries">
-    {% for entry in month.entries %}
-      <li>{{ entry.date }} - <a href="{{ entry.url }}">{{ entry.title }}</a></li>
+    <ol class="diary--months">
+    {% for month in year.months %}
+      <div class="diary--month">
+        <h3>{{ month.title }}</h3>
+      </div>
+      <ol class="diary--entries">
+      {% for entry in month.entries %}
+        <li class="h-entry">
+          <time class="dt-published" datetime="{{ entry.date }}">
+            {{ entry.date }}
+          </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+        </li>
+      {% endfor %}
+      </ol>
     {% endfor %}
     </ol>
+  </li>
   {% endfor %}
   </ol>
-</li>
-{% endfor %}
-</ol>
+</div>

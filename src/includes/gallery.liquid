@@ -27,12 +27,14 @@
           </div><!-- .page--content -->
         </section><!-- .page -->
       </main>
-      <script type="module">
+      <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
+      <script type="module" defer>
         import PhotoSwipeLightbox from '/assets/js/photoswipe-lightbox.esm.min.js';
         import PhotoSwipe from '/assets/js/photoswipe.esm.min.js';
         const options = {
           gallery: '#gallery',
-          children: 'picture',
+          children: 'a',
+          showHideAnimationType: 'zoom',
           pswpModule: PhotoSwipe,
         };
         const lightbox = new PhotoSwipeLightbox(options);
