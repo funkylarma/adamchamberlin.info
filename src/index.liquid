@@ -52,7 +52,7 @@ eleventyComputed:
           <div class="post--meta">
             <div class="post--date">
               <span>Date: </span>
-              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
             </div><!-- .post--date -->
             {% if post.data.categories %}
             <div class="post--categories">

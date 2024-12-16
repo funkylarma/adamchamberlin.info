@@ -29,7 +29,7 @@ This is a list of the 'stuff' I use on a day-to-day basis.
 
 ## Laptop
 
-![Working Outdoors](/images/pages/IMG_1361.jpg "Working outside")
+![Working Outdoors](/images/pages/IMG_1361.jpg 'Working outside')
 
 ### Hardware
 
@@ -56,7 +56,7 @@ This is a list of the 'stuff' I use on a day-to-day basis.
 
 ## Tablet
 
-![Working from home](/images/pages/IMG_0437.jpg "Working from home")
+![Working from home](/images/pages/IMG_0437.jpg 'Working from home')
 
 ### Hardware
 
@@ -75,13 +75,15 @@ This is a list of the 'stuff' I use on a day-to-day basis.
 
 ## Environment Setup
 
-![Office Setup](/images/pages/IMG_1225.jpg "Office setup")
+![Office Setup](/images/pages/IMG_1225.jpg 'Office setup')
 I'm not one for sitting down, so at home and work I have a standing desk. If I do need to take a seat, then I fall back to a Swiss ball.
 
----
+<div class="page--related">
 
-## Other Pages{.h3}
+Related Pages{.h3}
 
 - [/about](/about/) — Learn about me
 - [/now](/now/) — Learn about what I'm up to now
 - [/colophon](/colophon/) — Learn more about the site
+
+</div>

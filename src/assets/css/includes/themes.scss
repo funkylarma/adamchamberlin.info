@@ -49,7 +49,8 @@
 
   .post-single,
   .page {
-    img {
+    .page--related {
+      background: var(--main-color-base);
     }
 
     .tag-list,

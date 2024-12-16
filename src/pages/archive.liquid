@@ -52,7 +52,7 @@ permalink: "/archive/"
             {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
           </a>
           <div class="post-date">
-            - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
+            - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
           </div>
         </li>
       {% endfor %}

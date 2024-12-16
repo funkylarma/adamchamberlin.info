@@ -23,6 +23,34 @@ main {
       h4 {
         color: var(--main-color-tertiary);
       }
+
+      .page--related {
+        background: var(--main-color-white);
+        border-bottom-left-radius: 2.5rem;
+        border-bottom-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 2.5rem;
+        padding: 2rem;
+
+        * {
+          font-size: var(--main-font-size-small);
+        }
+
+        p.h3 {
+          color: var(--main-color-tertiary);
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+
+        ul {
+          padding: 0 1rem;
+          list-style: none;
+
+          li {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
     }
   }
 

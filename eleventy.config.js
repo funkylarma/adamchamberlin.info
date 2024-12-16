@@ -22,6 +22,7 @@ import events from './utils/events.js';
 import collections from './utils/collections.js';
 import filters from './utils/filters.js';
 import shortcodes from './utils/shortcodes.js';
+import pairedShortcodes from './utils/shortcodes-paired.js';
 import transforms from './utils/transforms.js';
 import { markdown } from './utils/markdown.js';
 import viteHelpers from './utils/vite.js';
@@ -102,6 +103,11 @@ export default async function (eleventyConfig) {
   // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
     eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+  });
+
+  // Paired Shortcodes
+  Object.keys(pairedShortcodes).forEach((shortcodeName) => {
+    eleventyConfig.addPairedShortcode(shortcodeName, pairedShortcodes[shortcodeName]);
   });
 
   // Vite Shortcodes

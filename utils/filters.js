@@ -107,9 +107,9 @@ export default {
   },
 
   dateLongDate: function (dateObj) {
-    date = parse(dateObj);
-    let day = date.getDate();
-    return `${day}${nth(day)} ${month_names[date.getMonth()]} ${date.getFullYear()}`;
+    dateObj = parse(dateObj);
+    let day = dateObj.getDate();
+    return `${day}${nth(day)} ${month_names[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
   },
 
   dateParse: function (dateObj) {

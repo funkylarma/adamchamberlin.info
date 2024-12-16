@@ -21,10 +21,12 @@ As family and life developed, the site was neglected and to cut out hosting, I m
 
 adamchamberlin.info was put into place in 2024 and all the original content was redirected to the new domain name. Google Search Console helped migrate any search index results.
 
----
+<div class="page--related">
 
-## Other Pages{.h3}
+Related Pages{.h3}
 
+- [/uses](/uses/) — Learn about my setup
 - [/about](/about/) — Learn about me
 - [/now](/now/) — Learn about what I'm up to now
-- [/uses](/uses/) — Learn about my setup
+
+</div>

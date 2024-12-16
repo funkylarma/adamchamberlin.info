@@ -12,10 +12,12 @@ I am the head of development at [Mackman Group](https://mackman.co.uk) and have 
 
 This site has been in development since 2008 and has seen many versions and setups.
 
----
+<div class="page--related">
 
-## Other Pages{.h3}
+Related Pages{.h3}
 
-- [/now](/now/) — Learn about what I'm up to now
 - [/colophon](/colophon/) — Learn more about the site
+- [/now](/now/) — Learn about what I'm up to now
 - [/uses](/uses/) — Learn about my setup
+
+</div>

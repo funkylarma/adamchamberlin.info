@@ -16,10 +16,12 @@ To keep me focused and the noise to a minimum, I have cut back on my digital foo
 - [YouTube](https://www.youtube.com/@funkylarma)
 - [LastFM](https://www.last.fm/user/FunkyLarma)
 
----
+<div class="page--related">
 
-## Other Pages{.h3}
+Related Pages{.h3}
 
 - [/now](/now/) — Learn about what I'm up to now
 - [/colophon](/colophon/) — Learn more about the site
 - [/uses](/uses/) — Learn about my setup
+
+</div>
