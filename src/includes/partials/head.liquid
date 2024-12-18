@@ -38,6 +38,11 @@
 <link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | absoluteUrl }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <link rel="manifest" href="{{ "/web.manifest" | absoluteUrl }}">
+
+<link rel="pingback" href="https://webmention.io/adamchamberlin.info/xmlrpc">
+<link rel="webmention" href="https://webmention.io/adamchamberlin.info/webmention">
+<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
 <link rel="micropub" href="{{ globals.url }}/micropub">
 <!-- OpenGraph -->
 <meta property="og:site_name" content="{{ metadata.title }}">
@@ -80,9 +85,6 @@
 {% endif %}
 <!-- Fediverse -->
 <meta name="fediverse:creator" content="@funkylarma@mastodon.social">
-<!-- Webmentions -->
-<link rel="pingback" href="https://webmention.io/adamchamberlin.info/xmlrpc">
-<link rel="webmention" href="https://webmention.io/adamchamberlin.info/webmention">
 <!-- Generator -->
 <meta name="generator" content="{{ eleventy.generator }}">
 <!-- Checking local storage for theme settings -->
