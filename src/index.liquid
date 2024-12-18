@@ -18,7 +18,7 @@ eleventyComputed:
       <div class="tagline">
         <p class="p-summary site-description">{{ metadata.description }}</p>
       </div><!-- .tagline -->
-  </div><!-- .intro--content -->
+  </div><!-- .intro-content -->
 </section><!-- .intro -->
 <section class="post-list">
   <div class="post-list--content">
@@ -33,7 +33,7 @@ eleventyComputed:
             class="u-photo"
             {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}
           >
-        </div><!-- .post--image -->
+        </div><!-- .post-image -->
       {% endif %}
       <div class="post--content">
         <div class="post--head">
@@ -53,7 +53,7 @@ eleventyComputed:
             <div class="post--date">
               <span>Date: </span>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-            </div><!-- .post--date -->
+            </div><!-- .post-date -->
             {% if post.data.categories %}
             <div class="post--categories">
               <span>Category: </span>
@@ -62,7 +62,7 @@ eleventyComputed:
                   {{ category }}
                 </a>
               {%- endfor -%}
-            </div><!-- .post--categories -->
+            </div><!-- .post-categories -->
             {% endif %}
             {% if post.data.tags.length > 1 %}
             <div class="post--tags">
@@ -74,7 +74,7 @@ eleventyComputed:
                   </a>
                 {% endif %}
               {%- endfor -%}
-            </div><!-- .post--tags -->
+            </div><!-- .post-tags -->
             {% endif %}
             <div class="post--reading">
               <span>Estimated: </span>
@@ -106,10 +106,10 @@ eleventyComputed:
             <a href="{{ post.url }}" title="Continue to {{ post.data.title }}">Continue</a>
           </div><!-- .continue-reading -->
         {% endif %}
-      </div><!-- .post--content -->
+      </div><!-- .post-content -->
     </article>
     {%- endfor -%}
-  </div><!-- .post-list--content -->
+  </div><!-- .post-list-content -->
 </section><!-- .post-list -->
 
 <section class="pagination">
