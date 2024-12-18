@@ -4,9 +4,7 @@ exports.handler = (event, context, callback) => {
   if (event.httpMethod === 'GET') {
     return callback(null, {
       statusCode: 200,
-      body: '{
-        "message": "hello"
-      }''
+      body: "{}"
     })
   }
 
