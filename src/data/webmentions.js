@@ -12,7 +12,7 @@ const CACHE_DIR = '.cache';
 const API = 'https://webmention.io/api';
 const TOKEN = process.env.WEB_MENTION_KEY;
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production';
-const DOMAIN = global.domain;
+const DOMAIN = globals.domain;
 
 async function fetchWebmentions(since, perPage = 100000) {
   if (!DOMAIN) {
