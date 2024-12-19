@@ -38,7 +38,8 @@ export async function onRequest(context) {
       fileContent.push('latitude: ' + lat)
       fileContent.push('longitude: ' + lng)
       fileContent.push('url: ' + url)
-      fileContent.push('category: checkin')
+      fileContent.push('categories:')
+      fileContent.push(' - checkin')
       fileContent.push('---')
 
       const contents = fileContent.join("\n").toString("base64");

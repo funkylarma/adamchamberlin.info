@@ -39,7 +39,7 @@
         <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
         <script>
-          mapboxgl.accessToken = "{{ keys.mapbox }}";
+          mapboxgl.accessToken = "{{ keys.mapBox }}";
           const map = new mapboxgl.Map({
               container: 'map', // container ID
               center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
