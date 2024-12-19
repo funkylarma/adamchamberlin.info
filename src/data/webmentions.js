@@ -1,7 +1,7 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
 import unionBy from 'lodash/unionBy.js';
-import metadata from './metadata.js';
+import globals from './globals.js';
 
 // Load .env variables with dotenv
 import dotenv from 'dotenv';
