@@ -7,6 +7,8 @@ node_modules/
 # output folder
 _site
 
+.wrangler
+
 # cached content
 _cache
 .cache

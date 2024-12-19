@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/rest"
+import { Octokit } from '@octokit/rest'
 import { Buffer } from 'node:buffer'
 
 export async function onRequest(context) {
@@ -42,6 +42,8 @@ export async function onRequest(context) {
       fileContent.push('category: checkin')
       fileContent.push('---')
 
+      const contents = fileContent.join("\n").toString("base64");
+
       const {
         updated,
         data: { commit },
@@ -49,7 +51,7 @@ export async function onRequest(context) {
         owner: "funkylarma",
         repo: "adamchamberlin.info",
         path: "src/checkins/" + filename + '.md',
-        content: Buffer.from(fileContent.join("\n")).toString("base64"),
+        content: btoa(contents),
         message: "Import checkin from Swarm: " + filename,
       });
       return new Response(`Imported Swarm activity`);
