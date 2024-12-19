@@ -1,4 +1,8 @@
 import { Octokit } from '@octokit/rest'
+<<<<<<< HEAD
+=======
+import { Buffer } from 'node:buffer'
+>>>>>>> master
 
 export async function onRequest(context) {
 
