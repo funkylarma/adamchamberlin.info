@@ -74,7 +74,7 @@ export default {
     collection.getAll().forEach((item) => {
       if (!item.data.categories) return;
       item.data.categories
-        .filter((cat) => !['posts', 'all'].includes(cat))
+        .filter((cat) => !['posts', 'page', 'all'].includes(cat))
         .forEach((cat) => {
           if (!catSet[cat]) {
             catSet[cat] = [];

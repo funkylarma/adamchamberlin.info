@@ -14,6 +14,11 @@ main {
       margin-right: auto;
       margin-bottom: 5rem;
 
+      #map {
+        width: 100%;
+        height: 40rem;
+      }
+
       img[width][height] {
         height: auto; /* Preserve aspect ratio */
       }

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
+  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
+  <body>
+    <div class="container">
+      <a href="#skip" class="skip-link">Skip to main content</a>
+      <header class="mast-head">
+        {% include "partials/nav-header.liquid" %}
+      </header><!-- .header -->
+      <main id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+        <article  class="h-entry">
+          <section class="intro">
+            <div class="intro--content">
+              <h1 class="post-title p-name">{{ title }}</h1>
+              <div class=" h-card" hidden>
+                <a class="u-url" style="display:none" href="{{ post.url }}">{{ title }}</a>
+                <a class="p-author h-card" rel="author" style="display:none" href="{{ globals.url }}">{{ metadata.author.name }}</a>
+                <img class="u-photo" style="display:none" src="/assets/images/headshot.webp" alt="headshot of Adam Chamberlin in Mackman Group outdoor space">
+              </div>
+              <div class="tagline">
+                <p>{{ tagline }}</p>
+              </div><!-- .tagline -->
+              <div class="post--meta">
+                <div class="post--date">
+                  <span>Date: </span>
+                  <time class="postlist-date dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateReadable }}</time>
+                </div><!-- .post--date -->
+                {% if categories %}
+                  <div class="post--categories">
+                    <span>Category: </span>
+                    {%- for category in categories -%}
+                      <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                        {{ category }}
+                      </a>
+                    {%- endfor -%}
+                  </div><!-- .post--categories -->
+                {% endif %}
+                {% if tags.length > 1 %}
+                  <div class="post--tags">
+                    <span>Tagged: </span>
+                    {%- for tag in tags -%}
+                      {% if tag != 'post' %}
+                        <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                          {{ tag }}
+                        </a>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div><!-- .post--tags -->
+                {% endif %}
+                <div class="post--reading">
+                  <span>Estimated: </span>
+                  {{ content | timeReading }}
+                </div><!-- .post-reading -->
+              </div><!-- .post-meta -->
+            </div><!-- .intro--content -->
+          </section><!-- .intro -->
+          <section class="post-single">
+            <div class="post--content e-content">
+              {{ content }}
+            </div><!-- .post--content -->
+          </section><!-- .post-single -->
+        </article>
+        <section class="responses" id="responses">
+          {% include "partials/webmentions.liquid" %}
+        </section>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | absoluteUrl }}"
+          },
+          "headline": "{{ title }}",
+          "description": "{{ summary }}",
+          "image": "{{ cover | absoluteUrl }}",
+          "author": {
+            "@type": "Person",
+            "name": "{{ metadata.author.name }}",
+            "url": "{{ globals.url }}"
+          },
+          "datePublished": "{{ page.date | dateHtmlString }}"
+        }
+        </script>
+      </main>
+      <footer class="mast-foot">
+        {% include "partials/nav-footer.liquid" %}
+      </footer><!-- .mast-foot -->
+    </div><!-- .container -->
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+    {% include "partials/footer.liquid" %}
+  </body>
+</html>

@@ -28,7 +28,7 @@ export default {
   },
 
   // Set the tag for collections
-  tag: 'gallery',
+  tags: 'gallery',
 
   // What layout to use
   layout: 'gallery.liquid',
