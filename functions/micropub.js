@@ -56,8 +56,10 @@ export async function onRequest(context) {
       });
       return new Response(`Imported Swarm activity`);
     }
+
+    return new Response(`no entry`);
   } else {
-    return new Response(`no joy`);
+    return new Response(`no h-entry`);
   }
 
   return new Response(`Hello world`);
