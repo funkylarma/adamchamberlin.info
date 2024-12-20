@@ -7,8 +7,7 @@ export default {
       const d = new Date(data.page.date);
       const year = d.getFullYear();
       const month = d.getMonth() +1;
-      const id = Date.parse(d);
-      return `/${year}/${month}/${id}/`;//${data.page.filePathStem.replace('/checkins', '/')}/`;
+      return `/${year}/${month}/${data.page.filePathStem.replace('/checkins', '/')}/`;
     },
 
     eleventyExcludeFromCollections: (data) => {
