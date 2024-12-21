@@ -59,7 +59,7 @@
 
             {% if type == 'reply' %}
               <div class="post--content e-content">
-                <p class="note-type-box">In reply to: <a class="u-in-reply-to" href="{{ link }}">{{ to }}</a></p>
+                <p class="note-type-box">In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ to }}</a></p>
                 {{ content }}
               </div>
             </div>
