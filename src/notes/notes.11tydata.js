@@ -4,21 +4,19 @@ export default {
     permalink: (data) => {
       const d = new Date(data.page.date);
       const year = d.getFullYear();
-      const month = d.getMonth() +1;
+      const month = d.getMonth() + 1;
       return `/${year}/${month}/${data.page.filePathStem.replace('/notes', '/')}/`;
     },
 
-    title: (data) => {
-
-      if (data.type === 'reply') {
-        const title = "Reply to "
-      }
-
-      return `${data.type} from ${data.page.date.toDateString()}`;
-    },
+    //     title: (data) => {
+    //       if (data.type === 'reply') {
+    //         const title = 'Reply to ' + data.to;
+    //       }
+    //
+    //       return `${title} from ${data.page.date.toDateString()}`;
+    //     },
 
     eleventyExcludeFromCollections: (data) => {
-
       return false;
     },
   },

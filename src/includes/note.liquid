@@ -12,6 +12,7 @@
       </header><!-- .header -->
       <main id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
         <article  class="h-entry">
+
           <section class="intro">
             <div class="intro--content">
               <h1 class="post-title p-name">{{ title }}</h1>
@@ -21,7 +22,7 @@
                 <img class="u-photo" style="display:none" src="/assets/images/headshot.webp" alt="headshot of Adam Chamberlin in Mackman Group outdoor space">
               </div>
               <div class="tagline">
-                <p>{{ tagline }}</p>
+                <p>{{ link }}</p>
               </div><!-- .tagline -->
               <div class="post--meta">
                 <div class="post--date">
@@ -50,18 +51,21 @@
                     {%- endfor -%}
                   </div><!-- .post--tags -->
                 {% endif %}
-                <div class="post--reading">
-                  <span>Estimated: </span>
-                  {{ content | timeReading }}
-                </div><!-- .post-reading -->
               </div><!-- .post-meta -->
             </div><!-- .intro--content -->
           </section><!-- .intro -->
+
           <section class="post-single">
-            <div class="post--content e-content">
-              {{ content }}
-            </div><!-- .post--content -->
-          </section><!-- .post-single -->
+
+            {% if type == 'reply' %}
+              <div class="post--content e-content">
+                <p class="note-type-box">In reply to: <a class="u-in-reply-to" href="{{ link }}">{{ to }}</a></p>
+                {{ content }}
+              </div>
+            </div>
+            {% endif %}
+
+          </section>
         </article>
         <section class="responses" id="responses">
           {% include "partials/webmentions.liquid" %}
