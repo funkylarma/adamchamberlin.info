@@ -63,7 +63,10 @@ export async function onRequestPost(context) {
 
     // Check if we have a content element
     if (entry.content != null) {
-      return Response.json(entry, { status: 200 });
+      return Response.json(
+        { message: entry.content },
+        { status: 201, headers: { Location: 'https://adamchamberlin.info' } }
+      );
     }
 
     return Response.json(
