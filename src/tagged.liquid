@@ -1,27 +1,27 @@
 ---
 layout: page.liquid
 pagination:
-  data: collections.tagList
+  data: collections
   size: 1
   alias: tag
+  filter:
+    - page
   generatePageOnEmptyData: true
 permalink: '/tagged/{{ tag | slugify }}/'
 eleventyComputed:
   title: 'Tagged: {{ tag }}'
   description: "Archive page for the tag '{{ tag }}'"
-  kicker: 'These are all the posts that have been tagged with "{{ tag }}"'
+  subhead: 'These are all the posts that have been tagged with "{{ tag }}"'
 ---
-<div class="archive-list">
-  <ul>
-  {%- for post in collections.tagList[tag] reversed -%}
-    <li class="post h-entry">
-      <a class="post-link u-url" href="{{ post.url }}" title="Read post">
-        <span class="p-name">{{ post.data.title }}</span>
-      </a>
-      <div class="post-date">
-        - <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
-      </div>
-    </li>
-  {%- endfor -%}
+<div class="archive--list">
+  <div class="h-feed">
+    <ul class="archive--feed">
+      {%- for entry in collections[tag] reversed -%}
+        <li class="h-entry">
+          <time class="dt-published" datetime="{{ entry.date }}">
+            {{ entry.date | dateLongDate }}
+          </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.data.title }}</a>
+        </li>
+      {%- endfor -%}
   </ul>
 </div>

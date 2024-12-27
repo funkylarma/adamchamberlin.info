@@ -1,0 +1,121 @@
+.page {
+  width: 100%;
+  margin-bottom: 5rem;
+
+  .page--header {
+    max-width: var(--main-layout-width-wide);
+    text-align: center;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--main-color-hairline);
+
+    @media (max-width: 550px) {
+      padding-bottom: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: var(--main-font-size-xx-large);
+      font-weight: 300;
+      color: var(--main-color-primary);
+    }
+
+    .tagline {
+      margin-top: 0.5rem;
+
+      @media (max-width: 550px) {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      p {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: var(--main-font-size-small);
+
+        @media (max-width: 550px) {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .page--content {
+    max-width: var(--main-layout-width-normal);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+
+    picture img {
+      &.wide {
+        display: block;
+        width: 140%;
+        max-width: 140%;
+        margin: 0 -20%;
+
+        @media (max-width: 1150px) {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    img {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      border-bottom-right-radius: 5rem;
+      border-bottom-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 5rem;
+      border: 1px solid var(--main-color-hairline);
+
+      &.no-frills {
+        border-radius: 0;
+      }
+
+      @media (max-width: 550px) {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 25px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        filter: grayscale(50%);
+      }
+    }
+  }
+
+  .page--related {
+    background: var(--main-color-white);
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 2.5rem;
+    padding: 2rem;
+
+    * {
+      font-size: var(--main-font-size-small);
+    }
+
+    p.h3 {
+      color: var(--main-color-tertiary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding: 0 1rem;
+      list-style: none;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

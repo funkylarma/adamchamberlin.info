@@ -1,0 +1,133 @@
+---
+layout: list.liquid
+title: "Adam Chamberlin"
+pagination:
+  data: collections.contentList
+  size: 40
+  reverse: true
+permalink: /activity/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
+eleventyComputed:
+  title: "Activity Feed {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
+---
+
+<div class="activity--list--content">
+
+  {%- for post in pagination.items -%}
+
+    {% if post.data.category == 'article' %}
+      <article class="post h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Wrote {{ post.data.to }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-article" viewBox="0 0 16 16">
+              <path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+              <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+              <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+            </svg>
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'note' %}
+      <article class="note h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-note" viewBox="0 0 16 16">
+              <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293z"/>
+            </svg>
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'reply' %}
+      <article class="reply h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Replied to {{ post.data.to }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-reply" viewBox="0 0 16 16">
+              <path d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.7 8.7 0 0 0-1.921-.306 7 7 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028zM7.8 10.386q.103 0 .223.006c.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96z"/>
+            </svg>
+            Replied to {{ post.data.to }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'videography' %}
+      <article class="post h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View video">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-video" viewBox="0 0 16 16">
+              <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+            </svg>
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'photography' %}
+      <article class="post h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-photo" viewBox="0 0 16 16">
+              <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"/>
+              <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+            </svg>
+            {{ post.data.to }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'checkin' %}
+      <article class="checkin h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-map" viewBox="0 0 16 16">
+              <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>
+            Checked in at {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% else %}
+      <article class="h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View Item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-unknown" viewBox="0 0 16 16">
+              <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.48 1.48 0 0 1 0-2.098zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+              <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+            </svg>
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+    {% endif %}
+
+  {%- endfor -%}
+
+</div><!-- .post-list-content -->
+
+<section class="pagination">
+  <div class="pagination--content">
+    <nav id="post--pagination" class="post--pagination" aria-labelledby="post--pagination">
+      <div class="previous-posts">
+        {% if pagination.href.previous %}
+          <a href="{{ pagination.href.previous }}" title="Head to the future">« Newer Posts</a>
+        {% endif %}
+      </div><!-- .previous-posts -->
+      <div class="next-posts">
+        {% if pagination.href.next %}
+          <a href="{{ pagination.href.next }}" title="Go back in time">Older Posts »</a>
+        {% endif %}
+      </div><!-- .next-posts -->
+    </nav><!-- .post-pagination -->
+  </div><!-- .pagination-content -->
+</section><!-- .pagination -->

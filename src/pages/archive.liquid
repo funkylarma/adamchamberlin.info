@@ -3,7 +3,7 @@ layout: page.liquid
 templateEngineOverride: njk
 eleventyExcludeFromCollections: true
 title: Archives
-kicker: Strolling back in time
+subhead: Strolling back in time
 description: "The archive of all the content published on adamchamberlin.info. You can browse by tag or category, or just dive into a list of all the posts."
 permalink: "/archive/"
 ---
@@ -12,50 +12,70 @@ permalink: "/archive/"
 <!-- Tags -->
 <div class="tag-list">
   <h2 id="tag">By Tag</h2>
-  <div class="tag-cloud wide">
-    {%- for tag, val in collections.tagList | dictsort -%}
-      <a href="/tagged/{{ tag | slugify }}/" title="Browse {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
-        <div class="tag">
-          {{ tag }}
-          <div class="post-count">
-            - {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}
-          </div>
-        </div><!-- .tag -->
-      </a>
-    {% endfor %}
-  </div><!-- .tag-cloud -->
+  <div class="h-feed">
+    <ul class="tag--feed wide">
+      {%- for tag, val in collections.tagList | dictsort -%}
+        <li class="h-entry">
+          <a href="/tagged/{{ tag | slugify }}/" title="Browse {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+            <div class="tag">
+              {{ tag }}
+              <span class="post-count">
+                - {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}
+              </span>
+            </div><!-- .tag -->
+          </a>
+        </li>
+      {% endfor %}
+    </ul><!-- .tag-cloud -->
+  </div><!-- .h-feed -->
 </div><!-- .tag-list -->
 <!-- Categories -->
 <div class="category-list">
   <h2 id="category">By Category</h2>
-  <div class="category-cloud">
-    {%- for cat, val in collections.categoryList | dictsort -%}
-      <a href="/category/{{ cat | slugify }}/" title="Browse {{ collections.categoryList[cat].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
-        <div class="category">
-          {{ cat }}
-          <div class="post-count">
-           - {{ collections.categoryList[cat].length }} post{% if collections.categoryList[cat].length > 1 %}s{% endif %}
-          </div>
-        </div><!-- .category -->
-      </a>
-    {% endfor %}
-  </div><!-- .category-cloud -->
+  <div class="h-feed">
+    <ul class="category--feed">
+      {%- for cat, val in collections.categoryList | dictsort -%}
+      <li class="h-entry">
+        <a href="/category/{{ cat | slugify }}/" title="Browse {{ collections.categoryList[cat].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+          <div class="category">
+            {{ cat }}
+            <span class="post-count">
+            - {{ collections.categoryList[cat].length }} item{% if collections.categoryList[cat].length > 1 %}s{% endif %}
+            </span>
+          </div><!-- .category -->
+        </a>
+      </li>
+      {% endfor %}
+    </ul><!-- .category-cloud -->
+  </div><!-- h-feed -->
 </div><!-- .category-list -->
 <div class="archive-list">
   <h2 id="date">By Date</h2>
-  {%- for year, yearPosts in collections.postsByYear -%}
-    <h3>{{ year }}</h3>
-    <ul class="postlist">
-      {% for post in yearPosts | reverse %}
-        <li class="post{% if post.url == url %} postlist-item-active{% endif %}">
-          <a class="postlist-link" href="{{ post.url | url }}" title="Read post">
-            {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
-          </a>
-          <div class="post-date">
-            - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-          </div>
-        </li>
+  <div class="h-feed">
+    <ul class="archive--feed">
+    {% for year in collections.contentArchive %}
+    <li class="archive--years">
+      <div class="archive--year">
+        <h2 id="{{ year.title }}">{{ year.title }}</h2>
+      </div>
+      <ul class="archive--months">
+      {% for month in year.months %}
+        <div class="archive--month">
+          <h3>{{ month.title }}</h3>
+        </div>
+        <ul class="archive--entries">
+        {% for entry in month.entries %}
+          <li class="h-entry">
+            <time class="dt-published" datetime="{{ entry.date }}">
+              {{ entry.date }}
+            </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+          </li>
+        {% endfor %}
+        </ul>
       {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
     </ul>
-  {% endfor %}
+  </div>
 </div><!-- .archive-list -->

@@ -1,6 +1,6 @@
 ---
 title: Contact
-kicker: Time to get social
+subhead: Time to get social
 description: This is the typical contact page, but instead of a contact form, you can pick the platform to contact me on.
 permalink: /contact/
 ---
@@ -18,7 +18,7 @@ To keep me focused and the noise to a minimum, I have cut back on my digital foo
 
 <div class="page--related">
 
-Related Pages{.h3}
+Related /slash Pages{.h3}
 
 - [/now](/now/) — Learn about what I'm up to now
 - [/about](/about/) - Learn more about me

@@ -1,6 +1,6 @@
 ---
 title: Hi, I'm Adam Chamberlin
-kicker: All about me
+subhead: All about me
 permalink: /about/
 ---
 
@@ -14,7 +14,7 @@ This site has been in development since 2008 and has seen many versions and setu
 
 <div class="page--related">
 
-Related Pages{.h3}
+Related /slash Pages{.h3}
 
 - [/colophon](/colophon/) — Learn more about the site
 - [/uses](/uses/) — Learn about my setup

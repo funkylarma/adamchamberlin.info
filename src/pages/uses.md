@@ -1,6 +1,6 @@
 ---
 title: Uses
-kicker: The tooling
+subhead: The tooling
 permalink: /uses/
 ---
 

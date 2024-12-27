@@ -60,6 +60,8 @@ function makeYearStats(
 }
 
 export default {
+  categoryFeeds: () => ['article', 'note'],
+
   // Drafts Collection
   drafts: function (collection) {
     return collection
@@ -68,43 +70,79 @@ export default {
       .sort((a, b) => b.date - a.date);
   },
 
-  // Category Collection
-  categoryList: function (collection) {
-    let catSet = {};
-    collection.getAll().forEach((item) => {
-      if (!item.data.categories) return;
-      item.data.categories
-        .filter((cat) => !['posts', 'page', 'all'].includes(cat))
-        .forEach((cat) => {
-          if (!catSet[cat]) {
-            catSet[cat] = [];
-          }
-          catSet[cat].push(item);
-        });
-    });
-    return catSet;
+  contentList: function (collection) {
+    return collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.tags) return;
+        if (
+          item.data.tags.includes('article') ||
+          item.data.tags.includes('checkin') ||
+          item.data.tags.includes('note')
+        ) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return a.date - b.date; // sort by date - descending
+      });
   },
 
-  // Tag Collection
+  // Gets all the filtered content by tag and outputs a Collection
   tagList: function (collection) {
     const tagsSet = {};
-    collection.getAll().forEach((item) => {
-      if (!item.data.tags) return;
-      item.data.tags
-        .filter((tag) => !['post', 'page', 'all'].includes(tag))
-        .forEach((tag) => {
-          if (!tagsSet[tag]) {
-            tagsSet[tag] = [];
-          }
-          tagsSet[tag].push(item);
-        });
-    });
+    collection
+      .getAll()
+      .sort((a, b) => a.date - b.date)
+      .forEach((item) => {
+        if (!item.data.tags) return;
+        item.data.tags
+          .filter((tag) => !['page', 'article', 'note', 'checkin', 'all'].includes(tag))
+          .forEach((tag) => {
+            if (!tagsSet[tag]) {
+              tagsSet[tag] = [];
+            }
+            tagsSet[tag].push(item);
+          });
+      });
     return tagsSet;
+  },
+
+  // Gets all the filtered content by category and outouts a Collection
+  categoryList: function (collection) {
+    let catSet = {};
+    collection
+      .getAll()
+      .sort((a, b) => b.date - a.date)
+      .forEach((item) => {
+        if (!item.data.category) return;
+        if (!catSet[item.data.category]) {
+          catSet[item.data.category] = [];
+        }
+        catSet[item.data.category].push(item);
+      });
+    return catSet;
   },
 
   // Year Collection
   postsByYear: function (collection) {
-    return _.chain(collection.getFilteredByTag('post'))
+    return _.chain(
+      collection
+        .getAll()
+        .filter((item) => {
+          if (!item.data.tags) return;
+          if (
+            item.data.tags.includes('article') ||
+            item.data.tags.includes('checkin') ||
+            item.data.tags.includes('note')
+          ) {
+            return item;
+          }
+          // console.log(item.data.tags);
+        })
+        .reverse()
+    )
       .groupBy((post) => post.date.getFullYear())
       .toPairs()
       .reverse()
@@ -113,7 +151,21 @@ export default {
 
   // Year/Month Collection
   postsByYearMonth: function (collection) {
-    return _.chain(collection.getFilteredByTag('post'))
+    return _.chain(
+      collection
+        .getAll()
+        .filter((item) => {
+          if (!item.data.tags) return;
+          if (
+            item.data.tags.includes('article') ||
+            item.data.tags.includes('checkin') ||
+            item.data.tags.includes('note')
+          ) {
+            return item;
+          }
+        })
+        .reverse()
+    )
       .groupBy((post) => {
         const year = post.date.getFullYear();
         const month = String(post.date.getMonth() + 1).padStart(2, '0');
@@ -126,7 +178,21 @@ export default {
 
   // Year/Month/Day Collection
   postsByYearMonthDay: function (collection) {
-    return _.chain(collection.getFilteredByTag('post'))
+    return _.chain(
+      collection
+        .getAll() //.filter((item) => ['post', 'note'].includes(item.tag))
+        .filter((item) => {
+          if (!item.data.tags) return;
+          if (
+            item.data.tags.includes('article') ||
+            item.data.tags.includes('checkin') ||
+            item.data.tags.includes('note')
+          ) {
+            return item;
+          }
+        })
+        .reverse()
+    )
       .groupBy((post) => {
         const year = post.date.getFullYear();
         const month = String(post.date.getMonth() + 1).padStart(2, '0');
@@ -138,10 +204,168 @@ export default {
       .value();
   },
 
-  postsDiary: function (collection) {
-    //let entries = collection.getFilteredByTag('post').reverse(),
-    let entries = collection.getFilteredByTag('post').reverse(),
-      output = [];
+  // Creates a tuple of content filtered by the specified tags.
+  contentArchive: function (collection) {
+    // Create a return output
+    let output = [];
+
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.tags) return;
+        if (
+          item.data.tags.includes('article') ||
+          item.data.tags.includes('checkin') ||
+          item.data.tags.includes('note')
+        ) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      });
+
+    // Loop through each of the entries
+    for (let item of entries) {
+      // Check we have both a date and title
+      if (item.data.title && item.date) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+
+        // If the year hasn't been seen before, make a stub object
+        if (!output[year]) {
+          output[year] = {
+            title: year,
+            months: [],
+          };
+        }
+
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if (!output[year].months[month]) {
+          output[year].months[month] = {
+            title: month_names[month],
+            entries: [],
+          };
+        }
+
+        output[year].months[month].entries.push({
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth(item.date.getDate()),
+          category: item.data.category,
+          tags: item.data.tags,
+        });
+      }
+    }
+
+    // Return our array
+    return (
+      output
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
+    );
+  },
+
+  // Creates a tuple of content filtered by the specified tags.
+  articleArchive: function (collection) {
+    // Create a return output
+    let output = [];
+
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category.includes('article')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      });
+
+    // Loop through each of the entries
+    for (let item of entries) {
+      // Check we have both a date and title
+      if (item.data.title && item.date) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+
+        // If the year hasn't been seen before, make a stub object
+        if (!output[year]) {
+          output[year] = {
+            title: year,
+            months: [],
+          };
+        }
+
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if (!output[year].months[month]) {
+          output[year].months[month] = {
+            title: month_names[month],
+            entries: [],
+          };
+        }
+
+        output[year].months[month].entries.push({
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth(item.date.getDate()),
+          category: item.data.category,
+          tags: item.data.tags,
+        });
+      }
+    }
+
+    // Return our array
+    return (
+      output
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
+    );
+  },
+
+  // Creates a tuple of content filtered by the specified tags.
+  noteArchive: function (collection) {
+    // Create a return output
+    let output = [];
+
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category.includes('note')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      });
 
     // Loop through each of the entries
     for (let item of entries) {
@@ -169,6 +393,283 @@ export default {
         }
 
         // Add the entry to the keyed year/month array - only add the info we need
+        output[year].months[month].entries.push({
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth(item.date.getDate()),
+          category: item.data.category,
+          tags: item.data.tags,
+        });
+      }
+    }
+
+    // Return our array
+    return (
+      output
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
+    );
+  },
+
+  // Creates a tuple of content filtered by the specified tags.
+  replyArchive: function (collection) {
+    // Create a return output
+    let output = [];
+
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category.includes('reply')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      });
+
+    // Loop through each of the entries
+    for (let item of entries) {
+      // Check we have both a date and title
+      if (item.data.title && item.date) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+
+        // If the year hasn't been seen before, make a stub object
+        if (!output[year]) {
+          output[year] = {
+            title: year,
+            months: [],
+          };
+        }
+
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if (!output[year].months[month]) {
+          output[year].months[month] = {
+            title: month_names[month],
+            entries: [],
+          };
+        }
+
+        // Add the entry to the keyed year/month array - only add the info we need
+        output[year].months[month].entries.push({
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth(item.date.getDate()),
+          category: item.data.category,
+          tags: item.data.tags,
+        });
+      }
+    }
+
+    // Return our array
+    return (
+      output
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
+    );
+  },
+
+  // Creates a tuple of content filtered by the specified tags.
+  checkinArchive: function (collection) {
+    // Create a return output
+    let output = [];
+
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category.includes('checkin')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      });
+
+    // Loop through each of the entries
+    for (let item of entries) {
+      // Check we have both a date and title
+      if (item.data.title && item.date) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+
+        // If the year hasn't been seen before, make a stub object
+        if (!output[year]) {
+          output[year] = {
+            title: year,
+            months: [],
+          };
+        }
+
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if (!output[year].months[month]) {
+          output[year].months[month] = {
+            title: month_names[month],
+            entries: [],
+          };
+        }
+
+        output[year].months[month].entries.push({
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth(item.date.getDate()),
+        });
+      }
+    }
+
+    // Return our array
+    return (
+      output
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
+    );
+  },
+
+  // Creates a tuple of content filtered by the specified tags.
+  videographyArchive: function (collection) {
+    // Create a return output
+    let output = [];
+
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category.includes('videography')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      });
+
+    // Loop through each of the entries
+    for (let item of entries) {
+      // Check we have both a date and title
+      if (item.data.title && item.date) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+
+        // If the year hasn't been seen before, make a stub object
+        if (!output[year]) {
+          output[year] = {
+            title: year,
+            months: [],
+          };
+        }
+
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if (!output[year].months[month]) {
+          output[year].months[month] = {
+            title: month_names[month],
+            entries: [],
+          };
+        }
+
+        output[year].months[month].entries.push({
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth(item.date.getDate()),
+        });
+      }
+    }
+
+    // Return our array
+    return (
+      output
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
+    );
+  },
+
+  // Creates a tuple of content filtered by the specified tags.
+  photographyArchive: function (collection) {
+    // Create a return output
+    let output = [];
+
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category.includes('photography')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      });
+
+    // Loop through each of the entries
+    for (let item of entries) {
+      // Check we have both a date and title
+      if (item.data.title && item.date) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+
+        // If the year hasn't been seen before, make a stub object
+        if (!output[year]) {
+          output[year] = {
+            title: year,
+            months: [],
+          };
+        }
+
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if (!output[year].months[month]) {
+          output[year].months[month] = {
+            title: month_names[month],
+            entries: [],
+          };
+        }
+
         output[year].months[month].entries.push({
           title: item.data.title,
           url: item.url,
@@ -227,12 +728,12 @@ export default {
       postsByDay: {},
     };
 
-    const posts = collectionApi.getFilteredByTag('post').sort((a, b) => {
+    const posts = collectionApi.getFilteredByTag('article').sort((a, b) => {
       return a.date - b.date;
     });
     let postCount = posts.length;
     if (postCount < 1) {
-      log.info(`No articles found for tag(s): ${tags.join(', ')}`);
+      cnsole.log(`No articles found for tag(s): ${tags.join(', ')}`);
       // return the empty stats object
       return statsObject;
     }

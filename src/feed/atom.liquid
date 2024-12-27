@@ -1,21 +1,21 @@
 ---
-# Metadata comes from _data/metadata.js
+layout: null
 templateEngineOverride: njk
-permalink: /feed/feed.xml
 eleventyExcludeFromCollections: true
+permalink: /feed/feed.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ globals.atomFeed.url }}" rel="self"/>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.article | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ globals.url | addPathPrefixToFullUrl }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.post | reverse %}
+  {%- for post in collections.article | reverse %}
   {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
   <entry>
     <id>{{ absolutePostUrl }}</id>
@@ -23,9 +23,7 @@ eleventyExcludeFromCollections: true
     <link href="{{ absolutePostUrl }}" />
     <published>{{ post.date | dateToRfc3339 }}</published>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
-    {%- for category in post.data.categories %}
     <category term="{{ category }}" />
-    {%- endfor %}
     <content type="html">{{ post.content | postExcerpt }}</content>
     <author>
       <name>{{ metadata.author.name }}</name>

@@ -1,16 +1,16 @@
-@use "variables" as *;
+@use 'variables' as *;
 
-code:not([class*="language"]) {
+code:not([class*='language']) {
   display: inline-flex;
   padding: 0.25em;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   border: 1px solid var(--main-color-base);
   border-radius: 2px;
   font-size: 0.75rem;
   line-height: 2.1;
 }
 
-pre code:not([class*="language"]) {
+pre code:not([class*='language']) {
   width: 100%;
   max-width: calc(100vw - 2rem);
   overflow-x: auto;
@@ -60,10 +60,10 @@ button,
   padding-inline: 1em;
   text-transform: uppercase;
   border: 1px solid var(--main-color-primary);
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 0.1rem;
   background: var(--main-color-primary);
   color: var(--main-color-white);
   padding: 0.52em 2em 0.45em;

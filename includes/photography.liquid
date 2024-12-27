@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
+  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
+  <body>
+    <div class="container">
+      <a href="#skip" class="skip-link">Skip to main content</a>
+      <header class="mast-head">
+        {% include "partials/nav-header.liquid" %}
+      </header><!-- .header -->
+      <main class="h-entry" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+        <section class="intro">
+          <div class="intro--content">
+            <h1 class="page-title p-name">{{ title }}</h1>
+              <div class="tagline">
+                {% if subhead %}
+                  <p>{{ subhead }}</p>
+                {% endif %}
+              </div><!-- .tagline -->
+          </div><!-- .intro-content -->
+        </section><!-- .intro -->
+        <section class="gallery"><!-- .page -->
+          <div class="gallery--content e-content">
+            {{ content }}
+          </div><!-- .page-content -->
+        </section><!-- .page -->
+      </main>
+      <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
+      <script type="module" defer>
+        import PhotoSwipeLightbox from '/assets/js/photoswipe-lightbox.esm.min.js';
+        import PhotoSwipe from '/assets/js/photoswipe.esm.min.js';
+        const options = {
+          gallery: '#gallery',
+          children: 'a',
+          showHideAnimationType: 'zoom',
+          pswpModule: PhotoSwipe,
+        };
+        const lightbox = new PhotoSwipeLightbox(options);
+        lightbox.init();
+      </script>
+      <footer class="mast-foot">
+        {% include "partials/nav-footer.liquid" %}
+      </footer><!-- .mast-foot -->
+    </div><!-- .container -->
+    <!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+    {% include "partials/footer.liquid" %}
+  </body>
+</html>

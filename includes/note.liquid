@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
+  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
+  <body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    <div class="hfeed h-feed layout" role="document">
+      {% include "partials/header.liquid" %}
+      <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+        <div class="hentry h-entry note--single">
+          <div class="note--main">
+            <div class="note--content">
+              <div class="note--meta">
+                <div class="note--date">
+                  <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-calendar" viewBox="0 0 16 16">
+                      <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                    </svg>
+                    <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+                      {{ page.date | dateLongDate }}
+                    </time>
+                  </h1>
+                </div><!-- .post--date -->
+                {% if tags.length > 1 %}
+                  <div class="note--tags">
+                    <span>Tagged: </span>
+                    {%- for tag in tags -%}
+                      {% if tag != 'post' %}
+                        <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                          {{ tag }}
+                        </a>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div><!-- .post--tags -->
+                {% endif %}
+              </div><!-- .post-meta -->
+
+              {% if category == 'videography' %}
+                <p class="p-summary">
+                  <a href="https://example.com" class="p-author h-card">Your Name</a>
+                  RSVPs <span class="p-rsvp">yes</span>
+                  to <a href="https://events.indieweb.org/example" class="u-in-reply-to">Event Name</a>
+                </p>
+              {% endif %}
+
+              {% if category == 'reply' %}
+                <p class="p-name">
+                  In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ to }}</a>
+                </p>
+                <div class="e-content">
+                  {{ content }}
+                </div>
+              {% endif %}
+
+              {% if category == 'rsvp' %}
+                <p class="p-summary">
+                  <a href="https://example.com" class="p-author h-card">Your Name</a>
+                  RSVPs <span class="p-rsvp">yes</span>
+                  to <a href="https://events.indieweb.org/example" class="u-in-reply-to">Event Name</a>
+                </p>
+              {% endif %}
+
+            </div><!-- .note--content -->
+            <div class="note--foter">
+            </div><!-- .note--footer -->
+          </div><!-- .note--main -->
+          <section class="responses" id="responses">
+            {% include "partials/webmentions.liquid" %}
+          </section>
+        </div><!-- .note -->
+      </main>
+      {% include "partials/footer.liquid" %}
+    </div><!-- .container -->
+  </body>
+</html>

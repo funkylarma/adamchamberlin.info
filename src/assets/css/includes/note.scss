@@ -1,0 +1,52 @@
+.note--single {
+  position: relative;
+
+  .note--main {
+    max-width: var(--main-layout-width-normal);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+
+    .note--content {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--main-color-hairline);
+
+      .note--meta {
+        font-size: var(--main-font-size-small);
+        margin-top: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        .note--date {
+          color: var(--main-color-quaternary);
+
+          h1 {
+            font-size: var(--main-font-size-small);
+            font-weight: 300;
+          }
+        }
+      }
+
+      h1 {
+        font-size: var(--main-font-size-small);
+        font-weight: 300;
+        color: var(--main-color-quaternary);
+      }
+
+      .p-name {
+        font-size: var(--main-font-size-xx-large);
+        color: var(--main-color-primary);
+      }
+
+      #map {
+        width: 100%;
+        height: 40rem;
+      }
+    }
+
+    .note--foter {
+    }
+  }
+}

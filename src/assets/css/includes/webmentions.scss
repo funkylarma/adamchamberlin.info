@@ -20,60 +20,14 @@
       display: inline;
     }
 
+    h3 {
+      color: var(--main-color-primary);
+      font-size: var(--main-font-size-small);
+      display: inline;
+    }
+
     p {
       font-size: var(--main-font-size-small);
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary {
-      display: flex;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-
-      h2 {
-        margin: 0;
-        display: inline;
-      }
-
-      &::before {
-        content: '';
-        width: 18px;
-        height: 10px;
-        background: url('/assets/icons/arrow.svg');
-        background-size: cover;
-        margin-right: 0.75em;
-        transition: 0.2s;
-        transform: rotate(270deg);
-      }
-    }
-
-    details {
-      overflow: hidden;
-    }
-
-    details[open] {
-      section {
-        animation: animateUp 0.5s linear forwards;
-      }
-    }
-
-    details[open] > summary::before {
-      transform: rotate(0deg);
-    }
-
-    @keyframes animateUp {
-      0% {
-        opacity: 0;
-        transform: translatey(100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translatey(0);
-      }
     }
 
     .webmentions {
@@ -119,7 +73,7 @@
 
               a {
                 &:hover {
-                  color: var(--main-color-quinary);
+                  color: var(--main-color-tertiary);
                   text-decoration: none;
                 }
               }
@@ -182,4 +136,3 @@
     }
   }
 }
-

@@ -1,0 +1,102 @@
+---
+layout: list.liquid
+title: "Notes Feed"
+pagination:
+  data: collections.note
+  size: 20
+  reverse: true
+permalink: /notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
+eleventyComputed:
+  title: "Notes Feed {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
+---
+
+<div class="activity--list--content">
+
+  {%- for post in pagination.items -%}
+
+    {% if post.data.category == 'videography' %}
+      <article class="checkin h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Filmed on {{ post.date | dateLongDate }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-video" viewBox="0 0 16 16">
+              <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+            </svg>
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'photography' %}
+      <article class="photography h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Filmed on {{ post.date | dateLongDate }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-photo" viewBox="0 0 16 16">
+              <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4z"/>
+              <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+            </svg>
+
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'checkin' %}
+      <article class="checkin h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-map" viewBox="0 0 16 16">
+              <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>
+            Checked in at {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </article>
+
+    {% elsif post.data.category == 'reply' %}
+      <article class="reply h-entry hentry">
+      <h2 class="p-name">
+        <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Replied to {{ post.data.to }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-reply" viewBox="0 0 16 16">
+            <path d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.7 8.7 0 0 0-1.921-.306 7 7 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254l-.042-.028a.147.147 0 0 1 0-.252l.042-.028zM7.8 10.386q.103 0 .223.006c.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96z"/>
+          </svg>
+          Replied to {{ post.data.to }}
+        </a>
+      </h2>
+      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+    </article>
+
+    {% else %}
+      <article class="note h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+            <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            Noodled about {{ post.data.title }}
+          </a>
+        </h2>
+      </article>
+    {% endif %}
+
+  {%- endfor -%}
+
+</div><!-- .post-list-content -->
+
+<section class="pagination">
+  <div class="pagination--content">
+    <nav id="post--pagination" class="post--pagination" aria-labelledby="post--pagination">
+      <div class="previous-posts">
+        {% if pagination.href.previous %}
+          <a href="{{ pagination.href.previous }}" title="Head to the future">« Newer Posts</a>
+        {% endif %}
+      </div><!-- .previous-posts -->
+      <div class="next-posts">
+        {% if pagination.href.next %}
+          <a href="{{ pagination.href.next }}" title="Go back in time">Older Posts »</a>
+        {% endif %}
+      </div><!-- .next-posts -->
+    </nav><!-- .post-pagination -->
+  </div><!-- .pagination-content -->
+</section><!-- .pagination -->

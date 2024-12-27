@@ -1,8 +1,8 @@
 ---
 layout: null
 templateEngineOverride: njk
-permalink: /feed/feed.rss
 eleventyExcludeFromCollections: true
+permalink: /feed/feed.rss
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
     <title>{{ metadata.author.name }}</title>
     <link>{{ globals.url }}</link>
   </image>
-  {%- for post in collections.post | reverse %}
+  {%- for post in collections.article -%}
   {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
     <item>
       <title>{{ post.data.title }}</title>

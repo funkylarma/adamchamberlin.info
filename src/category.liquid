@@ -9,19 +9,224 @@ permalink: '/category/{{ category | slugify }}/'
 eleventyComputed:
   title: 'Category: {{ category }}'
   description: "Archive page for the '{{ category }}' category"
-  kicker: 'These are all the posts listed under the category of "{{ category }}"'
+  subhead: 'These are all the posts listed under the category of "{{ category }}"'
 ---
-<div class="archive-list">
-  <ul>
-  {%- for post in collections.categoryList[category] reversed -%}
-    <li class="post h-entry">
-      <a class="post-link u-url" href="{{ post.url }}" title="Read post">
-        <span class="p-name">{{ post.data.title }}</span>
-      </a>
-      <div class="post-date">
-        - <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
-      </div>
-    </li>
-  {%- endfor -%}
-  </ul>
-</div>
+
+{% if category == "article" %}
+  <div class="archive--list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.articleArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif  category == "note" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.noteArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif  category == "videography" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.videographyArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif  category == "photography" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.photographyArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif category == "checkin" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.checkinArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Checked in at <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif category == "reply" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.replyArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% else %}
+  <div class="archive-list">
+    <p>Something has gone wrong with this category, so here is all the posts in one big list.</p>
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.contentArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+{% endif %}

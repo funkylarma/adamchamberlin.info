@@ -1,5 +1,3 @@
 export default {
-  eleventyComputed: {
-    eleventyExcludeFromCollections: true,
-  },
+  eleventyComputed: {},
 };

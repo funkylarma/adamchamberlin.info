@@ -1,6 +1,5 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
-import rollupPluginCritical from 'rollup-plugin-critical';
 
 export default defineConfig({
   server: {

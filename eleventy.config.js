@@ -30,14 +30,12 @@ import { markdown } from './utils/markdown.js';
 // Environmental
 const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production';
-const INPUT_DIR = 'src';
-const OUTPUT_DIR = '_site';
-const DATA_DIR = 'data';
-const INCLUDES_DIR = 'includes';
-const PATH_PREFIX = '/';
+import { dir } from './utils/constants.js';
 
 export default async function (eleventyConfig) {
   eleventyConfig.addGlobalData('env', process.env);
+
+  eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.setLiquidOptions({
     // Allows for dynamic include/partial names. If true, include names must be quoted. Defaults to true as of beta/1.0.
@@ -91,7 +89,7 @@ export default async function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginPostGraph, {
     highlightColorLight: 'var(--main-color-secondary)',
-    highlightColorDark: 'var(--main-color-quinary)',
+    highlightColorDark: 'var(--main-color-tertiary)',
     dayBoxTitle: true,
     dayBoxTitleFormat: 'MMM D, YYYY',
     sort: 'desc',
@@ -138,15 +136,15 @@ export default async function (eleventyConfig) {
     // Control which files Eleventy will process
     templateFormats: ['md', 'njk', 'html', 'liquid'],
 
-    pathPrefix: PATH_PREFIX,
+    pathPrefix: dir.prefix,
     passthroughFileCopy: true,
 
     // Inputs and outputs:
     dir: {
-      input: INPUT_DIR,
-      includes: INCLUDES_DIR,
-      data: DATA_DIR,
-      output: OUTPUT_DIR,
+      input: dir.input,
+      includes: dir.includes,
+      data: dir.data,
+      output: dir.output,
     },
   };
 }

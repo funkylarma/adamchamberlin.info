@@ -1,10 +1,9 @@
 ---
 date: 2024-12-21
-type: reply
 to: James
 title: Reply to James
 link: https://jamesg.blog/2020/09/04/how-i-use-webmentions/
-noindex: true
+category: reply
 ---
 
 Joe posted his [webmentions page](https://lab.artlung.com/webmentions/) in the IndieWeb chat and it prompted me to try and finally check the other side of webmentions.

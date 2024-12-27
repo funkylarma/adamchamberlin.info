@@ -1,16 +1,35 @@
 ---
-permalink: /feed/sitemap.xml
+layout: null
 templateEngineOverride: njk
 eleventyExcludeFromCollections: true
+permalink: /feed/sitemap.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for page in collections.post | reverse %}
+  {% for page in collections.page | reverse %}
     {% if (not page.data.draft) and (not page.data.noindex) %}
       {% set absoluteUrl %}{{ page.url | htmlBaseUrl(globals.url) }}{% endset %}
       <url>
         <loc>{{ absoluteUrl }}</loc>
         <lastmod>{{ page.date | dateISO }}</lastmod>
+      </url>
+    {% endif %}
+  {%- endfor %}
+  {% for article in collections.article | reverse %}
+    {% if (not article.data.draft) and (not article.data.noindex) %}
+      {% set absoluteUrl %}{{ article.url | htmlBaseUrl(globals.url) }}{% endset %}
+      <url>
+        <loc>{{ absoluteUrl }}</loc>
+        <lastmod>{{ article.date | dateISO }}</lastmod>
+      </url>
+    {% endif %}
+  {%- endfor %}
+  {% for note in collections.note | reverse %}
+    {% if (not note.data.draft) and (not note.data.noindex) %}
+      {% set absoluteUrl %}{{ note.url | htmlBaseUrl(globals.url) }}{% endset %}
+      <url>
+        <loc>{{ absoluteUrl }}</loc>
+        <lastmod>{{ note.date | dateISO }}</lastmod>
       </url>
     {% endif %}
   {%- endfor %}

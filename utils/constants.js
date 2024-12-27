@@ -2,11 +2,12 @@ import path from 'node:path';
 
 export const dir = {
   input: 'src',
-  output: 'dist',
-  includes: '_includes',
-  layouts: '_layouts',
-  data: '_data',
-  assets: 'assets',
+  output: '_site',
+  data: '../data',
+  includes: '../includes',
+  layouts: '../layouts',
+  assets: '/src/assets',
+  prefix: '/',
 };
 
 export const month_names = [

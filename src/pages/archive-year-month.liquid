@@ -3,7 +3,7 @@ layout: page.liquid
 templateEngineOverride: njk
 eleventyExcludeFromCollections: true
 title: Monthly Archives
-kicker: Strolling back in time
+subhead: Strolling back in time
 description: "The archive of all the content published on adamchamberlin.info. You can browse by tag or category, or just dive into a list of all the posts."
 pagination:
   data: collections.postsByYearMonth
@@ -11,23 +11,32 @@ pagination:
   alias: yearMonth
 permalink: /{{ yearMonth[0] }}/
 ---
-
-<h2>{{ yearMonth[0] | getMonth | monthName }} {{ yearMonth[0] | getYear }}</h2>
 <div class="archive-list">
-{% for postedYearMonth, monthPosts in collections.postsByYearMonth %}
-  {% if postedYearMonth === yearMonth[0] %}
-  <ul class="postlist">
-    {% for post in monthPosts | reverse %}
-      <li class="post{% if post.url == url %} postlist-item-active{% endif %}">
-        <a class="postlist-link" href="{{ post.url | url }}" title="Read post">
-          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
-        </a>
-        <div class="post-date">
-          - <time class="postlist-date" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateReadable }}</time>
-        </div>
-      </li>
-    {% endfor %}
+<div class="h-feed">
+  <ul class="archive--feed">
+    <li class="archive--years">
+      <div class="archive--year">
+        <h2 id="{{ yearMonth[0] | getYear }}">{{ yearMonth[0] | getYear }}</h2>
+      </div>
+        <ul class="archive--months">
+          <div class="archive--month">
+            <h3>{{ yearMonth[0] | getMonth | monthName }}</h3>
+          </div>
+          <ul class="archive--entries">
+            {% for postedYearMonth, monthPosts in collections.postsByYearMonth %}
+              {% if postedYearMonth === yearMonth[0] %}
+                {% for post in monthPosts | reverse %}
+                  <li class="h-entry">
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time> - <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </ul>
+    </li>
   </ul>
-  {% endif %}
-{% endfor %}
+</div>
 </div>

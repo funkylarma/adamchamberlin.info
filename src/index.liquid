@@ -1,29 +1,21 @@
 ---
-layout: default.liquid
+layout: list.liquid
 title: "Adam Chamberlin"
 pagination:
-  data: collections.post
+  data: collections.article
   size: 10
   reverse: true
-eleventyNavigation:
-  key: Home
-  order: 1
 permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
 eleventyComputed:
   title: "Adam Chamberlin {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
 ---
-<section class="intro h-feed hfeed">
-  <div class="intro--content ">
-    <h1 class="p-name site-title">{{ metadata.title }}</h1>
-      <div class="tagline">
-        <p class="p-summary site-description">{{ metadata.description }}</p>
-      </div><!-- .tagline -->
-  </div><!-- .intro-content -->
-</section><!-- .intro -->
-<section class="post-list">
-  <div class="post-list--content">
-    {%- for post in pagination.items -%}
-    <article class="post h-entry hentry">
+
+<div class="post--list--content">
+
+  {%- for post in pagination.items -%}
+
+    {% if post.data.category == 'article' %}
+      <article class="post h-entry hentry {% if post.data.cover %}cover{% endif %}">
       {% if post.data.cover %}
         <div class="post--image">
           <img src="{{ post.data.cover }}"
@@ -42,7 +34,7 @@ eleventyComputed:
               {% if post.data.title %}
                 {{ post.data.title }}
                 {% if post.data.draft %}
-                 <span class="draft">- Draft</span>
+                <span class="draft">- Draft</span>
                 {% endif %}
               {% else %}
                 <code>{{ post.url }}</code>
@@ -54,15 +46,75 @@ eleventyComputed:
               <span>Date: </span>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
             </div><!-- .post-date -->
-            {% if post.data.categories %}
-            <div class="post--categories">
+            {% if post.data.category %}
+            <div class="post--category">
               <span>Category: </span>
-              {%- for category in post.data.categories -%}
-                <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
-                  {{ category }}
+                <a class="p-category" href="/category/{{ post.data.category | slugify }}/" title="Browse other posts in the {{ post.data.category }} category">
+                  {{ post.data.category }}
                 </a>
+            </div><!-- .post-category -->
+            {% endif %}
+            {% if post.data.tags.length > 1 %}
+            <div class="post--tags">
+              <span>Tagged: </span>
+              {%- for tag in post.data.tags -%}
+                {% if tag != 'article' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                {% endif %}
               {%- endfor -%}
-            </div><!-- .post-categories -->
+            </div><!-- .post-tags -->
+            {% endif %}
+            <div class="post--reading">
+              <span>Estimated: </span>
+              {{ post.templateContent | timeReading }}
+            </div><!-- .post-reading -->
+          </div><!-- .post-meta -->
+        </div>
+      </div><!-- .post-content -->
+    </article>
+    {% endif %}
+
+    {% if post.data.category == 'videography' %}
+      <article class="post h-entry hentry {% if post.data.cover %}cover{% endif %}">
+      {% if post.data.cover %}
+        <div class="post--image">
+          <img src="{{ post.data.cover }}"
+            alt="Cover image for {{ post.data.title }}"
+            sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
+            width="936"
+            class="u-photo"
+            {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}
+          >
+        </div><!-- .post-image -->
+      {% endif %}
+      <div class="post--content">
+        <div class="post--head">
+          <h2 class="p-name">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+              {% if post.data.title %}
+                {{ post.data.title }}
+                {% if post.data.draft %}
+                <span class="draft">- Draft</span>
+                {% endif %}
+              {% else %}
+                <code>{{ post.url }}</code>
+              {% endif %}
+            </a>
+          </h2>
+          <div class="post--meta">
+            <div class="post--date">
+              <span>Date: </span>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </div><!-- .post-date -->
+            {% if post.data.category %}
+            <div class="post--category">
+              <span>Category: </span>
+                <a class="p-category" href="/category/{{ post.data.category | slugify }}/" title="Browse other posts in the {{ post.data.category }} category">
+                  {{ post.data.category }}
+                </a>
+            </div><!-- .post-category -->
             {% endif %}
             {% if post.data.tags.length > 1 %}
             <div class="post--tags">
@@ -82,35 +134,97 @@ eleventyComputed:
             </div><!-- .post-reading -->
           </div><!-- .post-meta -->
         </div>
-        {% if post.data.categories contains "writing" %}
-        <div class="post--excerpt e-content">
-          <p>
-            {% if post.data.summary %}
-              {{ post.data.summary }}
-            {% else %}
-              {{ post.templateContent | postExcerpt }}
-            {% endif %}
-          </p>
-          <div class="continue-reading call-to-action">
-            <a href="{{ post.url }}" title="Continue to read {{ post.data.title }}">Continue to read</a>
-          </div><!-- .continue-reading -->
-        </div><!-- .post-excerpt -->
-        {% elsif post.data.categories contains "videography" %}
-          <div class="post--excerpt">
-          <div class="continue-reading call-to-action">
-            <a href="{{ post.url }}" title="Continue to watch {{ post.data.title }}">Continue to watch</a>
-          </div><!-- .continue-reading -->
-        {% else %}
-          <div class="post--excerpt">
-          <div class="continue-reading call-to-action">
-            <a href="{{ post.url }}" title="Continue to {{ post.data.title }}">Continue</a>
-          </div><!-- .continue-reading -->
-        {% endif %}
       </div><!-- .post-content -->
     </article>
-    {%- endfor -%}
-  </div><!-- .post-list-content -->
-</section><!-- .post-list -->
+    {% endif %}
+
+    {% if post.data.category == 'photography' %}
+      <article class="post h-entry hentry {% if post.data.cover %}cover{% endif %}">
+      {% if post.data.cover %}
+        <div class="post--image">
+          <img src="{{ post.data.cover }}"
+            alt="Cover image for {{ post.data.title }}"
+            sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
+            width="936"
+            class="u-photo"
+            {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}
+          >
+        </div><!-- .post-image -->
+      {% endif %}
+      <div class="post--content">
+        <div class="post--head">
+          <h2 class="p-name">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+              {% if post.data.title %}
+                {{ post.data.title }}
+                {% if post.data.draft %}
+                <span class="draft">- Draft</span>
+                {% endif %}
+              {% else %}
+                <code>{{ post.url }}</code>
+              {% endif %}
+            </a>
+          </h2>
+          <div class="post--meta">
+            <div class="post--date">
+              <span>Date: </span>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </div><!-- .post-date -->
+            {% if post.data.category %}
+            <div class="post--category">
+              <span>Category: </span>
+                <a class="p-category" href="/category/{{ post.data.category | slugify }}/" title="Browse other posts in the {{ post.data.category }} category">
+                  {{ post.data.category }}
+                </a>
+            </div><!-- .post-category -->
+            {% endif %}
+            {% if post.data.tags.length > 1 %}
+            <div class="post--tags">
+              <span>Tagged: </span>
+              {%- for tag in post.data.tags -%}
+                {% if tag != 'post' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                {% endif %}
+              {%- endfor -%}
+            </div><!-- .post-tags -->
+            {% endif %}
+            <div class="post--reading">
+              <span>Estimated: </span>
+              {{ post.templateContent | timeReading }}
+            </div><!-- .post-reading -->
+          </div><!-- .post-meta -->
+        </div>
+      </div><!-- .post-content -->
+    </article>
+    {% endif %}
+
+    {% if post.data.category == 'note' %}
+      <article class="note h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+            <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            {{ post.data.title }}
+          </a>
+        </h2>
+      </article>
+    {% endif %}
+
+    {% if post.data.category == 'checkin' %}
+      <article class="checkin h-entry hentry">
+        <h2 class="p-name">
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
+            <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            {{ post.data.title }}
+          </a>
+        </h2>
+      </article>
+    {% endif %}
+
+  {%- endfor -%}
+
+</div><!-- .post-list-content -->
 
 <section class="pagination">
   <div class="pagination--content">

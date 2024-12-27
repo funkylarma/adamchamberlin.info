@@ -32,7 +32,7 @@ export async function onRequestPost(context) {
           const lng = checkin.properties.longitude[0];
           const url = checkin.properties.url[0];
           const filename = new Date().valueOf();
-          const path = '/src/checkins/';
+          const path = '/src/notes/checkins/';
 
           var fileContent = [];
 
@@ -42,8 +42,7 @@ export async function onRequestPost(context) {
           fileContent.push('latitude: ' + lat);
           fileContent.push('longitude: ' + lng);
           fileContent.push('url: ' + url);
-          fileContent.push('categories:');
-          fileContent.push(' - checkin');
+          fileContent.push('category: checkin');
           fileContent.push('---');
 
           const contents = fileContent.join('\n').toString('base64');

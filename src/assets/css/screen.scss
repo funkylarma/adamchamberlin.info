@@ -1,23 +1,41 @@
+// The colours and type variables
 @use 'includes/variables.scss';
 
+// A reset
 @use 'includes/reset.scss';
 
+// The base settings such as fontface and layout
 @use 'includes/base.scss';
 
+// Typography stylings
 @use 'includes/typography.scss';
 
+// The header elements
 @use 'includes/header.scss';
 
-@use 'includes/body.scss';
+// Pages
+@use 'includes/page.scss';
 
-@use 'includes/diary.scss';
+// Posts
+@use 'includes/post.scss';
 
-@use 'includes/gallery.scss';
+// Notes
+@use 'includes/note.scss';
 
+// Archive pages
+@use 'includes/archives.scss';
+
+// Gallery Pages
+//@use 'includes/gallery.scss';
+
+// The footer
 @use 'includes/footer.scss';
 
+// Webmentions
 @use 'includes/webmentions.scss';
 
+// Themse
 @use 'includes/themes.scss';
 
+// The cookie plugin
 @use 'includes/cookie.scss';

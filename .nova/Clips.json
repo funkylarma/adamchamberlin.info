@@ -1,14 +1,14 @@
 {
-  "clips" : [
+  "clips": [
     {
-      "content" : "---\ntitle: \"${:title}\"\nkicker: \"${:kickr}\"\ndescription: \"${:description}\"\nsummary: \"${:summary}\"\ndate: \"yyyy-mm-dd\"\ncategories:\n  - \"writing\"\ntags:\n  - \"${:tag}\"\ncover: \"\/images\/$FILENAME\"\nslug: \"\"\n---",
-      "name" : "Blog Post",
-      "scope" : "editor",
-      "syntax" : "markdown"
+      "content": "---\ntitle: \"${:title}\"\nkicker: \"${:kickr}\"\ndescription: \"${:description}\"\nsummary: \"${:summary}\"\ndate: yyyy-mm-dd\ncategory: article \ntags:\n  - \"${:tag}\"\ncover: \"/images/$FILENAME\"\nslug: \"\"\n---",
+      "name": "Blog Post",
+      "scope": "editor",
+      "syntax": "markdown"
     },
     {
-      "content" : "{.wide}{sizes=\"(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)\"}",
-      "name" : "Wide Image Attributes"
+      "content": "{.wide}{sizes=\"(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)\"}",
+      "name": "Wide Image Attributes"
     }
   ]
 }

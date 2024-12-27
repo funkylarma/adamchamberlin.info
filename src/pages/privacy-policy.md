@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-kicker: All the small print and legal stuff
+subhead: All the small print and legal stuff
 permalink: /privacy-policy/
 ---
 

@@ -1,42 +1,33 @@
 @font-face {
   font-display: swap;
-  font-family: "Plus Jakarta Sans";
+  font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/fonts/plus-jakarta-sans-v8-latin-regular.eot"); /* IE9 Compat Modes */
-  src: url("/assets/fonts/plus-jakarta-sans-v8-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2")
-      format("woff2"),
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2') format('woff2'),
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-      url("/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff")
-      format("woff"),
+      url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff') format('woff'),
     /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
-      url("/assets/fonts/plus-jakarta-sans-v8-latin-regular.ttf")
-      format("truetype"),
+      url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.ttf') format('truetype'),
     /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      url("/assets/fonts/plus-jakarta-sans-v8-latin-regular.svg#PlusJakartaSans")
-      format("svg"); /* Legacy iOS */
+      url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.svg#PlusJakartaSans') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Plus Jakarta Sans";
+  font-family: 'Plus Jakarta Sans';
   font-style: italic;
   font-weight: 400;
-  src: url("/assets/fonts/plus-jakarta-sans-v8-latin-italic.eot"); /* IE9 Compat Modes */
-  src: url("/assets/fonts/plus-jakarta-sans-v8-latin-italic.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("/assets/fonts/plus-jakarta-sans-v8-latin-italic.woff2")
-      format("woff2"),
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.woff2') format('woff2'),
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-      url("/assets/fonts/plus-jakarta-sans-v8-latin-italic.woff") format("woff"),
-    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
-      url("/assets/fonts/plus-jakarta-sans-v8-latin-italic.ttf")
-      format("truetype"),
+      url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.woff') format('woff'),
+    /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */ url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.ttf')
+      format('truetype'),
     /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      url("/assets/fonts/plus-jakarta-sans-v8-latin-italic.svg#PlusJakartaSans")
-      format("svg"); /* Legacy iOS */
+      url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.svg#PlusJakartaSans') format('svg'); /* Legacy iOS */
 }
 
 h1,
@@ -125,7 +116,7 @@ a:not(.button) {
 body {
   background-color: var(--main-color-background);
   color: var(--main-color-base);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .wide {
@@ -133,28 +124,33 @@ body {
   width: 140%;
   max-width: 140%;
   margin: 0 -20%;
+
+  @media (max-width: 1150px) {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 .animate {
-    -webkit-transform: translateY(50px) rotate(0deg) translateZ(0);
-    transform: translateY(50px) rotate(0deg) translateZ(0);
-    -webkit-transition-delay: .6s;
-    -o-transition-delay: .6s;
-    transition-delay: .6s;
-    -webkit-transition: .8s;
-    -o-transition: .8s;
-    transition: .8s;
-    opacity: 0;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
+  -webkit-transform: translateY(50px) rotate(0deg) translateZ(0);
+  transform: translateY(50px) rotate(0deg) translateZ(0);
+  -webkit-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  opacity: 0;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .animate-in {
-    opacity: 1 !important;
-    -webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
-    transform: translateY(0px) rotate(0deg) translateZ(0);
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
+  opacity: 1 !important;
+  -webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
+  transform: translateY(0px) rotate(0deg) translateZ(0);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .deeplink {
@@ -190,5 +186,91 @@ body {
 
   .deeplink {
     grid-row-start: 1;
+  }
+}
+
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
+/* Show keyboard focus */
+.skip-link:focus-visible {
+  transform: translateY(0%);
+}
+
+.container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  h2,
+  h3,
+  h4 {
+    color: var(--main-color-tertiary);
+    font-weight: 500;
+    margin-bottom: 1rem;
+
+    a.heading-anchor {
+      color: var(--main-color-tertiary);
+      text-decoration: none;
+    }
+  }
+
+  ul,
+  ol {
+    margin-bottom: 2rem;
+  }
+
+  hr {
+    display: block;
+    width: 50%;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px dashed var(--main-color-hairline);
+  }
+
+  .eleventy-plugin-youtube-embed {
+    margin-bottom: 2rem;
+  }
+
+  svg.icon {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+}
+
+.pagination {
+  .pagination--content {
+    max-width: var(--main-layout-width-normal);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5vh;
+
+    .post--pagination {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      justify-content: space-between;
+
+      a {
+        color: var(--main-color-secondary);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--main-color-primary);
+        }
+      }
+    }
   }
 }

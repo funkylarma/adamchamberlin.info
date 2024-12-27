@@ -1,8 +1,8 @@
 import { inspect } from 'node:util';
 import sanitizeHTML from 'sanitize-html';
 import { DateTime } from 'luxon';
-import globals from '../src/data/globals.js';
-import metadata from '../src/data/metadata.js';
+import globals from '../data/globals.js';
+import metadata from '../data/metadata.js';
 import { month_names } from './constants.js';
 import { nth } from './constants.js';
 
@@ -125,6 +125,10 @@ export default {
     }
   },
 
+  wordCount: function (content) {
+    return content.split(' ').length;
+  },
+
   timeReading: function (content) {
     const minutes = Math.ceil(content.trim().split(/\s+/).length / 200);
     return `${minutes} min read`;
@@ -149,6 +153,11 @@ export default {
     const params = new URLSearchParams(paramPart || '');
     params.set('v', DateTime.local().toFormat('X'));
     return `${urlPart}?${params}`;
+  },
+
+  limitList: function (value, from = 0, limit = 2) {
+    value.splice(from, limit);
+    return value;
   },
 
   webmentionsByUrl: function (webmentions, url) {

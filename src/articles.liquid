@@ -1,0 +1,220 @@
+---
+layout: list.liquid
+title: "Articles Feed"
+pagination:
+  data: collections.article
+  size: 10
+  reverse: true
+permalink: /articles/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
+eleventyComputed:
+  title: "Articles Feed {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
+---
+
+<div class="activity--list--content">
+
+  {%- for post in pagination.items -%}
+
+    {% if post.data.category == 'photography' %}
+      <article class="post h-entry hentry {% if post.data.cover %}cover{% endif %}">
+      {% if post.data.cover %}
+        <div class="post--image">
+          <img src="{{ post.data.cover }}"
+            alt="Cover image for {{ post.data.title }}"
+            sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
+            width="936"
+            class="u-photo"
+            {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}
+          >
+        </div><!-- .post-image -->
+      {% endif %}
+      <div class="post--content">
+        <div class="post--head">
+          <h2 class="p-name">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+              {% if post.data.title %}
+                {{ post.data.title }}
+                {% if post.data.draft %}
+                <span class="draft">- Draft</span>
+                {% endif %}
+              {% else %}
+                <code>{{ post.url }}</code>
+              {% endif %}
+            </a>
+          </h2>
+          <div class="post--meta">
+            <div class="post--date">
+              <span>Date: </span>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </div><!-- .post-date -->
+            {% if post.data.category %}
+            <div class="post--category">
+              <span>Category: </span>
+                <a class="p-category" href="/category/{{ post.data.category | slugify }}/" title="Browse other posts in the {{ post.data.category }} category">
+                  {{ post.data.category }}
+                </a>
+            </div><!-- .post-category -->
+            {% endif %}
+            {% if post.data.tags.length > 1 %}
+            <div class="post--tags">
+              <span>Tagged: </span>
+              {%- for tag in post.data.tags -%}
+                {% if tag != 'article' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                {% endif %}
+              {%- endfor -%}
+            </div><!-- .post-tags -->
+            {% endif %}
+            <div class="post--reading">
+              <span>Estimated: </span>
+              {{ post.templateContent | timeReading }}
+            </div><!-- .post-reading -->
+          </div><!-- .post-meta -->
+        </div>
+      </div><!-- .post-content -->
+    </article>
+
+    {% elsif post.data.category == 'videography' %}
+      <article class="post h-entry hentry {% if post.data.cover %}cover{% endif %}">
+      {% if post.data.cover %}
+        <div class="post--image">
+          <img src="{{ post.data.cover }}"
+            alt="Cover image for {{ post.data.title }}"
+            sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
+            width="936"
+            class="u-photo"
+            {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}
+          >
+        </div><!-- .post-image -->
+      {% endif %}
+      <div class="post--content">
+        <div class="post--head">
+          <h2 class="p-name">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+              {% if post.data.title %}
+                {{ post.data.title }}
+                {% if post.data.draft %}
+                <span class="draft">- Draft</span>
+                {% endif %}
+              {% else %}
+                <code>{{ post.url }}</code>
+              {% endif %}
+            </a>
+          </h2>
+          <div class="post--meta">
+            <div class="post--date">
+              <span>Date: </span>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </div><!-- .post-date -->
+            {% if post.data.category %}
+            <div class="post--category">
+              <span>Category: </span>
+                <a class="p-category" href="/category/{{ post.data.category | slugify }}/" title="Browse other posts in the {{ post.data.category }} category">
+                  {{ post.data.category }}
+                </a>
+            </div><!-- .post-category -->
+            {% endif %}
+            {% if post.data.tags.length > 1 %}
+            <div class="post--tags">
+              <span>Tagged: </span>
+              {%- for tag in post.data.tags -%}
+                {% if tag != 'post' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                {% endif %}
+              {%- endfor -%}
+            </div><!-- .post-tags -->
+            {% endif %}
+            <div class="post--reading">
+              <span>Estimated: </span>
+              {{ post.templateContent | timeReading }}
+            </div><!-- .post-reading -->
+          </div><!-- .post-meta -->
+        </div>
+      </div><!-- .post-content -->
+    </article>
+
+    {% else %}
+      <article class="post h-entry hentry {% if post.data.cover %}cover{% endif %}">
+      {% if post.data.cover %}
+        <div class="post--image">
+          <img src="{{ post.data.cover }}"
+            alt="Cover image for {{ post.data.title }}"
+            sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
+            width="936"
+            class="u-photo"
+            {%- if forloop.first -%}loading="eager" fetchpriority="high"{% endif %}
+          >
+        </div><!-- .post-image -->
+      {% endif %}
+      <div class="post--content">
+        <div class="post--head">
+          <h2 class="p-name">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+              {% if post.data.title %}
+                {{ post.data.title }}
+                {% if post.data.draft %}
+                <span class="draft">- Draft</span>
+                {% endif %}
+              {% else %}
+                <code>{{ post.url }}</code>
+              {% endif %}
+            </a>
+          </h2>
+          <div class="post--meta">
+            <div class="post--date">
+              <span>Date: </span>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </div><!-- .post-date -->
+            {% if post.data.category %}
+            <div class="post--category">
+              <span>Category: </span>
+                <a class="p-category" href="/category/{{ post.data.category | slugify }}/" title="Browse other posts in the {{ post.data.category }} category">
+                  {{ post.data.category }}
+                </a>
+            </div><!-- .post-category -->
+            {% endif %}
+            {% if post.data.tags.length > 1 %}
+            <div class="post--tags">
+              <span>Tagged: </span>
+              {%- for tag in post.data.tags -%}
+                {% if tag != 'post' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                {% endif %}
+              {%- endfor -%}
+            </div><!-- .post-tags -->
+            {% endif %}
+            <div class="post--reading">
+              <span>Estimated: </span>
+              {{ post.templateContent | timeReading }}
+            </div><!-- .post-reading -->
+          </div><!-- .post-meta -->
+        </div>
+      </div><!-- .post-content -->
+    </article>
+    {% endif %}
+
+  {%- endfor -%}
+
+</div><!-- .post-list-content -->
+
+<section class="pagination">
+  <div class="pagination--content">
+    <nav id="post--pagination" class="post--pagination" aria-labelledby="post--pagination">
+      <div class="previous-posts">
+        {% if pagination.href.previous %}
+          <a href="{{ pagination.href.previous }}" title="Head to the future">« Newer Posts</a>
+        {% endif %}
+      </div><!-- .previous-posts -->
+      <div class="next-posts">
+        {% if pagination.href.next %}
+          <a href="{{ pagination.href.next }}" title="Go back in time">Older Posts »</a>
+        {% endif %}
+      </div><!-- .next-posts -->
+    </nav><!-- .post-pagination -->
+  </div><!-- .pagination-content -->
+</section><!-- .pagination -->

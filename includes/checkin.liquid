@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
+  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
+  <body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    <div class="hfeed layout" role="document">
+      {% include "partials/header.liquid" %}
+      <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+        <div class="h-entry note--single">
+          <div class="note--main">
+            <div class="note--content e-content">
+              <div class="note--meta">
+                <div class="note--date">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-calendar" viewBox="0 0 16 16">
+                    <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                  </svg>
+                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateLongDate }}</time>
+                </div><!-- .post--date -->
+              </div><!-- .post-meta -->
+              <div itemscope itemtype="https://schema.org/Place">
+                <h1 class="post--title p-name" itemprop="name">
+                  Checked in at: <a href="{{ url }}">{{ title }}</a>
+                </h1>
+                <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                  <meta itemprop="latitude" content="{{ latitude }}" />
+                  <meta itemprop="longitude" content="{{ longitude }}" />
+                </div>
+              </div>
+              <div id="map"></div>
+              <a href="{{ url }}">View on Foursquare</a>
+              {{ content }}
+            </div><!-- .post--content -->
+            <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
+            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
+            <script>
+              mapboxgl.accessToken = "{{ keys.mapBox }}";
+              const map = new mapboxgl.Map({
+                  container: 'map', // container ID
+                  center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                  zoom: 16 // starting zoom
+              });
+              new mapboxgl.Marker().setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
+              map.resize();
+            </script>
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Place",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "{{ latitude }}",
+                "longitude": "{{ longitude }}"
+              },
+              "name": "{{ title }}"
+            }
+            </script>
+          </div><!-- .note--main -->
+          <div class="note--foter">
+          </div><!-- .note--footer -->
+        </div><!-- .note -->
+      </main>
+      {% include "partials/footer.liquid" %}
+    </div><!-- .container -->
+  </body>
+</html>
+

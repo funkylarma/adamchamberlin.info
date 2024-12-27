@@ -1,6 +1,6 @@
 ---
 title: Colophon
-kicker: Behind the site
+subhead: Behind the site
 description: How and what is used to build this site
 permalink: /colophon/
 ---
@@ -23,7 +23,7 @@ adamchamberlin.info was put into place in 2024 and all the original content was 
 
 <div class="page--related">
 
-Related Pages{.h3}
+Related /slash Pages{.h3}
 
 - [/uses](/uses/) — Learn about my setup
 - [/about](/about/) — Learn about me

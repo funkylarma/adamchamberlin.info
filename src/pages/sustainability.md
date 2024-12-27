@@ -1,6 +1,6 @@
 ---
 title: Sustainability
-kicker: Leaving a better place for others to enjoy
+subhead: Leaving a better place for others to enjoy
 description: The journey to a better and healthier lifestyle
 noindex: true
 permalink: /sustainability/

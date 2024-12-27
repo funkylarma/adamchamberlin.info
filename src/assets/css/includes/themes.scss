@@ -20,8 +20,8 @@
     }
   }
 
-  .post-list {
-    .post-list--content {
+  .post--list {
+    .post--list--content {
       .post {
         background: var(--main-color-base);
 
@@ -81,7 +81,7 @@
 
     .graph {
       .progress {
-        background: var(--main-color-quinary);
+        background: var(--main-color-tertiary);
       }
     }
   }
