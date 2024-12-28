@@ -128,9 +128,6 @@ export default async function (eleventyConfig) {
     eleventyConfig.addTransform(transformName, transforms[transformName]);
   });
 
-  // After build to copy all the OpenGraph images
-  eleventyConfig.on('afterBuild', events.afterBuild);
-
   // Base config
   return {
     // Control which files Eleventy will process

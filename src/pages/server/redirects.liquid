@@ -1,14 +1,15 @@
 ---
-eleventyExcludeFromCollections: true
 permalink: /_redirects
 ---
 
-{%- for page in collections.post -%}
+{%- for post in collections.article -%}
   {%- if page.url and page.data.slug -%}
-    {{ '/' }}{{ page.data.slug }}  {{ page.url }} {{ '301' }}
+    {{ '/' }}{{ post.data.slug }}  {{ post.url }} {{ '301' }}
     {{ '\n' }}
   {%- endif -%}
 {%- endfor -%}
+
+/diary https://adamchamberlin.info/activity 302
 
 adamchamberlin-info.pages.dev https://adamchamberlin.info 302
 
