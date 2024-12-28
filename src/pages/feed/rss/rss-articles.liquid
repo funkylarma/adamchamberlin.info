@@ -2,21 +2,22 @@
 layout: null
 templateEngineOverride: njk
 eleventyExcludeFromCollections: true
-permalink: /feed/feed.rss
+permalink: /feed/rss-articles.xml
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xml:base="{{ globals.url }}">
 <channel>
-  <title>{{ metadata.title}}</title>
+  <title>{{ metadata.title}} | Articles Only</title>
   <link>{{ globals.url }}</link>
   <description>{{ metadata.description }}</description>
   <language>{{ metadata.language }}</language>
+  <docs>{{ permalink | htmlBaseUrl(globals.url) }}</docs>
   <image>
     <url>{{ metadata.author.image }}</url>
     <title>{{ metadata.author.name }}</title>
     <link>{{ globals.url }}</link>
   </image>
-  {%- for post in collections.article -%}
+  {%- for post in collections.articlesForFeed -%}
   {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
     <item>
       <title>{{ post.data.title }}</title>

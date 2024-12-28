@@ -1,0 +1,32 @@
+---
+layout: null
+templateEngineOverride: njk
+eleventyExcludeFromCollections: true
+permalink: /feed/rss-notes.xml
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xml:base="{{ globals.url }}">
+<channel>
+  <title>{{ metadata.title}} | Notes Only</title>
+  <link>{{ globals.url }}</link>
+  <description>{{ metadata.description }}</description>
+  <language>{{ metadata.language }}</language>
+  <docs>{{ permalink | htmlBaseUrl(globals.url) }}</docs>
+  <image>
+    <url>{{ metadata.author.image }}</url>
+    <title>{{ metadata.author.name }}</title>
+    <link>{{ globals.url }}</link>
+  </image>
+  {%- for post in collections.notesForFeed -%}
+  {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <description>{{ post.templateContent | postExcerpt }}</description>
+      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <author>{{ metadata.author.name }}</author>
+      <guid>{{ absolutePostUrl }}</guid>
+    </item>
+  {%- endfor %}
+</channel>
+</rss>

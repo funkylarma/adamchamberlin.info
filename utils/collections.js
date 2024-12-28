@@ -62,6 +62,54 @@ function makeYearStats(
 export default {
   categoryFeeds: () => ['article', 'note'],
 
+  allFeed: function (collection) {
+    return collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.tags) return;
+        if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      })
+      .slice(0, 50);
+  },
+
+  articlesForFeed: function (collection) {
+    return collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.tags) return;
+        if (item.data.tags.includes('article')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      })
+      .slice(0, 50);
+  },
+
+  notesForFeed: function (collection) {
+    return collection
+      .getAll()
+      .filter((item) => {
+        if (!item.data.tags) return;
+        if (item.data.tags.includes('note')) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      })
+      .sort(function (a, b) {
+        return b.date - a.date; // sort by date - descending
+      })
+      .slice(0, 50);
+  },
+
   // Drafts Collection
   drafts: function (collection) {
     return collection
@@ -214,11 +262,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (
-          item.data.tags.includes('article') ||
-          item.data.tags.includes('checkin') ||
-          item.data.tags.includes('note')
-        ) {
+        if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
           return item;
         }
         // console.log(item.data.tags);

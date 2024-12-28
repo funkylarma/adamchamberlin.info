@@ -29,9 +29,9 @@
 <link rel="author self" href="{{ globals.url }}">
 <link rel="author" type="application/activity+json" href="https://adamchamberlin.info@adamchamberlin.info">
 <link rel="author" type="text/plain" href="{{ "/humans.txt" | absoluteUrl }}">
-<link rel="alternate" type="application/rss+xml" href="{{ globals.rssFeed.path | absoluteUrl }}" title="{{ metadata.title }} RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="{{ globals.atomFeed.path | absoluteUrl }}" title="{{ metadata.title }} Atom Feed">
-<link rel="alternate" type="application/json" href="{{ globals.jsonFeed.path | absoluteUrl }}" title="{{ metadata.title }} JSON Feed">
+<link rel="alternate" type="application/rss+xml" href="{{ 'feed/rss.xml' | absoluteUrl }}" title="{{ metadata.title }} | RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="{{ 'feed/atom.xml' | absoluteUrl }}" title="{{ metadata.title }} | Atom Feed">
+<link rel="alternate" type="application/json" href="{{ 'feed/feed.json' | absoluteUrl }}" title="{{ metadata.title }} | JSON Feed">
 <link rel="icon" type="image/png" href="{{ "/assets/icons/favicon-96x96.png" | absoluteUrl }}" sizes="96x96">
 <link rel="icon" type="image/png" href="{{ "/assets/icons/web-app-manifest-192x192.png" | absoluteUrl }}" sizes="192x192">
 <link rel="icon" type="image/svg+xml" href="{{ "/assets/icons/favicon.svg" | absoluteUrl }}">
