@@ -257,10 +257,14 @@
     margin-right: auto;
     margin-bottom: 5rem;
 
-    a {
+    a:not(.deeplink) {
+      color: var(--main-color-quaternary);
+      border-bottom: 1px dotted var(--main-color-quaternary);
+
       &:hover {
         color: var(--main-color-tertiary);
         text-decoration: none;
+        border-bottom: none;
       }
     }
 

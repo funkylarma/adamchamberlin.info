@@ -33,6 +33,12 @@ export default {
       url: '/',
     },
     {
+      label: 'Activity',
+      class: 'activity',
+      title: 'What I have been up to',
+      url: '/activity/',
+    },
+    {
       label: 'Contact',
       class: 'contact',
       title: 'Lets get social',
@@ -42,7 +48,7 @@ export default {
       label: 'RSS',
       class: 'rss',
       title: 'Long live the RSS feed',
-      url: '/feed/feed.xml',
+      url: '/feed/',
     },
   ],
 };

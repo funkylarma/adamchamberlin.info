@@ -12,6 +12,7 @@ permalink: "/archive/"
 <!-- Categories -->
 <div class="category-list">
   <h2 id="category">By Category</h2>
+  <p class="small">Browse the content by the different categories. At it's core there are two main types, articles and notes. Articles are the longer form writings and notes are short form musings. Notes are then further broken down into different categories.</p>
   <div class="h-feed">
     <ul class="category--feed">
       {%- for cat, val in collections.categoryList | dictsort -%}
@@ -32,6 +33,7 @@ permalink: "/archive/"
 <!-- Tags -->
 <div class="tag-list">
   <h2 id="tag">By Tag</h2>
+  <p class="small">Tags are used to group content together. An articles might be organised with a certain tag, but that same tag could also be used on a note or a checkin.</p>
   <div class="h-feed">
     <ul class="tag--feed wide">
       {%- for tag, val in collections.tagList | dictsort -%}
@@ -51,6 +53,7 @@ permalink: "/archive/"
 </div><!-- .tag-list -->
 <div class="archive-list">
   <h2 id="date">By Date</h2>
+  <p class="small">The following is a chronological list of all the content on the site. This includes the articles and notes. You can find a different take on this in the <a href="/activity/">activity</a> feed page.</p>
   <div class="h-feed">
     <ul class="archive--feed">
     {% for year in collections.contentArchive %}

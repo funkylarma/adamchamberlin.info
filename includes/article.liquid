@@ -65,7 +65,7 @@
             "@id": "{{ page.url | absoluteUrl }}"
           },
           "headline": "{{ title }}",
-          "description": "{{ summary }}",
+          "description": "{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}",
           "image": "{{ cover | absoluteUrl }}",
           "author": {
             "@type": "Person",
