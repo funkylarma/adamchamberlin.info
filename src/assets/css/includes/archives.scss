@@ -139,6 +139,7 @@
         text-transform: uppercase;
         position: sticky;
         top: 0;
+        z-index: 999;
 
         h3 {
           font-size: var(--main-font-size-large);

@@ -13,6 +13,10 @@ export default {
     return `<pre>${inspect(content)}</pre>`;
   },
 
+  capitaliseFirstLetter: function (string) {
+    return String(string).charAt(0).toUpperCase() + String(string).slice(1);
+  },
+
   metaTitle: function (title) {
     title.trim();
     if (this.page.url) {

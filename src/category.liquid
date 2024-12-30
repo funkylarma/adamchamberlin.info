@@ -1,5 +1,6 @@
 ---
 layout: page.liquid
+eleventyExcludeFromCollections: true
 pagination:
   data: collections.categoryList
   size: 1
@@ -7,8 +8,8 @@ pagination:
   generatePageOnEmptyData: true
 permalink: '/category/{{ category | slugify }}/'
 eleventyComputed:
-  title: 'Category: {{ category }}'
-  description: "Archive page for the '{{ category }}' category"
+  title: 'Category: {{ category | capitaliseFirstLetter }}'
+  description: "Archive page for the '{{ category | capitaliseFirstLetter }}' category"
   subhead: 'These are all the posts listed under the category of "{{ category }}"'
 ---
 

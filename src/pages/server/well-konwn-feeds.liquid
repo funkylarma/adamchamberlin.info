@@ -1,0 +1,26 @@
+---
+eleventyAllowMissingExtension: true
+permalink: '/.well-known/feeds'
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>{{ metadata.title }} | Feeds</title>
+    <dateCreated>{{ currentBuildDate }}</dateCreated>
+    <ownerName>{{ metadata.author.name }}</ownerName>
+    <ownerEmail>{{ metadata.author.email }}</ownerEmail>
+    <ownerId>{{ globals.domain }}</ownerId>
+    <docs>{{ 'feed/' | absoluteUrl }}</docs>
+  </head>
+  <body>
+    <outline text="Atom Feed (Full Content)" type="rss" version="ATOM1" xmlUrl="{{ 'feed/atom.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 posts as Atom feed"/>
+    <outline text="Atom Feed (Articles Only)" type="rss" version="ATOM1" xmlUrl="{{ 'feed/atom-articles.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 articles as Atom feed"/>
+    <outline text="Atom Feed (Notes Only)" type="rss" version="ATOM1" xmlUrl="{{ 'feed/atom-notes.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 notes as Atom feed"/>
+    <outline text="RSS Feed (Full Content)" type="rss" version="RSS2" xmlUrl="{{ 'feed/rss.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 posts as RSS feed"/>
+    <outline text="RSS Feed (Articles Only)" type="rss" version="RSS2" xmlUrl="{{ 'feed/rss-articles.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 articles as RSS feed"/>
+    <outline text="RSS Feed (Notes Only)" type="rss" version="RSS2" xmlUrl="{{ 'feed/rss-notes.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 notes as RSS feed"/>
+    <outline text="JSON Feed (Full Content)" type="rss" version="JSON1" xmlUrl="{{ 'feed/json.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 posts as JSON feed"/>
+    <outline text="JSON Feed (Articles Only)" type="rss" version="JSON1" xmlUrl="{{ 'feed/json-articles.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 articles as JSON feed"/>
+    <outline text="JSON Feed (Notes Only)" type="rss" version="JSON1" xmlUrl="{{ 'feed/json-notes.xml' | absoluteUrl }}" htmlUrl="{{ globals.domain }}" description="Last 20 notes as JSON feed"/>
+  </body>
+</opml>

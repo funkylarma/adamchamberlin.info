@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import Image from '@11ty/eleventy-img';
 
 export default {
@@ -7,6 +8,15 @@ export default {
 
   year: function () {
     return `${new Date().getFullYear()}`;
+  },
+
+  assetIcon: function (filename) {
+    let relativeFilePath = `./src/assets/icons/${filename}.svg`;
+    let data = fs.readFileSync(relativeFilePath, function (err, contents) {
+      if (err) return err;
+      return contents;
+    });
+    return data.toString('utf8');
   },
 
   galleryImage: async function (src, alt) {

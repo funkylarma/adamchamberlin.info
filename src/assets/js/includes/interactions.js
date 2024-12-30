@@ -38,8 +38,16 @@ function fadeIn(el) {
 (function ($) {
   'use strict';
 
-  if ($('.post')) {
-    fadeIn('.post');
+  if ($('.post--list--content article')) {
+    fadeIn('.post--list--content article');
+  }
+
+  if ($('.activity--list--content article')) {
+    fadeIn('.activity--list--content article');
+  }
+
+  if ($('.archive--list .h-entry')) {
+    fadeIn('.archive--list .h-entry');
   }
 
   if ($('.post-single picture')) {
