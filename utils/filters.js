@@ -36,7 +36,11 @@ export default {
       }
 
       if (/\d{4}\//.test(this.page.url)) {
-        return title + ' - an article posted by Adam Chamberlin on ' + this.page.date.toDateString();
+        return (
+          title.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '') +
+          ' - an article posted by Adam Chamberlin on ' +
+          this.page.date.toDateString()
+        );
       }
     }
 

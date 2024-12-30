@@ -23,7 +23,12 @@
               </div><!-- .post-meta -->
               <div itemscope itemtype="https://schema.org/Place">
                 <h1 class="post--title p-name" itemprop="name">
-                  Checked in at: <a href="{{ url }}">{{ title }}</a>
+                  Checked in at:
+                  {% if url %}
+                    <a href="{{ url }}">{{ title }}</a>
+                  {% else %}
+                    {{ title }}
+                  {% endif %}
                 </h1>
                 <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
                   <meta itemprop="latitude" content="{{ latitude }}" />
@@ -31,7 +36,9 @@
                 </div>
               </div>
               <div id="map"></div>
-              <a href="{{ url }}">View on Foursquare</a>
+              {% if url %}
+                <a href="{{ url }}">View on Foursquare</a>
+              {% endif %}
               {{ content }}
             </div><!-- .post--content -->
             <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
