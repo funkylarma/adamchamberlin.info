@@ -6,7 +6,6 @@ category: article
 tags:
 - software
 - apps
-draft: true
 ---
 
 It is that time of year, these are the default apps I've been using throughout 2024
