@@ -10,6 +10,7 @@
       {% include "partials/header.liquid" %}
       <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
         <article class="hentry h-entry post--single" id="{{ title | slugify }}" itemtype="http://schema.org/BlogPosting" itemid="{{ page.url | absoluteUrl }}" role="article">
+          {% include "partials/hcard.liquid" %}
           <meta itemprop="wordCount" content="{{ content | wordCount }}">
           <header class="post--header">
             <h1 class="post--title p-name" itemprop="headline">{{ title }}</h1>

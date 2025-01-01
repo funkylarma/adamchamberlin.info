@@ -47,6 +47,17 @@ eleventyComputed:
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </article>
 
+    {% elsif post.data.category == 'rsvp' %}
+    <article class="reply h-entry hentry">
+      <h2 class="p-name">
+        <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="RSVP'd to {{ post.data.title }}">
+          {% assetIcon "rsvp" %}
+          RSVP'd to {{ post.data.title }}
+        </a>
+      </h2>
+      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+    </article>
+
     {% elsif post.data.category == 'videography' %}
       <article class="post h-entry hentry">
         <h2 class="p-name">

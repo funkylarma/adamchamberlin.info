@@ -16,6 +16,7 @@ eleventyComputed:
 ---
 <div class="archive--list">
   <div class="h-feed">
+    {% include "partials/hcard.liquid" %}
     <ul class="archive--feed">
       {%- for entry in collections[tag] reversed -%}
         <li class="h-entry">

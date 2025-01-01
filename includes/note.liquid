@@ -10,8 +10,9 @@
       {% include "partials/header.liquid" %}
       <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
         <div class="hentry h-entry note--single">
+          {% include "partials/hcard.liquid" %}
           <div class="note--main">
-            <div class="note--content">
+            <div class="note--content {% if category %}{{ category}}{% endif %}">
               <div class="note--meta">
                 <div class="note--date">
                   <h1>
@@ -25,7 +26,7 @@
                   <div class="note--tags">
                     <span>Tagged: </span>
                     {%- for tag in tags -%}
-                      {% if tag != 'post' %}
+                      {% if tag != 'note' %}
                         <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
                           {{ tag }}
                         </a>
@@ -54,10 +55,21 @@
 
               {% if category == 'rsvp' %}
                 <p class="p-summary">
-                  <a href="https://example.com" class="p-author h-card">Your Name</a>
-                  RSVPs <span class="p-rsvp">yes</span>
-                  to <a href="https://events.indieweb.org/example" class="u-in-reply-to">Event Name</a>
+                  {% if rsvp == 'yes' %}
+                    <span class="p-rsvp" value="yes">Yep,</span> I'm going to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                  {% elsif rsvp == 'no' %}
+                    <span class="p-rsvp" value="no">Gutted,</span> I can not make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                  {% elsif rsvp == 'maybe' %}
+                    <span class="p-rsvp" value="maybe">Hoping,</span> to make it <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                  {% elsif rsvp == 'interested' %}
+                    <a href="{{ link }}" class="u-in-reply-to">This</a> has me <span class="p-rsvp" value="interested">intrigued</span>.
+                  {% else %}
+                    <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>
+                  {% endif %}
                 </p>
+                <div class="e-content">
+                  {{ content }}
+                </div>
               {% endif %}
 
             </div><!-- .note--content -->
