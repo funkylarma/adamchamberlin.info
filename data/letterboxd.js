@@ -38,7 +38,10 @@ export default async function() {
     let transformedMovie = {};
     transformedMovie.date = new Date(movie.pubDate);
     transformedMovie.url = movie.link;
-    transformedMovie.title = movie.title;
+    transformedMovie.data = {
+      title: movie.title,
+      category: 'movie'
+    };
     return transformedMovie;
   });
 
