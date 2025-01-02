@@ -26,11 +26,7 @@ export default async function() {
     const recentTracks = recentTracksResponse.recenttracks.track.map((track) => {
       let transformedTrack = {};
       transformedTrack.date = new Date(track.date['#text'])
-<<<<<<< HEAD
       transformedTrack.url = track.url
-=======
-      transformedTrack.url = track.link
->>>>>>> master
       transformedTrack.data = {
         title: track.name + " by " + track.artist['#text'],
         category: 'listen',
@@ -38,7 +34,6 @@ export default async function() {
       return transformedTrack;
     });
 
-<<<<<<< HEAD
     const weeklyTracks = weeklyTracksResponse.weeklytrackchart.track.map((track) => {
       let transformedTrack = {};
       transformedTrack.date = new Date()
@@ -63,10 +58,6 @@ export default async function() {
       }
       return transformedArtist;
     });
-=======
-    const weeklyTracks = weeklyTracksResponse.weeklytrackchart.track
-    const weeklyArtists = weeklyArtistsResponse.weeklyartistchart.artist
->>>>>>> master
 
     return {
       recentTracks: recentTracks,
