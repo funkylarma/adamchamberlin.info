@@ -23,9 +23,41 @@ export default async function() {
 
     const weeklyArtistsResponse = await EleventyFetch(`https://ws.audioscrobbler.com/2.0/?method=user.getweeklyartistchart&user=funkylarma&api_key=${TOKEN}&format=json`, fetchConfig)
 
-    const recentTracks = recentTracksResponse.recenttracks.track
-    const weeklyTracks = weeklyTracksResponse.weeklytrackchart.track
-    const weeklyArtists = weeklyArtistsResponse.weeklyartistchart.artist
+    const recentTracks = recentTracksResponse.recenttracks.track.map((track) => {
+      let transformedTrack = {};
+      transformedTrack.date = new Date(track.date['#text'])
+      transformedTrack.url = track.url
+      transformedTrack.data = {
+        title: track.name + " by " + track.artist['#text'],
+        category: 'listen',
+      }
+      return transformedTrack;
+    });
+
+    const weeklyTracks = weeklyTracksResponse.weeklytrackchart.track.map((track) => {
+      let transformedTrack = {};
+      transformedTrack.date = new Date()
+      transformedTrack.url = track.url
+      transformedTrack.data = {
+        title: track.name,
+        artist: track.artist['#text'],
+        category: 'listen',
+        playcount: track.playcount
+      }
+      return transformedTrack;
+    });
+
+    const weeklyArtists = weeklyArtistsResponse.weeklyartistchart.artist.map((artist) => {
+      let transformedArtist = {};
+      transformedArtist.date = new Date()
+      transformedArtist.url = artist.url
+      transformedArtist.data = {
+        title: artist.name,
+        category: 'listen',
+        playcount: artist.playcount
+      }
+      return transformedArtist;
+    });
 
     return {
       recentTracks: recentTracks,

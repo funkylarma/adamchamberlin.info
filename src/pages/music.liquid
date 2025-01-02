@@ -10,11 +10,12 @@ permalink: "/music/"
 
 <h2>Recent Played</h2>
 <ul>
-  {% for track in lastfm.recentTracks | limit: 10 %}
+  {% for track in lastfm.recentTracks %}
     <li class="track">
-        <a href="{{ track.url }}">
-            {{ track.name }} - {{ track.artist['#text'] }}
-        </a>
+      <a href="{{ track.url }}">
+        {{ track.data.title }}
+      </a>
+       - <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}">{{ track.date | dateLongDate }}</time>
     </li>
   {% endfor %}
 </ul>
@@ -23,9 +24,10 @@ permalink: "/music/"
 <ul>
   {% for track in lastfm.weeklyTracks %}
     <li class="track">
-        <a href="{{ track.url }}">
-            {{ track.name }} - {{ track.artist['#text'] }} - {{ track.playcount }} Play{% if track.playcount > 1 %}s{% endif %}
-        </a>
+      <a href="{{ track.url }}">
+          {{ track.data.title }} - {{ track.data.artist }}
+      </a>
+       - {{ track.data.playcount }} Play{% if track.data.playcount > 1 %}s{% endif %}
     </li>
   {% endfor %}
 </ul>
@@ -35,8 +37,9 @@ permalink: "/music/"
   {% for artist in lastfm.weeklyArtists %}
     <li class="artist">
       <a href="{{ artist.url }}">
-        {{ artist.name }} - {{ artist.playcount }} Play{% if artist.playcount > 1 %}s{% endif %}
+        {{ artist.data.title }}
       </a>
+       - {{ artist.data.playcount }} Play{% if artist.data.playcount > 1 %}s{% endif %}
     </li>
   {% endfor %}
 </ul>
