@@ -1,0 +1,42 @@
+---
+layout: page.liquid
+title: Music
+subhead: Where words fail, music speaks
+permalink: "/music/"
+---
+<p>
+  All data is taken from my <a href="https://www.last.fm/user/FunkyLarma">LastFM</a> account.
+</p>
+
+<h2>Recent Played</h2>
+<ul>
+  {% for track in lastfm.recentTracks | limit: 10 %}
+    <li class="track">
+        <a href="{{ track.url }}">
+            {{ track.name }} - {{ track.artist['#text'] }}
+        </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2>Weekly Tracks</h2>
+<ul>
+  {% for track in lastfm.weeklyTracks %}
+    <li class="track">
+        <a href="{{ track.url }}">
+            {{ track.name }} - {{ track.artist['#text'] }} - {{ track.playcount }} Play{% if track.playcount > 1 %}s{% endif %}
+        </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2>Weekly Artists</h2>
+<ul>
+  {% for artist in lastfm.weeklyArtists %}
+    <li class="artist">
+      <a href="{{ artist.url }}">
+        {{ artist.name }} - {{ artist.playcount }} Play{% if artist.playcount > 1 %}s{% endif %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

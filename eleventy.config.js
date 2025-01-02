@@ -33,6 +33,8 @@ const isProd = process.env.ELEVENTY_ENV === 'production';
 import { dir } from './utils/constants.js';
 
 export default async function (eleventyConfig) {
+
+  eleventyConfig.setQuietMode(true);
   eleventyConfig.addGlobalData('env', process.env);
 
   eleventyConfig.setDataDeepMerge(true);

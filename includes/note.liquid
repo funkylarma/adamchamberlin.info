@@ -56,13 +56,14 @@
               {% if category == 'rsvp' %}
                 <p class="p-summary">
                   {% if rsvp == 'yes' %}
-                    <span class="p-rsvp" value="yes">Yep,</span> I'm going to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                    <span class="p-rsvp" value="yes">Yep,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a> going to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
                   {% elsif rsvp == 'no' %}
-                    <span class="p-rsvp" value="no">Gutted,</span> I can not make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                    <span class="p-rsvp" value="no">Gutted,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a> can not make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
                   {% elsif rsvp == 'maybe' %}
-                    <span class="p-rsvp" value="maybe">Hoping,</span> to make it <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                    <span class="p-rsvp" value="maybe">Hoping,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a> can make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+
                   {% elsif rsvp == 'interested' %}
-                    <a href="{{ link }}" class="u-in-reply-to">This</a> has me <span class="p-rsvp" value="interested">intrigued</span>.
+                    <a href="{{ link }}" class="u-in-reply-to">This</a> has <a href="{{ globals.url }}" class="p-author h-card">me</a> <span class="p-rsvp" value="interested">intrigued</span>.
                   {% else %}
                     <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>
                   {% endif %}
