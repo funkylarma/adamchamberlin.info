@@ -60,9 +60,7 @@ function makeYearStats(
 }
 
 export default {
-  categoryFeeds: () => ['article', 'note'],
-
-  allFeed: function(collection) {
+  allFeed: function (collection) {
     return collection
       .getAll()
       .filter((item) => {
@@ -72,13 +70,13 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       })
       .slice(0, 50);
   },
 
-  articlesForFeed: function(collection) {
+  articlesForFeed: function (collection) {
     return collection
       .getAll()
       .filter((item) => {
@@ -88,13 +86,13 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       })
       .slice(0, 50);
   },
 
-  notesForFeed: function(collection) {
+  notesForFeed: function (collection) {
     return collection
       .getAll()
       .filter((item) => {
@@ -104,22 +102,21 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       })
       .slice(0, 50);
   },
 
   // Drafts Collection
-  drafts: function(collection) {
+  drafts: function (collection) {
     return collection
       .getAll()
       .filter((item) => item.data.draft)
       .sort((a, b) => b.date - a.date);
   },
 
-  allContent: function(collection) {
-
+  allContent: function (collection) {
     let lastfmContent = collection.getAll()[0].data.lastfm.recentTracks;
     let letterboxdContent = collection.getAll()[0].data.letterboxd;
     let mastodonContent = collection.getAll()[0].data.mastodon;
@@ -132,21 +129,22 @@ export default {
           return item;
         }
         // console.log(item.data.tags);
-      }).sort(function(a, b) {
-        return b.date - a.date;
       })
+      .sort(function (a, b) {
+        return b.date - a.date;
+      });
 
     // Merge all content
     let allContent = [...localContent, ...letterboxdContent, ...lastfmContent, ...mastodonContent];
 
-    let sortedContent = allContent.sort(function(a, b) {
+    let sortedContent = allContent.sort(function (a, b) {
       return a.date - b.date;
-    })
+    });
 
     return sortedContent;
   },
 
-  contentList: function(collection) {
+  contentList: function (collection) {
     return collection
       .getAll()
       .filter((item) => {
@@ -158,15 +156,14 @@ export default {
         ) {
           return item;
         }
-        // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
-        return a.date - b.date; // sort by date - descending
+      .sort(function (a, b) {
+        return a.date - b.date;
       });
   },
 
   // Gets all the filtered content by tag and outputs a Collection
-  tagList: function(collection) {
+  tagList: function (collection) {
     const tagsSet = {};
     collection
       .getAll()
@@ -186,7 +183,7 @@ export default {
   },
 
   // Gets all the filtered content by category and outouts a Collection
-  categoryList: function(collection) {
+  categoryList: function (collection) {
     let catSet = {};
     collection
       .getAll()
@@ -202,9 +199,9 @@ export default {
   },
 
   // Year Collection
-  postsByYear: function(collection) {
+  postsByYear: function (collection) {
     return _.chain(
-        collection
+      collection
         .getAll()
         .filter((item) => {
           if (!item.data.tags) return;
@@ -218,7 +215,7 @@ export default {
           // console.log(item.data.tags);
         })
         .reverse()
-      )
+    )
       .groupBy((post) => post.date.getFullYear())
       .toPairs()
       .reverse()
@@ -226,9 +223,9 @@ export default {
   },
 
   // Year/Month Collection
-  postsByYearMonth: function(collection) {
+  postsByYearMonth: function (collection) {
     return _.chain(
-        collection
+      collection
         .getAll()
         .filter((item) => {
           if (!item.data.tags) return;
@@ -241,7 +238,7 @@ export default {
           }
         })
         .reverse()
-      )
+    )
       .groupBy((post) => {
         const year = post.date.getFullYear();
         const month = String(post.date.getMonth() + 1).padStart(2, '0');
@@ -253,9 +250,9 @@ export default {
   },
 
   // Year/Month/Day Collection
-  postsByYearMonthDay: function(collection) {
+  postsByYearMonthDay: function (collection) {
     return _.chain(
-        collection
+      collection
         .getAll() //.filter((item) => ['post', 'note'].includes(item.tag))
         .filter((item) => {
           if (!item.data.tags) return;
@@ -268,7 +265,7 @@ export default {
           }
         })
         .reverse()
-      )
+    )
       .groupBy((post) => {
         const year = post.date.getFullYear();
         const month = String(post.date.getMonth() + 1).padStart(2, '0');
@@ -281,7 +278,7 @@ export default {
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  contentArchive: function(collection) {
+  contentArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -295,7 +292,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -338,20 +335,20 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  articleArchive: function(collection) {
+  articleArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -365,7 +362,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -408,20 +405,20 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  noteArchive: function(collection) {
+  noteArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -435,7 +432,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -479,20 +476,20 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  replyArchive: function(collection) {
+  replyArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -506,7 +503,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -550,19 +547,19 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
-  rsvpArchive: function(collection) {
+  rsvpArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -576,7 +573,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -620,20 +617,20 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  checkinArchive: function(collection) {
+  checkinArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -647,7 +644,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -688,20 +685,20 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  videographyArchive: function(collection) {
+  videographyArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -715,7 +712,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -756,20 +753,20 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  photographyArchive: function(collection) {
+  photographyArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -783,7 +780,7 @@ export default {
         }
         // console.log(item.data.tags);
       })
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
       });
 
@@ -824,19 +821,19 @@ export default {
     // Return our array
     return (
       output
-      // Reverse the months (most recent first)
-      .map((y) => {
-        y.months.reverse();
-        return y;
-      })
-      // Filter out any null years
-      .filter((a) => a)
-      // Reverse the years (recent first)
-      .reverse()
+        // Reverse the months (most recent first)
+        .map((y) => {
+          y.months.reverse();
+          return y;
+        })
+        // Filter out any null years
+        .filter((a) => a)
+        // Reverse the years (recent first)
+        .reverse()
     );
   },
 
-  postStats: function(collectionApi) {
+  postStats: function (collectionApi) {
     const oneDayMilliseconds = 1000 * 60 * 60 * 24;
     let avgDays = 0;
     let totalDays = 0;

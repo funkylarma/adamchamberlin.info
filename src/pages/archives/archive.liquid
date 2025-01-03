@@ -74,13 +74,13 @@ permalink: "/archive/"
               {% assetIcon "article" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Wrote <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
 
             {% elif entry.category == 'note' %}
               {% assetIcon "note" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Noodled about <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
 
             {% elif entry.category == 'checkin' %}
               {% assetIcon "checkin" %}
@@ -92,13 +92,13 @@ permalink: "/archive/"
               {% assetIcon "reply" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Replied to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
 
             {% elif entry.category == 'rsvp' %}
               {% assetIcon "rsvp" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - RSVP'd to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
 
 
             {% elif entry.category == 'photography' %}

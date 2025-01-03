@@ -36,17 +36,22 @@
                 {% endif %}
               </div><!-- .post-meta -->
 
-              {% if category == 'videography' %}
-                <p class="p-summary">
-                  <a href="https://example.com" class="p-author h-card">Your Name</a>
-                  RSVPs <span class="p-rsvp">yes</span>
-                  to <a href="https://events.indieweb.org/example" class="u-in-reply-to">Event Name</a>
+              {% if category == 'note' %}
+                <p class="p-name">
+                  {{ title }}
                 </p>
+                <div class="p-content">
+                  {{ content }}
+                </div>
+              {% endif %}
+
+              {% if category == 'videography' %}
+
               {% endif %}
 
               {% if category == 'reply' %}
                 <p class="p-name">
-                  In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ to }}</a>
+                  In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ title }}</a>
                 </p>
                 <div class="e-content">
                   {{ content }}

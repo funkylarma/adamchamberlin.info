@@ -1,5 +1,4 @@
 .page--content {
-
   /* stats page */
   .graph {
     .wrapper {
@@ -89,10 +88,12 @@
   }
 
   /* Tag archive */
-  .tag-list {}
+  .tag-list {
+  }
 
   /* Category list */
-  .category-list {}
+  .category-list {
+  }
 
   /* Date archive */
   .archive--feed {
@@ -111,7 +112,6 @@
       margin-bottom: 1rem;
 
       time {
-        color: var(--main-color-tertiary);
       }
     }
 
@@ -173,6 +173,10 @@
   margin-right: auto;
   margin-bottom: 5rem;
 
+  ul {
+    padding-inline-start: 0;
+  }
+
   // Notes
   li {
     display: flex;
@@ -188,6 +192,7 @@
       font-weight: 400;
       margin-bottom: 0;
       color: unset;
+      text-wrap: auto;
 
       a {
         color: var(--main-color-tertiary);
@@ -197,7 +202,6 @@
           color: var(--main-color-secondary);
         }
       }
-
     }
 
     time {

@@ -1,7 +1,6 @@
 ---
 date: 2024-12-21
-to: James
-title: Reply to James
+title: James
 link: https://jamesg.blog/2020/09/04/how-i-use-webmentions/
 category: reply
 ---
