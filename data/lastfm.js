@@ -1,6 +1,4 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
-
-// Load .env variables with dotenv
 import dotenv from 'dotenv';
 dotenv.config();
 

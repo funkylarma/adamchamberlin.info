@@ -3,20 +3,21 @@ import parser from "fast-xml-parser";
 
 export default async function() {
 
-  console.log('Fetching Letterboxd data');
+  console.log('Fetching Oku book data')
 
-  const url = "https://letterboxd.com/funkylarma/rss/"
+  const url = "https://oku.club/rss/collection/sNsDk"
   const fetchConfig = {
     duration: '12h',
     type: 'text',
   }
+
   let response;
 
   try {
     response = await EleventyFetch(url, fetchConfig)
 
   } catch (e) {
-    console.error(`Fetch failed in lastfm.js. ${e}`);
+    console.error(`Fetch failed in books.js. ${e}`);
     return `It has failed: ${e}`;
   }
 
@@ -32,18 +33,20 @@ export default async function() {
     );
   }
 
-  let movieList = feed.rss.channel.item;
+  let readingList = feed.rss.channel.item;
 
-  let movies = movieList.map((movie) => {
-    let transformedMovie = {};
-    transformedMovie.date = new Date(movie.pubDate);
-    transformedMovie.url = movie.link;
-    transformedMovie.data = {
-      title: movie.title,
-      category: 'movie'
+  let books = readingList.map((book) => {
+    let transformedBook = {};
+    transformedBook.date = new Date(book.pubDate);
+    transformedBook.url = book.guid;
+    transformedBook.data = {
+      title: book.title,
+      author: book['dc:creator'],
+      cover: book['oku:cover'],
+      category: 'book'
     };
-    return transformedMovie;
+    return transformedBook;
   });
 
-  return movies
-};
+  return books;
+}

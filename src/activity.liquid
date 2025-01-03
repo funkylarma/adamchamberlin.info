@@ -12,10 +12,11 @@ eleventyComputed:
 
 <div class="activity--list--content">
 
+  <ul>
   {%- for post in pagination.items -%}
 
     {% if post.data.category == 'article' %}
-      <article class="post h-entry hentry">
+      <li class="post h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "article" %}
           Wrote -
@@ -24,10 +25,10 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'note' %}
-      <article class="note h-entry hentry">
+      <li class="note h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "note" %}
           Noodled about -
@@ -36,10 +37,10 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'reply' %}
-      <article class="reply h-entry hentry">
+      <li class="reply h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "reply" %}
           Replied to -
@@ -48,22 +49,22 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'rsvp' %}
-    <article class="reply h-entry hentry">
-      <h2 class="p-name">
-        {% assetIcon "rsvp" %}
-        RSVP'd to -
-        <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="RSVP'd to {{ post.data.title }}">
-          {{ post.data.title }}
-        </a>
-      </h2>
-      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-    </article>
+      <li class="reply h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "rsvp" %}
+          RSVP'd to -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="RSVP'd to {{ post.data.title }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
 
     {% elsif post.data.category == 'videography' %}
-      <article class="post h-entry hentry">
+      <li class="post h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "video" %}
           Shot -
@@ -72,10 +73,10 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'photography' %}
-      <article class="post h-entry hentry">
+      <li class="post h-entry hentry">
         <h2 class="p-name">
           Snapped -
           <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
@@ -83,10 +84,10 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'checkin' %}
-      <article class="checkin h-entry hentry">
+      <li class="checkin h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "checkin" %}
           Checked in at -
@@ -95,10 +96,10 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'movie' %}
-      <article class="checkin h-entry hentry">
+      <li class="movie h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "movie" %}
           Watched -
@@ -106,11 +107,13 @@ eleventyComputed:
             {{ post.data.title }}
           </a>
         </h2>
+        <img src="{{ post.data.cover }}" eleventy:ignore>
+
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'listen' %}
-      <article class="checkin h-entry hentry">
+      <li class="listen h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "music" %}
           Listened to -
@@ -119,10 +122,10 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'toot' %}
-      <article class="checkin h-entry hentry">
+      <li class="toot h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "tooted" %}
           Tooted -
@@ -131,10 +134,10 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% else %}
-      <article class="h-entry hentry">
+      <li class="h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "unknown" %}
           Mumbled about -
@@ -143,10 +146,11 @@ eleventyComputed:
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
     {% endif %}
 
   {%- endfor -%}
+  </ul>
 
 </div><!-- .post-list-content -->
 
