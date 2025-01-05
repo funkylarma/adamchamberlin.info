@@ -1,21 +1,19 @@
-import EleventyFetch from "@11ty/eleventy-fetch";
-import parser from "fast-xml-parser";
+import EleventyFetch from '@11ty/eleventy-fetch';
+import parser from 'fast-xml-parser';
 
-export default async function() {
+export default async function () {
+  console.log('Fetching Oku book data');
 
-  console.log('Fetching Oku book data')
-
-  const url = "https://oku.club/rss/collection/sNsDk"
+  const url = 'https://oku.club/rss/collection/sNsDk';
   const fetchConfig = {
     duration: '12h',
     type: 'text',
-  }
+  };
 
   let response;
 
   try {
-    response = await EleventyFetch(url, fetchConfig)
-
+    response = await EleventyFetch(url, fetchConfig);
   } catch (e) {
     console.error(`Fetch failed in books.js. ${e}`);
     return `It has failed: ${e}`;
@@ -28,9 +26,7 @@ export default async function() {
     const xmlparser = new parser.XMLParser();
     feed = xmlparser.parse(response);
   } else {
-    console.error(
-      `rss.js - XML is invalid. Reason: ${result.err.msg}`
-    );
+    console.error(`rss.js - XML is invalid. Reason: ${result.err.msg}`);
   }
 
   let readingList = feed.rss.channel.item;
@@ -43,10 +39,12 @@ export default async function() {
       title: book.title,
       author: book['dc:creator'],
       cover: book['oku:cover'],
-      category: 'book'
+      category: 'book',
     };
     return transformedBook;
   });
 
-  return books;
+  return {
+    currentlyReading: books,
+  };
 }

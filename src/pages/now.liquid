@@ -1,7 +1,8 @@
 ---
 layout: page.liquid
 title: "What am I doing now?"
-updated: 2024-12-13
+description: This is my now page, a page that has an overview of my current life including recent media consumed and any short term goals.
+updated: 2025-01-05
 eleventyComputed:
   subhead: "Updated: {{ updated | dateReadable }}"
 permalink: "/now/"
@@ -9,17 +10,65 @@ permalink: "/now/"
 <p>
   This is a <a href="https://nownownow.com/about"><em>/now</em></a> page, you can read more about me on the <a href="/about/"><em>/about</em></a> page or view the online <a href="/activity/"><em>/activity</em></a>.
 </p>
-<h2>Currently</h2>
-<p>
-<ul>
-  <li>Living in Hadleigh Suffolk with Lucy and two children; Jack and Maia</li>
-  <li>Head of Development at <a href="https://mackman.co.uk" rel="noopener">Mackman Branding and Marketing Agency</a></li>
-  <li>Enjoying running and cycling with a view to get back into some form of competition in 2025</li>
-</ul>
-</p>
+
 <p>
   <img src="/images/pages/IMG_0173.jpeg" alt="Lucy and I enjoying some sun">
 </p>
+
+<h2>Currently</h2>
+<p>
+<ul>
+  <li>Living in Hadleigh Suffolk with Lucy and two children; Jack and Maia.</li>
+  <li>Head of Development at <a href="https://mackman.co.uk" rel="noopener">Mackman Branding and Marketing Agency</a>.</li>
+  <li>Enjoying running and cycling with a view to get back into some form of competition in 2025.</li>
+  <li>Looking towards 2025 and a return to cycle training.</li>
+</ul>
+</p>
+
+<h2>Currently Reading</h2>
+<ul>
+  {% for book in books.currentlyReading %}
+  <li class="movie h-entry hentry">
+    <div class="p-name">
+      {% assetIcon "book" %}
+      <a class="post-link u-url" rel="bookmark" href="{{ book.url }}" title="Watched on {{ book.date | dateLongDate }}">
+        {{ book.data.title }}
+      </a>
+    </div>
+    <time class="postlist-date dt-published" datetime="{{ book.date | dateHtmlString }}"/>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Recently Listened</h2>
+<ul>
+  {% for track in lastfm.recentTracks %}
+  <li class="listen h-entry hentry">
+    <div class="p-name">
+      {% assetIcon "music" %}
+      <a class="post-link u-url" rel="bookmark" href="{{ track.url }}" title="Listened on {{ track.date | dateLongDate }}">
+        {{ track.data.title }}
+      </a>
+      <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}"/>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Recently Watched</h2>
+<ul>
+  {% for movies in letterboxd.recentMovies %}
+  <li class="movie h-entry hentry">
+    <div class="p-name">
+      {% assetIcon "movie" %}
+      <a class="post-link u-url" rel="bookmark" href="{{ movies.url }}" title="Watched on {{ movies.date | dateLongDate }}">
+        {{ movies.data.title }}
+      </a>
+    </div>
+    <time class="postlist-date dt-published" datetime="{{ movies.date | dateHtmlString }}"/>
+  </li>
+  {% endfor %}
+</ul>
 
 <div class="page--related">
 <p class="h3">Related /slash Pages</p>

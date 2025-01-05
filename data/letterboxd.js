@@ -41,5 +41,8 @@ export default async function () {
     return transformedMovie;
   });
 
-  return movies;
+  return {
+    activityList: movies,
+    recentMovies: movies.slice(0, 10),
+  };
 }

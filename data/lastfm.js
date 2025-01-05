@@ -67,7 +67,8 @@ export default async function () {
     });
 
     return {
-      recentTracks: recentTracks,
+      activityList: recentTracks,
+      recentTracks: recentTracks.slice(0, 10),
       weeklyTracks: weeklyTracks,
       weeklyArtists: weeklyArtists,
     };

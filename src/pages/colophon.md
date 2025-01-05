@@ -1,7 +1,7 @@
 ---
 title: Colophon
 subhead: Behind the site
-description: How and what is used to build this site
+description: How and what is used to build this site, some details on the platform, the server and a little bit of history.
 permalink: /colophon/
 ---
 

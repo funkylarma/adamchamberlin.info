@@ -1,6 +1,7 @@
 ---
 title: Hi, I'm Adam Chamberlin
 subhead: All about me
+description: This is my about page, it is a bit of a personal wiki style page with some details about where I work and all that other stuff.
 permalink: /about/
 ---
 

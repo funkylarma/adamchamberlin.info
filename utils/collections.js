@@ -117,8 +117,8 @@ export default {
   },
 
   allContent: function (collection) {
-    let lastfmContent = collection.getAll()[0].data.lastfm.recentTracks;
-    let letterboxdContent = collection.getAll()[0].data.letterboxd;
+    let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
+    let letterboxdContent = collection.getAll()[0].data.letterboxd.activityList;
     let mastodonContent = collection.getAll()[0].data.mastodon;
 
     let localContent = collection

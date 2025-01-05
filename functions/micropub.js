@@ -34,6 +34,9 @@ export async function onRequestPost(context) {
           const filename = new Date().valueOf();
           const path = '/src/notes/checkins/';
 
+          if (entry.content[0] !== undefined) {
+          }
+
           var fileContent = [];
 
           fileContent.push('---');
@@ -44,6 +47,16 @@ export async function onRequestPost(context) {
           fileContent.push('url: ' + url);
           fileContent.push('category: checkin');
           fileContent.push('---');
+
+          // If we have a checkin post
+          if (entry.content[0] !== undefined) {
+            fileContent.push(entry.content[0]);
+          }
+
+          // If we have a checkin photo
+          if (entry.photo[0] !== undefined) {
+            fileContent.push('<img src="' + entry.content[0] + '" alt="Checkin Photo" />');
+          }
 
           const contents = fileContent.join('\n').toString('base64');
 

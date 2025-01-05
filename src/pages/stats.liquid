@@ -1,10 +1,11 @@
 ---
 layout: page.liquid
-eleventyExcludeFromCollections: true
 title: Site Statistics
 subhead: The numbers behind the words
+description: This page is all about the statistics and numbers that went into creating all the content on the site.
 permalink: "/stats/"
 ---
+
 {% if collections.postStats.postCount > 0 %}
 <section class="stats--global">
   <h2>Global Statistics</h2>
@@ -41,6 +42,7 @@ permalink: "/stats/"
     {% endif %}
   </ul>
 </section>
+
 <section class="stats--graph">
   <h2>Yearly Graph</h2>
   <div class="graph">
@@ -56,12 +58,14 @@ permalink: "/stats/"
     {% endfor %}
   </div>
 </section>
+
 <section class="stats--posts">
   <h2>Posts Graph</h2>
   <div class="wide">
   {% postGraph collections.article %}
   </div>
 </section>
+
 <section class="stats--yearly">
   <h2>Yearly Statistics</h2>
   <table class="stats">
@@ -91,6 +95,7 @@ permalink: "/stats/"
     </tbody>
   </table>
 </section>
+
 {% else %}
   <p><strong>No data to display</strong></p>
 {% endif %}

@@ -1,6 +1,7 @@
 ---
 title: Uses
 subhead: The tooling
+description: This page is all about what I use day to day to run this site and my life.
 permalink: /uses/
 ---
 
