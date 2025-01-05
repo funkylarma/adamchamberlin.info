@@ -53,21 +53,27 @@ export async function onRequestPost(context) {
           } = await octokit.repos.createOrUpdateFileContents({
             owner: 'funkylarma',
             repo: 'adamchamberlin.info',
-            path: 'src/checkins/' + filename + '.md',
+            path: 'src/notes/checkins/' + filename + '.md',
             content: btoa(contents),
             message: 'Import checkin from Swarm: ' + filename,
           });
-          return Response.json({ message: 'Imported Swarm activity' }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } });
+          return Response.json(
+            { message: 'Imported Swarm activity' },
+            { status: 201, headers: { Location: 'https://adamchamberlin.info' } }
+          );
         } else {
-          return Response.json({
-            message: 'No entry method found for this category',
-          }, {
-            status: 400,
-          });
+          return Response.json(
+            {
+              message: 'No entry method found for this category',
+            },
+            {
+              status: 400,
+            }
+          );
         }
       } else {
         // Loop over the categories
-        entry.category.forEach(function(category, index) {
+        entry.category.forEach(function (category, index) {
           console.log(category, index);
         });
       }
@@ -75,18 +81,27 @@ export async function onRequestPost(context) {
 
     // Check if we have a content element
     if (entry.content != null) {
-      return Response.json({ message: entry.content }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } });
+      return Response.json(
+        { message: entry.content },
+        { status: 201, headers: { Location: 'https://adamchamberlin.info' } }
+      );
     }
 
-    return Response.json({
-      message: 'No entry method found',
-    }, {
-      status: 400,
-    });
+    return Response.json(
+      {
+        message: 'No entry method found',
+      },
+      {
+        status: 400,
+      }
+    );
   } else {
-    return Response.json({
-      message: 'Not a valid micropub post, missing h-entry element',
-    }, { status: 400 });
+    return Response.json(
+      {
+        message: 'Not a valid micropub post, missing h-entry element',
+      },
+      { status: 400 }
+    );
   }
 
   return responseObj;
@@ -94,7 +109,10 @@ export async function onRequestPost(context) {
 
 // On all requests
 export async function onRequest(context) {
-  return Response.json({
-    message: 'Hello Micropub world',
-  }, { status: 200 });
+  return Response.json(
+    {
+      message: 'Hello Micropub world',
+    },
+    { status: 200 }
+  );
 }

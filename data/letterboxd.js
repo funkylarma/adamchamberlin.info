@@ -1,20 +1,18 @@
-import EleventyFetch from "@11ty/eleventy-fetch";
-import parser from "fast-xml-parser";
+import EleventyFetch from '@11ty/eleventy-fetch';
+import parser from 'fast-xml-parser';
 
-export default async function() {
-
+export default async function () {
   console.log('Fetching Letterboxd data');
 
-  const url = "https://letterboxd.com/funkylarma/rss/"
+  const url = 'https://letterboxd.com/funkylarma/rss/';
   const fetchConfig = {
-    duration: '12h',
+    duration: '6h',
     type: 'text',
-  }
+  };
   let response;
 
   try {
-    response = await EleventyFetch(url, fetchConfig)
-
+    response = await EleventyFetch(url, fetchConfig);
   } catch (e) {
     console.error(`Fetch failed in lastfm.js. ${e}`);
     return `It has failed: ${e}`;
@@ -27,9 +25,7 @@ export default async function() {
     const xmlparser = new parser.XMLParser();
     feed = xmlparser.parse(response);
   } else {
-    console.error(
-      `rss.js - XML is invalid. Reason: ${result.err.msg}`
-    );
+    console.error(`rss.js - XML is invalid. Reason: ${result.err.msg}`);
   }
 
   let movieList = feed.rss.channel.item;
@@ -40,10 +36,10 @@ export default async function() {
     transformedMovie.url = movie.link;
     transformedMovie.data = {
       title: movie.title,
-      category: 'movie'
+      category: 'movie',
     };
     return transformedMovie;
   });
 
-  return movies
-};
+  return movies;
+}
