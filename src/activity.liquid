@@ -93,7 +93,7 @@ eleventyComputed:
           {% assetIcon "checkin" %}
           Checked in at -
           <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
-            {{ post.data.title }}
+            {{ post.data.title | truncate: 50 }}
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -105,11 +105,9 @@ eleventyComputed:
           {% assetIcon "movie" %}
           Watched -
           <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Watched on {{ post.date | dateLongDate }}">
-            {{ post.data.title }}
+            {{ post.data.title | truncate: 50 }}
           </a>
         </h2>
-        <img src="{{ post.data.cover }}" eleventy:ignore>
-
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
 
@@ -119,8 +117,9 @@ eleventyComputed:
           {% assetIcon "music" %}
           Listened to -
           <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Listened on {{ post.date | dateLongDate }}">
-            {{ post.data.title }}
+            {{ post.data.title | truncate: 50 }}
           </a>
+          by {{ post.data.artist | truncate: 50 }}
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>

@@ -49,6 +49,7 @@ permalink: "/now/"
       <a class="post-link u-url" rel="bookmark" href="{{ track.url }}" title="Listened on {{ track.date | dateLongDate }}">
         {{ track.data.title }}
       </a>
+      by {{ track.data.artist }}
       <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}"/>
     </div>
   </li>

@@ -12,7 +12,7 @@ export default {
   },
 
   // Set the tag for collections
-  tags: ['checkin', 'note'],
+  tags: ['note', 'checkin'],
 
   // What layout to use
   layout: 'checkin.liquid',

@@ -14,65 +14,134 @@ eleventyComputed:
 
 <div class="activity--list--content">
 
+  <ul>
   {%- for post in pagination.items -%}
 
-    {% if post.data.category == 'videography' %}
-      <article class="checkin h-entry hentry">
+    {% if post.data.category == 'note' %}
+      <li class="note h-entry hentry">
         <h2 class="p-name">
-          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Filmed on {{ post.date | dateLongDate }}">
-            {% assetIcon "video" %}
+          {% assetIcon "note" %}
+          Noodled about -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
             {{ post.data.title }}
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
-
-    {% elsif post.data.category == 'photography' %}
-      <article class="photography h-entry hentry">
-        <h2 class="p-name">
-          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Filmed on {{ post.date | dateLongDate }}">
-            {% assetIcon "photo" %}
-            {{ post.data.title }}
-          </a>
-        </h2>
-        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
-
-    {% elsif post.data.category == 'checkin' %}
-      <article class="checkin h-entry hentry">
-        <h2 class="p-name">
-          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
-            {% assetIcon "checkin" %}
-            Checked in at {{ post.data.title }}
-          </a>
-        </h2>
-        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-      </article>
+      </li>
 
     {% elsif post.data.category == 'reply' %}
-      <article class="reply h-entry hentry">
-      <h2 class="p-name">
-        <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Replied to {{ post.data.to }}">
-          {% assetIcon "reply" %}
-          Replied to {{ post.data.to }}
-        </a>
-      </h2>
-      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-    </article>
-
-    {% else %}
-      <article class="note h-entry hentry">
+      <li class="reply h-entry hentry">
         <h2 class="p-name">
-          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
-            {% assetIcon "unknown" %}
-            <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
-            Noodled about {{ post.data.title }}
+          {% assetIcon "reply" %}
+          Replied to -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Replied to {{ post.data.title }}">
+            {{ post.data.title }}
           </a>
         </h2>
-      </article>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% elsif post.data.category == 'rsvp' %}
+      <li class="reply h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "rsvp" %}
+          RSVP'd to -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="RSVP'd to {{ post.data.title }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% elsif post.data.category == 'videography' %}
+      <li class="post h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "video" %}
+          Shot -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View video">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% elsif post.data.category == 'photography' %}
+      <li class="post h-entry hentry">
+        <h2 class="p-name">
+          Snapped -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
+            {{ post.data.to }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% elsif post.data.category == 'checkin' %}
+      <li class="checkin h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "checkin" %}
+          Checked in at -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% elsif post.data.category == 'movie' %}
+      <li class="movie h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "movie" %}
+          Watched -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Watched on {{ post.date | dateLongDate }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <img src="{{ post.data.cover }}" eleventy:ignore>
+
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% elsif post.data.category == 'listen' %}
+      <li class="listen h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "music" %}
+          Listened to -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Listened on {{ post.date | dateLongDate }}">
+            {{ post.data.title }}
+          </a>
+          by {{ post.data.artist }}
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% elsif post.data.category == 'toot' %}
+      <li class="toot h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "tooted" %}
+          Tooted -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
+            {{ post.data.title | strip_html | truncate: 50 }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+
+    {% else %}
+      <li class="h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "unknown" %}
+          Mumbled about -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View Item">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
     {% endif %}
 
   {%- endfor -%}
+  </ul>
 
 </div><!-- .post-list-content -->
 

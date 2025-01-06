@@ -3,6 +3,8 @@ date: 2024-12-21
 title: James
 link: https://jamesg.blog/2020/09/04/how-i-use-webmentions/
 category: reply
+tags:
+  - IndieWeb
 ---
 
 Joe posted his [webmentions page](https://lab.artlung.com/webmentions/) in the IndieWeb chat and it prompted me to try and finally check the other side of webmentions.

@@ -49,8 +49,8 @@ eleventyComputed:
               <h2 class="p-name">
                 {% assetIcon "reply" %}
                 Replied to -
-                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Replied to {{ post.data.to }}">
-                  {{ post.data.to }}
+                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Replied to {{ post.data.title }}">
+                  {{ post.data.title }}
                 </a>
               </h2>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>

@@ -1,0 +1,26 @@
+---
+layout: page.liquid
+title: Movies
+subhead: Where words fail, music speaks
+description: This page is a quick and dirty archive page of all my LetterBoxd activity.
+permalink: "/movies/"
+---
+<p>
+  All data is taken from my <a href="https://letterboxd.com/funkylarma/">Letter Boxd</a> account.
+</p>
+
+<h2>Recently Watched</h2>
+<ul>
+  {% for movies in letterboxd.activityList %}
+  <li class="movie h-entry hentry">
+    <div class="p-name">
+      {% assetIcon "movie" %}
+      <a class="post-link u-url" rel="bookmark" href="{{ movies.url }}" title="Watched on {{ movies.date | dateLongDate }}">
+        {{ movies.data.title }}
+      </a>
+    </div>
+    <time class="postlist-date dt-published" datetime="{{ movies.date | dateHtmlString }}"/>
+  </li>
+  {% endfor %}
+</ul>
+

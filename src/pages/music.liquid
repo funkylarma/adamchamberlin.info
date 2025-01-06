@@ -14,7 +14,7 @@ permalink: "/music/"
   {% for track in lastfm.recentTracks %}
     <li class="track">
       <a href="{{ track.url }}">
-        {{ track.data.title }}
+        {{ track.data.title }} by {{ track.data.artist }}
       </a>
        - <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}">{{ track.date | dateLongDate }}</time>
     </li>

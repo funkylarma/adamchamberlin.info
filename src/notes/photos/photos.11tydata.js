@@ -28,7 +28,7 @@ export default {
   },
 
   // Set the tag for collections
-  tags: 'photography',
+  tags: ['note', 'photo'],
 
   // What layout to use
   layout: 'photography.liquid',

@@ -4,7 +4,7 @@ dotenv.config();
 
 const TOKEN = process.env.LAST_FM_KEY;
 
-export default async function () {
+export default async function() {
   console.log('Fetching lastfm data');
 
   try {
@@ -35,7 +35,8 @@ export default async function () {
         transformedTrack.date = new Date(track.date['#text']);
         transformedTrack.url = track.url;
         transformedTrack.data = {
-          title: track.name + ' by ' + track.artist['#text'],
+          title: track.name,
+          artist: track.artist['#text'],
           category: 'listen',
         };
         return transformedTrack;
