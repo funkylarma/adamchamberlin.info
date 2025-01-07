@@ -1,12 +1,12 @@
 header {
   &.mast-head {
-    width: 100%;
+    max-width: var(--main-layout-width-x-wide);
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 
     .content {
-      max-width: var(--main-layout-width-x-wide);
-      margin-top: 2rem;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 1rem;
       display: flex;
       justify-content: space-between;
 
@@ -22,7 +22,6 @@ header {
 
       figure {
         width: 4rem;
-        margin: 0 1rem;
       }
 
       .nav {
