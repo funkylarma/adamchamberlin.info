@@ -1,8 +1,10 @@
 <header class="mast-head" role="banner">
   <div class="content">
-    <figure>
-      <img src="/assets/images/logo_dark.svg" alt="Site logo" width="64" height="43" eleventy:ignore>
-    </figure>
+    <a class="nav-link" {% if page.url==item.url %} aria-current="page" {% endif %} href="/" title="Back home">
+      <figure>
+        <img src="/assets/images/logo_dark.svg" alt="Site logo" width="64" height="43" eleventy:ignore>
+      </figure>
+    </a>
     <nav class="nav" aria-label="primary">
       <ul class="nav-bar">
       {% for item in navigation.primary %}
