@@ -73,6 +73,12 @@
       border-top-right-radius: 1rem;
       border-top-left-radius: 5rem;
       border: 1px solid var(--main-color-hairline);
+      transition: border-radius 1s;
+
+      &:hover {
+        border-radius: 5px;
+        transition: border-radius 1s;
+      }
 
       &.no-frills {
         border-radius: 0;
@@ -87,6 +93,12 @@
 
       @media (prefers-color-scheme: dark) {
         filter: grayscale(50%);
+      }
+    }
+
+    ul {
+      &.current--list {
+        list-style: none;
       }
     }
   }
