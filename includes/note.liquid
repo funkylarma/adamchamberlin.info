@@ -77,6 +77,20 @@
                 </div>
               {% endif %}
 
+            {% if category == 'event' %}
+              <div class="h-event">
+                <p class="p-summary">
+                  Signed up for <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                </p>
+                <p>
+                  <time class="dt-start" datetime="{{ start | dateHtmlString }}">{{ start | dateLongDate }}</time>
+                </p>
+                <div class="p-content">
+                  {{ content }}
+                </div>
+              </div>
+            {% endif %}
+
             </div><!-- .note--content -->
             <div class="note--foter">
             </div><!-- .note--footer -->

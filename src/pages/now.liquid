@@ -26,14 +26,15 @@ permalink: "/now/"
 </p>
 
 <h2>Currently Reading</h2>
-<ul>
+<ul class="current--list">
   {% for book in books.currentlyReading %}
-  <li class="movie h-entry hentry">
+  <li class="book h-entry hentry">
     <div class="p-name">
       {% assetIcon "book" %}
       <a class="post-link u-url" rel="bookmark" href="{{ book.url }}" title="Watched on {{ book.date | dateLongDate }}">
         {{ book.data.title }}
       </a>
+      by {{ book.data.author }}
     </div>
     <time class="postlist-date dt-published" datetime="{{ book.date | dateHtmlString }}"/>
   </li>
@@ -41,7 +42,7 @@ permalink: "/now/"
 </ul>
 
 <h2>Recently Listened</h2>
-<ul>
+<ul class="current--list">
   {% for track in lastfm.recentTracks %}
   <li class="listen h-entry hentry">
     <div class="p-name">
@@ -57,7 +58,7 @@ permalink: "/now/"
 </ul>
 
 <h2>Recently Watched</h2>
-<ul>
+<ul class="current--list">
   {% for movies in letterboxd.recentMovies %}
   <li class="movie h-entry hentry">
     <div class="p-name">
