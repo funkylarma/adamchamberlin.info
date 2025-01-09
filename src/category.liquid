@@ -138,6 +138,68 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
+{% elsif  category == "exercise" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.exerciseArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif  category == "race" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.raceArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
 {% elsif category == "checkin" %}
   <div class="archive-list">
     <div class="h-feed">

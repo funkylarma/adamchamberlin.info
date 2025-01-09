@@ -47,7 +47,7 @@
 <meta property="og:locale" content="en_GB" />
 <meta property="og:logo" content="{{ metadata.author.image }}">
 <meta property="og:title" content="{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}">
-<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title | metaTitle }}{% endif %}">
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}">
 <meta property="og:url" content="{{ page.url | absoluteUrl }}">
 {% if date %}
   <meta property="og:type" content="article">
@@ -69,7 +69,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@funkylarma">
 <meta name="twitter:creator" content="@funkylarma">
-<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ title }}{% endif %}">
+<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}">
 {% if date %}
   <meta name="twitter:image" content="{{ globals.url }}assets/ogi/{{ date }}-{{ title | slugify }}.jpeg">
 {% else %}

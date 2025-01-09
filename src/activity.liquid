@@ -63,6 +63,42 @@ eleventyComputed:
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
+    
+    {% elsif post.data.category == 'event' %}
+      <li class="event h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "calendar" %}
+          Signed up for -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Signed up for {{ post.data.title }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+    
+    {% elsif post.data.category == 'exercise' %}
+      <li class="exercise h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "stopwatch" %}
+          Went {{ post.data.sport }} -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Went {{ post.data.sport }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+    
+    {% elsif post.data.category == 'race' %}
+      <li class="race h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "trophy" %}
+          Raced -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Raced {{ post.data.title }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
 
     {% elsif post.data.category == 'videography' %}
       <li class="post h-entry hentry">

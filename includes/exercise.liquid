@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
+  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+  <head>
+    {% include "partials/head.liquid" %}
+  </head>
+  <body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    <div class="hfeed h-feed layout" role="document">
+      {% include "partials/header.liquid" %}
+      <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+        <div class="hentry h-entry note--single">
+          {% include "partials/hcard.liquid" %}
+          <div class="note--main">
+            <div class="note--content {% if category %}{{ category}}{% endif %}">
+              <div class="note--meta">
+                <div class="note--date">
+                  <h1>
+                    {% assetIcon "calendar" %}
+                    <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+                      {{ page.date | dateLongDate }}
+                    </time>
+                  </h1>
+                </div><!-- .post--date -->
+                {% if tags.length > 1 %}
+                  <div class="note--tags">
+                    <span>Tagged: </span>
+                    {%- for tag in tags -%}
+                      {% if tag != 'note' %}
+                        <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                          {{ tag }}
+                        </a>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div><!-- .post--tags -->
+                {% endif %}
+              </div><!-- .post-meta -->
+              Went {{ discipline }}.
+              <div id="map"></div>
+              <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
+              <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
+              <script>
+                mapboxgl.accessToken = "{{ keys.mapBox }}";
+                const map = new mapboxgl.Map({
+                    container: 'map', // container ID
+                    center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                    zoom: 16 // starting zoom
+                });
+                
+                map.on('load', () => {
+                  map.addSource('track-data', {
+                      type: 'geojson',
+                      data: '{{ geojson | url }}'
+                  });
+
+                  map.addLayer({
+                      'id': 'track-line',
+                      'type': 'line',
+                      'source': 'track-data',
+                      'layout': {
+                          'line-join': 'none',
+                      },
+                      'paint': {
+                          'line-color': '#c92fd0',
+                          'line-width': 5,
+                      }
+                  });
+              });
+              map.resize();
+              </script>
+
+              <div class="p-content">
+                {{ content }}
+              </div>
+
+            </div><!-- .note--content -->
+            <div class="note--foter">
+            </div><!-- .note--footer -->
+          </div><!-- .note--main -->
+          <section class="responses" id="responses">
+            {% include "partials/webmentions.liquid" %}
+          </section>
+        </div><!-- .note -->
+      </main>
+      {% include "partials/footer.liquid" %}
+    </div><!-- .container -->
+  </body>
+</html>

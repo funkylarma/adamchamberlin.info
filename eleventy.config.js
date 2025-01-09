@@ -48,6 +48,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     './src/assets/fonts': '/assets/fonts',
     './src/assets/images': '/assets/images',
+    './src/geojson': '/geojson',
     './src/assets/icons': '/assets/icons',
     './src/assets/templates': '/assets/templates',
     './src/assets/js/**/*.min.js': '/assets/js',

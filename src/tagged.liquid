@@ -102,6 +102,30 @@ eleventyComputed:
               </h2>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
             </li>
+          
+          {% elsif post.data.category == 'exercise' %}
+            <li class="checkin h-entry hentry">
+              <h2 class="p-name">
+                {% assetIcon "stopwatch" %}
+                Went {{ post.data.sport }} -
+                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
+                  {{ post.data.title }}
+                </a>
+              </h2>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </li>
+          
+          {% elsif post.data.category == 'race' %}
+            <li class="checkin h-entry hentry">
+              <h2 class="p-name">
+                {% assetIcon "trophy" %}
+                Raced -
+                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
+                  {{ post.data.title }}
+                </a>
+              </h2>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </li>
 
           {% elsif post.data.category == 'movie' %}
             <li class="checkin h-entry hentry">

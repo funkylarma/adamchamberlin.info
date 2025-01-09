@@ -15,6 +15,6 @@ export default {
   tags: ['note', 'exercise'],
 
   // What layout to use
-  layout: 'photography.liquid',
+  layout: 'exercise.liquid',
 
 };
