@@ -45,7 +45,7 @@ permalink: "/now/"
   {% for track in lastfm.recentTracks %}
   <li class="listen h-entry hentry">
     <div class="p-name">
-      {% assetIcon "music" %}
+      {% assetIcon "scrobble" %}
       <a class="post-link u-url" rel="bookmark" href="{{ track.url }}" title="Listened on {{ track.date | dateLongDate }}">
         {{ track.data.title }}
       </a>
