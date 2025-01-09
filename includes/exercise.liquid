@@ -35,51 +35,74 @@
                   </div><!-- .post--tags -->
                 {% endif %}
               </div><!-- .post-meta -->
-              Went {{ discipline }}.
+              <p class="p-name">
+                Went {{ sport }}.
+              </p>
               <div id="map"></div>
               <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
               <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
               <script>
+                // Load the api key
                 mapboxgl.accessToken = "{{ keys.mapBox }}";
+
+                // Create instance of a map
                 const map = new mapboxgl.Map({
-                    container: 'map', // container ID
-                    center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                    zoom: 16 // starting zoom
+                  container: 'map', // container ID
+                  center: [{{ startLongitude }}, {{ startLatitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                  zoom: 16 // starting zoom
                 });
-                
+
+                // Add some controls
+                const nav = new mapboxgl.NavigationControl();
+                map.addControl(nav, 'top-left');
+                map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+
+                // Add start and end markers
+                new mapboxgl.Marker({color: "#36d02f"}).setLngLat([{{ startLongitude }}, {{ startLatitude }}]).addTo(map);
+                new mapboxgl.Marker({color: "#c92fd0"}).setLngLat([{{ endLongitude }}, {{ endLatitude }}]).addTo(map);
+
+                // On map load
                 map.on('load', () => {
-                  map.addSource('track-data', {
-                      type: 'geojson',
-                      data: '{{ geojson | url }}'
+
+                  map.fitBounds([
+                    [{{ startLongitude }}, {{ startLatitude }}], // [lng, lat] - southwestern corner of the bounds
+                    [{{ endLongitude }}, {{ endLatitude }}] // [lng, lat] - northeastern corner of the bounds
+                  ]);
+
+                  // Load the geojson
+                  map.addSource('route', {
+                    type: 'geojson',
+                    data: '{{ geojson | url }}'
                   });
 
+                  // Add geojson as layer
                   map.addLayer({
-                      'id': 'track-line',
-                      'type': 'line',
-                      'source': 'track-data',
-                      'layout': {
-                          'line-join': 'none',
-                      },
-                      'paint': {
-                          'line-color': '#c92fd0',
-                          'line-width': 5,
-                      }
+                    'id': 'route',
+                    'type': 'line',
+                    'source': 'route',
+                    'layout': {
+                      'line-join': 'round',
+                      'line-cap': 'round'
+                    },
+                    'paint': {
+                      'line-color': '#2f87d0',
+                      'line-width': 8,
+                      'line-blur': 2
+                    }
                   });
               });
-              map.resize();
+              //map.resize();
               </script>
-
               <div class="p-content">
                 {{ content }}
               </div>
-
             </div><!-- .note--content -->
             <div class="note--foter">
             </div><!-- .note--footer -->
           </div><!-- .note--main -->
-          <section class="responses" id="responses">
+          <div class="responses" id="responses">
             {% include "partials/webmentions.liquid" %}
-          </section>
+          </div>
         </div><!-- .note -->
       </main>
       {% include "partials/footer.liquid" %}
