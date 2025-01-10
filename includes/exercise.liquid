@@ -43,11 +43,17 @@
               <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
               <script>
                 // Load the api key
-                mapboxgl.accessToken = "{{ keys.mapBox }}";
+              mapboxgl.accessToken = "{{ keys.mapBox }}";
 
-                // Create instance of a map
-                const map = new mapboxgl.Map({
-                  container: 'map', // container ID
+              let mapStyle = 'mapbox://styles/mapbox/light-v11';
+              if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                mapStyle = 'mapbox://styles/mapbox/dark-v11';
+              }
+
+              // Create instance of a map
+              const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: mapStyle,
                   center: [{{ startLongitude }}, {{ startLatitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
                   zoom: 16 // starting zoom
                 });

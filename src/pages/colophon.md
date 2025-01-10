@@ -23,10 +23,10 @@ adamchamberlin.info was put into place in 2024 and all the original content was 
 
 <div class="page--related">
 
-Related /slash Pages{.h3}
+Related Pages{.h3}
 
-- [/uses](/uses/) — Learn about my setup
-- [/about](/about/) — Learn about me
-- [/now](/now/) — Learn about what I'm up to now
+- [uses](/uses/) — Learn about my setup
+- [about](/about/) — Learn about me
+- [now](/now/) — Learn about what I'm up to now
 
 </div>

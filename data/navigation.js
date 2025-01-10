@@ -13,10 +13,16 @@ export default {
       url: '/now/',
     },
     {
-      label: 'About',
-      class: 'about',
-      title: 'All about me',
-      url: '/about/',
+      label: 'Articles',
+      class: 'articles',
+      title: 'Long form content',
+      url: '/articles/',
+    },
+    {
+      label: 'Notes',
+      class: 'notes',
+      title: 'Short form content',
+      url: '/notes/',
     },
     {
       label: 'Archives',

@@ -20,7 +20,7 @@
                 </div><!-- .post--date -->
               </div><!-- .post-meta -->
               <div itemscope itemtype="https://schema.org/Place">
-                <h1 class="post--title p-name" itemprop="name">
+                <h1 class="post--title p-name checkin" itemprop="name">
                   Checked in at:
                   {% if url %}
                     <a href="{{ url }}">{{ title }}</a>
@@ -45,16 +45,23 @@
               // Load the api key
               mapboxgl.accessToken = "{{ keys.mapBox }}";
 
+              let mapStyle = 'mapbox://styles/mapbox/light-v11';
+              if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                mapStyle = 'mapbox://styles/mapbox/dark-v11';
+              }
+
               // Create instance of a map
               const map = new mapboxgl.Map({
                 container: 'map', // container ID
+                style: mapStyle,
                 center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
                 zoom: 16 // starting zoom
               });
+
               // Add some controls
               const nav = new mapboxgl.NavigationControl();
               map.addControl(nav, 'top-left');
-              map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+              map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('map')}));
 
               // Drop the pin
               new mapboxgl.Marker({color: "#36d02f"}).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);

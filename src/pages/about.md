@@ -15,10 +15,10 @@ This site has been in development since 2008 and has seen many versions and setu
 
 <div class="page--related">
 
-Related /slash Pages{.h3}
+Related Pages{.h3}
 
-- [/colophon](/colophon/) — Learn more about the site
-- [/uses](/uses/) — Learn about my setup
-- [/now](/now/) — Learn about what I'm up to now
+- [colophon](/colophon/) — Learn more about the site
+- [uses](/uses/) — Learn about my setup
+- [now](/now/) — Learn about what I'm up to now
 
 </div>
