@@ -1,5 +1,6 @@
 # environment variables
 .env
+.dev.vars
 
 # dependancies
 node_modules/

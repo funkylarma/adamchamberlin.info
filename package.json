@@ -14,7 +14,8 @@
     "build:eleventy": "eleventy",
     "build:vite": "vite build",
     "debug": "DEBUG=Eleventy* npm start",
-    "benchmark": "DEBUG=Eleventy:Benchmark* npm start"
+    "benchmark": "DEBUG=Eleventy:Benchmark* npm start",
+    "micropub": "npx wrangler pages dev _site --binding"
   },
   "repository": {
     "type": "git",

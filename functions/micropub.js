@@ -50,12 +50,14 @@ export async function onRequestPost(context) {
 
           // If we have a checkin post
           if (entry.content[0] !== undefined) {
+            fileContent.push('');
             fileContent.push(entry.content[0]);
           }
 
           // If we have a checkin photo
           if (entry.photo[0] !== undefined) {
-            fileContent.push('<img src="' + entry.content[0] + '" alt="Checkin Photo" />');
+            fileContent.push('');
+            fileContent.push('<img src="' + entry.photo[0] + '" alt="Checkin Photo" />');
           }
 
           const contents = fileContent.join('\n').toString('base64');
@@ -70,6 +72,7 @@ export async function onRequestPost(context) {
             content: btoa(contents),
             message: 'Import checkin from Swarm: ' + filename,
           });
+
           return Response.json(
             { message: 'Imported Swarm activity' },
             { status: 201, headers: { Location: 'https://adamchamberlin.info' } }
