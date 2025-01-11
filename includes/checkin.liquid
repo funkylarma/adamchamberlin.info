@@ -34,10 +34,9 @@
                 </div>
               </div>
               <div id="map"></div>
-              {% if url %}
-                <a href="{{ url }}">View on Foursquare</a>
-              {% endif %}
-              {{ content }}
+              <div class="p-content">
+                {{ content }}
+              </div>
             </div><!-- .post--content -->
             <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
             <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>

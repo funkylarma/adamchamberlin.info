@@ -2,9 +2,10 @@
 layout: page.liquid
 templateEngineOverride: njk
 eleventyExcludeFromCollections: true
-title: Yearly Archives
-subhead: Strolling back in time
-description: "The archive of all the content published on adamchamberlin.info. You can browse by tag or category, or just dive into a list of all the posts."
+eleventyComputed:
+  title: 'Yearly Archive'
+  description: "The archive of all the content published on adamchamberlin.info. You can browse by tag or category, or just dive into a list of all the posts."
+  subhead: 'Strolling back in time to {{ year[0] }}'
 pagination:
   data: collections.postsByYear
   size: 1
@@ -27,67 +28,67 @@ permalink: /{{ year[0] }}/
               {% if post.data.category == 'article' %}
                 {% assetIcon "article" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Wrote <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% elif post.data.category == 'note' %}
                 {% assetIcon "note" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Noodled about <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% elif post.data.category == 'checkin' %}
                 {% assetIcon "checkin" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Checked in at <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% elif post.data.category == 'reply' %}
                 {% assetIcon "reply" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Replied to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% elif post.data.category == 'rsvp' %}
                 {% assetIcon "rsvp" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - RSVP'd to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% elif post.data.category == 'event' %}
                 {% assetIcon "calendar" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Signed up for <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
               
               {% elif post.data.category == 'exercise' %}
                 {% assetIcon "stopwatch" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Went <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
               
               {% elif post.data.category == 'race' %}
                 {% assetIcon "trophy" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Raced <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% elif post.data.category == 'photography' %}
                 {% assetIcon "photo" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
-                </time> - <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
+                </time> - Snapped <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% elif post.data.category == 'videography' %}
                 {% assetIcon "video" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
-                </time> - <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
+                </time> - Shot <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% else %}
                 {% assetIcon "unknown" %}
                 <time class="dt-published" datetime="{{ post.date }}">
-                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthName}}
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% endif %}

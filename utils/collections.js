@@ -212,9 +212,8 @@ export default {
           ) {
             return item;
           }
-          // console.log(item.data.tags);
         })
-        .reverse()
+        .sort((a, b) => b.date - a.date)
     )
       .groupBy((post) => post.date.getFullYear())
       .toPairs()
@@ -237,7 +236,7 @@ export default {
             return item;
           }
         })
-        .reverse()
+        .sort((a, b) => b.date - a.date)
     )
       .groupBy((post) => {
         const year = post.date.getFullYear();
@@ -264,7 +263,7 @@ export default {
             return item;
           }
         })
-        .reverse()
+        .sort((a, b) => b.date - a.date)
     )
       .groupBy((post) => {
         const year = post.date.getFullYear();

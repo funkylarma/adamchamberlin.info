@@ -17,12 +17,9 @@
 {% if globals.env == "production" %}
   <!-- Preloads -->
   <link rel="preload" type="font/woff2" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" crossorigin="anonymous">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous">
   {% viteLinkStylesheetTags %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" media="all" onload="this.media='all'" fetchpriority="low">
   <noscript>
     {% viteLinkStylesheetTags %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" media="screen">
   </noscript>
 {% endif %}
 <!-- Icons and Feeds -->

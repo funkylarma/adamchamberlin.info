@@ -25,6 +25,21 @@ export const month_names = [
   'December',
 ];
 
+export const month_short_names = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'June',
+  'July',
+  'Aug',
+  'Sept',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+
 export const nth = function (d) {
   if (d > 3 && d < 21) {
     return 'th';

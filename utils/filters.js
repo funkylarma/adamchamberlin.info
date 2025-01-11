@@ -3,7 +3,8 @@ import sanitizeHTML from 'sanitize-html';
 import { DateTime } from 'luxon';
 import globals from '../data/globals.js';
 import metadata from '../data/metadata.js';
-import { month_names } from './constants.js';
+import { month_names } from './constants.js'
+import { month_short_names } from './constants.js';
 import { nth } from './constants.js';
 
 const parse = (date) => new Date(Date.parse(date));
@@ -87,6 +88,10 @@ export default {
 
   getMonthName: function (dateObj) {
     return month_names[parse(dateObj).getMonth()];
+  },
+
+  getMonthShortName: function (dateObj) {
+    return month_short_names[parse(dateObj).getMonth()];
   },
 
   getDay: function (dateObj) {

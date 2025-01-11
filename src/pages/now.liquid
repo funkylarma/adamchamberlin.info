@@ -25,6 +25,13 @@ permalink: "/now/"
 </ul>
 </p>
 
+<h2>Current Focus</h2>
+<p>
+  <ul>
+    <li>Training for the <a href="/2025/1/2025-fred-writton/">Fred Whitton Challenge</a></li>
+  </ul>
+</p>
+
 <h2>Currently Reading</h2>
 <ul class="current--list">
   {% for book in books.currentlyReading %}
@@ -46,7 +53,7 @@ permalink: "/now/"
   {% for track in lastfm.recentTracks %}
   <li class="listen h-entry hentry">
     <div class="p-name">
-      {% assetIcon "scrobble" %}
+      {% assetIcon "headphones" %}
       <a class="post-link u-url" rel="bookmark" href="{{ track.url }}" title="Listened on {{ track.date | dateLongDate }}">
         {{ track.data.title }}
       </a>
