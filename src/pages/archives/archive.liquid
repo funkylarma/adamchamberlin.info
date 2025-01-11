@@ -129,6 +129,18 @@ permalink: "/archive/"
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
               </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+            
+            {% elif entry.category == 'bookmark' %}
+              {% assetIcon "bookmark" %}
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Bookmarked <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+          
+            {% elif entry.category == 'jam' %}
+              {% assetIcon "jam" %}
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Vibing to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
 
             {% else %}
               {% assetIcon "unknown" %}

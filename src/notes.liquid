@@ -1,15 +1,14 @@
 ---
 layout: list.liquid
-title: Notes Feed
-subhead: These are the short form items of content.
-description: This page is an archive of all the notes written on the site. This includes short form posts, RSVP's, checkins and replies.
 pagination:
   data: collections.note
   size: 50
   reverse: true
 permalink: /notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
 eleventyComputed:
-  title: "Notes Feed {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
+  title: "Notes {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
+  subhead: These are the short form items of content.
+  description: This page is an archive of all the notes written on the site. This includes short form posts, RSVP's, checkins and replies.
 ---
 
 <div class="activity--list--content">
@@ -42,7 +41,7 @@ eleventyComputed:
       </li>
 
     {% elsif post.data.category == 'rsvp' %}
-      <li class="reply h-entry hentry">
+      <li class="rsvp h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "rsvp" %}
           RSVP'd to -
@@ -54,7 +53,7 @@ eleventyComputed:
       </li>
 
     {% elsif post.data.category == 'videography' %}
-      <li class="post h-entry hentry">
+      <li class="video h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "video" %}
           Shot -
@@ -66,11 +65,36 @@ eleventyComputed:
       </li>
 
     {% elsif post.data.category == 'photography' %}
-      <li class="post h-entry hentry">
+      <li class="photo h-entry hentry">
         <h2 class="p-name">
+          {% assetIcon "photo" %}
           Snapped -
           <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
             {{ post.data.to }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+    
+    {% elsif post.data.category == 'bookmark' %}
+      <li class="bookmark h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "bookmark" %}
+          Bookmarked -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Bookmarked {{ post.data.title }}">
+            {{ post.data.title | strip_html | truncate: 50 }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+    
+    {% elsif post.data.category == 'jam' %}
+      <li class="jam h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "jam" %}
+          Vibing to -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Jamming to {{ post.data.title }}">
+            {{ post.data.title | strip_html | truncate: 50 }}
           </a>
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -112,7 +136,7 @@ eleventyComputed:
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
     
-        {% elsif post.data.category == 'race' %}
+    {% elsif post.data.category == 'race' %}
       <li class="race h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "trophy" %}

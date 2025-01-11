@@ -24,82 +24,116 @@ permalink: /{{ yearMonth[0] }}/
             <h3>{{ yearMonth[0] | getMonth | monthName }}</h3>
           </div>
           <ul class="archive--entries">
+
             {% for postedYearMonth, monthPosts in collections.postsByYearMonth %}
-            {% if postedYearMonth === yearMonth[0] %}
-            {% for post in monthPosts | reverse %}
-            <li class="h-entry {{ post.data.category }}">
 
-              {% if post.data.category == 'article' %}
-              {% assetIcon "article" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Wrote <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+              {% if postedYearMonth === yearMonth[0] %}
+              
+                {% for post in monthPosts | reverse %}
 
-              {% elif post.data.category == 'note' %}
-              {% assetIcon "note" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Noodled about <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                <li class="h-entry {{ post.data.category }}">
 
-              {% elif post.data.category == 'checkin' %}
-              {% assetIcon "checkin" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Checked in at <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% if post.data.category == 'article' %}
+                    {% assetIcon "article" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Wrote <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% elif post.data.category == 'reply' %}
-              {% assetIcon "reply" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Replied to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'note' %}
+                    {% assetIcon "note" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Noodled about <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% elif post.data.category == 'rsvp' %}
-              {% assetIcon "rsvp" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - RSVP'd to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'checkin' %}
+                    {% assetIcon "checkin" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Checked in at <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% elif post.data.category == 'event' %}
-              {% assetIcon "calendar" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Signed up for <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'reply' %}
+                    {% assetIcon "reply" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Replied to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% elif post.data.category == 'exercise' %}
-              {% assetIcon "stopwatch" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Went <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'rsvp' %}
+                    {% assetIcon "rsvp" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - RSVP'd to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% elif post.data.category == 'race' %}
-              {% assetIcon "trophy" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Raced <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'event' %}
+                    {% assetIcon "calendar" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Signed up for <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% elif post.data.category == 'photography' %}
-              {% assetIcon "photo" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Snapped <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'exercise' %}
+                    {% assetIcon "stopwatch" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Went <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% elif post.data.category == 'videography' %}
-              {% assetIcon "video" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - Shot <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'race' %}
+                    {% assetIcon "trophy" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Raced <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
-              {% else %}
-              {% assetIcon "unknown" %}
-              <time class="dt-published" datetime="{{ post.date }}">
-                {{ post.date | getDayOrdinal }}
-              </time> - <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% elif post.data.category == 'photography' %}
+                    {% assetIcon "photo" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Snapped <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+
+                  {% elif post.data.category == 'videography' %}
+                    {% assetIcon "video" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Shot <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+
+                  {% elif post.data.category == 'bookmark' %}
+                    { % assetIcon "bookmark" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Bookmarked <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+              
+                  {% elif post.data.category == 'jam' %}
+                    {% assetIcon "jam" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                    {{ post.date | getDayOrdinal }}
+                    </time>
+                    - Vibing to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+
+
+                  {% else %}
+                    {% assetIcon "unknown" %}
+                    <time class="dt-published" datetime="{{ post.date }}">
+                      {{ post.date | getDayOrdinal }}
+                    </time>
+                    - <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+                  {% endif %}
+
+                </li>
+
+                {% endfor %}
 
               {% endif %}
-            </li>
+
             {% endfor %}
-            {% endif %}
-            {% endfor %}
+
           </ul>
         </ul>
       </li>

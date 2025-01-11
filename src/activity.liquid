@@ -99,6 +99,30 @@ eleventyComputed:
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
+    
+    {% elsif post.data.category == 'bookmark' %}
+      <li class="bookmark h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "bookmark" %}
+          Bookmarked -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Bookmarked {{ post.data.title }}">
+            {{ post.data.title | strip_html | truncate: 50 }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
+    
+    {% elsif post.data.category == 'jam' %}
+      <li class="jam h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "jam" %}
+          Vibing to -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Jamming to {{ post.data.title }}">
+            {{ post.data.title | strip_html | truncate: 50 }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+      </li>
 
     {% elsif post.data.category == 'videography' %}
       <li class="post h-entry hentry">

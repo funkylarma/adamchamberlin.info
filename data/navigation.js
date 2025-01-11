@@ -51,10 +51,16 @@ export default {
       url: '/contact/',
     },
     {
+      label: 'Privacy',
+      class: 'privacy',
+      title: 'The boring stuff',
+      url: '/privacy/',
+    },
+    {
       label: 'RSS',
       class: 'rss',
       title: 'Long live the RSS feed',
       url: '/feed/',
-    },
+    }
   ],
 };

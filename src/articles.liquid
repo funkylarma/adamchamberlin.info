@@ -1,15 +1,14 @@
 ---
 layout: list.liquid
-title: Article Feed
-subhead: These are the long form items of content.
-description: This page is an archive of all the articles written on the site.
 pagination:
   data: collections.article
   size: 10
   reverse: true
 permalink: /articles/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
 eleventyComputed:
-  title: "Articles Feed {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
+  title: "Articles {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
+  subhead: These are the long form items of content.
+  description: This page is an archive of all the articles written on the site.
 ---
 
 <div class="post--list--content">

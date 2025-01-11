@@ -12,7 +12,7 @@ permalink: '/tagged/{{ tag | slugify }}/'
 eleventyComputed:
   title: 'Tagged: {{ tag }}'
   description: "Archive page for the content tagged with '{{ tag }}'"
-  subhead: 'These are all the posts that have been tagged with "{{ tag }}"'
+  subhead: 'This is all the content that has been tagged with "{{ tag }}"'
 ---
 <div class="activity--list--content">
   <div class="h-feed">
@@ -25,7 +25,7 @@ eleventyComputed:
               <h2 class="p-name">
                 {% assetIcon "article" %}
                 Wrote -
-                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Wrote {{ post.data.to }}">
+                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
                   {{ post.data.title }}
                 </a>
               </h2>
@@ -81,7 +81,7 @@ eleventyComputed:
             </li>
 
           {% elsif post.data.category == 'videography' %}
-            <li class="post h-entry hentry">
+            <li class="video h-entry hentry">
               <h2 class="p-name">
                 {% assetIcon "video" %}
                 Shot -
@@ -93,7 +93,7 @@ eleventyComputed:
             </li>
 
           {% elsif post.data.category == 'photography' %}
-            <li class="post h-entry hentry">
+            <li class="photo h-entry hentry">
               <h2 class="p-name">
                 Snapped -
                 <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
@@ -116,24 +116,48 @@ eleventyComputed:
             </li>
           
           {% elsif post.data.category == 'exercise' %}
-            <li class="checkin h-entry hentry">
+            <li class="exercise h-entry hentry">
               <h2 class="p-name">
                 {% assetIcon "stopwatch" %}
-                Went {{ post.data.sport }} -
-                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Went {{ post.title }}">
-                  {{ post.data.title }}
+                Went -
+                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Went {{ post.data.sport }}">
+                  {{ post.data.sport }}
                 </a>
               </h2>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
             </li>
           
           {% elsif post.data.category == 'race' %}
-            <li class="checkin h-entry hentry">
+            <li class="race h-entry hentry">
               <h2 class="p-name">
                 {% assetIcon "trophy" %}
                 Raced -
                 <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Raced {{ post.data.title }}">
                   {{ post.data.title }}
+                </a>
+              </h2>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </li>
+          
+          {% elsif post.data.category == 'bookmark' %}
+            <li class="bookmark h-entry hentry">
+              <h2 class="p-name">
+                {% assetIcon "bookmark" %}
+                Bookmarked -
+                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Bookmarked {{ post.data.title }}">
+                  {{ post.data.title | strip_html | truncate: 50 }}
+                </a>
+              </h2>
+              <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+            </li>
+          
+          {% elsif post.data.category == 'jam' %}
+            <li class="jam h-entry hentry">
+              <h2 class="p-name">
+                {% assetIcon "jam" %}
+                Vibing to -
+                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Jamming to {{ post.data.title }}">
+                  {{ post.data.title | strip_html | truncate: 50 }}
                 </a>
               </h2>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>

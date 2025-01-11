@@ -84,6 +84,18 @@ permalink: /{{ year[0] }}/
                 <time class="dt-published" datetime="{{ post.date }}">
                   {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
                 </time> - Shot <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+              
+              {% elif post.data.category == 'bookmark' %}
+                { % assetIcon "bookmark" %}
+                <time class="dt-published" datetime="{{ post.date }}">
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
+                </time> - Bookmarked <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
+          
+              {% elif post.data.category == 'jam' %}
+                {% assetIcon "jam" %}
+                <time class="dt-published" datetime="{{ post.date }}">
+                  {{ post.date | getDayOrdinal }} {{ post.date | getMonthShortName }}
+                </time> - Vibing to <a class="p-name" href="{{ post.url }}">{{ post.data.title }}</a>
 
               {% else %}
                 {% assetIcon "unknown" %}
