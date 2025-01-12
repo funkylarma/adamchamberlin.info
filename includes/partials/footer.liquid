@@ -2,14 +2,21 @@
   <div class="container">
     <nav class="footer">
       <ul class="navigation-footer">
-        {% for item in navigation.footer %}
-        <li class="nav-bar--item {% if item.class %}{{ item.class }}{% endif %}">
-          <a class="" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}"
-            title="{% if item.title %}{{ item.title }}{% endif %}">
-            {{ item.label }}
-          </a>
+        <li class="nav-bar--item home">
+          <a class="" href="/" title="Back home">Home</a>
         </li>
-        {% endfor %}
+        <li class="nav-bar--item activity">
+          <a href="/activity/" title="What I have been up to">Activity</a>
+        </li>
+        <li class="nav-bar--item contact">
+          <a href="/contact/" title="Lets get social">Contact</a>
+        </li>
+        <li class="nav-bar--item privacy">
+          <a href="/privacy/" title="The boring stuff">Privacy</a>
+        </li>
+        <li class="nav-bar--item rss">
+          <a href="/feed/" title="Long live the RSS feed">RSS</a>
+        </li>
       </ul><!-- .nav-bar -->
     </nav><!-- .footer -->
     <div class="theme" hidden>
@@ -36,7 +43,8 @@
       <a class="github" href="https://github.com/funkylarma" target="_blank" rel="me" aria-label="Git Hub">
         {% assetIcon "github" %}
       </a>
-      <a class="linkedin" href="https://www.linkedin.com/in/funkylarma/" target="_blank" rel="me" aria-label="Linked-In">
+      <a class="linkedin" href="https://www.linkedin.com/in/funkylarma/" target="_blank" rel="me"
+        aria-label="Linked-In">
         {% assetIcon "linkedin" %}
       </a>
       <a class="youtube" href="https://www.youtube.com/@funkylarma" target="_blank" rel="me" aria-label="YouTube">

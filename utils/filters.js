@@ -125,6 +125,12 @@ export default {
     return `${day}${nth(day)} ${month_names[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
   },
 
+  dateLongDateShortMonth: function (dateObj) {
+    dateObj = parse(dateObj);
+    let day = dateObj.getDate();
+    return `${day}${nth(day)} ${month_short_names[dateObj.getMonth()]}`;
+  },
+
   dateParse: function (dateObj) {
     if (typeof dateObj !== 'undefined') {
       if (dateObj instanceof Date) {

@@ -38,6 +38,23 @@ function fadeIn(el) {
 (function ($) {
   'use strict';
 
+  $('html').click(function (el) {
+    if (el.target.id == '') {
+      if (el.target.classList.contains('hamburger-label')) {
+        if ($("#trigger").prop('checked')) {
+          $("#trigger").prop('checked', false);
+          el.preventDefault();
+        } else {
+          $("#trigger").prop('checked', true);
+        }
+      }
+      if ($("#trigger").prop('checked')) {
+        $("#trigger").prop('checked', false);
+      }
+    }
+
+  });
+
   if ($('.post--list--content article')) {
     fadeIn('.post--list--content article');
   }
@@ -57,4 +74,6 @@ function fadeIn(el) {
   if ($('.comment')) {
     fadeIn('.comment');
   }
+
+
 })(jQuery);

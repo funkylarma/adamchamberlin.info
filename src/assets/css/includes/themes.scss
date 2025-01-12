@@ -20,27 +20,27 @@
     }
   }
 
+  .mast-head {
+    .hamburger {
+      span {
+        background: var(--main-color-white);
+      }
+    }
+
+    nav.main-navigation {
+      background: var(--main-color-base);
+    }
+  }
+
   .post--list {
     .post--list--content {
       .post {
         background: var(--main-color-base);
 
-        .post-image {
-          img {
-          }
-        }
-
         .post--content {
-          .post--head {
-            h2 {
-              a {
-              }
-            }
-            .post--meta {
-            }
-          }
+
           .post--excerpt {
-            border-top: 2px solid #333;
+            border-top: 2px solid #333333;
           }
         }
       }
@@ -55,6 +55,7 @@
 
     .tag-list,
     .category-list {
+
       .tag-cloud,
       .category-cloud {
         display: flex;
@@ -66,15 +67,6 @@
       a {
         .post-count {
           color: var(--main-color-primary);
-        }
-
-        &:hover {
-        }
-
-        .tag,
-        .category {
-          .post-count {
-          }
         }
       }
     }
@@ -95,13 +87,11 @@
   }
 
   .mast-foot {
-    .content {
-      .footer {
-      }
+    .container {
 
       .social {
         a {
-          color: var(--main-color-primary);
+          color: var(--main-color-white);
         }
       }
     }
@@ -110,14 +100,8 @@
   button,
   .button,
   .call-to-action {
-    a {
-    }
-
     &:hover {
       background: var(--main-color-background);
-
-      a {
-      }
     }
   }
 }
@@ -136,6 +120,7 @@
 
 /* Dark Color Scheme (system preference) */
 @media (prefers-color-scheme: dark) {
+
   :root:not([data-theme]),
   :root:has(input[name='theme'][value='auto']:checked) {
     @include theme-dark;

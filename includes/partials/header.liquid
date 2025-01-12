@@ -1,21 +1,58 @@
 <header class="mast-head" role="banner">
-  <div class="content">
-    <a class="nav-link" {% if page.url==item.url %} aria-current="page" {% endif %} href="/" title="Back home">
-      <figure>
-        <img src="/assets/images/logo_dark.svg" alt="Site logo" width="64" height="43" eleventy:ignore>
-      </figure>
-    </a>
-    <nav class="nav" aria-label="primary">
-      <ul class="nav-bar">
-      {% for item in navigation.primary %}
-        <li class="nav-bar--item {% if item.class %}{{ item.class }}{% endif %}">
-          <a class="nav-link" {% if page.url==item.url %} aria-current="page" {% endif %} href="{{ item.url }}" title="{% if item.title %}{{ item.title }}{% endif %}">
-            {{ item.label }}
-          </a>
+  <label for="trigger">
+    <input type="checkbox" class="trigger" id="trigger" />
+    <div class="hamburger hamburger-label">
+      <span class="hamburger-label"></span>
+      <span class="hamburger-label"></span>
+      <span class="hamburger-label"></span>
+    </div>
+    <span class="menu hamburger-label">Menu</span>
+    <nav class="main-navigation" role="navigation">
+      <p>Navigation</p>
+      <ul>
+        <li class="nav-bar--item home">
+          {% assetIcon "home" %}
+          <a href="/" title="Back home">Home</a>
         </li>
-      {% endfor %}
+        <li class="nav-bar--item about">
+          {% assetIcon "about" %}
+          <a href="/about/" title="Who is Adam Chamberlin?">About</a>
+          <ul>
+            <li class="nav-bar--item now">
+              {% assetIcon "star" %}
+              <a href="/now/" title="What am I upto right now?">Now</a>
+            </li>
+            <li class="nav-bar--item activity">
+              {% assetIcon "activity" %}
+              <a href="/activity/" title="What have I been upto?">Activity</a>
+            </li>
+            <li class="nav-bar--item uses">
+              {% assetIcon "laptop" %}
+              <a href="/uses/" title="What do I use?">Uses</a>
+            </li>
+            <li class="nav-bar--item colophon">
+              {% assetIcon "motherboard" %}
+              <a href="/colophon/" title="What is behind the site?">Colophon</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-bar--item article">
+          {% assetIcon "article" %}
+          <a href="/articles/" title="Read the longform content">Articles</a>
+        </li>
+        <li class="nav-bar--item note">
+          {% assetIcon "note" %}
+          <a href="/notes/" title="Read the short form content">Notes</a>
+        </li>
+        <li class="nav-bar--item archive">
+          {% assetIcon "archive" %}
+          <a href="/archive/" title="Read all the content">Archives</a>
+        </li>
+        <li class="nav-bar--item privacy">
+          {% assetIcon "cookie" %}
+          <a href="/privacy/" title="The boring legal stuff">Privacy Policy</a>
+        </li>
       </ul>
     </nav>
-  </div><!-- .content -->
+  </label>
 </header><!-- .header -->
-

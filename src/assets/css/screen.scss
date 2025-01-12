@@ -25,6 +25,9 @@
 // Archive pages
 @use 'includes/archives.scss';
 
+// Home page
+@use 'includes/home.scss';
+
 // Gallery Pages
 //@use 'includes/gallery.scss';
 
@@ -34,5 +37,5 @@
 // Webmentions
 @use 'includes/webmentions.scss';
 
-// Themse
+// Themes
 @use 'includes/themes.scss';

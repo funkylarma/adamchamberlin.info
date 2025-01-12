@@ -108,6 +108,66 @@ export default {
       .slice(0, 50);
   },
 
+  homePage: function (collection) {
+
+    const allContent = collection.getAll().sort(function (a, b) {
+      return b.date - a.date; // sort by date - descending
+    });
+
+    const articles = allContent
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category == 'article') {
+          return item;
+        }
+      })
+      .slice(0, 5);
+
+    const notes = allContent
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category == 'note') {
+          return item;
+        }
+      })
+      .slice(0, 5);
+
+    const comments = allContent
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category == 'reply') {
+          return item;
+        }
+      })
+      .slice(0, 5);
+
+    const checkin = allContent
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category == 'checkin') {
+          return item;
+        }
+      })
+      .slice(0, 1);
+
+    const activity = allContent
+      .filter((item) => {
+        if (!item.data.category) return;
+        if (item.data.category !== 'article' && item.data.category !== 'note' && item.data.category !== 'reply' && item.data.category !== 'checkin') {
+          return item;
+        }
+      })
+      .slice(0, 5);
+
+    return {
+      acticleList: articles,
+      noteList: notes,
+      commentList: comments,
+      activityList: activity,
+      lastSeen: checkin,
+    };
+  },
+
   // Drafts Collection
   drafts: function (collection) {
     return collection

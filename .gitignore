@@ -2,6 +2,10 @@
 .env
 .dev.vars
 
+# editor settings
+.nova
+.vscode
+
 # dependancies
 node_modules/
 
