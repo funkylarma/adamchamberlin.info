@@ -1,13 +1,20 @@
 .home--page {
-  max-width: var(--main-layout-width-wide);
+  max-width: var(--main-layout-width-x-wide);
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 5rem 1fr 1fr 1fr 1fr 5rem;
   grid-template-rows: min-content;
   row-gap: 4rem;
-  column-gap: 2rem;
+  column-gap: 4rem;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: min-content;
+    row-gap: 4rem;
+    column-gap: 2rem;
+  }
 
   @media screen and (max-width: 700px) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -37,15 +44,19 @@
   }
 
   h2 {
-    color: var(--main-color-tertiary);
+    color: var(--main-color-secondary);
     font-size: var(--main-font-size-small);
     text-transform: uppercase;
   }
 
   .welcome {
-    grid-column: 3 / 5;
+    grid-column: 4 / 6;
     grid-row: 1;
     justify-content: center;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 3 / span 2;
+    }
 
     @media screen and (max-width: 700px) {
       grid-column: 2 / span 2;
@@ -63,8 +74,12 @@
   }
 
   .headshot {
-    grid-column: 1 / 3;
+    grid-column: 2 / 4;
     grid-row: 1;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 1 / span 2;
+    }
 
     @media screen and (max-width: 700px) {
       grid-column: 1 / span 1;
@@ -110,8 +125,12 @@
   }
 
   .articles {
-    grid-column: 1 / 4;
+    grid-column: 1 / span 4;
     grid-row: 2 / 5;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 1 / span 3;
+    }
 
     @media screen and (max-width: 700px) {
       grid-column: 1 / span 3;
@@ -155,21 +174,41 @@
         .post--meta {
           display: flex;
           flex-direction: column;
-          font-size: var(--main-font-size-x-small);
-        }
+          text-transform: uppercase;
+          font-size: var(--main-font-size-xx-small);
 
-        a {
-          color: var(--main-color-primary);
+          .post--date,
+          .post--tags {
+            margin: 0 0 0.25rem 0;
+          }
 
-          &:hover {
-            color: var(--main-color-secondary);
+          span {
+            font-weight: 600;
+          }
+
+          a {
             text-decoration: none;
-          }
 
-          h3 {
-            color: var(--main-color-secondary);
+            &:hover {
+              color: var(--main-color-quaternary);
+            }
           }
         }
+
+        h3 {
+          color: var(--main-color-tertiary);
+
+          a {
+            color: var(--main-color-tertiary);
+
+            &:hover {
+              color: var(--main-color-primary);
+              text-decoration: none;
+            }
+          }
+        }
+
+
       }
 
       .post--image {
@@ -191,8 +230,12 @@
   }
 
   .notes {
-    grid-column: 4 / 5;
+    grid-column: 5 / span 1;
     grid-row: 3;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 4 / span 1;
+    }
 
     @media screen and (max-width: 700px) {
       grid-column: 1 / span 1;
@@ -202,6 +245,10 @@
     @media screen and (max-width: 400px) {
       grid-column: 1 / span 1;
       grid-row: 5;
+    }
+
+    h2 {
+      color: var(--main-color-tertiary);
     }
 
     li {
@@ -215,8 +262,12 @@
   }
 
   .comments {
-    grid-column: 4 / 5;
+    grid-column: 5 / 6;
     grid-row: 4;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 4 / span 1;
+    }
 
     @media screen and (max-width: 700px) {
       grid-column: 2 / span 1;
@@ -226,6 +277,10 @@
     @media screen and (max-width: 400px) {
       grid-column: 2 / span 1;
       grid-row: 5;
+    }
+
+    h2 {
+      color: var(--main-color-tertiary);
     }
 
     li {
@@ -239,8 +294,12 @@
   }
 
   .activity {
-    grid-column: 1 / 5;
+    grid-column: 2 / 5;
     grid-row: 5;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 1 / span 3;
+    }
 
     @media screen and (max-width: 700px) {
       grid-column: 1 / span 3;
@@ -250,6 +309,10 @@
     @media screen and (max-width: 400px) {
       grid-column: 1 / span 2;
       grid-row: 4;
+    }
+
+    h2 {
+      color: var(--main-color-tertiary);
     }
 
     .activity--list--content {
@@ -263,8 +326,12 @@
   }
 
   .checkin {
-    grid-column: 4 / 5;
+    grid-column: 5 / span 1;
     grid-row: 2;
+
+    @media screen and (max-width: 900px) {
+      grid-column: 4 / span 1;
+    }
 
     @media screen and (max-width: 700px) {
       grid-column: 3 / span 1;
@@ -274,6 +341,10 @@
     @media screen and (max-width: 400px) {
       grid-column: 1 / span 2;
       grid-row: 6;
+    }
+
+    h2 {
+      color: var(--main-color-tertiary);
     }
 
     #map {

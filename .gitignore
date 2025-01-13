@@ -5,6 +5,7 @@
 # editor settings
 .nova
 .vscode
+.vscode/launch.json
 
 # dependancies
 node_modules/
