@@ -155,26 +155,28 @@ permalink: /
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
   {% for post in collections.homePage.lastSeen %}
   <script>
-    // Load the api key
-    mapboxgl.accessToken = "{{ keys.mapBox }}";
+    window.addEventListener('load', (event) => {
+      // Load the api key
+      mapboxgl.accessToken = "{{ keys.mapBox }}";
 
-    let mapStyle = 'mapbox://styles/mapbox/light-v11?optimize=true';
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      mapStyle = 'mapbox://styles/mapbox/dark-v11?optimize=true';
-    }
+      let mapStyle = 'mapbox://styles/mapbox/light-v11?optimize=true';
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mapStyle = 'mapbox://styles/mapbox/dark-v11?optimize=true';
+      }
 
-    // Create instance of a map
-    const map = new mapboxgl.Map({
-      container: 'map', // container ID
-      style: mapStyle,
-      center: [{{ post.data.longitude }}, {{ post.data.latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-    zoom: 16 // starting zoom
-    });
+      // Create instance of a map
+      const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: mapStyle,
+        center: [{{ post.data.longitude }}, {{ post.data.latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+      zoom: 16 // starting zoom
+      });
 
     // Drop the pin
     new mapboxgl.Marker({ color: "#36d02f" }).setLngLat([{{ post.data.longitude }}, {{ post.data.latitude }}]).addTo(map);
 
     map.resize();
+    });
   </script>
   <a href="{{ post.url }}">
     {{ post.data.title }}
