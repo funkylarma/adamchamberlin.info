@@ -38,9 +38,16 @@
                 {{ content }}
               </div>
             </div><!-- .post--content -->
-            <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
-            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
+            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
+              crossorigin="anonymous">
+            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
+              onload="this.media='all'" fetchpriority="low">
+            <noscript>
+              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
+            </noscript>
+            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
             <script>
+            window.addEventListener('load', (event) => {
               // Load the api key
               mapboxgl.accessToken = "{{ keys.mapBox }}";
 
@@ -78,6 +85,7 @@
               },
               "name": "{{ title }}"
             }
+          });
             </script>
           </div><!-- .note--main -->
           <div class="note--foter">

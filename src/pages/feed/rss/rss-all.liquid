@@ -22,7 +22,7 @@ permalink: /feed/rss.xml
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ post.templateContent | postExcerpt }}</description>
+      <description>{{ post.templateContent }}</description>
       <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
       <author>{{ metadata.author.name }}</author>
       <guid>{{ absolutePostUrl }}</guid>

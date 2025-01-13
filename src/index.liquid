@@ -9,15 +9,15 @@ permalink: /
 
 <div class="welcome">
   <p class="h2">
-    Hi,
+    Hi there,
   </p>
   <p>
     My name is Adam and this is my personal website and domain.
   </p>
   <p>
-    I'm a web developer based in the UK. I'm passionate about the open web and a huge fan of the IndieWeb.<br>
-    You can read more <a href="/about/">about</a> who I am, what I <a href="/use/">use</a> or what I'm upto <a
-      href="/now/">now</a>.
+    I'm a web developer based in the UK. I'm passionate about the open web and a massive fan of the IndieWeb.
+    You can read more <a href="/about/">about</a> who I am, what I <a href="/use/">use</a>, or what I'm up to <a
+    href="/now/">now</a>.
   </p>
 </div>
 
@@ -31,10 +31,10 @@ permalink: /
   <h2>Latest Articles</h2>
   <ul>
     {% for post in collections.homePage.acticleList %}
-    <li>
+    <li class="h-entry hentry">
       <div class="post--content">
-        <h3 class="post--title">
-          <a href="{{ post.url }}">
+        <h3 class="post--title p-name">
+          <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
             {{ post.data.title }}
           </a>
         </h3>
@@ -79,12 +79,12 @@ permalink: /
   <h2>Latest Notes</h2>
   <ul>
     {% for post in collections.homePage.noteList %}
-    <li>
+    <li class="h-entry hentry">
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
         {% assetIcon "note" %}
         {{ post.date | dateLongDateShortMonth }}
       </time>
-      <a href="{{ post.url }}">
+      <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
         {{ post.data.title }}
       </a>
     </li>
@@ -97,12 +97,12 @@ permalink: /
   <h2>Recent Replies</h2>
   <ul>
     {% for post in collections.homePage.commentList %}
-    <li>
+    <li class="h-entry hentry">
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
         {% assetIcon "calendar" %}
         {{ post.date | dateLongDateShortMonth }}
       </time>
-      <a href="{{ post.url }}">
+      <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
         {{ post.data.title }}
       </a>
     </li>
@@ -114,7 +114,7 @@ permalink: /
   <h2>Recent Activity</h2>
   <ul class="activity--list--content">
     {% for post in collections.homePage.activityList %}
-    <li>
+    <li class="h-entry hentry">
       <div>
         {% if post.data.category == 'event' %}
         {% assetIcon "calendar" %}
@@ -129,7 +129,7 @@ permalink: /
         {% assetIcon "unknown" %}
         Noodled about -
         {% endif %}
-        <a href="{{ post.url }}">
+        <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
           {{ post.data.title }}
         </a>
       </div>

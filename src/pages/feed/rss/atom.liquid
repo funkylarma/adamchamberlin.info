@@ -24,7 +24,7 @@ permalink: /feed/feed.xml
     <published>{{ post.date | dateToRfc3339 }}</published>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <category term="{{ category }}" />
-    <content type="html">{{ post.content | postExcerpt }}</content>
+    <content type="html">{{ post.content }}</content>
     <author>
       <name>{{ metadata.author.name }}</name>
       <email>{{ metadata.author.email }}</email>
