@@ -145,16 +145,22 @@ permalink: /
 <div class="checkin">
   <h2>Last Checked In At</h2>
   <div id="map"></div>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
+  <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
+    onload="this.media='all'" fetchpriority="low">
+  <noscript>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
+  </noscript>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
   {% for post in collections.homePage.lastSeen %}
   <script>
     // Load the api key
     mapboxgl.accessToken = "{{ keys.mapBox }}";
 
-    let mapStyle = 'mapbox://styles/mapbox/light-v11';
+    let mapStyle = 'mapbox://styles/mapbox/light-v11?optimize=true';
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      mapStyle = 'mapbox://styles/mapbox/dark-v11';
+      mapStyle = 'mapbox://styles/mapbox/dark-v11?optimize=true';
     }
 
     // Create instance of a map
