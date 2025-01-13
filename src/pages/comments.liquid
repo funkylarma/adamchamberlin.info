@@ -1,0 +1,106 @@
+---
+layout: page.liquid
+eleventyExcludeFromCollections: true
+permalink: '/comments/'
+noindex: true
+title: Comments
+subhead: These are all the comments
+description: These are all the comments
+---
+
+<div class="comments--list--content">
+  <ul>
+    {% for mention in webmentions.children %}
+
+    {% if mention.wm-property == 'in-reply-to' %}
+    <li class="reply h-entry hentry">
+      <div class="mention">
+        <div class="mention--icon">
+          {% assetIcon "chat" %}
+        </div>
+        <div class="mention--content">
+          <div class="mention--header">
+            <p>
+              {% if mention.author %}
+              <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
+                {{ mention.author.name }}
+              </a>
+              {% else %}
+              <span class="comment--author">Anonymous</span>
+              {% endif %}
+              replied to {{ mention.wm-target }}.
+            </p>
+          </div>
+          <div class="mention--copy">
+            {{ mention.content.html }}
+          </div>
+        </div>
+        <time class="mention--date dt-published" datetime="{{ mention.wm-received }}">
+          {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
+        </time>
+      </div><!-- .mention--header -->
+    </li>
+
+    {% elsif mention.wm-property == 'mention-of' %}
+    <li class="reply h-entry hentry">
+      <div class="mention--header">
+        {% assetIcon "at" %}
+        <p>
+          {% if mention.author %}
+          <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
+            {{ mention.author.name }}
+          </a>
+          {% else %}
+          <span class="comment--author">Anonymous</span>
+          {% endif %}
+          mentioned {{ mention.wm-target }}.
+        </p>
+        <time class="postlist-date dt-published" datetime="{{ mention.wm-received }}">
+          {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
+        </time>
+      </div><!-- .mention--header -->
+      <div class="mention--content">
+        {{ mention.content.html }}
+      </div>
+    </li>
+
+    {% elsif mention.wm-property == 'like-of' %}
+    <li class="reply h-entry hentry">
+      <div class="mention--header">
+        {% assetIcon "heart" %}
+        <p>
+          {% if mention.author %}
+          <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
+            {{ mention.author.name }}
+          </a>
+          {% else %}
+          <span class="comment--author">Anonymous</span>
+          {% endif %}
+          liked {{ mention.wm-target }}.
+        </p>
+        <time class="postlist-date dt-published" datetime="{{ mention.wm-received }}">
+          {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
+        </time>
+      </div><!-- .mention--header -->
+      <div class="mention--content">
+        {{ mention.content.html }}
+      </div>
+    </li>
+
+    {% else %}
+    <li class="h-entry hentry">
+      {% assetIcon "unknown" %}
+      <a class="post-link u-url" rel="bookmark" href="{{ mention.url }}" title="View Item">
+        {{ mention.wm-target }}
+      </a>
+
+      <time class="postlist-date dt-published" datetime="{{ mention.wm-received | dateHtmlString }}">
+        {{ mention.wm-received | dateLongDate }}
+      </time>
+    </li>
+    {% endif %}
+
+    {%- endfor -%}
+  </ul>
+
+</div><!-- .post-list-content -->

@@ -31,6 +31,7 @@
     }
 
     .webmentions {
+
       .comments,
       .likes,
       .reposts {
@@ -131,7 +132,50 @@
         padding: 0.5rem;
       }
 
-      .button {
+      .button {}
+    }
+  }
+}
+
+.comments--list--content {
+  max-width: var(--main-layout-width-xx-wide);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  li {
+
+    .mention {
+      display: flex;
+      flex-direction: row;
+
+      .mention--icon {
+        svg {}
+      }
+
+      .mention--content {
+        display: flex;
+        flex-direction: column;
+
+        .mention--header {
+
+          p {
+            font-size: var(--main-font-size-small);
+            margin: 0;
+          }
+
+        }
+
+        .mention-copy {}
+      }
+
+      .mention--date {
+        font-size: var(--main-font-size-small);
       }
     }
   }
