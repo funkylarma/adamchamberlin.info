@@ -1,52 +1,55 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
-  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
-  <head>
-    {% include "partials/head.liquid" %}
-  </head>
-  <body>
-    <a href="#skip" class="skip-link">Skip to main content</a>
-    <div class="hfeed layout" role="document">
-      {% include "partials/header.liquid" %}
-      <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-        <div class="h-entry note--single">
-          {% include "partials/hcard.liquid" %}
-          <div class="note--main">
-            <div class="note--content e-content">
-              <div class="note--meta">
-                <div class="note--date">
-                  {% assetIcon "calendar" %}
-                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateLongDate }}</time>
-                </div><!-- .post--date -->
-              </div><!-- .post-meta -->
-              <div itemscope itemtype="https://schema.org/Place">
-                <h1 class="post--title p-name checkin" itemprop="name">
-                  Checked in at:
-                  {% if url %}
-                    <a href="{{ url }}">{{ title }}</a>
-                  {% else %}
-                    {{ title }}
-                  {% endif %}
-                </h1>
-                <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
-                  <meta itemprop="latitude" content="{{ latitude }}" />
-                  <meta itemprop="longitude" content="{{ longitude }}" />
-                </div>
+<!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+
+<head>
+  {% include "partials/head.liquid" %}
+</head>
+
+<body>
+  <a href="#skip" class="skip-link">Skip to main content</a>
+  <div class="hfeed layout" role="document">
+    {% include "partials/header.liquid" %}
+    <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+      <div class="h-entry note--single checkin">
+        {% include "partials/hcard.liquid" %}
+        <div class="note--main">
+          <div class="note--content e-content">
+            <div class="note--meta">
+              <div class="note--date">
+                {% assetIcon "calendar" %}
+                <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateLongDate
+                  }}</time>
+              </div><!-- .post--date -->
+            </div><!-- .post-meta -->
+            <div itemscope itemtype="https://schema.org/Place">
+              <h1 class="post--title p-name checkin" itemprop="name">
+                Checked in at:
+                {% if url %}
+                <a href="{{ url }}">{{ title }}</a>
+                {% else %}
+                {{ title }}
+                {% endif %}
+              </h1>
+              <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                <meta itemprop="latitude" content="{{ latitude }}" />
+                <meta itemprop="longitude" content="{{ longitude }}" />
               </div>
-              <div id="map"></div>
-              <div class="p-content">
-                {{ content }}
-              </div>
-            </div><!-- .post--content -->
-            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
-              crossorigin="anonymous">
-            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
-              onload="this.media='all'" fetchpriority="low">
-            <noscript>
-              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
-            </noscript>
-            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
-            <script>
+            </div>
+            <div id="map"></div>
+            <div class="p-content">
+              {{ content }}
+            </div>
+          </div><!-- .post--content -->
+          <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
+            crossorigin="anonymous">
+          <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
+            onload="this.media='all'" fetchpriority="low">
+          <noscript>
+            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
+          </noscript>
+          <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
+          <script>
             window.addEventListener('load', (event) => {
               // Load the api key
               mapboxgl.accessToken = "{{ keys.mapBox }}";
@@ -61,20 +64,21 @@
                 container: 'map', // container ID
                 style: mapStyle,
                 center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                zoom: 16 // starting zoom
+              zoom: 16 // starting zoom
               });
 
-              // Add some controls
-              const nav = new mapboxgl.NavigationControl();
-              map.addControl(nav, 'top-left');
-              map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('map')}));
+            // Add some controls
+            const nav = new mapboxgl.NavigationControl();
+            map.addControl(nav, 'top-left');
+            map.addControl(new mapboxgl.FullscreenControl({ container: document.querySelector('map') }));
 
-              // Drop the pin
-              new mapboxgl.Marker({color: "#36d02f"}).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
+            // Drop the pin
+            new mapboxgl.Marker({ color: "#36d02f" }).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
 
-              map.resize();
-            </script>
-            <script type="application/ld+json">
+            map.resize();
+            });
+          </script>
+          <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "Place",
@@ -85,15 +89,15 @@
               },
               "name": "{{ title }}"
             }
-          });
+          };
             </script>
-          </div><!-- .note--main -->
-          <div class="note--foter">
-          </div><!-- .note--footer -->
-        </div><!-- .note -->
-      </main>
-      {% include "partials/footer.liquid" %}
-    </div><!-- .container -->
-  </body>
-</html>
+        </div><!-- .note--main -->
+        <div class="note--foter">
+        </div><!-- .note--footer -->
+      </div><!-- .note -->
+    </main>
+    {% include "partials/footer.liquid" %}
+  </div><!-- .container -->
+</body>
 
+</html>

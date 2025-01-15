@@ -26,6 +26,8 @@ Content I write on site may include embedded data such as videos, images, articl
 
 These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, this is completely down to your own settings and accounts with those sites. I do not store or track any of that.
 
+CloudFlare, the hosting provider for this site do insert a script tag that is used for platform analytics. This does not provide me or the service with any identifiable data.
+
 ---
 
 ## Browser Based Local Storage

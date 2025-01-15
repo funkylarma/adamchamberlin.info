@@ -1,106 +1,122 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
-  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
-  <head>
-    {% include "partials/head.liquid" %}
-  </head>
-  <body>
-    <a href="#skip" class="skip-link">Skip to main content</a>
-    <div class="hfeed h-feed layout" role="document">
-      {% include "partials/header.liquid" %}
-      <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-        <div class="hentry h-entry note--single">
-          {% include "partials/hcard.liquid" %}
-          <div class="note--main">
-            <div class="note--content {% if category %}{{ category}}{% endif %}">
-              <div class="note--meta">
-                <div class="note--date">
-                  <h1>
-                    {% assetIcon "calendar" %}
-                    <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+<!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+
+<head>
+  {% include "partials/head.liquid" %}
+</head>
+
+<body>
+  <a href="#skip" class="skip-link">Skip to main content</a>
+  <div class="hfeed h-feed layout" role="document">
+    {% include "partials/header.liquid" %}
+    <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+      <article class="hentry h-entry note--single{% if category %} {{ category}}{% endif %}">
+        <div class="note--main">
+          <div class="note--content">
+            <header>
+              <div class="note--date">
+                <h1>
+                  {% assetIcon "calendar" %}
+                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+                    <a href="{{ page.url }}" class="u-url">
                       {{ page.date | dateLongDate }}
-                    </time>
-                  </h1>
-                </div><!-- .post--date -->
+                    </a>
+                  </time>
+                </h1>
+              </div><!-- .post--date -->
+              <div class="note--meta">
                 {% if tags.length > 1 %}
-                  <div class="note--tags">
-                    <span>Tagged: </span>
-                    {%- for tag in tags -%}
-                      {% if tag != 'note' %}
-                        <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
-                          {{ tag }}
-                        </a>
-                      {% endif %}
-                    {%- endfor -%}
-                  </div><!-- .post--tags -->
+                <div class="note--tags">
+                  <span>Tagged: </span>
+                  {%- for tag in tags -%}
+                  {% if tag != 'note' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/"
+                    title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                  {% endif %}
+                  {%- endfor -%}
+                </div><!-- .post--tags -->
                 {% endif %}
               </div><!-- .post-meta -->
-
-              {% if category == 'note' %}
-                <p class="p-name">
-                  {{ title }}
-                </p>
-                <div class="p-content">
-                  {{ content }}
-                </div>
-              {% endif %}
-
-              {% if category == 'videography' %}
-
-              {% endif %}
-
-              {% if category == 'reply' %}
-                <p class="p-name">
-                  In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ title }}</a>
-                </p>
-                <div class="e-content">
-                  {{ content }}
-                </div>
-              {% endif %}
-
-              {% if category == 'rsvp' %}
-                <p class="p-summary">
-                  {% if rsvp == 'yes' %}
-                    <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a> going to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
-                  {% elsif rsvp == 'no' %}
-                    <span class="p-rsvp" value="no">Gutted,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a> can not make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
-                  {% elsif rsvp == 'maybe' %}
-                    <span class="p-rsvp" value="maybe">Hoping,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a> can make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
-                  {% elsif rsvp == 'interested' %}
-                    <a href="{{ link }}" class="u-in-reply-to">This</a> has <a href="{{ globals.url }}" class="p-author h-card">me</a> <span class="p-rsvp" value="interested">intrigued</span>.
-                  {% else %}
-                    <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>
-                  {% endif %}
-                </p>
-                <div class="e-content">
-                  {{ content }}
-                </div>
-              {% endif %}
-
-            {% if category == 'event' %}
-              <div class="h-event">
-                <p class="p-summary">
-                  Signed up for <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
-                </p>
-                <p>
-                  Date: <time class="dt-start" datetime="{{ start | dateHtmlString }}">{{ start | dateLongDate }}</time>
-                </p>
-                <div class="p-content">
-                  {{ content }}
-                </div>
+            </header>
+            {% if category == 'note' %}
+            <section class="e-content">
+              <p class="p-name">
+                {{ title }}
+              </p>
+              <div class="note--copy">
+                {{ content }}
               </div>
+            </section>
             {% endif %}
 
-            </div><!-- .note--content -->
-            <div class="note--foter">
-            </div><!-- .note--footer -->
-          </div><!-- .note--main -->
-          <section class="responses" id="responses">
-            {% include "partials/webmentions.liquid" %}
-          </section>
-        </div><!-- .note -->
-      </main>
-      {% include "partials/footer.liquid" %}
-    </div><!-- .container -->
-  </body>
+            {% if category == 'reply' %}
+            <section class="e-content">
+              <p class="p-name">
+                In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ title }}</a>
+              </p>
+              <div class="note--copy">
+                {{ content }}
+              </div>
+            </section>
+            {% endif %}
+
+            {% if category == 'rsvp' %}
+            <section class="e-content">
+              <p class="p-summary">
+                {% if rsvp == 'yes' %}
+                <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a>
+                going to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                {% elsif rsvp == 'no' %}
+                <span class="p-rsvp" value="no">Gutted,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a>
+                can not make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                {% elsif rsvp == 'maybe' %}
+                <span class="p-rsvp" value="maybe">Hoping,</span> <a href="{{ globals.url }}"
+                  class="p-author h-card">I</a> can make it to <a href="{{ link }}" class="u-in-reply-to">{{ title
+                  }}</a>.
+                {% elsif rsvp == 'interested' %}
+                <a href="{{ link }}" class="u-in-reply-to">This</a> has <a href="{{ globals.url }}"
+                  class="p-author h-card">me</a> <span class="p-rsvp" value="interested">intrigued</span>.
+                {% else %}
+                <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>
+                {% endif %}
+              </p>
+              <div class="note--copy">
+                {{ content }}
+              </div>
+            </section>
+            {% endif %}
+
+            {% if category == 'videography' %}
+
+            {% endif %}
+
+
+            {% if category == 'event' %}
+            <section class="e-content">
+              <p class="p-summary">
+                Signed up for <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+              </p>
+              <p>
+                Date: <time class="dt-start" datetime="{{ start | dateHtmlString }}">{{ start | dateLongDate }}</time>
+              </p>
+              <div class="note--copy">
+                {{ content }}
+              </div>
+            </section>
+            {% endif %}
+
+          </div><!-- .note--content -->
+      </article><!-- .note--main -->
+      <div class="responses" id="responses">
+        {% include "partials/webmentions.liquid" %}
+      </div>
+  </div><!-- .note -->
+  </main>
+  {% include "partials/footer.liquid" %}
+  </div><!-- .container -->
+</body>
+
 </html>
