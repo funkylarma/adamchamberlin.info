@@ -43,6 +43,7 @@
             </header>
             {% if category == 'note' %}
             <section class="e-content">
+              {% include "partials/hcard.liquid" %}
               <p class="p-name">
                 {{ title }}
               </p>
@@ -54,6 +55,7 @@
 
             {% if category == 'reply' %}
             <section class="e-content">
+              {% include "partials/hcard.liquid" %}
               <p class="p-name">
                 In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ title }}</a>
               </p>
@@ -65,6 +67,7 @@
 
             {% if category == 'rsvp' %}
             <section class="e-content">
+              {% include "partials/hcard.liquid" %}
               <p class="p-summary">
                 {% if rsvp == 'yes' %}
                 <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a>
@@ -96,6 +99,7 @@
 
             {% if category == 'event' %}
             <section class="e-content">
+              {% include "partials/hcard.liquid" %}
               <p class="p-summary">
                 Signed up for <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
               </p>
@@ -108,7 +112,6 @@
             </section>
             {% endif %}
 
-            {% include "partials/hcard.liquid" %}
 
           </div><!-- .note--content -->
       </article><!-- .note--main -->
