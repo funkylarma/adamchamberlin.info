@@ -72,19 +72,20 @@
                 <data class="p-rsvp" value="{{ rsvp }}"></data>
                 {% if rsvp == 'yes' %}
                 <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a>
-                going to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                going to <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>.
                 {% elsif rsvp == 'no' %}
                 <span class="p-rsvp" value="no">Gutted,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a>
-                can not make it to <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>.
+                can not make it to <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>.
                 {% elsif rsvp == 'maybe' %}
                 <span class="p-rsvp" value="maybe">Hoping,</span> <a href="{{ globals.url }}"
-                  class="p-author h-card">I</a> can make it to <a href="{{ link }}" class="u-in-reply-to">{{ title
+                  class="p-author h-card">I</a> can make it to <a href="{{ link }}" class="u-in-reply-to p-name">{{
+                  title
                   }}</a>.
                 {% elsif rsvp == 'interested' %}
-                <a href="{{ link }}" class="u-in-reply-to">This</a> has <a href="{{ globals.url }}"
+                <a href="{{ link }}" class="u-in-reply-to p-name">This</a> has <a href="{{ globals.url }}"
                   class="p-author h-card">me</a> <span class="p-rsvp" value="interested">intrigued</span>.
                 {% else %}
-                <a href="{{ link }}" class="u-in-reply-to">{{ title }}</a>
+                <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>
                 {% endif %}
               </p>
               <div class="note--copy">

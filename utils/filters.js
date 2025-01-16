@@ -35,6 +35,7 @@ export default {
   },
 
   metaDescription: function (title) {
+
     if (this.page.url) {
       if (this.page.url == '/' || this.page.url.includes('page')) {
         return metadata.description;

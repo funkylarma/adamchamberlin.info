@@ -1,6 +1,5 @@
 .post--list {
   width: 100%;
-  margin-bottom: 5rem;
 
   .page--header {
     max-width: var(--main-layout-width-wide);
@@ -13,7 +12,7 @@
 
     @media (max-width: 550px) {
       padding-bottom: 1rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
       margin-bottom: 2rem;
     }
 
@@ -47,7 +46,6 @@
     max-width: var(--main-layout-width-normal);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5rem;
 
     // Writing
     .post {
@@ -68,6 +66,8 @@
         border-bottom-left-radius: 5px;
         border-top-right-radius: 5px;
         border-top-left-radius: 25px;
+        margin-bottom: 2rem;
+        ;
       }
 
       &.cover {
@@ -102,7 +102,8 @@
         }
 
         img[width][height] {
-          height: auto; /* Preserve aspect ratio */
+          height: auto;
+          /* Preserve aspect ratio */
         }
       }
 
