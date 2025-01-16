@@ -8,6 +8,4 @@ tags:
 - IndieWeb
 ---
 
-It is the first day back at work so depending on how the backlog clears I'm hoping to make my second #IndieWeb meetup
-
-
+Unfortunately, could not make the first one of the year but going to find a way to attend.
