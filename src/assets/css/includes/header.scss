@@ -7,6 +7,10 @@
   padding: 1rem;
   background: var(--main-color-background);
   background: linear-gradient(180deg, var(--main-color-background) 30%, rgba(0, 0, 0, 0) 90%);
+
+  @media screen and (max-width: 900px) {
+    background-color: var(--main-color-background);
+  }
 }
 
 .trigger {

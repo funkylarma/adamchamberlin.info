@@ -78,13 +78,3 @@ This is a list of the 'stuff' I use on a day-to-day basis.
 
 ![Office Setup](/images/pages/IMG_1225.jpg 'Office setup')
 I'm not one for sitting down, so at home and work I have a standing desk. If I do need to take a seat, then I fall back to a Swiss ball.
-
-<div class="page--related">
-
-Related Pages{.h3}
-
-- [/now](/now/) — Learn about what I'm up to now
-- [/about](/about/) — Learn about me
-- [/colophon](/colophon/) — Learn more about the site
-
-</div>

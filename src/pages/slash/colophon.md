@@ -20,13 +20,3 @@ As family and life developed, the site was neglected and to cut out hosting, I m
 2023 saw me decide to take back my data, and so I exported all my legacy posts into Markdown documents and stored them locally with a plan to host them again, some day.
 
 adamchamberlin.info was put into place in 2024 and all the original content was redirected to the new domain name. Google Search Console helped migrate any search index results.
-
-<div class="page--related">
-
-Related Pages{.h3}
-
-- [uses](/uses/) — Learn about my setup
-- [about](/about/) — Learn about me
-- [now](/now/) — Learn about what I'm up to now
-
-</div>

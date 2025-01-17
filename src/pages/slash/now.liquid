@@ -5,10 +5,11 @@ description: This is my now page, a page that has an overview of my current life
 updated: 2025-01-05
 eleventyComputed:
   subhead: "Updated: {{ updated | dateReadable }}"
-permalink: "/now/"
+  permalink: "/now/"
 ---
 <p>
-  This is a <a href="https://nownownow.com/about"><em>now</em></a> page, you can read more about me on the <a href="/about/"><em>about</em></a> page or view the online <a href="/activity/"><em>activity</em></a>.
+  This is a <a href="https://nownownow.com/about"><em>now</em></a> page, you can read more about me on the <a
+    href="/about/"><em>about</em></a> page or view the online <a href="/activity/"><em>activity</em></a>.
 </p>
 
 <p>
@@ -19,7 +20,8 @@ permalink: "/now/"
 <p>
 <ul>
   <li>Living in Hadleigh Suffolk with Lucy and two children; Jack and Maia.</li>
-  <li>Head of Development at <a href="https://mackman.co.uk" rel="noopener">Mackman Branding and Marketing Agency</a>.</li>
+  <li>Head of Development at <a href="https://mackman.co.uk" rel="noopener">Mackman Branding and Marketing Agency</a>.
+  </li>
   <li>Enjoying running and cycling with a view to get back into some form of competition in 2025.</li>
   <li>Looking towards 2025 and a return to cycle training.</li>
 </ul>
@@ -27,10 +29,10 @@ permalink: "/now/"
 
 <h2>Current Focus</h2>
 <p>
-  <ul>
-    <li>Training for the <a href="/2025/1/2025-fred-writton/">Fred Whitton Challenge</a>.</li>
-    <li>Continue developing this site with <a href="https://indieweb.org/principles">principles</a> in mind.</li>
-  </ul>
+<ul>
+  <li>Training for the <a href="/2025/1/2025-fred-writton/">Fred Whitton Challenge</a>.</li>
+  <li>Continue developing this site with <a href="https://indieweb.org/principles">principles</a> in mind.</li>
+</ul>
 </p>
 
 <h2>Currently Reading</h2>
@@ -44,7 +46,7 @@ permalink: "/now/"
       </a>
       by {{ book.data.author }}
     </div>
-    <time class="postlist-date dt-published" datetime="{{ book.date | dateHtmlString }}"/>
+    <time class="postlist-date dt-published" datetime="{{ book.date | dateHtmlString }}" />
   </li>
   {% endfor %}
 </ul>
@@ -55,11 +57,12 @@ permalink: "/now/"
   <li class="listen h-entry hentry">
     <div class="p-name">
       {% assetIcon "headphones" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ track.url }}" title="Listened on {{ track.date | dateLongDate }}">
+      <a class="post-link u-url" rel="bookmark" href="{{ track.url }}"
+        title="Listened on {{ track.date | dateLongDate }}">
         {{ track.data.title }}
       </a>
       by {{ track.data.artist }}
-      <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}"/>
+      <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}" />
     </div>
   </li>
   {% endfor %}
@@ -72,21 +75,13 @@ permalink: "/now/"
   <li class="movie h-entry hentry">
     <div class="p-name">
       {% assetIcon "movie" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ movies.url }}" title="Watched on {{ movies.date | dateLongDate }}">
+      <a class="post-link u-url" rel="bookmark" href="{{ movies.url }}"
+        title="Watched on {{ movies.date | dateLongDate }}">
         {{ movies.data.title }}
       </a>
     </div>
-    <time class="postlist-date dt-published" datetime="{{ movies.date | dateHtmlString }}"/>
+    <time class="postlist-date dt-published" datetime="{{ movies.date | dateHtmlString }}" />
   </li>
   {% endfor %}
 </ul>
 <p class="small">View more <a href="/movies/">watches</a></p>
-
-<div class="page--related">
-<p class="h3">Related Pages</p>
-<ul>
-  <li><a href="/about/">about</a> - Learn about me.</li>
-  <li><a href="/colophon/">colophon</a> - Learn more about the site.</li>
-  <li><a href="/uses/">uses</a> - Learn about my setup..</li>
-</ul>
-</div>

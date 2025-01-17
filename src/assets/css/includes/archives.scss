@@ -114,6 +114,10 @@
         top: 1rem;
         align-self: flex-start;
 
+        @media screen and (max-width: 900px) {
+          top: 3rem;
+        }
+
         h2 {
           font-size: var(--main-font-size-large);
         }
@@ -131,6 +135,10 @@
         position: sticky;
         top: 1rem;
         z-index: 999;
+
+        @media screen and (max-width: 900px) {
+          top: 3rem;
+        }
 
         h3 {
           font-size: var(--main-font-size-large);

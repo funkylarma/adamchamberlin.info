@@ -12,13 +12,3 @@ Welcome to my online playground and sandbox of ideas and musings.{.h3}
 I am the head of development at [Mackman Group](https://mackman.co.uk) and have been tinkering with computers for longer than I can remember.
 
 This site has been in development since 2008 and has seen many versions and setups.
-
-<div class="page--related">
-
-Related Pages{.h3}
-
-- [colophon](/colophon/) — Learn more about the site
-- [uses](/uses/) — Learn about my setup
-- [now](/now/) — Learn about what I'm up to now
-
-</div>

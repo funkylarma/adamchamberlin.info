@@ -29,6 +29,13 @@
 
       .note--tags {
         margin-bottom: 0.5rem;
+
+        a {
+          &:hover {
+            color: var(--main-color-quaternary);
+            text-decoration: none;
+          }
+        }
       }
 
     }

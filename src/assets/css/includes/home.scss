@@ -237,12 +237,12 @@
 
     @media screen and (max-width: 700px) {
       grid-column: 1 / span 1;
-      grid-row: 4;
+      grid-row: 3;
     }
 
     @media screen and (max-width: 400px) {
       grid-column: 1 / span 1;
-      grid-row: 5;
+      grid-row: 4;
     }
 
     h2 {
@@ -256,6 +256,15 @@
         font-size: var(--main-font-size-x-small);
         display: block;
       }
+
+      a.post-link {
+        font-size: var(--main-font-size-medium);
+
+        &:hover {
+          text-decoration: none;
+          color: var(--main-color-tertiary);
+        }
+      }
     }
   }
 
@@ -268,13 +277,13 @@
     }
 
     @media screen and (max-width: 700px) {
-      grid-column: 2 / span 1;
-      grid-row: 4;
+      grid-column: 3 / span 1;
+      grid-row: 3;
     }
 
     @media screen and (max-width: 400px) {
       grid-column: 2 / span 1;
-      grid-row: 5;
+      grid-row: 4;
     }
 
     h2 {
@@ -301,12 +310,12 @@
 
     @media screen and (max-width: 700px) {
       grid-column: 1 / span 3;
-      grid-row: 3;
+      grid-row: 4;
     }
 
     @media screen and (max-width: 400px) {
       grid-column: 1 / span 2;
-      grid-row: 4;
+      grid-row: 6;
     }
 
     h2 {
@@ -332,13 +341,13 @@
     }
 
     @media screen and (max-width: 700px) {
-      grid-column: 3 / span 1;
-      grid-row: 4;
+      grid-column: 2 / span 1;
+      grid-row: 3;
     }
 
     @media screen and (max-width: 400px) {
       grid-column: 1 / span 2;
-      grid-row: 6;
+      grid-row: 5;
     }
 
     h2 {
