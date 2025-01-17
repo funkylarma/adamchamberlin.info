@@ -1,23 +1,27 @@
-import { Octokit } from '@octokit/rest';
+/** @format */
+
+import { Octokit } from "@octokit/rest";
 
 // Post context
 export async function onRequestPost(context) {
   // Get the body contents
-  const data = await context.request.json();
+  const request = await context.request.json();
 
   // Check we have an h-entry element
-  if (data.type == 'h-entry') {
+  if (request.type == "h-entry") {
     // Get the entry properties
-    const entry = data.properties;
+    const entry = request.properties;
 
     // Check if we have a category
     if (entry.category != null) {
       // if we only have one category
       if (entry.category.length == 1) {
         // Check is is a single checkin
-        if (entry.category[0] === 'checkin') {
+        if (entry.category[0] === "checkin") {
           // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
-          const octokit = new Octokit({ auth: context.env.GITHUB_ACCESS_TOKEN });
+          const octokit = new Octokit({
+            auth: context.env.GITHUB_ACCESS_TOKEN,
+          });
 
           // Grab the checkin details
           const checkin = entry.checkin[0];
@@ -32,55 +36,60 @@ export async function onRequestPost(context) {
           const lng = checkin.properties.longitude[0];
           const url = checkin.properties.url[0];
           const filename = new Date().valueOf();
-          const path = '/src/notes/checkins/';
+          const path = "/src/notes/checkins/";
 
           if (entry.content[0] !== undefined) {
           }
 
           var fileContent = [];
 
-          fileContent.push('---');
-          fileContent.push('date: ' + date);
-          fileContent.push('title: ' + title);
-          fileContent.push('latitude: ' + lat);
-          fileContent.push('longitude: ' + lng);
-          fileContent.push('url: ' + url);
-          fileContent.push('category: checkin');
-          fileContent.push('---');
+          fileContent.push("---");
+          fileContent.push("date: " + date);
+          fileContent.push("title: " + title);
+          fileContent.push("latitude: " + lat);
+          fileContent.push("longitude: " + lng);
+          fileContent.push("url: " + url);
+          fileContent.push("category: checkin");
+          fileContent.push("---");
 
           // If we have a checkin post
           if (entry.content[0] !== undefined) {
-            fileContent.push('');
+            fileContent.push("");
             fileContent.push(entry.content[0]);
           }
 
           // If we have a checkin photo
           if (entry.photo[0] !== undefined) {
-            fileContent.push('');
-            fileContent.push('<img src="' + entry.photo[0] + '" alt="Checkin Photo" />');
+            fileContent.push("");
+            fileContent.push(
+              '<img src="' + entry.photo[0] + '" alt="Checkin Photo" />'
+            );
           }
 
-          const contents = fileContent.join('\n').toString('base64');
+          const contents = fileContent.join("\n").toString("base64");
 
-          const {
-            updated,
-            data: { commit },
-          } = await octokit.repos.createOrUpdateFileContents({
-            owner: 'funkylarma',
-            repo: 'adamchamberlin.info',
-            path: 'src/notes/checkins/' + filename + '.md',
-            content: btoa(contents),
-            message: 'Import checkin from Swarm: ' + filename,
-          });
+          // const {
+          //   updated,
+          //   data: { commit },
+          // } = await octokit.repos.createOrUpdateFileContents({
+          //   owner: 'funkylarma',
+          //   repo: 'adamchamberlin.info',
+          //   path: 'src/notes/checkins/' + filename + '.md',
+          //   content: btoa(contents),
+          //   message: 'Import checkin from Swarm: ' + filename,
+          // });
 
           return Response.json(
-            { message: 'Imported Swarm activity' },
-            { status: 201, headers: { Location: 'https://adamchamberlin.info' } }
+            { message: "Imported Swarm activity" },
+            {
+              status: 201,
+              headers: { Location: "https://adamchamberlin.info" },
+            }
           );
         } else {
           return Response.json(
             {
-              message: 'No entry method found for this category',
+              message: "No entry method found for this category",
             },
             {
               status: 400,
@@ -99,13 +108,13 @@ export async function onRequestPost(context) {
     if (entry.content != null) {
       return Response.json(
         { message: entry.content },
-        { status: 201, headers: { Location: 'https://adamchamberlin.info' } }
+        { status: 201, headers: { Location: "https://adamchamberlin.info" } }
       );
     }
 
     return Response.json(
       {
-        message: 'No entry method found',
+        message: "No entry method found",
       },
       {
         status: 400,
@@ -114,11 +123,13 @@ export async function onRequestPost(context) {
   } else {
     return Response.json(
       {
-        message: 'Not a valid micropub post, missing h-entry element',
+        message: "Not a valid micropub post, missing h-entry element",
       },
       { status: 400 }
     );
   }
+
+  function processCheckin(request) {}
 
   return responseObj;
 }
@@ -127,7 +138,7 @@ export async function onRequestPost(context) {
 export async function onRequest(context) {
   return Response.json(
     {
-      message: 'Hello Micropub world',
+      message: "Hello Micropub world",
     },
     { status: 200 }
   );

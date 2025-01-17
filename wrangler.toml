@@ -1,2 +1,12 @@
+# Top-level configuration
+name = "micropub"
+main = "functions/micropub.js"
 compatibility_date = "2024-12-05"
 compatibility_flags = [ "nodejs_compat" ]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[observability.logs]
+invocation_logs = false
