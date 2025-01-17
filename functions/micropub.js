@@ -12,10 +12,14 @@ export async function onRequestPost(context) {
     // Get the entry properties
     const entry = request.properties;
 
+    console.log("Request properties: ");
+    console.log(entry);
+
     // Check if we have a category
     if (entry.category != null) {
       // if we only have one category
       if (entry.category.length == 1) {
+        console.log("There is only one category");
         // Check is is a single checkin
         if (entry.category[0] === "checkin") {
           // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
