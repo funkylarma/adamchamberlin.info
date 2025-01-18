@@ -36,7 +36,7 @@
                 <div class="post--tags">
                   <span>Tagged: </span>
                   {%- for tag in tags -%}
-                    {% if tag != 'article' %}
+                    {% if tag != 'article' and tag != 'note' and tag != 'video' %}
                       <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
                         {{ tag }}
                       </a>

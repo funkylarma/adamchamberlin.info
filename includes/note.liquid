@@ -8,12 +8,17 @@
 
 <body>
   <a href="#skip" class="skip-link">Skip to main content</a>
+
   <div class="hfeed h-feed layout" role="document">
+
     {% include "partials/header.liquid" %}
+
     <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-      <article class="hentry h-entry note--single{% if category %} {{ category}}{% endif %}">
+
+      <article class="hentry h-entry note--single{% if category %} {{ category }}{% endif %}">
         <div class="note--main">
           <div class="note--content">
+
             <header>
               <div class="note--date">
                 <h1>
@@ -30,7 +35,7 @@
                 <div class="note--tags">
                   <span>Tagged: </span>
                   {%- for tag in tags -%}
-                  {% if tag != 'note' %}
+                  {% if tag != 'note' and tag != 'signup' %}
                   <a class="p-category" href="/tagged/{{ tag | slugify }}/"
                     title="Browse other posts tagged with {{ tag }}">
                     {{ tag }}
@@ -41,13 +46,14 @@
                 {% endif %}
               </div><!-- .post-meta -->
             </header>
+
             {% if category == 'note' %}
             {% include "partials/hcard.liquid" %}
             <section class="e-content">
               <p class="p-name">
                 {{ title }}
               </p>
-              <div class="note--copy">
+              <div class="note--copy p-content">
                 {{ content }}
               </div>
             </section>
@@ -59,7 +65,7 @@
               <p class="p-name">
                 In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ title }}</a>
               </p>
-              <div class="note--copy">
+              <div class="note--copy p-content">
                 {{ content }}
               </div>
             </section>
@@ -88,7 +94,7 @@
                 <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>
                 {% endif %}
               </p>
-              <div class="note--copy">
+              <div class="note--copy p-content">
                 {{ content }}
               </div>
             </section>
@@ -97,7 +103,6 @@
             {% if category == 'videography' %}
 
             {% endif %}
-
 
             {% if category == 'signup' %}
             {% include "partials/hcard.liquid" %}
@@ -108,22 +113,26 @@
               <p>
                 Date: <time class="dt-start" datetime="{{ start | dateHtmlString }}">{{ start | dateLongDate }}</time>
               </p>
-              <div class="note--copy">
+              <div class="note--copy p-content">
                 {{ content }}
               </div>
             </section>
             {% endif %}
 
-
           </div><!-- .note--content -->
+        </div><!-- .note--main -->
       </article><!-- .note--main -->
+
       <div class="responses" id="responses">
         {% include "partials/webmentions.liquid" %}
       </div>
-  </div><!-- .note -->
-  </main>
-  {% include "partials/footer.liquid" %}
+
+    </main>
+
+    {% include "partials/footer.liquid" %}
+
   </div><!-- .container -->
+
 </body>
 
 </html>

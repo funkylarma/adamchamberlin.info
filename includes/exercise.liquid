@@ -1,117 +1,147 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
   <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
-  <head>
-    {% include "partials/head.liquid" %}
-  </head>
-  <body>
-    <a href="#skip" class="skip-link">Skip to main content</a>
-    <div class="hfeed h-feed layout" role="document">
-      {% include "partials/header.liquid" %}
-      <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-        <div class="hentry h-entry note--single">
-          {% include "partials/hcard.liquid" %}
-          <div class="note--main">
-            <div class="note--content {% if category %}{{ category}}{% endif %}">
-              <div class="note--meta">
-                <div class="note--date">
-                  <h1>
-                    {% assetIcon "calendar" %}
-                    <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+
+<head>
+  {% include "partials/head.liquid" %}
+</head>
+
+<body>
+
+  <a href="#skip" class="skip-link">Skip to main content</a>
+
+  <div class="hfeed h-feed layout" role="document">
+
+    {% include "partials/header.liquid" %}
+
+    <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+
+      <article class="hentry h-entry note--single{% if category %} {{ category }}{% endif %}">
+        <div class="note--main">
+          <div class="note--content">
+
+            <header>
+              <div class="note--date">
+                <h1>
+                  {% assetIcon "calendar" %}
+                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+                    <a href="{{ page.url }}" class="u-url">
                       {{ page.date | dateLongDate }}
-                    </time>
-                  </h1>
-                </div><!-- .post--date -->
+                    </a>
+                  </time>
+                </h1>
+              </div><!-- .post--date -->
+              <div class="note--meta">
                 {% if tags.length > 1 %}
-                  <div class="note--tags">
-                    <span>Tagged: </span>
-                    {%- for tag in tags -%}
-                      {% if tag != 'note' %}
-                        <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
-                          {{ tag }}
-                        </a>
-                      {% endif %}
-                    {%- endfor -%}
-                  </div><!-- .post--tags -->
+                <div class="note--tags">
+                  <span>Tagged: </span>
+                  {%- for tag in tags -%}
+                  {% if tag != 'note' and tag != 'exercise' and tag != 'race' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/"
+                    title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                  {% endif %}
+                  {%- endfor -%}
+                </div><!-- .post--tags -->
                 {% endif %}
               </div><!-- .post-meta -->
+            </header>
+
+            {% include "partials/hcard.liquid" %}
+            <section class="e-content">
               <p class="p-name">
                 Went {{ sport }}.
               </p>
               <div id="map"></div>
-              <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" rel="stylesheet">
-              <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js"></script>
-              <script>
-                // Load the api key
-              mapboxgl.accessToken = "{{ keys.mapBox }}";
-
-              let mapStyle = 'mapbox://styles/mapbox/light-v11';
-              if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                mapStyle = 'mapbox://styles/mapbox/dark-v11';
-              }
-
-              // Create instance of a map
-              const map = new mapboxgl.Map({
-                container: 'map', // container ID
-                style: mapStyle,
-                  center: [{{ startLongitude }}, {{ startLatitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                  zoom: 16 // starting zoom
-                });
-
-                // Add some controls
-                const nav = new mapboxgl.NavigationControl();
-                map.addControl(nav, 'top-left');
-                map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
-
-                // Add start and end markers
-                new mapboxgl.Marker({color: "#36d02f"}).setLngLat([{{ startLongitude }}, {{ startLatitude }}]).addTo(map);
-                new mapboxgl.Marker({color: "#c92fd0"}).setLngLat([{{ endLongitude }}, {{ endLatitude }}]).addTo(map);
-
-                // On map load
-                map.on('load', () => {
-
-                  map.fitBounds([
-                    [{{ startLongitude }}, {{ startLatitude }}], // [lng, lat] - southwestern corner of the bounds
-                    [{{ endLongitude }}, {{ endLatitude }}] // [lng, lat] - northeastern corner of the bounds
-                  ]);
-
-                  // Load the geojson
-                  map.addSource('route', {
-                    type: 'geojson',
-                    data: '{{ geojson | url }}'
-                  });
-
-                  // Add geojson as layer
-                  map.addLayer({
-                    'id': 'route',
-                    'type': 'line',
-                    'source': 'route',
-                    'layout': {
-                      'line-join': 'round',
-                      'line-cap': 'round'
-                    },
-                    'paint': {
-                      'line-color': '#2f87d0',
-                      'line-width': 8,
-                      'line-blur': 2
-                    }
-                  });
-              });
-              //map.resize();
-              </script>
-              <div class="p-content">
+              <div class="note--copy p-content">
                 {{ content }}
               </div>
-            </div><!-- .note--content -->
-            <div class="note--foter">
-            </div><!-- .note--footer -->
-          </div><!-- .note--main -->
-          <div class="responses" id="responses">
-            {% include "partials/webmentions.liquid" %}
-          </div>
-        </div><!-- .note -->
-      </main>
-      {% include "partials/footer.liquid" %}
-    </div><!-- .container -->
-  </body>
+            </section>
+
+            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
+              crossorigin="anonymous">
+            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
+              onload="this.media='all'" fetchpriority="low">
+            <noscript>
+              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
+            </noscript>
+            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
+            <script type="application/ld+json">
+              window.addEventListener('load', (event) => {
+              // Load the api key
+            mapboxgl.accessToken = "{{ keys.mapBox }}";
+
+            let mapStyle = 'mapbox://styles/mapbox/light-v11';
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              mapStyle = 'mapbox://styles/mapbox/dark-v11';
+            }
+
+            // Create instance of a map
+            const map = new mapboxgl.Map({
+              container: 'map', // container ID
+              style: mapStyle,
+                center: [{{ startLongitude }}, {{ startLatitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                zoom: 16 // starting zoom
+              });
+
+              // Add some controls
+              const nav = new mapboxgl.NavigationControl();
+              map.addControl(nav, 'top-left');
+              map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+
+              // Add start and end markers
+              new mapboxgl.Marker({color: "#36d02f"}).setLngLat([{{ startLongitude }}, {{ startLatitude }}]).addTo(map);
+              new mapboxgl.Marker({color: "#c92fd0"}).setLngLat([{{ endLongitude }}, {{ endLatitude }}]).addTo(map);
+
+              // On map load
+              map.on('load', () => {
+
+                map.fitBounds([
+                  [{{ startLongitude }}, {{ startLatitude }}], // [lng, lat] - southwestern corner of the bounds
+                  [{{ endLongitude }}, {{ endLatitude }}] // [lng, lat] - northeastern corner of the bounds
+                ]);
+
+                // Load the geojson
+                map.addSource('route', {
+                  type: 'geojson',
+                  data: '{{ geojson | url }}'
+                });
+
+                // Add geojson as layer
+                map.addLayer({
+                  'id': 'route',
+                  'type': 'line',
+                  'source': 'route',
+                  'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                  },
+                  'paint': {
+                    'line-color': '#2f87d0',
+                    'line-width': 8,
+                    'line-blur': 2
+                  }
+                });
+            });
+            //map.resize();
+            });
+            </script>
+
+          </div><!-- .note--content -->
+        </div><!-- .note--main -->
+      </article><!-- .note--main -->
+
+      <div class="responses" id="responses">
+        {% include "partials/webmentions.liquid" %}
+      </div>
+
+    </main>
+
+    {% include "partials/footer.liquid" %}
+
+  </div><!-- .container -->
+
+</body>
+
 </html>

@@ -7,97 +7,133 @@
 </head>
 
 <body>
+
   <a href="#skip" class="skip-link">Skip to main content</a>
-  <div class="hfeed layout" role="document">
+
+  <div class="hfeed h-feed layout" role="document">
+
     {% include "partials/header.liquid" %}
+
     <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-      <div class="h-entry note--single checkin">
-        {% include "partials/hcard.liquid" %}
+
+      <article class="h-entry note--single checkin">
         <div class="note--main">
-          <div class="note--content e-content">
-            <div class="note--meta">
+          <div class="note--content">
+
+            <header>
               <div class="note--date">
-                {% assetIcon "calendar" %}
-                <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">{{ page.date | dateLongDate
-                  }}</time>
+                <h1>
+                  {% assetIcon "calendar" %}
+                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+                    <a href="{{ page.url }}" class="u-url">
+                      {{ page.date | dateLongDate }}
+                    </a>
+                  </time>
+                </h1>
               </div><!-- .post--date -->
-            </div><!-- .post-meta -->
-            <div itemscope itemtype="https://schema.org/Place">
-              <h1 class="post--title p-name checkin" itemprop="name">
+              <div class="note--meta">
+                {% if tags.length > 1 %}
+                <div class="note--tags">
+                  <span>Tagged: </span>
+                  {%- for tag in tags -%}
+                  {% if tag != 'note' and tag != 'checkin' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/"
+                    title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }}
+                  </a>
+                  {% endif %}
+                  {%- endfor -%}
+                </div><!-- .post--tags -->
+                {% endif %}
+              </div><!-- .post-meta -->
+            </header>
+
+            {% include "partials/hcard.liquid" %}
+
+            <section class="e-content" itemscope itemtype="https://schema.org/Place">
+              <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                <meta itemprop="latitude" content="{{ latitude }}" />
+                <meta itemprop="longitude" content="{{ longitude }}" />
+              </div>
+              <p class="p-name" itemprop="name">
                 Checked in at:
                 {% if url %}
                 <a href="{{ url }}">{{ title }}</a>
                 {% else %}
                 {{ title }}
                 {% endif %}
-              </h1>
-              <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
-                <meta itemprop="latitude" content="{{ latitude }}" />
-                <meta itemprop="longitude" content="{{ longitude }}" />
+              </p>
+              <div id="map"></div>
+              <div class="note--copy p-content">
+                {{ content }}
               </div>
-            </div>
-            <div id="map"></div>
-            <div class="p-content">
-              {{ content }}
-            </div>
-          </div><!-- .post--content -->
-          <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
-            crossorigin="anonymous">
-          <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
-            onload="this.media='all'" fetchpriority="low">
-          <noscript>
-            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
-          </noscript>
-          <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
-          <script>
-            window.addEventListener('load', (event) => {
-              // Load the api key
-              mapboxgl.accessToken = "{{ keys.mapBox }}";
+            </section>
 
-              let mapStyle = 'mapbox://styles/mapbox/light-v11';
-              if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                mapStyle = 'mapbox://styles/mapbox/dark-v11';
-              }
+            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
+              crossorigin="anonymous">
+            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
+              onload="this.media='all'" fetchpriority="low">
+            <noscript>
+              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
+            </noscript>
+            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
+            <script>
+              window.addEventListener('load', (event) => {
+                // Load the api key
+                mapboxgl.accessToken = "{{ keys.mapBox }}";
 
-              // Create instance of a map
-              const map = new mapboxgl.Map({
-                container: 'map', // container ID
-                style: mapStyle,
-                center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-              zoom: 16 // starting zoom
+                let mapStyle = 'mapbox://styles/mapbox/light-v11';
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  mapStyle = 'mapbox://styles/mapbox/dark-v11';
+                }
+
+                // Create instance of a map
+                const map = new mapboxgl.Map({
+                  container: 'map', // container ID
+                  style: mapStyle,
+                  center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                zoom: 16 // starting zoom
+                });
+
+              // Add some controls
+              const nav = new mapboxgl.NavigationControl();
+              map.addControl(nav, 'top-left');
+              map.addControl(new mapboxgl.FullscreenControl({ container: document.querySelector('map') }));
+
+              // Drop the pin
+              new mapboxgl.Marker({ color: "#36d02f" }).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
+
+              map.resize();
               });
-
-            // Add some controls
-            const nav = new mapboxgl.NavigationControl();
-            map.addControl(nav, 'top-left');
-            map.addControl(new mapboxgl.FullscreenControl({ container: document.querySelector('map') }));
-
-            // Drop the pin
-            new mapboxgl.Marker({ color: "#36d02f" }).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
-
-            map.resize();
-            });
-          </script>
-          <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "Place",
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "{{ latitude }}",
-                "longitude": "{{ longitude }}"
-              },
-              "name": "{{ title }}"
-            }
-          };
             </script>
+            <script type="application/ld+json">
+              {
+                "@context": "https://schema.org",
+                "@type": "Place",
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "{{ latitude }}",
+                  "longitude": "{{ longitude }}"
+                },
+                "name": "{{ title }}"
+              }
+            };
+            </script>
+
+          </div><!-- .note--content -->
         </div><!-- .note--main -->
-        <div class="note--foter">
-        </div><!-- .note--footer -->
-      </div><!-- .note -->
+      </article><!-- .note--main -->
+
+      <div class="responses" id="responses">
+        {% include "partials/webmentions.liquid" %}
+      </div>
+
     </main>
+
     {% include "partials/footer.liquid" %}
+
   </div><!-- .container -->
+
 </body>
 
 </html>
