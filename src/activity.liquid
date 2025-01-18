@@ -63,9 +63,9 @@ eleventyComputed:
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
-    
-    {% elsif post.data.category == 'event' %}
-      <li class="event h-entry hentry">
+
+    {% elsif post.data.category == 'signup' %}
+      <li class="signup h-entry hentry">
         <h2 class="p-name">
           {% assetIcon "calendar" %}
           Signed up for -
@@ -75,7 +75,7 @@ eleventyComputed:
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
-    
+
     {% elsif post.data.category == 'exercise' %}
       <li class="exercise h-entry hentry">
         <h2 class="p-name">
@@ -87,7 +87,7 @@ eleventyComputed:
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
-    
+
     {% elsif post.data.category == 'race' %}
       <li class="race h-entry hentry">
         <h2 class="p-name">
@@ -99,7 +99,7 @@ eleventyComputed:
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
-    
+
     {% elsif post.data.category == 'bookmark' %}
       <li class="bookmark h-entry hentry">
         <h2 class="p-name">
@@ -111,7 +111,7 @@ eleventyComputed:
         </h2>
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
       </li>
-    
+
     {% elsif post.data.category == 'jam' %}
       <li class="jam h-entry hentry">
         <h2 class="p-name">

@@ -116,7 +116,7 @@ permalink: /
     {% for post in collections.homePage.activityList %}
     <li class="h-entry hentry">
       <div>
-        {% if post.data.category == 'event' %}
+        {% if post.data.category == 'signup' %}
         {% assetIcon "calendar" %}
         Signed up for -
         {% elsif post.data.category == 'rsvp' %}

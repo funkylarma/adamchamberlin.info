@@ -45,7 +45,7 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif  category == "note" %}
+{% elsif category == "note" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
@@ -76,7 +76,7 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif  category == "videography" %}
+{% elsif category == "videography" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
@@ -107,7 +107,7 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif  category == "photography" %}
+{% elsif category == "photography" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
@@ -138,7 +138,7 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif  category == "exercise" %}
+{% elsif category == "exercise" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
@@ -169,7 +169,7 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif  category == "race" %}
+{% elsif category == "race" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
@@ -293,11 +293,11 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif category == "event" %}
+{% elsif category == "signup" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
-      {% for year in collections.eventArchive %}
+      {% for year in collections.signupArchive %}
       <li class="archive--years">
         <div class="archive--year">
           <h2 id="{{ year.title }}">{{ year.title }}</h2>

@@ -1,3 +1,5 @@
+/** @format */
+
 .note--single {
   position: relative;
 
@@ -20,7 +22,6 @@
           color: var(--main-color-quaternary);
         }
 
-
         h1 {
           font-size: var(--main-font-size-small);
           font-weight: 300;
@@ -37,7 +38,6 @@
           }
         }
       }
-
     }
   }
 
@@ -52,6 +52,13 @@
 
   &.note {
     .p-name {
+      font-size: var(--main-font-size-xx-large);
+      color: var(--main-color-primary);
+    }
+  }
+
+  &.signup {
+    .p-summary {
       font-size: var(--main-font-size-xx-large);
       color: var(--main-color-primary);
     }
@@ -82,7 +89,6 @@
       color: var(--main-color-primary);
       font-weight: 300;
     }
-
 
     .p-content {
       max-width: var(--main-layout-width-normal);

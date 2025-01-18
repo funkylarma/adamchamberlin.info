@@ -1,4 +1,6 @@
-import { DateTime } from 'luxon';
+/** @format */
+
+import { DateTime } from "luxon";
 
 export default {
   eleventyComputed: {
@@ -7,13 +9,16 @@ export default {
       const d = new Date(data.page.date);
       const year = d.getFullYear();
       const month = d.getMonth() + 1;
-      return `/${year}/${month}/${data.page.filePathStem.replace('/notes/events', '/')}/`;
+      return `/${year}/${month}/${data.page.filePathStem.replace(
+        "/notes/signups",
+        "/"
+      )}/`;
     },
   },
 
   // Set the tag for collections
-  tags: ['note', 'event'],
+  tags: ["note", "signup"],
 
   // What layout to use
-  layout: 'note.liquid',
+  layout: "note.liquid",
 };

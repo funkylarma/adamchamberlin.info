@@ -1,3 +1,5 @@
+/** @format */
+
 import fs from 'node:fs';
 import _ from 'lodash';
 import writingStats from 'writing-stats';
@@ -43,7 +45,10 @@ function makeYearStats(
   yearCharacterCount,
   yearParagraphCount
 ) {
-  const daysInYear = (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0 ? 366 : 365;
+  const daysInYear =
+    (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0
+      ? 366
+      : 365;
 
   return {
     year: currentYear,
@@ -52,9 +57,15 @@ function makeYearStats(
     wordCount: yearWordCount,
     codeBlockCount: yearCodeBlockCount,
     avgDays: parseFloat(avgDays.toFixed(2)),
-    avgCharacterCount: parseFloat((yearCharacterCount / yearPostCount).toFixed(2)),
-    avgCodeBlockCount: parseFloat((yearCodeBlockCount / yearPostCount).toFixed(2)),
-    avgParagraphCount: parseFloat((yearParagraphCount / yearPostCount).toFixed(2)),
+    avgCharacterCount: parseFloat(
+      (yearCharacterCount / yearPostCount).toFixed(2)
+    ),
+    avgCodeBlockCount: parseFloat(
+      (yearCodeBlockCount / yearPostCount).toFixed(2)
+    ),
+    avgParagraphCount: parseFloat(
+      (yearParagraphCount / yearPostCount).toFixed(2)
+    ),
     avgWordCount: parseFloat((yearWordCount / yearPostCount).toFixed(2)),
   };
 }
@@ -65,7 +76,10 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
+        if (
+          item.data.tags.includes('article') ||
+          item.data.tags.includes('note')
+        ) {
           return item;
         }
         // console.log(item.data.tags);
@@ -109,7 +123,6 @@ export default {
   },
 
   homePage: function (collection) {
-
     const allContent = collection.getAll().sort(function (a, b) {
       return b.date - a.date; // sort by date - descending
     });
@@ -153,7 +166,12 @@ export default {
     const activity = allContent
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category !== 'article' && item.data.category !== 'note' && item.data.category !== 'reply' && item.data.category !== 'checkin') {
+        if (
+          item.data.category !== 'article' &&
+          item.data.category !== 'note' &&
+          item.data.category !== 'reply' &&
+          item.data.category !== 'checkin'
+        ) {
           return item;
         }
       })
@@ -185,7 +203,10 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
+        if (
+          item.data.tags.includes('article') ||
+          item.data.tags.includes('note')
+        ) {
           return item;
         }
       })
@@ -194,7 +215,12 @@ export default {
       });
 
     // Merge all content
-    let allContent = [...localContent, ...letterboxdContent, ...lastfmContent, ...mastodonContent];
+    let allContent = [
+      ...localContent,
+      ...letterboxdContent,
+      ...lastfmContent,
+      ...mastodonContent,
+    ];
 
     let sortedContent = allContent.sort(function (a, b) {
       return a.date - b.date;
@@ -230,7 +256,10 @@ export default {
       .forEach((item) => {
         if (!item.data.tags) return;
         item.data.tags
-          .filter((tag) => !['page', 'article', 'note', 'checkin', 'all'].includes(tag))
+          .filter(
+            (tag) =>
+              !['page', 'article', 'note', 'checkin', 'all'].includes(tag)
+          )
           .forEach((tag) => {
             if (!tagsSet[tag]) {
               tagsSet[tag] = [];
@@ -345,7 +374,10 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
+        if (
+          item.data.tags.includes('article') ||
+          item.data.tags.includes('note')
+        ) {
           return item;
         }
         // console.log(item.data.tags);
@@ -687,7 +719,7 @@ export default {
     );
   },
 
-  eventArchive: function (collection) {
+  signupArchive: function (collection) {
     // Create a return output
     let output = [];
 
@@ -696,7 +728,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes('event')) {
+        if (item.data.category.includes('signup')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1294,7 +1326,9 @@ export default {
 
     for (let post of posts) {
       let postDate = post.data.page.date;
-      let dateIndexKey = `${moment(postDate).year()}-${moment(postDate).dayOfYear()}`;
+      let dateIndexKey = `${moment(postDate).year()}-${moment(
+        postDate
+      ).dayOfYear()}`;
 
       if (!statsObject.postsByDay[dateIndexKey]) {
         statsObject.postsByDay[dateIndexKey] = 0;
@@ -1359,10 +1393,18 @@ export default {
       );
     }
     statsObject.avgDays = parseFloat((totalDays / totalPostCount).toFixed(2));
-    statsObject.avgCharacterCount = parseFloat((totalCharacterCount / totalPostCount).toFixed(2));
-    statsObject.avgCodeBlockCount = parseFloat((totalCodeBlockCount / totalPostCount).toFixed(2));
-    statsObject.avgParagraphCount = parseFloat((totalParagraphCount / totalPostCount).toFixed(2));
-    statsObject.avgWordCount = parseFloat((totalWordCount / totalPostCount).toFixed(2));
+    statsObject.avgCharacterCount = parseFloat(
+      (totalCharacterCount / totalPostCount).toFixed(2)
+    );
+    statsObject.avgCodeBlockCount = parseFloat(
+      (totalCodeBlockCount / totalPostCount).toFixed(2)
+    );
+    statsObject.avgParagraphCount = parseFloat(
+      (totalParagraphCount / totalPostCount).toFixed(2)
+    );
+    statsObject.avgWordCount = parseFloat(
+      (totalWordCount / totalPostCount).toFixed(2)
+    );
     statsObject.totalWordCount = totalWordCount;
     statsObject.totalCodeBlockCount = totalCodeBlockCount;
     statsObject.highPostCount = highPostCount;

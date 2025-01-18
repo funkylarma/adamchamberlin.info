@@ -12,92 +12,109 @@ description: These are all the comments
   <ul>
     {% for mention in webmentions.children %}
 
-    {% if mention.wm-property == 'in-reply-to' %}
-    <li class="reply h-entry hentry">
-      <div class="mention">
-        <div class="mention--icon">
-          {% assetIcon "chat" %}
-        </div>
-        <div class="mention--content">
+    {% if mention.author.name != "" %}
+
+      {% if mention.wm-property == 'in-reply-to' %}
+        <li class="reply h-entry hentry">
+          <div class="mention--avatar">
+            <img src="{{ mention.author.photo }}" alt="Photo of {{ mention.author.name }}"/>
+          </div><!-- .mention--avatar -->
           <div class="mention--header">
             <p>
-              {% if mention.author %}
+              {% assetIcon "chat" %}
               <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
                 {{ mention.author.name }}
               </a>
-              {% else %}
-              <span class="comment--author">Anonymous</span>
-              {% endif %}
-              replied to {{ mention.wm-target }}.
+              replied to: <br />
+              <a href="{{ mention.wm-target }}" class="mention--link u-url">{{ mention.wm-target }}</a>
             </p>
-          </div>
-          <div class="mention--copy">
+          </div><!-- .mention--header -->
+          <div class="mention--date">
+            <time class="dt-published" datetime="{{ mention.wm-received }}">
+              {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
+            </time>
+          </div><!-- .mention--date -->
+          <div class="mention--content">
             {{ mention.content.html }}
-          </div>
-        </div>
-        <time class="mention--date dt-published" datetime="{{ mention.wm-received }}">
-          {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
-        </time>
-      </div><!-- .mention--header -->
-    </li>
+          </div><!-- .mention--content -->
+        </li>
 
-    {% elsif mention.wm-property == 'mention-of' %}
-    <li class="reply h-entry hentry">
-      <div class="mention--header">
-        {% assetIcon "at" %}
-        <p>
-          {% if mention.author %}
-          <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
-            {{ mention.author.name }}
-          </a>
-          {% else %}
-          <span class="comment--author">Anonymous</span>
-          {% endif %}
-          mentioned {{ mention.wm-target }}.
-        </p>
-        <time class="postlist-date dt-published" datetime="{{ mention.wm-received }}">
-          {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
-        </time>
-      </div><!-- .mention--header -->
-      <div class="mention--content">
-        {{ mention.content.html }}
-      </div>
-    </li>
+      {% elsif mention.wm-property == 'mention-of' %}
+        <li class="mention h-entry hentry">
+          <div class="mention--avatar">
+          <img src="{{ mention.author.photo }}" alt="Photo of {{ mention.author.name }}"/>
+        </div><!-- .mention--avatar -->
+        <div class="mention--header">
+          <p>
+            {% assetIcon "at" %}
+            <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
+              {{ mention.author.name }}
+            </a>
+            mentioned: <br />
+            <a href="{{ mention.wm-target }}" class="mention--link u-url">{{ mention.wm-target }}</a>
+          </p>
+        </div><!-- .mention--header -->
+        <div class="mention--date">
+          <time class="dt-published" datetime="{{ mention.wm-received }}">
+            {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
+          </time>
+        </div><!-- .mention--date -->
+        <div class="mention--content">
+          {{ mention.content.html }}
+        </div><!-- .mention--content -->
+        </li>
 
-    {% elsif mention.wm-property == 'like-of' %}
-    <li class="reply h-entry hentry">
-      <div class="mention--header">
-        {% assetIcon "heart" %}
-        <p>
-          {% if mention.author %}
-          <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
-            {{ mention.author.name }}
-          </a>
-          {% else %}
-          <span class="comment--author">Anonymous</span>
-          {% endif %}
-          liked {{ mention.wm-target }}.
-        </p>
-        <time class="postlist-date dt-published" datetime="{{ mention.wm-received }}">
-          {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
-        </time>
-      </div><!-- .mention--header -->
-      <div class="mention--content">
-        {{ mention.content.html }}
-      </div>
-    </li>
+      {% elsif mention.wm-property == 'like-of' %}
+        <li class="like h-entry hentry">
+          <div class="mention--avatar">
+          <img src="{{ mention.author.photo }}" alt="Photo of {{ mention.author.name }}"/>
+        </div><!-- .mention--avatar -->
+        <div class="mention--header">
+          <p>
+            {% assetIcon "heart" %}
+            <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
+              {{ mention.author.name }}
+            </a>
+            liked: <br />
+            <a href="{{ mention.wm-target }}" class="mention--link u-url">{{ mention.wm-target }}</a>
+          </p>
+        </div><!-- .mention--header -->
+        <div class="mention--date">
+          <time class="dt-published" datetime="{{ mention.wm-received }}">
+            {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
+          </time>
+        </div><!-- .mention--date -->
+        <div class="mention--content">
+          {{ mention.content.html }}
+        </div><!-- .mention--content -->
+        </li>
 
-    {% else %}
-    <li class="h-entry hentry">
-      {% assetIcon "unknown" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ mention.url }}" title="View Item">
-        {{ mention.wm-target }}
-      </a>
+      {% else %}
+        <li class="h-entry hentry">
+          <div class="mention--avatar">
+          <img src="{{ mention.author.photo }}" alt="Photo of {{ mention.author.name }}"/>
+        </div><!-- .mention--avatar -->
+        <div class="mention--header">
+          <p>
+            {% assetIcon "unknown" %}
+            <a href="{{ mention.author.url }}" class="comment--author h-card u-url">
+              {{ mention.author.name }}
+            </a>
+            did something with: <br />
+            <a href="{{ mention.wm-target }}" class="mention--link u-url">{{ mention.wm-target }}</a>
+          </p>
+        </div><!-- .mention--header -->
+        <div class="mention--date">
+          <time class="dt-published" datetime="{{ mention.wm-received }}">
+            {{ mention.wm-received | dateReadableFromISO: "dd LLL yyyy" }}
+          </time>
+        </div><!-- .mention--date -->
+        <div class="mention--content">
+          {{ mention.content.html }}
+        </div><!-- .mention--content -->
+        </li>
+      {% endif %}
 
-      <time class="postlist-date dt-published" datetime="{{ mention.wm-received | dateHtmlString }}">
-        {{ mention.wm-received | dateLongDate }}
-      </time>
-    </li>
     {% endif %}
 
     {%- endfor -%}
