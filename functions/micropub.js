@@ -73,17 +73,11 @@ export async function onRequestPost(context) {
     if (entry.content) {
       micropub.bodyContent.push(entry.content[0]);
       micropub.bodyContent.push("");
-    } else {
-      return Response.json(
-        { message: entry.content },
-        { status: 201, headers: { Location: "https://adamchamberlin.info" } }
-      );
     }
 
     // Commit the micropub
-    const responseObj = commitMicropub();
-
-    return responseObj;
+    const commit = await commitMicropub();
+    return commit;
   } else {
     return Response.json(
       {
@@ -95,7 +89,7 @@ export async function onRequestPost(context) {
 
   function processCheckin(checkin) {
     // Where should we save the checkin
-    micropub.path = "/src/notes/checkins/";
+    micropub.path = "src/notes/checkins/";
     // Give it a filename
     micropub.filename = new Date().valueOf();
     (micropub.message = "Import checkin from Swarm: " + micropub.filename),
@@ -127,30 +121,40 @@ export async function onRequestPost(context) {
   }
 
   async function commitMicropub() {
+    // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
+    const octokit = new Octokit({ auth: context.env.GITHUB_ACCESS_TOKEN });
+
     let contents = micropub.frontMatterContent.join("\n");
     contents += micropub.bodyContent.join("\n").toString("base64");
 
-    const {
-      updated,
-      data: { commit },
-    } = await octokit.repos.createOrUpdateFileContents({
-      owner: "funkylarma",
-      repo: "adamchamberlin.info",
-      path: micropub.path + micropub.filename + ".md",
-      content: btoa(contents),
-      message: micropub.message,
-    });
-
-    return Response.json(
-      { message: micropub.message },
-      {
-        status: 201,
-        headers: { Location: "https://adamchamberlin.info" },
-      }
-    );
+    try {
+      const { data } = await octokit.repos.createOrUpdateFileContents({
+        owner: "funkylarma",
+        repo: "adamchamberlin.info",
+        path: micropub.path + micropub.filename + ".md",
+        content: btoa(contents),
+        message: micropub.message,
+      });
+      return Response.json(
+        { message: data.commit.message },
+        { status: 201, headers: { Location: "https://adamchamberlin.info" } }
+      );
+    } catch (err) {
+      return Response.json(
+        {
+          message: err.message,
+        },
+        { status: err.status }
+      );
+    }
   }
 
-  return responseObj;
+  return Response.json(
+    {
+      message: "Hello Micropub world",
+    },
+    { status: 200 }
+  );
 }
 
 // On all requests
