@@ -51,10 +51,54 @@
             {% include "partials/hcard.liquid" %}
             <section class="e-content">
               <p class="p-name">
-                Went {{ sport }}.
+                {{ title }}
               </p>
               <div id="map"></div>
               <div class="note--copy p-content">
+                <h3 class="exercise--header">{{ sport | capitaliseFirstLetter }}</h3>
+                <div class="exercise--details">
+                  <ul>
+                    <li>Distance: {{ distance | round: 2 }} <span class="metric">km</span></li>
+                    <li>Time: {{ time | secondsToTime }}</li>
+                    <li>Calories: {{ calories }}</li>
+                  </ul>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td></td>
+                        <td>Avg</td>
+                        <td>Max</td>
+                        <td></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="metric">Speed</td>
+                        <td>{{ avgSpeed }}</td>
+                        <td>{{ maxSpeed }}</td>
+                        <td class="metric">km/h</td>
+                      </tr>
+                      <tr>
+                        <td class="metric">Power</td>
+                        <td>{{ avgPower }}</td>
+                        <td>{{ maxPower }}</td>
+                        <td class="metric">watts</td>
+                      </tr>
+                      <tr>
+                        <td class="metric">Cadence</td>
+                        <td>{{ avgCadence }}</td>
+                        <td>{{ maxCadence }}</td>
+                        <td class="metric">rpm</td>
+                      </tr>
+                      <tr>
+                        <td class="metric">Heart Rate</td>
+                        <td>{{ avgHr }}</td>
+                        <td>{{ maxHr }}</td>
+                        <td class="metric">bpm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 {{ content }}
               </div>
             </section>
@@ -67,65 +111,95 @@
               <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
             </noscript>
             <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
-            <script type="application/ld+json">
+            <script>
               window.addEventListener('load', (event) => {
-              // Load the api key
-            mapboxgl.accessToken = "{{ keys.mapBox }}";
 
-            let mapStyle = 'mapbox://styles/mapbox/light-v11';
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-              mapStyle = 'mapbox://styles/mapbox/dark-v11';
-            }
+                const geojson = fetch('{{ geojson }}')
+                  .then((res) => {
+                    if (!res.ok) {
+                      throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                  })
+                  .then((data) => {
+                    // Extract the start and end
+                    startLngLat = data.features[0].properties.start;
+                    endLngLat = data.features[0].properties.end;
 
-            // Create instance of a map
-            const map = new mapboxgl.Map({
-              container: 'map', // container ID
-              style: mapStyle,
-                center: [{{ startLongitude }}, {{ startLatitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                zoom: 16 // starting zoom
+                    // Load the api key
+                    mapboxgl.accessToken = "{{ keys.mapBox }}";
+
+                    // Set the style
+                    let mapStyle = 'mapbox://styles/mapbox/light-v11';
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                      mapStyle = 'mapbox://styles/mapbox/dark-v11';
+                    }
+
+                    // Create instance of a map
+                    const map = new mapboxgl.Map({
+                      container: 'map', // container ID
+                      style: mapStyle,
+                        center: startLngLat,
+                        zoom: 4
+                    });
+
+                    // Add some controls
+                    const nav = new mapboxgl.NavigationControl();
+                    map.addControl(nav, 'top-left');
+                    map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+
+                    // Add start and end markers
+                    new mapboxgl.Marker({color: "#36d02f"}).setLngLat(startLngLat).addTo(map);
+                    new mapboxgl.Marker({color: "#c92fd0"}).setLngLat(endLngLat).addTo(map);
+
+                    // On map load
+                    map.on('load', () => {
+
+                      // Geographic coordinates of the LineString
+                      const coordinates = data.features[0].geometry.coordinates;
+
+                      const bounds = new mapboxgl.LngLatBounds(
+                          coordinates[0],
+                          coordinates[0]
+                      );
+
+                      // Extend the 'LngLatBounds' to include every coordinate in the bounds result.
+                      for (const coord of coordinates) {
+                          bounds.extend(coord);
+                      }
+
+                      map.fitBounds(bounds, {
+                          padding: 20
+                      });
+
+                      // Load the geojson
+                      map.addSource('route', {
+                        type: 'geojson',
+                        data: data
+                      });
+
+                      // Add geojson as layer
+                      map.addLayer({
+                        'id': 'route',
+                        'type': 'line',
+                        'source': 'route',
+                        'layout': {
+                          'line-join': 'round',
+                          'line-cap': 'round'
+                        },
+                        'paint': {
+                          'line-color': '#2f87d0',
+                          'line-width': 8,
+                          'line-blur': 2
+                        }
+                      });
+                    });
+
+                  })
+                  .catch((error) =>
+                    console.error("Unable to fetch geojson:", error)
+                  );
               });
-
-              // Add some controls
-              const nav = new mapboxgl.NavigationControl();
-              map.addControl(nav, 'top-left');
-              map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
-
-              // Add start and end markers
-              new mapboxgl.Marker({color: "#36d02f"}).setLngLat([{{ startLongitude }}, {{ startLatitude }}]).addTo(map);
-              new mapboxgl.Marker({color: "#c92fd0"}).setLngLat([{{ endLongitude }}, {{ endLatitude }}]).addTo(map);
-
-              // On map load
-              map.on('load', () => {
-
-                map.fitBounds([
-                  [{{ startLongitude }}, {{ startLatitude }}], // [lng, lat] - southwestern corner of the bounds
-                  [{{ endLongitude }}, {{ endLatitude }}] // [lng, lat] - northeastern corner of the bounds
-                ]);
-
-                // Load the geojson
-                map.addSource('route', {
-                  type: 'geojson',
-                  data: '{{ geojson | url }}'
-                });
-
-                // Add geojson as layer
-                map.addLayer({
-                  'id': 'route',
-                  'type': 'line',
-                  'source': 'route',
-                  'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                  },
-                  'paint': {
-                    'line-color': '#2f87d0',
-                    'line-width': 8,
-                    'line-blur': 2
-                  }
-                });
-            });
-            //map.resize();
-            });
             </script>
 
           </div><!-- .note--content -->

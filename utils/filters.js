@@ -1,13 +1,13 @@
 /** @format */
 
-import { inspect } from "node:util";
-import sanitizeHTML from "sanitize-html";
-import { DateTime } from "luxon";
-import globals from "../data/globals.js";
-import metadata from "../data/metadata.js";
-import { month_names } from "./constants.js";
-import { month_short_names } from "./constants.js";
-import { nth } from "./constants.js";
+import { inspect } from 'node:util';
+import sanitizeHTML from 'sanitize-html';
+import { DateTime } from 'luxon';
+import globals from '../data/globals.js';
+import metadata from '../data/metadata.js';
+import { month_names } from './constants.js';
+import { month_short_names } from './constants.js';
+import { nth } from './constants.js';
 
 const parse = (date) => new Date(Date.parse(date));
 
@@ -23,44 +23,44 @@ export default {
   metaTitle: function (title) {
     title.trim();
     if (this.page.url) {
-      if (this.page.url == "/" || this.page.url.includes("page")) {
+      if (this.page.url == '/' || this.page.url.includes('page')) {
         title = metadata.tagline;
       } else {
-        title = title + " | " + metadata.title;
+        title = title + ' | ' + metadata.title;
       }
     }
     return title;
   },
 
   metaKeywords: function (tags) {
-    return tags.join(", ");
+    return tags.join(', ');
   },
 
   metaDescription: function (title) {
     if (this.page.url) {
-      if (this.page.url == "/" || this.page.url.includes("page")) {
+      if (this.page.url == '/' || this.page.url.includes('page')) {
         return metadata.description;
       }
 
       if (/\d{4}\//.test(this.page.url)) {
         return (
-          title.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "") +
-          " - an article posted by Adam Chamberlin on " +
+          title.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '') +
+          ' - an article posted by Adam Chamberlin on ' +
           this.page.date.toDateString()
         );
       }
     }
 
-    return title + " | " + metadata.title;
+    return title + ' | ' + metadata.title;
   },
 
   postExcerpt: function (post) {
-    const content = post.replace(/(<([^>]+)>)/gi, "");
-    return content.substr(0, content.lastIndexOf(" ", 400)) + "...";
+    const content = post.replace(/(<([^>]+)>)/gi, '');
+    return content.substr(0, content.lastIndexOf(' ', 400)) + '...';
   },
 
   splitLines: function (input) {
-    const parts = input.split(" ");
+    const parts = input.split(' ');
     const lines = parts.reduce(function (prev, current) {
       if (!prev.length) {
         return [current];
@@ -72,12 +72,18 @@ export default {
         return [...prev, current];
       }
 
-      prev[prev.length - 1] = lastOne + " " + current;
+      prev[prev.length - 1] = lastOne + ' ' + current;
 
       return prev;
     }, []);
 
     return lines;
+  },
+
+  secondsToTime: function (secondObj) {
+    let date = new Date(null);
+    date.setSeconds(secondObj);
+    return date.toISOString().substring(11, 16);
   },
 
   getYear: function (dateObj) {
@@ -106,8 +112,8 @@ export default {
   },
 
   dateReadable: function (dateObj, format, zone) {
-    return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
-      format || "dd LLLL yyyy"
+    return DateTime.fromJSDate(dateObj, { zone: zone || 'utc' }).toFormat(
+      format || 'dd LLLL yyyy'
     );
   },
 
@@ -119,7 +125,7 @@ export default {
   },
 
   dateHtmlString: function (dateObj) {
-    return DateTime.fromJSDate(dateObj, "utc").toFormat("yyyy-LL-dd");
+    return DateTime.fromJSDate(dateObj, 'utc').toFormat('yyyy-LL-dd');
   },
 
   dateISO: function (dateObj) {
@@ -141,7 +147,7 @@ export default {
   },
 
   dateParse: function (dateObj) {
-    if (typeof dateObj !== "undefined") {
+    if (typeof dateObj !== 'undefined') {
       if (dateObj instanceof Date) {
         return Date.parse(dateObj);
       } else {
@@ -149,12 +155,12 @@ export default {
         return Date.parse(date);
       }
     } else {
-      return "not-set";
+      return 'not-set';
     }
   },
 
   wordCount: function (content) {
-    return content.split(" ").length;
+    return content.split(' ').length;
   },
 
   timeReading: function (content) {
@@ -164,7 +170,7 @@ export default {
 
   monthName: function (monthNum) {
     const date = new Date(2000, parseInt(monthNum) - 1, 1);
-    return date.toLocaleDateString("en", { month: "long" });
+    return date.toLocaleDateString('en', { month: 'long' });
   },
 
   absoluteUrl: function (url) {
@@ -172,14 +178,14 @@ export default {
   },
 
   stripIndex: function (path) {
-    if (!path) return "";
-    return path.replace("/index.html", "/");
+    if (!path) return '';
+    return path.replace('/index.html', '/');
   },
 
   fileHash: function (url) {
-    const [urlPart, paramPart] = url.split("?");
-    const params = new URLSearchParams(paramPart || "");
-    params.set("v", DateTime.local().toFormat("X"));
+    const [urlPart, paramPart] = url.split('?');
+    const params = new URLSearchParams(paramPart || '');
+    params.set('v', DateTime.local().toFormat('X'));
     return `${urlPart}?${params}`;
   },
 
@@ -190,15 +196,15 @@ export default {
 
   webmentionsByUrl: function (webmentions, url) {
     const allowedTypes = {
-      likes: ["like-of"],
-      reposts: ["in-reply-to"],
-      comments: ["mention-of", "in-reply-to"],
+      likes: ['like-of'],
+      reposts: ['in-reply-to'],
+      comments: ['mention-of', 'in-reply-to'],
     };
 
     const allowedHTML = {
-      allowedTags: ["b", "i", "em", "strong", "a"],
+      allowedTags: ['b', 'i', 'em', 'strong', 'a'],
       allowedAttributes: {
-        a: ["href"],
+        a: ['href'],
       },
     };
 
@@ -223,7 +229,7 @@ export default {
         // really long html mentions, usually newsletters or compilations
         entry.content.value =
           html.length > 2000
-            ? `mentioned this in <a href="${entry["wm-source"]}">${entry["wm-source"]}</a>`
+            ? `mentioned this in <a href="${entry['wm-source']}">${entry['wm-source']}</a>`
             : sanitizeHTML(html, allowedHTML);
       } else {
         entry.content.value = sanitizeHTML(text, allowedHTML);
@@ -233,25 +239,25 @@ export default {
     };
 
     const pageWebMentions = webmentions.children
-      .filter((mention) => mention["wm-target"] === url)
+      .filter((mention) => mention['wm-target'] === url)
       .sort(orderByDate)
       .map(sanitize);
 
     const likes = pageWebMentions
-      .filter((mention) => allowedTypes.likes.includes(mention["wm-property"]))
+      .filter((mention) => allowedTypes.likes.includes(mention['wm-property']))
       .filter((like) => like.author)
       .map((like) => like.author);
 
     const reposts = pageWebMentions
       .filter((mention) =>
-        allowedTypes.reposts.includes(mention["wm-property"])
+        allowedTypes.reposts.includes(mention['wm-property'])
       )
       .filter((repost) => repost.author)
       .map((repost) => repost.author);
 
     const comments = pageWebMentions
       .filter((mention) =>
-        allowedTypes.comments.includes(mention["wm-property"])
+        allowedTypes.comments.includes(mention['wm-property'])
       )
       .filter((comment) => {
         const { author, published, content } = comment;

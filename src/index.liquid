@@ -122,6 +122,9 @@ permalink: /
         {% elsif post.data.category == 'rsvp' %}
         {% assetIcon "rsvp" %}
         RSVP'd to -
+        {% elsif post.data.category == 'exercise' %}
+        {% assetIcon "stopwatch" %}
+        Went {{ post.data.sport }} -
         {% elsif post.data.category == 'videography' %}
         {% assetIcon "video" %}
         Shot a video -

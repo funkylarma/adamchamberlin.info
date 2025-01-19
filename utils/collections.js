@@ -839,6 +839,7 @@ export default {
           // This is just the date plus ordinal (e.g. 23rd)
           date: item.date.getDate() + nth(item.date.getDate()),
           category: item.data.category,
+          sport: item.data.sport,
           tags: item.data.tags,
         });
       }
