@@ -22,22 +22,30 @@
     {% viteLinkStylesheetTags %}
   </noscript>
 {% endif %}
-<!-- Icons and Feeds -->
+<!-- Author -->
 <link rel="author self" href="{{ globals.url }}">
+<!-- Feeds -->
 <link rel="alternate" type="application/rss+xml" href="{{ 'feed/rss.xml' | absoluteUrl }}" title="{{ metadata.title }} | RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="{{ 'feed/atom.xml' | absoluteUrl }}" title="{{ metadata.title }} | Atom Feed">
 <link rel="alternate" type="application/json" href="{{ 'feed/feed.json' | absoluteUrl }}" title="{{ metadata.title }} | JSON Feed">
+<!-- Icons -->
 <link rel="icon" type="image/png" href="{{ "/assets/icons/favicon-96x96.png" | absoluteUrl }}" sizes="96x96">
 <link rel="icon" type="image/png" href="{{ "/assets/icons/web-app-manifest-192x192.png" | absoluteUrl }}" sizes="192x192">
 <link rel="icon" type="image/svg+xml" href="{{ "/assets/icons/favicon.svg" | absoluteUrl }}">
 <link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | absoluteUrl }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<!-- Theme and Manifest -->
 <link rel="manifest" href="{{ "/web.manifest" | absoluteUrl }}">
-<link rel="me authn" href="https://github.com/funkylarma">
+<meta name="theme-color" content="#2f87d0" media="(prefers-color-scheme: light">
+<meta name="theme-color" content="#151b23" media="(prefers-color-scheme: dark">
+<!-- WebMentions -->
 <link rel="pingback" href="https://webmention.io/adamchamberlin.info/xmlrpc">
 <link rel="webmention" href="https://webmention.io/adamchamberlin.info/webmention">
+<!-- Auth -->
+<link rel="me authn" href="https://github.com/funkylarma">
 <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+<!-- Micropub -->
 <link rel="micropub" href="{{ globals.url }}micropub">
 <!-- OpenGraph -->
 <meta property="og:site_name" content="{{ metadata.title }}">
@@ -76,8 +84,6 @@
 <meta name="fediverse:creator" content="@FunkyLarma@mastodon.social">
 <!-- Generator -->
 <meta name="generator" content="{{ eleventy.generator }}">
-<meta name="theme-color" content="#2f87d0" media="(prefers-color-scheme: light">
-<meta name="theme-color" content="#151b23" media="(prefers-color-scheme: dark">
 <!-- Checking local storage for theme settings -->
 <script>
   const cachedTheme = localStorage.getItem('ac_theme');
