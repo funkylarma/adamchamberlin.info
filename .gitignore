@@ -3,7 +3,6 @@
 .dev.vars
 
 # editor settings
-.nova
 .vscode
 .vscode/launch.json
 

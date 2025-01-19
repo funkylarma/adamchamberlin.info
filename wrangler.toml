@@ -8,3 +8,6 @@ ELEVENTY_ENV = "production"
 
 [env.production.vars]
 ELEVENTY_ENV = "production"
+
+[[kv_namespaces]]
+binding = "adamchamberlin"

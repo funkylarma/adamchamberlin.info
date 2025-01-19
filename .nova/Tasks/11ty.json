@@ -12,5 +12,6 @@
       "enabled" : true,
       "script" : "npm run start"
     }
-  }
+  },
+  "openLogOnRun" : "start"
 }
