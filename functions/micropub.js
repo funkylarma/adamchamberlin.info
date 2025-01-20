@@ -114,9 +114,9 @@ export async function onRequestPost(context) {
   }
 
   function processCheckin(checkin) {
-
-    const year = micropub.date.getFullYear();
-    const month = (micropub.date.getMonth() + 1).toString().padStart(2, '0');
+    let date = new Date(micropub.date);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
 
     // Where should we save the checkin
     micropub.path = 'src/notes/checkins/' + year + '/' + month + '/';
