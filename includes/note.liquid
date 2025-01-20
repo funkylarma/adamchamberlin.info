@@ -73,9 +73,9 @@
 
             {% if category == 'rsvp' %}
             {% include "partials/hcard.liquid" %}
+            <data class="p-rsvp" value="{{ rsvp }}"></data>
             <section class="e-content">
               <p class="p-summary">
-                <data class="p-rsvp" value="{{ rsvp }}"></data>
                 {% if rsvp == 'yes' %}
                 <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a>
                 going to <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>.
@@ -94,7 +94,7 @@
                 <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>
                 {% endif %}
               </p>
-              <div class="note--copy p-content">
+              <div class="note--copy">
                 {{ content }}
               </div>
             </section>
