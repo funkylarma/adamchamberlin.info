@@ -48,3 +48,11 @@ With only 5 km left to complete, I was determined to keep going, despite the no
 The next, 2800 steps were proof that the head is really the unsung hero in these endurance events. It was only as I entered Brantham and was overtaken by a runner who looked as fresh as a daisy with knees high and arms pumping that my head fell, and the pace dropped again. What did it matter, I had one corner and one playing field left to hit the finish line. As I ran towards the finish arch, I could feel the last 13 hours of effort and emotions building, lumps in the throat and those watery eyes as I crossed the finish line and received an SVP100 medal. In a daze, I found Lucy, who helped me remove my running pack and empty my pockets of energy products so that I could finally sit down. Over the next few minutes, the day's events began to sink home, I had just run from Newmarket to Brantham, a total of 101 km. Spent nearly 13 hours taking over 114,000 steps. John walked past with his family and he thanked me for the motivation and company over the race, it was then I understood more about running ultra-distance events. Whilst you need the training in your legs and the preparation in your body, the key is having the attitude to push through dark moments, ride the peaks and troughs and approach them with a growth can-do mindset. 12 months ago, I had only been running for a short time and the event proved too much. This year, it was still very close to being too much, but with the right approach, you can push your body to the finish line. It is the support from friends, family and complete strangers that keeps you putting one foot in front of the other. So thank you to all those who got me to, not only the finish line but also the start line, and a massive thank you to the support and event staff that gave up their time to enable the race to take place.
 
 ![Broken but finished](/images/2023/IMG_1250.jpg 'Broken but finished')
+
+<aside>
+  <div class="related">
+
+    [Race file](/2023/08/1737459434347/)
+    
+  </div>
+<aside>

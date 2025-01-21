@@ -20,6 +20,11 @@
 
         * {
           color: var(--main-color-quaternary);
+
+          &:hover {
+            text-decoration: none;
+            color: var(--main-color-tertiary);
+          }
         }
 
         h1 {
@@ -28,16 +33,27 @@
         }
       }
 
-      .note--tags {
+      .note--meta {
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.5rem;
         margin-bottom: 0.5rem;
-
-        a {
-          &:hover {
-            color: var(--main-color-quaternary);
-            text-decoration: none;
+  
+          a {
+            &:hover {
+              color: var(--main-color-quaternary);
+              text-decoration: none;
+            }
           }
+        .note--tags {
+        
+        }
+  
+        .note--category {
+  
         }
       }
+
     }
   }
 

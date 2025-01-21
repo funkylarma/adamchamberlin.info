@@ -31,3 +31,12 @@ Now, it is important to note that I have a habit of not exactly doing things in 
 
 With that in mind, I did not have a goal I had committed to either, secretly I would love to go under four hours but opted to run it socially and enjoy the moment.
 We were now within the last couple of miles and the bleak industrial units had been replaced with the Brighton sea front and lines of beach huts. With the beach huts came crowds, this was just what I needed, some extrinsic motivation. With every meter, I edged closer to the finish the crowds got larger and louder and my pace got quicker. By the time I could see the finish line, I was buzzing with energy, so much so that I stopped to help a stationary runner and get him going again. With one final, what felt like a sprint but no doubt looked like a fast hobble, I crossed the finish line. The marshal's ushered me through the finish funnel to collect a medal, a t-shirt, some other motional material and a bottle of water; that was really what I required. Once the adrenaline had eased I looked back at the clock, 3 hours and 53 minutes. The official time turned out to be 3 hours 52 minutes and 28 seconds!
+
+
+<aside>
+  <div class="related">
+
+    [Race file](/2023/04/1737458178759/)
+    
+  </div>
+<aside>

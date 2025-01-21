@@ -45,6 +45,14 @@
                   {%- endfor -%}
                 </div><!-- .post--tags -->
                 {% endif %}
+                {% if category %}
+                  <div class="note--category">
+                    <span>Category: </span>
+                    <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                      {{ category }}
+                    </a>
+                  </div><!-- .post--category -->
+                {% endif %}
               </div><!-- .post-meta -->
             </header>
 
