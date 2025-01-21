@@ -15,7 +15,7 @@ eleventyComputed:
   subhead: 'This is all the content that has been tagged with "{{ tag }}"'
 ---
 <div class="activity--list--content">
-  <div class="h-feed">
+  <div class="h-feed hfeed">
     {% include "partials/hcard.liquid" %}
     <ul>
       {%- for post in collections[tag] reversed -%}
@@ -131,10 +131,7 @@ eleventyComputed:
             <li class="exercise h-entry hentry">
               <h2 class="p-name">
                 {% assetIcon "stopwatch" %}
-                Went -
-                <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Went {{ post.data.sport }}">
-                  {{ post.data.sport }}
-                </a>
+                Went {{ post.data.sport }} - <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Went {{ post.data.sport }}">{{ post.data.title }}</a>
               </h2>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
             </li>
