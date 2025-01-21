@@ -18,13 +18,13 @@
 
       <article class="h-entry note--single checkin">
         <div class="note--main">
-          <div class="note--content">
+          <div class="note--content" itemprop="articleBody">
 
             <header>
               <div class="note--date">
                 <h1>
                   {% assetIcon "calendar" %}
-                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">
                     <a href="{{ page.url }}" class="u-url">
                       {{ page.date | dateLongDate }}
                     </a>
@@ -38,7 +38,7 @@
                   {%- for tag in tags -%}
                   {% if tag != 'note' and tag != 'checkin' %}
                   <a class="p-category" href="/tagged/{{ tag | slugify }}/"
-                    title="Browse other posts tagged with {{ tag }}">
+                    title="Browse other posts tagged with {{ tag }}" rel="tag">
                     {{ tag }}
                   </a>
                   {% endif %}
@@ -46,7 +46,7 @@
                   {% if category %}
                     <div class="note--category">
                       <span>Category: </span>
-                      <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                      <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
                         {{ category }}
                       </a>
                     </div><!-- .post--category -->
@@ -127,7 +127,6 @@
               }
             };
             </script>
-
           </div><!-- .note--content -->
         </div><!-- .note--main -->
       </article><!-- .note--main -->

@@ -17,7 +17,7 @@ permalink: "/archive/"
     <ul class="category--feed">
       {%- for cat, val in collections.categoryList | dictsort -%}
       <li class="h-entry">
-        <a href="/category/{{ cat | slugify }}/" title="Browse {{ collections.categoryList[cat].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+        <a href="/category/{{ cat | slugify }}/" title="Browse {{ collections.categoryList[cat].length }} post{% if collections[tag].length > 1 %}s{% endif %}" rel="tag">
           <div class="category">
             {{ cat | capitaliseFirstLetter }}
             <span class="post-count">
@@ -38,7 +38,7 @@ permalink: "/archive/"
     <ul class="tag--feed wide">
       {%- for tag, val in collections.tagList | dictsort -%}
         <li class="h-entry">
-          <a href="/tagged/{{ tag | slugify }}/" title="Browse {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}">
+          <a href="/tagged/{{ tag | slugify }}/" title="Browse {{ collections[tag].length }} post{% if collections[tag].length > 1 %}s{% endif %}" rel="tag">
             <div class="tag">
               {{ tag }}
               <span class="post-count">
@@ -110,7 +110,7 @@ permalink: "/archive/"
               {% assetIcon "stopwatch" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Went <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Went {{ entry.sport }} <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
             
             {% elif entry.category == 'race' %}
               {% assetIcon "trophy" %}

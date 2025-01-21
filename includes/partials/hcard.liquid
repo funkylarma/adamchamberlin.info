@@ -1,6 +1,7 @@
-<div id="hcard-Adam-Chamberlin" class="h-card hcard vcard p-author" hidden>
+<div id="hcard-Adam-Chamberlin" class="h-card hcard vcard p-author" itemscope itemtype="https://schema.org/Person" hidden>
   <img
     rel="me"
+    itemprop="image"
     class="u-photo"
     src="/assets/images/headshot.webp"
     alt="headshot of Adam Chamberlin in Mackman Group outdoor space"
@@ -10,10 +11,10 @@
     eleventy:ignore
   >
   <br>
-    <a class="u-url u-uid url uid url fn n" href="https://adamchamberlin.info" rel="me">
+    <a class="u-url u-uid url uid url fn n" href="{{ globals.url }}" itemprop="url" rel="me">
       <span class="p-name">
-        <span class="p-given-name">Adam</span>
-        <span class="p-family-name">Chamberlin</span>
+        <span class="p-given-name" itemprop="givenName">Adam</span>
+        <span class="p-family-name" itemprop="familyName">Chamberlin</span>
       </span>
     </a>
   <p class="p-note">
@@ -24,26 +25,26 @@
   </p>
   <a href="https://en.wiktionary.org/wiki/he#Pronoun" class="u-pronoun">he/him/his</a>
   <br />
-  <a class="u-email" href="mailto:hello@adamchamberlin.info">hello@adamchamberlin.info</a>
+  <a class="u-email" href="mailto:hello@adamchamberlin.info" itemprop="email">hello@adamchamberlin.info</a>
   <br />
-  <span class="p-tel">
+  <span class="p-tel" itemprop="telephone">
     <a rel="me" href="tel:+447816905420">+447816905420</a>
   </span>
   <br>
-  <span class="p-job-title">
+  <span class="p-job-title" itemprop="jobTitle">
     Head of Development
   </span>
   <br>
-  <a class="p-org" href="https://mackman.co.uk/" target="blank" rel="noopener">
+  <a class="p-org" href="https://mackman.co.uk/" target="blank" rel="noopener" itemprop="worksFor">
     Mackman Branding
   </a>
   <br>
-  <span class="p-adr">
-    <span class="p-locality">Hadleigh</span>
+  <span class="p-adr" itemprop="address">
+    <span class="p-locality" itemprop="addressLocality">Hadleigh</span>
     <br>
-    <span class="p-region">Suffolk</span>
+    <span class="p-region" itemprop="addressRegion">Suffolk</span>
     <br>
-    <span class="p-country-name">United Kingdom</span>
+    <span class="p-country-name" itemprop="addressCountry">United Kingdom</span>
   </span>
   <ul>
     <li><a class="link u-url url" href="https://github.com/funkylarma" rel="me">@funkylarma on Github</a></li>

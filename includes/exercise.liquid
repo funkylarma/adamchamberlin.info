@@ -18,13 +18,13 @@
 
       <article class="hentry h-entry note--single{% if category %} {{ category }}{% endif %}">
         <div class="note--main">
-          <div class="note--content">
+          <div class="note--content" itemprop="articleBody">
 
             <header>
               <div class="note--date">
                 <h1>
                   {% assetIcon "calendar" %}
-                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}">
+                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">
                     <a href="{{ page.url }}" class="u-url">
                       {{ page.date | dateLongDate }}
                     </a>
@@ -38,7 +38,7 @@
                   {%- for tag in tags -%}
                   {% if tag != 'note' and tag != 'exercise' and tag != 'race' %}
                   <a class="p-category" href="/tagged/{{ tag | slugify }}/"
-                    title="Browse other posts tagged with {{ tag }}">
+                    title="Browse other posts tagged with {{ tag }}" rel="tag">
                     {{ tag }}
                   </a>
                   {% endif %}
@@ -213,6 +213,25 @@
           </div><!-- .note--content -->
         </div><!-- .note--main -->
       </article><!-- .note--main -->
+              <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | absoluteUrl }}"
+          },
+          "headline": "{{ title }}",
+          "description": "{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}",
+          "image": "{{ cover | absoluteUrl }}",
+          "author": {
+            "@type": "Person",
+            "name": "{{ metadata.author.name }}",
+            "url": "{{ globals.url }}"
+          },
+          "datePublished": "{{ page.date | dateHtmlString }}"
+        }
+        </script>
 
       <div class="responses" id="responses">
         {% include "partials/webmentions.liquid" %}
