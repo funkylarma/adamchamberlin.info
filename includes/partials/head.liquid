@@ -16,7 +16,7 @@
 <link rel="canonical" href="{{ page.url | absoluteUrl }}">
 {% if globals.env == "production" %}
   <!-- Preloads -->
-  <link rel="preload" type="font/woff2" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" crossorigin="anonymous">
+  <link rel="preload" type="font/woff2" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" crossOrigin="anonymous">
   {% viteLinkStylesheetTags %}
   <noscript>
     {% viteLinkStylesheetTags %}
@@ -94,7 +94,7 @@
 
 {% if hasCode %}
 <!-- This is for use with eleventy-plugin-syntaxhighlight. -->
-<link rel="preload" href="{{ '/assets/css/dracula-prism.min.css' | url }}" as="style" crossorigin="anonymous">
+<link rel="preload" href="{{ '/assets/css/dracula-prism.min.css' | url }}" as="style" crossOrigin="anonymous">
 <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="all" onload="this.media='all'" fetchpriority="low">
 <noscript>
   <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="screen">
