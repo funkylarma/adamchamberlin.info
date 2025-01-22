@@ -2,17 +2,22 @@
 <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
 <!-- Meta Details -->
 <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="{{ metadata.author.name }}">
-<meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}">
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+<!-- Robots -->
 {%- if noindex -%}
   <meta name="robots" content="noindex">
 {%- else -%}
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noai, noimageai, index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="CCBot" name="nofollow">
 {%- endif -%}
 {% if tags.length > 0 %}
   <meta name="keywords" content="{{ tags | metaKeywords }}">
 {% endif %}
+<!-- Sitemap -->
 <link rel="canonical" href="{{ page.url | absoluteUrl }}">
 {% if globals.env == "production" %}
   <!-- Preloads -->
@@ -24,6 +29,7 @@
 {% endif %}
 <!-- Author -->
 <link rel="author self" href="{{ globals.url }}">
+<meta name="author" content="Designed and built by Adam Chamberlin.">
 <!-- Feeds -->
 <link rel="alternate" type="application/rss+xml" href="{{ 'feed/rss.xml' | absoluteUrl }}" title="{{ metadata.title }} | RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="{{ 'feed/atom.xml' | absoluteUrl }}" title="{{ metadata.title }} | Atom Feed">
@@ -38,6 +44,9 @@
 <link rel="manifest" href="{{ "/web.manifest" | absoluteUrl }}">
 <meta name="theme-color" content="#2f87d0" media="(prefers-color-scheme: light">
 <meta name="theme-color" content="#151b23" media="(prefers-color-scheme: dark">
+<!-- Fediverse -->
+<meta name="fediverse:creator" content="@FunkyLarma@mastodon.social">
+<meta property="article:author" content="@FunkyLarma@mastodon.social">
 <!-- WebMentions -->
 <link rel="pingback" href="https://webmention.io/adamchamberlin.info/xmlrpc">
 <link rel="webmention" href="https://webmention.io/adamchamberlin.info/webmention">
@@ -45,6 +54,9 @@
 <link rel="me authn" href="https://github.com/funkylarma">
 <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+<!-- ItemProp Tags -->
+<meta itemprop="name" content="{{ metatdata.author }}">
+<meta itemprop="description" content="{{ metatdat.description }}">
 <!-- Micropub -->
 <link rel="micropub" href="{{ globals.url }}micropub">
 <!-- OpenGraph -->
@@ -69,7 +81,7 @@
 <meta property="og:image:secure_url" content="{{ globals.url }}assets/images/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="780">
-<!-- Twitter -->
+<!-- For the shit show that is Twitter -->
 <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@funkylarma">
@@ -80,8 +92,6 @@
 {% else %}
   <meta name="twitter:image" content="{{ globals.url }}assets/images/og.png">
 {% endif %}
-<!-- Fediverse -->
-<meta name="fediverse:creator" content="@FunkyLarma@mastodon.social">
 <!-- Generator -->
 <meta name="generator" content="{{ eleventy.generator }}">
 <!-- Checking local storage for theme settings -->

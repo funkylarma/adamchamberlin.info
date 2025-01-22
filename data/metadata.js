@@ -9,7 +9,7 @@ export default {
   repo: 'https://github.com/funkylarma/adamchamberlin.info',
   locale: 'en-GB',
   language: 'en',
-  description: 'Welcome to the online playground of Adam Chamberlin. Consummate Athlete And DOM Element Wrangler.',
+  description: 'The online playground of Adam Chamberlin, a consummate athlete And DOM Element Wrangler from the UK.',
   author: {
     name: 'Adam Chamberlin',
     email: 'hello@adamchamberlin.info',

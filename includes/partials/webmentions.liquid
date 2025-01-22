@@ -1,7 +1,7 @@
 {% assign webmentionUrl = page.url | absoluteUrl %}
 {% assign mentions = webmentions | webmentionsByUrl: webmentionUrl %}
 
-<div class="post--comment" itemscope itemtype="https://schema.org/DiscussionForumPosting">
+<div class="post--comment">
 
   <div class="comments--meta" hidden>
     <meta itemprop="mainEntityOfPage" content=" {{ page.url }}" />
@@ -28,7 +28,7 @@
 
   {% if mentions.mentionCount > 0 %}
 
-    <div class="webmentions" id="webmentions" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">
+    <div class="webmentions" id="webmentions" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}"  itemscope itemtype="https://schema.org/DiscussionForumPosting">
 
       {% if mentions.comments %}
         <div class="comments">
@@ -152,9 +152,11 @@
     </div><!-- .webmentions -->
 
   {% else %}
+
     <p class="webmentions--empty" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}">
       No responses yet.
     </p>
+    
   {% endif %}
 
   <h3>Link your own content or reply.</h3>
