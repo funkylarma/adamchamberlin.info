@@ -63,12 +63,18 @@
               </p>
               <div id="map"></div>
               <div class="note--copy p-content">
-                <h3 class="exercise--header">{{ sport | capitaliseFirstLetter }}</h3>
+                <h2 class="exercise--header">{{ sport | capitaliseFirstLetter }}</h2>
                 <div class="exercise--details">
                   <ul>
-                    <li>Distance: {{ distance | round: 2 }} <span class="metric">km</span></li>
-                    <li>Time: {{ time | secondsToTime }}</li>
-                    <li>Calories: {{ calories }}</li>
+                    <li>
+                      <span class="metric heading">Distance:</span> {{ distance | round: 2 }} <span class="metric">km</span>
+                    </li>
+                    <li>
+                      <span class="metric heading">Time:</span> {{ time | secondsToTime }}
+                    </li>
+                    <li>
+                      <span class="metric heading">Calories:</span> {{ calories }}
+                    </li>
                   </ul>
                   <table>
                     <thead>
