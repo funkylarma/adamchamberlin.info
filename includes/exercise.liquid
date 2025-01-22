@@ -160,7 +160,7 @@
                     // Add some controls
                     const nav = new mapboxgl.NavigationControl();
                     map.addControl(nav, 'top-left');
-                    map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+                    map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('map')}));
 
                     // Add start and end markers
                     new mapboxgl.Marker({color: "#36d02f"}).setLngLat(startLngLat).addTo(map);

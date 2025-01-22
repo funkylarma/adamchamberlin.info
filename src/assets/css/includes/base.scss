@@ -169,6 +169,12 @@ body {
   background-color: var(--main-color-background);
   color: var(--main-color-base);
   font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .wide {
@@ -248,7 +254,6 @@ img[width][height] {
 }
 
 .skip-link {
-  position: absolute;
   top: 0;
   left: 0;
   transform: translateY(-100%);

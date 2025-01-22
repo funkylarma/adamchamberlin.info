@@ -37,21 +37,41 @@ export default {
   },
 
   metaDescription: function (title) {
+
     if (this.page.url) {
       if (this.page.url == '/' || this.page.url.includes('page')) {
         return metadata.description;
       }
 
       if (/\d{4}\//.test(this.page.url)) {
+        let type = "";
+
+        if (this.page.filePathStem.includes('article')) {
+          type = 'article';
+        }
+
+        if (this.page.filePathStem.includes('note')) {
+          type = 'note';
+        }
+
+        if (this.page.filePathStem.includes('checkin')) {
+          type = 'checkin';
+        }
+
+        if (this.page.filePathStem.includes('exercise')) {
+          type = 'activity';
+        }
+
         return (
+          'The ' +
           title.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '') +
-          ' - an article posted by Adam Chamberlin on ' +
+          ' is a ' + type + ' posted by Adam Chamberlin on ' +
           this.page.date.toDateString()
         );
       }
     }
 
-    return title + ' | ' + metadata.title;
+    return title + ' | ' + metadata.description;
   },
 
   postExcerpt: function (post) {

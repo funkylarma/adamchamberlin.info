@@ -16,6 +16,7 @@ import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/elev
 // 3rd Party Imports
 import pluginPostGraph from '@rknightuk/eleventy-plugin-post-graph';
 import pluginYouTube from 'eleventy-plugin-youtube-embed';
+import pluginTOC from 'eleventy-plugin-nesting-toc';
 
 // Import the local functions
 import events from './utils/events.js';
@@ -63,6 +64,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginEleventyRender);
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginTOC);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginImageTransform, {
     extensions: 'html',

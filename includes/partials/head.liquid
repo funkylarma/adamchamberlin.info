@@ -5,7 +5,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="{{ metadata.author.name }}">
-<meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}">
 <!-- Robots -->
 {%- if noindex -%}
   <meta name="robots" content="noindex">
@@ -104,7 +104,7 @@
 
 {% if hasCode %}
 <!-- This is for use with eleventy-plugin-syntaxhighlight. -->
-<link rel="preload" href="{{ '/assets/css/dracula-prism.min.css' | url }}" as="style" crossOrigin="anonymous">
+<link rel="prefetch" href="{{ '/assets/css/dracula-prism.min.css' | url }}" as="style" crossOrigin="anonymous">
 <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="all" onload="this.media='all'" fetchpriority="low">
 <noscript>
   <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="screen">
