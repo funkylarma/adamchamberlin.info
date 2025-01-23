@@ -34,7 +34,7 @@
               <div class="note--meta">
                 {% if tags.length > 1 %}
                 <div class="note--tags">
-                  <span>Tagged: </span>
+                  {% assetIcon "tag" %}
                   {%- for tag in tags -%}
                   {% if tag != 'note' and tag != 'exercise' and tag != 'race' %}
                   <a class="p-category" href="/tagged/{{ tag | slugify }}/"
@@ -47,7 +47,7 @@
                 {% endif %}
                 {% if category %}
                   <div class="note--category">
-                    <span>Category: </span>
+                    {% assetIcon "folder" %}
                     <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
                       {{ category }}
                     </a>
@@ -67,10 +67,10 @@
                 <div class="exercise--details">
                   <ul>
                     <li>
-                      <span class="metric heading">Distance:</span> {{ distance | round: 2 }} <span class="metric">km</span>
+                      <span class="metric heading">Distance:</span> {% if distance == "Unknown" %}}{{ distance }}{% else %}{{ distance | round: 2 }}{% endif %} <span class="metric">km</span>
                     </li>
                     <li>
-                      <span class="metric heading">Time:</span> {{ time | secondsToTime }}
+                      <span class="metric heading">Time:</span> {% if time == "Unknown" %}{{ time }}{% else %}{{ time | secondsToTime }}{% endif %}
                     </li>
                     <li>
                       <span class="metric heading">Calories:</span> {{ calories }}
@@ -88,20 +88,20 @@
                     <tbody>
                       <tr>
                         <td class="metric">Speed</td>
-                        <td>{{ avgSpeed | round: 2 }}</td>
-                        <td>{{ maxSpeed | round: 2 }}</td>
+                        <td>{% if avgSpeed == "Unknown" %}{{ avgSpeed }}{% else %}{{ avgSpeed | round: 2 }}{% endif %}</td>
+                        <td>{% if avgSpeed == "Unknown" %}{{ maxSpeed }}{% else %}{{ maxSpeed | round: 2 }}{% endif %}</td>
                         <td class="metric">km/h</td>
                       </tr>
                       <tr>
                         <td class="metric">Power</td>
-                        <td>{{ avgPower }}</td>
-                        <td>{{ maxPower }}</td>
+                        <td>{% if avgSpeed == "Unknown" %}{{ avgPower }}{% else %}{{ avgPower | round: 2 }}{% endif %}</td>
+                        <td>{% if avgSpeed == "Unknown" %}{{ maxPower }}{% else %}{{ maxSpeed | round: 2 }}{% endif %}</td>
                         <td class="metric">watts</td>
                       </tr>
                       <tr>
                         <td class="metric">Cadence</td>
-                        <td>{{ avgCadence }}</td>
-                        <td>{{ maxCadence }}</td>
+                        <td>{% if avgSpeed == "Unknown" %}{{ avgCadence }}{% else %}{{ avgCadence | round: 2 }}{% endif %}</td>
+                        <td>{% if avgSpeed == "Unknown" %}{{ maxCadence }}{% else %}{{ maxCadence | round: 2 }}{% endif %}</td>
                         <td class="metric">rpm</td>
                       </tr>
                       <tr>

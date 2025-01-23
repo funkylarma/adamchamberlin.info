@@ -33,7 +33,7 @@
               <div class="note--meta">
                 {% if tags.length > 1 %}
                 <div class="note--tags">
-                  <span>Tagged: </span>
+                  {% assetIcon "tag" %}
                   {%- for tag in tags -%}
                   {% if tag != 'note' and tag != 'signup' %}
                   <a class="p-category" href="/tagged/{{ tag | slugify }}/" rel="tag"
@@ -46,7 +46,7 @@
                 {% endif %}
                 {% if category %}
                 <div class="note--category">
-                  <span>Category: </span>
+                  {% assetIcon "folder" %}
                   <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
                     {{ category }}
                   </a>

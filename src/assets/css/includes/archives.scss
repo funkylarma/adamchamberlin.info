@@ -111,7 +111,7 @@
 
       .archive--year {
         position: sticky;
-        top: 1rem;
+        top: 3rem;
         align-self: flex-start;
 
         @media screen and (max-width: 900px) {
@@ -133,7 +133,7 @@
         background: var(--main-color-background);
         text-transform: uppercase;
         position: sticky;
-        top: 1rem;
+        top: 3rem;
         z-index: 999;
 
         @media screen and (max-width: 900px) {

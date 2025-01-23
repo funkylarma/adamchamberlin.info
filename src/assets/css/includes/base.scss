@@ -76,6 +76,10 @@
   /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 .h1 {
   font-size: var(--main-font-size-xx-large);
@@ -216,6 +220,7 @@ body {
   justify-content: center;
   align-content: center;
   border-bottom: none;
+  scroll-margin-top: 5rem;
 
   &:link,
   &:visited {
@@ -253,19 +258,27 @@ img[width][height] {
   /* Preserve aspect ratio */
 }
 
-.skip-link {
-  top: 0;
-  left: 0;
-  transform: translateY(-100%);
+
+[href="#skip"] {
+	position: relative;
+  top: 4rem;
+  left: 1rem;
 }
 
-/* Show keyboard focus */
-.skip-link:focus-visible {
-  transform: translateY(0%);
+/* Hide skip link when it's not focused */
+[href="#skip"]:not(:focus) {
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
 }
 
 .container {
   width: 100%;
+  margin-top: 5rem;;
   padding-left: 1rem;
   padding-right: 1rem;
 
