@@ -1,63 +1,90 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
-  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
-  <head>
-    {% include "partials/head.liquid" %}
-  </head>
-  <body>
-    <a href="#skip" class="skip-link">Skip to main content</a>
-    <div class="layout" role="document">
-      {% include "partials/header.liquid" %}
-      <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-        <article class="hentry h-entry post--single" id="{{ title | slugify }}" itemtype="http://schema.org/BlogPosting" itemid="{{ page.url | absoluteUrl }}" role="article">
-          {% include "partials/hcard.liquid" %}
-          <meta itemprop="wordCount" content="{{ content | wordCount }}">
-          <header class="post--header">
-            <h1 class="post--title p-name" itemprop="headline">{{ title }}</h1>
-            <div class="tagline">
-              {% if subhead %}
-                <p>{{ subhead }}</p>
+<!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+
+<head>
+  {% include "partials/head.liquid" %}
+</head>
+
+<body>
+  <a href="#skip" class="skip-link">Skip to main content</a>
+  <div class="layout" role="document">
+    {% include "partials/header.liquid" %}
+    <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+      <article class="hentry h-entry post--single" id="{{ title | slugify }}" itemtype="http://schema.org/BlogPosting" itemid="{{ page.url | absoluteUrl }}" role="article">
+        {% include "partials/hcard.liquid" %}
+        <meta itemprop="wordCount" content="{{ content | wordCount }}">
+        <header class="post--header">
+          <h1 class="post--title p-name" itemprop="headline">{{ title }}</h1>
+          <div class="tagline">
+            {% if subhead %}
+            <p>{{ subhead }}</p>
+            {% endif %}
+          </div><!-- .tagline -->
+          <div class="post--meta">
+            <div class="post--date">
+              {% assetIcon "calendar" %}
+              <time class="postlist-date dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">{{ page.date | dateReadable }}</time>
+            </div><!-- .post--date -->
+            {% if category %}
+            <div class="post--category">
+              {% assetIcon "folder" %}
+              <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
+                {{ category }}
+              </a>
+            </div><!-- .post--category -->
+            {% endif %}
+            {% if tags.length > 1 %}
+            <div class="post--tags">
+              {% assetIcon "tag" %}
+              {%- for tag in tags -%}
+              {% if tag != 'article' and tag != 'note' and tag != 'video' %}
+              <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}" rel="tag">
+                {{ tag }}
+              </a>
               {% endif %}
-            </div><!-- .tagline -->
-            <div class="post--meta">
-              <div class="post--date">
-                {% assetIcon "calendar" %}
-                <time class="postlist-date dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">{{ page.date | dateReadable }}</time>
-              </div><!-- .post--date -->
-              {% if category %}
-                <div class="post--category">
-                  {% assetIcon "folder" %}
-                  <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
-                    {{ category }}
-                  </a>
-                </div><!-- .post--category -->
-              {% endif %}
-              {% if tags.length > 1 %}
-                <div class="post--tags">
-                  {% assetIcon "tag" %}
-                  {%- for tag in tags -%}
-                    {% if tag != 'article' and tag != 'note' and tag != 'video' %}
-                      <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}" rel="tag">
-                        {{ tag }}
-                      </a>
-                    {% endif %}
-                  {%- endfor -%}
-                </div><!-- .post--tags -->
-              {% endif %}
-              <div class="post--reading">
-                {% assetIcon "hourglass" %}
-                {{ content | timeReading }}
-              </div><!-- .post-reading -->
-            </div><!-- .post-meta -->
-          </header><!-- .page--header -->
-          <div class="post--content e-content" itemprop="articleBody">
-            {{ content }}
-          </div><!-- .post--content -->
-          <div class="responses" id="responses" itemscope itemtype="https://schema.org/Comment">
+              {%- endfor -%}
+            </div><!-- .post--tags -->
+            {% endif %}
+            <div class="post--reading">
+              {% assetIcon "hourglass" %}
+              {{ content | timeReading }}
+            </div><!-- .post-reading -->
+          </div><!-- .post-meta -->
+        </header><!-- .page--header -->
+        <div class="post--content e-content" itemprop="articleBody">
+          {{ content }}
+        </div><!-- .post--content -->
+        <div class="interactions">
+          <h2>Get Involved</h2>
+          <div class="webmentions" itemscope itemtype="https://schema.org/Comment">
+            <h3>
+              {% assetIcon "at" %}
+              WebMention
+            </h3>
+            <p class="info">
+              <em>This site supports <a href="https://indieweb.org/Webmention">webmentions</a> via <a href="https://webmention.io/">webmention.io</a>.</em>
+            </p>
+            <p>Have you posted a response to this or anything related, let me know...</p>
             {% include "partials/webmentions.liquid" %}
-          </div>
-        </article>
-        <script type="application/ld+json">
+          </div><!-- .webmentions -->
+          <div class="share">
+            <h3>
+              {% assetIcon "share" %}
+              Share
+            </h3>
+            <a href="https://shareopenly.org/share/?url={{ page.url | absoluteUrl }}">Share on the Fediverse</a>
+          </div><!-- .share -->
+          <div class="email">
+            <h3>
+              {% assetIcon "email" %}
+              Email
+            </h3>
+            <a href='mailto:hello@adamchamberlin.info?subject=Re: {{ title }}'>Reply via email</a>
+          </div><!-- .email -->
+        </div><!-- .interactions -->
+      </article>
+      <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -75,9 +102,10 @@
           },
           "datePublished": "{{ page.date | dateHtmlString }}"
         }
-        </script>
-      </main>
-      {% include "partials/footer.liquid" %}
-    </div><!-- .container -->
-  </body>
+      </script>
+    </main>
+    {% include "partials/footer.liquid" %}
+  </div><!-- .container -->
+</body>
+
 </html>
