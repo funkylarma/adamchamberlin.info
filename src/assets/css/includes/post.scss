@@ -247,6 +247,8 @@
       .post--category,
       .post--tags,
       .post--reading {
+        display: flex;
+        align-items: baseline;
         font-size: var(--main-font-size-xx-small);
 
         span {
@@ -259,6 +261,12 @@
           &:hover {
             color: var(--main-color-quaternary);
           }
+        }
+      }
+
+      .post--tags {
+        a {
+          margin-right: 5px;
         }
       }
     }

@@ -39,9 +39,7 @@
               {% assetIcon "tag" %}
               {%- for tag in tags -%}
               {% if tag != 'article' and tag != 'note' and tag != 'video' %}
-              <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}" rel="tag">
-                {{ tag }}
-              </a>
+              <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}" rel="tag">{{ tag }} </a>
               {% endif %}
               {%- endfor -%}
             </div><!-- .post--tags -->
