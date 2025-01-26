@@ -12,7 +12,7 @@ permalink: '/category/{{ category | slugify }}/'
 eleventyComputed:
   title: 'Category: {{ category | capitaliseFirstLetter }}'
   description: "Archive page for the '{{ category | capitaliseFirstLetter }}' category"
-  subhead: 'These are all the posts listed under the category of "{{ category }}"'
+  subhead: 'These are all the content listed under the category of "{{ category }}"'
 ---
 
 {% if category == "article" %}

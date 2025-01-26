@@ -3,6 +3,10 @@ title: Contact
 subhead: Time to get social
 description: This is the typical contact page, but instead of a contact form, you can pick the platform to contact me on.
 permalink: /contact/
+related:
+  - /now/
+  - /uses/
+  - /about/
 ---
 
 Over the years, I have had various contact forms and social networking handles, all I have learnt is that they serve to generate more email or internet mental chatter.{.h3}

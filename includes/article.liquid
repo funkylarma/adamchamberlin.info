@@ -53,35 +53,85 @@
         <div class="post--content e-content" itemprop="articleBody">
           {{ content }}
         </div><!-- .post--content -->
-        <div class="interactions">
-          <h2>Get Involved</h2>
-          <div class="webmentions" itemscope itemtype="https://schema.org/Comment">
-            <h3>
-              {% assetIcon "at" %}
-              WebMention
-            </h3>
-            <p class="info">
-              <em>This site supports <a href="https://indieweb.org/Webmention">webmentions</a> via <a href="https://webmention.io/">webmention.io</a>.</em>
-            </p>
-            <p>Have you posted a response to this or anything related, let me know...</p>
-            {% include "partials/webmentions.liquid" %}
-          </div><!-- .webmentions -->
-          <div class="share">
-            <h3>
-              {% assetIcon "share" %}
-              Share
-            </h3>
-            <a href="https://shareopenly.org/share/?url={{ page.url | absoluteUrl }}">Share on the Fediverse</a>
-          </div><!-- .share -->
-          <div class="email">
-            <h3>
-              {% assetIcon "email" %}
-              Email
-            </h3>
-            <a href='mailto:hello@adamchamberlin.info?subject=Re: {{ title | escape }}'>Reply via email</a>
-          </div><!-- .email -->
-        </div><!-- .interactions -->
       </article>
+
+      {% if related %}
+        <aside class="related">
+          <h2>Related Content</h2>
+          <ul>
+          {% assign posts = related | getRelated: collections.all %}
+          {% for post in posts %}
+            <li>
+              {% if post.data.category == 'article' %}
+                {% assetIcon 'article' %}
+                Also written -
+
+              {% elsif post.data.category == 'note' %}
+                {% assetIcon "note" %}
+                Noted about -
+
+              {% elsif post.data.category == 'rsvp' %}
+                {% assetIcon "rsvp" %}
+                Attended -
+
+              {% elsif post.data.category == 'reply' %}
+                {% assetIcon "reply" %}
+                Commented to -
+
+              {% elsif post.data.category == 'signup' %}
+                {% assetIcon "signup" %}
+                Original signup -
+
+              {% elsif post.data.category == 'exercise' %}
+                {% assetIcon "stopwatch" %}
+                Training -
+
+              {% elsif post.data.category == 'race' %}
+                {% assetIcon "trophy" %}
+                Race file -
+
+              {% elsif post.data.category == 'checkin' %}
+                {% assetIcon "checkin" %}
+                Checked in -
+
+              {% endif %}
+              <a href="{{ post.url }}">
+                {{ post.data.title }}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </aside>
+      {% endif %}
+
+      <div class="interactions">
+        <h2>Get Involved</h2>
+        <div class="webmentions" itemscope itemtype="https://schema.org/Comment">
+          <h3>
+            {% assetIcon "at" %}
+            WebMention
+          </h3>
+          <p class="info">
+            <em>This site supports <a href="https://indieweb.org/Webmention">webmentions</a> via <a href="https://webmention.io/">webmention.io</a>.</em>
+          </p>
+          <p>Have you posted a response to this or anything related, let me know...</p>
+          {% include "partials/webmentions.liquid" %}
+        </div><!-- .webmentions -->
+        <div class="share">
+          <h3>
+            {% assetIcon "share" %}
+            Share
+          </h3>
+          <a href="https://shareopenly.org/share/?url={{ page.url | absoluteUrl }}">Share on the Fediverse</a>
+        </div><!-- .share -->
+        <div class="email">
+          <h3>
+            {% assetIcon "email" %}
+            Email
+          </h3>
+          <a href='mailto:hello@adamchamberlin.info?subject=Re: {{ title | escape }}'>Reply via email</a>
+        </div><!-- .email -->
+      </div><!-- .interactions -->
       <script type="application/ld+json">
         {
           "@context": "https://schema.org",

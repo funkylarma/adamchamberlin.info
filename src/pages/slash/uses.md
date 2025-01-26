@@ -3,6 +3,10 @@ title: Uses
 subhead: The tooling
 description: This page is all about what I use day to day to run this site and my life.
 permalink: /uses/
+related:
+  - /now/
+  - /about/
+  - /contact/
 ---
 
 This is a list of the 'stuff' I use on a day-to-day basis.

@@ -28,6 +28,8 @@
         }
 
         h1 {
+          display: flex;
+          align-items: center;
           font-size: var(--main-font-size-small);
           font-weight: 300;
         }
@@ -36,7 +38,7 @@
       .note--meta {
         display: flex;
         flex-direction: row;
-        align-items: baseline;
+        align-items: center;
         column-gap: 0.5rem;
         margin-bottom: 0.5rem;
         font-size: var(--main-font-size-xx-small);
@@ -50,10 +52,15 @@
             text-decoration: none;
           }
         }
+
         .note--tags {
+          display: flex;
+          align-items: center;
         }
 
         .note--category {
+          display: flex;
+          align-items: center;
         }
       }
     }

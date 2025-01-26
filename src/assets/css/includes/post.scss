@@ -248,7 +248,7 @@
       .post--tags,
       .post--reading {
         display: flex;
-        align-items: baseline;
+        align-items: center;
         font-size: var(--main-font-size-xx-small);
 
         span {
@@ -339,5 +339,22 @@
     .eleventy-plugin-youtube-embed {
       margin-bottom: 2rem;
     }
+  }
+}
+
+.related {
+  max-width: var(--main-layout-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+
+  h2 {
+    font-size: var(--main-font-size-medium);
+    font-weight: 400;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
   }
 }

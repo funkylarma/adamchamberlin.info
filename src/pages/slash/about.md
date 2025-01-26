@@ -3,6 +3,10 @@ title: Hi, I'm Adam Chamberlin
 subhead: All about me
 description: This is my about page, it is a bit of a personal wiki style page with some details about where I work and all that other stuff.
 permalink: /about/
+related:
+  - /now/
+  - /uses/
+  - /contact/
 ---
 
 ![My daughter running with me as I finish a 50k ultra](/images/pages/IMG_0900.jpeg){.wide}{sizes="(min-width: 1160px) 1120px, (min-width: 880px) 800px, calc(95vw - 17px)"}

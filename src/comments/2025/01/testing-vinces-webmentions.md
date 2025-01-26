@@ -6,6 +6,8 @@ category: reply
 tags:
   - IndieWeb
   - Webmentions
+related:
+  - /2024/12/testing-webmentions/
 ---
 
 Love the unicorn image and hopefully the webmentions work ;)
