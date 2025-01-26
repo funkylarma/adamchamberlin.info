@@ -29,7 +29,7 @@
 
 <div class="webmentions" id="webmentions" data-url="{{ webmentionUrl }}" data-last-fetched="{{ webmentions.lastFetched }}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
 
-  {% if mentions.comments %}
+  {% if mentions.comments.length > 0 %}
   <div class="comments">
     <h3 itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
       <span itemprop="userInteractionCount">
@@ -63,7 +63,7 @@
           </span>
           {% endif %}
           <em>
-            <time class="postlist-date dt-published" itemprop="datePublished" datetime="{{ item.published }}">{{ item.published | dateReadableFromISO: "dd LLL yyyy" }}</time>
+            <time class="postlist-date dt-published" itemprop="datePublished" datetime="{{ item.wm-received }}">{{ item.wm-received | dateReadableFromISO: "dd LLL yyyy" }}</time>
           </em>
         </div>
         <div class="comment--body">
@@ -77,7 +77,7 @@
   </div><!-- .comments -->
   {% endif %}
 
-  {% if mentions.likes %}
+  {% if mentions.likes.length > 0 %}
   <div class="likes">
     <h3 itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
       <span itemprop="userInteractionCount">
@@ -99,7 +99,7 @@
   </div>
   {% endif %}
 
-  {% if mentions.reposts %}
+  {% if mentions.reposts.length > 0 %}
   <div class="reposts">
     <h3 itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
       <span itemprop="userInteractionCount">
@@ -115,6 +115,9 @@
         <a class="h-card u-url" target="_blank" rel="noopener noreferrer" href="{{ item.url }}" itemprop="url">
           <img class="comment--author--photo u-photo" src="{{ item.photo }}" alt="photo of the author of one of the webmentions for this page" itemprop="image" width="50" height="50" loading="lazy" eleventy:ignore>
         </a>
+        <em>
+          <time class="postlist-date dt-published" itemprop="datePublished" datetime="{{ item.wm-received }}">{{ item.wm-received | dateReadableFromISO: "dd LLL yyyy" }}</time>
+        </em>
       </div>
       {% endfor %}
     </div>

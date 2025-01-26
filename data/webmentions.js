@@ -19,17 +19,13 @@ const DOMAIN = globals.domain;
 async function fetchWebmentions(since, perPage = 100000) {
   if (!DOMAIN) {
     // If we dont have a domain name, abort
-    console.warn(
-      '>>> unable to fetch webmentions: no domain name specified in site.json'
-    );
+    console.warn('>>> unable to fetch webmentions: no domain name specified in site.json');
     return false;
   }
 
   if (!TOKEN) {
     // If we dont have a domain access token, abort
-    console.warn(
-      '>>> unable to fetch webmentions: no access token specified in environment.'
-    );
+    console.warn('>>> unable to fetch webmentions: no access token specified in environment.');
     return false;
   }
 
@@ -39,9 +35,7 @@ async function fetchWebmentions(since, perPage = 100000) {
   const response = await fetch(url);
   if (response.ok) {
     const feed = await response.json();
-    console.log(
-      `>>> ${feed.children.length} new webmentions fetched from ${API}`
-    );
+    console.log(`>>> ${feed.children.length} new webmentions fetched from ${API}`);
     return feed;
   }
 

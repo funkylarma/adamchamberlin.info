@@ -5,6 +5,8 @@ pagination:
   size: 50
   reverse: true
 permalink: /notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
+tags:
+ - page
 eleventyComputed:
   title: "Notes {% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber }}{% endif %}"
   subhead: These are the short form items of content.

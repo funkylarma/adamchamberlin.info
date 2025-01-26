@@ -4,7 +4,8 @@ title: "Adam Chamberlin"
 subhead: "Consummate Athlete And DOM Element Wrangler."
 description: "The personal website of Adam Chamberlin"
 permalink: /
-
+tags:
+  - page
 ---
 
 <div class="welcome">
@@ -22,12 +23,12 @@ permalink: /
 </div>
 
 <div class="headshot">
-  <img 
-    src="/assets/images/headshot.webp" 
+  <img
+    src="/assets/images/headshot.webp"
     alt="Adam Chamberlin"
     sizes="(min-width: 1220px) 398px, (min-width: 920px) calc(53.57vw - 245px), (min-width: 720px) calc(40vw + 38px), (min-width: 420px) calc(33.21vw - 34px), calc(100vw - 34px)"
-    width="200" 
-    height="200" 
+    width="200"
+    height="200"
     loading="lazy"
   />
 </div>
@@ -72,7 +73,7 @@ permalink: /
       </div>
       {% if post.data.cover %}
       <div class="post--image">
-        <img src="{{ post.data.cover }}" 
+        <img src="{{ post.data.cover }}"
              alt="Cover image for {{ post.data.title }}"
              sizes="300px"
              loading="lazy" />

@@ -37,14 +37,13 @@ export default {
   },
 
   metaDescription: function (title) {
-
     if (this.page.url) {
       if (this.page.url == '/' || this.page.url.includes('page')) {
         return metadata.description;
       }
 
       if (/\d{4}\//.test(this.page.url)) {
-        let type = "";
+        let type = '';
 
         if (this.page.filePathStem.includes('article')) {
           type = 'article';
@@ -65,7 +64,9 @@ export default {
         return (
           'The ' +
           title.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '') +
-          ' is a ' + type + ' posted by Adam Chamberlin on ' +
+          ' is a ' +
+          type +
+          ' posted by Adam Chamberlin on ' +
           this.page.date.toDateString()
         );
       }
@@ -142,15 +143,10 @@ export default {
   },
 
   dateReadable: function (dateObj, format, zone) {
-    return DateTime.fromJSDate(dateObj, { zone: zone || 'utc' }).toFormat(
-      format || 'dd LLLL yyyy'
-    );
+    return DateTime.fromJSDate(dateObj, { zone: zone || 'utc' }).toFormat(format || 'dd LLLL yyyy');
   },
 
-  dateReadableFromISO: function (
-    dateStr,
-    formatStr = "dd LLL yyyy 'at' hh:mma"
-  ) {
+  dateReadableFromISO: function (dateStr, formatStr = "dd LLL yyyy 'at' hh:mma") {
     return DateTime.fromISO(dateStr).toFormat(formatStr);
   },
 
@@ -165,9 +161,7 @@ export default {
   dateLongDate: function (dateObj) {
     dateObj = parse(dateObj);
     let day = dateObj.getDate();
-    return `${day}${nth(day)} ${
-      month_names[dateObj.getMonth()]
-    } ${dateObj.getFullYear()}`;
+    return `${day}${nth(day)} ${month_names[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
   },
 
   dateLongDateShortMonth: function (dateObj) {
@@ -279,16 +273,12 @@ export default {
       .map((like) => like.author);
 
     const reposts = pageWebMentions
-      .filter((mention) =>
-        allowedTypes.reposts.includes(mention['wm-property'])
-      )
+      .filter((mention) => allowedTypes.reposts.includes(mention['wm-property']))
       .filter((repost) => repost.author)
       .map((repost) => repost.author);
 
     const comments = pageWebMentions
-      .filter((mention) =>
-        allowedTypes.comments.includes(mention['wm-property'])
-      )
+      .filter((mention) => allowedTypes.comments.includes(mention['wm-property']))
       .filter((comment) => {
         const { author, published, content } = comment;
         return author && author.name && published && content;
