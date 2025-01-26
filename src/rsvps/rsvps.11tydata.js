@@ -2,7 +2,7 @@ export default {
   eleventyComputed: {
     // Modify the permalink
     permalink: ( data ) => {
-      return `/${data.page.filePathStem.replace('/notes', '/')}/`;
+      return `/${data.page.filePathStem.replace('/rsvps', '/')}/`;
     },
     
     eleventyExcludeFromCollections: ( data ) => {
@@ -11,7 +11,7 @@ export default {
   },
   
   // Set the tag for collections
-  tags: [ 'note' ],
+  tags: [ 'note', 'rsvp' ],
   
   // What layout to use
   layout: 'note.liquid',

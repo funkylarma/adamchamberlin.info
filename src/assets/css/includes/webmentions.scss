@@ -135,9 +135,9 @@
         display: inline;
         margin: 0;
         padding: 0.5rem 1rem;
-        background: var(--main-color-base);
+        background: var(--main-color-background);
         min-width: 25rem;
-        border: none;
+        border: 1px solid var(--main-color-hairline);
         border-top-left-radius: 1rem;
       }
 

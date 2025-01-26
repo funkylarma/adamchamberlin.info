@@ -3,14 +3,14 @@ import { DateTime } from 'luxon';
 export default {
   eleventyComputed: {
     // Modify the permalink
-    permalink: (data) => {
-      return `/${data.page.filePathStem.replace('/notes/checkins', '/')}/`;
+    permalink: ( data ) => {
+      return `/${data.page.filePathStem.replace('/checkins', '/')}/`;
     },
   },
-
+  
   // Set the tag for collections
-  tags: ['checkin'],
-
+  tags: [ 'note', 'checkin' ],
+  
   // What layout to use
   layout: 'checkin.liquid',
 };

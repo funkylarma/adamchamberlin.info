@@ -37,19 +37,18 @@
                   <span>Tagged: </span>
                   {%- for tag in tags -%}
                   {% if tag != 'note' and tag != 'checkin' %}
-                  <a class="p-category" href="/tagged/{{ tag | slugify }}/"
-                    title="Browse other posts tagged with {{ tag }}" rel="tag">
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}" rel="tag">
                     {{ tag }}
                   </a>
                   {% endif %}
                   {%- endfor -%}
                   {% if category %}
-                    <div class="note--category">
-                      <span>Category: </span>
-                      <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
-                        {{ category }}
-                      </a>
-                    </div><!-- .post--category -->
+                  <div class="note--category">
+                    <span>Category: </span>
+                    <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
+                      {{ category }}
+                    </a>
+                  </div><!-- .post--category -->
                   {% endif %}
                 </div><!-- .post--tags -->
                 {% endif %}
@@ -77,10 +76,8 @@
               </div>
             </section>
 
-            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
-              crossorigin="anonymous">
-            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
-              onload="this.media='all'" fetchpriority="low">
+            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all" onload="this.media='all'" fetchpriority="low">
             <noscript>
               <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
             </noscript>
@@ -99,19 +96,39 @@
                 const map = new mapboxgl.Map({
                   container: 'map', // container ID
                   style: mapStyle,
-                  center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                zoom: 16 // starting zoom
+                  center: [{
+                    {
+                      longitude
+                    }
+                  }, {
+                    {
+                      latitude
+                    }
+                  }], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                  zoom: 16 // starting zoom
                 });
 
-              // Add some controls
-              const nav = new mapboxgl.NavigationControl();
-              map.addControl(nav, 'top-left');
-              map.addControl(new mapboxgl.FullscreenControl({ container: document.querySelector('map') }));
+                // Add some controls
+                const nav = new mapboxgl.NavigationControl();
+                map.addControl(nav, 'top-left');
+                map.addControl(new mapboxgl.FullscreenControl({
+                  container: document.querySelector('map')
+                }));
 
-              // Drop the pin
-              new mapboxgl.Marker({ color: "#36d02f" }).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
+                // Drop the pin
+                new mapboxgl.Marker({
+                  color: "#36d02f"
+                }).setLngLat([{
+                  {
+                    longitude
+                  }
+                }, {
+                  {
+                    latitude
+                  }
+                }]).addTo(map);
 
-              map.resize();
+                map.resize();
               });
             </script>
             <script type="application/ld+json">
@@ -125,15 +142,40 @@
                 },
                 "name": "{{ title }}"
               }
-            };
+              };
             </script>
           </div><!-- .note--content -->
         </div><!-- .note--main -->
       </article><!-- .note--main -->
 
-      <div class="responses" id="responses">
-        {% include "partials/webmentions.liquid" %}
-      </div>
+      <div class="interactions">
+        <h2>Get Involved</h2>
+        <div class="webmentions" itemscope itemtype="https://schema.org/Comment">
+          <h3>
+            {% assetIcon "at" %}
+            WebMention
+          </h3>
+          <p class="info">
+            <em>This site supports <a href="https://indieweb.org/Webmention">webmentions</a> via <a href="https://webmention.io/">webmention.io</a>.</em>
+          </p>
+          <p>Have you posted a response to this or anything related, let me know...</p>
+          {% include "partials/webmentions.liquid" %}
+        </div><!-- .webmentions -->
+        <div class="share">
+          <h3>
+            {% assetIcon "share" %}
+            Share
+          </h3>
+          <a href="https://shareopenly.org/share/?url={{ page.url | absoluteUrl }}">Share on the Fediverse</a>
+        </div><!-- .share -->
+        <div class="email">
+          <h3>
+            {% assetIcon "email" %}
+            Email
+          </h3>
+          <a href='mailto:hello@adamchamberlin.info?subject=Re: {{ title | escape }}'>Reply via email</a>
+        </div><!-- .email -->
+      </div><!-- .interactions -->
 
     </main>
 
