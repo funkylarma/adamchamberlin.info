@@ -29,7 +29,7 @@ const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production';
 import { dir } from './utils/constants.js';
 
-export default async function (eleventyConfig) {
+export default async function(eleventyConfig) {
 
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addGlobalData('env', process.env);
@@ -62,23 +62,23 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginTOC);
   eleventyConfig.addPlugin(feedPlugin, {
-		type: "atom", // or "rss", "json"
-		outputPath: "/test.xml",
-		collection: {
-			name: "posts", // iterate over `collections.posts`
-			limit: 25,     // 0 means no limit
-		},
-		metadata: {
-			language: "en",
-			title: "{{ meta.title }}",
-			subtitle: "{{ meta.description }}",
-			base: "https://adamchamberlin.info/",
-			author: {
-				name: "{{ meta.author.name }}",
-				email: "{{ meta.author.email }}", // Optional
-			}
-		}
-	});
+    type: "atom", // or "rss", "json"
+    outputPath: "/test.xml",
+    collection: {
+      name: "posts", // iterate over `collections.posts`
+      limit: 25, // 0 means no limit
+    },
+    metadata: {
+      language: "en",
+      title: "{{ meta.title }}",
+      subtitle: "{{ meta.description }}",
+      base: "https://adamchamberlin.info/",
+      author: {
+        name: "{{ meta.author.name }}",
+        email: "{{ meta.author.email }}", // Optional
+      }
+    }
+  });
   eleventyConfig.addPlugin(pluginImageTransform, {
     extensions: 'html',
     formats: ['jpg', 'webp'],
