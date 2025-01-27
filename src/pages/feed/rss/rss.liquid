@@ -4,28 +4,24 @@ templateEngineOverride: njk
 eleventyExcludeFromCollections: true
 permalink: /feed/feed.rss
 ---
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>{{ metadata.title}}</title>
-  <link>{{ globals.url }}</link>
-  <description>{{ metadata.description }}</description>
-  <language>{{ metadata.language }}</language>
-  <image>
-    <url>{{ metadata.author.image }}</url>
-    <title>{{ metadata.author.name }}</title>
-    <link>{{ globals.url }}</link>
-  </image>
-  {%- for post in collections.article -%}
-  {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ globals.url | addPathPrefixToFullUrl }}" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ metadata.title }} | RSS Feed</title>
+    <link>{{ globals.url | addPathPrefixToFullUrl }}</link>
+    <atom:link href="{{ permalink | htmlBaseUrl(globals.url) }}" rel="self" type="application/rss+xml" />
+    <description>{{ metadata.description }}</description>
+    <language>{{ metadata.language or page.lang }}</language>
+    {%- for post in collections.allFeed %}
+    {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}  
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ post.templateContent }}</description>
+      <description>{{ post.content | renderTransforms(post.data.page,globals.url) }}</description>
       <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-      <author>{{ metadata.author.name }}</author>
+      <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>
     </item>
-  {%- endfor %}
-</channel>
+    {%- endfor %}
+  </channel>
 </rss>

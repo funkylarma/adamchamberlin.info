@@ -6,105 +6,43 @@ import markdownItAnchor from 'markdown-it-anchor';
 import markdownItLinkAttributes from 'markdown-it-link-attributes';
 import markdownItPrism from 'markdown-it-prism';
 
-const markdownItAnchorOptions = {
-  permalink: true,
-  permalinkClass: 'deeplink',
-  permalinkSymbol: '#',
-  level: [2, 3, 4],
-  slugify: slugifyString,
-  renderPermalink: (slug, opts, state, idx) => {
-    // based on fifth version in
-    // https://amberwilson.co.uk/blog/are-your-anchor-links-accessible/
-    const linkContent = state.tokens[idx + 1].children[0].content;
 
-    // Create the openning <div> for the wrapper
-    const headingWrapperTokenOpen = Object.assign(new state.Token('div_open', 'div', 1), {
-      attrs: [['class', 'heading-wrapper']],
-    });
-    // Create the closing </div> for the wrapper
-    const headingWrapperTokenClose = Object.assign(new state.Token('div_close', 'div', -1), {
-      attrs: [['class', 'heading-wrapper']],
-    });
-
-    // Create the tokens for the full accessible anchor link
-    // <a class="deeplink" href="#your-own-platform-is-the-nearest-you-can-get-help-to-setup">
-    //   <span aria-hidden="true">
-    //     ${opts.permalinkSymbol}
-    //   </span>
-    //   <span class="visually-hidden">
-    //     Section titled Your "own" platform is the nearest you can(get help to) setup
-    //   </span>
-    // </a >
-    const anchorTokens = [
-      Object.assign(new state.Token('link_open', 'a', 1), {
-        attrs: [
-          ...(opts.permalinkClass ? [['class', opts.permalinkClass]] : []),
-          ['href', opts.permalinkHref(slug, state)],
-          ...Object.entries(opts.permalinkAttrs(slug, state)),
-        ],
-      }),
-      Object.assign(new state.Token('span_open', 'span', 1), {
-        attrs: [['aria-hidden', 'true']],
-      }),
-      Object.assign(new state.Token('html_block', '', 0), {
-        content: opts.permalinkSymbol,
-      }),
-      Object.assign(new state.Token('span_close', 'span', -1), {}),
-      Object.assign(new state.Token('span_open', 'span', 1), {
-        attrs: [['class', 'visually-hidden']],
-      }),
-      Object.assign(new state.Token('html_block', '', 0), {
-        content: `Section titled ${linkContent}`,
-      }),
-      Object.assign(new state.Token('span_close', 'span', -1), {}),
-      new state.Token('link_close', 'a', -1),
-    ];
-
-    // idx is the index of the heading's first token
-    // insert the wrapper opening before the heading
-    state.tokens.splice(idx, 0, headingWrapperTokenOpen);
-    // insert the anchor link tokens after the wrapper opening and the 3 tokens of the heading
-    state.tokens.splice(idx + 3 + 1, 0, ...anchorTokens);
-    // insert the wrapper closing after all these
-    state.tokens.splice(idx + 3 + 1 + anchorTokens.length, 0, headingWrapperTokenClose);
-  },
-};
-
-const mardownItLinkAttributesOptions = {
-  // Only external links (explicit protocol; internal links use relative paths)
-  pattern: /^https?:/,
-  attrs: {
-    rel: 'noopener',
-  },
-};
-
-/** Configures and returns a markdown parser. */
-const makeMarkdownParser = () =>
-  markdownIt({
-    // Use of HTML tags in Markdown
+  // Options for the `markdown-it` library
+  const markdownItOptions = {
     html: true,
-    // Conversion of \n to <br>
-    breaks: false,
-    // Automatically hyperlinking inline links
+    breaks: true,
     linkify: true,
-    // Smart quotes and other symbol replacements
-    typographer: true,
-  })
-    // https://github.com/11ty/eleventy/issues/2438
-    .disable('code')
+  }
 
-    // Markdown prism
-    .use(markdownItPrism, {
-      defaultLanguage: 'plaintext',
-    })
+  // Options for the `markdown-it-anchor` library
+  const markdownItAnchorOptions = {
+    level: [2, 3, 4],
+    slugifyString,
+    permalink: markdownItAnchor.permalink.linkAfterHeader({
+      class: 'deeplink',
+      symbol: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-link" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg>',
+      style: 'visually-hidden',
+      visuallyHiddenClass: 'visually-hidden',
+      assistiveText: (title) => `Permalink to heading ${title}`,
+      wrapper: ['<div class="heading-wrapper">', '</div>'],
+    }),
+  }
 
-    .use(markdownItAttrs)
+  const mardownItLinkAttributesOptions = {
+    // Only external links (explicit protocol; internal links use relative paths)
+    pattern: /^https?:/,
+    attrs: {
+      rel: 'noopener',
+    },
+  };
 
+  const markdownItPrismOptions = {
+    defaultLanguage: 'plaintext',
+  }
+
+  const md = markdownIt(markdownItOptions)
     .use(markdownItAnchor, markdownItAnchorOptions)
-
-    .use(markdownItLinkAttributes, mardownItLinkAttributesOptions);
-
-/** A customized, default markdown parser. Suitable for most of my parsing needs. */
-const markdown = makeMarkdownParser();
-
-export { markdown, makeMarkdownParser };
+    .use(markdownItAttrs, mardownItLinkAttributesOptions)
+    .use(markdownItPrism, markdownItPrismOptions)
+      
+  export  { md }

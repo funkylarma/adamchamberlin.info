@@ -19,13 +19,13 @@ permalink: /feed/json
     }
   ],
   "items": [
-    {%- for post in collections.post | reverse %}
+    {%- for post in collections.allFeed %}
     {%- set absolutePostUrl = post.url | absoluteUrl(globals.url) %}
     {
      "id": "{{ absolutePostUrl }}",
      "url": "{{ absolutePostUrl }}",
      "title": "{{ post.data.title }}",
-     "content_html": {% if post.templateContent %}{{ post.templateContent | postExcerpt | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{% else %}""{% endif %},
+     "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, globals.url) | dump | safe }}{% else %}""{% endif %},
      "date_published": "{{ post.date | dateToRfc3339 }}"
     }
     {% if not loop.last %},{% endif %}

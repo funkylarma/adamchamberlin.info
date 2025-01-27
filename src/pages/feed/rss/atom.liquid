@@ -8,14 +8,15 @@ permalink: /feed/feed.xml
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.description }}</subtitle>
-  <link href="{{ globals.atomFeed.url }}" rel="self"/>
-  <updated>{{ collections.articlesForFeed | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <link href="{{ permalink | htmlBaseUrl(globals.url) }}" rel="self"/>
+  <link href="{{ permalink | htmlBaseUrl(globals.url) }}" />
+  <updated>{{ collections.allFeed | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ globals.url | addPathPrefixToFullUrl }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.articlesForFeed %}
+  {%- for post in collections.allFeed %}
   {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
   <entry>
     <id>{{ absolutePostUrl }}</id>
@@ -23,8 +24,8 @@ permalink: /feed/feed.xml
     <link href="{{ absolutePostUrl }}" />
     <published>{{ post.date | dateToRfc3339 }}</published>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <category term="{{ category }}" />
-    <content type="html">{{ post.content }}</content>
+    <category term="{{ post.data.category }}" />
+    <content type="html">{{ post.templateContent | renderTransforms(post.data.page, globals.url) }}</content>
     <author>
       <name>{{ metadata.author.name }}</name>
       <email>{{ metadata.author.email }}</email>

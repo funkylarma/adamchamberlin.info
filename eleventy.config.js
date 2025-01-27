@@ -22,12 +22,14 @@ import shortcodes from './utils/shortcodes.js';
 import pairedShortcodes from './utils/shortcodes-paired.js';
 import liquidShortcodes from './utils/shortcodes-liquid.js';
 import transforms from './utils/transforms.js';
-import { markdown } from './utils/markdown.js';
+import { md } from './utils/markdown.js';
 
 // Environmental
 const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production';
 import { dir } from './utils/constants.js';
+import globals from './data/globals.js';
+import metadata from './data/metadata.js';
 
 export default async function(eleventyConfig) {
 
@@ -61,24 +63,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(feedPlugin, {
-    type: "atom", // or "rss", "json"
-    outputPath: "/test.xml",
-    collection: {
-      name: "all", // iterate over `collections.posts`
-      limit: 25, // 0 means no limit
-    },
-    metadata: {
-      language: "en",
-      title: "Adam Chamberlin",
-      subtitle: "Test Feed",
-      base: "https://adamchamberlin.info/",
-      author: {
-        name: "Adam Chamberlin",
-        email: "hello@adamchamberlin.info", // Optional
-      }
-    }
-  });
+  eleventyConfig.addPlugin(feedPlugin);
   eleventyConfig.addPlugin(pluginImageTransform, {
     extensions: 'html',
     formats: ['jpg', 'webp'],
@@ -114,7 +99,7 @@ export default async function(eleventyConfig) {
   });
 
   // Markdown
-  eleventyConfig.setLibrary('md', markdown);
+  eleventyConfig.setLibrary('md', md);
 
   // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
