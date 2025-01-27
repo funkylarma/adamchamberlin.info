@@ -3,13 +3,9 @@ import path from 'node:path';
 import dotenv from 'dotenv';
 dotenv.config();
 
-// Web imports
-import * as sass from 'sass';
-import htmlmin from 'html-minifier';
-
 // 11ty Imports
 import { HtmlBasePlugin as pluginHtmlBase, EleventyRenderPlugin as pluginEleventyRender } from '@11ty/eleventy';
-import pluginRss from '@11ty/eleventy-plugin-rss';
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginNavigation from '@11ty/eleventy-navigation';
 import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/eleventy-img';
 
@@ -65,7 +61,24 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom", // or "rss", "json"
+		outputPath: "/test.xml",
+		collection: {
+			name: "posts", // iterate over `collections.posts`
+			limit: 25,     // 0 means no limit
+		},
+		metadata: {
+			language: "en",
+			title: "{{ meta.title }}",
+			subtitle: "{{ meta.description }}",
+			base: "https://adamchamberlin.info/",
+			author: {
+				name: "{{ meta.author.name }}",
+				email: "{{ meta.author.email }}", // Optional
+			}
+		}
+	});
   eleventyConfig.addPlugin(pluginImageTransform, {
     extensions: 'html',
     formats: ['jpg', 'webp'],
