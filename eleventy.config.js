@@ -65,17 +65,17 @@ export default async function(eleventyConfig) {
     type: "atom", // or "rss", "json"
     outputPath: "/test.xml",
     collection: {
-      name: "posts", // iterate over `collections.posts`
+      name: "all", // iterate over `collections.posts`
       limit: 25, // 0 means no limit
     },
     metadata: {
       language: "en",
-      title: "{{ meta.title }}",
-      subtitle: "{{ meta.description }}",
+      title: "Adam Chamberlin",
+      subtitle: "Test Feed",
       base: "https://adamchamberlin.info/",
       author: {
-        name: "{{ meta.author.name }}",
-        email: "{{ meta.author.email }}", // Optional
+        name: "Adam Chamberlin",
+        email: "hello@adamchamberlin.info", // Optional
       }
     }
   });
