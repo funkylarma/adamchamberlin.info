@@ -65,7 +65,24 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginRss, {
+		type: "atom", // or "rss", "json"
+		outputPath: "/test.xml",
+		collection: {
+			name: "posts", // iterate over `collections.posts`
+			limit: 25,     // 0 means no limit
+		},
+		metadata: {
+			language: "en",
+			title: "{{ meta.title }}",
+			subtitle: "{{ meta.description }}",
+			base: "{{ globals.url }}",
+			author: {
+				name: "{{ meta.author.name }}",
+				email: "{{ meta.author.email }}", // Optional
+			}
+		}
+	});
   eleventyConfig.addPlugin(pluginImageTransform, {
     extensions: 'html',
     formats: ['jpg', 'webp'],
