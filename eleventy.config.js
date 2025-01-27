@@ -5,7 +5,7 @@ dotenv.config();
 
 // 11ty Imports
 import { HtmlBasePlugin as pluginHtmlBase, EleventyRenderPlugin as pluginEleventyRender } from '@11ty/eleventy';
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import rssPlugin from "@11ty/eleventy-plugin-rss";
 import pluginNavigation from '@11ty/eleventy-navigation';
 import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/eleventy-img';
 
@@ -15,7 +15,6 @@ import pluginYouTube from 'eleventy-plugin-youtube-embed';
 import pluginTOC from 'eleventy-plugin-nesting-toc';
 
 // Import the local functions
-import events from './utils/events.js';
 import collections from './utils/collections.js';
 import filters from './utils/filters.js';
 import shortcodes from './utils/shortcodes.js';
@@ -28,8 +27,6 @@ import { md } from './utils/markdown.js';
 const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production';
 import { dir } from './utils/constants.js';
-import globals from './data/globals.js';
-import metadata from './data/metadata.js';
 
 export default async function(eleventyConfig) {
 
@@ -39,7 +36,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.setLiquidOptions({
-    // Allows for dynamic include/partial names. If true, include names must be quoted. Defaults to true as of beta/1.0.
     dynamicPartials: true,
   });
 
@@ -63,7 +59,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(feedPlugin);
+  eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(pluginImageTransform, {
     extensions: 'html',
     formats: ['jpg', 'webp'],
