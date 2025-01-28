@@ -1,6 +1,6 @@
 :root {
   color-scheme: light dark;
-
+  
   /* Colour variables */
   --main-color-white: #ffffff;
   --main-color-black: #000000;
@@ -11,7 +11,14 @@
   --main-color-quaternary: #d0782f;
   --main-color-background: #f5f5f5;
   --main-color-hairline: #ebebeb;
-
+  
+  --main-color-note: #2f81f7;
+  --main-color-tip: #3fb950;
+  --main-color-warning: #d29922;
+  --main-color-severe: #db6d28;
+  --main-color-caution: #f85149;
+  --main-color-important: #a371f7;
+  
   /* Typography sizes */
   --main-font-size-normal: clamp(0.892rem, 0.892rem + ((1vw - 0.2rem) * 0.666), 1.333rem);
   --main-font-size-xx-small: 0.6827rem;
@@ -22,22 +29,23 @@
   --main-font-size-x-large: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 1.602), 42px);
   --main-font-size-xx-large: clamp(1.863rem, 1.863rem + ((1vw - 0.2rem) * 2.101), 3.255rem);
   --main-font-size-hero: clamp(2.23rem, 2.23rem + ((1vw - 0.2rem) * 2.776), 4.069rem);
-
+  
   /* Layout options */
   --main-layout-width-narrow: 40rem;
   --main-layout-width-normal: 50rem;
   --main-layout-width-wide: 60rem;
   --main-layout-width-x-wide: 80rem;
   --main-layout-width-xx-wide: 130ch;
-
+  
   /* Dark mode image filters */
   --main-image-filter: grayscale(50%);
-
+  
   --epg-box-highlight: var(--main-color-primary);
-
+  
   transition: all 1s ease-in-out;
-
-  @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  
+  @media screen and (prefers-reduced-motion: reduce),
+  (update: slow) {
     transition-duration: 0s;
   }
 }

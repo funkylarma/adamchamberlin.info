@@ -28,19 +28,19 @@ const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production';
 import { dir } from './utils/constants.js';
 
-export default async function(eleventyConfig) {
-
-  eleventyConfig.setQuietMode(true);
-  eleventyConfig.addGlobalData('env', process.env);
-
-  eleventyConfig.setDataDeepMerge(true);
-
-  eleventyConfig.setLiquidOptions({
+export default async function ( eleventyConfig ) {
+  
+  eleventyConfig.setQuietMode( true );
+  eleventyConfig.addGlobalData( 'env', process.env );
+  
+  eleventyConfig.setDataDeepMerge( true );
+  
+  eleventyConfig.setLiquidOptions( {
     dynamicPartials: true,
-  });
-
+  } );
+  
   // Pass-through copy for static assets
-  eleventyConfig.addPassthroughCopy({
+  eleventyConfig.addPassthroughCopy( {
     './src/assets/fonts': '/assets/fonts',
     './src/assets/images': '/assets/images',
     './src/geojson': '/geojson',
@@ -48,22 +48,22 @@ export default async function(eleventyConfig) {
     './src/assets/templates': '/assets/templates',
     './src/assets/js/**/*.min.js': '/assets/js',
     './src/assets/css/**/*.min.css': '/assets/css',
-  });
-
+  } );
+  
   // Watch content images for the image pipeline.
-  eleventyConfig.addWatchTarget('./src/assets/images/**/*.{svg,webp,png,jpeg}');
-  eleventyConfig.watchIgnores.add('./src/assets/ogi/**/*');
-
+  eleventyConfig.addWatchTarget( './src/assets/images/**/*.{svg,webp,png,jpeg}' );
+  eleventyConfig.watchIgnores.add( './src/assets/ogi/**/*' );
+  
   // Plugins
-  eleventyConfig.addPlugin(pluginEleventyRender);
-  eleventyConfig.addPlugin(pluginHtmlBase);
-  eleventyConfig.addPlugin(pluginNavigation);
-  eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(rssPlugin);
-  eleventyConfig.addPlugin(pluginImageTransform, {
+  eleventyConfig.addPlugin( pluginEleventyRender );
+  eleventyConfig.addPlugin( pluginHtmlBase );
+  eleventyConfig.addPlugin( pluginNavigation );
+  eleventyConfig.addPlugin( pluginTOC );
+  eleventyConfig.addPlugin( rssPlugin );
+  eleventyConfig.addPlugin( pluginImageTransform, {
     extensions: 'html',
-    formats: ['jpg', 'webp'],
-    widths: ['auto', 400, 600, 800],
+    formats: [ 'jpg', 'webp' ],
+    widths: [ 'auto', 400, 600, 800 ],
     urlPath: '/images/',
     outputDir: './_site/images/',
     defaultAttributes: {
@@ -71,8 +71,8 @@ export default async function(eleventyConfig) {
       sizes: '(min-width: 880px) 640px, calc(76.07vw - 14px)',
       decoding: 'async',
     },
-  });
-  eleventyConfig.addPlugin(pluginYouTube, {
+  } );
+  eleventyConfig.addPlugin( pluginYouTube, {
     lite: {
       responsive: true,
       css: {
@@ -85,56 +85,56 @@ export default async function(eleventyConfig) {
       },
     },
     modestBranding: true,
-  });
-  eleventyConfig.addPlugin(pluginPostGraph, {
+  } );
+  eleventyConfig.addPlugin( pluginPostGraph, {
     highlightColorLight: 'var(--main-color-secondary)',
     highlightColorDark: 'var(--main-color-tertiary)',
     dayBoxTitle: true,
     dayBoxTitleFormat: 'MMM D, YYYY',
     sort: 'desc',
-  });
-
+  } );
+  
   // Markdown
-  eleventyConfig.setLibrary('md', md);
-
+  eleventyConfig.setLibrary( 'md', md );
+  
   // Shortcodes
-  Object.keys(shortcodes).forEach((shortcodeName) => {
-    eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName]);
-  });
-
+  Object.keys( shortcodes ).forEach( ( shortcodeName ) => {
+    eleventyConfig.addShortcode( shortcodeName, shortcodes[ shortcodeName ] );
+  } );
+  
   // Paired Shortcodes
-  Object.keys(pairedShortcodes).forEach((shortcodeName) => {
-    eleventyConfig.addPairedShortcode(shortcodeName, pairedShortcodes[shortcodeName]);
-  });
-
+  Object.keys( pairedShortcodes ).forEach( ( shortcodeName ) => {
+    eleventyConfig.addPairedShortcode( shortcodeName, pairedShortcodes[ shortcodeName ] );
+  } );
+  
   // Liquid Shortcodes
-  Object.keys(liquidShortcodes).forEach((shortcodeName) => {
-    eleventyConfig.addLiquidShortcode(shortcodeName, liquidShortcodes[shortcodeName]);
-  });
-
+  Object.keys( liquidShortcodes ).forEach( ( shortcodeName ) => {
+    eleventyConfig.addLiquidShortcode( shortcodeName, liquidShortcodes[ shortcodeName ] );
+  } );
+  
   // Filters
-  Object.keys(filters).forEach((filterName) => {
-    eleventyConfig.addFilter(filterName, filters[filterName]);
-  });
-
+  Object.keys( filters ).forEach( ( filterName ) => {
+    eleventyConfig.addFilter( filterName, filters[ filterName ] );
+  } );
+  
   // Collections
-  Object.keys(collections).forEach((collectionName) => {
-    eleventyConfig.addCollection(collectionName, collections[collectionName]);
-  });
-
+  Object.keys( collections ).forEach( ( collectionName ) => {
+    eleventyConfig.addCollection( collectionName, collections[ collectionName ] );
+  } );
+  
   // Transforms
-  Object.keys(transforms).forEach((transformName) => {
-    eleventyConfig.addTransform(transformName, transforms[transformName]);
-  });
-
+  Object.keys( transforms ).forEach( ( transformName ) => {
+    eleventyConfig.addTransform( transformName, transforms[ transformName ] );
+  } );
+  
   // Base config
   return {
     // Control which files Eleventy will process
-    templateFormats: ['md', 'njk', 'html', 'liquid'],
-
+    templateFormats: [ 'md', 'njk', 'html', 'liquid' ],
+    
     pathPrefix: dir.prefix,
     passthroughFileCopy: true,
-
+    
     // Inputs and outputs:
     dir: {
       input: dir.input,

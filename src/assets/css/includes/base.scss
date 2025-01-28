@@ -117,20 +117,20 @@ small,
 }
 
 article {
-
-  >ul,
-  >ol {
-    >li+li {
+  
+  > ul,
+  > ol {
+    > li + li {
       margin-top: 1rem;
     }
   }
-
+  
   * {
-    +h2 {
+    + h2 {
       margin-top: 4rem;
     }
-
-    +h3 {
+    
+    + h3 {
       margin-top: 2rem;
     }
   }
@@ -149,11 +149,11 @@ hr {
 a:not(.button) {
   color: var(--main-color-secondary);
   text-decoration: none;
-
+  
   &:hover {
     text-decoration: underline;
   }
-
+  
   &:focus {
     border: 1px solid red;
   }
@@ -186,7 +186,7 @@ body {
   width: 140%;
   max-width: 140%;
   margin: 0 -20%;
-
+  
   @media (max-width: 1150px) {
     margin: 0;
     width: 100%;
@@ -221,13 +221,13 @@ body {
   align-content: center;
   border-bottom: none;
   scroll-margin-top: 5rem;
-
+  
   &:link,
   &:visited {
     color: var(--main-color-background);
     text-decoration: none;
   }
-
+  
   .heading-wrapper:hover &,
   &:hover,
   &:focus {
@@ -247,7 +247,7 @@ body {
     grid-template-columns: min-content auto;
     margin-left: -1.5rem;
   }
-
+  
   .deeplink {
     grid-row-start: 1;
   }
@@ -260,46 +260,47 @@ img[width][height] {
 
 
 [href="#skip"] {
-	position: relative;
+  position: relative;
   top: 4rem;
   left: 1rem;
 }
 
 /* Hide skip link when it's not focused */
 [href="#skip"]:not(:focus) {
-	clip: rect(0 0 0 0); 
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap; 
-	width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .container {
   width: 100%;
-  margin-top: 5rem;;
+  margin-top: 5rem;
+  ;
   padding-left: 1rem;
   padding-right: 1rem;
-
+  
   h2,
   h3,
   h4 {
     color: var(--main-color-tertiary);
     font-weight: 500;
     margin-bottom: 1rem;
-
+    
     a.heading-anchor {
       color: var(--main-color-tertiary);
       text-decoration: none;
     }
   }
-
+  
   ul,
   ol {
     margin-bottom: 2rem;
   }
-
+  
   hr {
     display: block;
     width: 50%;
@@ -309,11 +310,11 @@ img[width][height] {
     margin-right: auto;
     border-top: 1px dashed var(--main-color-hairline);
   }
-
+  
   .eleventy-plugin-youtube-embed {
     margin-bottom: 2rem;
   }
-
+  
   svg.icon {
     display: inline;
     margin-right: 0.5rem;
@@ -321,7 +322,7 @@ img[width][height] {
 }
 
 .pagination {
-
+  
   .pagination--content {
     max-width: var(--main-layout-width-normal);
     text-align: center;
@@ -330,22 +331,93 @@ img[width][height] {
     margin-top: 2rem;
     margin-bottom: 2rem;
     ;
-
+    
     .post--pagination {
       display: flex;
       padding: 0;
       margin: 0;
       list-style: none;
       justify-content: space-between;
-
+      
       a {
         color: var(--main-color-secondary);
         text-decoration: none;
-
+        
         &:hover {
           color: var(--main-color-primary);
         }
       }
     }
   }
+}
+
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert > :first-child {
+  margin-top: 0
+}
+
+.markdown-alert > :last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--main-color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--main-color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--main-color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--main-color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--main-color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--main-color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--main-color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--main-color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--main-color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--main-color-caution);
 }
