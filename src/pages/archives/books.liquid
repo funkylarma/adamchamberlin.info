@@ -1,0 +1,30 @@
+---
+layout: page.liquid
+title: Books
+subhead: If you don’t like to read, you haven’t found the right book.
+description: This page is a quick and dirty archive page of all my Hard Cover app book history.
+permalink: "/books/"
+---
+<p>
+  All data is taken from my <a href="https://hardcover.app/@FunkyLarma">Hard Cover</a> account.
+</p>
+
+<h2>Currently Reading</h2>
+<div class="book--list">
+{% for book in books.currentlyReading %}
+  <a rel="noreferrer" target="_blank" href="{{ book.url }}">
+    <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills">
+  </a>
+{% endfor %}
+</div>
+
+<h2>Want to read</h2>
+<ul>
+{% for book in books.wantToRead %}
+  <li>
+    <a rel="noreferrer" target="_blank" href="{{ book.url }}">
+    {{ book.data.title }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
