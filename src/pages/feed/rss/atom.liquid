@@ -9,7 +9,7 @@ permalink: /feed/feed.xml
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.description }}</subtitle>
   <link href="{{ permalink | htmlBaseUrl(globals.url) }}" rel="self"/>
-  <link href="{{ permalink | htmlBaseUrl(globals.url) }}" />
+  <link href="{{ globals.url }}" rel="alternate" />
   <updated>{{ collections.allFeed | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ globals.url | addPathPrefixToFullUrl }}</id>
   <author>
