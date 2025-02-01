@@ -2,7 +2,7 @@ export default {
   eleventyComputed: {
     // Modify the permalink
     permalink: ( data ) => {
-      return `/${data.page.filePathStem.replace('/comments', '/')}/`;
+      return `/${data.page.filePathStem.replace('/replies', '/')}/`;
     },
     
     eleventyExcludeFromCollections: ( data ) => {
