@@ -4,6 +4,7 @@ import markdownIt from 'markdown-it';
 import markdownItAttrs from 'markdown-it-attrs';
 import markdownItAnchor from 'markdown-it-anchor';
 import markdownItLinkAttributes from 'markdown-it-link-attributes';
+import MarkdownItGitHubAlerts from 'markdown-it-github-alerts';
 import markdownItPrism from 'markdown-it-prism';
 
 
@@ -36,6 +37,10 @@ const mardownItLinkAttributesOptions = {
   },
 };
 
+const markdownItGitHubAlertsOptions = {
+  
+}
+
 const markdownItPrismOptions = {
   defaultLanguage: 'plaintext',
 }
@@ -43,6 +48,7 @@ const markdownItPrismOptions = {
 const md = markdownIt( markdownItOptions )
   .use( markdownItAnchor, markdownItAnchorOptions )
   .use( markdownItAttrs, mardownItLinkAttributesOptions )
+  .use( MarkdownItGitHubAlerts, markdownItGitHubAlertsOptions )
   .use( markdownItPrism, markdownItPrismOptions )
 
 export { md }

@@ -102,14 +102,13 @@ export default async function () {
     } );
     const booklist = wantToReadResponse.data.me[ 0 ][ 'user_books' ].map( book => {
       let transformedBook = {};
-      //transformedBook.date = new Date( book.pubDate );
       transformedBook.url = 'https://hardcover.app/books/' + book.book.slug;
       transformedBook.data = {
         title: book.book.title,
         author: book.book.contributions[ 0 ].author.name,
-        //cover: book.image.url,
         category: 'book',
       };
+      
       return transformedBook;
       
     } );
