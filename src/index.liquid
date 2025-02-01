@@ -101,7 +101,7 @@ tags:
     </li>
     {% endfor %}
   </ul>
-  <a href="/notes/" class="more">View more notes</a>
+  <a href="/notes/" class="more">View all notes</a>
 </div>
 
 <div class="replies">
@@ -138,6 +138,12 @@ tags:
         {% elsif post.data.category == 'exercise' %}
         {% assetIcon "stopwatch" %}
         Went {{ post.data.sport }} -
+        {% elsif post.data.category == 'movie' %}
+        {% assetIcon "movie" %}
+        Watched -
+        {% elsif post.data.category == 'book' %}
+        {% assetIcon "book" %}
+        Read -
         {% elsif post.data.category == 'videography' %}
         {% assetIcon "video" %}
         Shot a video -
@@ -159,7 +165,7 @@ tags:
 </div>
 
 <div class="checkin">
-  <h2>Last Checked In At</h2>
+  <h2>Latest Checked In</h2>
   <div id="map"></div>
   <link rel="prefetch" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style" crossorigin="anonymous">
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"

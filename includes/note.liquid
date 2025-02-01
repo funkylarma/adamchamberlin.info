@@ -111,6 +111,30 @@
 
             {% endif %}
 
+            {% if category == 'movie' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Watched <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'book' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Read <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
             {% if category == 'signup' %}
             {% include "partials/hcard.liquid" %}
             <section class="e-content">

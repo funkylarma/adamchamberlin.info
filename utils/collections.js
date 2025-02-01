@@ -7,26 +7,26 @@ import moment from 'moment';
 import { month_names } from './constants.js';
 import { nth } from './constants.js';
 
-function processPostFile(filePath) {
+function processPostFile ( filePath ) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync( filePath, 'utf8' );
     // remove front matter
-    content = content.replace(/---\n.*?\n---/s, '');
+    content = content.replace( /---\n.*?\n---/s, '' );
     // remove empty lines
-    content = content.replace(/^\s*[\r\n]/gm, '');
-    const codeBlockMatches = content.match(/```(.*?)```/gis);
+    content = content.replace( /^\s*[\r\n]/gm, '' );
+    const codeBlockMatches = content.match( /```(.*?)```/gis );
     const codeBlocks = codeBlockMatches ? codeBlockMatches.length : 0;
     // remove code blocks
-    content = content.replace(/(```.+?```)/gms, '');
-    const stats = writingStats(content);
+    content = content.replace( /(```.+?```)/gms, '' );
+    const stats = writingStats( content );
     return {
       characterCount: stats.characterCount,
       codeBlockCount: codeBlocks,
       paragraphCount: stats.paragraphCount,
       wordCount: stats.wordCount,
     };
-  } catch (err) {
-    console.error(err);
+  } catch ( err ) {
+    console.error( err );
     return {
       characterCount: 0,
       codeBlockCount: 0,
@@ -36,7 +36,7 @@ function processPostFile(filePath) {
   }
 }
 
-function makeYearStats(
+function makeYearStats (
   currentYear,
   yearPostCount,
   yearWordCount,
@@ -46,126 +46,126 @@ function makeYearStats(
   yearParagraphCount
 ) {
   const daysInYear =
-    (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0
-      ? 366
-      : 365;
-
+    ( currentYear % 4 === 0 && currentYear % 100 > 0 ) || currentYear % 400 == 0 ?
+    366 :
+    365;
+  
   return {
     year: currentYear,
     daysInYear: daysInYear,
     postCount: yearPostCount,
     wordCount: yearWordCount,
     codeBlockCount: yearCodeBlockCount,
-    avgDays: parseFloat(avgDays.toFixed(2)),
+    avgDays: parseFloat( avgDays.toFixed( 2 ) ),
     avgCharacterCount: parseFloat(
-      (yearCharacterCount / yearPostCount).toFixed(2)
+      ( yearCharacterCount / yearPostCount ).toFixed( 2 )
     ),
     avgCodeBlockCount: parseFloat(
-      (yearCodeBlockCount / yearPostCount).toFixed(2)
+      ( yearCodeBlockCount / yearPostCount ).toFixed( 2 )
     ),
     avgParagraphCount: parseFloat(
-      (yearParagraphCount / yearPostCount).toFixed(2)
+      ( yearParagraphCount / yearPostCount ).toFixed( 2 )
     ),
-    avgWordCount: parseFloat((yearWordCount / yearPostCount).toFixed(2)),
+    avgWordCount: parseFloat( ( yearWordCount / yearPostCount ).toFixed( 2 ) ),
   };
 }
 
 export default {
-  allFeed: function (collection) {
+  allFeed: function ( collection ) {
     return collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.tags) return;
+      .filter( ( item ) => {
+        if ( !item.data.tags ) return;
         if (
-          item.data.tags.includes('article') ||
-          item.data.tags.includes('note')
+          item.data.tags.includes( 'article' ) ||
+          item.data.tags.includes( 'note' )
         ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      })
-      .slice(0, 50);
+      } )
+      .slice( 0, 50 );
   },
-
-  articlesForFeed: function (collection) {
+  
+  articlesForFeed: function ( collection ) {
     return collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.tags) return;
-        if (item.data.tags.includes('article')) {
+      .filter( ( item ) => {
+        if ( !item.data.tags ) return;
+        if ( item.data.tags.includes( 'article' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      })
-      .slice(0, 50);
+      } )
+      .slice( 0, 50 );
   },
-
-  notesForFeed: function (collection) {
+  
+  notesForFeed: function ( collection ) {
     return collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.tags) return;
-        if (item.data.tags.includes('note')) {
+      .filter( ( item ) => {
+        if ( !item.data.tags ) return;
+        if ( item.data.tags.includes( 'note' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      })
-      .slice(0, 50);
+      } )
+      .slice( 0, 50 );
   },
-
-  homePage: function (collection) {
-    const allContent = collection.getAll().sort(function (a, b) {
+  
+  homePage: function ( collection ) {
+    const allContent = collection.getAll().sort( function ( a, b ) {
       return b.date - a.date; // sort by date - descending
-    });
-
+    } );
+    
     const articles = allContent
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category == 'article') {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category == 'article' ) {
           return item;
         }
-      })
-      .slice(0, 5);
-
+      } )
+      .slice( 0, 5 );
+    
     const notes = allContent
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category == 'note') {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category == 'note' ) {
           return item;
         }
-      })
-      .slice(0, 5);
-
+      } )
+      .slice( 0, 5 );
+    
     const comments = allContent
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category == 'reply') {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category == 'reply' ) {
           return item;
         }
-      })
-      .slice(0, 5);
-
+      } )
+      .slice( 0, 5 );
+    
     const checkin = allContent
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category == 'checkin') {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category == 'checkin' ) {
           return item;
         }
-      })
-      .slice(0, 1);
-
+      } )
+      .slice( 0, 1 );
+    
     const activity = allContent
-      .filter((item) => {
-        if (!item.data.category) return;
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
         if (
           item.data.category !== 'article' &&
           item.data.category !== 'note' &&
@@ -174,9 +174,9 @@ export default {
         ) {
           return item;
         }
-      })
-      .slice(0, 5);
-
+      } )
+      .slice( 0, 5 );
+    
     return {
       acticleList: articles,
       noteList: notes,
@@ -185,35 +185,35 @@ export default {
       lastSeen: checkin,
     };
   },
-
+  
   // Drafts Collection
-  drafts: function (collection) {
+  drafts: function ( collection ) {
     return collection
       .getAll()
-      .filter((item) => item.data.draft)
-      .sort((a, b) => b.date - a.date);
+      .filter( ( item ) => item.data.draft )
+      .sort( ( a, b ) => b.date - a.date );
   },
-
-  allContent: function (collection) {
-    let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
-    let letterboxdContent = collection.getAll()[0].data.letterboxd.activityList;
-    let mastodonContent = collection.getAll()[0].data.mastodon;
-
+  
+  allContent: function ( collection ) {
+    let lastfmContent = collection.getAll()[ 0 ].data.lastfm.activityList;
+    let letterboxdContent = collection.getAll()[ 0 ].data.letterboxd.activityList;
+    let mastodonContent = collection.getAll()[ 0 ].data.mastodon;
+    
     let localContent = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.tags) return;
+      .filter( ( item ) => {
+        if ( !item.data.tags ) return;
         if (
-          item.data.tags.includes('article') ||
-          item.data.tags.includes('note')
+          item.data.tags.includes( 'article' ) ||
+          item.data.tags.includes( 'note' )
         ) {
           return item;
         }
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date;
-      });
-
+      } );
+    
     // Merge all content
     let allContent = [
       ...localContent,
@@ -221,14 +221,14 @@ export default {
       ...lastfmContent,
       ...mastodonContent,
     ];
-
-    let sortedContent = allContent.sort(function (a, b) {
+    
+    let sortedContent = allContent.sort( function ( a, b ) {
       return a.date - b.date;
-    });
-
+    } );
+    
     return sortedContent;
   },
-
+  
   // contentList: function (collection) {
   //   return collection
   //     .getAll()
@@ -246,1035 +246,1175 @@ export default {
   //       return a.date - b.date;
   //     });
   // },
-
+  
   // Gets all the filtered content by tag and outputs a Collection
-  tagList: function (collection) {
+  tagList: function ( collection ) {
     const tagsSet = {};
     collection
       .getAll()
-      .sort((a, b) => a.date - b.date)
-      .forEach((item) => {
-        if (!item.data.tags) return;
+      .sort( ( a, b ) => a.date - b.date )
+      .forEach( ( item ) => {
+        if ( !item.data.tags ) return;
         item.data.tags
           .filter(
-            (tag) =>
-              !['page', 'article', 'note', 'checkin', 'all'].includes(tag)
+            ( tag ) =>
+            ![ 'page', 'article', 'note', 'checkin', 'all' ].includes( tag )
           )
-          .forEach((tag) => {
-            if (!tagsSet[tag]) {
-              tagsSet[tag] = [];
+          .forEach( ( tag ) => {
+            if ( !tagsSet[ tag ] ) {
+              tagsSet[ tag ] = [];
             }
-            tagsSet[tag].push(item);
-          });
-      });
+            tagsSet[ tag ].push( item );
+          } );
+      } );
     return tagsSet;
   },
-
+  
   // Gets all the filtered content by category and outouts a Collection
-  categoryList: function (collection) {
+  categoryList: function ( collection ) {
     let catSet = {};
     collection
       .getAll()
-      .sort((a, b) => b.date - a.date)
-      .forEach((item) => {
-        if (!item.data.category) return;
-        if (!catSet[item.data.category]) {
-          catSet[item.data.category] = [];
+      .sort( ( a, b ) => b.date - a.date )
+      .forEach( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( !catSet[ item.data.category ] ) {
+          catSet[ item.data.category ] = [];
         }
-        catSet[item.data.category].push(item);
-      });
+        catSet[ item.data.category ].push( item );
+      } );
     return catSet;
   },
-
+  
   // Year Collection
-  postsByYear: function (collection) {
+  postsByYear: function ( collection ) {
     return _.chain(
-      collection
+        collection
         .getAll()
-        .filter((item) => {
-          if (!item.data.tags) return;
+        .filter( ( item ) => {
+          if ( !item.data.tags ) return;
           if (
-            item.data.tags.includes('article') ||
-            item.data.tags.includes('checkin') ||
-            item.data.tags.includes('note')
+            item.data.tags.includes( 'article' ) ||
+            item.data.tags.includes( 'checkin' ) ||
+            item.data.tags.includes( 'note' )
           ) {
             return item;
           }
-        })
-        .sort((a, b) => b.date - a.date)
-    )
-      .groupBy((post) => post.date.getFullYear())
+        } )
+        .sort( ( a, b ) => b.date - a.date )
+      )
+      .groupBy( ( post ) => post.date.getFullYear() )
       .toPairs()
       .reverse()
       .value();
   },
-
+  
   // Year/Month Collection
-  postsByYearMonth: function (collection) {
+  postsByYearMonth: function ( collection ) {
     return _.chain(
-      collection
+        collection
         .getAll()
-        .filter((item) => {
-          if (!item.data.tags) return;
+        .filter( ( item ) => {
+          if ( !item.data.tags ) return;
           if (
-            item.data.tags.includes('article') ||
-            item.data.tags.includes('checkin') ||
-            item.data.tags.includes('note')
+            item.data.tags.includes( 'article' ) ||
+            item.data.tags.includes( 'checkin' ) ||
+            item.data.tags.includes( 'note' )
           ) {
             return item;
           }
-        })
-        .sort((a, b) => b.date - a.date)
-    )
-      .groupBy((post) => {
+        } )
+        .sort( ( a, b ) => b.date - a.date )
+      )
+      .groupBy( ( post ) => {
         const year = post.date.getFullYear();
-        const month = String(post.date.getMonth() + 1).padStart(2, '0');
+        const month = String( post.date.getMonth() + 1 ).padStart( 2, '0' );
         return `${year}/${month}`;
-      })
+      } )
       .toPairs()
       .reverse()
       .value();
   },
-
+  
   // Year/Month/Day Collection
-  postsByYearMonthDay: function (collection) {
+  postsByYearMonthDay: function ( collection ) {
     return _.chain(
-      collection
+        collection
         .getAll() //.filter((item) => ['post', 'note'].includes(item.tag))
-        .filter((item) => {
-          if (!item.data.tags) return;
+        .filter( ( item ) => {
+          if ( !item.data.tags ) return;
           if (
-            item.data.tags.includes('article') ||
-            item.data.tags.includes('checkin') ||
-            item.data.tags.includes('note')
+            item.data.tags.includes( 'article' ) ||
+            item.data.tags.includes( 'checkin' ) ||
+            item.data.tags.includes( 'note' )
           ) {
             return item;
           }
-        })
-        .sort((a, b) => b.date - a.date)
-    )
-      .groupBy((post) => {
+        } )
+        .sort( ( a, b ) => b.date - a.date )
+      )
+      .groupBy( ( post ) => {
         const year = post.date.getFullYear();
-        const month = String(post.date.getMonth() + 1).padStart(2, '0');
-        const day = String(post.date.getDate()).padStart(2, '0');
+        const month = String( post.date.getMonth() + 1 ).padStart( 2, '0' );
+        const day = String( post.date.getDate() ).padStart( 2, '0' );
         return `${year}/${month}/${day}`;
-      })
+      } )
       .toPairs()
       .reverse()
       .value();
   },
-
+  
   // Creates a tuple of content filtered by the specified tags.
-  contentArchive: function (collection) {
+  contentArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.tags) return;
+      .filter( ( item ) => {
+        if ( !item.data.tags ) return;
         if (
-          item.data.tags.includes('article') ||
-          item.data.tags.includes('note')
+          item.data.tags.includes( 'article' ) ||
+          item.data.tags.includes( 'note' )
         ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
-        output[year].months[month].entries.push({
+        
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
+  
   // Creates a tuple of content filtered by the specified tags.
-  articleArchive: function (collection) {
+  articleArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('article')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'article' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
-        output[year].months[month].entries.push({
+        
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
+  
   // Creates a tuple of content filtered by the specified tags.
-  noteArchive: function (collection) {
+  noteArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('note')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'note' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
+  
   // Creates a tuple of content filtered by the specified tags.
-  replyArchive: function (collection) {
+  replyArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('reply')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'reply' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  rsvpArchive: function (collection) {
+  
+  rsvpArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('rsvp')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'rsvp' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  signupArchive: function (collection) {
+  
+  signupArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('signup')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'signup' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  exerciseArchive: function (collection) {
+  
+  exerciseArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('exercise')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'exercise' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           sport: item.data.sport,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  raceArchive: function (collection) {
+  
+  raceArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('race')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'race' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  bookmarkArchive: function (collection) {
+  
+  bookmarkArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('bookmark')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'bookmark' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  jamArchive: function (collection) {
+  
+  movieArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('jam')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'movie' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
+        
         // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
+          date: item.date.getDate() + nth( item.date.getDate() ),
           category: item.data.category,
           tags: item.data.tags,
-        });
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  // Creates a tuple of content filtered by the specified tags.
-  checkinArchive: function (collection) {
+  
+  bookArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('checkin')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'book' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
-        output[year].months[month].entries.push({
+        
+        // Add the entry to the keyed year/month array - only add the info we need
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
-        });
+          date: item.date.getDate() + nth( item.date.getDate() ),
+          category: item.data.category,
+          tags: item.data.tags,
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  // Creates a tuple of content filtered by the specified tags.
-  videographyArchive: function (collection) {
+  
+  jamArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('videography')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'jam' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
-        output[year].months[month].entries.push({
+        
+        // Add the entry to the keyed year/month array - only add the info we need
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
-        });
+          date: item.date.getDate() + nth( item.date.getDate() ),
+          category: item.data.category,
+          tags: item.data.tags,
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
+  
   // Creates a tuple of content filtered by the specified tags.
-  photographyArchive: function (collection) {
+  checkinArchive: function ( collection ) {
     // Create a return output
     let output = [];
-
+    
     // Get the entries we want to work with
     let entries = collection
       .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('photography')) {
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'checkin' ) ) {
           return item;
         }
         // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
+      } )
+      .sort( function ( a, b ) {
         return b.date - a.date; // sort by date - descending
-      });
-
+      } );
+    
     // Loop through each of the entries
-    for (let item of entries) {
+    for ( let item of entries ) {
       // Check we have both a date and title
-      if (item.data.title && item.date) {
+      if ( item.data.title && item.date ) {
         // Extract the year and month number (Jan = 0)
         let year = item.date.getFullYear(),
           month = item.date.getMonth();
-
+        
         // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
+        if ( !output[ year ] ) {
+          output[ year ] = {
             title: year,
             months: [],
           };
         }
-
+        
         // If the month hasn't been seen before, make a stub object
         // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
             entries: [],
           };
         }
-
-        output[year].months[month].entries.push({
+        
+        output[ year ].months[ month ].entries.push( {
           title: item.data.title,
           url: item.url,
           // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
-        });
+          date: item.date.getDate() + nth( item.date.getDate() ),
+        } );
       }
     }
-
+    
     // Return our array
     return (
       output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
     );
   },
-
-  postStats: function (collectionApi) {
+  
+  // Creates a tuple of content filtered by the specified tags.
+  videographyArchive: function ( collection ) {
+    // Create a return output
+    let output = [];
+    
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'videography' ) ) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      } )
+      .sort( function ( a, b ) {
+        return b.date - a.date; // sort by date - descending
+      } );
+    
+    // Loop through each of the entries
+    for ( let item of entries ) {
+      // Check we have both a date and title
+      if ( item.data.title && item.date ) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+        
+        // If the year hasn't been seen before, make a stub object
+        if ( !output[ year ] ) {
+          output[ year ] = {
+            title: year,
+            months: [],
+          };
+        }
+        
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
+            entries: [],
+          };
+        }
+        
+        output[ year ].months[ month ].entries.push( {
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth( item.date.getDate() ),
+        } );
+      }
+    }
+    
+    // Return our array
+    return (
+      output
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
+    );
+  },
+  
+  // Creates a tuple of content filtered by the specified tags.
+  photographyArchive: function ( collection ) {
+    // Create a return output
+    let output = [];
+    
+    // Get the entries we want to work with
+    let entries = collection
+      .getAll()
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category.includes( 'photography' ) ) {
+          return item;
+        }
+        // console.log(item.data.tags);
+      } )
+      .sort( function ( a, b ) {
+        return b.date - a.date; // sort by date - descending
+      } );
+    
+    // Loop through each of the entries
+    for ( let item of entries ) {
+      // Check we have both a date and title
+      if ( item.data.title && item.date ) {
+        // Extract the year and month number (Jan = 0)
+        let year = item.date.getFullYear(),
+          month = item.date.getMonth();
+        
+        // If the year hasn't been seen before, make a stub object
+        if ( !output[ year ] ) {
+          output[ year ] = {
+            title: year,
+            months: [],
+          };
+        }
+        
+        // If the month hasn't been seen before, make a stub object
+        // with a nice month name as the title
+        if ( !output[ year ].months[ month ] ) {
+          output[ year ].months[ month ] = {
+            title: month_names[ month ],
+            entries: [],
+          };
+        }
+        
+        output[ year ].months[ month ].entries.push( {
+          title: item.data.title,
+          url: item.url,
+          // This is just the date plus ordinal (e.g. 23rd)
+          date: item.date.getDate() + nth( item.date.getDate() ),
+        } );
+      }
+    }
+    
+    // Return our array
+    return (
+      output
+      // Reverse the months (most recent first)
+      .map( ( y ) => {
+        y.months.reverse();
+        return y;
+      } )
+      // Filter out any null years
+      .filter( ( a ) => a )
+      // Reverse the years (recent first)
+      .reverse()
+    );
+  },
+  
+  postStats: function ( collectionApi ) {
     const oneDayMilliseconds = 1000 * 60 * 60 * 24;
     let avgDays = 0;
     let totalDays = 0;
@@ -1290,7 +1430,7 @@ export default {
     let yearPostCount = 0;
     let yearPostDays = 0;
     let highPostCount = 0;
-
+    
     // Initialize the data object returned by the plugin
     let statsObject = {
       avgDays: 0,
@@ -1307,41 +1447,41 @@ export default {
       years: [],
       postsByDay: {},
     };
-
-    const posts = collectionApi.getFilteredByTag('article').sort((a, b) => {
+    
+    const posts = collectionApi.getFilteredByTag( 'article' ).sort( ( a, b ) => {
       return a.date - b.date;
-    });
+    } );
     let postCount = posts.length;
-    if (postCount < 1) {
-      cnsole.log(`No articles found for tag(s): ${tags.join(', ')}`);
+    if ( postCount < 1 ) {
+      cnsole.log( `No articles found for tag(s): ${tags.join(', ')}` );
       // return the empty stats object
       return statsObject;
     }
-
+    
     statsObject.postCount = postCount;
-    statsObject.firstPostDate = posts[0].data.page.date;
-    statsObject.lastPostDate = posts[postCount - 1].data.page.date;
-
-    let prevPostDate = posts[0].data.page.date;
+    statsObject.firstPostDate = posts[ 0 ].data.page.date;
+    statsObject.lastPostDate = posts[ postCount - 1 ].data.page.date;
+    
+    let prevPostDate = posts[ 0 ].data.page.date;
     let currentYear = prevPostDate.getFullYear();
-
-    for (let post of posts) {
+    
+    for ( let post of posts ) {
       let postDate = post.data.page.date;
       let dateIndexKey = `${moment(postDate).year()}-${moment(
         postDate
       ).dayOfYear()}`;
-
-      if (!statsObject.postsByDay[dateIndexKey]) {
-        statsObject.postsByDay[dateIndexKey] = 0;
+      
+      if ( !statsObject.postsByDay[ dateIndexKey ] ) {
+        statsObject.postsByDay[ dateIndexKey ] = 0;
       }
-
-      statsObject.postsByDay[dateIndexKey]++;
-      let daysBetween = (postDate - prevPostDate) / oneDayMilliseconds;
+      
+      statsObject.postsByDay[ dateIndexKey ]++;
+      let daysBetween = ( postDate - prevPostDate ) / oneDayMilliseconds;
       let thisYear = postDate.getFullYear();
-
-      if (thisYear != currentYear) {
+      
+      if ( thisYear != currentYear ) {
         avgDays = yearPostDays / yearPostCount;
-        highPostCount = Math.max(highPostCount, yearPostCount);
+        highPostCount = Math.max( highPostCount, yearPostCount );
         statsObject.years.push(
           makeYearStats(
             currentYear,
@@ -1366,8 +1506,8 @@ export default {
       yearPostDays += daysBetween;
       totalPostCount++;
       yearPostCount++;
-
-      let postStats = processPostFile(post.page.inputPath);
+      
+      let postStats = processPostFile( post.page.inputPath );
       totalCharacterCount += postStats.characterCount;
       yearCharacterCount += postStats.characterCount;
       totalCodeBlockCount += postStats.codeBlockCount;
@@ -1377,10 +1517,10 @@ export default {
       totalWordCount += postStats.wordCount;
       yearWordCount += postStats.wordCount;
     }
-
-    if (yearPostCount > 0) {
+    
+    if ( yearPostCount > 0 ) {
       avgDays = yearPostDays / yearPostCount;
-      highPostCount = Math.max(highPostCount, yearPostCount);
+      highPostCount = Math.max( highPostCount, yearPostCount );
       statsObject.years.push(
         makeYearStats(
           currentYear,
@@ -1393,23 +1533,23 @@ export default {
         )
       );
     }
-    statsObject.avgDays = parseFloat((totalDays / totalPostCount).toFixed(2));
+    statsObject.avgDays = parseFloat( ( totalDays / totalPostCount ).toFixed( 2 ) );
     statsObject.avgCharacterCount = parseFloat(
-      (totalCharacterCount / totalPostCount).toFixed(2)
+      ( totalCharacterCount / totalPostCount ).toFixed( 2 )
     );
     statsObject.avgCodeBlockCount = parseFloat(
-      (totalCodeBlockCount / totalPostCount).toFixed(2)
+      ( totalCodeBlockCount / totalPostCount ).toFixed( 2 )
     );
     statsObject.avgParagraphCount = parseFloat(
-      (totalParagraphCount / totalPostCount).toFixed(2)
+      ( totalParagraphCount / totalPostCount ).toFixed( 2 )
     );
     statsObject.avgWordCount = parseFloat(
-      (totalWordCount / totalPostCount).toFixed(2)
+      ( totalWordCount / totalPostCount ).toFixed( 2 )
     );
     statsObject.totalWordCount = totalWordCount;
     statsObject.totalCodeBlockCount = totalCodeBlockCount;
     statsObject.highPostCount = highPostCount;
-
+    
     return statsObject;
   },
 };
