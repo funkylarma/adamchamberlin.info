@@ -13,7 +13,7 @@ permalink: /feed/rss.xml
     <description>{{ metadata.description }}</description>
     <language>{{ metadata.language or page.lang }}</language>
     {%- for post in collections.allFeed %}
-    {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}  
+    {%- set absolutePostUrl = post.url | htmlBaseUrl(globals.url) %}
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
