@@ -104,18 +104,20 @@ tags:
   <a href="/notes/" class="more">View more notes</a>
 </div>
 
-<div class="comments">
+<div class="replies">
   <h2>Recent Replies</h2>
-  <ul>
+  <ul class="activity--list--content">
     {% for post in collections.homePage.commentList %}
     <li class="h-entry hentry">
+      <div>
+        {% assetIcon "reply" %}
+        <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
+          {{ post.data.title }}
+        </a>
+      </div>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
-        {% assetIcon "calendar" %}
         {{ post.date | dateLongDateShortMonth }}
       </time>
-      <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
-        {{ post.data.title }}
-      </a>
     </li>
     {% endfor %}
   </ul>
