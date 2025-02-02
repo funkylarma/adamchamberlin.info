@@ -158,7 +158,7 @@ tags:
         Noodled about -
         {% endif %}
         <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </div>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
