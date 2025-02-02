@@ -114,6 +114,18 @@ eleventyComputed:
         <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDateShortMonth }}</time>
       </li>
 
+    {% elsif post.data.category == 'like' %}
+      <li class="bookmark h-entry hentry">
+        <h2 class="p-name">
+          {% assetIcon "heart" %}
+          Liked -
+          <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Bookmarked {{ post.data.title }}">
+            {{ post.data.title | strip_html | truncate: 50 }}
+          </a>
+        </h2>
+        <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDateShortMonth }}</time>
+      </li>
+
     {% elsif post.data.category == 'jam' %}
       <li class="jam h-entry hentry">
         <h2 class="p-name">

@@ -28,8 +28,6 @@ export async function onRequestPost ( context ) {
   // Get the body contents
   const request = await context.request.json();
   
-  console.log( request );
-  
   // Init a micropub object
   let micropub = {
     frontMatterContent: [],
@@ -72,15 +70,36 @@ export async function onRequestPost ( context ) {
     content_types.forEach( ( type ) => {
       if ( type in entry ) {
         switch ( type ) {
-          case 'checkin':
-            createCheckin( entry.checkin );
+          case 'like-of':
+            let like = {};
+            // TODO: This is not correct micropub format
+            like.title = entry.title ? entry.title : 'Liked this';
+            like.url = entry[ 'like-of' ];
+            // Process the like
+            processLike( like );
             break;
           case 'bookmark-of':
-            const title = entry.content ? entry.content[ 0 ] : 'New bookmark';
-            createBookmark( entry[ 'bookmark-of' ], title );
-            commitFeedbin( entry[ 'bookmark-of' ], title );
+            let bookmark = {};
+            // Set the title
+            // TODO: This is not correct micropub format
+            bookmark.title = entry.title ? entry.title : 'New bookmark';
+            bookmark.url = entry[ 'bookmark-of' ];
+            
+            // Process the bookmark
+            processBookmark( bookmark );
+            
+            // Send the bookmark to Feedbin
+            commitFeedbin( bookmark );
+            
+            // Send the bookmark to Readwise Reader
+            commitReadwise( bookmark );
+            break;
+          case 'checkin':
+            // Process the checkin
+            processCheckin( entry.checkin );
             break;
           case 'photo':
+            // Process the photo
             processPhoto( entry.photo );
             break;
           default:
@@ -122,7 +141,7 @@ export async function onRequestPost ( context ) {
       // Check we are in production as I'm fed up deleting test commits.
       if ( context.env.ELEVENTY_ENV == 'production' ) {
         // Commit the micropub
-        console.log( 'Commite the post' );
+        console.log( 'Commit the post' );
         const commit = await commitMicropub();
         return commit;
       } else {
@@ -145,7 +164,29 @@ export async function onRequestPost ( context ) {
     }, { status: 400 } );
   }
   
-  function createBookmark ( url, title ) {
+  function processLike ( like ) {
+    console.log( 'Processing - Like' );
+    // Set some details for the folder creation
+    let date = new Date( micropub.date );
+    const year = date.getFullYear();
+    const month = ( date.getMonth() + 1 ).toString().padStart( 2, '0' );
+    
+    // Where should we save the checkin
+    micropub.path = 'src/likes/' + year + '/' + month + '/';
+    
+    // Give it a filename
+    micropub.filename = new Date().valueOf();
+    micropub.message = 'Liked: ' + `${like.title}`;
+    
+    // Build the frontmatter
+    micropub.frontMatterContent.push( 'date: ' + micropub.date );
+    micropub.frontMatterContent.push( 'title: ' + like.title );
+    micropub.frontMatterContent.push( 'url: ' + like.url );
+    micropub.frontMatterContent.push( 'category: like' );
+  }
+  
+  function processBookmark ( bookmark ) {
+    console.log( 'Processing - Bookmark' );
     // Set some details for the folder creation
     let date = new Date( micropub.date );
     const year = date.getFullYear();
@@ -156,16 +197,17 @@ export async function onRequestPost ( context ) {
     
     // Give it a filename
     micropub.filename = new Date().valueOf();
-    micropub.message = 'Bookmarked: ' + `${url}`;
+    micropub.message = 'Bookmarked: ' + `${bookmark.url}`;
     
     // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
-    micropub.frontMatterContent.push( 'title: ' + title );
-    micropub.frontMatterContent.push( 'url: ' + url );
+    micropub.frontMatterContent.push( 'title: ' + bookmark.title );
+    micropub.frontMatterContent.push( 'url: ' + bookmark.url );
     micropub.frontMatterContent.push( 'category: bookmark' );
   }
   
-  function createCheckin ( checkin ) {
+  function processCheckin ( checkin ) {
+    console.log( 'Processing - Checkin' );
     // Set some sdetails for the folder creation
     let date = new Date( micropub.date );
     const year = date.getFullYear();
@@ -191,6 +233,7 @@ export async function onRequestPost ( context ) {
   }
   
   function processPhoto ( photos ) {
+    console.log( 'Processing - Photos' );
     photos.forEach( ( photo ) => {
       micropub.bodyContent.push(
         '<img src="' + photo + '" alt="Checkin Photo" />'
@@ -200,6 +243,7 @@ export async function onRequestPost ( context ) {
   }
   
   function processTags ( tags ) {
+    console.log( 'Processing - Tags' );
     tags.forEach( ( tag ) => {
       micropub.frontMatterContent.push( ' - ' + tag );
     } );
@@ -228,13 +272,13 @@ export async function onRequestPost ( context ) {
     }
   }
   
-  async function commitFeedbin ( url, title ) {
+  async function commitFeedbin ( bookmark ) {
     const feedbinRequest = new Request(
       'https://api.feedbin.com/v2/pages.json', {
         method: 'POST',
         body: JSON.stringify( {
-          url: url,
-          title: title,
+          url: bookmark.url,
+          title: bookmark.title,
         } ),
         headers: {
           Authorization: 'Basic ' + context.env.FEEDBIN_KEY,
@@ -244,6 +288,33 @@ export async function onRequestPost ( context ) {
     );
     try {
       const response = await fetch( feedbinRequest );
+      if ( !response.ok ) {
+        throw new Error( `Response status: ${response.status}` );
+      }
+      
+      const text = await response.text();
+      console.log( text );
+      return Response.json( { message: text }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } } );
+    } catch ( err ) {
+      return Response.json( {
+        message: err.message,
+      }, { status: err.status } );
+    }
+  }
+  
+  async function commitReadwise ( bookmark ) {
+    const readwiseRequest = new Request( 'https://readwise.io/api/v3/save/', {
+      method: 'POST',
+      body: JSON.stringify( {
+        url: bookmark.url,
+      } ),
+      headers: {
+        Authorization: 'Token ' + context.env.READWISE_KEY,
+        'Content-Type': 'application/json; charset=utf-8',
+      },
+    } );
+    try {
+      const response = await fetch( readwiseRequest );
       if ( !response.ok ) {
         throw new Error( `Response status: ${response.status}` );
       }

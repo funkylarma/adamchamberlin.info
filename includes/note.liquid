@@ -31,11 +31,19 @@
                 </h1>
               </div><!-- .post--date -->
               <div class="note--meta">
+                {% if category %}
+                <div class="note--category">
+                  {% assetIcon "folder" %}
+                  <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                    {{ category }}
+                  </a>
+                </div><!-- .post--category -->
+                {% endif %}
                 {% if tags.length > 1 %}
                 <div class="note--tags">
                   {% assetIcon "tag" %}
                   {%- for tag in tags -%}
-                  {% if tag != 'note' and tag != 'signup' %}
+                  {% if tag != 'note' and tag != 'signup' and tag != 'bookmark' and tag != 'like' %}
                   <a class="p-category" href="/tagged/{{ tag | slugify }}/" rel="tag"
                     title="Browse other posts tagged with {{ tag }}">
                     {{ tag }}
@@ -44,14 +52,6 @@
                   {%- endfor -%}
                 </div><!-- .post--tags -->
                 {% endif %}
-                {% if category %}
-                <div class="note--category">
-                  {% assetIcon "folder" %}
-                  <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
-                    {{ category }}
-                  </a>
-                </div><!-- .post--category -->
-              {% endif %}
               </div><!-- .post-meta -->
             </header>
 
@@ -140,6 +140,18 @@
               <section class="e-content">
                 <p class="p-summary">
                   Bookmarked <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'like' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Liked <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {{ content }}

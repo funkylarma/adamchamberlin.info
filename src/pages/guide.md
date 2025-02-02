@@ -117,7 +117,8 @@ Likes are links to articles or content that have particular interest.
 ```markdown
 ---
 date: 2025-01-01
-link: Just a notes
+title: The title
+link: /the/link/to/like/
 category: like
 ---
 ```

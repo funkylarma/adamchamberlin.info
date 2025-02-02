@@ -94,6 +94,12 @@ permalink: "/archive/"
                 {{ entry.date }}
               </time> - Replied to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
 
+            {% elif entry.category == 'like' %}
+              {% assetIcon "heart" %}
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Liked <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+
             {% elif entry.category == 'rsvp' %}
               {% assetIcon "rsvp" %}
               <time class="dt-published" datetime="{{ entry.date }}">
