@@ -122,6 +122,7 @@ export async function onRequestPost ( context ) {
       // Check we are in production as I'm fed up deleting test commits.
       if ( context.env.ELEVENTY_ENV == 'production' ) {
         // Commit the micropub
+        console.log( 'Commite the post' );
         const commit = await commitMicropub();
         return commit;
       } else {
@@ -144,7 +145,7 @@ export async function onRequestPost ( context ) {
     }, { status: 400 } );
   }
   
-  function createBookmark ( bookmark, title ) {
+  function createBookmark ( url, title ) {
     // Set some details for the folder creation
     let date = new Date( micropub.date );
     const year = date.getFullYear();
@@ -155,12 +156,12 @@ export async function onRequestPost ( context ) {
     
     // Give it a filename
     micropub.filename = new Date().valueOf();
-    micropub.message = 'Bookmarked: ' + `${bookmark}`;
+    micropub.message = 'Bookmarked: ' + `${url}`;
     
     // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
     micropub.frontMatterContent.push( 'title: ' + title );
-    micropub.frontMatterContent.push( 'url: ' + bookmark );
+    micropub.frontMatterContent.push( 'url: ' + url );
     micropub.frontMatterContent.push( 'category: bookmark' );
   }
   

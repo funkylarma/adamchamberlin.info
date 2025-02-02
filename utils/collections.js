@@ -229,24 +229,6 @@ export default {
     return sortedContent;
   },
   
-  // contentList: function (collection) {
-  //   return collection
-  //     .getAll()
-  //     .filter((item) => {
-  //       if (!item.data.tags) return;
-  //       if (
-  //         item.data.tags.includes('article') ||
-  //         item.data.tags.includes('checkin') ||
-  //         item.data.tags.includes('note')
-  //       ) {
-  //         return item;
-  //       }
-  //     })
-  //     .sort(function (a, b) {
-  //       return a.date - b.date;
-  //     });
-  // },
-  
   // Gets all the filtered content by tag and outputs a Collection
   tagList: function ( collection ) {
     const tagsSet = {};

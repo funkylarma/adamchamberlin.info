@@ -135,6 +135,18 @@
               </section>
             {% endif %}
 
+            {% if category == 'bookmark' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Bookmarked <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
             {% if category == 'signup' %}
             {% include "partials/hcard.liquid" %}
             <section class="e-content">
