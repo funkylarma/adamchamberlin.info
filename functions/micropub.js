@@ -28,6 +28,8 @@ export async function onRequestPost ( context ) {
   // Get the body contents
   const request = await context.request.json();
   
+  console.log( request );
+  
   // Init a micropub object
   let micropub = {
     frontMatterContent: [],
@@ -47,7 +49,8 @@ export async function onRequestPost ( context ) {
       // Set the date
       micropub.date = entry.published[ 0 ];
     } else {
-      micropub.date = Date.now();
+      const date = new Date();
+      micropub.date = date.toISOString();
     }
     
     // Define some possible content types
@@ -72,9 +75,18 @@ export async function onRequestPost ( context ) {
           case 'checkin':
             createCheckin( entry.checkin );
             break;
+          case 'bookmark-of':
+            const title = entry.content ? entry.content[ 0 ] : 'New bookmark';
+            createBookmark( entry[ 'bookmark-of' ], title );
+            commitFeedbin( entry[ 'bookmark-of' ], title );
+            break;
           case 'photo':
             processPhoto( entry.photo );
             break;
+          default:
+            return Response.json( {
+              message: 'Not a valid micropub post, missing a type',
+            }, { status: 400 } );
         }
       }
     } );
@@ -99,16 +111,61 @@ export async function onRequestPost ( context ) {
       micropub.bodyContent.push( '' );
     }
     
-    // Commit the micropub
-    const commit = await commitMicropub();
-    return commit;
+    console.log( micropub );
+    
+    // Check that we have all the required data to push a commit
+    if (
+      micropub.bodyContent &&
+      micropub.frontMatterContent &&
+      micropub.message
+    ) {
+      // Check we are in production as I'm fed up deleting test commits.
+      if ( context.env.ELEVENTY_ENV == 'production' ) {
+        // Commit the micropub
+        const commit = await commitMicropub();
+        return commit;
+      } else {
+        return Response.json( {
+          message: 'We should be commiting this as it appears to be valid, but this is not production so skip it!',
+        }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } } );
+      }
+    } else {
+      return Response.json( {
+        message: 'Not going to save this as there is nothing to save',
+      }, { status: 400 } );
+    }
+    
+    return Response.json( {
+      message: 'Not a valid micropub post',
+    }, { status: 400 } );
   } else {
     return Response.json( {
       message: 'Not a valid micropub post, missing h-entry element',
     }, { status: 400 } );
   }
   
+  function createBookmark ( bookmark, title ) {
+    // Set some details for the folder creation
+    let date = new Date( micropub.date );
+    const year = date.getFullYear();
+    const month = ( date.getMonth() + 1 ).toString().padStart( 2, '0' );
+    
+    // Where should we save the checkin
+    micropub.path = 'src/bookmarks/' + year + '/' + month + '/';
+    
+    // Give it a filename
+    micropub.filename = new Date().valueOf();
+    micropub.message = 'Bookmarked: ' + `${bookmark}`;
+    
+    // Build the frontmatter
+    micropub.frontMatterContent.push( 'date: ' + micropub.date );
+    micropub.frontMatterContent.push( 'title: ' + title );
+    micropub.frontMatterContent.push( 'url: ' + bookmark );
+    micropub.frontMatterContent.push( 'category: bookmark' );
+  }
+  
   function createCheckin ( checkin ) {
+    // Set some sdetails for the folder creation
     let date = new Date( micropub.date );
     const year = date.getFullYear();
     const month = ( date.getMonth() + 1 ).toString().padStart( 2, '0' );
@@ -117,7 +174,9 @@ export async function onRequestPost ( context ) {
     micropub.path = 'src/checkins/' + year + '/' + month + '/';
     // Give it a filename
     micropub.filename = new Date().valueOf();
-    ( micropub.message = 'Import checkin from Swarm: ' + micropub.filename ),
+    micropub.message = 'Import checkin from Swarm: ' + micropub.filename;
+    
+    // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
     micropub.frontMatterContent.push( 'title: ' + checkin[ 0 ].properties.name );
     micropub.frontMatterContent.push(
@@ -161,6 +220,36 @@ export async function onRequestPost ( context ) {
         message: micropub.message,
       } );
       return Response.json( { message: data.commit.message }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } } );
+    } catch ( err ) {
+      return Response.json( {
+        message: err.message,
+      }, { status: err.status } );
+    }
+  }
+  
+  async function commitFeedbin ( url, title ) {
+    const feedbinRequest = new Request(
+      'https://api.feedbin.com/v2/pages.json', {
+        method: 'POST',
+        body: JSON.stringify( {
+          url: url,
+          title: title,
+        } ),
+        headers: {
+          Authorization: 'Basic ' + context.env.FEEDBIN_KEY,
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+      }
+    );
+    try {
+      const response = await fetch( feedbinRequest );
+      if ( !response.ok ) {
+        throw new Error( `Response status: ${response.status}` );
+      }
+      
+      const text = await response.text();
+      console.log( text );
+      return Response.json( { message: text }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } } );
     } catch ( err ) {
       return Response.json( {
         message: err.message,
