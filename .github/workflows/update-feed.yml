@@ -21,9 +21,9 @@ jobs:
         uses: funkylarma/rss-feed-to-markdown@main
         with:
           feed_url: 'https://letterboxd.com/funkylarma/rss/'
-          template_file: './includes/template.md'
+          template_file: './includes/templates/letterboxd.md'
           output_dir: 'src/media/'
-          
+
       - name: Commit and Push new articles
         run: |
             git config --global user.email "funkylarma@users.noreply.github.com"
