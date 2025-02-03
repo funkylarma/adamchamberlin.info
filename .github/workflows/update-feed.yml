@@ -14,6 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get current date
+        id: date
+        run: |
+            echo "::set-output name=year::$(date +'%Y')"
+            echo "::set-output name=month::$(date +'%m')"
+            echo "::set-output name=day::$(date +'%d')"
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -23,13 +30,7 @@ jobs:
           feed_url: 'https://letterboxd.com/funkylarma/rss/'
           template_file: './includes/templates/letterboxd.md'
           output_dir: 'src/media/'
-
-      - name: Commit and Push new movies
-        run: |
-            git config --global user.email "funkylarma@users.noreply.github.com"
-            git config --global user.name "funkylarma via GitHub Actions"
-            git add 'src/media/**/*.md'
-            git commit -am "new movies added - automated"
+          date_format: 'yyyy-MM-dd HH:mm:ss'
 
       - name: Run RSS Feed to Markdown Action for Feedbin Feed
         uses: funkylarma/rss-feed-to-markdown@main
@@ -37,11 +38,13 @@ jobs:
           feed_url: 'https://feedbin.com/starred/9e06fb0a995c4178a5b8f0194f7dc433.xml'
           template_file: './includes/templates/feedbin.md'
           output_dir: 'src/likes/'
+          date_format: 'yyyy-MM-dd HH:mm:ss xx'
 
       - name: Commit and Push new likes
         run: |
             git config --global user.email "funkylarma@users.noreply.github.com"
             git config --global user.name "funkylarma via GitHub Actions"
+            git add 'src/media/**/*.md'
             git add 'src/likes/**/*.md'
-            git commit -am "new likes added - automated"
+            git commit -am "new posts added - automated"
             git push
