@@ -1,2 +1,22 @@
 - name: RSS Feed to Markdown
-uses: keiranlovett/rss-feed-to-markdown@v1.1.6
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  convert_feeds:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run RSS Feed to Markdown Action
+        uses: keiranlovett/rss-feed-to-markdown@main
+        with:
+          feed_url: 'https://letterboxd.com/funkylarma/rss/'
+          template_file: 'assets/template.md'
+          output_dir: '/test/movies/'
