@@ -1,4 +1,4 @@
-- name: RSS Feed to Markdown
+name: Letterboxd RSS Feed to Markdown Posts
 
 on:
   push:
