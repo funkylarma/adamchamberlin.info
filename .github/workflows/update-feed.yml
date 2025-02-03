@@ -1,0 +1,32 @@
+name: Build new Markdown Posts from RSS Feeds
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert_feeds:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run RSS Feed to Markdown Action for Letterboxd Feed
+        uses: keiranlovett/rss-feed-to-markdown@main
+        with:
+          feed_url: 'https://letterboxd.com/funkylarma/rss/'
+          template_file: './includes/template.md'
+          output_dir: 'src/media/'
+          
+      - name: Commit and Push new articles
+        run: |
+            git config --global user.email "funkylarma@users.noreply.github.com"
+            git config --global user.name "funkylarma via GitHub Actions"
+            git commit -am "new posts - automated"
+            git push
