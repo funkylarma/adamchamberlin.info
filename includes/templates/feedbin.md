@@ -2,9 +2,10 @@
 date: [DATE]
 title: [TITLE]
 url: [LINK]
-category: movie
+author: [AUTHOR]
+category: like
 tags:
-  - Letterboxd
+  - Feedbin
 ---
 
 [MARKDOWN]
