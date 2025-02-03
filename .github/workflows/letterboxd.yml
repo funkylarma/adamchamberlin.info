@@ -18,5 +18,5 @@ jobs:
         uses: keiranlovett/rss-feed-to-markdown@main
         with:
           feed_url: 'https://letterboxd.com/funkylarma/rss/'
-          template_file: 'includes/template.md'
-          output_dir: 'test/movies/'
+          template_file: './includes/template.md'
+          output_dir: './test/movies/'
