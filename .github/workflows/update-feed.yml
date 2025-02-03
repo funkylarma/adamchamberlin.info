@@ -42,6 +42,6 @@ jobs:
         run: |
             git config --global user.email "funkylarma@users.noreply.github.com"
             git config --global user.name "funkylarma via GitHub Actions"
-            git add 'src/media/**/*.md'
+            git add 'src/likes/**/*.md'
             git commit -am "new likes added - automated"
             git push
