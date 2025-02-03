@@ -1,7 +1,7 @@
 ---
 date: 2024-12-21
 title: James
-link: https://jamesg.blog/2020/09/04/how-i-use-webmentions/
+url: https://jamesg.blog/2020/09/04/how-i-use-webmentions/
 category: reply
 tags:
   - IndieWeb

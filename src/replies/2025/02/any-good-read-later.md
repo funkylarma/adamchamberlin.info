@@ -1,7 +1,7 @@
 ---
 date: 2025-02-01
 title: Jason A Wise
-link: https://blog.jasonawise.com/2025/01/26/any-good-recommendations-for-a.html
+url: https://blog.jasonawise.com/2025/01/26/any-good-recommendations-for-a.html
 category: reply
 tags:
   - Readlater

@@ -56,7 +56,7 @@ Bookmarks are links to other content on the internet. They can either be a direc
 date: 2025-01-01
 title: Page title
 description: Used to populate the meta description
-link: /the/link/to/the/page/
+url: /the/link/to/the/page/
 category: bookmark
 tags:
   - tag1
@@ -118,7 +118,7 @@ Likes are links to articles or content that have particular interest.
 ---
 date: 2025-01-01
 title: The title
-link: /the/link/to/like/
+url: /the/link/to/like/
 category: like
 ---
 ```
@@ -146,7 +146,7 @@ Replies or comments are notes that are a direct response to another post.
 date: 2025-01-21
 title: Who am I replying to
 description: Used to populate the meta description
-link: /the/link/to/the/article/
+url: /the/link/to/the/article/
 category: reply
 tags:
   - tag1
@@ -162,7 +162,7 @@ title: Title of the event
 date: 2025-01-01
 category: rsvp
 rsvp: interested
-link: /the/link/to/the/event/
+url: /the/link/to/the/event/
 tags:
 - IndieWeb
 ---
@@ -178,7 +178,7 @@ title: The event I'm signing up to
 description: A description about the event
 start: 2025-06-07
 location:
-link: /the/link/to/the/event/
+url: /the/link/to/the/event/
 category: signup
 tags:
   - tag1

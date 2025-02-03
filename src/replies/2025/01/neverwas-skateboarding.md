@@ -1,7 +1,7 @@
 ---
 date: 2025-01-21
 title: NeverWas Skateboarding
-link: https://neverwasskateboarding.micro.blog/2025/01/16/oh-bye-mark.html
+url: https://neverwasskateboarding.micro.blog/2025/01/16/oh-bye-mark.html
 category: reply
 tags:
   - IndieWeb

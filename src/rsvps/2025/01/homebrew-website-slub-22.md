@@ -3,7 +3,7 @@ title: 'Homebrew Website Club Europe/London'
 date: 2025-01-20
 category: rsvp
 rsvp: yes
-link: https://events.indieweb.org/2025/01/homebrew-website-club-europe-london-EDE0nKJmcyhk
+url: https://events.indieweb.org/2025/01/homebrew-website-club-europe-london-EDE0nKJmcyhk
 tags:
 - IndieWeb
 ---

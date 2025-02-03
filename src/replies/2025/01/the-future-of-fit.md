@@ -1,7 +1,7 @@
 ---
 date: 2025-01-06
 title: Ray Maker
-link: https://www.dcrainmaker.com/2025/01/the-begining-of-the-end-for-ant-wireless.html
+url: https://www.dcrainmaker.com/2025/01/the-begining-of-the-end-for-ant-wireless.html
 category: reply
 tags:
   - fit

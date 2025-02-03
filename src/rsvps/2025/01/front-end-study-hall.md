@@ -3,7 +3,7 @@ title: 'Front End Study Hall #018'
 date: 2025-01-01
 category: rsvp
 rsvp: interested
-link: https://events.indieweb.org/2025/01/front-end-study-hall-018-jSXCx17D9a63
+url: https://events.indieweb.org/2025/01/front-end-study-hall-018-jSXCx17D9a63
 tags:
 - IndieWeb
 ---

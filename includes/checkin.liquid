@@ -32,6 +32,14 @@
                 </h1>
               </div><!-- .post--date -->
               <div class="note--meta">
+                {% if category %}
+                <div class="note--category">
+                  <span>Category: </span>
+                  <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
+                    {{ category }}
+                  </a>
+                </div><!-- .post--category -->
+                {% endif %}
                 {% if tags.length > 1 %}
                 <div class="note--tags">
                   <span>Tagged: </span>
@@ -42,14 +50,7 @@
                   </a>
                   {% endif %}
                   {%- endfor -%}
-                  {% if category %}
-                  <div class="note--category">
-                    <span>Category: </span>
-                    <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
-                      {{ category }}
-                    </a>
-                  </div><!-- .post--category -->
-                  {% endif %}
+
                 </div><!-- .post--tags -->
                 {% endif %}
               </div><!-- .post-meta -->

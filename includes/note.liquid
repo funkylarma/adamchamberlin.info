@@ -71,7 +71,7 @@
             {% include "partials/hcard.liquid" %}
             <section class="e-content">
               <p class="p-name">
-                In reply to: <a class="u-in-reply-to" href="{{ link }}" rel="in-reply-to">{{ title }}</a>
+                In reply to: <a class="u-in-reply-to" href="{{ url }}" rel="in-reply-to">{{ title }}</a>
               </p>
               <div class="note--copy p-content">
                 {{ content }}
@@ -85,20 +85,20 @@
               <p class="p-summary">
                 {% if rsvp == 'yes' %}
                 <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a>
-                going to <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>.
+                going to <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>.
                 {% elsif rsvp == 'no' %}
                 <span class="p-rsvp" value="no">Gutted,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a>
-                can not make it to <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>.
+                can not make it to <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>.
                 {% elsif rsvp == 'maybe' %}
                 <span class="p-rsvp" value="maybe">Hoping,</span> <a href="{{ globals.url }}"
-                  class="p-author h-card">I</a> can make it to <a href="{{ link }}" class="u-in-reply-to p-name">{{
+                  class="p-author h-card">I</a> can make it to <a href="{{ url }}" class="u-in-reply-to p-name">{{
                   title
                   }}</a>.
                 {% elsif rsvp == 'interested' %}
-                <a href="{{ link }}" class="u-in-reply-to p-name">This</a> has <a href="{{ globals.url }}"
+                <a href="{{ url }}" class="u-in-reply-to p-name">This</a> has <a href="{{ globals.url }}"
                   class="p-author h-card">me</a> <span class="p-rsvp" value="interested">intrigued</span>.
                 {% else %}
-                <a href="{{ link }}" class="u-in-reply-to p-name">{{ title }}</a>
+                <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>
                 {% endif %}
               </p>
               <div class="note--copy">
@@ -115,7 +115,7 @@
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
                 <p class="p-summary">
-                  Watched <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                  Watched <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {{ content }}
@@ -127,7 +127,7 @@
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
                 <p class="p-summary">
-                  Read <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                  Read <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {{ content }}
@@ -139,7 +139,7 @@
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
                 <p class="p-summary">
-                  Bookmarked <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                  Bookmarked <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {{ content }}
@@ -151,7 +151,7 @@
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
                 <p class="p-summary">
-                  Liked <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                  Liked <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {{ content }}
@@ -163,7 +163,7 @@
             {% include "partials/hcard.liquid" %}
             <section class="e-content">
               <p class="p-summary">
-                Signed up for <a class="u-url p-name" href="{{ link }}">{{ title }}</a>
+                Signed up for <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
               </p>
               <p>
                 Date: <time class="dt-start" datetime="{{ start | dateHtmlString }}">{{ start | dateLongDate }}</time>
