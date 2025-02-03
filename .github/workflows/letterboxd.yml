@@ -19,4 +19,4 @@ jobs:
         with:
           feed_url: 'https://letterboxd.com/funkylarma/rss/'
           template_file: './includes/template.md'
-          output_dir: './test/movies/'
+          output_dir: 'src/media/'
