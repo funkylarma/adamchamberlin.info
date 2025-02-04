@@ -159,8 +159,10 @@ export async function onRequestPost ( context ) {
         const commit = await commitMicropub();
         return commit;
       } else {
+        const message = 'We should be commiting this as it appears to be valid, but this is not production so skip it!';
+        console.log( message );
         return Response.json( {
-          message: 'We should be commiting this as it appears to be valid, but this is not production so skip it!',
+          message: message,
         }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } } );
       }
     } else {
