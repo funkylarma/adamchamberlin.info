@@ -1,5 +1,5 @@
 ---
-date: 2025-01-25 21:22:48
+date: 2025-01-25
 title: Captain America The Winter Soldier 2014
 url: https://letterboxd.com/funkylarma/film/captain-america-the-winter-soldier/
 category: movie

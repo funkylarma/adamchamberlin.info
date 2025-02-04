@@ -186,6 +186,20 @@ export default {
     };
   },
   
+  recentMovies: function ( collection ) {
+    const watched = collection.getAll().sort( function ( a, b ) {
+        return b.date - a.date; // sort by date - descending
+      } )
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category == 'movie' ) {
+          return item;
+        }
+      } )
+      .slice( 0, 10 );
+    return watched;
+  },
+  
   // Drafts Collection
   drafts: function ( collection ) {
     return collection

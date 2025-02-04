@@ -1,5 +1,5 @@
 ---
-date: 2024-12-29 19:23:38
+date: 2024-12-26
 title: John Wick Chapter 2 2017
 url: https://letterboxd.com/funkylarma/film/john-wick-chapter-2/
 category: movie

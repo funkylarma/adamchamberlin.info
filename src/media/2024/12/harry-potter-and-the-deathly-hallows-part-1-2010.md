@@ -1,5 +1,5 @@
 ---
-date: 2024-12-29 19:20:46
+date: 2024-12-23
 title: Harry Potter and the Deathly Hallows Part 1 2010
 url: https://letterboxd.com/funkylarma/film/harry-potter-and-the-deathly-hallows-part-1/
 category: movie

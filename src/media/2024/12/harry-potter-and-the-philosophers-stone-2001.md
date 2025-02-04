@@ -1,5 +1,5 @@
 ---
-date: 2024-12-14 20:17:53
+date: 2024-12-07
 title: Harry Potter and the Philosophers Stone 2001
 url: https://letterboxd.com/funkylarma/film/harry-potter-and-the-philosophers-stone/
 category: movie

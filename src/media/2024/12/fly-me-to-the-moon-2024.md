@@ -1,5 +1,5 @@
 ---
-date: 2024-12-29 22:00:02
+date: 2024-12-29
 title: Fly Me to the Moon 2024
 url: https://letterboxd.com/funkylarma/film/fly-me-to-the-moon-2024/
 category: movie

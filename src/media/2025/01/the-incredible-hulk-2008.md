@@ -1,5 +1,5 @@
 ---
-date: 2025-01-01 19:54:50
+date: 2025-01-01
 title: The Incredible Hulk 2008
 url: https://letterboxd.com/funkylarma/film/the-incredible-hulk/
 category: movie

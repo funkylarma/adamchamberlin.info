@@ -1,5 +1,5 @@
 ---
-date: 2025-01-19 18:38:15
+date: 2025-01-19
 title: Iron Man 3 2013
 url: https://letterboxd.com/funkylarma/film/iron-man-3/
 category: movie

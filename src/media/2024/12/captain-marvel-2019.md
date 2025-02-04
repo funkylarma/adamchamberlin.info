@@ -1,5 +1,5 @@
 ---
-date: 2024-12-31 22:15:04
+date: 2024-12-31
 title: Captain Marvel 2019
 url: https://letterboxd.com/funkylarma/film/captain-marvel/
 category: movie

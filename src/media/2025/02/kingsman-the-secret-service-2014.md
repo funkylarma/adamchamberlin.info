@@ -1,5 +1,5 @@
 ---
-date: 2025-02-01 20:39:47
+date: 2025-02-01
 title: Kingsman The Secret Service 2014
 url: https://letterboxd.com/funkylarma/film/kingsman-the-secret-service/
 category: movie

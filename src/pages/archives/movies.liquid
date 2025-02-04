@@ -6,17 +6,17 @@ description: This page is a quick and dirty archive page of all my LetterBoxd ac
 permalink: "/movies/"
 ---
 <p>
-  All data is taken from my <a href="https://letterboxd.com/funkylarma/">Letter Boxd</a> account.
+  All data is taken from my <a href="https://letterboxd.com/funkylarma/">LetterBoxd</a> account.
 </p>
 
 <h2>Recently Watched</h2>
 <ul>
-  {% for movies in letterboxd.activityList %}
+  {% for movie in collections.recentMovies %}
   <li class="movie h-entry hentry">
     <div class="p-name">
       {% assetIcon "movie" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ movies.url }}" title="Watched on {{ movies.date | dateLongDate }}">
-        {{ movies.data.title }}
+      <a class="post-link u-url" rel="bookmark" href="{{ movie.url }}" title="Watched on {{ movie.date | dateLongDate }}">
+        {{ movie.data.title }}
       </a>
     </div>
     <time class="postlist-date dt-published" datetime="{{ movies.date | dateHtmlString }}"/>

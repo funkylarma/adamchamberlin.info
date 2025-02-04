@@ -1,5 +1,5 @@
 ---
-date: 2024-12-30 23:09:14
+date: 2024-12-30
 title: Captain America The First Avenger 2011
 url: https://letterboxd.com/funkylarma/film/captain-america-the-first-avenger/
 category: movie

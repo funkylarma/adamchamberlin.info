@@ -1,5 +1,5 @@
 ---
-date: 2025-01-27 13:15:00 +0000
+date: 2025-01-27 13:15:00
 title: Container Queries Unleashed
 url: https://www.joshwcomeau.com/css/container-queries-unleashed/
 author: Josh Comeau's blog

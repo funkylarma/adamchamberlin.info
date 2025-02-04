@@ -1,5 +1,5 @@
 ---
-date: 2024-12-30 23:09:34
+date: 2024-12-30
 title: John Wick Chapter 4 2023
 url: https://letterboxd.com/funkylarma/film/john-wick-chapter-4/
 category: movie

@@ -1,5 +1,5 @@
 ---
-date: 2025-01-11 22:22:12
+date: 2025-01-11
 title: The Avengers 2012
 url: https://letterboxd.com/funkylarma/film/the-avengers-2012/
 category: movie

@@ -1,5 +1,5 @@
 ---
-date: 2025-01-01 18:29:59
+date: 2025-01-01
 title: Iron Man 2 2010
 url: https://letterboxd.com/funkylarma/film/iron-man-2/
 category: movie

@@ -1,5 +1,5 @@
 ---
-date: 2024-12-31 22:16:21
+date: 2024-12-31
 title: Iron Man 2008
 url: https://letterboxd.com/funkylarma/film/iron-man-2008/
 category: movie

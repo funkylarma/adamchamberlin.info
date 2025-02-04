@@ -1,5 +1,5 @@
 ---
-date: 2025-01-28 12:34:57
+date: 2025-01-28
 title: Guardians of the Galaxy 2014
 url: https://letterboxd.com/funkylarma/film/guardians-of-the-galaxy/
 category: movie

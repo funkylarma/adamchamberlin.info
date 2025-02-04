@@ -1,5 +1,5 @@
 ---
-date: 2024-12-29 19:22:20
+date: 2024-12-25
 title: Violent Night 2022
 url: https://letterboxd.com/funkylarma/film/violent-night/
 category: movie

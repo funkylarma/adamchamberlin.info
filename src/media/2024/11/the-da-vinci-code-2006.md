@@ -1,8 +1,10 @@
 ---
-date: 2024-11-07
+date: 2024-11-23
 title: The Da Vinci Code 2006
 url: https://letterboxd.com/funkylarma/film/the-da-vinci-code/
 category: movie
+tags:
+- Letterboxd
 ---
 
 ![](https://a.ltrbxd.com/resized/sm/upload/z4/t4/e8/sa/3hM1jR5zoee8h9sV5IxmcFt0gbZ-0-600-0-900-crop.jpg?v=fbb523bbbd)

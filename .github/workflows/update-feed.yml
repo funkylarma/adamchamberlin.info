@@ -30,7 +30,7 @@ jobs:
           feed_url: 'https://letterboxd.com/funkylarma/rss/'
           template_file: './includes/templates/letterboxd.md'
           output_dir: 'src/media/'
-          date_format: 'yyyy-MM-dd HH:mm:ss'
+          date_format: 'yyyy-MM-dd'
 
       - name: Run RSS Feed to Markdown Action for Feedbin Feed
         uses: funkylarma/rss-feed-to-markdown@main
@@ -38,7 +38,7 @@ jobs:
           feed_url: 'https://feedbin.com/starred/9e06fb0a995c4178a5b8f0194f7dc433.xml'
           template_file: './includes/templates/feedbin.md'
           output_dir: 'src/likes/'
-          date_format: 'yyyy-MM-dd HH:mm:ss xx'
+          date_format: 'yyyy-MM-dd'
 
       - name: Commit and Push new likes
         run: |

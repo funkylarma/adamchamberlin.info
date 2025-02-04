@@ -1,5 +1,5 @@
 ---
-date: 2024-12-14 20:13:26
+date: 2024-12-14
 title: Harry Potter and the Chamber of Secrets 2002
 url: https://letterboxd.com/funkylarma/film/harry-potter-and-the-chamber-of-secrets/
 category: movie

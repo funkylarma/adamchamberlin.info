@@ -1,5 +1,5 @@
 ---
-date: 2025-01-26 16:45:26
+date: 2025-01-26
 title: TRON Legacy 2010
 url: https://letterboxd.com/funkylarma/film/tron-legacy/
 category: movie

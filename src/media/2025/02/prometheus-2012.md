@@ -1,5 +1,5 @@
 ---
-date: 2025-02-02 20:39:48
+date: 2025-02-02
 title: Prometheus 2012
 url: https://letterboxd.com/funkylarma/film/prometheus/
 category: movie

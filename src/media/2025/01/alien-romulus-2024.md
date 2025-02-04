@@ -1,5 +1,5 @@
 ---
-date: 2025-01-31 21:27:48
+date: 2025-01-31
 title: Alien Romulus 2024
 url: https://letterboxd.com/funkylarma/film/alien-romulus/
 category: movie

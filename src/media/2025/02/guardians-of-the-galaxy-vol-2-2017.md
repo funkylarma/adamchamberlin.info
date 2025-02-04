@@ -1,5 +1,5 @@
 ---
-date: 2025-02-01 18:24:46
+date: 2025-02-01
 title: Guardians of the Galaxy Vol 2 2017
 url: https://letterboxd.com/funkylarma/film/guardians-of-the-galaxy-vol-2/
 category: movie

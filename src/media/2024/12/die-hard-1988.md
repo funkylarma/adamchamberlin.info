@@ -1,5 +1,5 @@
 ---
-date: 2024-12-29 19:21:40
+date: 2024-12-24
 title: Die Hard 1988
 url: https://letterboxd.com/funkylarma/film/die-hard/
 category: movie

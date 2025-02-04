@@ -1,5 +1,5 @@
 ---
-date: 2025-01-12 20:42:29
+date: 2025-01-12
 title: Thor The Dark World 2013
 url: https://letterboxd.com/funkylarma/film/thor-the-dark-world/
 category: movie
