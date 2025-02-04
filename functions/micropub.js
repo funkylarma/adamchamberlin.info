@@ -159,8 +159,24 @@ export async function onRequestPost ( context ) {
         const commit = await commitMicropub();
         return commit;
       } else {
-        const message = 'We should be commiting this as it appears to be valid, but this is not production so skip it!';
+        const message = 'We should be commiting this as it appears to be valid, but this is not production so going to create a mock commit';
         console.log( message );
+        
+        // Build the contents
+        let contents = micropub.frontMatterContent.join( '\n' );
+        contents += micropub.bodyContent.join( '\n' ).toString( 'base64' );
+        
+        // Building the commit objects
+        const commit = {
+          owner: 'funkylarma',
+          repo: 'adamchamberlin.info',
+          path: micropub.path + micropub.filename + '.md',
+          content: btoa( toBinaryStr( contents ) ),
+          message: micropub.message,
+        }
+        
+        console.log( commit );
+        
         return Response.json( {
           message: message,
         }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } } );
@@ -336,7 +352,7 @@ export async function onRequestPost ( context ) {
         owner: 'funkylarma',
         repo: 'adamchamberlin.info',
         path: micropub.path + micropub.filename + '.md',
-        content: btoa( contents ),
+        content: btoa( toBinaryStr( contents ) ),
         message: micropub.message,
       } );
       console.log( 'Waiting on commit...' );
@@ -415,4 +431,12 @@ function slugify ( str ) {
     .replace( /\s+/g, '-' ) // replace spaces with hyphens
     .replace( /-+/g, '-' ); // remove consecutive hyphens
   return str;
+}
+
+function toBinaryStr ( str ) {
+  const encoder = new TextEncoder();
+  // 1: split the UTF-16 string into an array of bytes
+  const charCodes = encoder.encode( str );
+  // 2: concatenate byte data to create a binary string
+  return String.fromCharCode( ...charCodes );
 }
