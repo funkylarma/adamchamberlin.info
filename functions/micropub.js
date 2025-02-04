@@ -324,8 +324,12 @@ export async function onRequestPost ( context ) {
     // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
     const octokit = new Octokit( { auth: context.env.GITHUB_ACCESS_TOKEN } );
     
+    console.log( octokit );
+    
     let contents = micropub.frontMatterContent.join( '\n' );
     contents += micropub.bodyContent.join( '\n' ).toString( 'base64' );
+    
+    console.log( "Preparing to commit payload" );
     
     try {
       const { data } = await octokit.repos.createOrUpdateFileContents( {
@@ -335,8 +339,10 @@ export async function onRequestPost ( context ) {
         content: btoa( contents ),
         message: micropub.message,
       } );
+      console.log( 'Waiting on commit...' );
       return Response.json( { message: data.commit.message }, { status: 201, headers: { Location: 'https://adamchamberlin.info' } } );
     } catch ( err ) {
+      console.error( 'There was a problem commiting the payload' );
       return Response.json( {
         message: err.message,
       }, { status: err.status } );
