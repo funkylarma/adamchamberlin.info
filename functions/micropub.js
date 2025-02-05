@@ -171,7 +171,8 @@ export async function onRequestPost ( context ) {
           owner: 'funkylarma',
           repo: 'adamchamberlin.info',
           path: micropub.path + micropub.filename + '.md',
-          content: btoa( toBinaryStr( contents ) ),
+          encoded: btoa( toBinaryStr( contents ) ),
+          content: contents,
           message: micropub.message,
         }
         
@@ -212,7 +213,7 @@ export async function onRequestPost ( context ) {
     
     // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
-    micropub.frontMatterContent.push( 'title: ' + like.name );
+    micropub.frontMatterContent.push( 'title: "' + like.name + '"' );
     micropub.frontMatterContent.push( 'url: ' + like.url );
     micropub.frontMatterContent.push( 'category: like' );
   }
@@ -237,7 +238,7 @@ export async function onRequestPost ( context ) {
     
     // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
-    micropub.frontMatterContent.push( 'title: ' + rsvp.name );
+    micropub.frontMatterContent.push( 'title: "' + rsvp.name + '"' );
     micropub.frontMatterContent.push( 'url: ' + rsvp.url );
     micropub.frontMatterContent.push( 'rsvp: ' + rsvp.rsvp );
     micropub.frontMatterContent.push( 'category: rsvp' );
@@ -263,7 +264,7 @@ export async function onRequestPost ( context ) {
     
     // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
-    micropub.frontMatterContent.push( 'title: ' + bookmark.name );
+    micropub.frontMatterContent.push( 'title: "' + bookmark.name + '"' );
     micropub.frontMatterContent.push( 'url: ' + bookmark.url );
     micropub.frontMatterContent.push( 'category: bookmark' );
   }
@@ -288,7 +289,7 @@ export async function onRequestPost ( context ) {
     
     // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
-    micropub.frontMatterContent.push( 'title: ' + reply.name );
+    micropub.frontMatterContent.push( 'title: "' + reply.name + '"' );
     micropub.frontMatterContent.push( 'url: ' + reply.url );
     micropub.frontMatterContent.push( 'category: reply' );
   }
@@ -308,7 +309,7 @@ export async function onRequestPost ( context ) {
     
     // Build the frontmatter
     micropub.frontMatterContent.push( 'date: ' + micropub.date );
-    micropub.frontMatterContent.push( 'title: ' + checkin[ 0 ].properties.name );
+    micropub.frontMatterContent.push( 'title: "' + checkin[ 0 ].properties.name + '"' );
     micropub.frontMatterContent.push(
       'latitude: ' + checkin[ 0 ].properties.latitude
     );
