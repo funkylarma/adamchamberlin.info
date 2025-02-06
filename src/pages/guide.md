@@ -33,21 +33,6 @@ tags:
 ---
 ```
 
-### Notes
-Notes a quick short form content.
-
-```markdown
----
-date: 2025-01-01
-title: Just a note
-description: Used to populate the meta description
-noindex: false
-category: note
-tags:
-  - tag1
----
-```
-
 ### Bookmarks
 Bookmarks are links to other content on the internet. They can either be a direct link or an archive of the link if it is of value. If the note has a __title__ then it is presumed to be a bookmark that is to be archived.
 
@@ -123,19 +108,20 @@ category: like
 ---
 ```
 
-### Reposts
-
+### Notes
+Notes a quick short form content.
 
 ```markdown
 ---
 date: 2025-01-01
-title: Page title
+title: Just a note
 description: Used to populate the meta description
-url: /the/link/to/the/page/
-category: repost
+noindex: false
+category: note
 tags:
   - tag1
 ---
+```
 
 ### Photos
 Photos are image related posts.
@@ -162,6 +148,20 @@ title: Who am I replying to
 description: Used to populate the meta description
 url: /the/link/to/the/article/
 category: reply
+tags:
+  - tag1
+---
+```
+
+### Reposts
+
+```markdown
+---
+date: 2025-01-01
+title: Page title
+description: Used to populate the meta description
+url: /the/link/to/the/page/
+category: repost
 tags:
   - tag1
 ---

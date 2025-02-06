@@ -127,47 +127,127 @@ tags:
   <h2>Recent Activity</h2>
   <ul class="activity--list--content">
     {% for post in collections.homePage.activityList %}
-    <li class="h-entry hentry">
-      <div>
-        {% if post.data.category == 'signup' %}
-        {% assetIcon "calendar" %}
-        Signed up for -
-        {% elsif post.data.category == 'rsvp' %}
-        {% assetIcon "rsvp" %}
-        RSVP'd to -
-        {% elsif post.data.category == 'exercise' %}
-        {% assetIcon "stopwatch" %}
-        Went {{ post.data.sport }} -
-        {% elsif post.data.category == 'movie' %}
-        {% assetIcon "movie" %}
-        Watched -
-        {% elsif post.data.category == 'book' %}
-        {% assetIcon "book" %}
-        Read -
-        {% elsif post.data.category == 'bookmark' %}
-        {% assetIcon "bookmark" %}
-        Bookmarked -
-        {% elsif post.data.category == 'repost' %}
-        {% assetIcon "boost" %}
-        Boosted -
-        {% elsif post.data.category == 'like' %}
-        {% assetIcon "heart" %}
-        Liked -
-        {% elsif post.data.category == 'videography' %}
-        {% assetIcon "video" %}
-        Shot a video -
-        {% else %}
-        {% assetIcon "unknown" %}
-        Noodled about -
-        {% endif %}
-        <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
-          {{ post.data.title | strip_html | truncate: 40 }}
-        </a>
-      </div>
-      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
-        {{ post.date | dateLongDateShortMonth }}
-      </time>
-    </li>
+
+      {% if post.data.category == 'book' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "book" %}
+            Read - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'bookmark' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "bookmark" %}
+            Bookmarked - <a href="{{ post.data.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'exercise' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "stopwatch" %}
+            Went {{ post.data.sport }} - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'jam' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "jam" %}
+            Jammin to - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a> by {{ post.data.artist | strip_html | truncate: 40 }}
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'like' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "heart" %}
+            Liked - <a href="{{ post.data.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'movie' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "movie" %}
+            Watched - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'repost' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "boost" %}
+            Boosted - <a href="{{ post.data.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'rsvp' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "rsvp" %}
+            RSVP'd - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'signup' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "calendar" %}
+            Signed up for - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
+      {% if post.data.category == 'videography' %}
+        <li class="h-entry hentry">
+          <div>
+            {% assetIcon "video" %}
+            Shot a video - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+          </div>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+            {{ post.date | dateLongDateShortMonth }}
+          </time>
+        </li>
+      {% endif %}
+
     {% endfor %}
   </ul>
   <a href="/activity/" class="more">View all activity</a>
