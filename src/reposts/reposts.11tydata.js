@@ -1,10 +1,12 @@
-import { DateTime } from 'luxon';
-
 export default {
   eleventyComputed: {
     // Modify the permalink
     permalink: ( data ) => {
-      return `/${data.page.filePathStem.replace('/bookmarks', '/')}/`;
+      return `/${data.page.filePathStem.replace('/reposts', '/')}/`;
+    },
+
+    eleventyExcludeFromCollections: ( data ) => {
+      return false;
     },
   },
 

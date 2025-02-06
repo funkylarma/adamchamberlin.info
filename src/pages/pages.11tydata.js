@@ -5,6 +5,4 @@ export default {
   // What layout to use
   layout: 'page.liquid',
 
-  // Apply a class to the body tag
-  bodyClass: 'page--single',
 };

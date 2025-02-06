@@ -11,7 +11,7 @@ export default {
   },
 
   // Set the tag for collections
-  tags: ['note', 'video'],
+  tags: ['note'],
 
   // What layout to use
   layout: 'article.liquid',

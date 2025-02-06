@@ -4,15 +4,15 @@ export default {
     permalink: ( data ) => {
       return `/${data.page.filePathStem.replace('/replies', '/')}/`;
     },
-    
+
     eleventyExcludeFromCollections: ( data ) => {
       return false;
     },
   },
-  
+
   // Set the tag for collections
-  tags: [ 'note', 'reply' ],
-  
+  tags: [ 'note' ],
+
   // What layout to use
   layout: 'note.liquid',
 };

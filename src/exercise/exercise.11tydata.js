@@ -7,11 +7,11 @@ export default {
       return `/${data.page.filePathStem.replace('/exercise', '/')}/`;
     },
   },
-  
+
   // Set the tag for collections
-  tags: [ 'note', 'exercise' ],
-  
+  tags: [ 'note' ],
+
   // What layout to use
   layout: 'exercise.liquid',
-  
+
 };
