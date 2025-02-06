@@ -123,6 +123,20 @@ category: like
 ---
 ```
 
+### Reposts
+
+
+```markdown
+---
+date: 2025-01-01
+title: Page title
+description: Used to populate the meta description
+url: /the/link/to/the/page/
+category: repost
+tags:
+  - tag1
+---
+
 ### Photos
 Photos are image related posts.
 

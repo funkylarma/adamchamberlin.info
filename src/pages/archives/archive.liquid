@@ -98,73 +98,85 @@ permalink: "/archive/"
               {% assetIcon "heart" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Liked <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Liked <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
+
+            {% elif entry.category == 'repost' %}
+              {% assetIcon "boost" %}
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Boosted <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'rsvp' %}
               {% assetIcon "rsvp" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - RSVP'd to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - RSVP'd to <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'event' %}
               {% assetIcon "calendar" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Signed up for <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Signed up for <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'exercise' %}
               {% assetIcon "stopwatch" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Went {{ entry.sport }} <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Went {{ entry.sport }} <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'race' %}
               {% assetIcon "trophy" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Raced <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Raced <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
+
+            {% elif entry.category == 'signup' %}
+              {% assetIcon "signup" %}
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Signed up for <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'photography' %}
               {% assetIcon "photo" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'videography' %}
               {% assetIcon "video" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'bookmark' %}
               {% assetIcon "bookmark" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Bookmarked <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Bookmarked <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'movie' %}
               {% assetIcon "movie" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Watched <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Watched <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'book' %}
               {% assetIcon "book" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Read <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Read <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% elif entry.category == 'jam' %}
               {% assetIcon "jam" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Vibing to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Vibing to <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
 
             {% else %}
               {% assetIcon "unknown" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
             {% endif %}
           </li>
         {% endfor %}

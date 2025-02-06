@@ -24,7 +24,7 @@ eleventyComputed:
         {% assetIcon "note" %}
         Noodled about -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -36,7 +36,7 @@ eleventyComputed:
         {% assetIcon "reply" %}
         Replied to -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Replied to {{ post.data.title }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -48,7 +48,7 @@ eleventyComputed:
         {% assetIcon "rsvp" %}
         RSVP'd to -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="RSVP'd to {{ post.data.title }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -60,7 +60,7 @@ eleventyComputed:
         {% assetIcon "video" %}
         Shot -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View video">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -72,7 +72,7 @@ eleventyComputed:
         {% assetIcon "photo" %}
         Snapped -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
-          {{ post.data.to }}
+          {{ post.data.to | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -84,7 +84,19 @@ eleventyComputed:
         {% assetIcon "bookmark" %}
         Bookmarked -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Bookmarked {{ post.data.title }}">
-          {{ post.data.title | strip_html | truncate: 50 }}
+          {{ post.data.title | strip_html | truncate: 40 }}
+        </a>
+      </h2>
+      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+    </li>
+
+    {% elsif post.data.category == 'repost' %}
+    <li class="repost h-entry hentry">
+      <h2 class="p-name">
+        {% assetIcon "boost" %}
+        Boosted -
+        <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Boosted {{ post.data.title }}">
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -96,7 +108,7 @@ eleventyComputed:
         {% assetIcon "jam" %}
         Vibing to -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Jamming to {{ post.data.title }}">
-          {{ post.data.title | strip_html | truncate: 50 }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -108,7 +120,7 @@ eleventyComputed:
         {% assetIcon "checkin" %}
         Checked in at -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -120,7 +132,7 @@ eleventyComputed:
         {% assetIcon "calendar" %}
         Attending -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Attending {{ post.data.title }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -132,7 +144,7 @@ eleventyComputed:
         {% assetIcon "signup" %}
         Signed up for -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Signed up for {{ post.data.title }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -144,7 +156,7 @@ eleventyComputed:
         {% assetIcon "stopwatch" %}
         Went {{ post.data.sport }} -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Went {{ post.data.title }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -156,7 +168,7 @@ eleventyComputed:
         {% assetIcon "trophy" %}
         Raced -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Raced {{ post.data.title }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -168,7 +180,7 @@ eleventyComputed:
         {% assetIcon "movie" %}
         Watched -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Watched on {{ post.date | dateLongDate }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <img src="{{ post.data.cover }}" eleventy:ignore>
@@ -182,9 +194,9 @@ eleventyComputed:
         {% assetIcon "music" %}
         Listened to -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Listened on {{ post.date | dateLongDate }}">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
-        by {{ post.data.artist }}
+        by {{ post.data.artist | strip_html | truncate: 40 }}
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
     </li>
@@ -195,7 +207,7 @@ eleventyComputed:
         {% assetIcon "tooted" %}
         Tooted -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
-          {{ post.data.title | strip_html | truncate: 50 }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
@@ -207,7 +219,7 @@ eleventyComputed:
         {% assetIcon "unknown" %}
         Mumbled about -
         <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View Item">
-          {{ post.data.title }}
+          {{ post.data.title | strip_html | truncate: 40 }}
         </a>
       </h2>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>

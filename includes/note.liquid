@@ -147,6 +147,18 @@
               </section>
             {% endif %}
 
+            {% if category == 'repost' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Boosted <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
             {% if category == 'like' %}
               {% include "partials/hcard.liquid" %}
               <section class="e-content">

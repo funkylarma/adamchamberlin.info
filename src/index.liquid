@@ -147,6 +147,9 @@ tags:
         {% elsif post.data.category == 'bookmark' %}
         {% assetIcon "bookmark" %}
         Bookmarked -
+        {% elsif post.data.category == 'repost' %}
+        {% assetIcon "boost" %}
+        Boosted -
         {% elsif post.data.category == 'like' %}
         {% assetIcon "heart" %}
         Liked -

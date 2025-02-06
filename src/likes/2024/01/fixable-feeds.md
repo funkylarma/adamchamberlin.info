@@ -8,6 +8,8 @@ tags:
   - Feedbin
 ---
 
+Liked [Fixable Feeds](https://feedbin.com/blog/2024/01/15/fixable-feeds/)
+
 There’s a new set of features available on Feedbin with the goal of helping you find and fix broken feeds.
 
 A fairly common reason for a feed breaking is when a publisher moves their feed, but does not redirect the old one to the new location.
