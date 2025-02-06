@@ -73,7 +73,7 @@ export async function onRequestPost(context) {
     content_types.forEach((type) => {
       if (type in entry) {
         switch (type) {
-          case 'repost-of'
+          case 'repost-of':
             let repost = {};
             repost.url = entry['repost-of'];
             repost.name = entry.name ? entry.name : "Boosted";
