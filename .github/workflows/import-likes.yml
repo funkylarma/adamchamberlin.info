@@ -22,7 +22,7 @@ jobs:
         uses: funkylarma/rss-feed-to-markdown@main
         with:
           feed_url: 'https://feedbin.com/starred/9e06fb0a995c4178a5b8f0194f7dc433.xml'
-          template_file: './includes/templates/feedbin.md'
+          template_file: './includes/templates/feedbin-like.md'
           output_dir: 'src/likes/'
           date_format: 'yyyy-MM-dd'
 

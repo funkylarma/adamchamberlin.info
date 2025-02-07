@@ -2,6 +2,7 @@
 date: 2025-01-27
 title: Container Queries Unleashed
 url: https://www.joshwcomeau.com/css/container-queries-unleashed/
+canonical: https://www.joshwcomeau.com/css/container-queries-unleashed/
 author: Josh Comeau's blog
 category: like
 tags:

@@ -18,7 +18,7 @@
   <meta name="keywords" content="{{ tags | metaKeywords }}">
 {% endif %}
 <!-- Sitemap -->
-<link rel="canonical" href="{{ page.url | absoluteUrl }}">
+<link rel="canonical" href="{% if canonical %}{{ canonical }}{% else %}{{ page.url | absoluteUrl }}{% endif %}">
 {% if globals.env == "production" %}
   <!-- Preloads -->
   <link rel="preload" type="font/woff2" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" crossOrigin="anonymous">

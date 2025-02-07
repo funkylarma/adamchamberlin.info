@@ -2,6 +2,7 @@
 date: 2025-02-05
 title: The Many Purposes of Timeline Apps for the Open Web
 url: https://www.macstories.net/stories/the-many-purposes-of-timeline-apps-for-the-open-web/
+canonical: https://www.macstories.net/stories/the-many-purposes-of-timeline-apps-for-the-open-web/
 author: MacStories
 category: like
 tags:
@@ -14,8 +15,8 @@ Tapestry (left) and Reeder.
 
 [Writing at The Verge](https://www.theverge.com/apps/605756/tapestry-reeder-surf-timeline-apps) following the release of The Iconfactory’s new app [Tapestry](https://usetapestry.com), David Pierce perfectly encapsulates how I feel about the idea of “timeline apps” (a name that I’m _totally_ going to steal, thanks David):
 
-> ⁠⁠What I like even more, though, is the idea behind Tapestry. There’s actually a whole genre of apps like this one, which I’ve taken to calling “timeline apps.” So far, in addition to Tapestry, there’s [Reeder](https://reederapp.com/), [Unread](https://www.goldenhillsoftware.com/unread/), [Feeeed](https://feeeed.nateparrott.com/), [Surf](https://surf.social/), and a few others. They all have slightly different interface and feature ideas, but they all have the same basic premise: that pretty much everything on the internet is just feeds. And that you might want a better place to read them.⁠⁠  
-> \[…\]  
+> ⁠⁠What I like even more, though, is the idea behind Tapestry. There’s actually a whole genre of apps like this one, which I’ve taken to calling “timeline apps.” So far, in addition to Tapestry, there’s [Reeder](https://reederapp.com/), [Unread](https://www.goldenhillsoftware.com/unread/), [Feeeed](https://feeeed.nateparrott.com/), [Surf](https://surf.social/), and a few others. They all have slightly different interface and feature ideas, but they all have the same basic premise: that pretty much everything on the internet is just feeds. And that you might want a better place to read them.⁠⁠
+> \[…\]
 > These apps can also take some getting used to. If you’re coming from an RSS reader, where everything has the same format — headline, image, intro, link — a timeline app will look hopelessly chaotic. If you’re coming from social, where everything moves impossibly fast and there’s more to see every time you pull to refresh, the timeline you curate is guaranteed to feel boring by comparison.⁠⁠
 
 I have a somewhat peculiar stance on this new breed of timeline apps, and since I’ve never written about them on MacStories before, allow me to clarify and share some recent developments in my workflow while I’m at it.
