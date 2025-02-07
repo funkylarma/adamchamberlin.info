@@ -48,14 +48,14 @@ tags:
         </h3>
         <div class="post--meta">
           <div class="post--date">
-            <span>Date: </span>
+            {% assetIcon "calendar" %}
             <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
               {{ post.date | dateLongDateShortMonth }}
             </time>
           </div>
           {% if post.data.tags.length > 1 %}
           <div class="post--tags">
-            <span>Tagged: </span>
+            {% assetIcon "tag" %}
             {%- for tag in post.data.tags -%}
             {% if tag != 'article' %}
             <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
@@ -66,7 +66,7 @@ tags:
           </div><!-- .post-tags -->
           {% endif %}
           <div class="post--reading">
-            <span>Estimated: </span>
+            {% assetIcon "hourglass" %}
             {{ post.templateContent | timeReading }}
           </div><!-- .post-reading -->
         </div>

@@ -175,17 +175,19 @@
         
         .post--meta {
           display: flex;
-          flex-direction: column;
-          text-transform: uppercase;
+          flex-direction: row;
+          align-items: center;
+          column-gap: 1rem;
+          margin-bottom: 0.5rem;
           font-size: var(--main-font-size-xx-small);
+          text-transform: uppercase;
+          letter-spacing: 2px;
           
           .post--date,
-          .post--tags {
-            margin: 0 0 0.25rem 0;
-          }
-          
-          span {
-            font-weight: 600;
+          .post--tags,
+          .post--reading {
+            display: flex;
+            align-items: center;
           }
           
           a {

@@ -117,19 +117,19 @@ small,
 }
 
 article {
-
+  
   > ul,
   > ol {
     > li + li {
       margin-top: 1rem;
     }
   }
-
+  
   * {
     + h2 {
       margin-top: 4rem;
     }
-
+    
     + h3 {
       margin-top: 2rem;
     }
@@ -149,11 +149,11 @@ hr {
 a:not(.button) {
   color: var(--main-color-secondary);
   text-decoration: none;
-
+  
   &:hover {
     text-decoration: underline;
   }
-
+  
   &:focus {
     border: 1px solid red;
   }
@@ -186,7 +186,7 @@ body {
   width: 140%;
   max-width: 140%;
   margin: 0 -20%;
-
+  
   @media (max-width: 1150px) {
     margin: 0;
     width: 100%;
@@ -227,7 +227,7 @@ body {
     grid-template-columns: min-content auto;
     margin-left: -1.6rem;
   }
-
+  
   .deeplink {
     grid-row-start: 1;
   }
@@ -262,25 +262,25 @@ img[width][height] {
   ;
   padding-left: 1rem;
   padding-right: 1rem;
-
+  
   h2,
   h3,
   h4 {
     color: var(--main-color-tertiary);
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 1rem;
-
+    
     a.heading-anchor {
       color: var(--main-color-tertiary);
       text-decoration: none;
     }
   }
-
+  
   ul,
   ol {
     margin-bottom: 2rem;
   }
-
+  
   hr {
     display: block;
     width: 50%;
@@ -290,7 +290,7 @@ img[width][height] {
     margin-right: auto;
     border-top: 1px dashed var(--main-color-hairline);
   }
-
+  
   .heading-wrapper h2,
   .heading-wrapper h3,
   .heading-wrapper h4,
@@ -303,7 +303,7 @@ img[width][height] {
   justify-content: center;
   align-content: center;
   border-bottom: none;
-
+  
   svg {
     &.icon {
       &.icon-link {
@@ -311,13 +311,13 @@ img[width][height] {
       }
     }
   }
-
+  
   &:link,
   &:visited {
     color: var(--main-color-hairline);
     text-decoration: none;
   }
-
+  
   .heading-wrapper:hover &,
   &:hover,
   &:focus {
@@ -336,7 +336,7 @@ svg.icon {
 }
 
 .pagination {
-
+  
   .pagination--content {
     max-width: var(--main-layout-width-normal);
     text-align: center;
@@ -345,18 +345,18 @@ svg.icon {
     margin-top: 2rem;
     margin-bottom: 2rem;
     ;
-
+    
     .post--pagination {
       display: flex;
       padding: 0;
       margin: 0;
       list-style: none;
       justify-content: space-between;
-
+      
       a {
         color: var(--main-color-secondary);
         text-decoration: none;
-
+        
         &:hover {
           color: var(--main-color-primary);
         }
@@ -370,7 +370,7 @@ svg.icon {
   margin-bottom: 2rem;
   color: inherit;
   border-left: .25em solid #888;
-
+  
   p {
     font-size: var(--main-font-size-small);
   }
