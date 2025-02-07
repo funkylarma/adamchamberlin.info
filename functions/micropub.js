@@ -53,23 +53,25 @@ export async function onRequestPost ( context ) {
     
     // Define some possible content types
     const content_types = [
-      'rsvp',
-      'in-reply-to',
-      'repost-of',
-      'like-of',
-      'listen-of',
-      'watch-of',
+      'ate', // TODO
       'bookmark-of',
-      'ate',
-      'drank',
-      'photo',
       'checkin',
+      'drank', // TODO
+      'in-reply-to',
+      'like-of',
+      'listen-of', // TODO
+      'photo', // TODO
+      'repost-of',
+      'rsvp',
+      'watch-of', // TODO
     ];
     
     // Loop through the content types and check if we have a match
     content_types.forEach( ( type ) => {
       if ( type in entry ) {
         switch ( type ) {
+          
+          // Bookmarks - Add to site and post to read later service
           case 'bookmark-of':
             let bookmark = {};
             // Set some variables
@@ -85,33 +87,22 @@ export async function onRequestPost ( context ) {
             // Send the bookmark to Readwise Reader
             commitReadwise( bookmark );
             break;
+            
+            // Checkin - Add to site
           case 'checkin':
             // Process the checkin
             processCheckin( entry.checkin );
             break;
+            
+            // Replied - Add to site
           case 'in-reply-to':
             let reply = {};
             reply.name = entry.name ? entry.name : `Replied to ${entry['in-reply-to']}`;
             reply.url = entry[ 'in-reply-to' ];
             processReply( reply );
             break;
-          case 'photo':
-            // Process the photo
-            processPhoto( entry.photo );
-            break;
-          case 'repost-of':
-            let repost = {};
-            repost.url = entry[ 'repost-of' ];
-            repost.name = entry.name ? entry.name : "Boosted";
-            processRepost( repost );
-            break;
-          case 'rsvp':
-            let rsvp = {};
-            rsvp.rsvp = entry[ 'rsvp' ];
-            rsvp.name = entry.name ? entry.name : "RSVP'd";
-            rsvp.url = entry.url;
-            processRSVP( rsvp );
-            break;
+            
+            // Likes - Add to site
           case 'like-of':
             let like = {};
             // TODO: This is not correct micropub format
@@ -120,6 +111,31 @@ export async function onRequestPost ( context ) {
             // Process the like
             processLike( like );
             break;
+            
+            // Photos - Need to think about this one
+          case 'photo':
+            // Process the photo
+            processPhoto( entry.photo );
+            break;
+            
+            // Repost/Boost - Add to the site
+          case 'repost-of':
+            let repost = {};
+            repost.url = entry[ 'repost-of' ];
+            repost.name = entry.name ? entry.name : "Boosted";
+            processRepost( repost );
+            break;
+            
+            // RSVP - Add to the site
+          case 'rsvp':
+            let rsvp = {};
+            rsvp.rsvp = entry[ 'rsvp' ];
+            rsvp.name = entry.name ? entry.name : "RSVP'd";
+            rsvp.url = entry.url;
+            processRSVP( rsvp );
+            break;
+            
+            // Default action - Break out of the loop.
           default:
             return Response.json( {
               message: 'Not a valid micropub post, missing a type',

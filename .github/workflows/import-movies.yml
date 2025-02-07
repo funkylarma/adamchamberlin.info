@@ -26,19 +26,10 @@ jobs:
           output_dir: 'src/media/'
           date_format: 'yyyy-MM-dd'
 
-      - name: Run RSS Feed to Markdown Action for Feedbin Feed
-        uses: funkylarma/rss-feed-to-markdown@main
-        with:
-          feed_url: 'https://feedbin.com/starred/9e06fb0a995c4178a5b8f0194f7dc433.xml'
-          template_file: './includes/templates/feedbin.md'
-          output_dir: 'src/likes/'
-          date_format: 'yyyy-MM-dd'
-
-      - name: Commit and Push new likes
+      - name: Commit and Push new movie watches
         run: |
             git config --global user.email "funkylarma@users.noreply.github.com"
             git config --global user.name "funkylarma via GitHub Actions"
             git add 'src/media/**/*.md'
-            git add 'src/likes/**/*.md'
-            git commit -am "new posts added - automated"
+            git commit -am "New movie watches added - Automated"
             git push
