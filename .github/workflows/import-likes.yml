@@ -1,4 +1,4 @@
-name: Build new Markdown Posts from RSS Feeds
+name: Import Likes and Favorites
 
 on:
   push:
