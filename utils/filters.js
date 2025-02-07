@@ -83,30 +83,43 @@ export default {
     return title + ' | ' + metadata.description;
   },
   
-  postExcerpt: function ( post ) {
-    const content = post.replace( /(<([^>]+)>)/gi, '' );
-    return content.substr( 0, content.lastIndexOf( ' ', 400 ) ) + '...';
-  },
-  
-  splitLines: function ( input ) {
-    const parts = input.split( ' ' );
-    const lines = parts.reduce( function ( prev, current ) {
-      if ( !prev.length ) {
-        return [ current ];
+  feedTitle: function ( postData ) {
+    if ( postData.category ) {
+      switch ( postData.category ) {
+        case 'book':
+          return `Read ${postData.title}`;
+          break;
+        case 'bookmark':
+          return `Bookmarked "${postData.title}"`;
+          break;
+        case 'checkin':
+          return `Checked in at ${postData.title}`;
+          break;
+        case 'exercise':
+          return `Went ${postData.sport} - ${postData.title}`;
+          break;
+        case 'like':
+          return `Liked "${postData.title}"`;
+          break;
+        case 'movie':
+          return `Watched ${postData.title}`;
+          break;
+        case 'reply':
+          return `Replied to ${postData.title}`;
+          break;
+        case 'repost':
+          return `Reposted "${postData.title}"`;
+          break;
+        case 'rsvp':
+          return `RSVP'd to ${postData.title}`;
+          break;
+        default:
+          return postData.title;
       }
-      
-      let lastOne = prev[ prev.length - 1 ];
-      
-      if ( lastOne.length + current.length > 19 ) {
-        return [ ...prev, current ];
-      }
-      
-      prev[ prev.length - 1 ] = lastOne + ' ' + current;
-      
-      return prev;
-    }, [] );
+    } else {
+      return postData.title
+    }
     
-    return lines;
   },
   
   secondsToTime: function ( secondObj ) {
