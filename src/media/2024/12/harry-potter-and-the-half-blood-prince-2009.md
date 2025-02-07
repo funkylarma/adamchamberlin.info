@@ -1,5 +1,5 @@
 ---
-date: 2024-12-22
+date: 2024-12-29
 title: Harry Potter and the Half-Blood Prince 2009
 url: https://letterboxd.com/funkylarma/film/harry-potter-and-the-half-blood-prince/
 category: movie

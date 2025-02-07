@@ -1,5 +1,5 @@
 ---
-date: 2024-12-25
+date: 2024-12-29
 title: John Wick 2014
 url: https://letterboxd.com/funkylarma/film/john-wick/
 category: movie

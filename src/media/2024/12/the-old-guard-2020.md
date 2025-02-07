@@ -1,5 +1,5 @@
 ---
-date: 2024-12-26
+date: 2024-12-29
 title: The Old Guard 2020
 url: https://letterboxd.com/funkylarma/film/the-old-guard-2020/
 category: movie

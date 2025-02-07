@@ -1,5 +1,5 @@
 ---
-date: 2024-12-27
+date: 2024-12-29
 title: John Wick Chapter 3 Parabellum 2019
 url: https://letterboxd.com/funkylarma/film/john-wick-chapter-3-parabellum/
 category: movie

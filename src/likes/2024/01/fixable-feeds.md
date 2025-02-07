@@ -1,5 +1,5 @@
 ---
-date: 2024-01-15 14:01:00
+date: 2024-01-15
 title: Fixable Feeds
 url: https://feedbin.com/blog/2024/01/15/fixable-feeds/
 author: Feedbin
@@ -7,8 +7,6 @@ category: like
 tags:
   - Feedbin
 ---
-
-Liked [Fixable Feeds](https://feedbin.com/blog/2024/01/15/fixable-feeds/)
 
 There’s a new set of features available on Feedbin with the goal of helping you find and fix broken feeds.
 

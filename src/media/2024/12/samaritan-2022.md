@@ -1,5 +1,5 @@
 ---
-date: 2024-12-27
+date: 2024-12-29
 title: Samaritan 2022
 url: https://letterboxd.com/funkylarma/film/samaritan-2022/
 category: movie

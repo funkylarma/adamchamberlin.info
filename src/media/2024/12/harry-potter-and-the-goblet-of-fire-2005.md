@@ -1,5 +1,5 @@
 ---
-date: 2024-12-21
+date: 2024-12-22
 title: Harry Potter and the Goblet of Fire 2005
 url: https://letterboxd.com/funkylarma/film/harry-potter-and-the-goblet-of-fire/
 category: movie

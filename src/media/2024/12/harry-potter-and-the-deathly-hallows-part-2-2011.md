@@ -1,5 +1,5 @@
 ---
-date: 2024-12-24
+date: 2024-12-29
 title: Harry Potter and the Deathly Hallows Part 2 2011
 url: https://letterboxd.com/funkylarma/film/harry-potter-and-the-deathly-hallows-part-2/
 category: movie
