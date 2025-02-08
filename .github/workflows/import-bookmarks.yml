@@ -10,30 +10,30 @@ on:
 
   workflow_dispatch:
 
-  permissions:
-    contents: write
+permissions:
+  contents: write
 
-  jobs:
-    convert_feeds:
-      runs-on: ubuntu-latest
+jobs:
+  convert_feeds:
+    runs-on: ubuntu-latest
 
-      steps:
+    steps:
 
-        - name: Checkout code
-          uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-        - name: Process the Reeder Bookmarks List
-          uses: funkylarma/rss-feed-to-markdown@main
-          with:
-            feed_url: 'https://149ff8376a964c67a0af03641403af20.s3.pub1.infomaniak.cloud/feeds/OLJcTWYhRySITeLoxvDecQ.json'
-            template_file: './includes/templates/reeder-bookmark.md'
-            output_dir: 'src/bookmarks/'
-            date_format: 'yyyy-MM-dd'
+      - name: Process the Reeder Bookmarks List
+        uses: funkylarma/rss-feed-to-markdown@main
+        with:
+          feed_url: 'https://149ff8376a964c67a0af03641403af20.s3.pub1.infomaniak.cloud/feeds/OLJcTWYhRySITeLoxvDecQ.json'
+          template_file: './includes/templates/reeder-bookmark.md'
+          output_dir: 'src/bookmarks/'
+          date_format: 'yyyy-MM-dd'
 
-        - name: Commit and Push new bookmarks
-          run: |
-              git config --global user.email "funkylarma@users.noreply.github.com"
-              git config --global user.name "funkylarma via GitHub Actions"
-              git add 'src/bookmarks/**/*.md'
-              git commit -am "New bookmarks added - Automated"
-              git push
+      - name: Commit and Push new bookmarks
+        run: |
+            git config --global user.email "funkylarma@users.noreply.github.com"
+            git config --global user.name "funkylarma via GitHub Actions"
+            git add 'src/bookmarks/**/*.md'
+            git commit -am "New bookmarks added - Automated"
+            git push

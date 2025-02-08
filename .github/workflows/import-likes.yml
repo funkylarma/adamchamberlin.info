@@ -10,38 +10,38 @@ on:
 
   workflow_dispatch:
 
-  permissions:
-    contents: write
+permissions:
+  contents: write
 
-  jobs:
-    convert_feeds:
-      runs-on: ubuntu-latest
+jobs:
+  convert_feeds:
+    runs-on: ubuntu-latest
 
-      steps:
+    steps:
 
-        - name: Checkout code
-          uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-        - name: Process the Feedbin Starred Items
-          uses: funkylarma/rss-feed-to-markdown@main
-          with:
-            feed_url: 'https://feedbin.com/starred/9e06fb0a995c4178a5b8f0194f7dc433.xml'
-            template_file: './includes/templates/feedbin-like.md'
-            output_dir: 'src/likes/'
-            date_format: 'yyyy-MM-dd'
+      - name: Process the Feedbin Starred Items
+        uses: funkylarma/rss-feed-to-markdown@main
+        with:
+          feed_url: 'https://feedbin.com/starred/9e06fb0a995c4178a5b8f0194f7dc433.xml'
+          template_file: './includes/templates/feedbin-like.md'
+          output_dir: 'src/likes/'
+          date_format: 'yyyy-MM-dd'
 
-        - name: Process the Reeder Favorites List
-          uses: funkylarma/rss-feed-to-markdown@main
-          with:
-            feed_url: 'https://149ff8376a964c67a0af03641403af20.s3.pub1.infomaniak.cloud/feeds/IKlrQgSRToKIc2VQypK7vA.json'
-            template_file: './includes/templates/reeder-like.md'
-            output_dir: 'src/likes/'
-            date_format: 'yyyy-MM-dd'
+      - name: Process the Reeder Favorites List
+        uses: funkylarma/rss-feed-to-markdown@main
+        with:
+          feed_url: 'https://149ff8376a964c67a0af03641403af20.s3.pub1.infomaniak.cloud/feeds/IKlrQgSRToKIc2VQypK7vA.json'
+          template_file: './includes/templates/reeder-like.md'
+          output_dir: 'src/likes/'
+          date_format: 'yyyy-MM-dd'
 
-        - name: Commit and Push new likes
-          run: |
-              git config --global user.email "funkylarma@users.noreply.github.com"
-              git config --global user.name "funkylarma via GitHub Actions"
-              git add 'src/likes/**/*.md'
-              git commit -am "New likes added - Automated"
-              git push
+      - name: Commit and Push new likes
+        run: |
+            git config --global user.email "funkylarma@users.noreply.github.com"
+            git config --global user.name "funkylarma via GitHub Actions"
+            git add 'src/likes/**/*.md'
+            git commit -am "New likes added - Automated"
+            git push
