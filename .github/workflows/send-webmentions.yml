@@ -1,8 +1,9 @@
 name: Send Webmentions
+
 on:
   push:
-  branches:
-    - 'main'
+    branches:
+      - 'main'
 
   schedule:
     - cron: "0 6,18 * * *"
@@ -11,7 +12,7 @@ on:
 
 jobs:
   send_webmentions:
-    name: Send Webmentions
+    name: Send Webmentions from sitemap
     runs-on: ubuntu-latest
 
     steps:
