@@ -1,16 +1,21 @@
 name: Send Webmentions
 on:
+  push:
+  branches:
+    - 'main'
+
   schedule:
-    - cron: "0 */6 * * *"
-    
+    - cron: "0 6,18 * * *"
+
   workflow_dispatch:
 
 jobs:
   send_webmentions:
+    name: Send Webmentions
     runs-on: ubuntu-latest
 
     steps:
-      - name: Fetch webmentions
+      - name: Fetch webmentions from feed
         run: |
           npm install @remy/webmention
           npx webmention ${{ secrets.WEBMENTION_TARGET_URL }} --limit=0 --send

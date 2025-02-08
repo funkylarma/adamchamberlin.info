@@ -15,14 +15,15 @@ permissions:
 
 jobs:
   convert_feeds:
+    name: Convert Feeds
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout code
+      - name: Checkout latest copy of the site
         uses: actions/checkout@v2
 
-      - name: Process the Feedbin Starred Items
+      - name: Process the Feedbin Starred feed list
         uses: funkylarma/rss-feed-to-markdown@main
         with:
           feed_url: 'https://feedbin.com/starred/9e06fb0a995c4178a5b8f0194f7dc433.xml'
@@ -30,7 +31,7 @@ jobs:
           output_dir: 'src/likes/'
           date_format: 'yyyy-MM-dd'
 
-      - name: Process the Reeder Favorites List
+      - name: Process the Reeder Favorites feed list
         uses: funkylarma/rss-feed-to-markdown@main
         with:
           feed_url: 'https://149ff8376a964c67a0af03641403af20.s3.pub1.infomaniak.cloud/feeds/IKlrQgSRToKIc2VQypK7vA.json'
@@ -38,10 +39,10 @@ jobs:
           output_dir: 'src/likes/'
           date_format: 'yyyy-MM-dd'
 
-      - name: Commit and Push new likes
+      - name: Commit and push any new likes
         run: |
             git config --global user.email "funkylarma@users.noreply.github.com"
             git config --global user.name "funkylarma via GitHub Actions"
             git add 'src/likes/**/*.md'
-            git commit -am "New likes added - Automated"
+            git diff --quiet && git diff --staged --quiet || git commit -am "New likes added - Automated"
             git push
