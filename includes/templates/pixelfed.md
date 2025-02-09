@@ -7,4 +7,8 @@ tags:
   - pixelfed
 ---
 
+<div class="gallery">
+
 [MARKDOWN]
+
+</div>
