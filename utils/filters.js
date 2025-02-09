@@ -104,6 +104,9 @@ export default {
         case 'movie':
           return `Watched ${postData.title}`;
           break;
+        case 'photography':
+          return `Snapped ${postData.title}`;
+          break;
         case 'reply':
           return `Replied to ${postData.title}`;
           break;
@@ -117,9 +120,8 @@ export default {
           return postData.title;
       }
     } else {
-      return postData.title
+      return postData.title;
     }
-    
   },
   
   secondsToTime: function ( secondObj ) {

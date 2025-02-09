@@ -1,4 +1,4 @@
-name: Import Bookmarks
+name: Import Photos
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'main'
 
   schedule:
-    - cron: '45 5,17 * * *'
+    - cron: '0 5,17 * * *'
 
   workflow_dispatch:
 
@@ -23,18 +23,18 @@ jobs:
       - name: Checkout latest copy of the site
         uses: actions/checkout@v2
 
-      - name: Process the Reeder Bookmarks feed list
+      - name: Process the Pixelfed feed list
         uses: funkylarma/rss-feed-to-markdown@main
         with:
-          feed_url: 'https://149ff8376a964c67a0af03641403af20.s3.pub1.infomaniak.cloud/feeds/OLJcTWYhRySITeLoxvDecQ.json'
-          template_file: './includes/templates/reeder-bookmark.md'
-          output_dir: 'src/bookmarks/'
+          feed_url: 'https://pixelfed.social/users/FunkyLarma.atom'
+          template_file: './includes/templates/pixelfed.md'
+          output_dir: 'src/photos/'
           date_format: 'yyyy-MM-dd'
 
-      - name: Commit and push any new bookmarks
+      - name: Commit and push any new photos
         run: |
             git config --global user.email "funkylarma@users.noreply.github.com"
             git config --global user.name "funkylarma via GitHub Actions"
-            git add 'src/bookmarks/**/*.md'
-            git diff --quiet && git diff --staged --quiet || git commit -am "New bookmarks added - Automated"
+            git add 'src/photos/**/*.md'
+            git diff --quiet && git diff --staged --quiet || git commit -am "New photos added - Automated"
             git push

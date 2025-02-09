@@ -156,7 +156,7 @@ eleventyComputed:
             {% assetIcon "photo" %}
             Snapped -
             <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
-              {{ post.data.to | strip_html | truncate: 50 }}
+              {{ post.data.title | strip_html | truncate: 50 }}
             </a>
           </h2>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
