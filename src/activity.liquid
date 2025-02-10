@@ -139,6 +139,7 @@ eleventyComputed:
     {% if post.data.category == 'photography' %}
       <li class="post h-entry hentry">
         <h2 class="p-name">
+          {% assetIcon "photo" %}
           Snapped -
           <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="View photo">
             {{ post.data.title | strip_html | truncate: 50 }}

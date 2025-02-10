@@ -23,7 +23,7 @@ First off, the whole timeline app, what is it?
 
 Fundamentally it is a way to consume content, in a way that we all know; a scrolling feed. Where these differ is that you can subscribe to various sources, and they all appear in one long timeline. Coupled with this, there is now really a concept of read and unread, just a point in a timeline.
 
-![Reeder, the new Reeder](/images/2025/reeder-screen.png)
+![Reeder, the new Reeder](/images/2025/reeder-screen.png){.no-frills}
 
 For example, you could add an RSS feed along with a podcast, your favourite YouTube channel and a few Bluesy accounts. This results in a continuous timeline of all these items that you can scroll through.
 So far, this sounds like a solution solved, no more moving around apps, just one app, one feed, one continuous source of content. But here is the catch, they are not native, so you cannot interact. If you want to reply to that Bluesky message you still need to launch the first party client, something that [Federico](https://www.macstories.net/stories/the-many-purposes-of-timeline-apps-for-the-open-web/) calls out as the shortcoming of this genre.
