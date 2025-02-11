@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   server: {
     mode: 'development',
+    cors: {
+      orign: "https://adamchamberlin.info"
+    }
   },
   clearScreen: false,
   appType: 'custom',

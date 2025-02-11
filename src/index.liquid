@@ -88,20 +88,32 @@ tags:
 
 <div class="notes">
   <h2>Latest Notes</h2>
-  <ul>
+  <ul class="activity--list--content">
     {% for post in collections.homePage.noteList %}
     <li class="h-entry hentry">
-      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
+      <div>
         {% assetIcon "note" %}
+        <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
+          {{ post.data.title }}
+        </a>
+      </div>
+      <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
         {{ post.date | dateLongDateShortMonth }}
       </time>
-      <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
-        {{ post.data.title }}
-      </a>
     </li>
     {% endfor %}
   </ul>
   <a href="/notes/" class="more">View all notes</a>
+</div>
+
+<div class="photos">
+  <h2>Latest Photo</h2>
+  {% for photo in collections.homePage.latestPhoto %}
+    <img src="{{ photo.data.cover }}" alt="{{ photo.data.title }}" />
+    <a href="{{ photo.url }}">
+      {{ photo.data.title }}
+    </a>
+  {% endfor %}
 </div>
 
 <div class="replies">
@@ -254,7 +266,7 @@ tags:
 </div>
 
 <div class="checkin">
-  <h2>Latest Checked In</h2>
+  <h2>Latest Check In</h2>
   <div id="map"></div>
   <link rel="prefetch" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style" crossorigin="anonymous">
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"

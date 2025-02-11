@@ -2,6 +2,7 @@
 date: 2025-02-09
 title: Remembering the last of the sunny Sunday outings
 url: https://pixelfed.social/p/FunkyLarma/794131428051488797
+cover: https://pxscdn.com/public/m/_v2/793919033588244502/758e75a50-ddd61a/WyM0LJFJsE0q/zzzX29AETwjU73j7EtXFCqhMtsVUSJ1wfRWviOzD.jpg
 category: photography
 tags:
   - pixelfed
