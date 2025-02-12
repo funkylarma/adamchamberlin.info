@@ -22,21 +22,23 @@
             {{ content }}
           </div>
         </div><!-- .page--content -->
-      </main>
 
-      {% if related %}
-        <aside class="related">
-          <h2>Related Pages</h2>
-          <ul>
-          {% assign posts = related | getRelated: collections.page %}
-          {% for post in posts %}
-            <li>
-              <a href="{{ post.url }}">{{ post.data.title }}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </aside>
-      {% endif %}
+        {% if related %}
+          <aside class="related">
+            <h2>Related Pages</h2>
+            <ul>
+            {% assign posts = related | getRelated: collections.page %}
+            {% for post in posts %}
+              <li>
+                {% assetIcon 'page' %}
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </aside>
+        {% endif %}
+
+      </main>
 
       {% include "partials/footer.liquid" %}
     </div><!-- .container -->

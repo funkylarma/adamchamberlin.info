@@ -128,39 +128,4 @@
     }
   }
   
-  .page--related {
-    background: var(--main-color-white);
-    border-bottom-right-radius: 5rem;
-    border-bottom-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 5rem;
-    padding: 4rem 2rem 2rem 2rem;
-    
-    @media (max-width: 550px) {
-      border-bottom-right-radius: 25px;
-      border-bottom-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-top-left-radius: 25px;
-      padding: 2rem;
-    }
-    
-    * {
-      font-size: var(--main-font-size-small);
-    }
-    
-    p.h3 {
-      color: var(--main-color-tertiary);
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-    
-    ul {
-      padding: 0 1rem;
-      list-style: none;
-      
-      li {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
 }

@@ -55,7 +55,7 @@ tags:
           </div>
           {% if post.data.tags.length > 1 %}
           <div class="post--tags">
-            {% assetIcon "tag" %}
+            {% assetIcon "tags" %}
             {%- for tag in post.data.tags -%}
             {% if tag != 'article' %}
             <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
@@ -133,6 +133,7 @@ tags:
     </li>
     {% endfor %}
   </ul>
+  <a href="/category/reply/" class="more">View all relies</a>
 </div>
 
 <div class="activity">

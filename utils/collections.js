@@ -167,7 +167,8 @@ export default {
           item.data.category !== 'article' &&
           item.data.category !== 'note' &&
           item.data.category !== 'reply' &&
-          item.data.category !== 'checkin'
+          item.data.category !== 'checkin' &&
+          item.data.category !== 'photography'
         ) {
           return item;
         }
