@@ -356,7 +356,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5rem;
-  padding: 2rem;
+  padding: 2rem 2rem 1rem 2rem;
   
   @media (max-width: 550px) {
     border-bottom-right-radius: 25px;
@@ -373,6 +373,17 @@
   h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+  
+  a {
+    color: var(--main-color-quaternary);
+    border-bottom: 1px dotted var(--main-color-quaternary);
+    
+    &:hover {
+      text-decoration: none;
+      color: var(--main-color-tertiary);
+      border-bottom: none;
+    }
   }
   
   ul {

@@ -30,9 +30,54 @@
             {% assign posts = related | getRelated: collections.page %}
             {% for post in posts %}
               <li>
-                {% assetIcon 'page' %}
-                <a href="{{ post.url }}">{{ post.data.title }}</a>
+                {% if post.data.category == 'article' %}
+                  {% assetIcon 'article' %}
+                  Also written -
+                {% endif %}
+
+                {% if post.data.category == 'note' %}
+                  {% assetIcon "note" %}
+                  Noted about -
+                {% endif %}
+
+                {% if post.data.category == 'rsvp' %}
+                  {% assetIcon "rsvp" %}
+                  Attended -
+                {% endif %}
+
+                {% if post.data.category == 'reply' %}
+                  {% assetIcon "reply" %}
+                  Commented to -
+                {% endif %}
+
+                {% if post.data.category == 'signup' %}
+                  {% assetIcon "signup" %}
+                  Original signup -
+                {% endif %}
+
+                {% if post.data.category == 'exercise' %}
+                  {% assetIcon "stopwatch" %}
+                  Training -
+                {% endif %}
+
+                {% if post.data.category == 'race' %}
+                  {% assetIcon "trophy" %}
+                  Race file -
+                {% endif %}
+
+                {% if post.data.category == 'checkin' %}
+                  {% assetIcon "checkin" %}
+                  Checked in -
+                {% endif %}
+
+                {% if post.data.tags contains 'page' %}
+                  {% assetIcon "page" %}
+                {% endif %}
+                <a href="{{ post.url }}">
+                  {{ post.data.title }}
+                </a>
               </li>
+
             {% endfor %}
             </ul>
           </aside>
