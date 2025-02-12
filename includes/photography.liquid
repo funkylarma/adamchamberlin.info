@@ -10,7 +10,7 @@
   <a href="#skip" class="skip-link">Skip to main content</a>
   <div class="layout" role="document">
     {% include "partials/header.liquid" %}
-    <main class="container main" id="#skip" role="main" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+    <main class="container main" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
       <article class="hentry h-entry post--single" id="{{ title | slugify }}" itemtype="http://schema.org/BlogPosting" itemid="{{ page.url | absoluteUrl }}" role="article">
         {% include "partials/hcard.liquid" %}
         <meta itemprop="wordCount" content="{{ content | wordCount }}">
