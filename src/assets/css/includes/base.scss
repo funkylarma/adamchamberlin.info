@@ -111,6 +111,10 @@ p {
   font-weight: 300;
 }
 
+iframe {
+  margin: 0 0 2rem 0;
+}
+
 small,
 .small {
   font-size: var(--main-font-size-small);
@@ -155,7 +159,7 @@ a:not(.button) {
   }
   
   &:focus {
-    border: 1px solid red;
+    border: 1px solid var(--main-color-secondary);
   }
 }
 
@@ -279,6 +283,10 @@ img[width][height] {
   ul,
   ol {
     margin-bottom: 2rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
   }
   
   hr {
