@@ -35,7 +35,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Wrote <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Wrote <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -66,7 +66,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -97,7 +97,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Shot <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Shot <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -128,7 +128,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Snapped <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Snapped <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -159,7 +159,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Went {{ entry.sport }} - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Went {{ entry.sport }} - <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -190,7 +190,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Raced <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Raced <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -221,7 +221,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Checked in at <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Checked in at <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -252,7 +252,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Replied to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Replied to <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -283,7 +283,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Boosted <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Boosted <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -314,7 +314,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - RSVP'd to <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - RSVP'd to <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -345,7 +345,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Signed up for <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Signed up for <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -376,7 +376,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Bookmarked <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Bookmarked <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -407,7 +407,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Liked <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Liked <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -438,7 +438,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Read <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Read <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -469,7 +469,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Watched <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Watched <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -500,7 +500,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Currently vibing <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - Currently vibing <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -532,7 +532,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title }}</a>
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>

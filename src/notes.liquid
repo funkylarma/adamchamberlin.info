@@ -36,7 +36,7 @@ eleventyComputed:
           <h2 class="p-name">
             {% assetIcon "bookmark" %}
             Bookmarked -
-            <a class="post-link u-url" rel="bookmark" href="{{ post.data.url }}" title="Bookmarked {{ post.data.title }}">
+            <a class="post-link u-url" rel="noopener noreferrer" href="{{ post.data.url }}" title="Bookmarked {{ post.data.title }}">
               {{ post.data.title | strip_html | truncate: 50 }}
             </a>
           </h2>
@@ -101,7 +101,7 @@ eleventyComputed:
           <h2 class="p-name">
             {% assetIcon "heart" %}
             Liked -
-            <a class="post-link u-url" rel="bookmark" href="{{ post.data.url }}" title="Attending {{ post.data.title }}">
+            <a class="post-link u-url" rel="noopener noreferrer" href="{{ post.data.url }}" title="Attending {{ post.data.title }}">
               {{ post.data.title | strip_html | truncate: 50 }}
             </a>
           </h2>
@@ -181,7 +181,7 @@ eleventyComputed:
           <h2 class="p-name">
             {% assetIcon "boost" %}
             Boosted -
-            <a class="post-link u-url" rel="bookmark" href="{{ post.data.url }}" title="Boosted {{ post.data.title }}">
+            <a class="post-link u-url" rel="noopener noreferrer" href="{{ post.data.url }}" title="Boosted {{ post.data.title }}">
               {{ post.data.title | strip_html | truncate: 50 }}
             </a>
           </h2>

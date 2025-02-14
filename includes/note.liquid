@@ -274,7 +274,7 @@
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
                 <p class="p-summary">
-                  Bookmarked <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                  Bookmarked <a class="u-url p-name" href="{{ url }}" rel="noopener noreferrer">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {% if updated %}
@@ -313,7 +313,7 @@
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
                 <p class="p-summary">
-                  Boosted <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                  Boosted <a class="u-url p-name" href="{{ url }}" rel="noopener noreferrer">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {% if updated %}
@@ -352,7 +352,7 @@
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
                 <p class="p-summary">
-                  Liked <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                  Liked <a class="u-url p-name" href="{{ url }}" rel="noopener noreferrer">{{ title }}</a>
                 </p>
                 <div class="note--copy p-content">
                   {% if updated %}
