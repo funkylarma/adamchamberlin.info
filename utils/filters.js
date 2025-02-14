@@ -34,10 +34,10 @@ export default {
       if ( this.page.url == '/' || this.page.url.includes( 'page' ) ) {
         title = metadata.tagline;
       } else {
-        title = title + ' | ' + metadata.title;
+        title = title.replace( /"/g, '' ) + ' - ' + metadata.title;
       }
     }
-    return title;
+    return title.replace( /"/g, '' );
   },
 
   metaKeywords: function ( tags ) {
@@ -84,7 +84,7 @@ export default {
       }
     }
 
-    return title + ' | ' + metadata.description;
+    return title + ' - ' + metadata.description;
   },
 
   feedTitle: function ( postData ) {
