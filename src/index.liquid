@@ -43,7 +43,7 @@ tags:
       <div class="post--content">
         <h3 class="post--title p-name">
           <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
-            {{ post.data.title }}
+            {{ post.data.title | escape }}
           </a>
         </h3>
         <div class="post--meta">
@@ -74,7 +74,7 @@ tags:
       {% if post.data.cover %}
       <div class="post--image">
         <img src="{{ post.data.cover }}"
-             alt="Cover image for article {{ post.data.title }}"
+             alt="Cover image for article {{ post.data.title | escape }}"
              sizes="300px"
              loading="lazy" />
       </div><!-- .post-image -->
@@ -94,7 +94,7 @@ tags:
       <div>
         {% assetIcon "note" %}
         <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
-          {{ post.data.title }}
+          {{ post.data.title | escape }}
         </a>
       </div>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
@@ -109,9 +109,9 @@ tags:
 <div class="photos">
   <h2>Latest Photo</h2>
   {% for photo in collections.homePage.latestPhoto %}
-    <img src="{{ photo.data.cover }}" alt="{{ photo.data.title }}" />
+    <img src="{{ photo.data.cover }}" alt="{{ photo.data.title | escape }}" />
     <a href="{{ photo.url }}">
-      {{ photo.data.title }}
+      {{ photo.data.title | escape }}
     </a>
   {% endfor %}
 </div>
@@ -124,7 +124,7 @@ tags:
       <div>
         {% assetIcon "reply" %}
         <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">
-          {{ post.data.title }}
+          {{ post.data.title | escape }}
         </a>
       </div>
       <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
@@ -145,7 +145,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "book" %}
-            Read - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Read - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -157,7 +157,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "bookmark" %}
-            Bookmarked - <a href="{{ post.data.url }}" class="post-link u-url"rel="noopener noreferrer">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Bookmarked - <a href="{{ post.data.url }}" class="post-link u-url"rel="noopener noreferrer">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -169,7 +169,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "stopwatch" %}
-            Went {{ post.data.sport }} - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Went {{ post.data.sport }} - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -181,7 +181,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "jam" %}
-            Jammin to - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a> by {{ post.data.artist | strip_html | truncate: 40 }}
+            Jammin to - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | escape | strip_html | truncate: 40 }}</a> by {{ post.data.artist | escape | strip_html | truncate: 40 }}
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -193,7 +193,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "heart" %}
-            Liked - <a href="{{ post.data.url }}" class="post-link u-url" rel="noopener noreferrer">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Liked - <a href="{{ post.data.url }}" class="post-link u-url" rel="noopener noreferrer">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -205,7 +205,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "movie" %}
-            Watched - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Watched - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -217,7 +217,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "boost" %}
-            Boosted - <a href="{{ post.data.url }}" class="post-link u-url" rel="noopener noreferrer">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Boosted - <a href="{{ post.data.url }}" class="post-link u-url" rel="noopener noreferrer">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -229,7 +229,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "rsvp" %}
-            RSVP'd - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            RSVP'd - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -241,7 +241,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "calendar" %}
-            Signed up for - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Signed up for - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}
@@ -253,7 +253,7 @@ tags:
         <li class="h-entry hentry">
           <div>
             {% assetIcon "video" %}
-            Shot a video - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | strip_html | truncate: 40 }}</a>
+            Shot a video - <a href="{{ post.url }}" class="post-link u-url" rel="bookmark">{{ post.data.title | escape | strip_html | truncate: 40 }}</a>
           </div>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">
             {{ post.date | dateLongDateShortMonth }}

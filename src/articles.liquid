@@ -33,9 +33,9 @@ eleventyComputed:
       <div class="post--content">
         <div class="post--head">
           <h2 class="p-name">
-            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title | escape }}">
               {% if post.data.title %}
-                {{ post.data.title }}
+                {{ post.data.title | escape }}
                 {% if post.data.draft %}
                 <span class="draft">- Draft</span>
                 {% endif %}
@@ -94,9 +94,9 @@ eleventyComputed:
       <div class="post--content">
         <div class="post--head">
           <h2 class="p-name">
-            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title | escape }}">
               {% if post.data.title %}
-                {{ post.data.title }}
+                {{ post.data.title | escape }}
                 {% if post.data.draft %}
                 <span class="draft">- Draft</span>
                 {% endif %}
@@ -144,7 +144,7 @@ eleventyComputed:
         {% if post.data.cover %}
           <div class="post--image">
             <img src="{{ post.data.cover }}"
-              alt="Cover image for {{ post.data.title }}"
+              alt="Cover image for {{ post.data.title | escape }}"
               sizes="(min-width: 880px) 800px, calc(95vw - 17px)"
               width="936"
               class="u-photo"
@@ -155,9 +155,9 @@ eleventyComputed:
         <div class="post--content">
           <div class="post--head">
             <h2 class="p-name">
-              <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title }}">
+              <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Continue to read {{ post.data.title | escape }}">
                 {% if post.data.title %}
-                  {{ post.data.title }}
+                  {{ post.data.title | escape }}
                   {% if post.data.draft %}
                   <span class="draft">- Draft</span>
                   {% endif %}
