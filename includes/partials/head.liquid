@@ -15,7 +15,7 @@
   <meta name="CCBot" content="nofollow">
 {%- endif -%}
 {% if tags.length > 0 %}
-  <meta name="keywords" content="{{ tags | escape | metaKeywords }}">
+  <meta name="keywords" content="{{ tags | metaKeywords }}">
 {% endif %}
 <!-- Sitemap -->
 <link rel="canonical" href="{% if canonical %}{{ canonical }}{% else %}{{ page.url | absoluteUrl }}{% endif %}">
