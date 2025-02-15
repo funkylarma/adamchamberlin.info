@@ -1,7 +1,8 @@
 ---
-date: 2024-12-29
-title: Samaritan 2022
+date: 2024-12-27
+title: Samaritan
 url: https://letterboxd.com/funkylarma/film/samaritan-2022/
+cover: https://a.ltrbxd.com/resized/film-poster/5/5/5/5/8/8/555588-samaritan-0-600-0-900-crop.jpg?v=107f6a5bfe
 category: movie
 tags:
   - Letterboxd

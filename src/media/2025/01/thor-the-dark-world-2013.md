@@ -1,7 +1,8 @@
 ---
 date: 2025-01-12
-title: Thor The Dark World 2013
+title: Thor The Dark World
 url: https://letterboxd.com/funkylarma/film/thor-the-dark-world/
+cover: https://a.ltrbxd.com/resized/sm/upload/pc/xw/7h/17/bnX5PqAdQZRXSw3aX3DutDcdso5-0-600-0-900-crop.jpg?v=4c0f579fe5
 category: movie
 tags:
   - Letterboxd

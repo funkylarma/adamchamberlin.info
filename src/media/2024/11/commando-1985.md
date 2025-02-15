@@ -1,10 +1,11 @@
 ---
 date: 2024-11-02
-title: Commando 1985
+title: Commando
 url: https://letterboxd.com/funkylarma/film/commando/
+cover: https://a.ltrbxd.com/resized/film-poster/4/5/7/0/3/45703-commando-0-600-0-900-crop.jpg?v=82ebc01d48
 category: movie
 tags:
-- Letterboxd
+  - Letterboxd
 ---
 
 ![](https://a.ltrbxd.com/resized/film-poster/4/5/7/0/3/45703-commando-0-600-0-900-crop.jpg?v=82ebc01d48)

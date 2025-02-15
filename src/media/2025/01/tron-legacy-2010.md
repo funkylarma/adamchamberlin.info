@@ -1,7 +1,8 @@
 ---
 date: 2025-01-26
-title: TRON Legacy 2010
+title: TRON Legacy
 url: https://letterboxd.com/funkylarma/film/tron-legacy/
+cover: https://a.ltrbxd.com/resized/film-poster/3/8/9/5/7/38957-tron-legacy-0-600-0-900-crop.jpg?v=9452aea970
 category: movie
 tags:
   - Letterboxd
