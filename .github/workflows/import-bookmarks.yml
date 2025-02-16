@@ -19,22 +19,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout latest copy of the site
         uses: actions/checkout@v2
 
       - name: Process the Reeder Bookmarks feed list
-        uses: funkylarma/rss-feed-to-markdown@main
-        with:
-          feed_url: 'https://149ff8376a964c67a0af03641403af20.s3.pub1.infomaniak.cloud/feeds/OLJcTWYhRySITeLoxvDecQ.json'
-          template_file: './includes/templates/reeder-bookmark.md'
-          output_dir: 'src/bookmarks/'
-          date_format: 'yyyy-MM-dd'
+        uses: funkylarma/processBookmarks@master
 
       - name: Commit and push any new bookmarks
         run: |
-            git config --global user.email "funkylarma@users.noreply.github.com"
-            git config --global user.name "funkylarma via GitHub Actions"
-            git add 'src/bookmarks/**/*.md'
-            git diff --quiet && git diff --staged --quiet || git commit -am "New bookmarks added - Automated"
-            git push
+          git config --global user.email "funkylarma@users.noreply.github.com"
+          git config --global user.name "funkylarma via GitHub Actions"
+          git add 'src/bookmarks/**/*.md'
+          git diff --quiet && git diff --staged --quiet || git commit -am "New bookmarks added - Automated"
+          git push
