@@ -24,12 +24,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Process the Letterboxd feed list
-        uses: funkylarma/rss-feed-to-markdown@main
-        with:
-          feed_url: 'https://letterboxd.com/funkylarma/rss/'
-          template_file: './includes/templates/letterboxd.md'
-          output_dir: 'src/media/'
-          date_format: 'yyyy-MM-dd'
+        uses: funkylarma/processMovies@main
 
       - name: Commit and push any new movie watches
         run: |
