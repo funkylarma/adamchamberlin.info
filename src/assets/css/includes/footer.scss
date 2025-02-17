@@ -25,6 +25,7 @@ footer {
           list-style: none;
           gap: 1rem;
           padding-inline-start: 0;
+          margin-bottom: 0;
 
           .nav-bar--item {
             display: inline-block;
@@ -52,12 +53,16 @@ footer {
 
         a {
           color: var(--main-color-base);
-          margin: 1rem;
+          margin: 2rem 1rem;
 
-          &:hover {
-            color: var(--main-color-primary);
+          &:hover svg {
+            color: var(--main-color-tertiary);
           }
         }
+      }
+
+      .copyright {
+        font-size: var(--main-font-size-xx-small);
       }
     }
   }

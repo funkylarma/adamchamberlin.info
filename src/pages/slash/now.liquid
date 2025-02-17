@@ -40,53 +40,40 @@ related:
 </p>
 
 <h2>Currently Reading</h2>
-<ul class="current--list">
-  {% for book in books.currentlyReading %}
-  <li class="book h-entry hentry">
-    <div class="p-name">
-      {% assetIcon "book" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ book.url }}" title="Watched on {{ book.date | dateLongDate }}">
-        {{ book.data.title }}
-      </a>
-      by {{ book.data.author }}
-    </div>
-    <time class="postlist-date dt-published" datetime="{{ book.date | dateHtmlString }}" />
+<ul class="book--list">
+{% for book in books.currentlyReading limit: 8 %}
+  <li>
+    <a rel="noreferrer" target="_blank" href="{{ book.url }}">
+      <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills">
+    </a>
+    <p>{{ book.data.title }}</p>
   </li>
-  {% endfor %}
+{% endfor %}
 </ul>
 <p class="small">View more <a href="/books/">reading</a></p>
 
 <h2>Recently Listened</h2>
-<ul class="current--list">
-  {% for track in lastfm.recentTracks %}
-  <li class="listen h-entry hentry">
-    <div class="p-name">
-      {% assetIcon "headphones" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ track.url }}"
-        title="Listened on {{ track.date | dateLongDate }}">
-        {{ track.data.title }}
+<ul class="music--list">
+  {% for track in lastfm.recentTracks limit: 8 %}
+    <li>
+      <a href="{{ track.url }}">
+        <img src="{{ track.data.cover }}" title="{{ track.data.title }}" alt="Cover of {{ track.data.title }}" width="120" loading="lazy" class="no-frills">
       </a>
-      by {{ track.data.artist }}
-      <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}" />
-    </div>
-  </li>
+      <p> {{ track.data.title }} by {{ track.data.artist }}</p>
+    </li>
   {% endfor %}
 </ul>
 <p class="small">View more <a href="/music/">listens</a></p>
 
 <h2>Recently Watched</h2>
-<ul class="current--list">
-  {% for movies in collections.recentMovies %}
-  <li class="movie h-entry hentry">
-    <div class="p-name">
-      {% assetIcon "movie" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ movies.url }}"
-        title="Watched on {{ movies.date | dateLongDate }}">
-        {{ movies.data.title }}
+<ul class="movie--list">
+ {% for movie in collections.recentMovies limit: 8 %}
+    <li>
+      <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
+        <img src="{{ movie.data.cover }}" title="{{ movie.data.title }}" alt="Cover of {{ movie.data.title }}" width="120" loading="lazy" class="no-frills">
       </a>
-    </div>
-    <time class="postlist-date dt-published" datetime="{{ movies.date | dateHtmlString }}" />
-  </li>
+      <p>{{ movie.data.title }}</p>
+    </li>
   {% endfor %}
 </ul>
 <p class="small">View more <a href="/movies/">watches</a></p>
