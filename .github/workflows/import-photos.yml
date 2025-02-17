@@ -19,22 +19,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout latest copy of the site
         uses: actions/checkout@v2
 
       - name: Process the Pixelfed feed list
-        uses: funkylarma/rss-feed-to-markdown@main
-        with:
-          feed_url: 'https://pixelfed.social/users/FunkyLarma.atom'
-          template_file: './includes/templates/pixelfed.md'
-          output_dir: 'src/photos/'
-          date_format: 'yyyy-MM-dd'
+        uses: funkylarma/processPhotos@master
 
       - name: Commit and push any new photos
         run: |
-            git config --global user.email "funkylarma@users.noreply.github.com"
-            git config --global user.name "funkylarma via GitHub Actions"
-            git add 'src/photos/**/*.md'
-            git diff --quiet && git diff --staged --quiet || git commit -am "New photos added - Automated"
-            git push
+          git config --global user.email "funkylarma@users.noreply.github.com"
+          git config --global user.name "funkylarma via GitHub Actions"
+          git add 'src/photos/**/*.md'
+          git diff --quiet && git diff --staged --quiet || git commit -am "New photos added - Automated"
+          git push

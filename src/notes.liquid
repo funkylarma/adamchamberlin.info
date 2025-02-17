@@ -233,8 +233,8 @@ eleventyComputed:
           <h2 class="p-name">
             {% assetIcon "tooted" %}
             Tooted -
-            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Checked in on {{ post.date | dateLongDate }}">
-              {{ post.data.title | escape | strip_html | truncate: 50 }}
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Tooted {{ post.data.title | strip_html }}">
+              {{ post.data.title | strip_html | truncate: 50 }}
             </a>
           </h2>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
