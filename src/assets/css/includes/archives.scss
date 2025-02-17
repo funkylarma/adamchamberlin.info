@@ -1,5 +1,5 @@
 .page--content {
-  
+
   /* stats page */
   .graph {
     .wrapper {
@@ -88,6 +88,41 @@
     }
   }
   
+  .book--list {
+    a {
+      border-bottom: none;
+    }
+  }
+  
+  ul.book--list,
+  ul.movie--list,
+  ul.music--list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+    li {
+      a {
+        border-bottom: none;
+      }
+      
+      img {
+        width: 10rem;
+        max-width: 10rem;
+        margin: 0;
+      }
+      
+      p {
+        margin: 1rem 0;
+        text-align: center;
+        font-size: var(--main-font-size-xx-small);
+        max-width: 10rem;
+      }
+    }
+  }
+  
   /* Date archive */
   .archive--feed {
     position: relative;
@@ -161,13 +196,6 @@
       svg {
         margin: 0 0.5rem;
       }
-    }
-  }
-  
-  .book--list {
-    
-    img {
-      max-width: 120px
     }
   }
 }

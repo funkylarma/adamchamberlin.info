@@ -2,6 +2,7 @@
 date: 2024-12-28
 title: Carry-On
 url: https://letterboxd.com/funkylarma/film/carry-on-2024/
+cover: https://a.ltrbxd.com/resized/film-poster/9/0/5/8/7/6/905876-carry-on-2024-0-600-0-900-crop.jpg?v=bc2c1c0d8f
 category: movie
 tags:
   - Letterboxd

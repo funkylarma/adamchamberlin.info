@@ -10,17 +10,15 @@ permalink: "/movies/"
 </p>
 
 <h2>Recently Watched</h2>
-<ul>
-  {% for movie in collections.recentMovies %}
-  <li class="movie h-entry hentry">
-    <div class="p-name">
-      {% assetIcon "movie" %}
-      <a class="post-link u-url" rel="bookmark" href="{{ movie.url }}" title="Watched on {{ movie.date | dateLongDate }}">
-        {{ movie.data.title }}
+<ul class="movie--list">
+ {% for movie in collections.recentMovies %}
+    <li>
+      <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
+        <img src="{{ movie.data.cover }}" title="{{ movie.data.title }}" alt="Cover of {{ movie.data.title }}" width="120" loading="lazy" class="no-frills">
       </a>
-    </div>
-    <time class="postlist-date dt-published" datetime="{{ movies.date | dateHtmlString }}"/>
-  </li>
+      <p>{{ movie.data.title }}</p>
+    </li>
   {% endfor %}
 </ul>
+
 

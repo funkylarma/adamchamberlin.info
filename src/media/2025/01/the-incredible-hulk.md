@@ -2,6 +2,7 @@
 date: 2025-01-01
 title: The Incredible Hulk
 url: https://letterboxd.com/funkylarma/film/the-incredible-hulk/
+cover: https://a.ltrbxd.com/resized/film-poster/5/0/8/2/7/50827-the-incredible-hulk-0-600-0-900-crop.jpg?v=f03c15122c
 category: movie
 tags:
   - Letterboxd

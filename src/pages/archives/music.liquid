@@ -9,26 +9,14 @@ permalink: "/music/"
   All data is taken from my <a href="https://www.last.fm/user/FunkyLarma">LastFM</a> account.
 </p>
 
-<h2>Recent Played</h2>
-<ul>
+<h2>Recently Played</h2>
+<ul class="music--list">
   {% for track in lastfm.recentTracks %}
-    <li class="track">
+    <li>
       <a href="{{ track.url }}">
-        {{ track.data.title }} by {{ track.data.artist }}
+        <img src="{{ track.data.cover }}" title="{{ track.data.title }}" alt="Cover of {{ track.data.title }}" width="120" loading="lazy" class="no-frills">
       </a>
-       - <time class="postlist-date dt-published" datetime="{{ track.date | dateHtmlString }}">{{ track.date | dateLongDate }}</time>
-    </li>
-  {% endfor %}
-</ul>
-
-<h2>Weekly Tracks</h2>
-<ul>
-  {% for track in lastfm.weeklyTracks %}
-    <li class="track">
-      <a href="{{ track.url }}">
-          {{ track.data.title }} - {{ track.data.artist }}
-      </a>
-       - {{ track.data.playcount }} Play{% if track.data.playcount > 1 %}s{% endif %}
+      <p> {{ track.data.title }} by {{ track.data.artist }}</p>
     </li>
   {% endfor %}
 </ul>

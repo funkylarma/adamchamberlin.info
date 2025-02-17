@@ -96,7 +96,6 @@
     }
     
     ul {
-      
       @media (max-width: 550px) {
         padding: 0 1rem;
       }
@@ -116,16 +115,5 @@
         border-bottom: none;
       }
     }
-    
-    .book--list {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      
-      a {
-        border-bottom: none;
-      }
-    }
   }
-  
 }
