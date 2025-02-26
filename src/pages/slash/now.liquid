@@ -57,9 +57,9 @@ related:
   {% for track in lastfm.recentTracks limit: 8 %}
     <li>
       <a href="{{ track.url }}">
-        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape | strip_html }}" alt="Cover of {{ track.data.title | escape | strip_html }}" width="120" loading="lazy" class="no-frills">
+        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape }}" alt="Cover of {{ track.data.title | escape }}" width="120" loading="lazy" class="no-frills">
       </a>
-      <p> {{ track.data.title | escape | strip_html }} by {{ track.data.artist | escape | strip_html }}</p>
+      <p> {{ track.data.title | escape }} by {{ track.data.artist | escape }}</p>
     </li>
   {% endfor %}
 </ul>
