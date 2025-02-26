@@ -44,7 +44,7 @@ related:
 {% for book in books.currentlyReading limit: 8 %}
   <li>
     <a rel="noreferrer" target="_blank" href="{{ book.url }}">
-      <img src="{{ book.data.cover }}" title="{{ book.data.title | escape | strip_html }}" alt="Cover of {{ book.data.title | escape | strip_html }}" width="120" loading="lazy" class="no-frills">
+      <img src="{{ book.data.cover }}" title="{{ book.data.title | escape | strip_html }}" alt="Cover of {{ book.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills">
     </a>
     <p>{{ book.data.title | escape | strip_html }}</p>
   </li>
@@ -57,7 +57,7 @@ related:
   {% for track in lastfm.recentTracks limit: 8 %}
     <li>
       <a href="{{ track.url }}">
-        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape }}" alt="Cover of {{ track.data.title | escape }}" width="120" loading="lazy" class="no-frills">
+        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape }}" alt="Cover of {{ track.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills">
       </a>
       <p> {{ track.data.title | escape }} by {{ track.data.artist | escape }}</p>
     </li>
@@ -70,7 +70,7 @@ related:
  {% for movie in collections.recentMovies limit: 8 %}
     <li>
       <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
-        <img src="{{ movie.data.cover }}" title="{{ movie.data.title | escape | strip_html }}" alt="Cover of {{ movie.data.title | escape | strip_html }}" width="120" loading="lazy" class="no-frills">
+        <img src="{{ movie.data.cover }}" title="{{ movie.data.title | escape | strip_html }}" alt="Cover of {{ movie.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills">
       </a>
       <p>{{ movie.data.title | escape | strip_html }}</p>
     </li>

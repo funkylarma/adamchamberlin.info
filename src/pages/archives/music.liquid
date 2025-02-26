@@ -14,7 +14,7 @@ permalink: "/music/"
   {% for track in lastfm.recentTracks %}
     <li>
       <a href="{{ track.url }}">
-        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape }}" alt="Cover of {{ track.data.title | escape }}" width="120" loading="lazy" class="no-frills">
+        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape }}" alt="Cover of {{ track.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills">
       </a>
       <p> {{ track.data.title | escape }} by {{ track.data.artist | escape }}</p>
     </li>
