@@ -125,7 +125,7 @@
                   container: 'map', // container ID
                   style: mapStyle,
                   center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                  zoom: 16 // starting zoom
+                  zoom: 4 // starting zoom
                 });
 
                 // Add some controls
@@ -140,7 +140,15 @@
                   color: "#36d02f"
                 }).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
 
-                map.resize();
+                // On map load
+                map.on('load', () => {
+                  map.fitBounds([
+                    [{{ longitude | plus: 0.001 }}, {{ latitude | plus: 0.001 }}],
+                    [{{ longitude | minus: 0.001 }}, {{ latitude | minus: 0.001 }}]
+                  ], {
+                    padding: 50
+                  });
+                });
               });
             </script>
             <script type="application/ld+json">
