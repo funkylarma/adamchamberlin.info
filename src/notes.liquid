@@ -132,7 +132,6 @@ eleventyComputed:
               {{ post.data.title | escape | strip_html | truncate: 50 }}
             </a>
           </h2>
-          <img src="{{ post.data.cover }}" eleventy:ignore>
           <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
         </li>
       {% endif %}
