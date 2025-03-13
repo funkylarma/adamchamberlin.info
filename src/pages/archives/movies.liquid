@@ -14,7 +14,7 @@ permalink: "/movies/"
  {% for movie in collections.recentMovies %}
     <li>
       <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
-        <img src="{{ movie.data.cover }}" title="{{ movie.data.title }}" alt="Cover of {{ movie.data.title }}" width="120" loading="lazy" class="no-frills">
+        <img src="{{ movie.data.cover }}" title="{{ movie.data.title }}" alt="Cover of {{ movie.data.title }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
       </a>
       <p>{{ movie.data.title }}</p>
     </li>

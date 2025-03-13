@@ -14,7 +14,7 @@ permalink: "/books/"
 {% for book in books.currentlyReading %}
   <li>
     <a rel="noreferrer" target="_blank" href="{{ book.url }}">
-      <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills">
+      <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
     </a>
     <p>{{ book.data.title }}</p>
   </li>
@@ -26,7 +26,7 @@ permalink: "/books/"
 {% for book in books.recentlyRead %}
   <li>
     <a rel="noreferrer" target="_blank" href="{{ book.url }}">
-      <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills">
+      <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
     </a>
     <p>{{ book.data.title }}</p>
   </li>
@@ -38,7 +38,7 @@ permalink: "/books/"
 {% for book in books.wantToRead %}
   <li>
     <a rel="noreferrer" target="_blank" href="{{ book.url }}">
-      <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills">
+      <img src="{{ book.data.cover }}" title="{{ book.data.title }}" alt="Cover of {{ book.data.title }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
     </a>
     <p>{{ book.data.title }}</p>
   </li>

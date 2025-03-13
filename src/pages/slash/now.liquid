@@ -2,7 +2,7 @@
 layout: page.liquid
 title: "What am I doing now?"
 description: This is my now page, a page that has an overview of my current life including recent media consumed and any short term goals.
-updated: 2025-02-26
+updated: 2025-03-13
 eleventyComputed:
   subhead: "Updated: {{ updated | dateReadable }}"
   permalink: "/now/"
@@ -12,15 +12,25 @@ related:
   - /contact/
 ---
 <p>
-  This is a <a href="https://nownownow.com/about"><em>now</em></a> page, you can read more about me on the <a
-    href="/about/"><em>about</em></a> page or view the online <a href="/activity/"><em>activity</em></a>.
+  This is a <a href="https://nownownow.com/about"><em>now</em></a> page, you can read more about me on the <a href="/about/"><em>about</em></a> page or view the online <a href="/activity/"><em>activity</em></a>.
 </p>
 
 <p>
-  <img src="/images/2025/commute_feb.jpg" alt="February Commute">
+  <img src="/images/2025/commute_march.jpg" alt="March Commute">
 </p>
 
-<h2>Currently</h2>
+<div class="heading-wrapper">
+  <h2 id="currently" tabindex="1">Currently</h2>
+  <a class="deeplink" href="#currently">
+    <span class="visually-hidden">Permalink to heading Currently</span>
+    <span aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-link" viewBox="0 0 16 16">
+        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"></path>
+        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"></path>
+      </svg>
+    </span>
+  </a>
+</div>
 <p>
 <ul>
   <li>Living in Hadleigh Suffolk with Lucy and two children; Jack and Maia.</li>
@@ -31,7 +41,18 @@ related:
 </ul>
 </p>
 
-<h2>Current Focus</h2>
+<div class="heading-wrapper">
+  <h2 id="current-focus" tabindex="1">Current Focus</h2>
+  <a class="deeplink" href="#current-focus">
+    <span class="visually-hidden">Permalink to heading Current Focus</span>
+    <span aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-link" viewBox="0 0 16 16">
+        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"></path>
+        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"></path>
+      </svg>
+    </span>
+  </a>
+</div>
 <p>
 <ul>
   <li>Training for the <a href="/2025/1/2025-fred-writton/">Fred Whitton Challenge</a>.</li>
@@ -39,41 +60,109 @@ related:
 </ul>
 </p>
 
-<h2>Currently Reading</h2>
+<div class="heading-wrapper">
+  <h2 id="current-signups" tabindex="1">Current Signups</h2>
+  <a class="deeplink" href="#current-signups">
+    <span class="visually-hidden">Permalink to heading Current Signups</span>
+    <span aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-link" viewBox="0 0 16 16">
+        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"></path>
+        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"></path>
+      </svg>
+    </span>
+  </a>
+</div>
+<p>
+  {% if collections.currentSignups.length >= 1 %}
+    <ul>
+    {% for signup in collections.currentSignups limit: 8 %}
+      <li>
+        <a class="post-link u-url" rel="bookmark" href="{{ signup.url }}" title="Continue to view {{ signup.data.title | escape }}">
+          {{ signup.data.title | escape | strip_html | truncate: 40 }}
+        </a>
+        - {{ signup.data.start | dateReadable }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    Nothing much on the calendar at the moment
+  {% endif %}
+</p>
+
+<div class="heading-wrapper">
+  <h2 id="currently-reading" tabindex="1">Currently Reading</h2>
+  <a class="deeplink" href="#currently-reading">
+    <span class="visually-hidden">Permalink to heading Currently Reading</span>
+    <span aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-link" viewBox="0 0 16 16">
+        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"></path>
+        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"></path>
+      </svg>
+    </span>
+  </a>
+</div>
+<p>
 <ul class="book--list">
 {% for book in books.currentlyReading limit: 8 %}
   <li>
     <a rel="noreferrer" target="_blank" href="{{ book.url }}">
-      <img src="{{ book.data.cover }}" title="{{ book.data.title | escape | strip_html }}" alt="Cover of {{ book.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills">
+      <img src="{{ book.data.cover }}" title="{{ book.data.title | escape | strip_html }}" alt="Cover of {{ book.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
     </a>
     <p>{{ book.data.title | escape | strip_html }}</p>
   </li>
 {% endfor %}
 </ul>
+</p>
 <p class="small">View more <a href="/books/">reading</a></p>
 
-<h2>Recently Listened</h2>
+<div class="heading-wrapper">
+  <h2 id="recently-listened" tabindex="1">Recently Listened</h2>
+  <a class="deeplink" href="#recently-listened">
+    <span class="visually-hidden">Permalink to heading Recently Listened</span>
+    <span aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-link" viewBox="0 0 16 16">
+        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"></path>
+        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"></path>
+      </svg>
+    </span>
+  </a>
+</div>
+<p>
 <ul class="music--list">
   {% for track in lastfm.recentTracks limit: 8 %}
     <li>
       <a href="{{ track.url }}">
-        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape }}" alt="Cover of {{ track.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills">
+        <img src="{{ track.data.cover }}" title="{{ track.data.title | escape }}" alt="Cover of {{ track.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
       </a>
       <p> {{ track.data.title | escape }} by {{ track.data.artist | escape }}</p>
     </li>
   {% endfor %}
 </ul>
+</p>
 <p class="small">View more <a href="/music/">listens</a></p>
 
-<h2>Recently Watched</h2>
+<div class="heading-wrapper">
+  <h2 id="recently-watched" tabindex="1">Recently Watched</h2>
+  <a class="deeplink" href="#recently-watched">
+    <span class="visually-hidden">Permalink to heading Recently Watched</span>
+    <span aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon icon-link" viewBox="0 0 16 16">
+        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"></path>
+        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"></path>
+      </svg>
+    </span>
+  </a>
+</div>
+<p>
 <ul class="movie--list">
  {% for movie in collections.recentMovies limit: 8 %}
     <li>
       <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
-        <img src="{{ movie.data.cover }}" title="{{ movie.data.title | escape | strip_html }}" alt="Cover of {{ movie.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills">
+        <img src="{{ movie.data.cover }}" title="{{ movie.data.title | escape | strip_html }}" alt="Cover of {{ movie.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
       </a>
       <p>{{ movie.data.title | escape | strip_html }}</p>
     </li>
   {% endfor %}
 </ul>
+</p>
 <p class="small">View more <a href="/movies/">watches</a></p>

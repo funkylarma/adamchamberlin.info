@@ -222,6 +222,26 @@ export default {
     return booksRead;
   },
   
+  currentSignups: function ( collection ) {
+    const signups = collection
+      .getAll( )
+      .sort( function ( a, b ) {
+        return a.date - b.date; // sort by date - descending
+      } )
+      .filter( ( item ) => {
+        if ( !item.data.category ) return;
+        if ( item.data.category == 'signup' ) {
+          let todaysDate = new Date( );
+          let eventDate = new Date( item.data.start );
+          if ( todaysDate < eventDate ) {
+            return item;
+          }
+        }
+      } )
+      .slice( 0, 12 );
+    return signups;
+  },
+  
   // Drafts Collection
   drafts: function ( collection ) {
     return collection
