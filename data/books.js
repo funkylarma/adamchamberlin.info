@@ -2,7 +2,7 @@ import EleventyFetch from '@11ty/eleventy-fetch';
 import dotenv from 'dotenv';
 dotenv.config( );
 
-const TOKEN = 'Bearer ' + process.env.HARDCOVER_KEY;
+const TOKEN = process.env.HARDCOVER_KEY;
 
 export default async function ( ) {
   console.log( 'Fetching Hardcover book data' );
