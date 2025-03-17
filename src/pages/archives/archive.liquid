@@ -181,7 +181,7 @@ permalink: "/archive/"
               {% assetIcon "service" %}
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">Serviced</a> the <a class="p-name" href="/bike/{{ entry.bike }}/">{{ entry.bike | getBikeName }}</a>
+              </time> - Serviced the <a class="p-name" href="{{ entry.url }}">{{ entry.bike | getBikeName }}</a>
             {% endif %}
 
             {% if entry.category == 'signup' %}

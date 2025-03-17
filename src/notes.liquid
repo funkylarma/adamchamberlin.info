@@ -227,6 +227,19 @@ eleventyComputed:
         </li>
       {% endif %}
 
+      {% if post.data.category == 'service' %}
+        <li class="signup h-entry hentry">
+          <h2 class="p-name">
+            {% assetIcon "service" %}
+            Serviced -
+            <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Details about the service">
+              {{ post.data.bike | getBikeName }}
+            </a>
+          </h2>
+          <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+        </li>
+      {% endif %}
+
       {% if post.data.category == 'toot' %}
         <li class="toot h-entry hentry">
           <h2 class="p-name">

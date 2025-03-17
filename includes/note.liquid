@@ -389,10 +389,15 @@
                 <p class="p-summary">
                   <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
                 </p>
-                <ul class="bike-details">
-                  <li><span>Bike:</span><a href="/bike/{{ bike }}/" title="View the bike">{{ bike | getBikeName }}</a></li>
-                  <li><span>Odo:</span>{{ odometer }}km</li>
-                </ul>
+                <div class="markdown-alert markdown-alert-tip bike-details">
+                  <p class="markdown-alert-title">
+                    Bike Details
+                  </p>
+                  <ul>
+                    <li><span>Bike:</span><a href="/bike/{{ bike }}/" title="View the bike">{{ bike | getBikeName }}</a></li>
+                    <li><span>Odo:</span>{{ odometer }}km</li>
+                  </ul>
+                </div>
                 <div class="note--copy p-content">
                   {{ content }}
                 </div>
