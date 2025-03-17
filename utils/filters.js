@@ -1,16 +1,17 @@
 /** @format */
-
+import { createRequire } from "node:module";
 import { inspect } from 'node:util';
 import sanitizeHTML from 'sanitize-html';
 import { DateTime } from 'luxon';
 import globals from '../data/globals.js';
 import metadata from '../data/metadata.js';
-import bikes from '../data/bikes.json' with { type: "json" };
 import { month_names } from './constants.js';
 import { month_short_names } from './constants.js';
 import { nth } from './constants.js';
 
+const require = createRequire( import.meta.url );
 const parse = ( date ) => new Date( Date.parse( date ) );
+const bikes = require( '../data/bikes.json' );
 
 export default {
   debug: function ( content ) {
@@ -351,13 +352,13 @@ export default {
   },
   
   getBike: function ( slug ) {
-
+    
     const indexFound = bikes.findIndex(
       bike => slug === bike.slug
     );
-
+    
     return -1 !== indexFound ? (
-        bikes[indexFound]
+      bikes[ indexFound ]
     ) : `Bike not found.`;
   },
   
@@ -365,14 +366,14 @@ export default {
     const indexFound = bikes.findIndex(
       bike => slug === bike.slug
     );
-
-    if (indexFound) {
-      const bike = bikes[indexFound];
+    
+    if ( indexFound ) {
+      const bike = bikes[ indexFound ];
       return `${bike.make} ${bike.model}`;
     } else {
       return `No bike found.`;
     }
-
+    
   },
   
   servicesByBikeName: function ( services, slug ) {
