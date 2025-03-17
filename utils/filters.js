@@ -5,6 +5,7 @@ import sanitizeHTML from 'sanitize-html';
 import { DateTime } from 'luxon';
 import globals from '../data/globals.js';
 import metadata from '../data/metadata.js';
+import bikes from '../data/bikes.json' with { type: "json" };
 import { month_names } from './constants.js';
 import { month_short_names } from './constants.js';
 import { nth } from './constants.js';
@@ -347,5 +348,35 @@ export default {
     const mentionCount = likes.length + reposts.length + comments.length;
     const data = { likes, reposts, comments, mentionCount };
     return data;
+  },
+  
+  getBike: function ( slug ) {
+
+    const indexFound = bikes.findIndex(
+      bike => slug === bike.slug
+    );
+
+    return -1 !== indexFound ? (
+        bikes[indexFound]
+    ) : `Bike not found.`;
+  },
+  
+  getBikeName: function ( slug ) {
+    const indexFound = bikes.findIndex(
+      bike => slug === bike.slug
+    );
+
+    if (indexFound) {
+      const bike = bikes[indexFound];
+      return `${bike.make} ${bike.model}`;
+    } else {
+      return `No bike found.`;
+    }
+
+  },
+  
+  servicesByBikeName: function ( services, slug ) {
+    const serviceList = services.filter( ( service ) => service.data.bike === slug )
+    return serviceList;
   },
 };

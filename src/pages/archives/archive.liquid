@@ -177,6 +177,13 @@ permalink: "/archive/"
               </time> - RSVP'd to <a class="p-name" href="{{ entry.url }}">{{ entry.title | truncate(40) }}</a>
             {% endif %}
 
+            {% if entry.category == 'service' %}
+              {% assetIcon "service" %}
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">Serviced</a> the <a class="p-name" href="/bike/{{ entry.bike }}/">{{ entry.bike | getBikeName }}</a>
+            {% endif %}
+
             {% if entry.category == 'signup' %}
               {% assetIcon "signup" %}
               <time class="dt-published" datetime="{{ entry.date }}">

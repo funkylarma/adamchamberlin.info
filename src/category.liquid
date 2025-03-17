@@ -47,11 +47,11 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif category == "note" %}
+{% elsif category == "book" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
-      {% for year in collections.noteArchive %}
+      {% for year in collections.bookArchive %}
       <li class="archive--years">
         <div class="archive--year">
           <h2 id="{{ year.title }}">{{ year.title }}</h2>
@@ -66,7 +66,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+              </time> - Read <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -78,11 +78,11 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif category == "videography" %}
+{% elsif category == "bookmark" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
-      {% for year in collections.videographyArchive %}
+      {% for year in collections.bookmarkArchive %}
       <li class="archive--years">
         <div class="archive--year">
           <h2 id="{{ year.title }}">{{ year.title }}</h2>
@@ -97,7 +97,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Shot <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+              </time> - Bookmarked <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -109,11 +109,11 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif category == "photography" %}
+{% elsif category == "checkin" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
-      {% for year in collections.photographyArchive %}
+      {% for year in collections.checkinArchive %}
       <li class="archive--years">
         <div class="archive--year">
           <h2 id="{{ year.title }}">{{ year.title }}</h2>
@@ -128,7 +128,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Snapped <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+              </time> - Checked in at <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -171,6 +171,161 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
+{% elsif category == "jam" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.jamArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Currently vibing <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif category == "like" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.likeArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Liked <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif category == "movie" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.movieArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Watched <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif category == "note" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.noteArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
+{% elsif category == "photography" %}
+  <div class="archive-list">
+    <div class="h-feed">
+      <ul class="archive--feed">
+      {% for year in collections.photographyArchive %}
+      <li class="archive--years">
+        <div class="archive--year">
+          <h2 id="{{ year.title }}">{{ year.title }}</h2>
+        </div>
+        <ul class="archive--months">
+        {% for month in year.months %}
+          <div class="archive--month">
+            <h3>{{ month.title }}</h3>
+          </div>
+          <ul class="archive--entries">
+          {% for entry in month.entries %}
+            <li class="h-entry">
+              <time class="dt-published" datetime="{{ entry.date }}">
+                {{ entry.date }}
+              </time> - Snapped <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div><!-- .archive-list -->
+
 {% elsif category == "race" %}
   <div class="archive-list">
     <div class="h-feed">
@@ -191,37 +346,6 @@ eleventyComputed:
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
               </time> - Raced <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        {% endfor %}
-        </ul>
-      </li>
-      {% endfor %}
-      </ul>
-    </div>
-  </div><!-- .archive-list -->
-
-{% elsif category == "checkin" %}
-  <div class="archive-list">
-    <div class="h-feed">
-      <ul class="archive--feed">
-      {% for year in collections.checkinArchive %}
-      <li class="archive--years">
-        <div class="archive--year">
-          <h2 id="{{ year.title }}">{{ year.title }}</h2>
-        </div>
-        <ul class="archive--months">
-        {% for month in year.months %}
-          <div class="archive--month">
-            <h3>{{ month.title }}</h3>
-          </div>
-          <ul class="archive--entries">
-          {% for entry in month.entries %}
-            <li class="h-entry">
-              <time class="dt-published" datetime="{{ entry.date }}">
-                {{ entry.date }}
-              </time> - Checked in at <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -357,11 +481,11 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif category == "bookmark" %}
+{% elsif category == "service" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
-      {% for year in collections.bookmarkArchive %}
+      {% for year in collections.serviceArchive %}
       <li class="archive--years">
         <div class="archive--year">
           <h2 id="{{ year.title }}">{{ year.title }}</h2>
@@ -376,7 +500,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Bookmarked <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+              </time> - <a class="p-name" href="{{ entry.url }}">Serviced</a> the <a class="p-name" href="/bike/{{ entry.bike }}/">{{ entry.bike | getBikeName }}</a>
             </li>
           {% endfor %}
           </ul>
@@ -388,11 +512,11 @@ eleventyComputed:
     </div>
   </div><!-- .archive-list -->
 
-{% elsif category == "like" %}
+{% elsif category == "videography" %}
   <div class="archive-list">
     <div class="h-feed">
       <ul class="archive--feed">
-      {% for year in collections.likeArchive %}
+      {% for year in collections.videographyArchive %}
       <li class="archive--years">
         <div class="archive--year">
           <h2 id="{{ year.title }}">{{ year.title }}</h2>
@@ -407,100 +531,7 @@ eleventyComputed:
             <li class="h-entry">
               <time class="dt-published" datetime="{{ entry.date }}">
                 {{ entry.date }}
-              </time> - Liked <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        {% endfor %}
-        </ul>
-      </li>
-      {% endfor %}
-      </ul>
-    </div>
-  </div><!-- .archive-list -->
-
-{% elsif category == "book" %}
-  <div class="archive-list">
-    <div class="h-feed">
-      <ul class="archive--feed">
-      {% for year in collections.bookArchive %}
-      <li class="archive--years">
-        <div class="archive--year">
-          <h2 id="{{ year.title }}">{{ year.title }}</h2>
-        </div>
-        <ul class="archive--months">
-        {% for month in year.months %}
-          <div class="archive--month">
-            <h3>{{ month.title }}</h3>
-          </div>
-          <ul class="archive--entries">
-          {% for entry in month.entries %}
-            <li class="h-entry">
-              <time class="dt-published" datetime="{{ entry.date }}">
-                {{ entry.date }}
-              </time> - Read <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        {% endfor %}
-        </ul>
-      </li>
-      {% endfor %}
-      </ul>
-    </div>
-  </div><!-- .archive-list -->
-
-{% elsif category == "movie" %}
-  <div class="archive-list">
-    <div class="h-feed">
-      <ul class="archive--feed">
-      {% for year in collections.movieArchive %}
-      <li class="archive--years">
-        <div class="archive--year">
-          <h2 id="{{ year.title }}">{{ year.title }}</h2>
-        </div>
-        <ul class="archive--months">
-        {% for month in year.months %}
-          <div class="archive--month">
-            <h3>{{ month.title }}</h3>
-          </div>
-          <ul class="archive--entries">
-          {% for entry in month.entries %}
-            <li class="h-entry">
-              <time class="dt-published" datetime="{{ entry.date }}">
-                {{ entry.date }}
-              </time> - Watched <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        {% endfor %}
-        </ul>
-      </li>
-      {% endfor %}
-      </ul>
-    </div>
-  </div><!-- .archive-list -->
-
-{% elsif category == "jam" %}
-  <div class="archive-list">
-    <div class="h-feed">
-      <ul class="archive--feed">
-      {% for year in collections.jamArchive %}
-      <li class="archive--years">
-        <div class="archive--year">
-          <h2 id="{{ year.title }}">{{ year.title }}</h2>
-        </div>
-        <ul class="archive--months">
-        {% for month in year.months %}
-          <div class="archive--month">
-            <h3>{{ month.title }}</h3>
-          </div>
-          <ul class="archive--entries">
-          {% for entry in month.entries %}
-            <li class="h-entry">
-              <time class="dt-published" datetime="{{ entry.date }}">
-                {{ entry.date }}
-              </time> - Currently vibing <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
+              </time> - Shot <a class="p-name" href="{{ entry.url }}">{{ entry.title | escape | strip_html | truncate: 40 }}</a>
             </li>
           {% endfor %}
           </ul>

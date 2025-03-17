@@ -55,182 +55,6 @@
               </div><!-- .post-meta -->
             </header>
 
-            {% if category == 'note' %}
-            {% include "partials/hcard.liquid" %}
-            <section class="e-content">
-              <p class="p-name">
-                {{ title }}
-              </p>
-              <div class="note--copy p-content">
-                {% if updated %}
-                  <div class="markdown-alert markdown-alert-note">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                      </svg>
-                      Article Updated
-                    </p>
-                    <p>
-                      Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                      it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                    </p>
-                  </div>
-                {% endif %}
-                {% if rewrite %}
-                  <div class="markdown-alert markdown-alert-important">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                      </svg>
-                      Important
-                    </p>
-                    <p>
-                      There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                    </p>
-                  </div>
-                {% endif %}
-                {{ content }}
-              </div>
-            </section>
-            {% endif %}
-
-            {% if category == 'reply' %}
-            {% include "partials/hcard.liquid" %}
-            <section class="e-content">
-              <p class="p-name">
-                In reply to: <a class="u-in-reply-to" href="{{ url }}" rel="in-reply-to">{{ title }}</a>
-              </p>
-              <div class="note--copy p-content">
-                {% if updated %}
-                  <div class="markdown-alert markdown-alert-note">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                      </svg>
-                      Article Updated
-                    </p>
-                    <p>
-                      Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                      it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                    </p>
-                  </div>
-                {% endif %}
-                {% if rewrite %}
-                  <div class="markdown-alert markdown-alert-important">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                      </svg>
-                      Important
-                    </p>
-                    <p>
-                      There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                    </p>
-                  </div>
-                {% endif %}
-                {{ content }}
-              </div>
-            </section>
-            {% endif %}
-
-            {% if category == 'rsvp' %}
-            {% include "partials/hcard.liquid" %}
-            <section class="e-content">
-              <p class="p-summary">
-                {% if rsvp == 'yes' %}
-                <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a>
-                going to <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>.
-                {% elsif rsvp == 'no' %}
-                <span class="p-rsvp" value="no">Gutted,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a>
-                can not make it to <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>.
-                {% elsif rsvp == 'maybe' %}
-                <span class="p-rsvp" value="maybe">Hoping,</span> <a href="{{ globals.url }}"
-                  class="p-author h-card">I</a> can make it to <a href="{{ url }}" class="u-in-reply-to p-name">{{
-                  title
-                  }}</a>.
-                {% elsif rsvp == 'interested' %}
-                <a href="{{ url }}" class="u-in-reply-to p-name">This</a> has <a href="{{ globals.url }}"
-                  class="p-author h-card">me</a> <span class="p-rsvp" value="interested">intrigued</span>.
-                {% else %}
-                <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>
-                {% endif %}
-              </p>
-              <div class="note--copy">
-                {% if updated %}
-                  <div class="markdown-alert markdown-alert-note">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                      </svg>
-                      Article Updated
-                    </p>
-                    <p>
-                      Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                      it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                    </p>
-                  </div>
-                {% endif %}
-                {% if rewrite %}
-                  <div class="markdown-alert markdown-alert-important">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                      </svg>
-                      Important
-                    </p>
-                    <p>
-                      There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                    </p>
-                  </div>
-                {% endif %}
-                {{ content }}
-              </div>
-            </section>
-            {% endif %}
-
-            {% if category == 'videography' %}
-
-            {% endif %}
-
-            {% if category == 'movie' %}
-              {% include "partials/hcard.liquid" %}
-              <section class="e-content">
-                <p class="p-summary">
-                  Watched <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
-                </p>
-                <div class="note--copy p-content">
-                  {% if updated %}
-                    <div class="markdown-alert markdown-alert-note">
-                      <p class="markdown-alert-title">
-                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                        </svg>
-                        Article Updated
-                      </p>
-                      <p>
-                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                      </p>
-                    </div>
-                  {% endif %}
-                  {% if rewrite %}
-                    <div class="markdown-alert markdown-alert-important">
-                      <p class="markdown-alert-title">
-                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                        </svg>
-                        Important
-                      </p>
-                      <p>
-                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                      </p>
-                    </div>
-                  {% endif %}
-                  {{ content }}
-                </div>
-              </section>
-            {% endif %}
-
             {% if category == 'book' %}
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
@@ -309,45 +133,6 @@
               </section>
             {% endif %}
 
-            {% if category == 'repost' %}
-              {% include "partials/hcard.liquid" %}
-              <section class="e-content">
-                <p class="p-summary">
-                  Boosted <a class="u-url p-name" href="{{ url }}" rel="noopener noreferrer">{{ title }}</a>
-                </p>
-                <div class="note--copy p-content">
-                  {% if updated %}
-                    <div class="markdown-alert markdown-alert-note">
-                      <p class="markdown-alert-title">
-                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                        </svg>
-                        Article Updated
-                      </p>
-                      <p>
-                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                      </p>
-                    </div>
-                  {% endif %}
-                  {% if rewrite %}
-                    <div class="markdown-alert markdown-alert-important">
-                      <p class="markdown-alert-title">
-                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                        </svg>
-                        Important
-                      </p>
-                      <p>
-                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                      </p>
-                    </div>
-                  {% endif %}
-                  {{ content }}
-                </div>
-              </section>
-            {% endif %}
-
             {% if category == 'like' %}
               {% include "partials/hcard.liquid" %}
               <section class="e-content">
@@ -387,16 +172,146 @@
               </section>
             {% endif %}
 
-            {% if category == 'signup' %}
+            {% if category == 'movie' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Watched <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {% if updated %}
+                    <div class="markdown-alert markdown-alert-note">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                        </svg>
+                        Article Updated
+                      </p>
+                      <p>
+                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                      </p>
+                    </div>
+                  {% endif %}
+                  {% if rewrite %}
+                    <div class="markdown-alert markdown-alert-important">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                        </svg>
+                        Important
+                      </p>
+                      <p>
+                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                      </p>
+                    </div>
+                  {% endif %}
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'note' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-name">
+                  {{ title }}
+                </p>
+                <div class="note--copy p-content">
+                  {% if updated %}
+                    <div class="markdown-alert markdown-alert-note">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                        </svg>
+                        Article Updated
+                      </p>
+                      <p>
+                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                      </p>
+                    </div>
+                  {% endif %}
+                  {% if rewrite %}
+                    <div class="markdown-alert markdown-alert-important">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                        </svg>
+                        Important
+                      </p>
+                      <p>
+                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                      </p>
+                    </div>
+                  {% endif %}
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'reply' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-name">
+                  In reply to: <a class="u-in-reply-to" href="{{ url }}" rel="in-reply-to">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {% if updated %}
+                    <div class="markdown-alert markdown-alert-note">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                        </svg>
+                        Article Updated
+                      </p>
+                      <p>
+                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                      </p>
+                    </div>
+                  {% endif %}
+                  {% if rewrite %}
+                    <div class="markdown-alert markdown-alert-important">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                        </svg>
+                        Important
+                      </p>
+                      <p>
+                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                      </p>
+                    </div>
+                  {% endif %}
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'rsvp' %}
             {% include "partials/hcard.liquid" %}
             <section class="e-content">
               <p class="p-summary">
-                Signed up for <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                {% if rsvp == 'yes' %}
+                <span class="p-rsvp" value="yes">Yes,</span> <a href="{{ globals.url }}" class="p-author h-card">I'm</a>
+                going to <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>.
+                {% elsif rsvp == 'no' %}
+                <span class="p-rsvp" value="no">Gutted,</span> <a href="{{ globals.url }}" class="p-author h-card">I</a>
+                can not make it to <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>.
+                {% elsif rsvp == 'maybe' %}
+                <span class="p-rsvp" value="maybe">Hoping,</span> <a href="{{ globals.url }}"
+                  class="p-author h-card">I</a> can make it to <a href="{{ url }}" class="u-in-reply-to p-name">{{
+                  title
+                  }}</a>.
+                {% elsif rsvp == 'interested' %}
+                <a href="{{ url }}" class="u-in-reply-to p-name">This</a> has <a href="{{ globals.url }}"
+                  class="p-author h-card">me</a> <span class="p-rsvp" value="interested">intrigued</span>.
+                {% else %}
+                <a href="{{ url }}" class="u-in-reply-to p-name">{{ title }}</a>
+                {% endif %}
               </p>
-              <p>
-                Date: <time class="dt-start" datetime="{{ start | dateHtmlString }}">{{ start | dateLongDate }}</time>
-              </p>
-              <div class="note--copy p-content">
+              <div class="note--copy">
                 {% if updated %}
                   <div class="markdown-alert markdown-alert-note">
                     <p class="markdown-alert-title">
@@ -427,6 +342,107 @@
                 {{ content }}
               </div>
             </section>
+            {% endif %}
+
+            {% if category == 'repost' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Boosted <a class="u-url p-name" href="{{ url }}" rel="noopener noreferrer">{{ title }}</a>
+                </p>
+                <div class="note--copy p-content">
+                  {% if updated %}
+                    <div class="markdown-alert markdown-alert-note">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                        </svg>
+                        Article Updated
+                      </p>
+                      <p>
+                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                      </p>
+                    </div>
+                  {% endif %}
+                  {% if rewrite %}
+                    <div class="markdown-alert markdown-alert-important">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                        </svg>
+                        Important
+                      </p>
+                      <p>
+                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                      </p>
+                    </div>
+                  {% endif %}
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'service' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                </p>
+                <ul class="bike-details">
+                  <li><span>Bike:</span><a href="/bike/{{ bike }}/" title="View the bike">{{ bike | getBikeName }}</a></li>
+                  <li><span>Odo:</span>{{ odometer }}km</li>
+                </ul>
+                <div class="note--copy p-content">
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'signup' %}
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-summary">
+                  Signed up for <a class="u-url p-name" href="{{ url }}">{{ title }}</a>
+                </p>
+                <p>
+                  Date: <time class="dt-start" datetime="{{ start | dateHtmlString }}">{{ start | dateLongDate }}</time>
+                </p>
+                <div class="note--copy p-content">
+                  {% if updated %}
+                    <div class="markdown-alert markdown-alert-note">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                        </svg>
+                        Article Updated
+                      </p>
+                      <p>
+                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                      </p>
+                    </div>
+                  {% endif %}
+                  {% if rewrite %}
+                    <div class="markdown-alert markdown-alert-important">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                        </svg>
+                        Important
+                      </p>
+                      <p>
+                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                      </p>
+                    </div>
+                  {% endif %}
+                  {{ content }}
+                </div>
+              </section>
+            {% endif %}
+
+            {% if category == 'videography' %}
+
             {% endif %}
 
           </div><!-- .note--content -->

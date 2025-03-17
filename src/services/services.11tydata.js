@@ -13,10 +13,14 @@ export default {
   eleventyComputed: {
     // Modify the permalink
     permalink: ( data ) => {
-      if ( process.env.ELEVENTY_ENV === 'production' && devOnly( data ) ) {
-        return false;
-      }
-      return `/${data.page.filePathStem.replace('/services', '/')}/`;
+      // Give it a filename
+      const serviceDate = new Date( data.date );
+      const year = serviceDate.getFullYear( );
+      const month = ( serviceDate.getMonth( ) + 1 )
+        .toString( )
+        .padStart( 2, '0' );
+      const filename = serviceDate.valueOf( );
+      return `/${year}/${month}/${filename}/`;
     },
     
     eleventyExcludeFromCollections: ( data ) => {
