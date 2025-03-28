@@ -225,9 +225,6 @@ export default {
   currentSignups: function ( collection ) {
     const signups = collection
       .getAll( )
-      .sort( function ( a, b ) {
-        return a.date - b.date; // sort by date - descending
-      } )
       .filter( ( item ) => {
         if ( !item.data.category ) return;
         if ( item.data.category == 'signup' ) {
@@ -238,7 +235,9 @@ export default {
           }
         }
       } )
-      .slice( 0, 12 );
+      .sort( function ( a, b ) {
+        return a.data.start - b.data.start;
+      } );
     return signups;
   },
   
