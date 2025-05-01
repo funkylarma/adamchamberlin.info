@@ -62,7 +62,7 @@
     "sanitize-html": "^2.14.0",
     "sass": "^1.85.0",
     "vite": "^6.1.6",
-    "wrangler": "^3.109.2",
+    "wrangler": "^3.114.7",
     "writing-stats": "^1.0.6"
   }
 }
