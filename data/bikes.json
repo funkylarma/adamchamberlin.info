@@ -8,5 +8,15 @@
     "slug": "crosshill",
     "make": "LaPierre",
     "model": "Crosshill 5"
+  },
+  {
+    "slug": "checkpoint",
+    "make": "Trek",
+    "model": "Checkpoint SLR 7 AXS"
+  },
+  {
+    "slug": "x-night",
+    "make": "Ridley",
+    "model": "X Night"
   }
 ]
