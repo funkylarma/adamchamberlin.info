@@ -12,10 +12,12 @@ permalink: /feed/feed.json
   "home_page_url": "{{ globals.url | addPathPrefixToFullUrl }}",
   "feed_url": "{{ permalink | htmlBaseUrl(globals.url) }}",
   "description": "{{ metadata.description }}",
+  "icon": "{{ "/assets/icons/web-app-manifest-512x512.png" | absoluteUrl(globals.url) }}",
   "authors": [
     {
       "name": "{{ metadata.author.name }}",
-      "url": "{{ metadata.author.url }}"
+      "url": "{{ metadata.author.url }}",
+      "avatar": "{{ "/assets/icons/web-app-manifest-512x512.png" | absoluteUrl(globals.url) }}"
     }
   ],
   "items": [
@@ -24,9 +26,21 @@ permalink: /feed/feed.json
     {
      "id": "{{ absolutePostUrl }}",
      "url": "{{ absolutePostUrl }}",
-     "title": "{{ post.data | feedTitle }}",
+     "title": {{ post.data | feedTitle | dump | safe }},
      "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, globals.url) | dump | safe }}{% else %}""{% endif %},
-     "date_published": "{{ post.date | dateToRfc3339 }}"
+     "summary": {% if post.data.description %}{{ post.data.description | dump | safe }}{% else %}""{% endif %},
+     "date_published": "{{ post.date | dateToRfc3339 }}",
+     "tags": {% if post.data.tags %}{{ post.data.tags | dump | safe }}{% else %}[]{% endif %},
+     {% if post.data.url === 'bookmark' %}
+     "external_url": "{{ post.data.url }}",
+     {% endif %}
+     {% if post.data.category === 'like' %}
+     "external_url": "{{ post.data.url }}",
+     "authors": [
+         {
+             "name": {% if post.data.author %}"{{ post.data.author }}",{% else %}null,{% endif %}
+         }
+     ],{% endif %}
     }
     {% if not loop.last %},{% endif %}
     {%- endfor %}

@@ -7,17 +7,19 @@ permalink: /feed/feed-articles.json
 ---
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "{{ metadata.title }} | Articles Only",
-  "language": "{{ metadata.language or page.lang }}",
-  "home_page_url": "{{ globals.url | addPathPrefixToFullUrl }}",
-  "feed_url": "{{ permalink | htmlBaseUrl(globals.url) }}",
-  "description": "{{ metadata.description }}",
-  "authors": [
-    {
-      "name": "{{ metadata.author.name }}",
-      "url": "{{ metadata.author.url }}"
-    }
-  ],
+"title": "{{ metadata.title }} | JSON Feed",
+"language": "{{ metadata.language or page.lang }}",
+"home_page_url": "{{ globals.url | addPathPrefixToFullUrl }}",
+"feed_url": "{{ permalink | htmlBaseUrl(globals.url) }}",
+"description": "{{ metadata.description }}",
+"icon": "{{ "/assets/icons/web-app-manifest-512x512.png" | absoluteUrl(globals.url) }}",
+"authors": [
+  {
+    "name": "{{ metadata.author.name }}",
+    "url": "{{ metadata.author.url }}",
+    "avatar": "{{ "/assets/icons/web-app-manifest-512x512.png" | absoluteUrl(globals.url) }}"
+  }
+],
   "items": [
     {%- for post in collections.articlesForFeed %}
     {%- set absolutePostUrl = post.url | absoluteUrl(globals.url) %}

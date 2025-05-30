@@ -12,10 +12,12 @@ permalink: /feed/feed-notes.json
   "home_page_url": "{{ globals.url | addPathPrefixToFullUrl }}",
   "feed_url": "{{ permalink | htmlBaseUrl(globals.url) }}",
   "description": "{{ metadata.description }}",
+  "icon": "{{ "/assets/icons/web-app-manifest-512x512.png" | absoluteUrl(globals.url) }}",
   "authors": [
     {
       "name": "{{ metadata.author.name }}",
-      "url": "{{ metadata.author.url }}"
+      "url": "{{ metadata.author.url }}",
+      "avatar": "{{ "/assets/icons/web-app-manifest-512x512.png" | absoluteUrl(globals.url) }}"
     }
   ],
   "items": [
