@@ -44,7 +44,8 @@ permalink: "/stats/"
 </section>
 
 <section class="stats--graph">
-  <h2>Yearly Graph</h2>
+  <h2>Yearly Content Graph</h2>
+  <p>A yearly breakdown of all content by years</p>
   <div class="graph">
     {%- for year in collections.postStats.years reversed %}
     <div class="wrapper">
@@ -60,7 +61,8 @@ permalink: "/stats/"
 </section>
 
 <section class="stats--posts">
-  <h2>Posts Graph</h2>
+  <h2>Articles Written Graph</h2>
+  <p>Long form articles by day</p>
   <div class="wide">
   {% postGraph collections.article %}
   </div>

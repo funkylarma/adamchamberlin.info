@@ -9,5 +9,3 @@ date: 2025-03-26
 tags:
   - duathlon
 ---
-
-<!-- @format -->

@@ -120,6 +120,9 @@ export default {
         case 'photography':
           return `Snapped ${postData.title}`;
           break;
+        case 'signup':
+        return `Signed up for ${postData.title}`;
+        break;
         case 'reply':
           return `Replied to ${postData.title}`;
           break;
