@@ -100,13 +100,13 @@ export default {
     if ( postData.category ) {
       switch ( postData.category ) {
         case 'book':
-          return `Read ${postData.title}`;
+          return `Read "${postData.title}"`;
           break;
         case 'bookmark':
           return `Bookmarked "${postData.title}"`;
           break;
         case 'checkin':
-          return `Checked in at ${postData.title}`;
+          return `Checked in at "${postData.title}"`;
           break;
         case 'exercise':
           return `Went ${postData.sport} - ${postData.title}`;
@@ -115,10 +115,10 @@ export default {
           return `Liked "${postData.title}"`;
           break;
         case 'movie':
-          return `Watched ${postData.title}`;
+          return `Watched "${postData.title}"`;
           break;
         case 'photography':
-          return `Snapped ${postData.title}`;
+          return `Snapped "${postData.title}"`;
           break;
         case 'signup':
         return `Signed up for ${postData.title}`;
