@@ -26,8 +26,7 @@ permalink: /feed/mastodon.json
     {
       "id": "{{ absolutePostUrl }}",
       {% if post.data.category === 'article' %}"url": "{{ absolutePostUrl }}",{% endif %}
-      {% if post.data.category === 'bookmark' %}"url": "{{ post.data.url }}",
-        "external_url": "{{ absolutePostUrl }}",{% endif %}
+      {% if post.data.category === 'bookmark' %}"url": "{{ post.data.url }}","external_url": "{{ absolutePostUrl }}",{% endif %}
       {% if post.data.category === 'checkin' %}"url": "{{ absolutePostUrl }}",{% endif %}
       {% if post.data.category === 'like' %}"url": "{{ post.data.url }}",
         "external_url": "{{ absolutePostUrl }}",
@@ -36,8 +35,10 @@ permalink: /feed/mastodon.json
             "name": {% if post.data.author %}"{{ post.data.author }}"{% else %}null{% endif %}
           }
         ],{% endif %}
+      {% if post.data.category === 'movie' %}"url": "{{ absolutePostUrl }}",{% endif %}
       {% if post.data.category === 'note' %}"url": "{{ absolutePostUrl }}",{% endif %}
       {% if post.data.category === 'photo' %}"url": "{{ absolutePostUrl }}",{% endif %}
+      {% if post.data.category === 'photography' %}"url": "{{ absolutePostUrl }}",{% endif %}
       {% if post.data.category === 'reply' %}"url": "{{ absolutePostUrl }}",
         "external_url": "{{ post.data.url }}",{% endif %}
       {% if post.data.category === 'repost' %}"url": "{{ absolutePostUrl }}",{% endif %}
