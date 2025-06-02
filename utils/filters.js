@@ -63,31 +63,59 @@ export default {
         let type = '';
         
         if ( this.page.filePathStem.includes( 'article' ) ) {
-          type = 'article';
+          type = 'n article posted';
         }
         
-        if ( this.page.filePathStem.includes( 'bookmark' ) ) {
-          type = 'bookmark';
+        if ( this.page.filePathStem.includes( 'bookmarks' ) ) {
+          type = ' bookmark saved';
         }
         
-        if ( this.page.filePathStem.includes( 'checkin' ) ) {
-          type = 'checkin';
+        if ( this.page.filePathStem.includes( 'checkins' ) ) {
+          type = ' place checked in';
         }
         
         if ( this.page.filePathStem.includes( 'exercise' ) ) {
-          type = 'activity';
+          type = ' activity undertaken';
         }
         
-        if ( this.page.filePathStem.includes( 'note' ) ) {
-          type = 'note';
+        if ( this.page.filePathStem.includes( 'likes' ) ) {
+          type = ' like';
+        }
+        
+        if ( this.page.filePathStem.includes( 'notes' ) ) {
+          type = ' note made';
+        }
+        
+        if ( this.page.filePathStem.includes( 'photos' ) ) {
+          type = ' photo taken';
+        }
+        
+        if ( this.page.filePathStem.includes( 'replies' ) ) {
+          type = ' reply made';
+        }
+        
+        if ( this.page.filePathStem.includes( 'rsvps' ) ) {
+          type = ' rsvp made';
+        }
+        
+        if ( this.page.filePathStem.includes( 'services' ) ) {
+          type = ' service record';
+        }
+        
+        if ( this.page.filePathStem.includes( 'signups' ) ) {
+          type = 'n event signup for';
+        }
+        
+        if ( this.page.filePathStem.includes( 'videos' ) ) {
+          type = ' video made';
         }
         
         return (
           'The ' +
           title.replace( /[.,\/#!$%\^&\*;:{}=\-_`~()"]/g, '' ) +
-          ' is a ' +
+          ' is a' +
           type +
-          ' posted by Adam Chamberlin on ' +
+          ' by Adam Chamberlin on ' +
           this.page.date.toDateString( )
         );
       }
