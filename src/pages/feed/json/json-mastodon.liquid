@@ -33,7 +33,7 @@ permalink: /feed/mastodon.json
         "external_url": "{{ absolutePostUrl }}",
         "authors": [
           {
-            "name": {% if post.data.author %}"{{ post.data.author }}",{% else %}null,{% endif %}
+            "name": {% if post.data.author %}"{{ post.data.author }}"{% else %}null{% endif %}
           }
         ],{% endif %}
       {% if post.data.category === 'note' %}"url": "{{ absolutePostUrl }}",{% endif %}
@@ -50,7 +50,7 @@ permalink: /feed/mastodon.json
      "title": {{ post.data | feedTitle | dump | safe }},
      "summary": {% if post.data.description %}{{ post.data.description | dump | safe }}{% else %}""{% endif %},
      "date_published": "{{ post.date | dateToRfc3339 }}",
-     "tags": {% if post.data.tags %}{{ post.data.tags | dump | safe }}{% else %}[]{% endif %},
+     "tags": {% if post.data.tags %}{{ post.data.tags | dump | safe }}{% else %}[]{% endif %}
      
     }
     {% if not loop.last %},{% endif %}
