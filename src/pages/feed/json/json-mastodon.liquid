@@ -48,6 +48,7 @@ permalink: /feed/mastodon.json
         "external_url": "{{ post.data.url }}",{% endif %}
       {% if post.data.category === 'video' %}"url": "{{ absolutePostUrl }}",{% endif %}
      "title": {{ post.data | feedTitle | dump | safe }},
+     "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, globals.url) | dump | safe }}{% else %}""{% endif %},
      "summary": {% if post.data.description %}{{ post.data.description | dump | safe }}{% else %}""{% endif %},
      "date_published": "{{ post.date | dateToRfc3339 }}",
      "tags": {% if post.data.tags %}{{ post.data.tags | dump | safe }}{% else %}[]{% endif %}
