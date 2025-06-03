@@ -4,7 +4,7 @@ date: 2025-06-03
 description: Forever hopeful that the next firmware updates to my Suunto Race will include some quality of life updates for me
 category: note
 tags:
-  - suunto
+  - Suunto
 ---
 
 Over a year ago I handed my Garmin Forerunner 955 to Lucy and put a Suunto Race on my wrist. I knew that the Suunto would not have all the bells and feature whistles of the Garmin, that was part of my choice.

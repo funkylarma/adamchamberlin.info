@@ -23,7 +23,7 @@ This is a list of the 'stuff' I use on a day-to-day basis.
 
 - [Overcast](https://overcast.fm/) — Pushing through the update issues as it is the best audio
 - [Ivory](https://tapbots.com/ivory/) — Mastodon is mostly the only social platform I engage in now
-- [lire](https://www.lireapp.com) — RSS consumption
+- [Reeder Classic](https://reederapp.com/classic/) — RSS consumption
 - [GoodLinks](https://goodlinks.app) — Offline reading
 - [Readwise Reader](https://readwise.io/read) — Used for saving articles and references
 - [Suunto](https://www.suunto.com/en-gb/suunto-app/suunto-app-2022/) — Running
