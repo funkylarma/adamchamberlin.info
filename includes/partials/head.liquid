@@ -26,11 +26,10 @@
 <meta property="article:author" content="{{ metadata.author.name }}">
 <meta property="og:site_name" content="{{ metadata.title }}">
 <meta property="og:locale" content="en_GB" />
-<meta property="og:logo" content="{{ "/assets/images/headshot.jpg" | absoluteUrl }}">
 <meta property="og:title" content="{% if title %}{{ title | escape | metaTitle }}{% else %}{{ metadata.title }}{% endif %}">
 <meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}">
 <meta property="og:url" content="{{ page.url | absoluteUrl }}">
-<meta property="og:image" content="{{ "/assets/images/headshot.jpg" | absoluteUrl }}">
+<meta property="og:image" content="{{ "/assets/images/headshot-300.png" | absoluteUrl }}">
 {% if date %}
   <meta property="og:type" content="article">
   <meta property="article:author" content="{{ metadata.author.name }}">
