@@ -1,7 +1,9 @@
 
 <title>{% if title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}</title>
+
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
 <meta name="generator" content="{{ eleventy.generator }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="supported-color-schemes" content="light dark" />
@@ -15,52 +17,56 @@
   <meta name="robots" content="noindex" />
 {%- else -%}
   <meta name="robots" content="noai, noimageai, index, follow" />
-  <meta name="googlebot" content="index, follow">
-  <meta name="CCBot" content="nofollow">
+  <meta name="googlebot" content="index, follow" />
+  <meta name="CCBot" content="nofollow" />
 {%- endif -%}
 {% if tags.length > 0 %}
-  <meta name="keywords" content="{{ tags | metaKeywords }}">
+  <meta name="keywords" content="{{ tags | metaKeywords }}" />
 {% endif %}
-<meta itemprop="name" content="{{ metadata.author.name }}">
-<meta itemprop="description" content="{{ metadata.description }}">
-<meta property="article:author" content="{{ metadata.author.name }}">
-<meta property="og:site_name" content="{{ metadata.title }}">
+
+<meta itemprop="name" content="{{ metadata.author.name }}" />
+<meta itemprop="description" content="{{ metadata.description }}" />
+
+<meta property="og:site_name" content="{{ metadata.title }}" />
 <meta property="og:locale" content="en_GB" />
-<meta property="og:title" content="{% if title %}{{ title | escape | metaTitle }}{% else %}{{ metadata.title }}{% endif %}">
-<meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}">
-<meta property="og:url" content="{{ page.url | absoluteUrl }}">
-<meta property="og:image" content="{{ "/assets/images/headshot-300.png" | absoluteUrl }}">
+<meta property="og:title" content="{% if title %}{{ title | escape | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
+<meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}" />
+<meta property="og:url" content="{{ page.url | absoluteUrl }}" />
+<meta property="og:image" content="{{ "/assets/images/headshot-300.png" | absoluteUrl }}" />
 {% if date %}
-  <meta property="og:type" content="article">
-  <meta property="article:author" content="{{ metadata.author.name }}">
-  <meta property="article:published_time" content="{{ page.date | dateISO }}">
+  <meta property="og:type" content="article" />
+  <meta property="article:author" content="{{ metadata.author.name }}" />
+  <meta property="article:published_time" content="{{ page.date | dateISO }}" />
   {% if tags.length > 0 %}
     {% for tag in tags %}
-      <meta property="article:tag" content="{{ tag }}">
+      <meta property="article:tag" content="{{ tag }}" />
     {% endfor %}
   {% endif %}
+{% else %}
+  <meta property="og:type" content="website" />
 {% endif %}
-<link rel="canonical" href="{% if canonical %}{{ canonical }}{% else %}{{ page.url | absoluteUrl }}{% endif %}">
-<link rel="author self" href="{{ globals.url }}">
+
+<link rel="canonical" href="{% if canonical %}{{ canonical }}{% else %}{{ page.url | absoluteUrl }}{% endif %}" />
+<link rel="author self" href="{{ globals.url }}" />
 <link rel="me" href="mailto:hello@adamchamberlin.info" />
 <link rel="me" href="sms:+447816905420" />
-<link rel="me authn" href="https://github.com/funkylarma">
-<link rel="webmention" href="https://webmention.io/adamchamberlin.info/webmention">
-<link rel="pingback" href="https://webmention.io/adamchamberlin.info/xmlrpc">
-<link rel="authorization_endpoint" href="https://indieauth.com/auth">
-<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-<link rel="micropub" href="{{ globals.url }}micropub">
-<link rel="alternate" type="application/rss+xml" href="{{ 'feed/rss.xml' | absoluteUrl }}" title="{{ metadata.title }} | RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="{{ 'feed/atom.xml' | absoluteUrl }}" title="{{ metadata.title }} | Atom Feed">
-<link rel="alternate" type="application/json" href="{{ 'feed/feed.json' | absoluteUrl }}" title="{{ metadata.title }} | JSON Feed">
-<link rel="icon" type="image/png" href="{{ "/assets/icons/favicon-96x96.png" | absoluteUrl }}" sizes="96x96">
-<link rel="icon" type="image/png" href="{{ "/assets/icons/web-app-manifest-192x192.png" | absoluteUrl }}" sizes="192x192">
-<link rel="icon" type="image/svg+xml" href="{{ "/assets/icons/favicon.svg" | absoluteUrl }}">
-<link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | absoluteUrl }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/icons/apple-touch-icon.png" | absoluteUrl }}">
-<link rel="manifest" href="{{ "/web.manifest" | absoluteUrl }}">
+<link rel="me authn" href="https://github.com/funkylarma" />
+<link rel="webmention" href="https://webmention.io/adamchamberlin.info/webmention" />
+<link rel="pingback" href="https://webmention.io/adamchamberlin.info/xmlrpc" />
+<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+<link rel="micropub" href="{{ globals.url }}micropub" />
+<link rel="alternate" type="application/rss+xml" href="{{ 'feed/rss.xml' | absoluteUrl }}" title="{{ metadata.title }} | RSS Feed" />
+<link rel="alternate" type="application/atom+xml" href="{{ 'feed/atom.xml' | absoluteUrl }}" title="{{ metadata.title }} | Atom Feed" />
+<link rel="alternate" type="application/json" href="{{ 'feed/feed.json' | absoluteUrl }}" title="{{ metadata.title }} | JSON Feed" />
+<link rel="icon" type="image/png" href="{{ "/assets/icons/favicon-96x96.png" | absoluteUrl }}" sizes="96x96" />
+<link rel="icon" type="image/png" href="{{ "/assets/icons/web-app-manifest-192x192.png" | absoluteUrl }}" sizes="192x192" />
+<link rel="icon" type="image/svg+xml" href="{{ "/assets/icons/favicon.svg" | absoluteUrl }}" />
+<link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | absoluteUrl }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/icons/apple-touch-icon.png" | absoluteUrl }}" />
+<link rel="manifest" href="{{ "/web.manifest" | absoluteUrl }}" />
 {% if globals.env == "production" %}
-  <link rel="preload" type="font/woff2" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" crossOrigin="anonymous">
+  <link rel="preload" type="font/woff2" href="{{ '/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2' | url }}" as="font" crossOrigin="anonymous" />
   {% viteLinkStylesheetTags %}
   <noscript>
     {% viteLinkStylesheetTags %}
@@ -73,9 +79,9 @@
   }
 </script>
 {% if hasCode %}
-<link rel="prefetch" href="{{ '/assets/css/dracula-prism.min.css' | url }}" as="style" crossOrigin="anonymous">
-<link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="all" onload="this.media='all'" fetchpriority="low">
+<link rel="prefetch" href="{{ '/assets/css/dracula-prism.min.css' | url }}" as="style" crossOrigin="anonymous" />
+<link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="all" onload="this.media='all'" fetchpriority="low" />
 <noscript>
-  <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="screen">
+  <link rel="stylesheet" href="{{ '/assets/css/dracula-prism.min.css' | url }}" media="screen" />
 </noscript>
 {% endif %}
