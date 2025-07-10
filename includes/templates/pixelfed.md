@@ -1,6 +1,6 @@
 ---
 date: [DATE]
-title: [TITLE]
+title: "[TITLE]"
 url: [LINK]
 cover: [COVER]
 category: photography
