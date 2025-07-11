@@ -27,9 +27,9 @@
 <meta itemprop="name" content="{{ metadata.author.name }}" />
 <meta itemprop="description" content="{{ metadata.description }}" />
 
-<meta property="og:site_name" content="{{ metadata.title }}" />
+<meta property="og:site_name" content="https://adamchamberlin.info" />
 <meta property="og:locale" content="en_GB" />
-<meta property="og:title" content="{% if title %}{{ title | escape | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
+<meta property="og:title" content="{% if title %}{{ title | escape | ogTitle }}{% else %}{{ metadata.title }}{% endif %}" />
 <meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}" />
 <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
 <meta property="og:image" content="{{ "/assets/images/headshot-300.png" | absoluteUrl }}" />

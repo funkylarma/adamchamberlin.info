@@ -124,8 +124,13 @@ export default {
     return title + ' - ' + metadata.description;
   },
   
+  ogTitle: function ( title ) {
+    title.trim( );
+    return title.replace( /"/g, '' );
+  },
+  
   feedTitle: function ( postData ) {
-    if ( postData.category ) {
+    if ( postData?.category ) {
       switch ( postData.category ) {
         case 'book':
           return `Read "${postData.title}"`;
@@ -164,7 +169,7 @@ export default {
           return postData.title;
       }
     } else {
-      return postData.title;
+      return postData?.title;
     }
   },
   
