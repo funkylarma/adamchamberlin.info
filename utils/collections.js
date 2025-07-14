@@ -272,8 +272,8 @@ export default {
   },
 
   allContent: function (collection) {
-    let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
-    let mastodonContent = collection.getAll()[0].data.mastodon;
+    //let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
+    //let mastodonContent = collection.getAll()[0].data.mastodon;
 
     let localContent = collection
       .getAll()
@@ -291,7 +291,7 @@ export default {
       });
 
     // Merge all content
-    let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
+    let allContent = [...localContent]; //, ...lastfmContent, ...mastodonContent];
 
     let sortedContent = allContent.sort(function (a, b) {
       return a.date - b.date;
