@@ -28,7 +28,7 @@
 
 <meta property="og:site_name" content="https://adamchamberlin.info" />
 <meta property="og:locale" content="en_GB" />
-<meta property="og:title" content="{% if date %}{{ title | ogTitle: category }}{% elsif title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
+<meta property="og:title" content="{% if date %}{{ title | ogTitle: category | escape }}{% elsif title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
 <meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}" />
 <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
 {% if cover %}
