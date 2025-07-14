@@ -124,9 +124,45 @@ export default {
     return title + ' - ' + metadata.description;
   },
   
-  ogTitle: function ( title ) {
-    title.trim( );
-    return title.replace( /"/g, '' );
+  ogTitle: function ( title, category ) {
+
+    switch ( category ) {
+      case 'book':
+        return `Read "${title}"`;
+        break;
+      case 'bookmark':
+        return `Bookmarked "${title}"`;
+        break;
+      case 'checkin':
+        return `Checked in at "${title}"`;
+        break;
+      case 'like':
+        return `Liked "${title}"`;
+        break;
+      case 'movie':
+        return `Watched "${title}"`;
+        break;
+      case 'photography':
+        return `Snapped "${title}"`;
+        break;
+      case 'signup':
+        return `Signed up for ${title}`;
+        break;
+      case 'race':
+        return `Raced ${title}`;
+        break;
+      case 'reply':
+        return `Replied to ${title}`;
+        break;
+      case 'repost':
+        return `Reposted "${title}"`;
+        break;
+      case 'rsvp':
+        return `RSVP'd to ${title}`;
+        break;
+      default:
+        return title;
+    }
   },
   
   feedTitle: function ( postData ) {
@@ -154,8 +190,11 @@ export default {
           return `Snapped "${postData.title}"`;
           break;
         case 'signup':
-        return `Signed up for ${postData.title}`;
-        break;
+          return `Signed up for ${postData.title}`;
+          break;
+        case 'race':
+          return `Raced ${postData.title}`;
+          break;
         case 'reply':
           return `Replied to ${postData.title}`;
           break;

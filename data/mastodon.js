@@ -1,19 +1,22 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
-import parser from "fast-xml-parser";
+import { XMLParser, XMLValidator } from "fast-xml-parser";
 
 export default async function() {
 
-  console.log('Fetching Mastodon data')
-
+  console.log('Fetching Mastodon data');
+  
+  const parser = new XMLParser();
   const url = "https://mastodon.social/@FunkyLarma.rss"
   const fetchConfig = {
     duration: '12h',
-    type: 'text',
+    type: 'xml',
   }
   let response;
 
   try {
-    response = await EleventyFetch(url, fetchConfig)
+    response = await EleventyFetch(url, fetchConfig);
+    
+    return response;
 
   } catch (e) {
     console.error(`Fetch failed in mastodon.js. ${e}`);
@@ -21,11 +24,11 @@ export default async function() {
   }
 
   let feed;
-  const result = parser.XMLValidator.validate(response);
+  
+  const result = XMLValidator.validate(response);
 
   if (result === true) {
-    const xmlparser = new parser.XMLParser();
-    feed = xmlparser.parse(response);
+    feed = parser.parse(response);
   } else {
     console.error(
       `rss.js - XML is invalid. Reason: ${result.err.msg}`

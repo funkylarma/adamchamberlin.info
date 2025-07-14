@@ -3,7 +3,6 @@
 
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
 <meta name="generator" content="{{ eleventy.generator }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="supported-color-schemes" content="light dark" />
@@ -29,10 +28,14 @@
 
 <meta property="og:site_name" content="https://adamchamberlin.info" />
 <meta property="og:locale" content="en_GB" />
-<meta property="og:title" content="{% if title %}{{ title | escape | ogTitle }}{% else %}{{ metadata.title }}{% endif %}" />
+<meta property="og:title" content="{% if category %}{{ title | ogTitle: category }}{% elsif title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
 <meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}" />
 <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
-<meta property="og:image" content="{{ "/assets/images/headshot-300.png" | absoluteUrl }}" />
+{% if cover %}
+  <meta property="og:image" content="{{ cover }}" />
+{% else %}
+  <meta property="og:image" content="{{ "/assets/images/headshot-300.png" | absoluteUrl }}" />
+{% endif %}
 {% if date %}
   <meta property="og:type" content="article" />
   <meta property="article:author" content="{{ metadata.author.name }}" />
