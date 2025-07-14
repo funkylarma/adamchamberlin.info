@@ -128,22 +128,22 @@ export default {
 
     switch ( category ) {
       case 'book':
-        return `Read "${title}"`;
+        return `Read ${title}`;
         break;
       case 'bookmark':
-        return `Bookmarked "${title}"`;
+        return `Bookmarked ${title}`;
         break;
       case 'checkin':
-        return `Checked in at "${title}"`;
+        return `Checked in at ${title}`;
         break;
       case 'like':
-        return `Liked "${title}"`;
+        return `Liked ${title}`;
         break;
       case 'movie':
-        return `Watched "${title}"`;
+        return `Watched ${title}`;
         break;
       case 'photography':
-        return `Snapped "${title}"`;
+        return `Snapped ${title}`;
         break;
       case 'signup':
         return `Signed up for ${title}`;
@@ -155,7 +155,7 @@ export default {
         return `Replied to ${title}`;
         break;
       case 'repost':
-        return `Reposted "${title}"`;
+        return `Reposted ${title}`;
         break;
       case 'rsvp':
         return `RSVP'd to ${title}`;
