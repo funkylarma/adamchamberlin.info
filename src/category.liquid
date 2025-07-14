@@ -10,7 +10,7 @@ pagination:
   generatePageOnEmptyData: true
 permalink: '/category/{{ category | slugify }}/'
 eleventyComputed:
-  title: 'Category: {{ category | capitaliseFirstLetter }}'
+  title: '{{ category | capitaliseFirstLetter }} Archive'
   description: "Archive page for the '{{ category | capitaliseFirstLetter }}' category"
   subhead: 'These are all the content listed under the category of "{{ category }}"'
 ---
