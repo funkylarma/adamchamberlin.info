@@ -32,7 +32,7 @@
 <meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}" />
 <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
 {% if cover %}
-  <meta property="og:image" content="{{ cover }}" />
+  <meta property="og:image" content="{{ cover | absoluteUrl }}" />
 {% else %}
   <meta property="og:image" content="{{ "/assets/images/headshot-300.png" | absoluteUrl }}" />
 {% endif %}
