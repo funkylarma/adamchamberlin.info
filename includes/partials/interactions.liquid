@@ -1,24 +1,17 @@
 <div class="interactions">
   <h2>Get Involved</h2>
   <div class="webmentions" itemscope itemtype="https://schema.org/Comment">
-    <h3>
-      {% assetIcon "at" %}
-      WebMention
-    </h3>
-    <p class="info">
-      <em>This site supports <a href="https://indieweb.org/Webmention">webmentions</a> via <a href="https://webmention.io/">webmention.io</a>.</em>
-    </p>
     <p>Have you posted a response to this or anything related, let me know...</p>
     {% include "partials/webmentions.liquid" %}
   </div><!-- .webmentions -->
-  <div class="share">
+  <div class="share" hidden>
     <h3>
       {% assetIcon "share" %}
       Share
     </h3>
     <a href="https://shareopenly.org/share/?url={{ page.url | absoluteUrl }}">Share on the Fediverse</a>
   </div><!-- .share -->
-  <div class="email">
+  <div class="email" hidden>
     <h3>
       {% assetIcon "email" %}
       Email
