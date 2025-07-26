@@ -275,7 +275,7 @@ export default {
     // let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
     // let mastodonContent = collection.getAll()[0].data.mastodon;
 
-    let localContent = collection
+    return collection
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
@@ -285,9 +285,10 @@ export default {
         ) {
           return item;
         }
+        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
-        return b.date - a.date;
+        return a.date - b.date; // sort by date - descending
       });
 
     // Merge all content
@@ -296,12 +297,8 @@ export default {
     //     let sortedContent = allContent.sort(function (a, b) {
     //       return a.date - b.date;
     //     });
-
-    let sortedContent = localContent.sort(function (a, b) {
-      return a.date - b.date;
-    });
-
-    return sortedContent;
+    //
+    //     return sortedContent;
   },
 
   // Gets all the filtered content by tag and outputs a Collection
