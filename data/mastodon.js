@@ -4,7 +4,7 @@ import { XMLParser, XMLValidator } from "fast-xml-parser";
 export default async function() {
 
   console.log('Fetching Mastodon data');
-  
+
   const parser = new XMLParser();
   const url = "https://mastodon.social/@FunkyLarma.rss"
   const fetchConfig = {
@@ -15,27 +15,27 @@ export default async function() {
 
   try {
     response = await EleventyFetch(url, fetchConfig);
-    
-    return response;
 
   } catch (e) {
     console.error(`Fetch failed in mastodon.js. ${e}`);
     return `It has failed: ${e}`;
   }
 
-  let feed;
-  
-  const result = XMLValidator.validate(response);
+  // let feed;
+//
+  // const result = XMLValidator.validate(response);
+//
+  // if (result === true) {
+  //   feed = parser.parse(response);
+  // } else {
+  //   console.error(
+  //     `rss.js - XML is invalid. Reason: ${result.err.msg}`
+  //   );
+  // }
 
-  if (result === true) {
-    feed = parser.parse(response);
-  } else {
-    console.error(
-      `rss.js - XML is invalid. Reason: ${result.err.msg}`
-    );
-  }
-
+  let feed = parser.parse(response);
   let tootList = feed.rss.channel.item;
+
 
   let toots = tootList.map((toot) => {
     let transformedToot = {};

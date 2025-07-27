@@ -272,33 +272,33 @@ export default {
   },
 
   allContent: function (collection) {
-    // let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
-    // let mastodonContent = collection.getAll()[0].data.mastodon;
 
-    return collection
-      .getAll()
-      .filter((item) => {
-        if (!item.data.tags) return;
-        if (
-          item.data.tags.includes("article") ||
-          item.data.tags.includes("note")
-        ) {
-          return item;
-        }
-        // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
-        return a.date - b.date; // sort by date - descending
-      });
+    // Get the online content
+    let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
+    let mastodonContent = collection.getAll()[0].data.mastodon;
 
-    // Merge all content
-    //     let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
-    //
-    //     let sortedContent = allContent.sort(function (a, b) {
-    //       return a.date - b.date;
-    //     });
-    //
-    //     return sortedContent;
+    // Get the local content
+    let localContent = collection
+    .getAll( )
+    .filter( ( item ) => {
+      if ( !item.data.tags ) return;
+      if ( item.data.tags.includes( 'article' ) || item.data.tags.includes( 'note' ) ) {
+        return item;
+      }
+    } )
+    .sort( function ( a, b ) {
+      return a.date - b.date;
+    } );
+
+    // Merge all content together
+    let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
+
+    // Sort the content
+    let sortedContent = allContent.sort(function (a, b) {
+      return a.date - b.date;
+    });
+
+    return sortedContent;
   },
 
   // Gets all the filtered content by tag and outputs a Collection
