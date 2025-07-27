@@ -6,14 +6,14 @@ const TOKEN = process.env.HARDCOVER_KEY;
 
 export default async function ( ) {
   console.log( 'Fetching Hardcover book data' );
-  
+
   let currentlyReading = {};
   let wantToRead = {};
   let recentlyRead = {};
-  
+
   // Currently Reading
   try {
-    
+
     const currentlyReadingResponse = await EleventyFetch( 'https://api.hardcover.app/v1/graphql', {
       duration: '12h',
       type: 'json',
@@ -57,17 +57,17 @@ export default async function ( ) {
         category: 'book',
       };
       return transformedBook;
-      
+
     } );
-    
+
     currentlyReading = booklist;
-    
+
   } catch ( e ) {
     console.log( e.status, e.statusText );
-    console.error( `Failed to fetch the currently reading in books.js` );
+    console.error( `Failed to fetch the currently reading in books.js on line 67` );
     return `It has failed: ${e}`;
   }
-  
+
   // Want to Read
   try {
     const wantToReadResponse = await EleventyFetch( 'https://api.hardcover.app/v1/graphql', {
@@ -111,17 +111,17 @@ export default async function ( ) {
         cover: book.book.image?.url || 'https://assets.hardcover.app/static/covers/cover3.png',
         category: 'book',
       };
-      
+
       return transformedBook;
-      
+
     } );
     wantToRead = booklist;
   } catch ( e ) {
     console.log( e.status, e.statusText );
-    console.error( `Failed to fetch the want to read in books.js` );
+    console.error( `Failed to fetch the want to read in books.js on line 121` );
     return `It has failed: ${e}`;
   }
-  
+
   // Recently Read
   try {
     const recentlyReadResponse = await EleventyFetch( 'https://api.hardcover.app/v1/graphql', {
@@ -165,17 +165,17 @@ export default async function ( ) {
         cover: book.book.image?.url || 'https://assets.hardcover.app/static/covers/cover3.png',
         category: 'book',
       };
-      
+
       return transformedBook;
-      
+
     } );
     recentlyRead = booklist;
   } catch ( e ) {
     console.log( e.status, e.statusText );
-    console.error( `Failed to fetch the want to read in books.js` );
+    console.error( `Failed to fetch the want to read in books.js on line 175` );
     return `It has failed: ${e}`;
   }
-  
+
   return {
     currentlyReading: currentlyReading,
     wantToRead: wantToRead,

@@ -275,23 +275,20 @@ export default {
 
     // Get the online content
     let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
+    console.log( 'LastFM items: ' + lastfmContent.length );
+
     let mastodonContent = collection.getAll()[0].data.mastodon;
+    console.log( 'Mastodon items: ' + mastodonContent.length );
 
     // Get the local content
-    let localContent = collection
-    .getAll( )
-    .filter( ( item ) => {
-      if ( !item.data.tags ) return;
-      if ( item.data.tags.includes( 'article' ) || item.data.tags.includes( 'note' ) ) {
-        return item;
-      }
-    } )
-    .sort( function ( a, b ) {
-      return a.date - b.date;
-    } );
+    let localContent = collection.getAll();
+    console.log( 'Local items: ' + localContent.length );
 
     // Merge all content together
-    let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
+    //let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
+    let allContent = [].concat(localContent, lastfmContent, mastodonContent);
+
+    console.log( 'Total items: ' + allContent.length );
 
     // Sort the content
     let sortedContent = allContent.sort(function (a, b) {
