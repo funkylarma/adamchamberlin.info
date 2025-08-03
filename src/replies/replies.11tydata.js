@@ -1,18 +1,18 @@
 export default {
   eleventyComputed: {
     // Modify the permalink
-    permalink: ( data ) => {
-      return `/${data.page.filePathStem.replace('/replies', '/')}/`;
+    permalink: (data) => {
+      return `/${data.page.filePathStem.replace("/replies", "/")}/`;
     },
 
-    eleventyExcludeFromCollections: ( data ) => {
+    eleventyExcludeFromCollections: (data) => {
       return false;
     },
   },
 
   // Set the tag for collections
-  tags: [ 'note' ],
+  tags: ["note", "reply", "activity"],
 
   // What layout to use
-  layout: 'note.liquid',
+  layout: "note.liquid",
 };

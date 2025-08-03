@@ -6,14 +6,15 @@ cover: https://pxscdn.com/public/m/_v2/793919033588244502/7a53dd069-05894d/P6Aum
 category: photography
 tags:
   - pixelfed
+  - activity
 ---
 
 <div class="gallery">
 
 ![](https://pxscdn.com/public/m/_v2/793919033588244502/7a53dd069-05894d/P6AumGMRDxlG/rEZZpGVpa2obd4F3YEUpppFoGJQhJR4pewYynmwG.jpg)
 
-All the scenes last night on the run home.  
-  
+All the scenes last night on the run home.
+
 [#trailRunning](https://pixelfed.social/discover/tags/trailRunning?src=hash "#trailRunning")
 
 </div>

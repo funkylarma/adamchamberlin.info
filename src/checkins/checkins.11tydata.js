@@ -1,16 +1,16 @@
-import { DateTime } from 'luxon';
+import { DateTime } from "luxon";
 
 export default {
   eleventyComputed: {
     // Modify the permalink
-    permalink: ( data ) => {
-      return `/${data.page.filePathStem.replace('/checkins', '/')}/`;
+    permalink: (data) => {
+      return `/${data.page.filePathStem.replace("/checkins", "/")}/`;
     },
   },
 
   // Set the tag for collections
-  tags: [ 'note' ],
+  tags: ["note", "checkin", "activity"],
 
   // What layout to use
-  layout: 'checkin.liquid',
+  layout: "checkin.liquid",
 };

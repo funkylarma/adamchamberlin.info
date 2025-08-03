@@ -6,6 +6,7 @@ cover: [COVER]
 category: movie
 tags:
   - Letterboxd
+  - activity
 ---
 
 [MARKDOWN]

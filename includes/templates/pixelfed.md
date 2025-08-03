@@ -6,6 +6,7 @@ cover: [COVER]
 category: photography
 tags:
   - pixelfed
+  - activity
 ---
 
 <div class="gallery">

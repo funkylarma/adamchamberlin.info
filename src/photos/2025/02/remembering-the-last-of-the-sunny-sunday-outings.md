@@ -6,6 +6,7 @@ cover: https://pxscdn.com/public/m/_v2/793919033588244502/758e75a50-ddd61a/WyM0L
 category: photography
 tags:
   - pixelfed
+  - activity
 ---
 
 <div class="gallery">

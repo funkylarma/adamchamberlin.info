@@ -1,16 +1,16 @@
-import { DateTime } from 'luxon';
+import { DateTime } from "luxon";
 
 export default {
   eleventyComputed: {
     // Modify the permalink
-    permalink: ( data ) => {
-      return `/${data.page.filePathStem.replace('/bookmarks', '/')}/`;
+    permalink: (data) => {
+      return `/${data.page.filePathStem.replace("/bookmarks", "/")}/`;
     },
   },
 
   // Set the tag for collections
-  tags: [ 'note' ],
+  tags: ["note", "bookmark", "activity"],
 
   // What layout to use
-  layout: 'note.liquid',
+  layout: "note.liquid",
 };
