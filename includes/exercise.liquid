@@ -1,341 +1,332 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
   <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
-
-<head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
-  <!-- End Google Tag Manager -->
-  {% include "partials/head.liquid" %}
-</head>
-
-<body>
   
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <a href="#skip" class="skip-link">Skip to main content</a>
-
-  <div class="layout" role="document">
-
-    {% include "partials/header.liquid" %}
-
-    <main class="container main" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-
-      <article class="hentry h-entry note--single{% if category %} {{ category }}{% endif %}">
-        <div class="note--main">
-          <div class="note--content" itemprop="articleBody">
-
-            <header>
-              <div class="note--date">
-                <h1>
-                  {% assetIcon "calendar" %}
-                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">
-                    <a href="{{ page.url }}" class="u-url">
-                      {{ page.date | dateLongDate }}
-                    </a>
-                  </time>
-                </h1>
-              </div><!-- .post--date -->
-              <div class="note--meta">
-                {% if category %}
-                  <div class="note--category">
-                    {% assetIcon "folder" %}
-                    <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
-                      {{ category }}
-                    </a>
-                  </div><!-- .post--category -->
-                {% endif %}
-                {% if tags.length > 1 %}
-                <div class="note--tags">
-                  {% assetIcon "tag" %}
-                  {%- for tag in tags -%}
-                  {% if tag != 'note' and tag != 'exercise' and tag != 'race' %}
-                  <a class="p-category" href="/tagged/{{ tag | slugify }}/"
-                    title="Browse other posts tagged with {{ tag }}" rel="tag">
-                    {{ tag }}
-                  </a>
+  <head>
+    <!-- GoatCounter -->
+    <script data-goatcounter="https://adamchamberlin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <!-- End GoatCounter -->
+    {% include "partials/head.liquid" %}
+  </head>
+  
+  <body>
+  
+    <a href="#skip" class="skip-link">Skip to main content</a>
+  
+    <div class="layout" role="document">
+  
+      {% include "partials/header.liquid" %}
+  
+      <main class="container main" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+  
+        <article class="hentry h-entry note--single{% if category %} {{ category }}{% endif %}">
+          <div class="note--main">
+            <div class="note--content" itemprop="articleBody">
+  
+              <header>
+                <div class="note--date">
+                  <h1>
+                    {% assetIcon "calendar" %}
+                    <time class="dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">
+                      <a href="{{ page.url }}" class="u-url">
+                        {{ page.date | dateLongDate }}
+                      </a>
+                    </time>
+                  </h1>
+                </div><!-- .post--date -->
+                <div class="note--meta">
+                  {% if category %}
+                    <div class="note--category">
+                      {% assetIcon "folder" %}
+                      <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category">
+                        {{ category }}
+                      </a>
+                    </div><!-- .post--category -->
                   {% endif %}
-                  {%- endfor -%}
-                </div><!-- .post--tags -->
-                {% endif %}
-              </div><!-- .post-meta -->
-            </header>
-
-            {% include "partials/hcard.liquid" %}
-            <section class="e-content">
-              <p class="p-name">
-                {{ title }}
-              </p>
-              <div id="map"></div>
-              <div class="note--copy p-content">
-                <h2 class="exercise--header">{{ sport | capitaliseFirstLetter }}</h2>
-                <div class="exercise--details">
-                  <ul>
-                    <li>
-                      <span class="metric heading">Distance:</span> {% if distance == "Unknown" %}}{{ distance }}{% else %}{{ distance | round: 2 }}{% endif %} <span class="metric">km</span>
-                    </li>
-                    <li>
-                      <span class="metric heading">Time:</span> {% if time == "Unknown" %}{{ time }}{% else %}{{ time | secondsToTime }}{% endif %}
-                    </li>
-                    <li>
-                      <span class="metric heading">Calories:</span> {{ calories }}
-                    </li>
-                  </ul>
-                  <table>
-                    <thead>
-                      <tr>
-                        <td></td>
-                        <td>Avg</td>
-                        <td>Max</td>
-                        <td></td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="metric">Speed</td>
-                        <td>{% if avgSpeed == "Unknown" %}{{ avgSpeed }}{% else %}{{ avgSpeed | round: 2 }}{% endif %}</td>
-                        <td>{% if avgSpeed == "Unknown" %}{{ maxSpeed }}{% else %}{{ maxSpeed | round: 2 }}{% endif %}</td>
-                        <td class="metric">km/h</td>
-                      </tr>
-                      <tr>
-                        <td class="metric">Power</td>
-                        <td>{% if avgSpeed == "Unknown" %}{{ avgPower }}{% else %}{{ avgPower | round: 2 }}{% endif %}</td>
-                        <td>{% if avgSpeed == "Unknown" %}{{ maxPower }}{% else %}{{ maxPower | round: 2 }}{% endif %}</td>
-                        <td class="metric">watts</td>
-                      </tr>
-                      <tr>
-                        <td class="metric">Cadence</td>
-                        <td>{% if avgSpeed == "Unknown" %}{{ avgCadence }}{% else %}{{ avgCadence | round: 2 }}{% endif %}</td>
-                        <td>{% if avgSpeed == "Unknown" %}{{ maxCadence }}{% else %}{{ maxCadence | round: 2 }}{% endif %}</td>
-                        <td class="metric">rpm</td>
-                      </tr>
-                      <tr>
-                        <td class="metric">Heart Rate</td>
-                        <td>{{ avgHr }}</td>
-                        <td>{{ maxHr }}</td>
-                        <td class="metric">bpm</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  {% if tags.length > 1 %}
+                  <div class="note--tags">
+                    {% assetIcon "tag" %}
+                    {%- for tag in tags -%}
+                    {% if tag != 'note' and tag != 'exercise' and tag != 'race' %}
+                    <a class="p-category" href="/tagged/{{ tag | slugify }}/"
+                      title="Browse other posts tagged with {{ tag }}" rel="tag">
+                      {{ tag }}
+                    </a>
+                    {% endif %}
+                    {%- endfor -%}
+                  </div><!-- .post--tags -->
+                  {% endif %}
+                </div><!-- .post-meta -->
+              </header>
+  
+              {% include "partials/hcard.liquid" %}
+              <section class="e-content">
+                <p class="p-name">
+                  {{ title }}
+                </p>
+                <div id="map"></div>
+                <div class="note--copy p-content">
+                  <h2 class="exercise--header">{{ sport | capitaliseFirstLetter }}</h2>
+                  <div class="exercise--details">
+                    <ul>
+                      <li>
+                        <span class="metric heading">Distance:</span> {% if distance == "Unknown" %}}{{ distance }}{% else %}{{ distance | round: 2 }}{% endif %} <span class="metric">km</span>
+                      </li>
+                      <li>
+                        <span class="metric heading">Time:</span> {% if time == "Unknown" %}{{ time }}{% else %}{{ time | secondsToTime }}{% endif %}
+                      </li>
+                      <li>
+                        <span class="metric heading">Calories:</span> {{ calories }}
+                      </li>
+                    </ul>
+                    <table>
+                      <thead>
+                        <tr>
+                          <td></td>
+                          <td>Avg</td>
+                          <td>Max</td>
+                          <td></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="metric">Speed</td>
+                          <td>{% if avgSpeed == "Unknown" %}{{ avgSpeed }}{% else %}{{ avgSpeed | round: 2 }}{% endif %}</td>
+                          <td>{% if avgSpeed == "Unknown" %}{{ maxSpeed }}{% else %}{{ maxSpeed | round: 2 }}{% endif %}</td>
+                          <td class="metric">km/h</td>
+                        </tr>
+                        <tr>
+                          <td class="metric">Power</td>
+                          <td>{% if avgSpeed == "Unknown" %}{{ avgPower }}{% else %}{{ avgPower | round: 2 }}{% endif %}</td>
+                          <td>{% if avgSpeed == "Unknown" %}{{ maxPower }}{% else %}{{ maxPower | round: 2 }}{% endif %}</td>
+                          <td class="metric">watts</td>
+                        </tr>
+                        <tr>
+                          <td class="metric">Cadence</td>
+                          <td>{% if avgSpeed == "Unknown" %}{{ avgCadence }}{% else %}{{ avgCadence | round: 2 }}{% endif %}</td>
+                          <td>{% if avgSpeed == "Unknown" %}{{ maxCadence }}{% else %}{{ maxCadence | round: 2 }}{% endif %}</td>
+                          <td class="metric">rpm</td>
+                        </tr>
+                        <tr>
+                          <td class="metric">Heart Rate</td>
+                          <td>{{ avgHr }}</td>
+                          <td>{{ maxHr }}</td>
+                          <td class="metric">bpm</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  {% if updated %}
+                    <div class="markdown-alert markdown-alert-note">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                        </svg>
+                        Article Updated
+                      </p>
+                      <p>
+                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                      </p>
+                    </div>
+                  {% endif %}
+                  {% if rewrite %}
+                    <div class="markdown-alert markdown-alert-important">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                        </svg>
+                        Important
+                      </p>
+                      <p>
+                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                      </p>
+                    </div>
+                  {% endif %}
+                  {{ content }}
                 </div>
-                {% if updated %}
-                  <div class="markdown-alert markdown-alert-note">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                      </svg>
-                      Article Updated
-                    </p>
-                    <p>
-                      Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                      it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                    </p>
-                  </div>
-                {% endif %}
-                {% if rewrite %}
-                  <div class="markdown-alert markdown-alert-important">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                      </svg>
-                      Important
-                    </p>
-                    <p>
-                      There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                    </p>
-                  </div>
-                {% endif %}
-                {{ content }}
-              </div>
-            </section>
-
-            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
-              crossorigin="anonymous">
-            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
-              onload="this.media='all'" fetchpriority="low">
-            <noscript>
-              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
-            </noscript>
-            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
-            <script>
-              window.addEventListener('load', (event) => {
-
-                const geojson = fetch('{{ geojson }}')
-                  .then((res) => {
-                    if (!res.ok) {
-                      throw new Error(`HTTP error! Status: ${res.status}`);
-                    }
-                    return res.json();
-                  })
-                  .then((data) => {
-                    // Extract the start and end
-                    startLngLat = data.features[0].properties.start;
-                    endLngLat = data.features[0].properties.end;
-
-                    // Load the api key
-                    mapboxgl.accessToken = "{{ keys.mapBox }}";
-
-                    // Set the style
-                    let mapStyle = 'mapbox://styles/mapbox/light-v11';
-                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                      mapStyle = 'mapbox://styles/mapbox/dark-v11';
-                    }
-
-                    // Create instance of a map
-                    const map = new mapboxgl.Map({
-                      container: 'map', // container ID
-                      style: mapStyle,
-                        center: startLngLat,
-                        zoom: 4
-                    });
-
-                    // Add some controls
-                    const nav = new mapboxgl.NavigationControl();
-                    map.addControl(nav, 'top-left');
-                    map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('map')}));
-
-                    // Add start and end markers
-                    new mapboxgl.Marker({color: "#36d02f"}).setLngLat(startLngLat).addTo(map);
-                    new mapboxgl.Marker({color: "#c92fd0"}).setLngLat(endLngLat).addTo(map);
-
-                    // On map load
-                    map.on('load', () => {
-
-                      // Geographic coordinates of the LineString
-                      const coordinates = data.features[0].geometry.coordinates;
-
-                      const bounds = new mapboxgl.LngLatBounds(
-                          coordinates[0],
-                          coordinates[0]
-                      );
-
-                      // Extend the 'LngLatBounds' to include every coordinate in the bounds result.
-                      for (const coord of coordinates) {
-                          bounds.extend(coord);
+              </section>
+  
+              <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style"
+                crossorigin="anonymous">
+              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
+                onload="this.media='all'" fetchpriority="low">
+              <noscript>
+                <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
+              </noscript>
+              <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
+              <script>
+                window.addEventListener('load', (event) => {
+  
+                  const geojson = fetch('{{ geojson }}')
+                    .then((res) => {
+                      if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
                       }
-
-                      map.fitBounds(bounds, {
-                          padding: 20
+                      return res.json();
+                    })
+                    .then((data) => {
+                      // Extract the start and end
+                      startLngLat = data.features[0].properties.start;
+                      endLngLat = data.features[0].properties.end;
+  
+                      // Load the api key
+                      mapboxgl.accessToken = "{{ keys.mapBox }}";
+  
+                      // Set the style
+                      let mapStyle = 'mapbox://styles/mapbox/light-v11';
+                      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        mapStyle = 'mapbox://styles/mapbox/dark-v11';
+                      }
+  
+                      // Create instance of a map
+                      const map = new mapboxgl.Map({
+                        container: 'map', // container ID
+                        style: mapStyle,
+                          center: startLngLat,
+                          zoom: 4
                       });
-
-                      // Load the geojson
-                      map.addSource('route', {
-                        type: 'geojson',
-                        data: data
-                      });
-
-                      // Add geojson as layer
-                      map.addLayer({
-                        'id': 'route',
-                        'type': 'line',
-                        'source': 'route',
-                        'layout': {
-                          'line-join': 'round',
-                          'line-cap': 'round'
-                        },
-                        'paint': {
-                          'line-color': '#2f87d0',
-                          'line-width': 8,
-                          'line-blur': 2
+  
+                      // Add some controls
+                      const nav = new mapboxgl.NavigationControl();
+                      map.addControl(nav, 'top-left');
+                      map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('map')}));
+  
+                      // Add start and end markers
+                      new mapboxgl.Marker({color: "#36d02f"}).setLngLat(startLngLat).addTo(map);
+                      new mapboxgl.Marker({color: "#c92fd0"}).setLngLat(endLngLat).addTo(map);
+  
+                      // On map load
+                      map.on('load', () => {
+  
+                        // Geographic coordinates of the LineString
+                        const coordinates = data.features[0].geometry.coordinates;
+  
+                        const bounds = new mapboxgl.LngLatBounds(
+                            coordinates[0],
+                            coordinates[0]
+                        );
+  
+                        // Extend the 'LngLatBounds' to include every coordinate in the bounds result.
+                        for (const coord of coordinates) {
+                            bounds.extend(coord);
                         }
+  
+                        map.fitBounds(bounds, {
+                            padding: 20
+                        });
+  
+                        // Load the geojson
+                        map.addSource('route', {
+                          type: 'geojson',
+                          data: data
+                        });
+  
+                        // Add geojson as layer
+                        map.addLayer({
+                          'id': 'route',
+                          'type': 'line',
+                          'source': 'route',
+                          'layout': {
+                            'line-join': 'round',
+                            'line-cap': 'round'
+                          },
+                          'paint': {
+                            'line-color': '#2f87d0',
+                            'line-width': 8,
+                            'line-blur': 2
+                          }
+                        });
                       });
-                    });
-
-                  })
-                  .catch((error) =>
-                    console.error("Unable to fetch geojson:", error)
-                  );
-              });
-            </script>
-
-          </div><!-- .note--content -->
-        </div><!-- .note--main -->
-      </article><!-- .note--main -->
-
-      {% if related %}
-        <aside class="related">
-          <h2>Related Content</h2>
-          <ul>
-          {% assign posts = related | getRelated: collections.all %}
-          {% for post in posts %}
-            <li>
-              {% if post.data.category == 'article' %}
-                {% assetIcon 'article' %}
-                Also written -
-
-              {% elsif post.data.category == 'note' %}
-                {% assetIcon "note" %}
-                Noted about -
-
-              {% elsif post.data.category == 'rsvp' %}
-                {% assetIcon "rsvp" %}
-                Attended -
-
-              {% elsif post.data.category == 'reply' %}
-                {% assetIcon "reply" %}
-                Commented to -
-
-              {% elsif post.data.category == 'signup' %}
-                {% assetIcon "signup" %}
-                Original signup -
-
-              {% elsif post.data.category == 'exercise' %}
-                {% assetIcon "stopwatch" %}
-                Training -
-
-              {% elsif post.data.category == 'race' %}
-                {% assetIcon "trophy" %}
-                Race file -
-
-              {% elsif post.data.category == 'checkin' %}
-                {% assetIcon "checkin" %}
-                Checked in -
-
-              {% endif %}
-              <a href="{{ post.url }}">
-                {{ post.data.title }}
-              </a>
-            </li>
-          {% endfor %}
-          </ul>
-        </aside>
-      {% endif %}
-
-      <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ page.url | absoluteUrl }}"
-          },
-          "headline": "{{ title }}",
-          "description": "{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}",
-          "image": "{{ cover | absoluteUrl }}",
-          "author": {
-            "@type": "Person",
-            "name": "{{ metadata.author.name }}",
-            "url": "{{ globals.url }}"
-          },
-          "datePublished": "{{ page.date | dateHtmlString }}"
-        }
-        </script>
-
-      {% include "partials/interactions.liquid" %}
-
-    </main>
-
-    {% include "partials/footer.liquid" %}
-
-  </div><!-- .container -->
-
-</body>
+  
+                    })
+                    .catch((error) =>
+                      console.error("Unable to fetch geojson:", error)
+                    );
+                });
+              </script>
+  
+            </div><!-- .note--content -->
+          </div><!-- .note--main -->
+        </article><!-- .note--main -->
+  
+        {% if related %}
+          <aside class="related">
+            <h2>Related Content</h2>
+            <ul>
+            {% assign posts = related | getRelated: collections.all %}
+            {% for post in posts %}
+              <li>
+                {% if post.data.category == 'article' %}
+                  {% assetIcon 'article' %}
+                  Also written -
+  
+                {% elsif post.data.category == 'note' %}
+                  {% assetIcon "note" %}
+                  Noted about -
+  
+                {% elsif post.data.category == 'rsvp' %}
+                  {% assetIcon "rsvp" %}
+                  Attended -
+  
+                {% elsif post.data.category == 'reply' %}
+                  {% assetIcon "reply" %}
+                  Commented to -
+  
+                {% elsif post.data.category == 'signup' %}
+                  {% assetIcon "signup" %}
+                  Original signup -
+  
+                {% elsif post.data.category == 'exercise' %}
+                  {% assetIcon "stopwatch" %}
+                  Training -
+  
+                {% elsif post.data.category == 'race' %}
+                  {% assetIcon "trophy" %}
+                  Race file -
+  
+                {% elsif post.data.category == 'checkin' %}
+                  {% assetIcon "checkin" %}
+                  Checked in -
+  
+                {% endif %}
+                <a href="{{ post.url }}">
+                  {{ post.data.title }}
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          </aside>
+        {% endif %}
+  
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "{{ page.url | absoluteUrl }}"
+            },
+            "headline": "{{ title }}",
+            "description": "{% if description %}{{ description }}{% else %}{{ title | metaDescription }}{% endif %}",
+            "image": "{{ cover | absoluteUrl }}",
+            "author": {
+              "@type": "Person",
+              "name": "{{ metadata.author.name }}",
+              "url": "{{ globals.url }}"
+            },
+            "datePublished": "{{ page.date | dateHtmlString }}"
+          }
+          </script>
+  
+        {% include "partials/interactions.liquid" %}
+  
+      </main>
+  
+      {% include "partials/footer.liquid" %}
+  
+    </div><!-- .container -->
+  
+  </body>
 
 </html>

@@ -1,70 +1,63 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
-  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+  <!-- Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
+  
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
-    <!-- End Google Tag Manager -->
+    <!-- GoatCounter -->
+    <script data-goatcounter="https://adamchamberlin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <!-- End GoatCounter -->
     {% include "partials/head.liquid" %}
   </head>
+  
   <body>
-    
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <a href="#skip" class="skip-link">Skip to main content</a>
-    <div class="hfeed h-feed layout" role="document">
-      {% include "partials/hcard.liquid" %}
-      {% include "partials/header.liquid" %}
-      <main class="container main" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-        <div class="page">
-          <header class="page--header">
-            <h1 class="page--title p-name">{{ title }}</h1>
-            <div class="tagline">
-              {% if subhead %}
-                <p>{{ subhead }}</p>
+  
+      <a href="#skip" class="skip-link">Skip to main content</a>
+      <div class="hfeed h-feed layout" role="document">
+        {% include "partials/hcard.liquid" %}
+        {% include "partials/header.liquid" %}
+        <main class="container main" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+          <div class="page">
+            <header class="page--header">
+              <h1 class="page--title p-name">{{ title }}</h1>
+              <div class="tagline">
+                {% if subhead %}
+                  <p>{{ subhead }}</p>
+                {% endif %}
+              </div><!-- .tagline -->
+            </header><!-- .page--header -->
+            <div class="page--content">
+              {% if updated %}
+                <div class="markdown-alert markdown-alert-note">
+                  <p class="markdown-alert-title">
+                    <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                      <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                    </svg>
+                    Article Updated
+                  </p>
+                  <p>
+                    Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                    it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                  </p>
+                </div>
               {% endif %}
-            </div><!-- .tagline -->
-          </header><!-- .page--header -->
-          <div class="page--content">
-            {% if updated %}
-              <div class="markdown-alert markdown-alert-note">
-                <p class="markdown-alert-title">
-                  <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                  </svg>
-                  Article Updated
-                </p>
-                <p>
-                  Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                  it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                </p>
-              </div>
-            {% endif %}
-            {% if rewrite %}
-              <div class="markdown-alert markdown-alert-important">
-                <p class="markdown-alert-title">
-                  <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                    <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                  </svg>
-                  Important
-                </p>
-                <p>
-                  There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                </p>
-              </div>
-            {% endif %}
-            {{ content }}
-          </div>
-        </div><!-- .page--content -->
-      </main>
-      {% include "partials/footer.liquid" %}
-    </div><!-- .container -->
-  </body>
+              {% if rewrite %}
+                <div class="markdown-alert markdown-alert-important">
+                  <p class="markdown-alert-title">
+                    <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                      <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                    </svg>
+                    Important
+                  </p>
+                  <p>
+                    There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                  </p>
+                </div>
+              {% endif %}
+              {{ content }}
+            </div>
+          </div><!-- .page--content -->
+        </main>
+        {% include "partials/footer.liquid" %}
+      </div><!-- .container -->
+    </body>
 </html>

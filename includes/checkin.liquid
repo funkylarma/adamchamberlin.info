@@ -1,242 +1,233 @@
 <!doctype html>
 <html lang="{{ metadata.locale }}" prefix="og: https://ogp.me/ns#">
-<!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
-
-<head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KM52M2F');</script>
-  <!-- End Google Tag Manager -->
-  {% include "partials/head.liquid" %}
-</head>
-
-<body>
+  <!--! Hello you curious user, if it helps you can see the full code over on GitHub: {{ metadata.repo }} -->
   
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM52M2F"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <a href="#skip" class="skip-link">Skip to main content</a>
-
-  <div class="layout" role="document">
-
-    {% include "partials/header.liquid" %}
-
-    <main class="container main" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
-
-      <article class="h-entry note--single checkin">
-        <div class="note--main">
-          <div class="note--content" itemprop="articleBody">
-
-            <header>
-              <div class="note--date">
-                <h1>
-                  {% assetIcon "calendar" %}
-                  <time class="dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">
-                    <a href="{{ page.url }}" class="u-url">
-                      {{ page.date | dateLongDate }}
+  <head>
+    <!-- GoatCounter -->
+    <script data-goatcounter="https://adamchamberlin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <!-- End GoatCounter -->
+    {% include "partials/head.liquid" %}
+  </head>
+  
+  <body>
+  
+    <a href="#skip" class="skip-link">Skip to main content</a>
+  
+    <div class="layout" role="document">
+  
+      {% include "partials/header.liquid" %}
+  
+      <main class="container main" id="#skip" tabindex="-1" data-input-path="{{ page.filePathStem }}">
+  
+        <article class="h-entry note--single checkin">
+          <div class="note--main">
+            <div class="note--content" itemprop="articleBody">
+  
+              <header>
+                <div class="note--date">
+                  <h1>
+                    {% assetIcon "calendar" %}
+                    <time class="dt-published" datetime="{{ page.date | dateHtmlString }}" itemprop="datePublished">
+                      <a href="{{ page.url }}" class="u-url">
+                        {{ page.date | dateLongDate }}
+                      </a>
+                    </time>
+                  </h1>
+                </div><!-- .post--date -->
+                <div class="note--meta">
+                  {% if category %}
+                  <div class="note--category">
+                    <span>Category: </span>
+                    <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
+                      {{ category }}
                     </a>
-                  </time>
-                </h1>
-              </div><!-- .post--date -->
-              <div class="note--meta">
-                {% if category %}
-                <div class="note--category">
-                  <span>Category: </span>
-                  <a class="p-category" href="/category/{{ category | slugify }}/" title="Browse other posts in the {{ category }} category" rel="tag">
-                    {{ category }}
-                  </a>
-                </div><!-- .post--category -->
-                {% endif %}
-                {% if tags.length > 1 %}
-                <div class="note--tags">
-                  <span>Tagged: </span>
-                  {%- for tag in tags -%}
-                  {% if tag != 'note' and tag != 'checkin' %}
-                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}" rel="tag">
-                    {{ tag }}
-                  </a>
+                  </div><!-- .post--category -->
                   {% endif %}
-                  {%- endfor -%}
-
-                </div><!-- .post--tags -->
-                {% endif %}
-              </div><!-- .post-meta -->
-            </header>
-
-            {% include "partials/hcard.liquid" %}
-
-            <section class="e-content" itemscope itemtype="https://schema.org/Place">
-              <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
-                <meta itemprop="latitude" content="{{ latitude }}" />
-                <meta itemprop="longitude" content="{{ longitude }}" />
-              </div>
-              <p class="p-name" itemprop="name">
-                Checked in at:
-                {% if url %}
-                <a href="{{ url }}">{{ title }}</a>
-                {% else %}
-                {{ title }}
-                {% endif %}
-              </p>
-              <div id="map"></div>
-              <div class="note--copy p-content">
-                {% if updated %}
-                  <div class="markdown-alert markdown-alert-note">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
-                      </svg>
-                      Article Updated
-                    </p>
-                    <p>
-                      Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
-                      it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
-                    </p>
-                  </div>
-                {% endif %}
-                {% if rewrite %}
-                  <div class="markdown-alert markdown-alert-important">
-                    <p class="markdown-alert-title">
-                      <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-                        <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-                      </svg>
-                      Important
-                    </p>
-                    <p>
-                      There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
-                    </p>
-                  </div>
-                {% endif %}
-                {{ content }}
-              </div>
-            </section>
-
-            <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style" crossorigin="anonymous">
-            <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all" onload="this.media='all'" fetchpriority="low">
-            <noscript>
-              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
-            </noscript>
-            <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
-            <script>
-              window.addEventListener('load', (event) => {
-                // Load the api key
-                mapboxgl.accessToken = "{{ keys.mapBox }}";
-
-                let mapStyle = 'mapbox://styles/mapbox/light-v11';
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  mapStyle = 'mapbox://styles/mapbox/dark-v11';
-                }
-
-                // Create instance of a map
-                const map = new mapboxgl.Map({
-                  container: 'map', // container ID
-                  style: mapStyle,
-                  center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                  zoom: 4 // starting zoom
-                });
-
-                // Add some controls
-                const nav = new mapboxgl.NavigationControl();
-                map.addControl(nav, 'top-left');
-                map.addControl(new mapboxgl.FullscreenControl({
-                  container: document.querySelector('map')
-                }));
-
-                // Drop the pin
-                new mapboxgl.Marker({
-                  color: "#36d02f"
-                }).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
-
-                // On map load
-                map.on('load', () => {
-                  map.fitBounds([
-                    [{{ longitude | plus: 0.001 }}, {{ latitude | plus: 0.001 }}],
-                    [{{ longitude | minus: 0.001 }}, {{ latitude | minus: 0.001 }}]
-                  ], {
-                    padding: 50
+                  {% if tags.length > 1 %}
+                  <div class="note--tags">
+                    <span>Tagged: </span>
+                    {%- for tag in tags -%}
+                    {% if tag != 'note' and tag != 'checkin' %}
+                    <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}" rel="tag">
+                      {{ tag }}
+                    </a>
+                    {% endif %}
+                    {%- endfor -%}
+  
+                  </div><!-- .post--tags -->
+                  {% endif %}
+                </div><!-- .post-meta -->
+              </header>
+  
+              {% include "partials/hcard.liquid" %}
+  
+              <section class="e-content" itemscope itemtype="https://schema.org/Place">
+                <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                  <meta itemprop="latitude" content="{{ latitude }}" />
+                  <meta itemprop="longitude" content="{{ longitude }}" />
+                </div>
+                <p class="p-name" itemprop="name">
+                  Checked in at:
+                  {% if url %}
+                  <a href="{{ url }}">{{ title }}</a>
+                  {% else %}
+                  {{ title }}
+                  {% endif %}
+                </p>
+                <div id="map"></div>
+                <div class="note--copy p-content">
+                  {% if updated %}
+                    <div class="markdown-alert markdown-alert-note">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+                        </svg>
+                        Article Updated
+                      </p>
+                      <p>
+                        Whilst this article was originally written on the {{ date | getDayOrdinal }} {{ date | getMonthShortName }} {{ date | getYear }}, <br />
+                        it was updated on the {{ updated | getDayOrdinal }} {{ updated | getMonthShortName }} {{ updated | getYear }}
+                      </p>
+                    </div>
+                  {% endif %}
+                  {% if rewrite %}
+                    <div class="markdown-alert markdown-alert-important">
+                      <p class="markdown-alert-title">
+                        <svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                          <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+                        </svg>
+                        Important
+                      </p>
+                      <p>
+                        There is an updated version of this article <a href="{{ rewrite | absoluteUrl }}">over here</a>.
+                      </p>
+                    </div>
+                  {% endif %}
+                  {{ content }}
+                </div>
+              </section>
+  
+              <link rel="preload" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style" crossorigin="anonymous">
+              <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all" onload="this.media='all'" fetchpriority="low">
+              <noscript>
+                <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
+              </noscript>
+              <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
+              <script>
+                window.addEventListener('load', (event) => {
+                  // Load the api key
+                  mapboxgl.accessToken = "{{ keys.mapBox }}";
+  
+                  let mapStyle = 'mapbox://styles/mapbox/light-v11';
+                  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    mapStyle = 'mapbox://styles/mapbox/dark-v11';
+                  }
+  
+                  // Create instance of a map
+                  const map = new mapboxgl.Map({
+                    container: 'map', // container ID
+                    style: mapStyle,
+                    center: [{{ longitude }}, {{ latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+                    zoom: 4 // starting zoom
+                  });
+  
+                  // Add some controls
+                  const nav = new mapboxgl.NavigationControl();
+                  map.addControl(nav, 'top-left');
+                  map.addControl(new mapboxgl.FullscreenControl({
+                    container: document.querySelector('map')
+                  }));
+  
+                  // Drop the pin
+                  new mapboxgl.Marker({
+                    color: "#36d02f"
+                  }).setLngLat([{{ longitude }}, {{ latitude }}]).addTo(map);
+  
+                  // On map load
+                  map.on('load', () => {
+                    map.fitBounds([
+                      [{{ longitude | plus: 0.001 }}, {{ latitude | plus: 0.001 }}],
+                      [{{ longitude | minus: 0.001 }}, {{ latitude | minus: 0.001 }}]
+                    ], {
+                      padding: 50
+                    });
                   });
                 });
-              });
-            </script>
-            <script type="application/ld+json">
-              {
-                "@context": "https://schema.org",
-                "@type": "Place",
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "latitude": "{{ latitude }}",
-                  "longitude": "{{ longitude }}"
-                },
-                "name": "{{ title }}"
-              }
-              };
-            </script>
-          </div><!-- .note--content -->
-        </div><!-- .note--main -->
-      </article><!-- .note--main -->
-
-      {% if related %}
-        <aside class="related">
-          <h2>Related Content</h2>
-          <ul>
-          {% assign posts = related | getRelated: collections.all %}
-          {% for post in posts %}
-            <li>
-              {% if post.data.category == 'article' %}
-                {% assetIcon 'article' %}
-                Also written -
-
-              {% elsif post.data.category == 'note' %}
-                {% assetIcon "note" %}
-                Noted about -
-
-              {% elsif post.data.category == 'rsvp' %}
-                {% assetIcon "rsvp" %}
-                Attended -
-
-              {% elsif post.data.category == 'reply' %}
-                {% assetIcon "reply" %}
-                Commented to -
-
-              {% elsif post.data.category == 'signup' %}
-                {% assetIcon "signup" %}
-                Original signup -
-
-              {% elsif post.data.category == 'exercise' %}
-                {% assetIcon "stopwatch" %}
-                Training -
-
-              {% elsif post.data.category == 'race' %}
-                {% assetIcon "trophy" %}
-                Race file -
-
-              {% elsif post.data.category == 'checkin' %}
-                {% assetIcon "checkin" %}
-                Checked in -
-
-              {% endif %}
-              <a href="{{ post.url }}">
-                {{ post.data.title }}
-              </a>
-            </li>
-          {% endfor %}
-          </ul>
-        </aside>
-      {% endif %}
-
-      {% include "partials/interactions.liquid" %}
-
-    </main>
-
-    {% include "partials/footer.liquid" %}
-
-  </div><!-- .container -->
-
-</body>
+              </script>
+              <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Place",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "{{ latitude }}",
+                    "longitude": "{{ longitude }}"
+                  },
+                  "name": "{{ title }}"
+                }
+                };
+              </script>
+            </div><!-- .note--content -->
+          </div><!-- .note--main -->
+        </article><!-- .note--main -->
+  
+        {% if related %}
+          <aside class="related">
+            <h2>Related Content</h2>
+            <ul>
+            {% assign posts = related | getRelated: collections.all %}
+            {% for post in posts %}
+              <li>
+                {% if post.data.category == 'article' %}
+                  {% assetIcon 'article' %}
+                  Also written -
+  
+                {% elsif post.data.category == 'note' %}
+                  {% assetIcon "note" %}
+                  Noted about -
+  
+                {% elsif post.data.category == 'rsvp' %}
+                  {% assetIcon "rsvp" %}
+                  Attended -
+  
+                {% elsif post.data.category == 'reply' %}
+                  {% assetIcon "reply" %}
+                  Commented to -
+  
+                {% elsif post.data.category == 'signup' %}
+                  {% assetIcon "signup" %}
+                  Original signup -
+  
+                {% elsif post.data.category == 'exercise' %}
+                  {% assetIcon "stopwatch" %}
+                  Training -
+  
+                {% elsif post.data.category == 'race' %}
+                  {% assetIcon "trophy" %}
+                  Race file -
+  
+                {% elsif post.data.category == 'checkin' %}
+                  {% assetIcon "checkin" %}
+                  Checked in -
+  
+                {% endif %}
+                <a href="{{ post.url }}">
+                  {{ post.data.title }}
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          </aside>
+        {% endif %}
+  
+        {% include "partials/interactions.liquid" %}
+  
+      </main>
+  
+      {% include "partials/footer.liquid" %}
+  
+    </div><!-- .container -->
+  
+  </body>
 
 </html>
