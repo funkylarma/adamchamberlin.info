@@ -214,11 +214,9 @@
   li {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    gap: 0 1rem;
-    height: 3rem;
     align-items: center;
+    padding-bottom: 1rem;
     
     h2 {
       font-size: var(--main-font-size-small);
@@ -239,6 +237,7 @@
     
     time {
       font-size: var(--main-font-size-x-small);
+      text-align: right;
       
       @media (max-width: 550px) {
         display: none;

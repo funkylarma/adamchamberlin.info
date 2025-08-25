@@ -30,7 +30,7 @@ export default {
   },
 
   // Set the tag for collections
-  tags: ["note", "service", "activity"],
+  tags: ["service", "activity"],
 
   // What layout to use
   layout: "note.liquid",

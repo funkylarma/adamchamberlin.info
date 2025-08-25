@@ -10,9 +10,6 @@ export default {
     },
   },
   
-  // Set the tag for collections
-  tags: [ 'note' ],
-  
   // What layout to use
   layout: 'note.liquid',
 };

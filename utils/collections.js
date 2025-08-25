@@ -280,7 +280,7 @@ export default {
     console.log("Mastodon items: " + mastodonContent.length);
 
     // Get the local content
-    let localContent = collection.getFilteredByTags("activity");
+    let localContent = collection.getFilteredByTag("activity");
     console.log("Local items: " + localContent.length);
 
     // Merge all content together

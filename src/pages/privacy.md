@@ -18,6 +18,8 @@ In my day job I work with many clients who wish to track and monitor their site 
 
 I have no need for any of that, my life will not change if you view an Amazon listing after viewing my site and I do not get paid by the view. So I do not track or plan to track any of your visits.
 
+Site traffic is recorded via [GoatCounter](https://www.goatcounter.com/) just a vanity score and to give me a little idea of what is interesting. There are no cookies or any identifiable information stored. Please refer to the [GDPR policy](https://www.goatcounter.com/help/gdpr) for more information.
+
 ---
 
 ## Embedded content from other websites
@@ -34,4 +36,13 @@ CloudFlare, the hosting provider for this site do insert a script tag that is us
 
 Currently I do not store anything within your browser outside of the usual browser caching process. There is a plan in the future where I will allow you to control some settings on the site such as theme appearance but this is a long way off.
 
----
+You can change your cookie preferences any time by clicking the above button. This will let you revisit the cookie consent banner and change your preferences or withdraw your consent right away.
+
+In addition to this, different browsers provide different methods to block and delete cookies used by websites. You can change the settings of your browser to block/delete the cookies. Listed below are the links to the support documents on how to manage and delete cookies from the major web browsers:
+
+- [Chrome](https://support.google.com/accounts/answer/32050)
+- [Safari](https://support.apple.com/en-in/guide/safari/sfri11471/mac)
+- [Firefox](https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox?redirectslug=delete-cookies-remove-info-websites-stored&redirectlocale=en-US)
+- [Internet Explorer](https://support.microsoft.com/en-us/topic/how-to-delete-cookie-files-in-internet-explorer-bca9446f-d873-78de-77ba-d42645fa52fc)
+
+If you are using any other web browser, please visit your browser’s official support documents.

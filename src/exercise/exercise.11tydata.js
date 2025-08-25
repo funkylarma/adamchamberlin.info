@@ -9,7 +9,7 @@ export default {
   },
 
   // Set the tag for collections
-  tags: ["note", "exercise", "activity"],
+  tags: ["exercise", "activity"],
 
   // What layout to use
   layout: "exercise.liquid",

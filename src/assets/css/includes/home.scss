@@ -45,7 +45,6 @@
   }
   
   h2 {
-    color: var(--main-color-secondary);
     font-size: var(--main-font-size-small);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -192,6 +191,7 @@
           
           a {
             text-decoration: none;
+            color: var(--main-color-primary);
             
             &:hover {
               color: var(--main-color-quaternary);
@@ -200,10 +200,8 @@
         }
         
         h3 {
-          color: var(--main-color-tertiary);
           
           a {
-            color: var(--main-color-tertiary);
             
             &:hover {
               color: var(--main-color-primary);
@@ -255,11 +253,11 @@
     
     li {
       font-size: var(--main-font-size-x-small);
-      margin: 0;
       
       time {
         font-size: var(--main-font-size-x-small);
         display: block;
+        text-align: right;
       }
     }
   }
@@ -289,11 +287,11 @@
     
     li {
       font-size: var(--main-font-size-x-small);
-      margin: 0;
       
       time {
         font-size: var(--main-font-size-x-small);
         display: block;
+        text-align: right;
       }
     }
   }
@@ -326,7 +324,6 @@
       
       li {
         font-size: var(--main-font-size-x-small);
-        margin: 0;
       }
     }
   }

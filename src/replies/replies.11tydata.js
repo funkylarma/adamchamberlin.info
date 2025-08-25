@@ -11,7 +11,7 @@ export default {
   },
 
   // Set the tag for collections
-  tags: ["note", "reply", "activity"],
+  tags: ["reply", "activity"],
 
   // What layout to use
   layout: "note.liquid",

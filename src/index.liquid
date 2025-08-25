@@ -59,7 +59,7 @@ tags:
             {%- for tag in post.data.tags -%}
             {% if tag != 'article' %}
             <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
-              {{ tag }}
+              {{ tag }} 
             </a>
             {% endif %}
             {%- endfor -%}
@@ -79,7 +79,6 @@ tags:
              loading="lazy" />
       </div><!-- .post-image -->
       {% endif %}
-      </a>
     </li>
     {% endfor %}
   </ul>
