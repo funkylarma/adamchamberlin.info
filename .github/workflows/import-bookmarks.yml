@@ -3,10 +3,10 @@ name: Import Bookmarks
 on:
   push:
     branches:
-      - 'main'
+      - "main"
 
   schedule:
-    - cron: '45 5,17 * * *'
+    - cron: "45 5,17 * * *"
 
   workflow_dispatch:
 
@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Process the Reeder Bookmarks feed list
-        uses: funkylarma/processBookmarks@master
+        uses: funkylarma/processBookmarks@main
 
       - name: Commit and push any new bookmarks
         run: |

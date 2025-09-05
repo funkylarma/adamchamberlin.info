@@ -3,10 +3,10 @@ name: Import Movies
 on:
   push:
     branches:
-      - 'main'
+      - "main"
 
   schedule:
-    - cron: '15 5,17 * * *'
+    - cron: "15 5,17 * * *"
 
   workflow_dispatch:
 
@@ -19,17 +19,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout latest copy of the site
         uses: actions/checkout@v2
 
       - name: Process the Letterboxd feed list
-        uses: funkylarma/processMovies@master
+        uses: funkylarma/processMovies@main
 
       - name: Commit and push any new movie watches
         run: |
-            git config --global user.email "funkylarma@users.noreply.github.com"
-            git config --global user.name "funkylarma via GitHub Actions"
-            git add 'src/media/**/*.md'
-            git diff --quiet && git diff --staged --quiet || git commit -am "New movie watches added - Automated"
-            git push
+          git config --global user.email "funkylarma@users.noreply.github.com"
+          git config --global user.name "funkylarma via GitHub Actions"
+          git add 'src/media/**/*.md'
+          git diff --quiet && git diff --staged --quiet || git commit -am "New movie watches added - Automated"
+          git push

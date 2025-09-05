@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/funkylarma/adamchamberlin.info/issues"
   },
-  "homepage": "https://github.com/funkylarma/adamchamberlin.info/blob/master/README.md",
+  "homepage": "https://github.com/funkylarma/adamchamberlin.info/blob/main/README.md",
   "keywords": [],
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

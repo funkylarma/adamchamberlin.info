@@ -3,10 +3,10 @@ name: Import Likes and Favorites
 on:
   push:
     branches:
-      - 'main'
+      - "main"
 
   schedule:
-    - cron: '30 5,17 * * *'
+    - cron: "30 5,17 * * *"
 
   workflow_dispatch:
 
@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Process my Starred feeds list
-        uses: funkylarma/processLikes@master
+        uses: funkylarma/processLikes@main
 
       - name: Commit and push any new likes
         run: |
