@@ -2,3 +2,9 @@
 name = "adamchamberlin"
 pages_build_output_dir = "_site"
 compatibility_date = "2025-05-05"
+
+[vars]
+ELEVENTY_ENV = "production"
+
+[env.production.vars]
+ELEVENTY_ENV = "production"
