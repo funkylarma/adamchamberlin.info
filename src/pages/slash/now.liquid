@@ -164,14 +164,18 @@ related:
 </div>
 <p>
 <ul class="movie--list">
- {% for movie in collections.recentMovies limit: 8 %}
-    <li>
-      <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
+  {% if collections.recentMovies.length >= 1 %}
+    <li>Have not watch a lot lately</li>
+  {% else %}
+    {% for movie in collections.recentMovies limit: 8 %}
+      <li>
+        <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
         <img src="{{ movie.data.cover }}" title="{{ movie.data.title | escape | strip_html }}" alt="Cover of {{ movie.data.title | stripDoubleQuote | escape }}" width="120" loading="lazy" class="no-frills" eleventy:optional>
-      </a>
-      <p>{{ movie.data.title | escape | strip_html }}</p>
-    </li>
-  {% endfor %}
+        </a>
+        <p>{{ movie.data.title | escape | strip_html }}</p>
+      </li>
+    {% endfor %}
+  {% endif %}
 </ul>
 </p>
 <p class="small">View more <a href="/movies/">watches</a></p>

@@ -1,23 +1,23 @@
 /** @format */
 
-import fs from "node:fs";
-import _ from "lodash";
-import writingStats from "writing-stats";
-import moment from "moment";
-import { month_names } from "./constants.js";
-import { nth } from "./constants.js";
+import fs from 'node:fs';
+import _ from 'lodash';
+import writingStats from 'writing-stats';
+import moment from 'moment';
+import { month_names } from './constants.js';
+import { nth } from './constants.js';
 
 function processPostFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, "utf8");
+    let content = fs.readFileSync(filePath, 'utf8');
     // remove front matter
-    content = content.replace(/---\n.*?\n---/s, "");
+    content = content.replace(/---\n.*?\n---/s, '');
     // remove empty lines
-    content = content.replace(/^\s*[\r\n]/gm, "");
+    content = content.replace(/^\s*[\r\n]/gm, '');
     const codeBlockMatches = content.match(/```(.*?)```/gis);
     const codeBlocks = codeBlockMatches ? codeBlockMatches.length : 0;
     // remove code blocks
-    content = content.replace(/(```.+?```)/gms, "");
+    content = content.replace(/(```.+?```)/gms, '');
     const stats = writingStats(content);
     return {
       characterCount: stats.characterCount,
@@ -45,10 +45,7 @@ function makeYearStats(
   yearCharacterCount,
   yearParagraphCount,
 ) {
-  const daysInYear =
-    (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0
-      ? 366
-      : 365;
+  const daysInYear = (currentYear % 4 === 0 && currentYear % 100 > 0) || currentYear % 400 == 0 ? 366 : 365;
 
   return {
     year: currentYear,
@@ -57,15 +54,9 @@ function makeYearStats(
     wordCount: yearWordCount,
     codeBlockCount: yearCodeBlockCount,
     avgDays: parseFloat(avgDays.toFixed(2)),
-    avgCharacterCount: parseFloat(
-      (yearCharacterCount / yearPostCount).toFixed(2),
-    ),
-    avgCodeBlockCount: parseFloat(
-      (yearCodeBlockCount / yearPostCount).toFixed(2),
-    ),
-    avgParagraphCount: parseFloat(
-      (yearParagraphCount / yearPostCount).toFixed(2),
-    ),
+    avgCharacterCount: parseFloat((yearCharacterCount / yearPostCount).toFixed(2)),
+    avgCodeBlockCount: parseFloat((yearCodeBlockCount / yearPostCount).toFixed(2)),
+    avgParagraphCount: parseFloat((yearParagraphCount / yearPostCount).toFixed(2)),
     avgWordCount: parseFloat((yearWordCount / yearPostCount).toFixed(2)),
   };
 }
@@ -76,10 +67,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (
-          item.data.tags.includes("article") ||
-          item.data.tags.includes("note")
-        ) {
+        if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -95,7 +83,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (item.data.tags.includes("article")) {
+        if (item.data.tags.includes('article')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -111,7 +99,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (item.data.tags.includes("note")) {
+        if (item.data.tags.includes('note')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -130,7 +118,7 @@ export default {
     const articles = allContent
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "article") {
+        if (item.data.category == 'article') {
           return item;
         }
       })
@@ -139,7 +127,7 @@ export default {
     const notes = allContent
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "note") {
+        if (item.data.category == 'note') {
           return item;
         }
       })
@@ -148,7 +136,7 @@ export default {
     const comments = allContent
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "reply") {
+        if (item.data.category == 'reply') {
           return item;
         }
       })
@@ -157,7 +145,7 @@ export default {
     const checkin = allContent
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "checkin") {
+        if (item.data.category == 'checkin') {
           return item;
         }
       })
@@ -166,7 +154,7 @@ export default {
     const photo = allContent
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "photography") {
+        if (item.data.category == 'photography') {
           return item;
         }
       })
@@ -176,11 +164,11 @@ export default {
       .filter((item) => {
         if (!item.data.category) return;
         if (
-          item.data.category !== "article" &&
-          item.data.category !== "note" &&
-          item.data.category !== "reply" &&
-          item.data.category !== "checkin" &&
-          item.data.category !== "photography"
+          item.data.category !== 'article' &&
+          item.data.category !== 'note' &&
+          item.data.category !== 'reply' &&
+          item.data.category !== 'checkin' &&
+          item.data.category !== 'photography'
         ) {
           return item;
         }
@@ -205,7 +193,7 @@ export default {
       })
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "movie") {
+        if (item.data.category == 'movie') {
           return item;
         }
       })
@@ -221,7 +209,7 @@ export default {
       })
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "book") {
+        if (item.data.category == 'book') {
           return item;
         }
       })
@@ -234,7 +222,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "signup") {
+        if (item.data.category == 'signup') {
           let todaysDate = new Date();
           let eventDate = new Date(item.data.start);
           if (todaysDate < eventDate) {
@@ -256,7 +244,7 @@ export default {
       })
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category == "service") {
+        if (item.data.category == 'service') {
           return item;
         }
       });
@@ -274,19 +262,19 @@ export default {
   activityContent: function (collection) {
     // Get the online content
     let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
-    console.log("LastFM items: " + lastfmContent.length);
+    console.log('LastFM items: ' + lastfmContent.length);
 
     let mastodonContent = collection.getAll()[0].data.mastodon;
-    console.log("Mastodon items: " + mastodonContent.length);
+    console.log('Mastodon items: ' + mastodonContent.length);
 
     // Get the local content
-    let localContent = collection.getFilteredByTag("activity");
-    console.log("Local items: " + localContent.length);
+    let localContent = collection.getFilteredByTag('activity');
+    console.log('Local items: ' + localContent.length);
 
     // Merge all content together
     let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
 
-    console.log("Total items: " + allContent.length);
+    console.log('Total items: ' + allContent.length);
 
     // Sort the content
     let sortedContent = allContent.sort(function (a, b) {
@@ -305,7 +293,7 @@ export default {
       .forEach((item) => {
         if (!item.data.tags) return;
         item.data.tags
-          .filter((tag) => !["page", "article", "note", "all"].includes(tag))
+          .filter((tag) => !['page', 'article', 'note', 'all'].includes(tag))
           .forEach((tag) => {
             if (!tagsSet[tag]) {
               tagsSet[tag] = [];
@@ -339,10 +327,7 @@ export default {
         .getAll()
         .filter((item) => {
           if (!item.data.tags) return;
-          if (
-            item.data.tags.includes("article") ||
-            item.data.tags.includes("note")
-          ) {
+          if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
             return item;
           }
         })
@@ -361,10 +346,7 @@ export default {
         .getAll()
         .filter((item) => {
           if (!item.data.tags) return;
-          if (
-            item.data.tags.includes("article") ||
-            item.data.tags.includes("note")
-          ) {
+          if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
             return item;
           }
         })
@@ -372,7 +354,7 @@ export default {
     )
       .groupBy((post) => {
         const year = post.date.getFullYear();
-        const month = String(post.date.getMonth() + 1).padStart(2, "0");
+        const month = String(post.date.getMonth() + 1).padStart(2, '0');
         return `${year}/${month}`;
       })
       .toPairs()
@@ -387,10 +369,7 @@ export default {
         .getAll() //.filter((item) => ['post', 'note'].includes(item.tag))
         .filter((item) => {
           if (!item.data.tags) return;
-          if (
-            item.data.tags.includes("article") ||
-            item.data.tags.includes("note")
-          ) {
+          if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
             return item;
           }
         })
@@ -398,8 +377,8 @@ export default {
     )
       .groupBy((post) => {
         const year = post.date.getFullYear();
-        const month = String(post.date.getMonth() + 1).padStart(2, "0");
-        const day = String(post.date.getDate()).padStart(2, "0");
+        const month = String(post.date.getMonth() + 1).padStart(2, '0');
+        const day = String(post.date.getDate()).padStart(2, '0');
         return `${year}/${month}/${day}`;
       })
       .toPairs()
@@ -417,10 +396,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.tags) return;
-        if (
-          item.data.tags.includes("article") ||
-          item.data.tags.includes("note")
-        ) {
+        if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -453,13 +429,13 @@ export default {
             entries: [],
           };
         }
-        let sport = "N/A";
-        if (item.data.category === "exercise") {
+        let sport = 'N/A';
+        if (item.data.category === 'exercise') {
           sport = item.data.sport;
         }
 
-        let bike = "N/A";
-        if (item.data.category === "service") {
+        let bike = 'N/A';
+        if (item.data.category === 'service') {
           bike = item.data.bike;
         }
 
@@ -501,7 +477,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("article")) {
+        if (item.data.category.includes('article')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -571,7 +547,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("book")) {
+        if (item.data.category.includes('book')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -642,7 +618,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("bookmark")) {
+        if (item.data.category.includes('bookmark')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -713,7 +689,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("checkin")) {
+        if (item.data.category.includes('checkin')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -781,7 +757,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("exercise")) {
+        if (item.data.category.includes('exercise')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -853,7 +829,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("jam")) {
+        if (item.data.category.includes('jam')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -924,7 +900,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("like")) {
+        if (item.data.category.includes('like')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -995,7 +971,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("movie")) {
+        if (item.data.category.includes('movie')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1066,7 +1042,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("movie")) {
+        if (item.data.category.includes('movie')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1137,7 +1113,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("note")) {
+        if (item.data.category.includes('note')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1208,7 +1184,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("photography")) {
+        if (item.data.category.includes('photography')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1276,7 +1252,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("race")) {
+        if (item.data.category.includes('race')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1347,7 +1323,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("reply")) {
+        if (item.data.category.includes('reply')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1418,7 +1394,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("repost")) {
+        if (item.data.category.includes('repost')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1489,7 +1465,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("rsvp")) {
+        if (item.data.category.includes('rsvp')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1560,7 +1536,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("signup")) {
+        if (item.data.category.includes('signup')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1631,7 +1607,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("service")) {
+        if (item.data.category.includes('service')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1703,7 +1679,7 @@ export default {
       .getAll()
       .filter((item) => {
         if (!item.data.category) return;
-        if (item.data.category.includes("videography")) {
+        if (item.data.category.includes('videography')) {
           return item;
         }
         // console.log(item.data.tags);
@@ -1814,9 +1790,7 @@ export default {
 
     for (let post of posts) {
       let postDate = post.data.page.date;
-      let dateIndexKey = `${moment(postDate).year()}-${moment(
-        postDate,
-      ).dayOfYear()}`;
+      let dateIndexKey = `${moment(postDate).year()}-${moment(postDate).dayOfYear()}`;
 
       if (!statsObject.postsByDay[dateIndexKey]) {
         statsObject.postsByDay[dateIndexKey] = 0;
@@ -1881,18 +1855,10 @@ export default {
       );
     }
     statsObject.avgDays = parseFloat((totalDays / totalPostCount).toFixed(2));
-    statsObject.avgCharacterCount = parseFloat(
-      (totalCharacterCount / totalPostCount).toFixed(2),
-    );
-    statsObject.avgCodeBlockCount = parseFloat(
-      (totalCodeBlockCount / totalPostCount).toFixed(2),
-    );
-    statsObject.avgParagraphCount = parseFloat(
-      (totalParagraphCount / totalPostCount).toFixed(2),
-    );
-    statsObject.avgWordCount = parseFloat(
-      (totalWordCount / totalPostCount).toFixed(2),
-    );
+    statsObject.avgCharacterCount = parseFloat((totalCharacterCount / totalPostCount).toFixed(2));
+    statsObject.avgCodeBlockCount = parseFloat((totalCodeBlockCount / totalPostCount).toFixed(2));
+    statsObject.avgParagraphCount = parseFloat((totalParagraphCount / totalPostCount).toFixed(2));
+    statsObject.avgWordCount = parseFloat((totalWordCount / totalPostCount).toFixed(2));
     statsObject.totalWordCount = totalWordCount;
     statsObject.totalCodeBlockCount = totalCodeBlockCount;
     statsObject.highPostCount = highPostCount;
