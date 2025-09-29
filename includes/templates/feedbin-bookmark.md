@@ -1,11 +1,13 @@
 ---
 date: [DATE]
-title: [TITLE]
+title: '[TITLE]'
 url: [LINK]
 canonical: [LINK]
 category: bookmark
 tags:
   - Feedbin
 ---
+
+<!-- @format -->
 
 [MARKDOWN]

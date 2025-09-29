@@ -1,6 +1,6 @@
 ---
 date: [DATE]
-title: [TITLE]
+title: '[TITLE]'
 url: [LINK]
 cover: [COVER]
 category: movie
@@ -8,5 +8,7 @@ tags:
   - Letterboxd
   - activity
 ---
+
+<!-- @format -->
 
 [MARKDOWN]
