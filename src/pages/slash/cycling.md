@@ -40,7 +40,7 @@ Unfortunately, a global pandemic forced my hand and I returned to the web indust
 
 Whilst I had taken part in a few school-organised races, it was not until 2013 that I hit the start line of a cycle race properly. It was a local club mate who suggested I try my hand at cross country racing. He was right—I did enjoy it, and I was hooked.
 
-### XCO
+### Cross Country Olympic
 
 ![Mountain biking action](/images/pages/xco-racing.jpg)
 
@@ -48,7 +48,7 @@ My first race was a regional event in 2013. From that one event, I went on to na
 
 ### Road
 
-![Tipping it in](/images/pages/trinity-worlds-2.jpg)
+![Tipping it in](/images/pages/road-race.jpg)
 
 It was only a matter of time before I ended up in a road race, living that Tour de France dream in a regional B category. It was never going to be amazing, but turns out a 4.7w/kg threshold can pull out some wins every now and again.
 
@@ -60,13 +60,15 @@ Criterium racing is an acquired taste. Very fast, very close, and at times very 
 
 ### Cyclocross
 
+![Getting muddy](/images/pages/cyclocross.jpg)
+
 Cyclocross started as a way to combine muddy trails with some curly handlebars, but after being introduced to the scene I realised just how approachable the discipline is. Everyone is welcome and it can be as serious as you want.
 
 I ended up taking it quite seriously and trying my hand at all levels, from regional to national events. Even representing GB at the Masters World Championships.
 
 ### Fondo
 
-![Being chased down](/images/pages/grand-fondo.jpg)
+![Being chased down](/images/pages/fondo.jpg)
 
 In the UK, Gran Fondos get lost in everything else, but in Europe they are their own beast with prize money and kudos galore. I took part in the Pinarello-sponsored events out of Treviso and up into the Dolomites. This then led me to have a crack at the UCI Gran Fondo events. I qualified for the World Championships in 2019 after completing the UK-based Tour of Cambridgeshire.
 
@@ -77,5 +79,7 @@ In the UK, Gran Fondos get lost in everything else, but in Europe they are their
 The time trial scene is huge in the UK, but to me the evening club 10 is a great opportunity to complete a threshold test. Rocking up on the night with nothing to lose but a lot of sweat and some muscle glycogen.
 
 ### Gravel
+
+![New pain faces](/images/pages/gravel-3.jpg)
 
 Gravel is the latest discipline for me to try. Having only purchased a true gravel bike in 2025, I have already completed the GritFest stage race in Wales and won an event taking in the South Downs Way.
