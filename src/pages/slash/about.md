@@ -30,8 +30,9 @@ After my first child was born, I started commuting 20km to work on a hybrid bike
 
 By 2016, I'd made the jump to work as head [mechanic](/mechanic/) at a local bike shop specialising in Italian brands. Over five years, I was trained in Cytech standards, learned to build custom wheels, and had experiences I never imagined—riding with Miguel Induráin, meeting Fausto Pinarello himself, and even dismantling Team Sky's grand tour-winning bikes.
 
-I also built and coached a small development team, helping young riders from local clubs get the team experience and support they needed.
-The pandemic brought me back to web development, but cycling remains central to my life. I race across multiple disciplines—road, cyclocross, criteriums, time trials, gran fondos, and most recently gravel. I represented GB at the Masters Cyclocross World Championships and qualified for the UCI Gran Fondo World Championships in 2019.
+I also built and coached a [small development team](https://www.instagram.com/tph_racing/), helping young riders from local clubs get the team experience and support they needed.
+
+The pandemic brought me back to web development, but cycling remains central to my life. I race across multiple disciplines—road, cyclocross, criteriums, time trials, gran fondos, and most recently gravel. I represented GB at the Masters Cyclocross World Championships and qualified for the UCI Gran Fondo World Championships in 2021.
 
 ## The Running Chapter
 During Covid lockdown, I started running to keep my partner Lucy company on 5K loops. When racing returned, I somehow went from casual 5Ks to completing 100km ultras on the Stour Valley Path (twice), the Suffolk Coastal 50km (twice), and around the Jurassic Coast. I even completed a marathon a month for an entire year.

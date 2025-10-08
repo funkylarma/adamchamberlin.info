@@ -32,7 +32,7 @@ Back to the classroom I went, and not long after I was building custom wheels to
 
 ## The Build Video
 
-Working with my close friend Andrew Keedle, we decided to try and put together one of those clever bike build montage clips. I provided the material and Andrew provided the output.
+Working with my close friend [Andrew Keedle](https://andrewkeedle.com/), we decided to try and put together one of those clever bike build montage clips. I provided the material and Andrew provided the output.
 
 https://youtu.be/wtAvDIQ229Q?si=Yho4ATHQMxBYgfrU
 

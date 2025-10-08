@@ -30,7 +30,7 @@ In 2016, I joined a local bike shop specialising in Italian brands as the [head 
 
 ![Tours of the Sky Truck](/images/pages/sky-truck.jpg)
 
-Cycling branched outside of the day job as I put together a small development team from within the shop. The goal was to take young talent from the local clubs and give them the team experience—to help support them in the sport and set them on that fabled development pathway.
+Cycling branched outside of the day job as I put together a [small development team](https://www.instagram.com/tph_racing/) from within the shop. The goal was to take young talent from the local clubs and give them the team experience—to help support them in the sport and set them on that fabled development pathway.
 
 Racing myself, I soon realised how confusing the training scene has become, with so many buzzwords and metrics to track. But I was fascinated with the science between human performance and technology. Since that day, I have made it my mission to understand both the physical and psychological demands of the sport.
 
