@@ -58,13 +58,15 @@ tags:
           {% if post.data.tags.length > 1 %}
           <div class="post--tags">
             {% assetIcon "tags" %}
-            {%- for tag in post.data.tags -%}
-            {% if tag != 'article' %}
-            <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
-              {{ tag }} 
-            </a>
-            {% endif %}
-            {%- endfor -%}
+            <div class="post--tags--list">
+              {%- for tag in post.data.tags -%}
+                {% if tag != 'article' %}
+                  <a class="p-category" href="/tagged/{{ tag | slugify }}/" title="Browse other posts tagged with {{ tag }}">
+                    {{ tag }} 
+                  </a>
+                {% endif %}
+              {%- endfor -%}
+            </div>
           </div><!-- .post-tags -->
           {% endif %}
           <div class="post--reading">
