@@ -15,8 +15,13 @@
     "model": "Checkpoint SLR 7 AXS"
   },
   {
-    "slug": "x-night",
+    "slug": "xnight",
     "make": "Ridley",
     "model": "X Night"
+  },
+  {
+    "slug": "trail",
+    "make": "Cannondale",
+    "model": "Trail Single Speed"
   }
 ]

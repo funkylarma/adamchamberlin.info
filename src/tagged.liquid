@@ -233,6 +233,18 @@ eleventyComputed:
               </h2>
               <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
             </li>
+          
+          {% elsif post.data.category == 'service' %}
+          <li class="checkin h-entry hentry">
+            <h2 class="p-name">
+              {% assetIcon "service" %}
+              Serviced -
+              <a class="post-link u-url" rel="bookmark" href="{{ post.url }}" title="Details about the service">
+                {{ post.data.bike | getBikeName }}
+              </a>
+            </h2>
+            <time class="postlist-date dt-published" datetime="{{ post.date | dateHtmlString }}">{{ post.date | dateLongDate }}</time>
+          </li>
 
           {% elsif post.data.category == 'toot' %}
             <li class="checkin h-entry hentry">
