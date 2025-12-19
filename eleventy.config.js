@@ -124,9 +124,9 @@ export default async function (eleventyConfig) {
   });
 
   // Transforms
-  // Object.keys( transforms ).forEach( ( transformName ) => {
-  //   eleventyConfig.addTransform( transformName, transforms[ transformName ] );
-  // } );
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addTransform(transformName, transforms[transformName]);
+  });
 
   // Base config
   return {

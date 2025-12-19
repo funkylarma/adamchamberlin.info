@@ -28,8 +28,6 @@ When a tire rolls it constantly squashes and un-squashes. Rubber is not a perfec
 
 Gravel exaggerates the effect because every pebble is a miniature speed-bump. The tire carcass flexes more, the hysteresis loop grows, and so does Crr​. Narrow, high-pressure road slicks hardly deform on tarmac, so the hysteresis penalty is tiny by comparison.
 
-![](https://blog.flocycling.com/wp-content/uploads/2025/05/MainImage-1200x600.png)
-
 Comparing Road, Triathlon, and Gravel
 -------------------------------------
 
