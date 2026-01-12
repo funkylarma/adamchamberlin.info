@@ -1,5 +1,5 @@
 ---
-title: Weeknote #2515
+title: 'Weeknote #2515'
 date: 2026-01-11
 description: Weeknote for 2515 of my life
 category: note

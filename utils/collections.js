@@ -937,7 +937,7 @@ export default {
         // Add the entry to the keyed year/month array - only add the info we need
         output[year].months[month].entries.push({
           title: item.data.title,
-          url: item.url,
+          url: item.data.url,
           // This is just the date plus ordinal (e.g. 23rd)
           date: item.date.getDate() + nth(item.date.getDate()),
           category: item.data.category,
