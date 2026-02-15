@@ -8,7 +8,7 @@ tags:
   - software
 ---
 
-Completely forgot that I did complete this last [year](https://adamchamberlin.info/2024/12/app-defaults-2024/), but here is the app defaults as they stand going into 2026.
+Completely forgot that I did complete this last [year](https://adamchamberlin.info/2024/12/app-defaults-2024/), but here are the app defaults as they stand going into 2026.
 
 Should also submit this to [Robb](https://rknight.me) and get listed on the [App Defaults](https://defaults.rknight.me) website.
 
@@ -36,7 +36,7 @@ Should also submit this to [Robb](https://rknight.me) and get listed on the [App
 - 🌤️ Weather: [Carrot](https://www.meetcarrot.com/weather/).
 - 🎵 Music: Apple Music scrobbled to [Last.fm](https://www.last.fm/user/FunkyLarma).
 - 🎤 Podcasts: Overcast.
-- 🍿 Movie tracking: Letterboxd.
+- 🍿 Movie tracking: [Letterboxd](https://letterboxd.com/FunkyLarma/).
 - 🔐 Password Management: 1Password.
 - 🧮 Code Editor: [Nova](https://nova.app/) by Panic.
 - 👨🏻‍💻 Terminal: Terminal.app.
