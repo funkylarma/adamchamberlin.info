@@ -30,8 +30,6 @@ _Fizik doesn’t say what size for their spec weight, but still pretty light_
 
 **Chuck Peña PEZ sez:** You may have seen these shoes on Movistar team riders over the past couple of seasons. So even though they are old school with velcro for the closure, they are definitely pro level.
 
-![](https://pezcyclingnews.com/wp-content/uploads/2025/02/fizik-vento-powerstrap-aeroweave-top-and-bottom-2025-cp-1000.jpeg)
-
 You could get the [Movistar Team edition](https://www.fizik.com/us_en/vento-powerstrap-aeroweave-movistar-team.html), but PEZ went with the #realmenwearpink version. Because … pink … the color of the Giro … my favorite of the Grand Tours.
 
 ![](https://pezcyclingnews.com/wp-content/uploads/2025/02/fizik-vento-powerstrap-aeroweave-heel-counter-2025-cp-1000.jpeg)
