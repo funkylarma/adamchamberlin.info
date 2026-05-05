@@ -38,7 +38,7 @@ export default {
   },
   
   metaTitle: function ( title ) {
-    title.trim( );
+    title = title.trim( );
     if ( this.page.url ) {
       if ( this.page.url == '/' || this.page.url.includes( 'page' ) ) {
         title = metadata.tagline;
@@ -58,70 +58,31 @@ export default {
       if ( this.page.url == '/' || this.page.url.includes( 'page' ) ) {
         return metadata.description.replace( /"/g, "" );
       }
-      
+
       if ( /\d{4}\//.test( this.page.url ) ) {
-        let type = '';
-        
-        if ( this.page.filePathStem.includes( 'article' ) ) {
-          type = 'n article posted';
-        }
-        
-        if ( this.page.filePathStem.includes( 'bookmarks' ) ) {
-          type = ' bookmark saved';
-        }
-        
-        if ( this.page.filePathStem.includes( 'checkins' ) ) {
-          type = ' place checked in';
-        }
-        
-        if ( this.page.filePathStem.includes( 'exercise' ) ) {
-          type = ' activity undertaken';
-        }
-        
-        if ( this.page.filePathStem.includes( 'likes' ) ) {
-          type = ' like';
-        }
-        
-        if ( this.page.filePathStem.includes( 'notes' ) ) {
-          type = ' note made';
-        }
-        
-        if ( this.page.filePathStem.includes( 'photos' ) ) {
-          type = ' photo taken';
-        }
-        
-        if ( this.page.filePathStem.includes( 'replies' ) ) {
-          type = ' reply made';
-        }
-        
-        if ( this.page.filePathStem.includes( 'rsvps' ) ) {
-          type = ' rsvp made';
-        }
-        
-        if ( this.page.filePathStem.includes( 'services' ) ) {
-          type = ' service record';
-        }
-        
-        if ( this.page.filePathStem.includes( 'signups' ) ) {
-          type = 'n event signup for';
-        }
-        
-        if ( this.page.filePathStem.includes( 'videos' ) ) {
-          type = ' video made';
-        }
-        
-        return (
-          'The ' +
-          title.replace( /[.,\/#!$%\^&\*;:{}=\-_`~()"]/g, '' ) +
-          ' is a' +
-          type +
-          ' by Adam Chamberlin on ' +
-          this.page.date.toDateString( )
-        );
+        const cleanTitle = title.replace( /[.,\/#!$%\^&\*;:{}=\-_`~()"]/g, '' );
+        const dateStr = DateTime.fromJSDate( this.page.date, { zone: 'utc' } ).toFormat( 'dd LLLL yyyy' );
+        const stem = this.page.filePathStem;
+
+        let typePhrase = 'A post';
+        if ( stem.includes( 'articles' ) )       typePhrase = 'An article';
+        else if ( stem.includes( 'bookmarks' ) )  typePhrase = 'A bookmark';
+        else if ( stem.includes( 'checkins' ) )   typePhrase = 'A check-in';
+        else if ( stem.includes( 'exercise' ) )   typePhrase = 'An activity record';
+        else if ( stem.includes( 'likes' ) )      typePhrase = 'A liked post';
+        else if ( stem.includes( 'notes' ) )      typePhrase = 'A note';
+        else if ( stem.includes( 'photos' ) )     typePhrase = 'A photo';
+        else if ( stem.includes( 'replies' ) )    typePhrase = 'A reply';
+        else if ( stem.includes( 'rsvps' ) )      typePhrase = 'An RSVP';
+        else if ( stem.includes( 'services' ) )   typePhrase = 'A service record';
+        else if ( stem.includes( 'signups' ) )    typePhrase = 'An event signup';
+        else if ( stem.includes( 'videos' ) )     typePhrase = 'A video';
+
+        return `${typePhrase} by Adam Chamberlin, published ${dateStr}: ${cleanTitle}. ${metadata.description}`;
       }
     }
-    
-    return title + ' - ' + metadata.description;
+
+    return `${title} – ${metadata.description}`;
   },
   
   ogTitle: function ( title, category ) {
@@ -448,7 +409,7 @@ export default {
       bike => slug === bike.slug
     );
     
-    if ( indexFound ) {
+    if ( indexFound !== -1 ) {
       const bike = bikes[ indexFound ];
       return `${bike.make} ${bike.model}`;
     } else {

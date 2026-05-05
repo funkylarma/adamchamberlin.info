@@ -5,7 +5,7 @@ export default defineConfig({
   server: {
     mode: 'development',
     cors: {
-      orign: "https://adamchamberlin.info"
+      origin: "https://adamchamberlin.info"
     }
   },
   clearScreen: false,
@@ -14,7 +14,7 @@ export default defineConfig({
     mode: 'production',
     outDir: resolve(__dirname, '_site'),
     emptyOutDir: false,
-    sourcemap: true,
+    sourcemap: false,
     manifest: true,
     rollupOptions: {
       input: {

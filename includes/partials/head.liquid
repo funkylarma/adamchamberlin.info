@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#2f87d0" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#151b23" media="(prefers-color-scheme: dark)" />
 <meta name="author" content="{{ metadata.author.name }}" />
-<meta name="author" content="Designed and built by Adam Chamberlin." />
 <meta name="fediverse:creator" content="@FunkyLarma@mastodon.social" />
 <meta name="description" content="{% if description %}{{ description | escape }}{% else %}{{ title | metaDescription }}{% endif %}" />
 {%- if noindex -%}
@@ -23,12 +22,12 @@
 {% endif %}
 
 <meta itemprop="name" content="{{ metadata.author.name }}" />
-<meta itemprop="description" content="{{ metadata.description }}" />
+<meta itemprop="description" content="{% if description %}{{ description | escape }}{% else %}{{ title | metaDescription }}{% endif %}" />
 
-<meta property="og:site_name" content="https://adamchamberlin.info" />
+<meta property="og:site_name" content="{{ metadata.title }}" />
 <meta property="og:locale" content="en_GB" />
 <meta property="og:title" content="{% if date %}{{ title | ogTitle: category | escape }}{% elsif title %}{{ title | metaTitle }}{% else %}{{ metadata.title }}{% endif %}" />
-<meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | escape | metaDescription }}{% endif %}" />
+<meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ title | metaDescription | escape }}{% endif %}" />
 <meta property="og:url" content="{{ page.url | absoluteUrl }}" />
 {% if cover %}
   <meta property="og:image" content="{{ cover | absoluteUrl }}" />

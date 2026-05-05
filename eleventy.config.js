@@ -25,9 +25,6 @@ import liquidShortcodes from './utils/shortcodes-liquid.js';
 import transforms from './utils/transforms.js';
 import { md } from './utils/markdown.js';
 
-// Environmental
-const isDev = process.env.ELEVENTY_ENV === 'development';
-const isProd = process.env.ELEVENTY_ENV === 'production';
 import { dir } from './utils/constants.js';
 
 export default async function (eleventyConfig) {

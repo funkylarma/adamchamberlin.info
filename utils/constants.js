@@ -1,5 +1,3 @@
-import path from 'node:path';
-
 export const dir = {
   input: 'src',
   output: '_site',
@@ -34,7 +32,7 @@ export const month_short_names = [
   'June',
   'July',
   'Aug',
-  'Sept',
+  'Sep',
   'Oct',
   'Nov',
   'Dec',
@@ -56,12 +54,3 @@ export const nth = function (d) {
   }
 };
 
-export const imagePaths = {
-  input: path.join(dir.input, dir.assets, 'images'),
-  output: path.join(dir.output, dir.assets, 'images'),
-};
-
-export const scriptDirs = {
-  input: path.join(dir.input, dir.assets, 'scripts'),
-  output: path.join(dir.output, dir.assets, 'scripts'),
-};
