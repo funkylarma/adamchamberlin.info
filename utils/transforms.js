@@ -1,12 +1,12 @@
 /** @format */
 
-import htmlmin from 'html-minifier';
+import { minify } from 'html-minifier-terser';
 
 export default {
-  htmlmin: function (content, outputPath) {
+  htmlmin: async function (content) {
     if (process.env.ELEVENTY_ENV === 'production') {
       if ((this.page.outputPath || '').endsWith('.html')) {
-        let minified = htmlmin.minify(content, {
+        return minify(content, {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
           decodeEntities: true,
@@ -15,13 +15,8 @@ export default {
           minifyJS: true,
           removeComments: true,
         });
-        return minified;
       }
-      return content;
-    } else {
-      return content;
     }
-
     return content;
   },
 };
