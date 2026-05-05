@@ -67,6 +67,7 @@
     "writing-stats": "^1.0.6"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-vite": "^8.0.0",
     "node-fetch": "^3.3.2"
   }
 }

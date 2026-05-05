@@ -5,8 +5,8 @@ export default defineConfig({
   server: {
     mode: 'development',
     cors: {
-      origin: "https://adamchamberlin.info"
-    }
+      origin: 'http://localhost:8080',
+    },
   },
   clearScreen: false,
   appType: 'custom',
