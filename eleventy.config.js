@@ -7,8 +7,10 @@ dotenv.config();
 
 // 11ty Imports
 import { HtmlBasePlugin as pluginHtmlBase, EleventyRenderPlugin as pluginEleventyRender } from '@11ty/eleventy';
+import EleventyVitePlugin from '@11ty/eleventy-plugin-vite';
 import rssPlugin from '@11ty/eleventy-plugin-rss';
 import pluginNavigation from '@11ty/eleventy-navigation';
+
 import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/eleventy-img';
 
 // 3rd Party Imports
@@ -53,6 +55,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.watchIgnores.add('./src/assets/ogi/**/*');
 
   // Plugins
+  eleventyConfig.addPlugin(EleventyVitePlugin);
   eleventyConfig.addPlugin(pluginEleventyRender);
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
