@@ -57,6 +57,6 @@ export default async function ( ) {
     };
   } catch ( e ) {
     console.error( `Fetch failed in lastfm.js. ${e}` );
-    return `It has failed: ${e}`;
+    return { activityList: [], recentTracks: [], weeklyArtists: [] };
   }
 }

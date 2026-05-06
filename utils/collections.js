@@ -261,10 +261,12 @@ export default {
 
   activityContent: function (collection) {
     // Get the online content
-    let lastfmContent = collection.getAll()[0].data.lastfm.activityList;
+    let lastfmContent = collection.getAll()[0]?.data?.lastfm?.activityList ?? [];
+    if (!Array.isArray(lastfmContent)) lastfmContent = [];
     console.log('LastFM items: ' + lastfmContent.length);
 
-    let mastodonContent = collection.getAll()[0].data.mastodon;
+    let mastodonContent = collection.getAll()[0]?.data?.mastodon ?? [];
+    if (!Array.isArray(mastodonContent)) mastodonContent = [];
     console.log('Mastodon items: ' + mastodonContent.length);
 
     // Get the local content

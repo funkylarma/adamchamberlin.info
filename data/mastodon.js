@@ -18,7 +18,7 @@ export default async function() {
 
   } catch (e) {
     console.error(`Fetch failed in mastodon.js. ${e}`);
-    return `It has failed: ${e}`;
+    return [];
   }
 
   // let feed;
