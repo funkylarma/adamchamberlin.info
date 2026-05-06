@@ -42,7 +42,7 @@
   
   --epg-box-highlight: var(--main-color-primary);
   
-  transition: all 1s ease-in-out;
+  transition: color 1s ease-in-out, background-color 1s ease-in-out;
   
   @media screen and (prefers-reduced-motion: reduce),
   (update: slow) {

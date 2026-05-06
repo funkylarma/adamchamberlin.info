@@ -7,6 +7,9 @@ export default defineConfig({
     cors: {
       origin: 'http://localhost:8080',
     },
+    optimizeDeps: {
+      exclude: ['jquery'],
+    },
   },
   clearScreen: false,
   appType: 'custom',

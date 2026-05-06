@@ -1,83 +1,61 @@
 /* plus-jakarta-sans-300 - latin */
 @font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: optional;
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 300;
-  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-300.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    url('/assets/fonts/plus-jakarta-sans-v8-latin-300.ttf') format('truetype');
-  /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-300.woff2') format('woff2');
 }
 
 /* plus-jakarta-sans-300italic - latin */
 @font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: optional;
   font-family: 'Plus Jakarta Sans';
   font-style: italic;
   font-weight: 300;
-  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-300italic.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    url('/assets/fonts/plus-jakarta-sans-v8-latin-300italic.ttf') format('truetype');
-  /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-300italic.woff2') format('woff2');
 }
 
 /* plus-jakarta-sans-regular - latin */
 @font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: optional;
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.ttf') format('truetype');
-  /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-regular.woff2') format('woff2');
 }
 
 /* plus-jakarta-sans-italic - latin */
 @font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: optional;
   font-family: 'Plus Jakarta Sans';
   font-style: italic;
   font-weight: 400;
-  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.ttf') format('truetype');
-  /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-italic.woff2') format('woff2');
 }
 
 /* plus-jakarta-sans-600 - latin */
 @font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: optional;
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 600;
-  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-600.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    url('/assets/fonts/plus-jakarta-sans-v8-latin-600.ttf') format('truetype');
-  /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-600.woff2') format('woff2');
 }
 
 /* plus-jakarta-sans-700 - latin */
 @font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: optional;
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 700;
-  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-700.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    url('/assets/fonts/plus-jakarta-sans-v8-latin-700.ttf') format('truetype');
-  /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('/assets/fonts/plus-jakarta-sans-v8-latin-700.woff2') format('woff2');
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 h1,

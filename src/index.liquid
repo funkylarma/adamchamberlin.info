@@ -31,7 +31,8 @@ tags:
     sizes="(min-width: 1220px) 398px, (min-width: 920px) calc(53.57vw - 245px), (min-width: 720px) calc(40vw + 38px), (min-width: 420px) calc(33.21vw - 34px), calc(100vw - 34px)"
     width="400"
     height="400"
-    loading="lazy"
+    loading="eager"
+    fetchpriority="high"
   />
 </div>
 
@@ -112,7 +113,7 @@ tags:
 <div class="photos">
   <h2>Latest Photo</h2>
   {% for photo in collections.homePage.latestPhoto %}
-    <img src="{{ photo.data.cover }}" alt="{{ photo.data.title | escape }}" />
+    <img src="{{ photo.data.cover }}" alt="{{ photo.data.title | escape }}" width="800" height="600" loading="lazy" />
     <a href="{{ photo.url }}">
       {{ photo.data.title | escape }}
     </a>
@@ -271,39 +272,17 @@ tags:
 
 <div class="checkin">
   <h2>Latest Check In</h2>
-  <div id="map"></div>
-  <link rel="prefetch" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" as="style" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="all"
-    onload="this.media='all'" fetchpriority="low">
-  <noscript>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.css" media="screen">
-  </noscript>
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.0/mapbox-gl.js" defer></script>
   {% for post in collections.homePage.lastSeen %}
-  <script>
-    window.addEventListener('load', (event) => {
-      // Load the api key
-      mapboxgl.accessToken = "{{ keys.mapBox }}";
-
-      let mapStyle = 'mapbox://styles/mapbox/light-v11?optimize=true';
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        mapStyle = 'mapbox://styles/mapbox/dark-v11?optimize=true';
-      }
-
-      // Create instance of a map
-      const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: mapStyle,
-        center: [{{ post.data.longitude }}, {{ post.data.latitude }}], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-      zoom: 16 // starting zoom
-      });
-
-    // Drop the pin
-    new mapboxgl.Marker({ color: "#36d02f" }).setLngLat([{{ post.data.longitude }}, {{ post.data.latitude }}]).addTo(map);
-
-    map.resize();
-    });
-  </script>
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+      srcset="https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/pin-s+36d02f({{ post.data.longitude }},{{ post.data.latitude }})/{{ post.data.longitude }},{{ post.data.latitude }},16/600x400@2x?access_token={{ keys.mapBox }}">
+    <img
+      src="https://api.mapbox.com/styles/v1/mapbox/light-v11/static/pin-s+36d02f({{ post.data.longitude }},{{ post.data.latitude }})/{{ post.data.longitude }},{{ post.data.latitude }},16/600x400@2x?access_token={{ keys.mapBox }}"
+      alt="Map showing location: {{ post.data.title | escape }}"
+      width="600"
+      height="400"
+      loading="lazy">
+  </picture>
   <a href="{{ post.url }}">
     {{ post.data.title }}
   </a>
