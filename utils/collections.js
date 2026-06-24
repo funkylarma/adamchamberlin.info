@@ -3,7 +3,6 @@
 import fs from 'node:fs';
 import _ from 'lodash';
 import writingStats from 'writing-stats';
-import moment from 'moment';
 import { month_names } from './constants.js';
 import { nth } from './constants.js';
 
@@ -70,7 +69,6 @@ export default {
         if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -86,7 +84,6 @@ export default {
         if (item.data.tags.includes('article')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -102,7 +99,6 @@ export default {
         if (item.data.tags.includes('note')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -176,7 +172,7 @@ export default {
       .slice(0, 5);
 
     return {
-      acticleList: articles,
+      articleList: articles,
       noteList: notes,
       commentList: comments,
       activityList: activity,
@@ -271,12 +267,8 @@ export default {
 
     // Get the local content
     let localContent = collection.getFilteredByTag('activity');
-    console.log('Local items: ' + localContent.length);
 
-    // Merge all content together
     let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
-
-    console.log('Total items: ' + allContent.length);
 
     // Sort the content
     let sortedContent = allContent.sort(function (a, b) {
@@ -401,7 +393,6 @@ export default {
         if (item.data.tags.includes('article') || item.data.tags.includes('note')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -482,7 +473,6 @@ export default {
         if (item.data.category.includes('article')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -552,7 +542,6 @@ export default {
         if (item.data.category.includes('book')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -623,7 +612,6 @@ export default {
         if (item.data.category.includes('bookmark')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -694,7 +682,6 @@ export default {
         if (item.data.category.includes('checkin')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -762,7 +749,6 @@ export default {
         if (item.data.category.includes('exercise')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -834,7 +820,6 @@ export default {
         if (item.data.category.includes('jam')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -905,7 +890,6 @@ export default {
         if (item.data.category.includes('like')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -964,77 +948,6 @@ export default {
   },
 
   // Creates a tuple of content filtered by the specified tags.
-  mediaArchive: function (collection) {
-    // Create a return output
-    let output = [];
-
-    // Get the entries we want to work with
-    let entries = collection
-      .getAll()
-      .filter((item) => {
-        if (!item.data.category) return;
-        if (item.data.category.includes('movie')) {
-          return item;
-        }
-        // console.log(item.data.tags);
-      })
-      .sort(function (a, b) {
-        return b.date - a.date; // sort by date - descending
-      });
-
-    // Loop through each of the entries
-    for (let item of entries) {
-      // Check we have both a date and title
-      if (item.data.title && item.date) {
-        // Extract the year and month number (Jan = 0)
-        let year = item.date.getFullYear(),
-          month = item.date.getMonth();
-
-        // If the year hasn't been seen before, make a stub object
-        if (!output[year]) {
-          output[year] = {
-            title: year,
-            months: [],
-          };
-        }
-
-        // If the month hasn't been seen before, make a stub object
-        // with a nice month name as the title
-        if (!output[year].months[month]) {
-          output[year].months[month] = {
-            title: month_names[month],
-            entries: [],
-          };
-        }
-
-        // Add the entry to the keyed year/month array - only add the info we need
-        output[year].months[month].entries.push({
-          title: item.data.title,
-          url: item.url,
-          // This is just the date plus ordinal (e.g. 23rd)
-          date: item.date.getDate() + nth(item.date.getDate()),
-          category: item.data.category,
-          tags: item.data.tags,
-        });
-      }
-    }
-
-    // Return our array
-    return (
-      output
-        // Reverse the months (most recent first)
-        .map((y) => {
-          y.months.reverse();
-          return y;
-        })
-        // Filter out any null years
-        .filter((a) => a)
-        // Reverse the years (recent first)
-        .reverse()
-    );
-  },
-
-  // Creates a tuple of content filtered by the specified tags.
   movieArchive: function (collection) {
     // Create a return output
     let output = [];
@@ -1047,7 +960,6 @@ export default {
         if (item.data.category.includes('movie')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1118,7 +1030,6 @@ export default {
         if (item.data.category.includes('note')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1189,7 +1100,6 @@ export default {
         if (item.data.category.includes('photography')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1257,7 +1167,6 @@ export default {
         if (item.data.category.includes('race')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1328,7 +1237,6 @@ export default {
         if (item.data.category.includes('reply')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1399,7 +1307,6 @@ export default {
         if (item.data.category.includes('repost')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1470,7 +1377,6 @@ export default {
         if (item.data.category.includes('rsvp')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1541,7 +1447,6 @@ export default {
         if (item.data.category.includes('signup')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1612,7 +1517,6 @@ export default {
         if (item.data.category.includes('service')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1684,7 +1588,6 @@ export default {
         if (item.data.category.includes('videography')) {
           return item;
         }
-        // console.log(item.data.tags);
       })
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -1792,7 +1695,8 @@ export default {
 
     for (let post of posts) {
       let postDate = post.data.page.date;
-      let dateIndexKey = `${moment(postDate).year()}-${moment(postDate).dayOfYear()}`;
+      const dayOfYear = Math.floor((postDate - new Date(postDate.getFullYear(), 0, 1)) / 86400000) + 1;
+      let dateIndexKey = `${postDate.getFullYear()}-${dayOfYear}`;
 
       if (!statsObject.postsByDay[dateIndexKey]) {
         statsObject.postsByDay[dateIndexKey] = 0;

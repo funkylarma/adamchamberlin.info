@@ -314,8 +314,7 @@ export default {
   },
   
   limitList: function ( value, from = 0, limit = 2 ) {
-    value.splice( from, limit );
-    return value;
+    return value.slice( from, from + limit );
   },
   
   webmentionsByUrl: function ( webmentions, url ) {
