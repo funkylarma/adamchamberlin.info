@@ -1,3 +1,5 @@
+/** @format */
+
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
@@ -7,10 +9,8 @@ export default defineConfig({
     cors: {
       origin: 'http://localhost:8080',
     },
-    optimizeDeps: {
-      exclude: ['jquery'],
-    },
   },
+
   clearScreen: false,
   appType: 'custom',
   build: {

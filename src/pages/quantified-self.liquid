@@ -1,0 +1,56 @@
+---
+title: "Quantified Self"
+subhead: "A snapshot of my physical activity this week."
+description: "A weekly snapshot of Adam Chamberlin's physical activity — cycling, running, walking and daily steps."
+permalink: "/quantified-self/"
+---
+
+<section class="qs--week">
+  <h2>
+    Week of
+    {{ health.week.start | dateReadableFromISO: "d LLL" }}
+    –
+    {{ health.week.end | dateReadableFromISO: "d LLL yyyy" }}
+  </h2>
+
+  <p>Distance and duration cover completed activities only. Data refreshes with each site build.</p>
+
+  <table class="qs--table">
+    <thead>
+      <tr>
+        <th scope="col">Sport</th>
+        <th scope="col">Distance</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Sessions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cycling</td>
+        <td>{{ health.week.cycling.distance }} km</td>
+        <td>{{ health.week.cycling.duration }}</td>
+        <td>{{ health.week.cycling.count }}</td>
+      </tr>
+      <tr>
+        <td>Running</td>
+        <td>{{ health.week.running.distance }} km</td>
+        <td>{{ health.week.running.duration }}</td>
+        <td>{{ health.week.running.count }}</td>
+      </tr>
+      <tr>
+        <td>Walking</td>
+        <td>{{ health.week.walking.distance }} km</td>
+        <td>{{ health.week.walking.duration }}</td>
+        <td>{{ health.week.walking.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="qs--steps">
+  <h2>Steps</h2>
+  <ul>
+    <li><strong>Today:</strong> {{ health.steps.today | default: "—" }}</li>
+    <li><strong>This week:</strong> {{ health.steps.weekTotal | default: "—" }}</li>
+  </ul>
+</section>

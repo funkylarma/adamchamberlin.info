@@ -9,7 +9,7 @@
     "clean:vite": "del-cli _site/.vite",
     "dev": "run-p dev:*",
     "dev:eleventy": "eleventy --serve",
-    "dev:vite": "vite",
+    "dev:vite": "vite --force",
     "build": "cross-env ELEVENTY_ENV=production run-s clean build:vite build:eleventy clean:vite",
     "build:eleventy": "eleventy",
     "build:vite": "vite build",
@@ -48,7 +48,6 @@
     "eleventy-plugin-youtube-embed": "^1.13.1",
     "fast-xml-parser": "^5.3.3",
     "html-minifier-terser": "^7.2.0",
-    "jquery": "^3.7.1",
     "js-yaml": "^4.1.1",
     "lodash": "^4.17.23",
     "luxon": "^3.7.2",
@@ -67,6 +66,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-vite": "^8.0.0",
+    "jquery": "^4.0.0",
     "node-fetch": "^3.3.2"
   }
 }

@@ -13,8 +13,6 @@ tags:
 
 Although I feel deeply conflicted, I’ve been using AI coding tools more often to speed up particular aspects of development. Recently, I added an `AGENTS.md` to my setup so I don’t need to repeat my preferences.
 
-![Hello fleshy ones](https://stuffandnonsense.co.uk/content/img/2026-04-08.png)
-
 Judge Dredd. Robot Wars. 2000AD comic.
 
 I started using ChatGPT and DeepSeek to help me fix bugs and debug error messages, especially when I was new to working with Eleventy. I asked them questions, pasted in code, and then copied the result back into my project. Now, I use Codex to clone my boilerplate files and set up new projects. But whenever I started something new, I had to tell the machine my preferences again.
