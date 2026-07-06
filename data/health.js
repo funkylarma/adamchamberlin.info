@@ -4,6 +4,7 @@ dotenv.config();
 
 const ATHLETE_ID = process.env.INTERVALS_ICU_ID;
 const API_KEY = process.env.INTERVALS_ICU_KEY;
+const WEEK_COUNT = 12;
 
 const SPORT_GROUPS = {
   cycling: ['Ride', 'VirtualRide', 'MountainBikeRide', 'GravelRide', 'EBikeRide'],
@@ -11,19 +12,41 @@ const SPORT_GROUPS = {
   walking: ['Walk', 'Hike'],
 };
 
-function getWeekBounds() {
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function getWeekRange(count) {
   const now = new Date();
   const day = now.getUTCDay();
   const diffToMonday = day === 0 ? -6 : 1 - day;
-  const monday = new Date(now);
-  monday.setUTCDate(now.getUTCDate() + diffToMonday);
-  monday.setUTCHours(0, 0, 0, 0);
-  const sunday = new Date(monday);
-  sunday.setUTCDate(monday.getUTCDate() + 6);
-  return {
-    start: monday.toISOString().split('T')[0],
-    end: sunday.toISOString().split('T')[0],
-  };
+
+  const thisMonday = new Date(now);
+  thisMonday.setUTCDate(now.getUTCDate() + diffToMonday);
+  thisMonday.setUTCHours(0, 0, 0, 0);
+
+  const weeks = [];
+  for (let i = count - 1; i >= 0; i--) {
+    const start = new Date(thisMonday);
+    start.setUTCDate(thisMonday.getUTCDate() - i * 7);
+    const end = new Date(start);
+    end.setUTCDate(start.getUTCDate() + 6);
+
+    const startStr = start.toISOString().split('T')[0];
+    const endStr = end.toISOString().split('T')[0];
+    const [, , mm, dd] = startStr.match(/(\d{4})-(\d{2})-(\d{2})/);
+    const label = `${parseInt(dd)} ${MONTHS[parseInt(mm) - 1]}`;
+
+    weeks.push({ start: startStr, end: endStr, label });
+  }
+
+  return { oldest: weeks[0].start, newest: weeks[weeks.length - 1].end, weeks };
+}
+
+function getMonday(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00Z');
+  const day = d.getUTCDay();
+  const diff = day === 0 ? -6 : 1 - day;
+  d.setUTCDate(d.getUTCDate() + diff);
+  return d.toISOString().split('T')[0];
 }
 
 function metresToKm(m) {
@@ -31,109 +54,110 @@ function metresToKm(m) {
 }
 
 function secondsToHM(s) {
+  if (!s) return '—';
   const h = Math.floor(s / 3600);
   const m = Math.floor((s % 3600) / 60);
   return h > 0 ? `${h}h ${m}m` : `${m}m`;
 }
 
-function emptySport() {
-  return { distance: 0, duration: '—', count: 0 };
-}
-
-function emptyData(week = {}) {
-  return {
-    week: {
-      start: week.start ?? '',
-      end: week.end ?? '',
-      cycling: emptySport(),
-      running: emptySport(),
-      walking: emptySport(),
-    },
-    steps: { today: 0, weekTotal: 0 },
-  };
-}
-
 export default async function () {
   if (!ATHLETE_ID || !API_KEY) {
     console.warn('health.js: INTERVALS_ICU_ID or INTERVALS_ICU_KEY not set');
-    return emptyData();
+    return { weeks: [] };
   }
 
-  const { start, end } = getWeekBounds();
+  const { oldest, newest, weeks } = getWeekRange(WEEK_COUNT);
   const authHeader = 'Basic ' + Buffer.from(`API_KEY:${API_KEY}`).toString('base64');
   const fetchConfig = {
     duration: '1h',
     type: 'json',
-    fetchOptions: {
-      headers: { Authorization: authHeader },
-    },
+    fetchOptions: { headers: { Authorization: authHeader } },
   };
 
   try {
     const [activities, wellness] = await Promise.all([
       EleventyFetch(
-        `https://intervals.icu/api/v1/athlete/${ATHLETE_ID}/activities?oldest=${start}&newest=${end}`,
+        `https://intervals.icu/api/v1/athlete/${ATHLETE_ID}/activities?oldest=${oldest}&newest=${newest}`,
         fetchConfig
       ),
       EleventyFetch(
-        `https://intervals.icu/api/v1/athlete/${ATHLETE_ID}/wellness?oldest=${start}&newest=${end}`,
+        `https://intervals.icu/api/v1/athlete/${ATHLETE_ID}/wellness?oldest=${oldest}&newest=${newest}`,
         fetchConfig
       ),
     ]);
 
-    const totals = {
-      cycling: { distance: 0, duration: 0, count: 0 },
-      running: { distance: 0, duration: 0, count: 0 },
-      walking: { distance: 0, duration: 0, count: 0 },
-    };
+    // Initialise per-week accumulators keyed by Monday date
+    const weekMap = {};
+    for (const week of weeks) {
+      weekMap[week.start] = {
+        ...week,
+        cycling: { distanceRaw: 0, duration: 0, count: 0 },
+        running: { distanceRaw: 0, duration: 0, count: 0 },
+        walking: { distanceRaw: 0, duration: 0, count: 0 },
+        stepsRaw: 0,
+      };
+    }
 
     for (const activity of activities) {
+      const dateStr = (activity.start_date_local || activity.start_date || '').substring(0, 10);
+      if (!dateStr) continue;
+      const weekStart = getMonday(dateStr);
+      if (!weekMap[weekStart]) continue;
+
       for (const [group, types] of Object.entries(SPORT_GROUPS)) {
         if (types.includes(activity.type)) {
-          totals[group].distance += activity.distance ?? 0;
-          totals[group].duration += activity.moving_time ?? 0;
-          totals[group].count += 1;
+          weekMap[weekStart][group].distanceRaw += activity.distance ?? 0;
+          weekMap[weekStart][group].duration += activity.moving_time ?? 0;
+          weekMap[weekStart][group].count += 1;
         }
       }
     }
 
-    const today = new Date().toISOString().split('T')[0];
-    let todaySteps = 0;
-    let weekSteps = 0;
     for (const day of wellness) {
-      if (day.steps) {
-        weekSteps += day.steps;
-        if (day.id === today) todaySteps = day.steps;
-      }
+      if (!day.steps) continue;
+      const weekStart = getMonday(day.id);
+      if (!weekMap[weekStart]) continue;
+      weekMap[weekStart].stepsRaw += day.steps;
     }
 
-    return {
-      week: {
-        start,
-        end,
-        cycling: {
-          distance: metresToKm(totals.cycling.distance),
-          duration: secondsToHM(totals.cycling.duration),
-          count: totals.cycling.count,
-        },
-        running: {
-          distance: metresToKm(totals.running.distance),
-          duration: secondsToHM(totals.running.duration),
-          count: totals.running.count,
-        },
-        walking: {
-          distance: metresToKm(totals.walking.distance),
-          duration: secondsToHM(totals.walking.duration),
-          count: totals.walking.count,
-        },
-      },
-      steps: {
-        today: todaySteps,
-        weekTotal: weekSteps,
-      },
-    };
+    // First pass: compute totals to find the maximums
+    let maxActivityKm = 0;
+    let maxSteps = 0;
+    const computed = weeks.map(w => {
+      const d = weekMap[w.start];
+      const cy = metresToKm(d.cycling.distanceRaw);
+      const ru = metresToKm(d.running.distanceRaw);
+      const wa = metresToKm(d.walking.distanceRaw);
+      const total = Math.round((cy + ru + wa) * 10) / 10;
+      if (total > maxActivityKm) maxActivityKm = total;
+      if (d.stepsRaw > maxSteps) maxSteps = d.stepsRaw;
+      return {
+        start: w.start,
+        end: w.end,
+        label: w.label,
+        cycling: { distance: cy, duration: secondsToHM(d.cycling.duration), count: d.cycling.count },
+        running: { distance: ru, duration: secondsToHM(d.running.duration), count: d.running.count },
+        walking: { distance: wa, duration: secondsToHM(d.walking.duration), count: d.walking.count },
+        activityTotal: total,
+        stepsRaw: d.stepsRaw,
+      };
+    });
+
+    // Second pass: add normalised chart heights
+    const today = new Date().toISOString().split('T')[0];
+    const currentWeekStart = getMonday(today);
+
+    const result = computed.map(w => ({
+      ...w,
+      activityHeightPct: maxActivityKm > 0 ? Math.round((w.activityTotal / maxActivityKm) * 100) : 0,
+      stepsHeightPct: maxSteps > 0 ? Math.round((w.stepsRaw / maxSteps) * 100) : 0,
+      stepsFormatted: w.stepsRaw > 0 ? w.stepsRaw.toLocaleString('en-GB') : '—',
+      isCurrent: w.start === currentWeekStart,
+    }));
+
+    return { weeks: result };
   } catch (e) {
     console.error(`health.js: fetch failed — ${e.message}`);
-    return emptyData({ start, end });
+    return { weeks: [] };
   }
 }

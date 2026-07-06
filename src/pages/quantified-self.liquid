@@ -5,52 +5,72 @@ description: "A weekly snapshot of Adam Chamberlin's physical activity — cycli
 permalink: "/quantified-self/"
 ---
 
-<section class="qs--week">
-  <h2>
-    Week of
-    {{ health.week.start | dateReadableFromISO: "d LLL" }}
-    –
-    {{ health.week.end | dateReadableFromISO: "d LLL yyyy" }}
-  </h2>
+<section class="qs-section">
+  <h2>Activities</h2>
+  <p class="qs-note">Weekly distance in km by sport, last 12 weeks. Data refreshes with each site build.</p>
 
-  <p>Distance and duration cover completed activities only. Data refreshes with each site build.</p>
+  {% if health.weeks.size > 0 %}
+    <div class="qs-chart" role="img" aria-label="Stacked bar chart of weekly activity distance">
+      {% for week in health.weeks %}
+        <div class="qs-chart__col{% if week.isCurrent %} qs-chart__col--current{% endif %}">
+          <div class="qs-chart__bar" style="height: {{ week.activityHeightPct }}%">
+            {% if week.walking.distance > 0 %}
+              <span class="qs-chart__seg qs-chart__seg--walking" style="flex-grow: {{ week.walking.distance }}"></span>
+            {% endif %}
+            {% if week.running.distance > 0 %}
+              <span class="qs-chart__seg qs-chart__seg--running" style="flex-grow: {{ week.running.distance }}"></span>
+            {% endif %}
+            {% if week.cycling.distance > 0 %}
+              <span class="qs-chart__seg qs-chart__seg--cycling" style="flex-grow: {{ week.cycling.distance }}"></span>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="qs-labels">
+      {% for week in health.weeks %}
+        <span class="qs-label{% if week.isCurrent %} qs-label--current{% endif %}">{{ week.label }}</span>
+      {% endfor %}
+    </div>
 
-  <table class="qs--table">
-    <thead>
-      <tr>
-        <th scope="col">Sport</th>
-        <th scope="col">Distance</th>
-        <th scope="col">Duration</th>
-        <th scope="col">Sessions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Cycling</td>
-        <td>{{ health.week.cycling.distance }} km</td>
-        <td>{{ health.week.cycling.duration }}</td>
-        <td>{{ health.week.cycling.count }}</td>
-      </tr>
-      <tr>
-        <td>Running</td>
-        <td>{{ health.week.running.distance }} km</td>
-        <td>{{ health.week.running.duration }}</td>
-        <td>{{ health.week.running.count }}</td>
-      </tr>
-      <tr>
-        <td>Walking</td>
-        <td>{{ health.week.walking.distance }} km</td>
-        <td>{{ health.week.walking.duration }}</td>
-        <td>{{ health.week.walking.count }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <ul class="qs-legend" aria-label="Chart legend">
+      <li class="qs-legend__item">
+        <span class="qs-legend__swatch qs-legend__swatch--cycling"></span> Cycling
+      </li>
+      <li class="qs-legend__item">
+        <span class="qs-legend__swatch qs-legend__swatch--running"></span> Running
+      </li>
+      <li class="qs-legend__item">
+        <span class="qs-legend__swatch qs-legend__swatch--walking"></span> Walking
+      </li>
+    </ul>
+  {% else %}
+    <p>No activity data available.</p>
+  {% endif %}
 </section>
 
-<section class="qs--steps">
+<section class="qs-section">
   <h2>Steps</h2>
-  <ul>
-    <li><strong>Today:</strong> {{ health.steps.today | default: "—" }}</li>
-    <li><strong>This week:</strong> {{ health.steps.weekTotal | default: "—" }}</li>
-  </ul>
+  <p class="qs-note">Total steps per week, last 12 weeks.</p>
+
+  {% if health.weeks.size > 0 %}
+    <div class="qs-chart" role="img" aria-label="Bar chart of weekly step counts">
+      {% for week in health.weeks %}
+        <div class="qs-chart__col{% if week.isCurrent %} qs-chart__col--current{% endif %}">
+          <div class="qs-chart__bar" style="height: {{ week.stepsHeightPct }}%">
+            {% if week.stepsRaw > 0 %}
+              <span class="qs-chart__seg qs-chart__seg--steps"></span>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="qs-labels">
+      {% for week in health.weeks %}
+        <span class="qs-label{% if week.isCurrent %} qs-label--current{% endif %}">{{ week.label }}</span>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No step data available.</p>
+  {% endif %}
 </section>

@@ -1,0 +1,132 @@
+.qs-section {
+  margin-top: 2.5rem;
+
+  h2 {
+    font-size: var(--main-font-size-large);
+    font-weight: 300;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.qs-note {
+  font-size: var(--main-font-size-small);
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+// Chart container — fixed height, bars grow from the bottom
+.qs-chart {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 3px;
+  height: 180px;
+  border-bottom: 2px solid var(--main-color-hairline);
+  padding-bottom: 2px;
+}
+
+// One column per week
+.qs-chart__col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &--current .qs-chart__bar {
+    opacity: 1;
+    outline: 2px solid var(--main-color-hairline);
+    outline-offset: 2px;
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+// The bar itself — height set via inline style as % of chart height
+.qs-chart__bar {
+  width: 100%;
+  min-height: 3px;
+  background: var(--main-color-hairline); // floor marker for empty weeks
+  display: flex;
+  flex-direction: column; // walking top → cycling bottom
+  overflow: hidden;
+  border-radius: 3px 3px 0 0;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Stacked segments — flex-grow set inline to distribute proportionally
+.qs-chart__seg {
+  flex-basis: 0;
+  flex-shrink: 1;
+  min-height: 0;
+  width: 100%;
+
+  &--cycling { background: var(--main-color-secondary); }
+  &--running { background: var(--main-color-tertiary); }
+  &--walking { background: var(--main-color-quaternary); }
+  &--steps   { flex-grow: 1; background: var(--main-color-primary); }
+}
+
+// Label row beneath the chart
+.qs-labels {
+  display: flex;
+  gap: 3px;
+  margin-top: 0.35rem;
+}
+
+.qs-label {
+  flex: 1;
+  font-size: var(--main-font-size-xx-small);
+  text-align: center;
+  opacity: 0.55;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &--current {
+    opacity: 1;
+    font-weight: 600;
+  }
+
+  // On narrow viewports, only show every third label to avoid crowding
+  @media (max-width: 480px) {
+    visibility: hidden;
+
+    &:nth-child(3n+1) {
+      visibility: visible;
+    }
+  }
+}
+
+// Colour legend
+.qs-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  font-size: var(--main-font-size-small);
+}
+
+.qs-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.qs-legend__swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+
+  &--cycling { background: var(--main-color-secondary); }
+  &--running { background: var(--main-color-tertiary); }
+  &--walking { background: var(--main-color-quaternary); }
+}
