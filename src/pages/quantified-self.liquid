@@ -6,6 +6,35 @@ permalink: "/quantified-self/"
 ---
 
 <section class="qs-section">
+  <h2>Steps</h2>
+  <p class="qs-note">Total steps per week, last 12 weeks.</p>
+
+  {% if health.weeks.size > 0 %}
+    <div class="qs-chart" role="img" aria-label="Bar chart of weekly step counts">
+      {% for week in health.weeks %}
+        <div class="qs-chart__col{% if week.isCurrent %} qs-chart__col--current{% endif %}">
+          <div class="qs-chart__bar" style="height: {{ week.stepsHeightPct }}%">
+            {% if week.stepsRaw > 0 %}
+              <span class="qs-chart__seg qs-chart__seg--steps"></span>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="qs-labels qs-labels--with-values">
+      {% for week in health.weeks %}
+        <span class="qs-label{% if week.isCurrent %} qs-label--current{% endif %}">
+          <span class="qs-label__date">{{ week.label }}</span>
+          <span class="qs-label__value">{{ week.stepsFormatted }}</span>
+        </span>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No step data available.</p>
+  {% endif %}
+</section>
+
+<section class="qs-section">
   <h2>Activities</h2>
   <p class="qs-note">Weekly distance in km by sport, last 12 weeks. Data refreshes with each site build.</p>
 
@@ -44,33 +73,31 @@ permalink: "/quantified-self/"
         <span class="qs-legend__swatch qs-legend__swatch--walking"></span> Walking
       </li>
     </ul>
+
+    <div class="qs-table-wrap">
+      <table class="qs-table">
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th><span class="qs-legend__swatch qs-legend__swatch--cycling" aria-hidden="true"></span> Cycling</th>
+            <th><span class="qs-legend__swatch qs-legend__swatch--running" aria-hidden="true"></span> Running</th>
+            <th><span class="qs-legend__swatch qs-legend__swatch--walking" aria-hidden="true"></span> Walking</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% assign weeks_desc = health.weeks | reverse %}
+          {% for week in weeks_desc %}
+            <tr{% if week.isCurrent %} class="qs-table__row--current"{% endif %}>
+              <td class="qs-table__week">{{ week.label }}</td>
+              <td>{% if week.cycling.count > 0 %}{{ week.cycling.duration }} &middot; {{ week.cycling.distance }}&thinsp;km{% else %}&mdash;{% endif %}</td>
+              <td>{% if week.running.count > 0 %}{{ week.running.duration }} &middot; {{ week.running.distance }}&thinsp;km{% else %}&mdash;{% endif %}</td>
+              <td>{% if week.walking.count > 0 %}{{ week.walking.duration }} &middot; {{ week.walking.distance }}&thinsp;km{% else %}&mdash;{% endif %}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   {% else %}
     <p>No activity data available.</p>
-  {% endif %}
-</section>
-
-<section class="qs-section">
-  <h2>Steps</h2>
-  <p class="qs-note">Total steps per week, last 12 weeks.</p>
-
-  {% if health.weeks.size > 0 %}
-    <div class="qs-chart" role="img" aria-label="Bar chart of weekly step counts">
-      {% for week in health.weeks %}
-        <div class="qs-chart__col{% if week.isCurrent %} qs-chart__col--current{% endif %}">
-          <div class="qs-chart__bar" style="height: {{ week.stepsHeightPct }}%">
-            {% if week.stepsRaw > 0 %}
-              <span class="qs-chart__seg qs-chart__seg--steps"></span>
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-    <div class="qs-labels">
-      {% for week in health.weeks %}
-        <span class="qs-label{% if week.isCurrent %} qs-label--current{% endif %}">{{ week.label }}</span>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No step data available.</p>
   {% endif %}
 </section>

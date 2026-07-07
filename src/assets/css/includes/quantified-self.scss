@@ -102,6 +102,35 @@
   }
 }
 
+// Step count annotation beneath each bar label
+.qs-labels--with-values .qs-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  white-space: normal;
+}
+
+.qs-label__date {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.qs-label__value {
+  font-size: 0.6rem;
+  opacity: 0.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
 // Colour legend
 .qs-legend {
   display: flex;
@@ -129,4 +158,59 @@
   &--cycling { background: var(--main-color-secondary); }
   &--running { background: var(--main-color-tertiary); }
   &--walking { background: var(--main-color-quaternary); }
+}
+
+// Activities data table
+.qs-table-wrap {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.qs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--main-font-size-small);
+
+  th,
+  td {
+    padding: 0.35rem 1.25rem 0.35rem 0;
+    text-align: left;
+    border-bottom: 1px solid var(--main-color-hairline);
+    white-space: nowrap;
+    vertical-align: middle;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  th {
+    font-size: var(--main-font-size-xx-small);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.6;
+    padding-bottom: 0.5rem;
+
+    .qs-legend__swatch {
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+.qs-table__week {
+  opacity: 0.7;
+}
+
+.qs-table__row--current {
+  td {
+    font-weight: 600;
+  }
+
+  .qs-table__week {
+    opacity: 1;
+  }
 }
