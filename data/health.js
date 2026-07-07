@@ -94,6 +94,7 @@ export default async function () {
         cycling: { distanceRaw: 0, duration: 0, count: 0 },
         running: { distanceRaw: 0, duration: 0, count: 0 },
         walking: { distanceRaw: 0, duration: 0, count: 0 },
+        commute: { distanceRaw: 0, duration: 0, count: 0 },
         stepsRaw: 0,
       };
     }
@@ -111,6 +112,12 @@ export default async function () {
           weekMap[weekStart][group].count += 1;
         }
       }
+
+      if (activity.commute) {
+        weekMap[weekStart].commute.distanceRaw += activity.distance ?? 0;
+        weekMap[weekStart].commute.duration += activity.moving_time ?? 0;
+        weekMap[weekStart].commute.count += 1;
+      }
     }
 
     for (const day of wellness) {
@@ -120,16 +127,21 @@ export default async function () {
       weekMap[weekStart].stepsRaw += day.steps;
     }
 
+    const CO2_G_PER_KM = 170; // UK average car emissions
+
     // First pass: compute totals to find the maximums
     let maxActivityKm = 0;
+    let maxCommuteKm = 0;
     let maxSteps = 0;
     const computed = weeks.map(w => {
       const d = weekMap[w.start];
       const cy = metresToKm(d.cycling.distanceRaw);
       const ru = metresToKm(d.running.distanceRaw);
       const wa = metresToKm(d.walking.distanceRaw);
+      const co = metresToKm(d.commute.distanceRaw);
       const total = Math.round((cy + ru + wa) * 10) / 10;
       if (total > maxActivityKm) maxActivityKm = total;
+      if (co > maxCommuteKm) maxCommuteKm = co;
       if (d.stepsRaw > maxSteps) maxSteps = d.stepsRaw;
       return {
         start: w.start,
@@ -138,6 +150,7 @@ export default async function () {
         cycling: { distance: cy, duration: secondsToHM(d.cycling.duration), count: d.cycling.count },
         running: { distance: ru, duration: secondsToHM(d.running.duration), count: d.running.count },
         walking: { distance: wa, duration: secondsToHM(d.walking.duration), count: d.walking.count },
+        commute: { distance: co, duration: secondsToHM(d.commute.duration), count: d.commute.count },
         activityTotal: total,
         stepsRaw: d.stepsRaw,
       };
@@ -150,12 +163,26 @@ export default async function () {
     const result = computed.map(w => ({
       ...w,
       activityHeightPct: maxActivityKm > 0 ? Math.round((w.activityTotal / maxActivityKm) * 100) : 0,
+      commuteHeightPct: maxCommuteKm > 0 ? Math.round((w.commute.distance / maxCommuteKm) * 100) : 0,
       stepsHeightPct: maxSteps > 0 ? Math.round((w.stepsRaw / maxSteps) * 100) : 0,
       stepsFormatted: w.stepsRaw > 0 ? w.stepsRaw.toLocaleString('en-GB') : '—',
       isCurrent: w.start === currentWeekStart,
     }));
 
-    return { weeks: result };
+    const totalCommuteKm = Math.round(computed.reduce((s, w) => s + w.commute.distance, 0) * 10) / 10;
+    const totalCommuteRides = computed.reduce((s, w) => s + w.commute.count, 0);
+    const totalCo2Kg = Math.round((totalCommuteKm * CO2_G_PER_KM) / 100) / 10;
+
+    return {
+      weeks: result,
+      commuteTotals: {
+        rides: totalCommuteRides,
+        distanceKm: totalCommuteKm,
+        distanceFormatted: totalCommuteKm.toLocaleString('en-GB'),
+        co2SavedKg: totalCo2Kg,
+        co2SavedFormatted: totalCo2Kg.toLocaleString('en-GB'),
+      },
+    };
   } catch (e) {
     console.error(`health.js: fetch failed — ${e.message}`);
     return { weeks: [] };

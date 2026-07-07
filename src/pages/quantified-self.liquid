@@ -35,6 +35,47 @@ permalink: "/quantified-self/"
 </section>
 
 <section class="qs-section">
+  <h2>Commutes</h2>
+  <p class="qs-note">Bike commutes replacing car trips, last 12 weeks. CO&#x2082; saving estimated at 170&thinsp;g/km (UK average car).</p>
+
+  {% if health.commuteTotals.rides > 0 %}
+    <div class="qs-stats">
+      <div class="qs-stat">
+        <span class="qs-stat__value">{{ health.commuteTotals.rides }}</span>
+        <span class="qs-stat__label">rides</span>
+      </div>
+      <div class="qs-stat">
+        <span class="qs-stat__value">{{ health.commuteTotals.distanceFormatted }}</span>
+        <span class="qs-stat__label">km cycled</span>
+      </div>
+      <div class="qs-stat qs-stat--highlight">
+        <span class="qs-stat__value">{{ health.commuteTotals.co2SavedFormatted }}</span>
+        <span class="qs-stat__label">kg CO&#x2082; saved</span>
+      </div>
+    </div>
+
+    <div class="qs-chart" role="img" aria-label="Bar chart of weekly commute distance">
+      {% for week in health.weeks %}
+        <div class="qs-chart__col{% if week.isCurrent %} qs-chart__col--current{% endif %}">
+          <div class="qs-chart__bar qs-chart__bar--commute" style="height: {{ week.commuteHeightPct }}%">
+            {% if week.commute.count > 0 %}
+              <span class="qs-chart__seg qs-chart__seg--commute"></span>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="qs-labels">
+      {% for week in health.weeks %}
+        <span class="qs-label{% if week.isCurrent %} qs-label--current{% endif %}">{{ week.label }}</span>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No commute data available.</p>
+  {% endif %}
+</section>
+
+<section class="qs-section">
   <h2>Activities</h2>
   <p class="qs-note">Weekly distance in km by sport, last 12 weeks. Data refreshes with each site build.</p>
 
