@@ -2,6 +2,7 @@
 
 // Node imports
 import path from 'node:path';
+import fs from 'node:fs';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -66,13 +67,19 @@ export default async function (eleventyConfig) {
     formats: ['jpg', 'webp'],
     widths: ['auto', 400, 600, 800],
     urlPath: '/images/',
-    outputDir: './_site/images/',
+    outputDir: './.cache/images/',
+    failOnError: false,
     defaultAttributes: {
       loading: 'lazy',
       sizes: '(min-width: 880px) 640px, calc(76.07vw - 14px)',
       decoding: 'async',
     },
   });
+
+  eleventyConfig.on('eleventy.after', () => {
+    fs.cpSync('.cache/images/', path.join(dir.output, 'images'), { recursive: true });
+  });
+
   eleventyConfig.addPlugin(pluginYouTube, {
     lite: {
       responsive: true,
