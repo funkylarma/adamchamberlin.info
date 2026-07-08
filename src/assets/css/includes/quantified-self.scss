@@ -63,6 +63,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
 
   &--current .qs-chart__bar {
     opacity: 1;
@@ -70,6 +71,42 @@
     outline-offset: 2px;
     border-radius: 4px 4px 0 0;
   }
+
+  .qs-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--main-color-bg);
+    border: 1px solid var(--main-color-hairline);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    font-size: var(--main-font-size-xx-small);
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+    line-height: 1.6;
+  }
+
+  &:hover .qs-tooltip {
+    display: block;
+  }
+
+  &:first-child .qs-tooltip {
+    left: 0;
+    transform: none;
+  }
+
+  &:last-child .qs-tooltip {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+}
+
+.qs-tooltip__line {
+  display: block;
 }
 
 // The bar itself — height set via inline style as % of chart height

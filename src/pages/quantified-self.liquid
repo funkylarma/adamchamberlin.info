@@ -18,6 +18,9 @@ permalink: "/quantified-self/"
               <span class="qs-chart__seg qs-chart__seg--steps"></span>
             {% endif %}
           </div>
+          {% if week.stepsRaw > 0 %}
+            <span class="qs-tooltip">{{ week.stepsFormatted }} steps</span>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -62,12 +65,18 @@ permalink: "/quantified-self/"
               <span class="qs-chart__seg qs-chart__seg--commute"></span>
             {% endif %}
           </div>
+          {% if week.commute.count > 0 %}
+            <span class="qs-tooltip">{{ week.commute.distance }}&thinsp;km · {{ week.commute.duration }}</span>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
-    <div class="qs-labels">
+    <div class="qs-labels qs-labels--with-values">
       {% for week in health.weeks %}
-        <span class="qs-label{% if week.isCurrent %} qs-label--current{% endif %}">{{ week.label }}</span>
+        <span class="qs-label{% if week.isCurrent %} qs-label--current{% endif %}">
+          <span class="qs-label__date">{{ week.label }}</span>
+          <span class="qs-label__value">{% if week.commute.count > 0 %}{{ week.commute.distance }}&thinsp;km{% endif %}</span>
+        </span>
       {% endfor %}
     </div>
   {% else %}
@@ -94,6 +103,13 @@ permalink: "/quantified-self/"
               <span class="qs-chart__seg qs-chart__seg--cycling" style="flex-grow: {{ week.cycling.distance }}"></span>
             {% endif %}
           </div>
+          {% if week.cycling.distance > 0 or week.running.distance > 0 or week.walking.distance > 0 %}
+            <span class="qs-tooltip">
+              {% if week.cycling.distance > 0 %}<span class="qs-tooltip__line">Cycling: {{ week.cycling.distance }}&thinsp;km · {{ week.cycling.duration }}</span>{% endif %}
+              {% if week.running.distance > 0 %}<span class="qs-tooltip__line">Running: {{ week.running.distance }}&thinsp;km · {{ week.running.duration }}</span>{% endif %}
+              {% if week.walking.distance > 0 %}<span class="qs-tooltip__line">Walking: {{ week.walking.distance }}&thinsp;km · {{ week.walking.duration }}</span>{% endif %}
+            </span>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
