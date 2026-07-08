@@ -1,3 +1,5 @@
+/** @format */
+
 .qs-section {
   margin-top: 2.5rem;
 
@@ -78,7 +80,7 @@
     bottom: calc(100% + 6px);
     left: 50%;
     transform: translateX(-50%);
-    background: var(--main-color-bg);
+    background: var(--main-color-background);
     border: 1px solid var(--main-color-hairline);
     border-radius: 4px;
     padding: 0.3rem 0.6rem;
@@ -133,11 +135,23 @@
   min-height: 0;
   width: 100%;
 
-  &--cycling { background: var(--main-color-secondary); }
-  &--running { background: var(--main-color-tertiary); }
-  &--walking { background: var(--main-color-quaternary); }
-  &--steps   { flex-grow: 1; background: var(--main-color-primary); }
-  &--commute { flex-grow: 1; background: var(--main-color-tertiary); }
+  &--cycling {
+    background: var(--main-color-secondary);
+  }
+  &--running {
+    background: var(--main-color-tertiary);
+  }
+  &--walking {
+    background: var(--main-color-quaternary);
+  }
+  &--steps {
+    flex-grow: 1;
+    background: var(--main-color-primary);
+  }
+  &--commute {
+    flex-grow: 1;
+    background: var(--main-color-tertiary);
+  }
 }
 
 // Label row beneath the chart
@@ -165,7 +179,7 @@
   @media (max-width: 480px) {
     visibility: hidden;
 
-    &:nth-child(3n+1) {
+    &:nth-child(3n + 1) {
       visibility: visible;
     }
   }
@@ -224,9 +238,15 @@
   border-radius: 2px;
   flex-shrink: 0;
 
-  &--cycling { background: var(--main-color-secondary); }
-  &--running { background: var(--main-color-tertiary); }
-  &--walking { background: var(--main-color-quaternary); }
+  &--cycling {
+    background: var(--main-color-secondary);
+  }
+  &--running {
+    background: var(--main-color-tertiary);
+  }
+  &--walking {
+    background: var(--main-color-quaternary);
+  }
 }
 
 // Activities data table

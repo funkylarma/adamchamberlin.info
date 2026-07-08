@@ -1,3 +1,5 @@
+/** @format */
+
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
 const imageOptions = {
@@ -9,7 +11,7 @@ const imageOptions = {
   widths: ['auto', 400, 900],
   // output directory
   urlPath: '/images/',
-  outputDir: './_site/images/',
+  outputDir: './.cache/images/',
   // optional, attributes assigned on <img> override these values.
   defaultAttributes: {
     loading: 'lazy',
