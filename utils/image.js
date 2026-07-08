@@ -11,7 +11,7 @@ const imageOptions = {
   widths: ['auto', 400, 900],
   // output directory
   urlPath: '/images/',
-  outputDir: './.cache/images/',
+  outputDir: './_site/images/',
   // optional, attributes assigned on <img> override these values.
   defaultAttributes: {
     loading: 'lazy',

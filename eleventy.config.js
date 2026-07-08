@@ -42,7 +42,7 @@ export default async function (eleventyConfig) {
   // Pass-through copy for static assets
   eleventyConfig.addPassthroughCopy({
     './src/assets/fonts': '/assets/fonts',
-    './src/assets/images': '/.cache/images',
+    './src/assets/images': '/_site/images',
     './src/geojson': '/geojson',
     './src/assets/icons': '/assets/icons',
     './src/assets/templates': '/assets/templates',
@@ -66,7 +66,7 @@ export default async function (eleventyConfig) {
     formats: ['jpg', 'webp'],
     widths: ['auto', 400, 600, 800],
     urlPath: '/images/',
-    outputDir: './.cache/images/',
+    outputDir: './_site/images/',
     defaultAttributes: {
       loading: 'lazy',
       sizes: '(min-width: 880px) 640px, calc(76.07vw - 14px)',
