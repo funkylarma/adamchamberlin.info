@@ -94,6 +94,7 @@ export default async function () {
         cycling: { distanceRaw: 0, duration: 0, count: 0 },
         running: { distanceRaw: 0, duration: 0, count: 0 },
         walking: { distanceRaw: 0, duration: 0, count: 0 },
+        other: { distanceRaw: 0, duration: 0, count: 0 },
         commute: { distanceRaw: 0, duration: 0, count: 0 },
         stepsRaw: 0,
       };
@@ -105,12 +106,19 @@ export default async function () {
       const weekStart = getMonday(dateStr);
       if (!weekMap[weekStart]) continue;
 
+      let matchedGroup = false;
       for (const [group, types] of Object.entries(SPORT_GROUPS)) {
         if (types.includes(activity.type)) {
           weekMap[weekStart][group].distanceRaw += activity.distance ?? 0;
           weekMap[weekStart][group].duration += activity.moving_time ?? 0;
           weekMap[weekStart][group].count += 1;
+          matchedGroup = true;
         }
+      }
+      if (!matchedGroup) {
+        weekMap[weekStart].other.distanceRaw += activity.distance ?? 0;
+        weekMap[weekStart].other.duration += activity.moving_time ?? 0;
+        weekMap[weekStart].other.count += 1;
       }
 
       if (activity.commute) {
@@ -138,8 +146,9 @@ export default async function () {
       const cy = metresToKm(d.cycling.distanceRaw);
       const ru = metresToKm(d.running.distanceRaw);
       const wa = metresToKm(d.walking.distanceRaw);
+      const ot = metresToKm(d.other.distanceRaw);
       const co = metresToKm(d.commute.distanceRaw);
-      const total = Math.round((cy + ru + wa) * 10) / 10;
+      const total = Math.round((cy + ru + wa + ot) * 10) / 10;
       if (total > maxActivityKm) maxActivityKm = total;
       if (co > maxCommuteKm) maxCommuteKm = co;
       if (d.stepsRaw > maxSteps) maxSteps = d.stepsRaw;
@@ -150,6 +159,7 @@ export default async function () {
         cycling: { distance: cy, duration: secondsToHM(d.cycling.duration), count: d.cycling.count },
         running: { distance: ru, duration: secondsToHM(d.running.duration), count: d.running.count },
         walking: { distance: wa, duration: secondsToHM(d.walking.duration), count: d.walking.count },
+        other: { distance: ot, duration: secondsToHM(d.other.duration), count: d.other.count },
         commute: { distance: co, duration: secondsToHM(d.commute.duration), count: d.commute.count },
         activityTotal: total,
         stepsRaw: d.stepsRaw,

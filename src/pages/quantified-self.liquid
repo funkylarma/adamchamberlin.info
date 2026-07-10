@@ -102,12 +102,16 @@ permalink: "/quantified-self/"
             {% if week.cycling.distance > 0 %}
               <span class="qs-chart__seg qs-chart__seg--cycling" style="flex-grow: {{ week.cycling.distance }}"></span>
             {% endif %}
+            {% if week.other.distance > 0 %}
+              <span class="qs-chart__seg qs-chart__seg--other" style="flex-grow: {{ week.other.distance }}"></span>
+            {% endif %}
           </div>
-          {% if week.cycling.distance > 0 or week.running.distance > 0 or week.walking.distance > 0 %}
+          {% if week.cycling.distance > 0 or week.running.distance > 0 or week.walking.distance > 0 or week.other.distance > 0 %}
             <span class="qs-tooltip">
               {% if week.cycling.distance > 0 %}<span class="qs-tooltip__line">Cycling: {{ week.cycling.distance }}&thinsp;km · {{ week.cycling.duration }}</span>{% endif %}
               {% if week.running.distance > 0 %}<span class="qs-tooltip__line">Running: {{ week.running.distance }}&thinsp;km · {{ week.running.duration }}</span>{% endif %}
               {% if week.walking.distance > 0 %}<span class="qs-tooltip__line">Walking: {{ week.walking.distance }}&thinsp;km · {{ week.walking.duration }}</span>{% endif %}
+              {% if week.other.distance > 0 %}<span class="qs-tooltip__line">Other: {{ week.other.distance }}&thinsp;km · {{ week.other.duration }}</span>{% endif %}
             </span>
           {% endif %}
         </div>
@@ -129,6 +133,9 @@ permalink: "/quantified-self/"
       <li class="qs-legend__item">
         <span class="qs-legend__swatch qs-legend__swatch--walking"></span> Walking
       </li>
+      <li class="qs-legend__item">
+        <span class="qs-legend__swatch qs-legend__swatch--other"></span> Other
+      </li>
     </ul>
 
     <div class="qs-table-wrap">
@@ -139,6 +146,7 @@ permalink: "/quantified-self/"
             <th><span class="qs-legend__swatch qs-legend__swatch--cycling" aria-hidden="true"></span> Cycling</th>
             <th><span class="qs-legend__swatch qs-legend__swatch--running" aria-hidden="true"></span> Running</th>
             <th><span class="qs-legend__swatch qs-legend__swatch--walking" aria-hidden="true"></span> Walking</th>
+            <th><span class="qs-legend__swatch qs-legend__swatch--other" aria-hidden="true"></span> Other</th>
           </tr>
         </thead>
         <tbody>
@@ -149,6 +157,7 @@ permalink: "/quantified-self/"
               <td>{% if week.cycling.count > 0 %}{{ week.cycling.duration }} &middot; {{ week.cycling.distance }}&thinsp;km{% else %}&mdash;{% endif %}</td>
               <td>{% if week.running.count > 0 %}{{ week.running.duration }} &middot; {{ week.running.distance }}&thinsp;km{% else %}&mdash;{% endif %}</td>
               <td>{% if week.walking.count > 0 %}{{ week.walking.duration }} &middot; {{ week.walking.distance }}&thinsp;km{% else %}&mdash;{% endif %}</td>
+              <td>{% if week.other.count > 0 %}{{ week.other.duration }} &middot; {{ week.other.distance }}&thinsp;km{% else %}&mdash;{% endif %}</td>
             </tr>
           {% endfor %}
         </tbody>

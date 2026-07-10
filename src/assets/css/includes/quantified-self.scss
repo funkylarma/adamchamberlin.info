@@ -144,6 +144,9 @@
   &--walking {
     background: var(--main-color-quaternary);
   }
+  &--other {
+    background: var(--main-color-important);
+  }
   &--steps {
     flex-grow: 1;
     background: var(--main-color-primary);
@@ -246,6 +249,9 @@
   }
   &--walking {
     background: var(--main-color-quaternary);
+  }
+  &--other {
+    background: var(--main-color-important);
   }
 }
 
