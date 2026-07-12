@@ -64,7 +64,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(pluginImageTransform, {
     extensions: 'html',
-    formats: ['jpg', 'webp'],
+    formats: ['avif', 'webp'],
     widths: ['auto', 400, 600, 800],
     urlPath: '/images/',
     outputDir: './.cache/images/',
