@@ -1,10 +1,54 @@
 /** @format */
 
 import fs from 'node:fs';
+import path from 'node:path';
+import { load as yamlLoad } from 'js-yaml';
 import _ from 'lodash';
 import writingStats from 'writing-stats';
 import { month_names } from './constants.js';
 import { nth } from './constants.js';
+
+// Directories under src/ that publish to the "activity" tag (see each
+// directory's <name>.11tydata.js). Read directly off disk with plain fs
+// rather than the Collection API - Eleventy's dependency graph schedules
+// custom collections that call `getFilteredByTag`/`getAll` at an ambiguous
+// point relative to when all ~3000 tagged files have been discovered (order
+// is tie-broken by filesystem discovery order, which differs between macOS
+// and Linux build containers), so `collection.getFilteredByTag('activity')`
+// can return a partial result. Reading the files ourselves has no such
+// dependency and is always complete.
+const ACTIVITY_DIRS = ['likes', 'bookmarks', 'checkins', 'replies', 'rsvps', 'videos', 'exercise', 'services'];
+
+function readActivityContentFromDisk() {
+  const items = [];
+
+  for (const dir of ACTIVITY_DIRS) {
+    const base = path.join('src', dir);
+    if (!fs.existsSync(base)) continue;
+
+    const files = fs.readdirSync(base, { recursive: true }).filter((file) => file.endsWith('.md'));
+
+    for (const file of files) {
+      const raw = fs.readFileSync(path.join(base, file), 'utf8');
+      const match = raw.match(/^---\n([\s\S]*?)\n---/);
+      if (!match) continue;
+
+      const data = yamlLoad(match[1]) ?? {};
+
+      // Mirrors services.11tydata.js: drafts are dev-only in production.
+      if (process.env.ELEVENTY_ENV === 'production' && data.draft) continue;
+
+      const relativePath = file.replace(/\.md$/, '').split(path.sep).join('/');
+      items.push({
+        date: new Date(data.date),
+        url: `/${relativePath}/`,
+        data,
+      });
+    }
+  }
+
+  return items;
+}
 
 function processPostFile(filePath) {
   try {
@@ -256,27 +300,19 @@ export default {
   },
 
   activityContent: function (collection) {
-    // Get the online content
     let lastfmContent = collection.getAll()[0]?.data?.lastfm?.activityList ?? [];
     if (!Array.isArray(lastfmContent)) lastfmContent = [];
-    console.log('LastFM items: ' + lastfmContent.length);
 
     let mastodonContent = collection.getAll()[0]?.data?.mastodon ?? [];
     if (!Array.isArray(mastodonContent)) mastodonContent = [];
-    console.log('Mastodon items: ' + mastodonContent.length);
 
-    // Get the local content
-    let localContent = collection.getFilteredByTag('activity');
-    console.log('Local activity items: ' + localContent.length + ' (collection.getAll() total: ' + collection.getAll().length + ')');
+    let localContent = readActivityContentFromDisk();
 
     let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
 
-    // Sort the content
-    let sortedContent = allContent.sort(function (a, b) {
+    return allContent.sort(function (a, b) {
       return a.date - b.date;
     });
-
-    return sortedContent;
   },
 
   // Gets all the filtered content by tag and outputs a Collection

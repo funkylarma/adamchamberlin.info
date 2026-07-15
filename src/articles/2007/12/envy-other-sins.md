@@ -1,5 +1,5 @@
 ---
-title: 'Envy &amp; Other Sins'
+title: 'Envy & Other Sins'
 date: '2007-12-16'
 category: article
 tags:

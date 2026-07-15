@@ -83,7 +83,7 @@ related:
     {% for signup in collections.currentSignups limit: 8 %}
       <li>
         <a class="post-link u-url" rel="bookmark" href="{{ signup.url }}" title="Continue to view {{ signup.data.title | escape }}">
-          {{ signup.data.title | escape | strip_html | truncate: 40 }}
+          {{ signup.data.title | strip_html | truncate: 40 | escape }}
         </a>
         - {{ signup.data.start | dateReadable }}
       </li>
