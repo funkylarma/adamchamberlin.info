@@ -167,8 +167,6 @@ related:
 <p>
 <ul class="movie--list">
   {% if collections.recentMovies.length >= 1 %}
-    <li>Have not watch a lot lately</li>
-  {% else %}
     {% for movie in collections.recentMovies limit: 8 %}
       <li>
         <a rel="noreferrer" target="_blank" href="{{ movie.url }}">
@@ -177,6 +175,8 @@ related:
         <p>{{ movie.data.title | escape | strip_html }}</p>
       </li>
     {% endfor %}
+  {% else %}
+    <li>Have not watch a lot lately</li>
   {% endif %}
 </ul>
 </p>

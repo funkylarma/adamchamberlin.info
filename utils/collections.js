@@ -182,7 +182,7 @@ export default {
   },
 
   recentMovies: function (collection) {
-    const watched = collection
+    const moviesWatched = collection
       .getAll()
       .sort(function (a, b) {
         return b.date - a.date; // sort by date - descending
@@ -194,7 +194,7 @@ export default {
         }
       })
       .slice(0, 12);
-    return watched;
+    return moviesWatched;
   },
 
   recentReads: function (collection) {
@@ -267,6 +267,7 @@ export default {
 
     // Get the local content
     let localContent = collection.getFilteredByTag('activity');
+    console.log('Local activity items: ' + localContent.length + ' (collection.getAll() total: ' + collection.getAll().length + ')');
 
     let allContent = [...localContent, ...lastfmContent, ...mastodonContent];
 
