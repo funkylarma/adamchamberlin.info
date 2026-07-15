@@ -1,0 +1,35 @@
+name: Scheduled Cloudflare Build
+
+on:
+  schedule:
+    # 08:30 covering both UK clock changes (cron is always UTC):
+    - cron: "30 7 * * *" # 08:30 during BST (UTC+1)
+    - cron: "30 8 * * *" # 08:30 during GMT (UTC+0)
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trigger-build:
+    name: Trigger Cloudflare Pages Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Only proceed if it's actually ~08:30 in Europe/London
+        id: check
+        run: |
+          now_minutes=$(TZ="Europe/London" date +%H:%M | awk -F: '{print $1*60+$2}')
+          diff=$(( now_minutes - 510 ))
+          diff=${diff#-}
+          if [ "$diff" -le 10 ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Not within 10 minutes of 08:30 Europe/London (it's $(TZ="Europe/London" date +%H:%M)) — the other cron entry covers this half of the year."
+          fi
+
+      - name: Trigger Cloudflare Pages deploy hook
+        if: steps.check.outputs.run == 'true'
+        run: curl --fail --silent --show-error -X POST "${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}"
