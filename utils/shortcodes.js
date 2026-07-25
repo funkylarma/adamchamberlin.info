@@ -11,7 +11,7 @@ export default {
   },
 
   assetIcon: function (filename) {
-    let relativeFilePath = `./src/assets/icons/${filename}.svg`;
+    let relativeFilePath = `./public/assets/icons/${filename}.svg`;
     let data = fs.readFileSync(relativeFilePath, function (err, contents) {
       if (err) return err;
       return contents;

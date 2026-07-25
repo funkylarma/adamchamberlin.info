@@ -40,13 +40,15 @@ export default async function (eleventyConfig) {
     dynamicPartials: true,
   });
 
-  // Pass-through copy for static assets
+  // Pass-through copy for static assets.
+  // Fonts, icons, geojson (and images, duplicated below) live in ./public — the
+  // eleventy-plugin-vite publicDir convention is what lets these survive the
+  // plugin's internal Vite build untouched (it empties and re-emits _site from
+  // its own asset graph on every build, so anything not routed through publicDir
+  // gets dropped). `src/assets/images` is kept in parallel because
+  // eleventyImageTransformPlugin resolves <img> sources against the Eleventy
+  // input dir, not publicDir.
   eleventyConfig.addPassthroughCopy({
-    './src/assets/fonts': '/assets/fonts',
-    './src/assets/images': '/_site/images',
-    './src/geojson': '/geojson',
-    './src/assets/icons': '/assets/icons',
-    './src/assets/templates': '/assets/templates',
     './src/assets/js/**/*.min.js': '/assets/js',
     './src/assets/css/**/*.min.css': '/assets/css',
   });
